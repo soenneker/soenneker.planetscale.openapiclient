@@ -4608,109 +4608,6 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/extensions/{extension}": {
-      "patch": {
-        "tags": [
-          "api-neki_shard_configuration_profile_extensions"
-        ],
-        "summary": "Enable or disable an extension for a Neki shard configuration profile",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "UpdateShardConfigurationProfileExtension",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "configurationProfile",
-            "description": "Name from \u0060list_shard_configuration_profiles\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "extension",
-            "description": "The name of the extension",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/UpdateShardConfigurationProfileExtensionRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Shard configuration profile or extension not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Extension cannot be enabled or disabled",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the updated extension",
-            "schema": {
-              "$ref": "#/definitions/NekiExtensionDefinition"
-            }
-          }
-        }
-      }
-    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/maintenance": {
       "post": {
         "tags": [
@@ -23877,7 +23774,6 @@
     "PostgresClusterParameter": {
       "type": "object",
       "required": [
-        "id",
         "name",
         "display_name",
         "namespace",
@@ -23899,10 +23795,6 @@
         "actor"
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the parameter"
-        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -24103,11 +23995,13 @@
         },
         "vtgate_max_count": {
           "type": "integer",
-          "description": "The maximum number of vtgates in an availability zone when autoscaling is enabled"
+          "description": "The maximum number of vtgates in an availability zone when autoscaling is enabled",
+          "x-nullable": true
         },
         "previous_vtgate_max_count": {
           "type": "integer",
-          "description": "The previous maximum number of vtgates in the availability zone when autoscaling is enabled"
+          "description": "The previous maximum number of vtgates in the availability zone when autoscaling is enabled",
+          "x-nullable": true
         },
         "vtgate_autoscaling": {
           "type": "boolean",
@@ -24119,11 +24013,13 @@
         },
         "vtgate_target_cpu_utilization": {
           "type": "number",
-          "description": "The target CPU utilization for the vtgate cluster"
+          "description": "The target CPU utilization for the vtgate cluster",
+          "x-nullable": true
         },
         "previous_vtgate_target_cpu_utilization": {
           "type": "number",
-          "description": "The previous target CPU utilization for the vtgate cluster"
+          "description": "The previous target CPU utilization for the vtgate cluster",
+          "x-nullable": true
         },
         "vtgate_name": {
           "type": "string",
@@ -25479,6 +25375,7 @@
     "NekiParameter": {
       "type": "object",
       "required": [
+        "id",
         "name",
         "display_name",
         "namespace",
@@ -25496,6 +25393,11 @@
         "actor"
       ],
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the parameter",
+          "x-nullable": true
+        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -25525,11 +25427,13 @@
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -27414,12 +27318,8 @@
       "type": "object",
       "required": [
         "type",
-        "current_page",
-        "per_page",
         "next_page",
-        "next_page_url",
         "prev_page",
-        "prev_page_url",
         "data"
       ],
       "properties": {
@@ -27429,11 +27329,13 @@
         },
         "current_page": {
           "type": "integer",
-          "description": "The current page number"
+          "description": "The current page number",
+          "x-nullable": true
         },
         "per_page": {
           "type": "integer",
-          "description": "The maximum number of results per page"
+          "description": "The maximum number of results per page",
+          "x-nullable": true
         },
         "next_page": {
           "type": "integer",
@@ -27467,12 +27369,8 @@
       "type": "object",
       "required": [
         "type",
-        "current_page",
-        "per_page",
         "next_page",
-        "next_page_url",
         "prev_page",
-        "prev_page_url",
         "data"
       ],
       "properties": {
@@ -27482,11 +27380,13 @@
         },
         "current_page": {
           "type": "integer",
-          "description": "The current page number"
+          "description": "The current page number",
+          "x-nullable": true
         },
         "per_page": {
           "type": "integer",
-          "description": "The maximum number of results per page"
+          "description": "The maximum number of results per page",
+          "x-nullable": true
         },
         "next_page": {
           "type": "integer",
@@ -27623,9 +27523,9 @@
         },
         "table_keyspaces": {
           "type": "array",
-          "description": "Mapping of tables to their keyspaces",
+          "description": "Keyspaces or schemas accessed by the query",
           "items": {
-            "$ref": "#/definitions/QuerySummaryTableKeyspacesItemProperty"
+            "type": "string"
           }
         },
         "index_usages": {
@@ -27687,7 +27587,7 @@
           "description": "Average rows affected per query"
         },
         "sum_total_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total duration in milliseconds across all executions"
         },
         "sum_total_duration_percent": {
@@ -27695,7 +27595,7 @@
           "description": "Percentage of total query time"
         },
         "sum_cpu_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total CPU duration in milliseconds"
         },
         "sum_cpu_duration_percent": {
@@ -27703,7 +27603,7 @@
           "description": "Percentage of total CPU time"
         },
         "sum_io_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total IO duration in milliseconds"
         },
         "sum_io_duration_percent": {
@@ -27916,12 +27816,8 @@
       "type": "object",
       "required": [
         "type",
-        "current_page",
-        "per_page",
         "next_page",
-        "next_page_url",
         "prev_page",
-        "prev_page_url",
         "data"
       ],
       "properties": {
@@ -27931,11 +27827,13 @@
         },
         "current_page": {
           "type": "integer",
-          "description": "The current page number"
+          "description": "The current page number",
+          "x-nullable": true
         },
         "per_page": {
           "type": "integer",
-          "description": "The maximum number of results per page"
+          "description": "The maximum number of results per page",
+          "x-nullable": true
         },
         "next_page": {
           "type": "integer",
@@ -27969,12 +27867,8 @@
       "type": "object",
       "required": [
         "type",
-        "current_page",
-        "per_page",
         "next_page",
-        "next_page_url",
         "prev_page",
-        "prev_page_url",
         "data"
       ],
       "properties": {
@@ -27984,11 +27878,13 @@
         },
         "current_page": {
           "type": "integer",
-          "description": "The current page number"
+          "description": "The current page number",
+          "x-nullable": true
         },
         "per_page": {
           "type": "integer",
-          "description": "The maximum number of results per page"
+          "description": "The maximum number of results per page",
+          "x-nullable": true
         },
         "next_page": {
           "type": "integer",
@@ -28022,12 +27918,8 @@
       "type": "object",
       "required": [
         "type",
-        "current_page",
-        "per_page",
         "next_page",
-        "next_page_url",
         "prev_page",
-        "prev_page_url",
         "data"
       ],
       "properties": {
@@ -28037,11 +27929,13 @@
         },
         "current_page": {
           "type": "integer",
-          "description": "The current page number"
+          "description": "The current page number",
+          "x-nullable": true
         },
         "per_page": {
           "type": "integer",
-          "description": "The maximum number of results per page"
+          "description": "The maximum number of results per page",
+          "x-nullable": true
         },
         "next_page": {
           "type": "integer",
@@ -29945,11 +29839,13 @@
         },
         "last_sent_result": {
           "type": "string",
-          "description": "The last result sent by the webhook"
+          "description": "The last result sent by the webhook",
+          "x-nullable": true
         },
         "last_sent_success": {
           "type": "boolean",
-          "description": "Whether the last sent was successful"
+          "description": "Whether the last sent was successful",
+          "x-nullable": true
         },
         "last_sent_at": {
           "type": "string",
@@ -31704,11 +31600,13 @@
         },
         "table_name": {
           "type": "string",
-          "description": "The table with the error"
+          "description": "The table with the error",
+          "x-nullable": true
         },
         "error_description": {
           "type": "string",
-          "description": "A description for the error that occurred"
+          "description": "A description for the error that occurred",
+          "x-nullable": true
         },
         "docs_url": {
           "type": "string",
@@ -31716,53 +31614,64 @@
         },
         "column_name": {
           "type": "string",
-          "description": "The column in a table relevant to the error"
+          "description": "The column in a table relevant to the error",
+          "x-nullable": true
         },
         "foreign_key_column_names": {
           "type": "array",
           "description": "A list of invalid foreign key columns in a table",
           "items": {
             "type": "string"
-          }
+          },
+          "x-nullable": true
         },
         "auto_increment_column_names": {
           "type": "array",
           "description": "A list of invalid auto-incremented columns",
           "items": {
             "type": "string"
-          }
+          },
+          "x-nullable": true
         },
         "charset_name": {
           "type": "string",
-          "description": "The charset of the schema"
+          "description": "The charset of the schema",
+          "x-nullable": true
         },
         "engine_name": {
           "type": "string",
-          "description": "The engine of the schema"
+          "description": "The engine of the schema",
+          "x-nullable": true
         },
         "vindex_name": {
           "type": "string",
-          "description": "The name of the vindex for the schema"
+          "description": "The name of the vindex for the schema",
+          "x-nullable": true
         },
         "json_path": {
           "type": "string",
-          "description": "The path for an invalid JSON column"
+          "description": "The path for an invalid JSON column",
+          "x-nullable": true
         },
         "check_constraint_name": {
           "type": "string",
-          "description": "The name of the invalid check constraint"
+          "description": "The name of the invalid check constraint",
+          "x-nullable": true
         },
         "enum_value": {
           "type": "string",
-          "description": "The name of the invalid enum value"
+          "description": "The name of the invalid enum value",
+          "x-nullable": true
         },
         "partitioning_type": {
           "type": "string",
-          "description": "The name of the invalid partitioning type"
+          "description": "The name of the invalid partitioning type",
+          "x-nullable": true
         },
         "partition_name": {
           "type": "string",
-          "description": "The name of the invalid partition in the schema"
+          "description": "The name of the invalid partition in the schema",
+          "x-nullable": true
         }
       }
     },
@@ -31779,7 +31688,6 @@
     "PostgresClusterExtensionParametersItem": {
       "type": "object",
       "required": [
-        "id",
         "name",
         "display_name",
         "namespace",
@@ -31801,10 +31709,6 @@
         "actor"
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the parameter"
-        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -31974,11 +31878,13 @@
         },
         "vtgate_max_count": {
           "type": "integer",
-          "description": "The maximum number of vtgates in an availability zone when autoscaling is enabled"
+          "description": "The maximum number of vtgates in an availability zone when autoscaling is enabled",
+          "x-nullable": true
         },
         "previous_vtgate_max_count": {
           "type": "integer",
-          "description": "The previous maximum number of vtgates in the availability zone when autoscaling is enabled"
+          "description": "The previous maximum number of vtgates in the availability zone when autoscaling is enabled",
+          "x-nullable": true
         },
         "vtgate_autoscaling": {
           "type": "boolean",
@@ -31990,11 +31896,13 @@
         },
         "vtgate_target_cpu_utilization": {
           "type": "number",
-          "description": "The target CPU utilization for the vtgate cluster"
+          "description": "The target CPU utilization for the vtgate cluster",
+          "x-nullable": true
         },
         "previous_vtgate_target_cpu_utilization": {
           "type": "number",
-          "description": "The previous target CPU utilization for the vtgate cluster"
+          "description": "The previous target CPU utilization for the vtgate cluster",
+          "x-nullable": true
         },
         "vtgate_name": {
           "type": "string",
@@ -33865,6 +33773,7 @@
     "NekiExtensionDefinitionParametersItem": {
       "type": "object",
       "required": [
+        "id",
         "name",
         "display_name",
         "namespace",
@@ -33882,6 +33791,11 @@
         "actor"
       ],
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the parameter",
+          "x-nullable": true
+        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -33911,11 +33825,13 @@
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -35149,9 +35065,9 @@
         },
         "table_keyspaces": {
           "type": "array",
-          "description": "Mapping of tables to their keyspaces",
+          "description": "Keyspaces or schemas accessed by the query",
           "items": {
-            "$ref": "#/definitions/PaginatedQuerySummaryDataItemTableKeyspacesItemProperty"
+            "type": "string"
           }
         },
         "index_usages": {
@@ -35213,7 +35129,7 @@
           "description": "Average rows affected per query"
         },
         "sum_total_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total duration in milliseconds across all executions"
         },
         "sum_total_duration_percent": {
@@ -35221,7 +35137,7 @@
           "description": "Percentage of total query time"
         },
         "sum_cpu_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total CPU duration in milliseconds"
         },
         "sum_cpu_duration_percent": {
@@ -35229,7 +35145,7 @@
           "description": "Percentage of total CPU time"
         },
         "sum_io_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total IO duration in milliseconds"
         },
         "sum_io_duration_percent": {
@@ -35438,9 +35354,6 @@
         }
       }
     },
-    "QuerySummaryTableKeyspacesItem": {
-      "type": "object"
-    },
     "QuerySummaryIndexUsagesItem": {
       "type": "object"
     },
@@ -35605,9 +35518,9 @@
         },
         "table_keyspaces": {
           "type": "array",
-          "description": "Mapping of tables to their keyspaces",
+          "description": "Keyspaces or schemas accessed by the query",
           "items": {
-            "$ref": "#/definitions/PaginatedDimensionsQuerySummaryDataItemTableKeyspacesItemProperty"
+            "type": "string"
           }
         },
         "index_usages": {
@@ -35669,7 +35582,7 @@
           "description": "Average rows affected per query"
         },
         "sum_total_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total duration in milliseconds across all executions"
         },
         "sum_total_duration_percent": {
@@ -35677,7 +35590,7 @@
           "description": "Percentage of total query time"
         },
         "sum_cpu_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total CPU duration in milliseconds"
         },
         "sum_cpu_duration_percent": {
@@ -35685,7 +35598,7 @@
           "description": "Percentage of total CPU time"
         },
         "sum_io_duration_millis": {
-          "type": "integer",
+          "type": "number",
           "description": "Total IO duration in milliseconds"
         },
         "sum_io_duration_percent": {
@@ -38508,11 +38421,13 @@
         },
         "last_sent_result": {
           "type": "string",
-          "description": "The last result sent by the webhook"
+          "description": "The last result sent by the webhook",
+          "x-nullable": true
         },
         "last_sent_success": {
           "type": "boolean",
-          "description": "Whether the last sent was successful"
+          "description": "Whether the last sent was successful",
+          "x-nullable": true
         },
         "last_sent_at": {
           "type": "string",
@@ -40852,9 +40767,6 @@
         }
       }
     },
-    "PaginatedQuerySummaryDataItemTableKeyspacesItem": {
-      "type": "object"
-    },
     "PaginatedQuerySummaryDataItemIndexUsagesItem": {
       "type": "object"
     },
@@ -40892,9 +40804,6 @@
     "PaginatedDimensionsQuerySummaryDataItemDimensions": {
       "type": "object",
       "description": "The tag names and values this summary is grouped by"
-    },
-    "PaginatedDimensionsQuerySummaryDataItemTableKeyspacesItem": {
-      "type": "object"
     },
     "PaginatedDimensionsQuerySummaryDataItemIndexUsagesItem": {
       "type": "object"
@@ -44823,18 +44732,6 @@
         "$ref": "#/definitions/NekiExtensionDefinition"
       }
     },
-    "UpdateShardConfigurationProfileExtensionRequest": {
-      "type": "object",
-      "required": [
-        "enabled"
-      ],
-      "properties": {
-        "enabled": {
-          "type": "boolean",
-          "description": "Whether the extension should be enabled"
-        }
-      }
-    },
     "ListShardConfigurationProfileParameters200Response": {
       "type": "array",
       "items": {
@@ -46173,9 +46070,6 @@
       "type": "object",
       "description": "The previous bouncer parameters"
     },
-    "QuerySummaryTableKeyspacesItemProperty": {
-      "type": "object"
-    },
     "QuerySummaryIndexUsagesItemProperty": {
       "type": "object"
     },
@@ -46268,9 +46162,6 @@
       "type": "object",
       "description": "Additional metadata containing details about the change"
     },
-    "PaginatedQuerySummaryDataItemTableKeyspacesItemProperty": {
-      "type": "object"
-    },
     "PaginatedQuerySummaryDataItemIndexUsagesItemProperty": {
       "type": "object"
     },
@@ -46287,9 +46178,6 @@
     "PaginatedDimensionsQuerySummaryDataItemDimensionsProperty": {
       "type": "object",
       "description": "The tag names and values this summary is grouped by"
-    },
-    "PaginatedDimensionsQuerySummaryDataItemTableKeyspacesItemProperty": {
-      "type": "object"
     },
     "PaginatedDimensionsQuerySummaryDataItemIndexUsagesItemProperty": {
       "type": "object"
@@ -49197,9 +49085,9 @@
       "type": "string",
       "description": "The subject for the errors",
       "enum": [
-        "table",
-        "vschema",
-        "routing_rules"
+        "table_error",
+        "vschema_error",
+        "routing_rules_error"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -49207,16 +49095,16 @@
         "modelAsString": false,
         "values": [
           {
-            "value": "table",
-            "name": "Table"
+            "value": "table_error",
+            "name": "TableError"
           },
           {
-            "value": "vschema",
-            "name": "Vschema"
+            "value": "vschema_error",
+            "name": "VschemaError"
           },
           {
-            "value": "routing_rules",
-            "name": "RoutingRules"
+            "value": "routing_rules_error",
+            "name": "RoutingRulesError"
           }
         ]
       }

@@ -64,6 +64,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
+        /// <summary>The ID of the parameter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The maximum value of the parameter</summary>
         public double? Max { get; set; }
         /// <summary>The minimum value of the parameter</summary>
@@ -156,6 +164,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "default_value", n => { DefaultValue = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -184,6 +193,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("display_name", DisplayName);
+            writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("name", Name);

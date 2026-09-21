@@ -7,17 +7,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaginatedSchemaLintErrorDataItemSubjectType
     {
-        [EnumMember(Value = "table")]
+        [EnumMember(Value = "table_error")]
         #pragma warning disable CS1591
-        Table,
+        TableError,
         #pragma warning restore CS1591
-        [EnumMember(Value = "vschema")]
+        [EnumMember(Value = "vschema_error")]
         #pragma warning disable CS1591
-        Vschema,
+        VschemaError,
         #pragma warning restore CS1591
-        [EnumMember(Value = "routing_rules")]
+        [EnumMember(Value = "routing_rules_error")]
         #pragma warning disable CS1591
-        RoutingRules,
+        RoutingRulesError,
         #pragma warning restore CS1591
     }
 }

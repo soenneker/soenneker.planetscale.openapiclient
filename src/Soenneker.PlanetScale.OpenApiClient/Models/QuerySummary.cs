@@ -135,11 +135,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string StatementType { get; set; }
 #endif
         /// <summary>Total CPU duration in milliseconds</summary>
-        public int? SumCpuDurationMillis { get; set; }
+        public double? SumCpuDurationMillis { get; set; }
         /// <summary>Percentage of total CPU time</summary>
         public double? SumCpuDurationPercent { get; set; }
         /// <summary>Total IO duration in milliseconds</summary>
-        public int? SumIoDurationMillis { get; set; }
+        public double? SumIoDurationMillis { get; set; }
         /// <summary>Percentage of total IO time</summary>
         public double? SumIoDurationPercent { get; set; }
         /// <summary>The total number of rows affected</summary>
@@ -151,7 +151,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The total number of shard queries</summary>
         public int? SumShardQueries { get; set; }
         /// <summary>Total duration in milliseconds across all executions</summary>
-        public int? SumTotalDurationMillis { get; set; }
+        public double? SumTotalDurationMillis { get; set; }
         /// <summary>Percentage of total query time</summary>
         public double? SumTotalDurationPercent { get; set; }
         /// <summary>Syntax highlighted SQL statement</summary>
@@ -162,13 +162,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string SyntaxHighlightedSql { get; set; }
 #endif
-        /// <summary>Mapping of tables to their keyspaces</summary>
+        /// <summary>Keyspaces or schemas accessed by the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryTableKeyspacesItemProperty>? TableKeyspaces { get; set; }
+        public List<string>? TableKeyspaces { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryTableKeyspacesItemProperty> TableKeyspaces { get; set; }
+        public List<string> TableKeyspaces { get; set; }
 #endif
         /// <summary>Tables accessed by the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,18 +244,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "rows_read_per_returned", n => { RowsReadPerReturned = n.GetDoubleValue(); } },
                 { "rows_returned_per_query", n => { RowsReturnedPerQuery = n.GetDoubleValue(); } },
                 { "statement_type", n => { StatementType = n.GetStringValue(); } },
-                { "sum_cpu_duration_millis", n => { SumCpuDurationMillis = n.GetIntValue(); } },
+                { "sum_cpu_duration_millis", n => { SumCpuDurationMillis = n.GetDoubleValue(); } },
                 { "sum_cpu_duration_percent", n => { SumCpuDurationPercent = n.GetDoubleValue(); } },
-                { "sum_io_duration_millis", n => { SumIoDurationMillis = n.GetIntValue(); } },
+                { "sum_io_duration_millis", n => { SumIoDurationMillis = n.GetDoubleValue(); } },
                 { "sum_io_duration_percent", n => { SumIoDurationPercent = n.GetDoubleValue(); } },
                 { "sum_rows_affected", n => { SumRowsAffected = n.GetIntValue(); } },
                 { "sum_rows_read", n => { SumRowsRead = n.GetIntValue(); } },
                 { "sum_rows_returned", n => { SumRowsReturned = n.GetIntValue(); } },
                 { "sum_shard_queries", n => { SumShardQueries = n.GetIntValue(); } },
-                { "sum_total_duration_millis", n => { SumTotalDurationMillis = n.GetIntValue(); } },
+                { "sum_total_duration_millis", n => { SumTotalDurationMillis = n.GetDoubleValue(); } },
                 { "sum_total_duration_percent", n => { SumTotalDurationPercent = n.GetDoubleValue(); } },
                 { "syntax_highlighted_sql", n => { SyntaxHighlightedSql = n.GetStringValue(); } },
-                { "table_keyspaces", n => { TableKeyspaces = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryTableKeyspacesItemProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryTableKeyspacesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "table_keyspaces", n => { TableKeyspaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tables", n => { Tables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "time_per_query", n => { TimePerQuery = n.GetDoubleValue(); } },
                 { "traffic_control_checked", n => { TrafficControlChecked = n.GetIntValue(); } },
@@ -303,18 +303,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("rows_read_per_returned", RowsReadPerReturned);
             writer.WriteDoubleValue("rows_returned_per_query", RowsReturnedPerQuery);
             writer.WriteStringValue("statement_type", StatementType);
-            writer.WriteIntValue("sum_cpu_duration_millis", SumCpuDurationMillis);
+            writer.WriteDoubleValue("sum_cpu_duration_millis", SumCpuDurationMillis);
             writer.WriteDoubleValue("sum_cpu_duration_percent", SumCpuDurationPercent);
-            writer.WriteIntValue("sum_io_duration_millis", SumIoDurationMillis);
+            writer.WriteDoubleValue("sum_io_duration_millis", SumIoDurationMillis);
             writer.WriteDoubleValue("sum_io_duration_percent", SumIoDurationPercent);
             writer.WriteIntValue("sum_rows_affected", SumRowsAffected);
             writer.WriteIntValue("sum_rows_read", SumRowsRead);
             writer.WriteIntValue("sum_rows_returned", SumRowsReturned);
             writer.WriteIntValue("sum_shard_queries", SumShardQueries);
-            writer.WriteIntValue("sum_total_duration_millis", SumTotalDurationMillis);
+            writer.WriteDoubleValue("sum_total_duration_millis", SumTotalDurationMillis);
             writer.WriteDoubleValue("sum_total_duration_percent", SumTotalDurationPercent);
             writer.WriteStringValue("syntax_highlighted_sql", SyntaxHighlightedSql);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryTableKeyspacesItemProperty>("table_keyspaces", TableKeyspaces);
+            writer.WriteCollectionOfPrimitiveValues<string>("table_keyspaces", TableKeyspaces);
             writer.WriteCollectionOfPrimitiveValues<string>("tables", Tables);
             writer.WriteDoubleValue("time_per_query", TimePerQuery);
             writer.WriteIntValue("traffic_control_checked", TrafficControlChecked);

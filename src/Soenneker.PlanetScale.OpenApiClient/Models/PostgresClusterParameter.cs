@@ -64,14 +64,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Configures an extension</summary>
         public bool? Extension { get; set; }
-        /// <summary>The ID of the parameter</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
         /// <summary>Whether the parameter can be changed</summary>
         public bool? Immutable { get; set; }
         /// <summary>The maximum value of the parameter</summary>
@@ -158,7 +150,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "extension", n => { Extension = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "immutable", n => { Immutable = n.GetBoolValue(); } },
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
@@ -187,7 +178,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteBoolValue("extension", Extension);
-            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("immutable", Immutable);
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
