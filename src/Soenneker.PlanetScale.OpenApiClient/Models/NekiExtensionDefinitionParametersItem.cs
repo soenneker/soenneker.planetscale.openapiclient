@@ -86,7 +86,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The namespace of the parameter</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionDefinitionParametersItemNamespace? Namespace { get; set; }
-        /// <summary>Valid options for the parameter value</summary>
+        /// <summary>Valid options for the parameter value. Null represents an unset value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Options { get; set; }
