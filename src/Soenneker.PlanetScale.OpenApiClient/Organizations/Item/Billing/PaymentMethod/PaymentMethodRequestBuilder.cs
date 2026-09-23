@@ -41,6 +41,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod500Error.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,6 +74,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +92,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

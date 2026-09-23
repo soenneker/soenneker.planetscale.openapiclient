@@ -61,6 +61,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +79,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.Shards500Error.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,6 +93,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +111,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.PaginatedNekiShard500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiShard>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiShard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -122,6 +128,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +147,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.AssignShardConfigurationProfileShards200ResponseSchema500Error.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardAssignment>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -156,6 +164,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +183,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Shards.NekiShard500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShard>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

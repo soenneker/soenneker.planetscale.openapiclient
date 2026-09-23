@@ -55,6 +55,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PaginatedPostgresSwitchover500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresSwitchover>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresSwitchover.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -87,6 +91,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +111,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.PostgresSwitchover500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresSwitchover>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresSwitchover.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

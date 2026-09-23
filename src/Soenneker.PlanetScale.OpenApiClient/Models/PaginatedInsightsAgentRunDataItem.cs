@@ -22,6 +22,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInsightsAgentRunDataItemAgentProperty Agent { get; set; }
 #endif
+        /// <summary>How much this run cost, as a stringified decimal to preserve precision</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cost { get; set; }
+#nullable restore
+#else
+        public string Cost { get; set; }
+#endif
         /// <summary>When the run was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,6 +186,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInsightsAgentRunDataItemAgentProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInsightsAgentRunDataItemAgentProperty.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "execution_duration_ms", n => { ExecutionDurationMs = n.GetDoubleValue(); } },
                 { "failure_message", n => { FailureMessage = n.GetStringValue(); } },
@@ -208,6 +217,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInsightsAgentRunDataItemAgentProperty>("agent", Agent);
+            writer.WriteStringValue("cost", Cost);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteDoubleValue("execution_duration_ms", ExecutionDurationMs);
             writer.WriteStringValue("failure_message", FailureMessage);

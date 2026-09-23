@@ -54,6 +54,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +72,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.Resizes500Error.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -83,6 +87,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +105,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.PaginatedMysqlClusterResizeRequest500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -113,6 +121,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +140,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.MysqlClusterResizeRequest500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.MysqlClusterResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.MysqlClusterResizeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

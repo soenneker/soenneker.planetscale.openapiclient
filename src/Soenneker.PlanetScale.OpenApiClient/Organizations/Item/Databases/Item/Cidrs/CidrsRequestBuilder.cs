@@ -56,6 +56,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +74,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PaginatedPostgresClusterCidr500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresClusterCidr>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresClusterCidr.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -88,6 +90,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +109,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs.PostgresClusterCidr500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterCidr>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterCidr.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

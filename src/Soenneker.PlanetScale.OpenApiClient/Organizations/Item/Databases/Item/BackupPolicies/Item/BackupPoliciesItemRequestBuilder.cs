@@ -41,6 +41,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicies500Error.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,6 +74,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +92,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupPolicy>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BackupPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -100,6 +108,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +127,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.BackupPolicies.Item.BackupPolicy500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupPolicy>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BackupPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

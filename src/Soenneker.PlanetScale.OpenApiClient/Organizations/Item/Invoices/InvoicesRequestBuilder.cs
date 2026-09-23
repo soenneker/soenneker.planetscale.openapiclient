@@ -55,6 +55,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.PaginatedInvoice500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoice>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

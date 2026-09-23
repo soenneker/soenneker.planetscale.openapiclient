@@ -36,31 +36,35 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `connect_production_branch`, `connect_production_read_only_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_passwords`, `manage_production_branch_passwords`, `manage_read_only_passwords`, `manage_production_read_only_passwords` || Database | `manage_passwords`, `manage_production_branch_passwords`, `manage_read_only_passwords`, `manage_production_read_only_passwords` || Branch | `manage_passwords`, `manage_read_only_passwords` |
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPassword"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecret"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPassword?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecret?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPassword> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecret> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPassword500Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret401Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret429Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords.Item.Renew.DatabaseBranchPasswordWithSecret500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPassword>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPassword.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecret>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecret.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `connect_production_branch`, `connect_production_read_only_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_passwords`, `manage_production_branch_passwords`, `manage_read_only_passwords`, `manage_production_read_only_passwords` || Database | `manage_passwords`, `manage_production_branch_passwords`, `manage_read_only_passwords`, `manage_production_read_only_passwords` || Branch | `manage_passwords`, `manage_read_only_passwords` |

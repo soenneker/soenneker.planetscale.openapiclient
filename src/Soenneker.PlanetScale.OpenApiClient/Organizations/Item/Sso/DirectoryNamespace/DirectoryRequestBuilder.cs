@@ -42,6 +42,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -71,6 +75,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +93,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

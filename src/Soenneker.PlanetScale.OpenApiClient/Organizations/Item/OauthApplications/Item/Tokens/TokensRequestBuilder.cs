@@ -55,6 +55,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Tokens.PaginatedServiceToken500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

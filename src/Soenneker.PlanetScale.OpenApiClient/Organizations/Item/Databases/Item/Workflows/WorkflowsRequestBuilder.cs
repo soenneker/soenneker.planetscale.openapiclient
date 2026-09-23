@@ -46,12 +46,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/workflows{?between*,page*,per_page*}", rawUrl)
         {
         }
+        /// <summary>
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_workflows` || Database | `read_workflows` |
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedWorkflow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,10 +73,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.PaginatedWorkflow500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedWorkflow>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedWorkflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_workflows` || Database | `write_workflows` |
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.Workflow"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,6 +89,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow401Error">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,10 +108,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow401Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow404Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.Workflow500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.Workflow>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_workflows` || Database | `read_workflows` |
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,6 +133,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_workflows` || Database | `write_workflows` |
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,10 +164,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
             return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Workflows.WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_workflows` || Database | `read_workflows` |
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WorkflowsRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>Filter workflows to those active during a time range (e.g. 2025-01-01T00:00:00Z..2025-01-01T23:59:59)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

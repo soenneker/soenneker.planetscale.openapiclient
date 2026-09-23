@@ -57,6 +57,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Memb
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +76,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Memb
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.PaginatedOrganizationTeamMembership500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembership>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,6 +93,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Memb
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership404Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership422Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +113,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Memb
                 { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership404Error.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership422Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Teams.Item.Members.OrganizationTeamMembership500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationTeamMembership>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationTeamMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
