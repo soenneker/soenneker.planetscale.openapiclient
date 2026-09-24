@@ -61265,5 +61265,8 @@
       "name": "Organization teams",
       "description": "            Resources for managing teams within an organization. Teams allow you to group members and grant them access to specific databases.\n\n            Note: Teams managed through SSO/directory services cannot be modified via API.\n"
     }
-  ]
+  ],
+  "x-readme": {
+    "explorer-enabled": false
+  }
 }
