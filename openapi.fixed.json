@@ -11509,6 +11509,940 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows": {
+      "get": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "List MoveTables workflows",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
+        "operationId": "ListMoveTablesWorkflows",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "target_keyspace",
+            "description": "Filter by target keyspace (returns workflows from all kept keyspaces if omitted)",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "MoveTables workflows",
+            "schema": {
+              "$ref": "#/definitions/ListMoveTablesWorkflows200Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Create a MoveTables workflow",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "CreateMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "202": {
+            "description": "MoveTables create operation",
+            "schema": {
+              "$ref": "#/definitions/CreateMoveTablesWorkflow202Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}": {
+      "get": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Show MoveTables workflow details",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
+        "operationId": "GetMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "target_keyspace",
+            "description": "Target keyspace name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "MoveTables show response",
+            "schema": {
+              "$ref": "#/definitions/GetMoveTablesWorkflow200Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/cancel": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Cancel a MoveTables workflow",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "CancelMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "202": {
+            "description": "MoveTables cancel operation",
+            "schema": {
+              "$ref": "#/definitions/CancelMoveTablesWorkflow202Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/complete": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Complete a MoveTables workflow",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "CompleteMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "202": {
+            "description": "MoveTables complete operation",
+            "schema": {
+              "$ref": "#/definitions/CompleteMoveTablesWorkflow202Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/reverse-traffic": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Reverse traffic back to the source keyspace",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "ReverseTrafficMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "202": {
+            "description": "MoveTables reverse traffic operation",
+            "schema": {
+              "$ref": "#/definitions/ReverseTrafficMoveTablesWorkflow202Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/start": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Start a MoveTables workflow",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "StartMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "MoveTables start response",
+            "schema": {
+              "$ref": "#/definitions/StartMoveTablesWorkflow200Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/status": {
+      "get": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Show MoveTables workflow status",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
+        "operationId": "GetMoveTablesWorkflowStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "target_keyspace",
+            "description": "Target keyspace name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "MoveTables status response",
+            "schema": {
+              "$ref": "#/definitions/GetMoveTablesWorkflowStatus200Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/stop": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Stop a MoveTables workflow",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "StopMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "MoveTables stop response",
+            "schema": {
+              "$ref": "#/definitions/StopMoveTablesWorkflow200Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows/{workflow}/switch-traffic": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Switch traffic to the target keyspace",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
+        "operationId": "SwitchTrafficMoveTablesWorkflow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "workflow",
+            "description": "Workflow name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "202": {
+            "description": "MoveTables switch traffic operation",
+            "schema": {
+              "$ref": "#/definitions/SwitchTrafficMoveTablesWorkflow202Response"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/neki-changes": {
       "get": {
         "tags": [
@@ -18594,6 +19528,99 @@
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/vtctld/operations/{id}": {
+      "get": {
+        "tags": [
+          "VtctldOperations"
+        ],
+        "summary": "Get a vtctld operation",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_workflow\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060, \u0060manage_branch_topologies\u0060, \u0060manage_production_branch_topologies\u0060 |\n| Database | \u0060read_workflows\u0060, \u0060manage_branch_topologies\u0060, \u0060manage_production_branch_topologies\u0060 |\n| Branch | \u0060manage_topology\u0060 |",
+        "operationId": "GetVtctldOperation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The vtctld operation UUID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the vtctld operation",
+            "schema": {
+              "$ref": "#/definitions/GetVtctldOperation200Response"
             }
           }
         }
@@ -49808,6 +50835,121 @@
         }
       }
     },
+    "ListMoveTablesWorkflows200Response": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/ListMoveTablesWorkflows200ResponseData"
+        }
+      }
+    },
+    "CreateMoveTablesWorkflow202Response": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the vtctld operation. Poll the vtctld operation endpoint for its result."
+        }
+      }
+    },
+    "GetMoveTablesWorkflow200Response": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/GetMoveTablesWorkflow200ResponseData"
+        }
+      }
+    },
+    "CancelMoveTablesWorkflow202Response": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the vtctld operation. Poll the vtctld operation endpoint for its result."
+        }
+      }
+    },
+    "CompleteMoveTablesWorkflow202Response": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the vtctld operation. Poll the vtctld operation endpoint for its result."
+        }
+      }
+    },
+    "ReverseTrafficMoveTablesWorkflow202Response": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the vtctld operation. Poll the vtctld operation endpoint for its result."
+        }
+      }
+    },
+    "StartMoveTablesWorkflow200Response": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/StartMoveTablesWorkflow200ResponseData"
+        }
+      }
+    },
+    "GetMoveTablesWorkflowStatus200Response": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseData"
+        }
+      }
+    },
+    "StopMoveTablesWorkflow200Response": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/StopMoveTablesWorkflow200ResponseData"
+        }
+      }
+    },
+    "SwitchTrafficMoveTablesWorkflow202Response": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the vtctld operation. Poll the vtctld operation endpoint for its result."
+        }
+      }
+    },
     "ListParameters200Response": {
       "type": "array",
       "items": {
@@ -50219,6 +51361,63 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "GetVtctldOperation200Response": {
+      "type": "object",
+      "required": [
+        "type",
+        "id",
+        "action",
+        "timeout",
+        "created_at",
+        "completed_at",
+        "state",
+        "completed"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The object type, always VtctldOperation"
+        },
+        "id": {
+          "type": "string",
+          "description": "The UUID of the operation"
+        },
+        "action": {
+          "type": "string",
+          "description": "The vtctld action being executed, such as move_tables_create"
+        },
+        "timeout": {
+          "type": "integer",
+          "description": "Timeout in seconds"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the operation was created"
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the operation completed, or null while it is still running",
+          "x-nullable": true
+        },
+        "state": {
+          "$ref": "#/definitions/GetVtctldOperation200ResponseState"
+        },
+        "completed": {
+          "type": "string",
+          "description": "Whether the operation has reached a terminal state"
+        },
+        "metadata": {
+          "$ref": "#/definitions/GetVtctldOperation200ResponseMetadata"
+        },
+        "result": {
+          "$ref": "#/definitions/GetVtctldOperation200ResponseResult"
+        },
+        "error": {
+          "type": "string",
+          "description": "The error message, present when the operation fails or its status could not be checked"
         }
       }
     },
@@ -51336,6 +52535,66 @@
         }
       }
     },
+    "ListMoveTablesWorkflows200ResponseData": {
+      "type": "object",
+      "required": [
+        "workflows"
+      ],
+      "properties": {
+        "workflows": {
+          "type": "array",
+          "description": "MoveTables workflows reported by Vitess",
+          "items": {
+            "$ref": "#/definitions/ListMoveTablesWorkflows200ResponseDataWorkflowsItem"
+          }
+        }
+      }
+    },
+    "GetMoveTablesWorkflow200ResponseData": {
+      "type": "object",
+      "properties": {
+        "workflows": {
+          "type": "array",
+          "description": "The workflows Vitess reports for the target keyspace",
+          "items": {
+            "$ref": "#/definitions/GetMoveTablesWorkflow200ResponseDataWorkflowsItem"
+          }
+        }
+      }
+    },
+    "StartMoveTablesWorkflow200ResponseData": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string",
+          "description": "Human-readable summary of the start result"
+        }
+      }
+    },
+    "GetMoveTablesWorkflowStatus200ResponseData": {
+      "type": "object",
+      "properties": {
+        "traffic_state": {
+          "type": "string",
+          "description": "Human-readable summary of the workflow\u0027s current traffic state"
+        },
+        "table_copy_state": {
+          "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseDataTableCopyState"
+        },
+        "shard_streams": {
+          "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseDataShardStreams"
+        }
+      }
+    },
+    "StopMoveTablesWorkflow200ResponseData": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string",
+          "description": "Human-readable summary of the stop result"
+        }
+      }
+    },
     "CreateReadOnlyReplicaRequestStorage": {
       "type": "object",
       "properties": {
@@ -51420,6 +52679,14 @@
       "type": "object",
       "description": "Sidecar parameters nested by namespace (e.g., {\u0022sidecar\u0022: {\u0022pool-capacity\u0022: \u0022100\u0022}})"
     },
+    "GetVtctldOperation200ResponseMetadata": {
+      "type": "object",
+      "description": "Operation-specific metadata captured when the operation started"
+    },
+    "GetVtctldOperation200ResponseResult": {
+      "type": "object",
+      "description": "Operation-specific result payload, present once the operation succeeds"
+    },
     "CheckDeployRequestStorage200ResponseStorageReport": {
       "type": "object",
       "description": "Per-keyspace and per-shard storage report. Keys are keyspace names.",
@@ -51471,12 +52738,58 @@
         }
       }
     },
+    "ListMoveTablesWorkflows200ResponseDataWorkflowsItem": {
+      "type": "object"
+    },
+    "GetMoveTablesWorkflow200ResponseDataWorkflowsItem": {
+      "type": "object"
+    },
+    "GetMoveTablesWorkflowStatus200ResponseDataTableCopyState": {
+      "type": "object",
+      "description": "VReplication table copy progress, keyed by table name",
+      "additionalProperties": {
+        "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseDataTableCopyStateAdditionalProperties"
+      }
+    },
+    "GetMoveTablesWorkflowStatus200ResponseDataShardStreams": {
+      "type": "object",
+      "description": "VReplication stream status, keyed by Vitess keyspace/shard",
+      "additionalProperties": {
+        "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties"
+      }
+    },
     "CheckDeployRequestStorage200ResponseStorageReportAdditionalProperties": {
       "type": "object",
       "description": "Per-shard storage details. Keys are shard names.",
       "additionalProperties": {
         "$ref": "#/definitions/CheckDeployRequestStorage200ResponseStorageReportAdditionalPropertiesAdditionalProperties"
       }
+    },
+    "GetMoveTablesWorkflowStatus200ResponseDataTableCopyStateAdditionalProperties": {
+      "type": "object",
+      "properties": {
+        "rows_copied": {
+          "type": "integer"
+        },
+        "rows_total": {
+          "type": "integer"
+        },
+        "rows_percentage": {
+          "type": "number"
+        },
+        "bytes_copied": {
+          "type": "integer"
+        },
+        "bytes_total": {
+          "type": "integer"
+        },
+        "bytes_percentage": {
+          "type": "number"
+        }
+      }
+    },
+    "GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties": {
+      "type": "object"
     },
     "CheckDeployRequestStorage200ResponseStorageReportAdditionalPropertiesAdditionalProperties": {
       "type": "object",
@@ -57527,6 +58840,44 @@
         ]
       }
     },
+    "GetVtctldOperation200ResponseState": {
+      "type": "string",
+      "description": "The current state of the operation",
+      "enum": [
+        "pending",
+        "running",
+        "completed",
+        "failed",
+        "cancelled"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "GetVtctldOperation200ResponseState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "running",
+            "name": "Running"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "failed",
+            "name": "Failed"
+          },
+          {
+            "value": "cancelled",
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
     "ClosedState": {
       "type": "string",
       "description": "The deploy request will be updated to this state",
@@ -61158,6 +62509,10 @@
       "description": "          Resources for retrieving database metrics.\n"
     },
     {
+      "name": "MoveTables",
+      "description": "          API endpoints for creating and managing Vitess MoveTables workflows on a branch.\n"
+    },
+    {
       "name": "OAuth applications",
       "description": "          Resources for managing OAuth applications.\n"
     },
@@ -61220,6 +62575,10 @@
     {
       "name": "Users",
       "description": "          Resources for managing users.\n"
+    },
+    {
+      "name": "VtctldOperations",
+      "description": "          API endpoints for checking the result of asynchronous vtctld operations, such as MoveTables commands.\n"
     },
     {
       "name": "Workflows",
