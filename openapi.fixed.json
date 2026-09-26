@@ -2231,7 +2231,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -4182,13 +4182,6 @@
               "description": "Fallback media schema"
             }
           },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
           "429": {
             "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
             "schema": {
@@ -4198,6 +4191,13 @@
           },
           "500": {
             "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -4574,7 +4574,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -4865,7 +4865,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -16194,7 +16194,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -16388,7 +16388,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -18109,7 +18109,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Content",
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
