@@ -19,6 +19,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         NekiConfigurationProfileChangeRequest,
         #pragma warning restore CS1591
+        [EnumMember(Value = "NekiExternalShardChangeRequest")]
+        #pragma warning disable CS1591
+        NekiExternalShardChangeRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NekiRouterChangeRequest")]
         #pragma warning disable CS1591
         NekiRouterChangeRequest,

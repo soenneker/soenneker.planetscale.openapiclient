@@ -159,7 +159,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("target_id")]
             public string TargetId { get; set; }
 #endif
-            /// <summary>Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiRouter, or NekiSidecar</summary>
+            /// <summary>Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, NekiRouter, or NekiSidecar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("target_types")]

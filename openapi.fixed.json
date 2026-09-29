@@ -12503,7 +12503,7 @@
           {
             "in": "query",
             "name": "target_types",
-            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiRouter, or NekiSidecar",
+            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, NekiRouter, or NekiSidecar",
             "type": "array",
             "items": {
               "type": "string"
@@ -29226,7 +29226,7 @@
         "imported",
         "vector_pool_allocation",
         "node_ttl_strategy",
-        "disk_autoscaling",
+        "storage",
         "max_rollout",
         "replication_durability_constraints",
         "vreplication_flags",
@@ -29319,8 +29319,8 @@
         "node_ttl_strategy": {
           "$ref": "#/definitions/DatabaseBranchKeyspaceNodeTtlStrategy"
         },
-        "disk_autoscaling": {
-          "$ref": "#/definitions/DatabaseBranchKeyspaceDiskAutoscaling"
+        "storage": {
+          "$ref": "#/definitions/DatabaseBranchKeyspaceStorage"
         },
         "max_rollout": {
           "type": "integer",
@@ -31179,6 +31179,16 @@
           "description": "The previous Neki image version",
           "x-nullable": true
         },
+        "replicas": {
+          "type": "integer",
+          "description": "The number of replicas",
+          "x-nullable": true
+        },
+        "previous_replicas": {
+          "type": "integer",
+          "description": "The previous number of replicas",
+          "x-nullable": true
+        },
         "router_size": {
           "type": "string",
           "description": "The name of the router size SKU",
@@ -31269,11 +31279,6 @@
           "description": "The display order of the cluster size SKU",
           "x-nullable": true
         },
-        "replicas": {
-          "type": "integer",
-          "description": "The number of replicas",
-          "x-nullable": true
-        },
         "shards": {
           "type": "integer",
           "description": "The number of shards",
@@ -31305,11 +31310,6 @@
         "previous_cluster_rank": {
           "type": "integer",
           "description": "The previous display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_replicas": {
-          "type": "integer",
-          "description": "The previous number of replicas",
           "x-nullable": true
         },
         "previous_shards": {
@@ -37433,7 +37433,7 @@
         "imported",
         "vector_pool_allocation",
         "node_ttl_strategy",
-        "disk_autoscaling",
+        "storage",
         "max_rollout",
         "replication_durability_constraints",
         "vreplication_flags",
@@ -37526,8 +37526,8 @@
         "node_ttl_strategy": {
           "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemNodeTtlStrategy"
         },
-        "disk_autoscaling": {
-          "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscaling"
+        "storage": {
+          "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemStorage"
         },
         "max_rollout": {
           "type": "integer",
@@ -37551,19 +37551,24 @@
         }
       }
     },
-    "DatabaseBranchKeyspaceDiskAutoscaling": {
+    "DatabaseBranchKeyspaceStorage": {
       "type": "object",
       "required": [
-        "strategy",
-        "storage_limit_bytes"
+        "storage_bytes",
+        "max_storage_bytes",
+        "disk_scaling_strategy"
       ],
       "properties": {
-        "strategy": {
-          "$ref": "#/definitions/DatabaseBranchKeyspaceDiskAutoscalingStrategy"
+        "storage_bytes": {
+          "type": "integer",
+          "description": "The current provisioned disk size in bytes. Disks grow from and shrink to this size. Custom shards may have staff-set overrides"
         },
-        "storage_limit_bytes": {
+        "max_storage_bytes": {
           "type": "integer",
           "description": "The maximum size in bytes disks may autoscale to"
+        },
+        "disk_scaling_strategy": {
+          "$ref": "#/definitions/DatabaseBranchKeyspaceStorageDiskScalingStrategy"
         }
       }
     },
@@ -39152,6 +39157,16 @@
           "description": "The previous Neki image version",
           "x-nullable": true
         },
+        "replicas": {
+          "type": "integer",
+          "description": "The number of replicas",
+          "x-nullable": true
+        },
+        "previous_replicas": {
+          "type": "integer",
+          "description": "The previous number of replicas",
+          "x-nullable": true
+        },
         "router_size": {
           "type": "string",
           "description": "The name of the router size SKU",
@@ -39242,11 +39257,6 @@
           "description": "The display order of the cluster size SKU",
           "x-nullable": true
         },
-        "replicas": {
-          "type": "integer",
-          "description": "The number of replicas",
-          "x-nullable": true
-        },
         "shards": {
           "type": "integer",
           "description": "The number of shards",
@@ -39278,11 +39288,6 @@
         "previous_cluster_rank": {
           "type": "integer",
           "description": "The previous display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_replicas": {
-          "type": "integer",
-          "description": "The previous number of replicas",
           "x-nullable": true
         },
         "previous_shards": {
@@ -45375,19 +45380,24 @@
         }
       }
     },
-    "PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscaling": {
+    "PaginatedDatabaseBranchKeyspaceDataItemStorage": {
       "type": "object",
       "required": [
-        "strategy",
-        "storage_limit_bytes"
+        "storage_bytes",
+        "max_storage_bytes",
+        "disk_scaling_strategy"
       ],
       "properties": {
-        "strategy": {
-          "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscalingStrategy"
+        "storage_bytes": {
+          "type": "integer",
+          "description": "The current provisioned disk size in bytes. Disks grow from and shrink to this size. Custom shards may have staff-set overrides"
         },
-        "storage_limit_bytes": {
+        "max_storage_bytes": {
           "type": "integer",
           "description": "The maximum size in bytes disks may autoscale to"
+        },
+        "disk_scaling_strategy": {
+          "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy"
         }
       }
     },
@@ -53663,6 +53673,7 @@
         "NekiAdminChangeRequest",
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
+        "NekiExternalShardChangeRequest",
         "NekiRouterChangeRequest",
         "NekiSidecarChangeRequest"
       ],
@@ -53713,6 +53724,7 @@
         "NekiAdmin",
         "NekiCluster",
         "NekiConfigurationProfile",
+        "NekiExternalShard",
         "NekiRouter",
         "NekiSidecar"
       ],
@@ -55497,9 +55509,9 @@
         ]
       }
     },
-    "DatabaseBranchKeyspaceDiskAutoscalingStrategy": {
+    "DatabaseBranchKeyspaceStorageDiskScalingStrategy": {
       "type": "string",
-      "description": "The disk autoscaling strategy",
+      "description": "The disk scaling strategy",
       "enum": [
         "grow",
         "disable",
@@ -55507,7 +55519,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "DatabaseBranchKeyspaceDiskAutoscalingStrategy",
+        "name": "DatabaseBranchKeyspaceStorageDiskScalingStrategy",
         "modelAsString": false,
         "values": [
           {
@@ -55802,6 +55814,7 @@
         "NekiAdminChangeRequest",
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
+        "NekiExternalShardChangeRequest",
         "NekiRouterChangeRequest",
         "NekiSidecarChangeRequest"
       ],
@@ -55852,6 +55865,7 @@
         "NekiAdmin",
         "NekiCluster",
         "NekiConfigurationProfile",
+        "NekiExternalShard",
         "NekiRouter",
         "NekiSidecar"
       ],
@@ -57486,9 +57500,9 @@
         ]
       }
     },
-    "PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscalingStrategy": {
+    "PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy": {
       "type": "string",
-      "description": "The disk autoscaling strategy",
+      "description": "The disk scaling strategy",
       "enum": [
         "grow",
         "disable",
@@ -57496,7 +57510,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscalingStrategy",
+        "name": "PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy",
         "modelAsString": false,
         "values": [
           {

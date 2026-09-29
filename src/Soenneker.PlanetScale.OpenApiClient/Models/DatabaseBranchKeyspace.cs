@@ -42,14 +42,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Is this the default keyspace for the branch</summary>
         public bool? Default { get; set; }
-        /// <summary>The disk_autoscaling property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling? DiskAutoscaling { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling DiskAutoscaling { get; set; }
-#endif
         /// <summary>If the keyspace uses an external datasource</summary>
         public bool? External { get; set; }
         /// <summary>Number of extra replicas in the keyspace</summary>
@@ -108,6 +100,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public bool? Sharded { get; set; }
         /// <summary>The number of keyspace shards</summary>
         public int? Shards { get; set; }
+        /// <summary>The storage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage? Storage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage Storage { get; set; }
+#endif
         /// <summary>The throttler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,7 +172,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "config_change_in_progress", n => { ConfigChangeInProgress = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
-                { "disk_autoscaling", n => { DiskAutoscaling = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling.CreateFromDiscriminatorValue); } },
                 { "external", n => { External = n.GetBoolValue(); } },
                 { "extra_replicas", n => { ExtraReplicas = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -190,6 +189,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "resizing", n => { Resizing = n.GetBoolValue(); } },
                 { "sharded", n => { Sharded = n.GetBoolValue(); } },
                 { "shards", n => { Shards = n.GetIntValue(); } },
+                { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage.CreateFromDiscriminatorValue); } },
                 { "throttler", n => { Throttler = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "vector_pool_allocation", n => { VectorPoolAllocation = n.GetDoubleValue(); } },
@@ -209,7 +209,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("config_change_in_progress", ConfigChangeInProgress);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteBoolValue("default", Default);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling>("disk_autoscaling", DiskAutoscaling);
             writer.WriteBoolValue("external", External);
             writer.WriteIntValue("extra_replicas", ExtraReplicas);
             writer.WriteStringValue("id", Id);
@@ -227,6 +226,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("resizing", Resizing);
             writer.WriteBoolValue("sharded", Sharded);
             writer.WriteIntValue("shards", Shards);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage>("storage", Storage);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler>("throttler", Throttler);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteDoubleValue("vector_pool_allocation", VectorPoolAllocation);

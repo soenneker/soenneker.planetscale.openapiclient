@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
-    /// <summary>The disk autoscaling strategy</summary>
+    /// <summary>The disk scaling strategy</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PaginatedDatabaseBranchKeyspaceDataItemDiskAutoscalingStrategy
+    public enum PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy
     {
         [EnumMember(Value = "grow")]
         #pragma warning disable CS1591

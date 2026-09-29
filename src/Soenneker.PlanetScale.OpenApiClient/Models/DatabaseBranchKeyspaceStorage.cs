@@ -9,31 +9,33 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DatabaseBranchKeyspaceDiskAutoscaling : IAdditionalDataHolder, IParsable
+    public partial class DatabaseBranchKeyspaceStorage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The disk scaling strategy</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorageDiskScalingStrategy? DiskScalingStrategy { get; set; }
         /// <summary>The maximum size in bytes disks may autoscale to</summary>
-        public int? StorageLimitBytes { get; set; }
-        /// <summary>The disk autoscaling strategy</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscalingStrategy? Strategy { get; set; }
+        public int? MaxStorageBytes { get; set; }
+        /// <summary>The current provisioned disk size in bytes. Disks grow from and shrink to this size. Custom shards may have staff-set overrides</summary>
+        public int? StorageBytes { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage"/> and sets the default values.
         /// </summary>
-        public DatabaseBranchKeyspaceDiskAutoscaling()
+        public DatabaseBranchKeyspaceStorage()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscaling();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +45,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "storage_limit_bytes", n => { StorageLimitBytes = n.GetIntValue(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscalingStrategy>(); } },
+                { "disk_scaling_strategy", n => { DiskScalingStrategy = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorageDiskScalingStrategy>(); } },
+                { "max_storage_bytes", n => { MaxStorageBytes = n.GetIntValue(); } },
+                { "storage_bytes", n => { StorageBytes = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +57,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("storage_limit_bytes", StorageLimitBytes);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceDiskAutoscalingStrategy>("strategy", Strategy);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorageDiskScalingStrategy>("disk_scaling_strategy", DiskScalingStrategy);
+            writer.WriteIntValue("max_storage_bytes", MaxStorageBytes);
+            writer.WriteIntValue("storage_bytes", StorageBytes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
