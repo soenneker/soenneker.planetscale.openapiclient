@@ -50,6 +50,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ClusterDisplayName { get; set; }
 #endif
+        /// <summary>The SKU representing the external sidecar size</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClusterName { get; set; }
+#nullable restore
+#else
+        public string ClusterName { get; set; }
+#endif
         /// <summary>The display order of the cluster size SKU</summary>
         public int? ClusterRank { get; set; }
         /// <summary>The name of the cluster size SKU</summary>
@@ -153,6 +161,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #nullable restore
 #else
         public string PreviousClusterDisplayName { get; set; }
+#endif
+        /// <summary>The SKU representing the previous external sidecar size</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousClusterName { get; set; }
+#nullable restore
+#else
+        public string PreviousClusterName { get; set; }
 #endif
         /// <summary>The previous display order of the cluster size SKU</summary>
         public int? PreviousClusterRank { get; set; }
@@ -341,6 +357,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "autoscaling", n => { Autoscaling = n.GetBoolValue(); } },
                 { "can_delete", n => { CanDelete = n.GetBoolValue(); } },
                 { "cluster_display_name", n => { ClusterDisplayName = n.GetStringValue(); } },
+                { "cluster_name", n => { ClusterName = n.GetStringValue(); } },
                 { "cluster_rank", n => { ClusterRank = n.GetIntValue(); } },
                 { "cluster_size", n => { ClusterSize = n.GetStringValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetStringValue(); } },
@@ -357,6 +374,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_admin_size_display_name", n => { PreviousAdminSizeDisplayName = n.GetStringValue(); } },
                 { "previous_autoscaling", n => { PreviousAutoscaling = n.GetBoolValue(); } },
                 { "previous_cluster_display_name", n => { PreviousClusterDisplayName = n.GetStringValue(); } },
+                { "previous_cluster_name", n => { PreviousClusterName = n.GetStringValue(); } },
                 { "previous_cluster_rank", n => { PreviousClusterRank = n.GetIntValue(); } },
                 { "previous_cluster_size", n => { PreviousClusterSize = n.GetStringValue(); } },
                 { "previous_flags", n => { PreviousFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -402,6 +420,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("autoscaling", Autoscaling);
             writer.WriteBoolValue("can_delete", CanDelete);
             writer.WriteStringValue("cluster_display_name", ClusterDisplayName);
+            writer.WriteStringValue("cluster_name", ClusterName);
             writer.WriteIntValue("cluster_rank", ClusterRank);
             writer.WriteStringValue("cluster_size", ClusterSize);
             writer.WriteStringValue("completed_at", CompletedAt);
@@ -418,6 +437,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("previous_admin_size_display_name", PreviousAdminSizeDisplayName);
             writer.WriteBoolValue("previous_autoscaling", PreviousAutoscaling);
             writer.WriteStringValue("previous_cluster_display_name", PreviousClusterDisplayName);
+            writer.WriteStringValue("previous_cluster_name", PreviousClusterName);
             writer.WriteIntValue("previous_cluster_rank", PreviousClusterRank);
             writer.WriteStringValue("previous_cluster_size", PreviousClusterSize);
             writer.WriteCollectionOfPrimitiveValues<string>("previous_flags", PreviousFlags);

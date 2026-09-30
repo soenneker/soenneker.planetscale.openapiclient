@@ -3896,13 +3896,6 @@
               "description": "Fallback media schema"
             }
           },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
           "429": {
             "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
             "schema": {
@@ -3912,6 +3905,13 @@
           },
           "500": {
             "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -14452,13 +14452,6 @@
               "description": "Fallback media schema"
             }
           },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
           "429": {
             "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
             "schema": {
@@ -14468,6 +14461,13 @@
           },
           "500": {
             "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Invalid parameters",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -29863,6 +29863,7 @@
         "branches_count",
         "open_schema_recommendations_count",
         "development_branches_count",
+        "development_branches_limit",
         "production_branches_count",
         "multiple_admins_required_for_deletion",
         "ready",
@@ -29921,6 +29922,10 @@
           "type": "integer",
           "description": "The total number of database development branches"
         },
+        "development_branches_limit": {
+          "type": "integer",
+          "description": "The current maximum number of development branches. Change it with development_branches_limit on the database PATCH endpoint, up to 5000."
+        },
         "production_branches_count": {
           "type": "integer",
           "description": "The total number of database production branches"
@@ -29945,9 +29950,6 @@
         "at_development_branch_usage_limit": {
           "type": "boolean",
           "description": "If the database has reached its development branch limit"
-        },
-        "data_import": {
-          "$ref": "#/definitions/DatabaseDataImport"
         },
         "region": {
           "$ref": "#/definitions/DatabaseRegion"
@@ -31189,6 +31191,26 @@
           "description": "The previous number of replicas",
           "x-nullable": true
         },
+        "cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the external sidecar size",
+          "x-nullable": true
+        },
+        "cluster_display_name": {
+          "type": "string",
+          "description": "The display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the previous external sidecar size",
+          "x-nullable": true
+        },
+        "previous_cluster_display_name": {
+          "type": "string",
+          "description": "The previous display name of the cluster size SKU",
+          "x-nullable": true
+        },
         "router_size": {
           "type": "string",
           "description": "The name of the router size SKU",
@@ -31264,11 +31286,6 @@
           "description": "The name of the cluster size SKU",
           "x-nullable": true
         },
-        "cluster_display_name": {
-          "type": "string",
-          "description": "The display name of the cluster size SKU",
-          "x-nullable": true
-        },
         "metal": {
           "type": "boolean",
           "description": "Whether the cluster size SKU uses metal instances",
@@ -31295,11 +31312,6 @@
         "previous_cluster_size": {
           "type": "string",
           "description": "The previous name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_cluster_display_name": {
-          "type": "string",
-          "description": "The previous display name of the cluster size SKU",
           "x-nullable": true
         },
         "previous_metal": {
@@ -38088,6 +38100,7 @@
         "branches_count",
         "open_schema_recommendations_count",
         "development_branches_count",
+        "development_branches_limit",
         "production_branches_count",
         "multiple_admins_required_for_deletion",
         "ready",
@@ -38146,6 +38159,10 @@
           "type": "integer",
           "description": "The total number of database development branches"
         },
+        "development_branches_limit": {
+          "type": "integer",
+          "description": "The current maximum number of development branches. Change it with development_branches_limit on the database PATCH endpoint, up to 5000."
+        },
         "production_branches_count": {
           "type": "integer",
           "description": "The total number of database production branches"
@@ -38170,9 +38187,6 @@
         "at_development_branch_usage_limit": {
           "type": "boolean",
           "description": "If the database has reached its development branch limit"
-        },
-        "data_import": {
-          "$ref": "#/definitions/PaginatedDatabaseDataItemDataImport"
         },
         "region": {
           "$ref": "#/definitions/PaginatedDatabaseDataItemRegion"
@@ -38296,40 +38310,6 @@
           "$ref": "#/definitions/PaginatedDatabaseDataItemKind"
         }
       }
-    },
-    "DatabaseDataImport": {
-      "type": "object",
-      "required": [
-        "state",
-        "import_check_errors",
-        "started_at",
-        "finished_at",
-        "data_source"
-      ],
-      "properties": {
-        "state": {
-          "type": "string",
-          "description": "State of the data import"
-        },
-        "import_check_errors": {
-          "type": "string",
-          "description": "Errors encountered during the import check"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When the import started",
-          "x-nullable": true
-        },
-        "finished_at": {
-          "type": "string",
-          "description": "When the import finished",
-          "x-nullable": true
-        },
-        "data_source": {
-          "$ref": "#/definitions/DatabaseDataImportDataSource"
-        }
-      },
-      "x-nullable": true
     },
     "DatabaseRegion": {
       "type": "object",
@@ -39167,6 +39147,26 @@
           "description": "The previous number of replicas",
           "x-nullable": true
         },
+        "cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the external sidecar size",
+          "x-nullable": true
+        },
+        "cluster_display_name": {
+          "type": "string",
+          "description": "The display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the previous external sidecar size",
+          "x-nullable": true
+        },
+        "previous_cluster_display_name": {
+          "type": "string",
+          "description": "The previous display name of the cluster size SKU",
+          "x-nullable": true
+        },
         "router_size": {
           "type": "string",
           "description": "The name of the router size SKU",
@@ -39242,11 +39242,6 @@
           "description": "The name of the cluster size SKU",
           "x-nullable": true
         },
-        "cluster_display_name": {
-          "type": "string",
-          "description": "The display name of the cluster size SKU",
-          "x-nullable": true
-        },
         "metal": {
           "type": "boolean",
           "description": "Whether the cluster size SKU uses metal instances",
@@ -39273,11 +39268,6 @@
         "previous_cluster_size": {
           "type": "string",
           "description": "The previous name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_cluster_display_name": {
-          "type": "string",
-          "description": "The previous display name of the cluster size SKU",
           "x-nullable": true
         },
         "previous_metal": {
@@ -45599,40 +45589,6 @@
         }
       }
     },
-    "PaginatedDatabaseDataItemDataImport": {
-      "type": "object",
-      "required": [
-        "state",
-        "import_check_errors",
-        "started_at",
-        "finished_at",
-        "data_source"
-      ],
-      "properties": {
-        "state": {
-          "type": "string",
-          "description": "State of the data import"
-        },
-        "import_check_errors": {
-          "type": "string",
-          "description": "Errors encountered during the import check"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When the import started",
-          "x-nullable": true
-        },
-        "finished_at": {
-          "type": "string",
-          "description": "When the import finished",
-          "x-nullable": true
-        },
-        "data_source": {
-          "$ref": "#/definitions/PaginatedDatabaseDataItemDataImportDataSource"
-        }
-      },
-      "x-nullable": true
-    },
     "PaginatedDatabaseDataItemRegion": {
       "type": "object",
       "required": [
@@ -45695,28 +45651,6 @@
         "neki_supported": {
           "type": "boolean",
           "description": "Whether the region supports Neki databases"
-        }
-      }
-    },
-    "DatabaseDataImportDataSource": {
-      "type": "object",
-      "required": [
-        "hostname",
-        "port",
-        "database"
-      ],
-      "properties": {
-        "hostname": {
-          "type": "string",
-          "description": "Hostname of the data source"
-        },
-        "port": {
-          "type": "integer",
-          "description": "Port of the data source"
-        },
-        "database": {
-          "type": "string",
-          "description": "Database name of the data source"
         }
       }
     },
@@ -48809,28 +48743,6 @@
       },
       "x-nullable": true
     },
-    "PaginatedDatabaseDataItemDataImportDataSource": {
-      "type": "object",
-      "required": [
-        "hostname",
-        "port",
-        "database"
-      ],
-      "properties": {
-        "hostname": {
-          "type": "string",
-          "description": "Hostname of the data source"
-        },
-        "port": {
-          "type": "integer",
-          "description": "Port of the data source"
-        },
-        "database": {
-          "type": "string",
-          "description": "Database name of the data source"
-        }
-      }
-    },
     "PaginatedServiceTokenDataItemServiceTokenAccessesItemResource": {
       "type": "object",
       "required": [
@@ -50091,6 +50003,10 @@
         "default_branch": {
           "type": "string",
           "description": "The default branch of the database"
+        },
+        "development_branches_limit": {
+          "type": "integer",
+          "description": "The number of development branches this database can have, up to 5000."
         }
       }
     },

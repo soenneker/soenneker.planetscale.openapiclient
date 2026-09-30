@@ -44,14 +44,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The data_import property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDataImport? DataImport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDataImport DataImport { get; set; }
-#endif
         /// <summary>The default branch for the database</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +62,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public bool? DeletionProtected { get; set; }
         /// <summary>The total number of database development branches</summary>
         public int? DevelopmentBranchesCount { get; set; }
+        /// <summary>The current maximum number of development branches. Change it with development_branches_limit on the database PATCH endpoint, up to 5000.</summary>
+        public int? DevelopmentBranchesLimit { get; set; }
         /// <summary>Whether foreign key constraints are enabled</summary>
         public bool? ForeignKeysEnabled { get; set; }
         /// <summary>The URL to see this database&apos;s branches in the web UI</summary>
@@ -218,13 +212,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "config_change_queued", n => { ConfigChangeQueued = n.GetBoolValue(); } },
                 { "config_changing", n => { ConfigChanging = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "data_import", n => { DataImport = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDataImport>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDataImport.CreateFromDiscriminatorValue); } },
                 { "default_branch", n => { DefaultBranch = n.GetStringValue(); } },
                 { "default_branch_read_only_regions_count", n => { DefaultBranchReadOnlyRegionsCount = n.GetIntValue(); } },
                 { "default_branch_shard_count", n => { DefaultBranchShardCount = n.GetIntValue(); } },
                 { "default_branch_table_count", n => { DefaultBranchTableCount = n.GetIntValue(); } },
                 { "deletion_protected", n => { DeletionProtected = n.GetBoolValue(); } },
                 { "development_branches_count", n => { DevelopmentBranchesCount = n.GetIntValue(); } },
+                { "development_branches_limit", n => { DevelopmentBranchesLimit = n.GetIntValue(); } },
                 { "foreign_keys_enabled", n => { ForeignKeysEnabled = n.GetBoolValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -270,13 +264,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("config_change_queued", ConfigChangeQueued);
             writer.WriteBoolValue("config_changing", ConfigChanging);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDataImport>("data_import", DataImport);
             writer.WriteStringValue("default_branch", DefaultBranch);
             writer.WriteIntValue("default_branch_read_only_regions_count", DefaultBranchReadOnlyRegionsCount);
             writer.WriteIntValue("default_branch_shard_count", DefaultBranchShardCount);
             writer.WriteIntValue("default_branch_table_count", DefaultBranchTableCount);
             writer.WriteBoolValue("deletion_protected", DeletionProtected);
             writer.WriteIntValue("development_branches_count", DevelopmentBranchesCount);
+            writer.WriteIntValue("development_branches_limit", DevelopmentBranchesLimit);
             writer.WriteBoolValue("foreign_keys_enabled", ForeignKeysEnabled);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteStringValue("id", Id);

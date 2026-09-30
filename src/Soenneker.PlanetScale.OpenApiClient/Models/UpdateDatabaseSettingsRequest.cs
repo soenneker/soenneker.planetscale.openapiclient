@@ -30,6 +30,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Whether deletion protection is enabled for the database</summary>
         public bool? DeletionProtected { get; set; }
+        /// <summary>The number of development branches this database can have, up to 5000.</summary>
+        public int? DevelopmentBranchesLimit { get; set; }
         /// <summary>Whether or not full queries should be collected from the database</summary>
         public bool? InsightsRawQueries { get; set; }
         /// <summary>A migration framework to use on the database. (Vitess only)</summary>
@@ -92,6 +94,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "automatic_migrations", n => { AutomaticMigrations = n.GetBoolValue(); } },
                 { "default_branch", n => { DefaultBranch = n.GetStringValue(); } },
                 { "deletion_protected", n => { DeletionProtected = n.GetBoolValue(); } },
+                { "development_branches_limit", n => { DevelopmentBranchesLimit = n.GetIntValue(); } },
                 { "insights_raw_queries", n => { InsightsRawQueries = n.GetBoolValue(); } },
                 { "migration_framework", n => { MigrationFramework = n.GetStringValue(); } },
                 { "migration_table_name", n => { MigrationTableName = n.GetStringValue(); } },
@@ -113,6 +116,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("automatic_migrations", AutomaticMigrations);
             writer.WriteStringValue("default_branch", DefaultBranch);
             writer.WriteBoolValue("deletion_protected", DeletionProtected);
+            writer.WriteIntValue("development_branches_limit", DevelopmentBranchesLimit);
             writer.WriteBoolValue("insights_raw_queries", InsightsRawQueries);
             writer.WriteStringValue("migration_framework", MigrationFramework);
             writer.WriteStringValue("migration_table_name", MigrationTableName);
