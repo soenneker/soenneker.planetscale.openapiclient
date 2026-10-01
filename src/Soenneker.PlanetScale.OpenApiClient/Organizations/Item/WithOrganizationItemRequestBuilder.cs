@@ -8,6 +8,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.AuditLog;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications;
@@ -47,6 +48,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.DatabasesRequestBuilder Databases
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.DatabasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The invitations property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations.InvitationsRequestBuilder Invitations
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invoices property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.InvoicesRequestBuilder Invoices

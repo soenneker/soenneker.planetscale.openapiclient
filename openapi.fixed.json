@@ -24492,6 +24492,252 @@
         }
       }
     },
+    "/organizations/{organization}/invitations": {
+      "get": {
+        "tags": [
+          "Organization invitations"
+        ],
+        "summary": "List pending invitations",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_members\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_members\u0060 |",
+        "operationId": "ListOrganizationInvitations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns pending invitations for the organization",
+            "schema": {
+              "$ref": "#/definitions/PaginatedOrganizationInvitation"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Organization invitations"
+        ],
+        "summary": "Send an invitation",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_members\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_members\u0060 |",
+        "operationId": "CreateOrganizationInvitation",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateOrganizationInvitationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the created invitation. Service tokens can only create invitations with the member role.",
+            "schema": {
+              "$ref": "#/definitions/OrganizationInvitation"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/invitations/{id}": {
+      "delete": {
+        "tags": [
+          "Organization invitations"
+        ],
+        "summary": "Cancel an invitation",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_members\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_members\u0060 |",
+        "operationId": "CancelOrganizationInvitation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the invitation",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "204": {
+            "description": "Invitation cancelled successfully",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/invoices": {
       "get": {
         "tags": [
@@ -28814,40 +29060,41 @@
         }
       }
     },
-    "PostgresClusterExtension": {
+    "PostgresExtensionDefinition": {
       "type": "object",
       "required": [
-        "id",
         "name",
+        "can_enable",
         "description",
         "internal",
-        "loader",
         "requirements",
         "url",
         "parameters"
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the extension"
-        },
         "name": {
           "type": "string",
           "description": "The name of the extension"
+        },
+        "can_enable": {
+          "type": "boolean",
+          "description": "Whether the extension can be enabled or disabled by the cluster"
         },
         "description": {
           "type": "string",
           "description": "The description of the extension"
         },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether the extension is enabled by the cluster",
+          "x-nullable": true
+        },
         "internal": {
           "type": "boolean",
           "description": "The internal state of the extension"
         },
-        "loader": {
-          "$ref": "#/definitions/PostgresClusterExtensionLoader"
-        },
         "requirements": {
-          "$ref": "#/definitions/PostgresClusterExtensionRequirements"
+          "$ref": "#/definitions/PostgresExtensionDefinitionRequirements"
         },
         "url": {
           "type": "string",
@@ -28856,7 +29103,7 @@
         "parameters": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PostgresClusterExtensionParametersItem"
+            "$ref": "#/definitions/PostgresExtensionDefinitionParametersItem"
           }
         }
       }
@@ -32048,6 +32295,118 @@
         },
         "oauth_accesses_by_resource": {
           "$ref": "#/definitions/ServiceTokenOAuthAccessesByResource"
+        }
+      }
+    },
+    "PaginatedOrganizationInvitation": {
+      "type": "object",
+      "required": [
+        "type",
+        "current_page",
+        "per_page",
+        "next_page",
+        "next_page_url",
+        "prev_page",
+        "prev_page_url",
+        "total_count",
+        "total_pages",
+        "data"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022list\u0022 for paginated responses."
+        },
+        "current_page": {
+          "type": "integer",
+          "description": "The current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "description": "The maximum number of results per page"
+        },
+        "next_page": {
+          "type": "integer",
+          "description": "The next page number, or null when this is the last page",
+          "x-nullable": true
+        },
+        "next_page_url": {
+          "type": "string",
+          "description": "The next page of results, or null when this is the last page",
+          "x-nullable": true
+        },
+        "prev_page": {
+          "type": "integer",
+          "description": "The previous page number, or null when this is the first page",
+          "x-nullable": true
+        },
+        "prev_page_url": {
+          "type": "string",
+          "description": "The previous page of results, or null when this is the first page",
+          "x-nullable": true
+        },
+        "total_count": {
+          "type": "integer",
+          "description": "The total number of matching results"
+        },
+        "total_pages": {
+          "type": "integer",
+          "description": "The total number of pages of matching results"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaginatedOrganizationInvitationDataItem"
+          }
+        }
+      }
+    },
+    "OrganizationInvitation": {
+      "type": "object",
+      "required": [
+        "id",
+        "email",
+        "role",
+        "sender",
+        "recipient",
+        "expired",
+        "expires_at",
+        "created_at",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the invitation"
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address the invitation was sent to"
+        },
+        "role": {
+          "$ref": "#/definitions/OrganizationInvitationRole"
+        },
+        "sender": {
+          "$ref": "#/definitions/OrganizationInvitationSender"
+        },
+        "recipient": {
+          "$ref": "#/definitions/OrganizationInvitationRecipient"
+        },
+        "expired": {
+          "type": "boolean",
+          "description": "Whether the invitation has expired"
+        },
+        "expires_at": {
+          "type": "string",
+          "description": "When the invitation expires"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the invitation was created"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the avatar shown for the invitation"
         }
       }
     },
@@ -37145,7 +37504,7 @@
         }
       }
     },
-    "PostgresClusterExtensionRequirements": {
+    "PostgresExtensionDefinitionRequirements": {
       "type": "object",
       "properties": {
         "postgres_image_version": {
@@ -37155,7 +37514,7 @@
         }
       }
     },
-    "PostgresClusterExtensionParametersItem": {
+    "PostgresExtensionDefinitionParametersItem": {
       "type": "object",
       "required": [
         "name",
@@ -37188,7 +37547,7 @@
           "description": "The display name of the parameter"
         },
         "namespace": {
-          "$ref": "#/definitions/PostgresClusterExtensionParametersItemNamespace"
+          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemNamespace"
         },
         "category": {
           "type": "string",
@@ -37207,7 +37566,7 @@
           "description": "Whether the parameter can be changed"
         },
         "parameter_type": {
-          "$ref": "#/definitions/PostgresClusterExtensionParametersItemParameterType"
+          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
@@ -37253,7 +37612,7 @@
           }
         },
         "actor": {
-          "$ref": "#/definitions/PostgresClusterExtensionParametersItemActor"
+          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemActor"
         }
       }
     },
@@ -39903,6 +40262,198 @@
         },
         "user": {
           "$ref": "#/definitions/ServiceTokenOAuthAccessesByResourceUser"
+        }
+      },
+      "x-nullable": true
+    },
+    "PaginatedOrganizationInvitationDataItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "email",
+        "role",
+        "sender",
+        "recipient",
+        "expired",
+        "expires_at",
+        "created_at",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the invitation"
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address the invitation was sent to"
+        },
+        "role": {
+          "$ref": "#/definitions/PaginatedOrganizationInvitationDataItemRole"
+        },
+        "sender": {
+          "$ref": "#/definitions/PaginatedOrganizationInvitationDataItemSender"
+        },
+        "recipient": {
+          "$ref": "#/definitions/PaginatedOrganizationInvitationDataItemRecipient"
+        },
+        "expired": {
+          "type": "boolean",
+          "description": "Whether the invitation has expired"
+        },
+        "expires_at": {
+          "type": "string",
+          "description": "When the invitation expires"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the invitation was created"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the avatar shown for the invitation"
+        }
+      }
+    },
+    "OrganizationInvitationSender": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "name",
+        "email",
+        "avatar_url",
+        "created_at",
+        "updated_at",
+        "two_factor_auth_configured"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the user"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The display name of the user"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the user",
+          "x-nullable": true
+        },
+        "email": {
+          "type": "string",
+          "description": "The email of the user"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL source of the user\u0027s avatar"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the user was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the user was last updated"
+        },
+        "two_factor_auth_configured": {
+          "type": "boolean",
+          "description": "Whether or not the user has configured two factor authentication"
+        },
+        "default_organization": {
+          "$ref": "#/definitions/OrganizationInvitationSenderDefaultOrganization"
+        },
+        "sso": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by SSO.",
+          "x-nullable": true
+        },
+        "managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by an authentication provider.",
+          "x-nullable": true
+        },
+        "directory_managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by a SSO directory.",
+          "x-nullable": true
+        },
+        "email_verified": {
+          "type": "boolean",
+          "description": "Whether or not the user is verified by email.",
+          "x-nullable": true
+        }
+      }
+    },
+    "OrganizationInvitationRecipient": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "name",
+        "email",
+        "avatar_url",
+        "created_at",
+        "updated_at",
+        "two_factor_auth_configured"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the user"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The display name of the user"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the user",
+          "x-nullable": true
+        },
+        "email": {
+          "type": "string",
+          "description": "The email of the user"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL source of the user\u0027s avatar"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the user was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the user was last updated"
+        },
+        "two_factor_auth_configured": {
+          "type": "boolean",
+          "description": "Whether or not the user has configured two factor authentication"
+        },
+        "default_organization": {
+          "$ref": "#/definitions/OrganizationInvitationRecipientDefaultOrganization"
+        },
+        "sso": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by SSO.",
+          "x-nullable": true
+        },
+        "managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by an authentication provider.",
+          "x-nullable": true
+        },
+        "directory_managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by a SSO directory.",
+          "x-nullable": true
+        },
+        "email_verified": {
+          "type": "boolean",
+          "description": "Whether or not the user is verified by email.",
+          "x-nullable": true
         }
       },
       "x-nullable": true
@@ -45326,7 +45877,7 @@
       "description": "VTGate configuration options",
       "x-nullable": true
     },
-    "PostgresClusterExtensionParametersItemActor": {
+    "PostgresExtensionDefinitionParametersItemActor": {
       "type": "object",
       "required": [
         "id",
@@ -46101,6 +46652,217 @@
           }
         }
       }
+    },
+    "PaginatedOrganizationInvitationDataItemSender": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "name",
+        "email",
+        "avatar_url",
+        "created_at",
+        "updated_at",
+        "two_factor_auth_configured"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the user"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The display name of the user"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the user",
+          "x-nullable": true
+        },
+        "email": {
+          "type": "string",
+          "description": "The email of the user"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL source of the user\u0027s avatar"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the user was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the user was last updated"
+        },
+        "two_factor_auth_configured": {
+          "type": "boolean",
+          "description": "Whether or not the user has configured two factor authentication"
+        },
+        "default_organization": {
+          "$ref": "#/definitions/PaginatedOrganizationInvitationDataItemSenderDefaultOrganization"
+        },
+        "sso": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by SSO.",
+          "x-nullable": true
+        },
+        "managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by an authentication provider.",
+          "x-nullable": true
+        },
+        "directory_managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by a SSO directory.",
+          "x-nullable": true
+        },
+        "email_verified": {
+          "type": "boolean",
+          "description": "Whether or not the user is verified by email.",
+          "x-nullable": true
+        }
+      }
+    },
+    "PaginatedOrganizationInvitationDataItemRecipient": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "name",
+        "email",
+        "avatar_url",
+        "created_at",
+        "updated_at",
+        "two_factor_auth_configured"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the user"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The display name of the user"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the user",
+          "x-nullable": true
+        },
+        "email": {
+          "type": "string",
+          "description": "The email of the user"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL source of the user\u0027s avatar"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the user was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the user was last updated"
+        },
+        "two_factor_auth_configured": {
+          "type": "boolean",
+          "description": "Whether or not the user has configured two factor authentication"
+        },
+        "default_organization": {
+          "$ref": "#/definitions/PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization"
+        },
+        "sso": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by SSO.",
+          "x-nullable": true
+        },
+        "managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by an authentication provider.",
+          "x-nullable": true
+        },
+        "directory_managed": {
+          "type": "boolean",
+          "description": "Whether or not the user is managed by a SSO directory.",
+          "x-nullable": true
+        },
+        "email_verified": {
+          "type": "boolean",
+          "description": "Whether or not the user is verified by email.",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
+    "OrganizationInvitationSenderDefaultOrganization": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
+    "OrganizationInvitationRecipientDefaultOrganization": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
     },
     "PaginatedOrganizationMembershipDataItemUser": {
       "type": "object",
@@ -49026,6 +49788,74 @@
         }
       }
     },
+    "PaginatedOrganizationInvitationDataItemSenderDefaultOrganization": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
+    "PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
     "PaginatedOrganizationMembershipDataItemUserDefaultOrganization": {
       "type": "object",
       "required": [
@@ -50282,6 +51112,13 @@
           "type": "integer",
           "description": "The total number of replicas"
         },
+        "extensions": {
+          "type": "array",
+          "description": "Extensions to enable. This replaces the current set; omit it to leave them unchanged.",
+          "items": {
+            "type": "string"
+          }
+        },
         "parameters": {
           "$ref": "#/definitions/UpdateBranchChangeRequestRequestParameters"
         },
@@ -50501,7 +51338,7 @@
     "ListExtensions200Response": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresClusterExtension"
+        "$ref": "#/definitions/PostgresExtensionDefinition"
       }
     },
     "CreateInsightsAgentRunRequest": {
@@ -51633,6 +52470,21 @@
         }
       }
     },
+    "CreateOrganizationInvitationRequest": {
+      "type": "object",
+      "required": [
+        "email"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "The email address to send the invitation to"
+        },
+        "role": {
+          "$ref": "#/definitions/CreateOrganizationInvitationRequestRole"
+        }
+      }
+    },
     "UpdateOrganizationMembershipRequest": {
       "type": "object",
       "required": [
@@ -51829,7 +52681,7 @@
     "ListExtensions200ResponseSchema": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresClusterExtension"
+        "$ref": "#/definitions/PostgresExtensionDefinition"
       }
     },
     "ListInsightsAgentSchedules200ResponseSchema": {
@@ -52958,34 +53810,6 @@
         ]
       }
     },
-    "PostgresClusterExtensionLoader": {
-      "type": "string",
-      "description": "How the extension is loaded",
-      "enum": [
-        "shared_preload_libraries",
-        "session_preload_libraries",
-        "create_extension"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "PostgresClusterExtensionLoader",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "shared_preload_libraries",
-            "name": "SharedPreloadLibraries"
-          },
-          {
-            "value": "session_preload_libraries",
-            "name": "SessionPreloadLibraries"
-          },
-          {
-            "value": "create_extension",
-            "name": "CreateExtension"
-          }
-        ]
-      }
-    },
     "PostgresClusterParameterNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
@@ -53731,6 +54555,34 @@
           {
             "value": "ready",
             "name": "Ready"
+          }
+        ]
+      }
+    },
+    "OrganizationInvitationRole": {
+      "type": "string",
+      "description": "The role granted when the invitation is accepted. Invitations sent by service tokens are always member.",
+      "enum": [
+        "admin",
+        "analyst",
+        "member"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "OrganizationInvitationRole",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "admin",
+            "name": "Admin"
+          },
+          {
+            "value": "analyst",
+            "name": "Analyst"
+          },
+          {
+            "value": "member",
+            "name": "Member"
           }
         ]
       }
@@ -55273,7 +56125,7 @@
         ]
       }
     },
-    "PostgresClusterExtensionParametersItemNamespace": {
+    "PostgresExtensionDefinitionParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
@@ -55283,7 +56135,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresClusterExtensionParametersItemNamespace",
+        "name": "PostgresExtensionDefinitionParametersItemNamespace",
         "modelAsString": false,
         "values": [
           {
@@ -55301,7 +56153,7 @@
         ]
       }
     },
-    "PostgresClusterExtensionParametersItemParameterType": {
+    "PostgresExtensionDefinitionParametersItemParameterType": {
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
@@ -55317,7 +56169,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresClusterExtensionParametersItemParameterType",
+        "name": "PostgresExtensionDefinitionParametersItemParameterType",
         "modelAsString": false,
         "values": [
           {
@@ -55874,6 +56726,34 @@
           {
             "value": "time",
             "name": "Time"
+          }
+        ]
+      }
+    },
+    "PaginatedOrganizationInvitationDataItemRole": {
+      "type": "string",
+      "description": "The role granted when the invitation is accepted. Invitations sent by service tokens are always member.",
+      "enum": [
+        "admin",
+        "analyst",
+        "member"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedOrganizationInvitationDataItemRole",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "admin",
+            "name": "Admin"
+          },
+          {
+            "value": "analyst",
+            "name": "Analyst"
+          },
+          {
+            "value": "member",
+            "name": "Member"
           }
         ]
       }
@@ -58878,6 +59758,34 @@
           {
             "value": "EXEC_IGNORE",
             "name": "ExecIgnore"
+          }
+        ]
+      }
+    },
+    "CreateOrganizationInvitationRequestRole": {
+      "type": "string",
+      "description": "The role granted when the invitation is accepted. Defaults to member. Service tokens can only invite members; requesting another role returns 422.",
+      "enum": [
+        "admin",
+        "analyst",
+        "member"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "CreateOrganizationInvitationRequestRole",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "admin",
+            "name": "Admin"
+          },
+          {
+            "value": "analyst",
+            "name": "Analyst"
+          },
+          {
+            "value": "member",
+            "name": "Member"
           }
         ]
       }
@@ -62449,6 +63357,10 @@
     {
       "name": "OAuth tokens",
       "description": "          Resources for managing OAuth tokens.\n"
+    },
+    {
+      "name": "Organization invitations",
+      "description": "          Resources for inviting people to an organization. Service tokens with \u0060write_members\u0060 can list, send, and cancel invitations, but can only invite people as members. Only organization administrators can invite people as administrators or analysts.\n"
     },
     {
       "name": "Organization members",

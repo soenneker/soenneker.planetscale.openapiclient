@@ -3,21 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
-    /// <summary>How the extension is loaded</summary>
+    /// <summary>The role granted when the invitation is accepted. Defaults to member. Service tokens can only invite members; requesting another role returns 422.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostgresClusterExtensionLoader
+    public enum CreateOrganizationInvitationRequestRole
     {
-        [EnumMember(Value = "shared_preload_libraries")]
+        [EnumMember(Value = "admin")]
         #pragma warning disable CS1591
-        SharedPreloadLibraries,
+        Admin,
         #pragma warning restore CS1591
-        [EnumMember(Value = "session_preload_libraries")]
+        [EnumMember(Value = "analyst")]
         #pragma warning disable CS1591
-        SessionPreloadLibraries,
+        Analyst,
         #pragma warning restore CS1591
-        [EnumMember(Value = "create_extension")]
+        [EnumMember(Value = "member")]
         #pragma warning disable CS1591
-        CreateExtension,
+        Member,
         #pragma warning restore CS1591
     }
 }

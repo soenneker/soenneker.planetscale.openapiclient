@@ -9,16 +9,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostgresClusterExtensionParametersItem : IAdditionalDataHolder, IParsable
+    public partial class PostgresExtensionDefinitionParametersItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemActor? Actor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemActor Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The namespace of the parameter</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemNamespace? Namespace { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemNamespace? Namespace { get; set; }
         /// <summary>Valid options for the parameter value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public List<string> Options { get; set; }
 #endif
         /// <summary>The type of the parameter</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemParameterType? ParameterType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemParameterType? ParameterType { get; set; }
         /// <summary>Whether the parameter is required</summary>
         public bool? Required { get; set; }
         /// <summary>True if processes require a server restart on change</summary>
@@ -119,21 +119,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem"/> and sets the default values.
         /// </summary>
-        public PostgresClusterExtensionParametersItem()
+        public PostgresExtensionDefinitionParametersItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,7 +143,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemActor.CreateFromDiscriminatorValue); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "default_value", n => { DefaultValue = n.GetStringValue(); } },
@@ -154,9 +154,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemNamespace>(); } },
+                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemNamespace>(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemParameterType>(); } },
+                { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemParameterType>(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "restart", n => { Restart = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -171,7 +171,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor>("actor", Actor);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemActor>("actor", Actor);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("default_value", DefaultValue);
@@ -182,9 +182,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemNamespace>("namespace", Namespace);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemNamespace>("namespace", Namespace);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemParameterType>("parameter_type", ParameterType);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItemParameterType>("parameter_type", ParameterType);
             writer.WriteBoolValue("required", Required);
             writer.WriteBoolValue("restart", Restart);
             writer.WriteStringValue("updated_at", UpdatedAt);

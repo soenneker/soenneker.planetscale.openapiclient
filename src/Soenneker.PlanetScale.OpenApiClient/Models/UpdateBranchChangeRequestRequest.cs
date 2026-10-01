@@ -22,6 +22,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ClusterSize { get; set; }
 #endif
+        /// <summary>Extensions to enable. This replaces the current set; omit it to leave them unchanged.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Extensions { get; set; }
+#nullable restore
+#else
+        public List<string> Extensions { get; set; }
+#endif
         /// <summary>Cluster configuration parameters nested by namespace (e.g., {&quot;pgconf&quot;: {&quot;max_connections&quot;: &quot;200&quot;}}). Use the &apos;List cluster parameters&apos; endpoint to retrieve available parameters. Supported namespaces include &apos;patroni&apos;, &apos;pgconf&apos;, and &apos;pgbouncer&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cluster_size", n => { ClusterSize = n.GetStringValue(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters.CreateFromDiscriminatorValue); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage.CreateFromDiscriminatorValue); } },
@@ -79,6 +88,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cluster_size", ClusterSize);
+            writer.WriteCollectionOfPrimitiveValues<string>("extensions", Extensions);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters>("parameters", Parameters);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage>("storage", Storage);

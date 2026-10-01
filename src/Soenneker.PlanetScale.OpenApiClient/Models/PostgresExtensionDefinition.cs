@@ -9,11 +9,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostgresClusterExtension : IAdditionalDataHolder, IParsable
+    public partial class PostgresExtensionDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the extension can be enabled or disabled by the cluster</summary>
+        public bool? CanEnable { get; set; }
         /// <summary>The description of the extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,18 +24,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The ID of the extension</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Whether the extension is enabled by the cluster</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The internal state of the extension</summary>
         public bool? Internal { get; set; }
-        /// <summary>How the extension is loaded</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionLoader? Loader { get; set; }
         /// <summary>The name of the extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,18 +39,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem>? Parameters { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem>? Parameters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem> Parameters { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem> Parameters { get; set; }
 #endif
         /// <summary>The requirements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionRequirements? Requirements { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionRequirements? Requirements { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionRequirements Requirements { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionRequirements Requirements { get; set; }
 #endif
         /// <summary>The URL of the extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,21 +61,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Url { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinition"/> and sets the default values.
         /// </summary>
-        public PostgresClusterExtension()
+        public PostgresExtensionDefinition()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtension"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtension();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,13 +85,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "can_enable", n => { CanEnable = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "internal", n => { Internal = n.GetBoolValue(); } },
-                { "loader", n => { Loader = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionLoader>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "requirements", n => { Requirements = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionRequirements>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionRequirements.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "requirements", n => { Requirements = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionRequirements>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionRequirements.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -108,13 +102,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("can_enable", CanEnable);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("internal", Internal);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionLoader>("loader", Loader);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItem>("parameters", Parameters);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionRequirements>("requirements", Requirements);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionParametersItem>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresExtensionDefinitionRequirements>("requirements", Requirements);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

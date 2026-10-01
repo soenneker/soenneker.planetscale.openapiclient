@@ -3,21 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
-    /// <summary>The namespace of the parameter</summary>
+    /// <summary>The role granted when the invitation is accepted. Invitations sent by service tokens are always member.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostgresClusterExtensionParametersItemNamespace
+    public enum OrganizationInvitationRole
     {
-        [EnumMember(Value = "patroni")]
+        [EnumMember(Value = "admin")]
         #pragma warning disable CS1591
-        Patroni,
+        Admin,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pgconf")]
+        [EnumMember(Value = "analyst")]
         #pragma warning disable CS1591
-        Pgconf,
+        Analyst,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pgbouncer")]
+        [EnumMember(Value = "member")]
         #pragma warning disable CS1591
-        Pgbouncer,
+        Member,
         #pragma warning restore CS1591
     }
 }

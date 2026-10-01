@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The type of the parameter</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostgresClusterExtensionParametersItemParameterType
+    public enum PostgresExtensionDefinitionParametersItemParameterType
     {
         [EnumMember(Value = "array")]
         #pragma warning disable CS1591

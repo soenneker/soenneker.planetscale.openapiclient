@@ -9,28 +9,28 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostgresClusterExtensionParametersItemActor : IAdditionalDataHolder, IParsable
+    public partial class PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The URL of the actor&apos;s avatar</summary>
+        /// <summary>When the resource was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarUrl { get; set; }
+        public string? CreatedAt { get; set; }
 #nullable restore
 #else
-        public string AvatarUrl { get; set; }
+        public string CreatedAt { get; set; }
 #endif
-        /// <summary>The name of the actor</summary>
+        /// <summary>When the resource was deleted, if deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string DeletedAt { get; set; }
 #endif
-        /// <summary>The ID of the actor</summary>
+        /// <summary>The ID for the resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -38,22 +38,38 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The name for the resource</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>When the resource was last updated</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization"/> and sets the default values.
         /// </summary>
-        public PostgresClusterExtensionParametersItemActor()
+        public PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresClusterExtensionParametersItemActor();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipientDefaultOrganization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +79,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +93,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatar_url", AvatarUrl);
-            writer.WriteStringValue("display_name", DisplayName);
+            writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteStringValue("deleted_at", DeletedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
