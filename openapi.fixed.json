@@ -33534,6 +33534,8 @@
         "rows_read",
         "rows_affected",
         "rows_returned",
+        "egress_bytes",
+        "ingress_bytes",
         "total_duration_millis",
         "error_message",
         "normalized_sql",
@@ -33605,6 +33607,14 @@
         "rows_returned": {
           "type": "integer",
           "description": "The number of rows returned"
+        },
+        "egress_bytes": {
+          "type": "integer",
+          "description": "The number of bytes sent to the client"
+        },
+        "ingress_bytes": {
+          "type": "integer",
+          "description": "The number of bytes received from the client"
         },
         "total_duration_millis": {
           "type": "integer",
@@ -41513,6 +41523,8 @@
         "rows_read",
         "rows_affected",
         "rows_returned",
+        "egress_bytes",
+        "ingress_bytes",
         "total_duration_millis",
         "error_message",
         "normalized_sql",
@@ -41584,6 +41596,14 @@
         "rows_returned": {
           "type": "integer",
           "description": "The number of rows returned"
+        },
+        "egress_bytes": {
+          "type": "integer",
+          "description": "The number of bytes sent to the client"
+        },
+        "ingress_bytes": {
+          "type": "integer",
+          "description": "The number of bytes received from the client"
         },
         "total_duration_millis": {
           "type": "integer",

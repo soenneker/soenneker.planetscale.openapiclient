@@ -22,6 +22,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The number of bytes sent to the client</summary>
+        public int? EgressBytes { get; set; }
         /// <summary>Error message if the query failed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The number of bytes received from the client</summary>
+        public int? IngressBytes { get; set; }
         /// <summary>The keyspace the query ran against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,10 +178,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "egress_bytes", n => { EgressBytes = n.GetIntValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "explainable", n => { Explainable = n.GetBoolValue(); } },
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "ingress_bytes", n => { IngressBytes = n.GetIntValue(); } },
                 { "keyspace", n => { Keyspace = n.GetStringValue(); } },
                 { "normalized_sql", n => { NormalizedSql = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryDataItemPasswordProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryDataItemPasswordProperty.CreateFromDiscriminatorValue); } },
@@ -205,10 +211,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteIntValue("egress_bytes", EgressBytes);
             writer.WriteStringValue("error_message", ErrorMessage);
             writer.WriteBoolValue("explainable", Explainable);
             writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("ingress_bytes", IngressBytes);
             writer.WriteStringValue("keyspace", Keyspace);
             writer.WriteStringValue("normalized_sql", NormalizedSql);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryDataItemPasswordProperty>("password", Password);
