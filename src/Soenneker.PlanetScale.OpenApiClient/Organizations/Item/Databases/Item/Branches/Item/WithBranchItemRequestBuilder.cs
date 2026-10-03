@@ -11,8 +11,11 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Bouncers;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Changes;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Cluster;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DataTopology;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicaChanges;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicas;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DefaultConfigurationProfile;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Demote;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Extensions;
@@ -27,8 +30,6 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Passwords;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Promote;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.QueryPatterns;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicaChanges;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicas;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Roles;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.RouterSizeSkus;
@@ -39,6 +40,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Sidecars;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Traffic;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.VitessParameters;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Vtctld;
 using System.Collections.Generic;
 using System.IO;
@@ -88,6 +90,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Cluster.ClusterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The configChanges property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.ConfigChangesRequestBuilder ConfigChanges
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.ConfigChangesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The configurationProfiles property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.ConfigurationProfilesRequestBuilder ConfigurationProfiles
         {
@@ -97,6 +104,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DataTopology.DataTopologyRequestBuilder DataTopology
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DataTopology.DataTopologyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dedicatedReadReplicaChanges property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicaChanges.DedicatedReadReplicaChangesRequestBuilder DedicatedReadReplicaChanges
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicaChanges.DedicatedReadReplicaChangesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dedicatedReadReplicas property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicas.DedicatedReadReplicasRequestBuilder DedicatedReadReplicas
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DedicatedReadReplicas.DedicatedReadReplicasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultConfigurationProfile property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.DefaultConfigurationProfile.DefaultConfigurationProfileRequestBuilder DefaultConfigurationProfile
@@ -168,16 +185,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.QueryPatterns.QueryPatternsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The readOnlyReplicaChanges property</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicaChanges.ReadOnlyReplicaChangesRequestBuilder ReadOnlyReplicaChanges
-        {
-            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicaChanges.ReadOnlyReplicaChangesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The readOnlyReplicas property</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicas.ReadOnlyReplicasRequestBuilder ReadOnlyReplicas
-        {
-            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ReadOnlyReplicas.ReadOnlyReplicasRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The resizes property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Resizes.ResizesRequestBuilder Resizes
         {
@@ -227,6 +234,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Traffic.TrafficRequestBuilder Traffic
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Traffic.TrafficRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The vitessParameters property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.VitessParameters.VitessParametersRequestBuilder VitessParameters
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.VitessParameters.VitessParametersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vtctld property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Vtctld.VtctldRequestBuilder Vtctld

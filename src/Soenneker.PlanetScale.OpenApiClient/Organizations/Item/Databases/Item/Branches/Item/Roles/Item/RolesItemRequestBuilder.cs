@@ -40,7 +40,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RolesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/roles/{id}{?bouncer*,read_only_replica*,replica*,router*,shard*,successor*}", pathParameters)
+        public RolesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/roles/{id}{?bouncer*,dedicated_read_replica*,replica*,router*,shard*,successor*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RolesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/roles/{id}{?bouncer*,read_only_replica*,replica*,router*,shard*,successor*}", rawUrl)
+        public RolesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/roles/{id}{?bouncer*,dedicated_read_replica*,replica*,router*,shard*,successor*}", rawUrl)
         {
         }
         /// <summary>
@@ -253,15 +253,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("bouncer")]
             public string Bouncer { get; set; }
 #endif
-            /// <summary>Return connection details for this read-only replica</summary>
+            /// <summary>Return connection details for this dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("read_only_replica")]
-            public string? ReadOnlyReplica { get; set; }
+            [QueryParameter("dedicated_read_replica")]
+            public string? DedicatedReadReplica { get; set; }
 #nullable restore
 #else
-            [QueryParameter("read_only_replica")]
-            public string ReadOnlyReplica { get; set; }
+            [QueryParameter("dedicated_read_replica")]
+            public string DedicatedReadReplica { get; set; }
 #endif
             /// <summary>Return connection details for a replica</summary>
             [QueryParameter("replica")]

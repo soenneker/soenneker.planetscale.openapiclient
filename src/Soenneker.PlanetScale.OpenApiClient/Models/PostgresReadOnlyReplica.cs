@@ -12,7 +12,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     public partial class PostgresReadOnlyReplica : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The database connection host for the read-only replica</summary>
+        /// <summary>The database connection host for the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessHostUrl { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The SKU representing the cluster size of the read-only replica, for display</summary>
+        /// <summary>The SKU representing the cluster size of the dedicated read replica, for display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClusterDisplayName { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ClusterDisplayName { get; set; }
 #endif
-        /// <summary>The SKU representing the cluster size of the read-only replica</summary>
+        /// <summary>The SKU representing the cluster size of the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClusterName { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ClusterName { get; set; }
 #endif
-        /// <summary>When the read-only replica was created</summary>
+        /// <summary>When the dedicated read replica was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The ID of the read-only replica</summary>
+        /// <summary>The ID of the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? MaximumStorageBytes { get; set; }
         /// <summary>The minimum storage size in bytes</summary>
         public int? MinimumStorageBytes { get; set; }
-        /// <summary>The name of the read-only replica</summary>
+        /// <summary>The name of the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItem> Parameters { get; set; }
 #endif
-        /// <summary>The private database connection host for the read-only replica</summary>
+        /// <summary>The private database connection host for the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateAccessHostUrl { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PrivateAccessHostUrl { get; set; }
 #endif
-        /// <summary>The service name to set up private connectivity for the read-only replica</summary>
+        /// <summary>The service name to set up private connectivity for the dedicated read replica</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateConnectionServiceName { get; set; }
@@ -98,9 +98,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PrivateConnectionServiceName { get; set; }
 #endif
-        /// <summary>Whether or not the read-only replica is ready to serve queries</summary>
+        /// <summary>Whether or not the dedicated read replica is ready to serve queries</summary>
         public bool? Ready { get; set; }
-        /// <summary>When the read-only replica was ready to serve queries</summary>
+        /// <summary>When the dedicated read replica was ready to serve queries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReadyAt { get; set; }
@@ -116,9 +116,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaRegion Region { get; set; }
 #endif
-        /// <summary>The number of instances serving reads in this read-only replica</summary>
+        /// <summary>The number of instances serving reads in this dedicated read replica</summary>
         public int? Replicas { get; set; }
-        /// <summary>The state of the read-only replica: pending, ready, or deleting</summary>
+        /// <summary>The state of the dedicated read replica: pending, ready, or deleting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -134,7 +134,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? StorageThroughputMibs { get; set; }
         /// <summary>The storage type</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaStorageType? StorageType { get; set; }
-        /// <summary>When the read-only replica was last updated</summary>
+        /// <summary>When the dedicated read replica was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get; set; }

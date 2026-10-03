@@ -52,7 +52,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public bool? DeletionProtected { get; set; }
         /// <summary>True if the branch allows passwords to connect directly to a vtgate, bypassing load balancers</summary>
         public bool? DirectVtgate { get; set; }
-        /// <summary>True if the branch has read-only replica servers</summary>
+        /// <summary>True if the branch has servers dedicated to read traffic</summary>
         public bool? HasReadOnlyReplicas { get; set; }
         /// <summary>True if the branch has replica servers</summary>
         public bool? HasReplicas { get; set; }

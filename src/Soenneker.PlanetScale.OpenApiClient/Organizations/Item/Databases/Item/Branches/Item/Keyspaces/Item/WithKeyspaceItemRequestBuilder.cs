@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.PlanetScale.OpenApiClient.Models;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.ConfigChanges;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.Resizes;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.RolloutStatus;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.Vschema;
@@ -20,6 +21,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithKeyspaceItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The configChanges property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.ConfigChanges.ConfigChangesRequestBuilder ConfigChanges
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.ConfigChanges.ConfigChangesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The resizes property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.Resizes.ResizesRequestBuilder Resizes
         {

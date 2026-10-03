@@ -22,6 +22,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string BouncerSize { get; set; }
 #endif
+        /// <summary>The ID of the dedicated read replica where the bouncer should run</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DedicatedReadReplicaId { get; set; }
+#nullable restore
+#else
+        public string DedicatedReadReplicaId { get; set; }
+#endif
         /// <summary>The bouncer name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bouncer_size", n => { BouncerSize = n.GetStringValue(); } },
+                { "dedicated_read_replica_id", n => { DedicatedReadReplicaId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "replicas_per_cell", n => { ReplicasPerCell = n.GetIntValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bouncer_size", BouncerSize);
+            writer.WriteStringValue("dedicated_read_replica_id", DedicatedReadReplicaId);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("replicas_per_cell", ReplicasPerCell);
             writer.WriteStringValue("target", Target);

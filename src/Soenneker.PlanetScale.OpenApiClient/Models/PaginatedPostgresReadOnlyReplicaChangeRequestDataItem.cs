@@ -56,7 +56,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The ID of the read-only replica change request</summary>
+        /// <summary>The ID of the dedicated read replica change request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

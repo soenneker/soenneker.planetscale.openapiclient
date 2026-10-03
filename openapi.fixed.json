@@ -4409,6 +4409,481 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/config-changes": {
+      "get": {
+        "tags": [
+          "Branch config changes"
+        ],
+        "summary": "List branch config change requests",
+        "description": "        Returns the VTGate config change requests for the branch and the VTTablet and MySQL config change requests for its keyspaces, newest first.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListBranchConfigChangeRequests",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns branch and keyspace config change requests",
+            "schema": {
+              "$ref": "#/definitions/PaginatedConfigChangeRequest"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Branch config changes"
+        ],
+        "summary": "Create a branch config change request",
+        "description": "        Creates a draft change to the VTGate parameters of a branch. Nothing is applied until the draft is submitted with the \u0022submit_branch_config_change_requests\u0022 endpoint.\n        A branch can have one unfinished VTGate change at a time. Use the \u0022list_branch_vitess_parameters\u0022 endpoint to see the parameters you can change.\n\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
+        "operationId": "CreateBranchConfigChangeRequest",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateBranchConfigChangeRequestRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "201": {
+            "description": "Returns the created config change request",
+            "schema": {
+              "$ref": "#/definitions/BranchConfigChangeRequest"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/config-changes/submit": {
+      "post": {
+        "tags": [
+          "Branch config changes"
+        ],
+        "summary": "Submit draft config change requests",
+        "description": "        Submits draft config change requests for the branch and its keyspaces together. Each ID must belong to a draft created with the \u0022create_branch_config_change_request\u0022 or \u0022create_keyspace_config_change_request\u0022 endpoint.\n        If any draft fails validation, none of them are submitted.\n\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
+        "operationId": "SubmitBranchConfigChangeRequests",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SubmitBranchConfigChangeRequestsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the number of submitted config changes",
+            "schema": {
+              "$ref": "#/definitions/SubmitBranchConfigChangeRequests200Response"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/config-changes/{id}": {
+      "get": {
+        "tags": [
+          "Branch config changes"
+        ],
+        "summary": "Get a branch config change request",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "GetBranchConfigChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the config change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns a branch config change request",
+            "schema": {
+              "$ref": "#/definitions/BranchConfigChangeRequest"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Branch config changes"
+        ],
+        "summary": "Cancel a draft branch config change request",
+        "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
+        "operationId": "CancelBranchConfigChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the config change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "204": {
+            "description": "Config change request cancelled",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles": {
       "get": {
         "tags": [
@@ -6575,6 +7050,584 @@
             "description": "Returns the updated data topology for the branch",
             "schema": {
               "$ref": "#/definitions/NekiDataTopology"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/dedicated-read-replica-changes": {
+      "get": {
+        "tags": [
+          "api-read_only_replica_changes"
+        ],
+        "summary": "Get dedicated read replica change requests",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListDedicatedReadReplicaChangeRequests",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          },
+          {
+            "in": "query",
+            "name": "period",
+            "description": "Filter change requests by named period",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "description": "Filter change requests completed between two ISO 8601 timestamps",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns dedicated read replica change requests",
+            "schema": {
+              "$ref": "#/definitions/PaginatedPostgresReadOnlyReplicaChangeRequest"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/dedicated-read-replicas": {
+      "get": {
+        "tags": [
+          "Dedicated read replicas"
+        ],
+        "summary": "List dedicated read replicas",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListDedicatedReadReplicas",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns dedicated read replicas",
+            "schema": {
+              "$ref": "#/definitions/ListDedicatedReadReplicas200ResponseSchema"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Dedicated read replicas"
+        ],
+        "summary": "Create a dedicated read replica",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "CreateDedicatedReadReplica",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateDedicatedReadReplicaRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the new dedicated read replica",
+            "schema": {
+              "$ref": "#/definitions/PostgresReadOnlyReplica"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/dedicated-read-replicas/{dedicatedReadReplica}": {
+      "get": {
+        "tags": [
+          "Dedicated read replicas"
+        ],
+        "summary": "Get a dedicated read replica",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "GetDedicatedReadReplica",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dedicatedReadReplica",
+            "description": "The name of the dedicated read replica",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the dedicated read replica",
+            "schema": {
+              "$ref": "#/definitions/PostgresReadOnlyReplica"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Dedicated read replicas"
+        ],
+        "summary": "Update a dedicated read replica",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "UpdateDedicatedReadReplica",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dedicatedReadReplica",
+            "description": "The name of the dedicated read replica",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDedicatedReadReplicaRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Invalid parameters",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the updated dedicated read replica",
+            "schema": {
+              "$ref": "#/definitions/PostgresReadOnlyReplica"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Dedicated read replicas"
+        ],
+        "summary": "Delete a dedicated read replica",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "DeleteDedicatedReadReplica",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "dedicatedReadReplica",
+            "description": "The name of the dedicated read replica",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "204": {
+            "description": "Deletes the dedicated read replica",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
             }
           }
         }
@@ -9471,6 +10524,413 @@
           },
           "204": {
             "description": "Delete a keyspace",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/keyspaces/{keyspace}/config-changes": {
+      "get": {
+        "tags": [
+          "Keyspace config changes"
+        ],
+        "summary": "List keyspace config change requests",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListKeyspaceConfigChangeRequests",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "keyspace",
+            "description": "The name of the keyspace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns keyspace config change requests",
+            "schema": {
+              "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequest"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Keyspace config changes"
+        ],
+        "summary": "Create a keyspace config change request",
+        "description": "        Creates a draft change to the VTTablet or MySQL parameters of a keyspace. Nothing is applied until the draft is submitted with the \u0022submit_branch_config_change_requests\u0022 endpoint.\n        A keyspace can have one unfinished change of each type at a time. Use the \u0022list_branch_vitess_parameters\u0022 endpoint to see the parameters you can change.\n\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
+        "operationId": "CreateKeyspaceConfigChangeRequest",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "keyspace",
+            "description": "The name of the keyspace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateKeyspaceConfigChangeRequestRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "201": {
+            "description": "Returns the created config change request",
+            "schema": {
+              "$ref": "#/definitions/KeyspaceConfigChangeRequest"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/keyspaces/{keyspace}/config-changes/{id}": {
+      "get": {
+        "tags": [
+          "Keyspace config changes"
+        ],
+        "summary": "Get a keyspace config change request",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "GetKeyspaceConfigChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "keyspace",
+            "description": "The name of the keyspace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the config change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns a keyspace config change request",
+            "schema": {
+              "$ref": "#/definitions/KeyspaceConfigChangeRequest"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Keyspace config changes"
+        ],
+        "summary": "Cancel a draft or pending keyspace config change request",
+        "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
+        "operationId": "CancelKeyspaceConfigChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "keyspace",
+            "description": "The name of the keyspace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the config change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "204": {
+            "description": "Config change request cancelled",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -13996,584 +15456,6 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/read-only-replica-changes": {
-      "get": {
-        "tags": [
-          "api-read_only_replica_changes"
-        ],
-        "summary": "Get read-only replica change requests",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "ListReadOnlyReplicaChangeRequests",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "description": "If provided, specifies the page offset of returned results",
-            "type": "integer",
-            "default": 1
-          },
-          {
-            "in": "query",
-            "name": "per_page",
-            "description": "If provided, specifies the number of returned results",
-            "type": "integer",
-            "default": 25
-          },
-          {
-            "in": "query",
-            "name": "period",
-            "description": "Filter change requests by named period",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "completed_at",
-            "description": "Filter change requests completed between two ISO 8601 timestamps",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns read-only replica change requests",
-            "schema": {
-              "$ref": "#/definitions/PaginatedPostgresReadOnlyReplicaChangeRequest"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/read-only-replicas": {
-      "get": {
-        "tags": [
-          "Read-only replicas"
-        ],
-        "summary": "List read-only replicas",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "ListReadOnlyReplicas",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns read-only replicas",
-            "schema": {
-              "$ref": "#/definitions/ListReadOnlyReplicas200ResponseSchema"
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Read-only replicas"
-        ],
-        "summary": "Create a read-only replica",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "CreateReadOnlyReplica",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/CreateReadOnlyReplicaRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the new read-only replica",
-            "schema": {
-              "$ref": "#/definitions/PostgresReadOnlyReplica"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/read-only-replicas/{readOnlyReplica}": {
-      "get": {
-        "tags": [
-          "Read-only replicas"
-        ],
-        "summary": "Get a read-only replica",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "GetReadOnlyReplica",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "readOnlyReplica",
-            "description": "The name of the read-only replica",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the read-only replica",
-            "schema": {
-              "$ref": "#/definitions/PostgresReadOnlyReplica"
-            }
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "Read-only replicas"
-        ],
-        "summary": "Update a read-only replica",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "UpdateReadOnlyReplica",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "readOnlyReplica",
-            "description": "The name of the read-only replica",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/UpdateReadOnlyReplicaRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Invalid parameters",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the updated read-only replica",
-            "schema": {
-              "$ref": "#/definitions/PostgresReadOnlyReplica"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Read-only replicas"
-        ],
-        "summary": "Delete a read-only replica",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "DeleteReadOnlyReplica",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "readOnlyReplica",
-            "description": "The name of the read-only replica",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "204": {
-            "description": "Deletes the read-only replica",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          }
-        }
-      }
-    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/resizes": {
       "delete": {
         "tags": [
@@ -15379,8 +16261,8 @@
           },
           {
             "in": "query",
-            "name": "read_only_replica",
-            "description": "Return connection details for this read-only replica",
+            "name": "dedicated_read_replica",
+            "description": "Return connection details for this dedicated read replica",
             "type": "string"
           },
           {
@@ -19528,6 +20410,92 @@
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/vitess-parameters": {
+      "get": {
+        "tags": [
+          "Branch Vitess parameters"
+        ],
+        "summary": "List Vitess parameters",
+        "description": "        Returns the VTGate parameters for the branch and the VTTablet and MySQL parameters for each of its keyspaces, with their default and current values.\n        To change VTGate parameters, use the \u0022create_branch_config_change_request\u0022 endpoint. To change VTTablet or MySQL parameters, use the \u0022create_keyspace_config_change_request\u0022 endpoint.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListBranchVitessParameters",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the organization the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the database the branch belongs to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "The name of the branch",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the Vitess parameters for the branch and its keyspaces",
+            "schema": {
+              "$ref": "#/definitions/ListBranchVitessParameters200Response"
             }
           }
         }
@@ -28984,7 +29952,7 @@
         },
         "has_read_only_replicas": {
           "type": "boolean",
-          "description": "True if the branch has read-only replica servers"
+          "description": "True if the branch has servers dedicated to read traffic"
         },
         "html_url": {
           "type": "string",
@@ -29057,6 +30025,131 @@
           "items": {
             "$ref": "#/definitions/PaginatedSchemaLintErrorDataItem"
           }
+        }
+      }
+    },
+    "PaginatedConfigChangeRequest": {
+      "type": "object",
+      "required": [
+        "type",
+        "current_page",
+        "per_page",
+        "next_page",
+        "next_page_url",
+        "prev_page",
+        "prev_page_url",
+        "data"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022list\u0022 for paginated responses."
+        },
+        "current_page": {
+          "type": "integer",
+          "description": "The current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "description": "The maximum number of results per page"
+        },
+        "next_page": {
+          "type": "integer",
+          "description": "The next page number, or null when this is the last page",
+          "x-nullable": true
+        },
+        "next_page_url": {
+          "type": "string",
+          "description": "The next page of results, or null when this is the last page",
+          "x-nullable": true
+        },
+        "prev_page": {
+          "type": "integer",
+          "description": "The previous page number, or null when this is the first page",
+          "x-nullable": true
+        },
+        "prev_page_url": {
+          "type": "string",
+          "description": "The previous page of results, or null when this is the first page",
+          "x-nullable": true
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaginatedConfigChangeRequestDataItem"
+          }
+        }
+      }
+    },
+    "BranchConfigChangeRequest": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "change_type",
+        "previous_options",
+        "new_options",
+        "error_message",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "keyspace_name",
+        "queued_until",
+        "actor"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the config change request"
+        },
+        "state": {
+          "$ref": "#/definitions/BranchConfigChangeRequestState"
+        },
+        "change_type": {
+          "$ref": "#/definitions/VtgateChangeType"
+        },
+        "previous_options": {
+          "$ref": "#/definitions/BranchConfigChangeRequestPreviousOptionsProperty"
+        },
+        "new_options": {
+          "$ref": "#/definitions/BranchConfigChangeRequestNewOptionsProperty"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message if the change failed",
+          "x-nullable": true
+        },
+        "started_at": {
+          "type": "string",
+          "description": "When the config change started applying",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the config change completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the config change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the config change request was last updated"
+        },
+        "keyspace_name": {
+          "type": "string",
+          "description": "The keyspace name for keyspace-level config changes",
+          "x-nullable": true
+        },
+        "queued_until": {
+          "type": "string",
+          "description": "When the config change is expected to be applied (only set when queued)",
+          "x-nullable": true
+        },
+        "actor": {
+          "$ref": "#/definitions/BranchConfigChangeRequestActor"
         }
       }
     },
@@ -30688,6 +31781,131 @@
         }
       }
     },
+    "PaginatedKeyspaceConfigChangeRequest": {
+      "type": "object",
+      "required": [
+        "type",
+        "current_page",
+        "per_page",
+        "next_page",
+        "next_page_url",
+        "prev_page",
+        "prev_page_url",
+        "data"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022list\u0022 for paginated responses."
+        },
+        "current_page": {
+          "type": "integer",
+          "description": "The current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "description": "The maximum number of results per page"
+        },
+        "next_page": {
+          "type": "integer",
+          "description": "The next page number, or null when this is the last page",
+          "x-nullable": true
+        },
+        "next_page_url": {
+          "type": "string",
+          "description": "The next page of results, or null when this is the last page",
+          "x-nullable": true
+        },
+        "prev_page": {
+          "type": "integer",
+          "description": "The previous page number, or null when this is the first page",
+          "x-nullable": true
+        },
+        "prev_page_url": {
+          "type": "string",
+          "description": "The previous page of results, or null when this is the first page",
+          "x-nullable": true
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItem"
+          }
+        }
+      }
+    },
+    "KeyspaceConfigChangeRequest": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "change_type",
+        "previous_options",
+        "new_options",
+        "error_message",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "keyspace_name",
+        "queued_until",
+        "actor"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the config change request"
+        },
+        "state": {
+          "$ref": "#/definitions/KeyspaceConfigChangeRequestState"
+        },
+        "change_type": {
+          "$ref": "#/definitions/KeyspaceConfigChangeRequestChangeType"
+        },
+        "previous_options": {
+          "$ref": "#/definitions/KeyspaceConfigChangeRequestPreviousOptionsProperty"
+        },
+        "new_options": {
+          "$ref": "#/definitions/KeyspaceConfigChangeRequestNewOptionsProperty"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message if the change failed",
+          "x-nullable": true
+        },
+        "started_at": {
+          "type": "string",
+          "description": "When the config change started applying",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the config change completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the config change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the config change request was last updated"
+        },
+        "keyspace_name": {
+          "type": "string",
+          "description": "The keyspace name for keyspace-level config changes",
+          "x-nullable": true
+        },
+        "queued_until": {
+          "type": "string",
+          "description": "When the config change is expected to be applied (only set when queued)",
+          "x-nullable": true
+        },
+        "actor": {
+          "$ref": "#/definitions/KeyspaceConfigChangeRequestActor"
+        }
+      }
+    },
     "PaginatedKeyspaceResizeRequest": {
       "type": "object",
       "required": [
@@ -30899,11 +32117,7 @@
         "enabled",
         "expires_at",
         "deadline_at",
-        "required",
-        "pending_vitess_version_update",
-        "pending_vitess_version",
-        "pending_mysql_version_update",
-        "pending_mysql_version"
+        "required"
       ],
       "properties": {
         "id": {
@@ -30973,7 +32187,8 @@
         },
         "pending_vitess_version_update": {
           "type": "boolean",
-          "description": "Whether there is a pending Vitess version update"
+          "description": "Whether there is a pending Vitess version update",
+          "x-nullable": true
         },
         "pending_vitess_version": {
           "type": "string",
@@ -30982,7 +32197,8 @@
         },
         "pending_mysql_version_update": {
           "type": "boolean",
-          "description": "Whether there is a pending MySQL version update"
+          "description": "Whether there is a pending MySQL version update",
+          "x-nullable": true
         },
         "pending_mysql_version": {
           "type": "string",
@@ -34054,39 +35270,39 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the read-only replica"
+          "description": "The ID of the dedicated read replica"
         },
         "name": {
           "type": "string",
-          "description": "The name of the read-only replica"
+          "description": "The name of the dedicated read replica"
         },
         "state": {
           "type": "string",
-          "description": "The state of the read-only replica: pending, ready, or deleting"
+          "description": "The state of the dedicated read replica: pending, ready, or deleting"
         },
         "replicas": {
           "type": "integer",
-          "description": "The number of instances serving reads in this read-only replica"
+          "description": "The number of instances serving reads in this dedicated read replica"
         },
         "cluster_name": {
           "type": "string",
-          "description": "The SKU representing the cluster size of the read-only replica"
+          "description": "The SKU representing the cluster size of the dedicated read replica"
         },
         "cluster_display_name": {
           "type": "string",
-          "description": "The SKU representing the cluster size of the read-only replica, for display"
+          "description": "The SKU representing the cluster size of the dedicated read replica, for display"
         },
         "access_host_url": {
           "type": "string",
-          "description": "The database connection host for the read-only replica"
+          "description": "The database connection host for the dedicated read replica"
         },
         "private_access_host_url": {
           "type": "string",
-          "description": "The private database connection host for the read-only replica"
+          "description": "The private database connection host for the dedicated read replica"
         },
         "private_connection_service_name": {
           "type": "string",
-          "description": "The service name to set up private connectivity for the read-only replica",
+          "description": "The service name to set up private connectivity for the dedicated read replica",
           "x-nullable": true
         },
         "minimum_storage_bytes": {
@@ -34124,20 +35340,20 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the read-only replica was created"
+          "description": "When the dedicated read replica was created"
         },
         "updated_at": {
           "type": "string",
-          "description": "When the read-only replica was last updated"
+          "description": "When the dedicated read replica was last updated"
         },
         "ready_at": {
           "type": "string",
-          "description": "When the read-only replica was ready to serve queries",
+          "description": "When the dedicated read replica was ready to serve queries",
           "x-nullable": true
         },
         "ready": {
           "type": "boolean",
-          "description": "Whether or not the read-only replica is ready to serve queries"
+          "description": "Whether or not the dedicated read replica is ready to serve queries"
         },
         "actor": {
           "$ref": "#/definitions/PostgresReadOnlyReplicaActor"
@@ -37254,7 +38470,7 @@
         },
         "has_read_only_replicas": {
           "type": "boolean",
-          "description": "True if the branch has read-only replica servers"
+          "description": "True if the branch has servers dedicated to read traffic"
         },
         "html_url": {
           "type": "string",
@@ -37511,6 +38727,108 @@
           "type": "string",
           "description": "The name of the invalid partition in the schema",
           "x-nullable": true
+        }
+      }
+    },
+    "PaginatedConfigChangeRequestDataItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "change_type",
+        "previous_options",
+        "new_options",
+        "error_message",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "keyspace_name",
+        "queued_until",
+        "actor"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the config change request"
+        },
+        "state": {
+          "$ref": "#/definitions/PaginatedConfigChangeRequestDataItemState"
+        },
+        "change_type": {
+          "$ref": "#/definitions/PaginatedConfigChangeRequestDataItemChangeType"
+        },
+        "previous_options": {
+          "$ref": "#/definitions/PaginatedConfigChangeRequestDataItemPreviousOptionsProperty"
+        },
+        "new_options": {
+          "$ref": "#/definitions/PaginatedConfigChangeRequestDataItemNewOptionsProperty"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message if the change failed",
+          "x-nullable": true
+        },
+        "started_at": {
+          "type": "string",
+          "description": "When the config change started applying",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the config change completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the config change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the config change request was last updated"
+        },
+        "keyspace_name": {
+          "type": "string",
+          "description": "The keyspace name for keyspace-level config changes",
+          "x-nullable": true
+        },
+        "queued_until": {
+          "type": "string",
+          "description": "When the config change is expected to be applied (only set when queued)",
+          "x-nullable": true
+        },
+        "actor": {
+          "$ref": "#/definitions/PaginatedConfigChangeRequestDataItemActor"
+        }
+      }
+    },
+    "BranchConfigChangeRequestPreviousOptions": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "BranchConfigChangeRequestNewOptions": {
+      "type": "object",
+      "description": "The new option values"
+    },
+    "BranchConfigChangeRequestActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
         }
       }
     },
@@ -39046,6 +40364,108 @@
     "InsightsAgentRunSelectedTargetsItem": {
       "type": "object"
     },
+    "PaginatedKeyspaceConfigChangeRequestDataItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "change_type",
+        "previous_options",
+        "new_options",
+        "error_message",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "keyspace_name",
+        "queued_until",
+        "actor"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the config change request"
+        },
+        "state": {
+          "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItemState"
+        },
+        "change_type": {
+          "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItemChangeType"
+        },
+        "previous_options": {
+          "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptionsProperty"
+        },
+        "new_options": {
+          "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItemNewOptionsProperty"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message if the change failed",
+          "x-nullable": true
+        },
+        "started_at": {
+          "type": "string",
+          "description": "When the config change started applying",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the config change completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the config change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the config change request was last updated"
+        },
+        "keyspace_name": {
+          "type": "string",
+          "description": "The keyspace name for keyspace-level config changes",
+          "x-nullable": true
+        },
+        "queued_until": {
+          "type": "string",
+          "description": "When the config change is expected to be applied (only set when queued)",
+          "x-nullable": true
+        },
+        "actor": {
+          "$ref": "#/definitions/PaginatedKeyspaceConfigChangeRequestDataItemActor"
+        }
+      }
+    },
+    "KeyspaceConfigChangeRequestPreviousOptions": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "KeyspaceConfigChangeRequestNewOptions": {
+      "type": "object",
+      "description": "The new option values"
+    },
+    "KeyspaceConfigChangeRequestActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
+        }
+      }
+    },
     "PaginatedKeyspaceResizeRequestDataItem": {
       "type": "object",
       "required": [
@@ -39173,11 +40593,7 @@
         "enabled",
         "expires_at",
         "deadline_at",
-        "required",
-        "pending_vitess_version_update",
-        "pending_vitess_version",
-        "pending_mysql_version_update",
-        "pending_mysql_version"
+        "required"
       ],
       "properties": {
         "id": {
@@ -39247,7 +40663,8 @@
         },
         "pending_vitess_version_update": {
           "type": "boolean",
-          "description": "Whether there is a pending Vitess version update"
+          "description": "Whether there is a pending Vitess version update",
+          "x-nullable": true
         },
         "pending_vitess_version": {
           "type": "string",
@@ -39256,7 +40673,8 @@
         },
         "pending_mysql_version_update": {
           "type": "boolean",
-          "description": "Whether there is a pending MySQL version update"
+          "description": "Whether there is a pending MySQL version update",
+          "x-nullable": true
         },
         "pending_mysql_version": {
           "type": "string",
@@ -42157,7 +43575,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the read-only replica change request"
+          "description": "The ID of the dedicated read replica change request"
         },
         "state": {
           "$ref": "#/definitions/PaginatedPostgresReadOnlyReplicaChangeRequestDataItemState"
@@ -45897,6 +47315,36 @@
       "description": "VTGate configuration options",
       "x-nullable": true
     },
+    "PaginatedConfigChangeRequestDataItemPreviousOptions": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "PaginatedConfigChangeRequestDataItemNewOptions": {
+      "type": "object",
+      "description": "The new option values"
+    },
+    "PaginatedConfigChangeRequestDataItemActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
+        }
+      }
+    },
     "PostgresExtensionDefinitionParametersItemActor": {
       "type": "object",
       "required": [
@@ -46323,6 +47771,36 @@
     },
     "PaginatedInsightsAgentRunDataItemSelectedTargetsItem": {
       "type": "object"
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptions": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemNewOptions": {
+      "type": "object",
+      "description": "The new option values"
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
+        }
+      }
     },
     "PaginatedKeyspaceResizeRequestDataItemActor": {
       "type": "object",
@@ -51098,6 +52576,10 @@
         "replicas_per_cell": {
           "type": "integer",
           "description": "The number of replica servers per cell"
+        },
+        "dedicated_read_replica_id": {
+          "type": "string",
+          "description": "The ID of the dedicated read replica where the bouncer should run"
         }
       }
     },
@@ -51156,6 +52638,48 @@
         "cluster_size": {
           "type": "string",
           "description": "The new size of the database cluster: PS_10, PS_20,\u2026"
+        }
+      }
+    },
+    "CreateBranchConfigChangeRequestRequest": {
+      "type": "object",
+      "required": [
+        "change_type",
+        "options"
+      ],
+      "properties": {
+        "change_type": {
+          "$ref": "#/definitions/VtgateChangeType"
+        },
+        "options": {
+          "$ref": "#/definitions/CreateBranchConfigChangeRequestRequestOptions"
+        }
+      }
+    },
+    "SubmitBranchConfigChangeRequestsRequest": {
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "type": "array",
+          "description": "The IDs of the draft config change requests to submit",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "SubmitBranchConfigChangeRequests200Response": {
+      "type": "object",
+      "required": [
+        "submitted"
+      ],
+      "properties": {
+        "submitted": {
+          "type": "integer",
+          "description": "The number of config change requests submitted"
         }
       }
     },
@@ -51343,6 +52867,59 @@
         }
       }
     },
+    "ListDedicatedReadReplicas200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PostgresReadOnlyReplica"
+      }
+    },
+    "CreateDedicatedReadReplicaRequest": {
+      "type": "object",
+      "required": [
+        "name",
+        "region"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The dedicated read replica name"
+        },
+        "region": {
+          "type": "string",
+          "description": "The region slug for the dedicated read replica"
+        },
+        "replicas": {
+          "type": "integer",
+          "description": "The number of instances serving reads. Defaults to 1."
+        },
+        "cluster_size": {
+          "type": "string",
+          "description": "The cluster size SKU name. Defaults to the primary cluster size."
+        },
+        "storage": {
+          "$ref": "#/definitions/CreateDedicatedReadReplicaRequestStorage"
+        }
+      }
+    },
+    "UpdateDedicatedReadReplicaRequest": {
+      "type": "object",
+      "properties": {
+        "replicas": {
+          "type": "integer",
+          "description": "The number of instances serving reads"
+        },
+        "cluster_size": {
+          "type": "string",
+          "description": "The cluster size SKU name"
+        },
+        "parameters": {
+          "$ref": "#/definitions/UpdateDedicatedReadReplicaRequestParameters"
+        },
+        "storage": {
+          "$ref": "#/definitions/UpdateDedicatedReadReplicaRequestStorage"
+        }
+      }
+    },
     "SetDefaultShardConfigurationProfileRequest": {
       "type": "object",
       "required": [
@@ -51461,6 +53038,21 @@
         },
         "throttler": {
           "$ref": "#/definitions/UpdateKeyspaceRequestThrottler"
+        }
+      }
+    },
+    "CreateKeyspaceConfigChangeRequestRequest": {
+      "type": "object",
+      "required": [
+        "change_type",
+        "options"
+      ],
+      "properties": {
+        "change_type": {
+          "$ref": "#/definitions/CreateKeyspaceConfigChangeRequestRequestChangeType"
+        },
+        "options": {
+          "$ref": "#/definitions/CreateKeyspaceConfigChangeRequestRequestOptions"
         }
       }
     },
@@ -51786,59 +53378,6 @@
         }
       }
     },
-    "ListReadOnlyReplicas200Response": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/PostgresReadOnlyReplica"
-      }
-    },
-    "CreateReadOnlyReplicaRequest": {
-      "type": "object",
-      "required": [
-        "name",
-        "region"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The read-only replica name"
-        },
-        "region": {
-          "type": "string",
-          "description": "The region slug for the read-only replica"
-        },
-        "replicas": {
-          "type": "integer",
-          "description": "The number of instances serving reads. Defaults to 1."
-        },
-        "cluster_size": {
-          "type": "string",
-          "description": "The cluster size SKU name. Defaults to the primary cluster size."
-        },
-        "storage": {
-          "$ref": "#/definitions/CreateReadOnlyReplicaRequestStorage"
-        }
-      }
-    },
-    "UpdateReadOnlyReplicaRequest": {
-      "type": "object",
-      "properties": {
-        "replicas": {
-          "type": "integer",
-          "description": "The number of instances serving reads"
-        },
-        "cluster_size": {
-          "type": "string",
-          "description": "The cluster size SKU name"
-        },
-        "parameters": {
-          "$ref": "#/definitions/UpdateReadOnlyReplicaRequestParameters"
-        },
-        "storage": {
-          "$ref": "#/definitions/UpdateReadOnlyReplicaRequestStorage"
-        }
-      }
-    },
     "UpdateBranchResizeRequestRequest": {
       "type": "object",
       "properties": {
@@ -52144,6 +53683,29 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "ListBranchVitessParameters200Response": {
+      "type": "object",
+      "required": [
+        "type",
+        "vtgate",
+        "keyspaces"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022VitessParameters\u0022."
+        },
+        "vtgate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ListBranchVitessParameters200ResponseVtgateItem"
+          }
+        },
+        "keyspaces": {
+          "$ref": "#/definitions/ListBranchVitessParameters200ResponseKeyspaces"
         }
       }
     },
@@ -52698,6 +54260,12 @@
         "$ref": "#/definitions/NekiShardAssignment"
       }
     },
+    "ListDedicatedReadReplicas200ResponseSchema": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PostgresReadOnlyReplica"
+      }
+    },
     "ListExtensions200ResponseSchema": {
       "type": "array",
       "items": {
@@ -52714,12 +54282,6 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/PostgresClusterParameter"
-      }
-    },
-    "ListReadOnlyReplicas200ResponseSchema": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/PostgresReadOnlyReplica"
       }
     },
     "ListRouterSizeSkus200ResponseSchema": {
@@ -52776,6 +54338,14 @@
       "type": "object",
       "description": "VTGate configuration options"
     },
+    "BranchConfigChangeRequestPreviousOptionsProperty": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "BranchConfigChangeRequestNewOptionsProperty": {
+      "type": "object",
+      "description": "The new option values"
+    },
     "NekiDataTopologyDataTopologyProperty": {
       "type": "object",
       "description": "The data topology for the branch"
@@ -52798,6 +54368,14 @@
     },
     "InsightsAgentRunSelectedTargetsItemProperty": {
       "type": "object"
+    },
+    "KeyspaceConfigChangeRequestPreviousOptionsProperty": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "KeyspaceConfigChangeRequestNewOptionsProperty": {
+      "type": "object",
+      "description": "The new option values"
     },
     "NekiChangeRequestParametersProperty": {
       "type": "object",
@@ -52887,6 +54465,14 @@
       "type": "object",
       "description": "VTGate configuration options"
     },
+    "PaginatedConfigChangeRequestDataItemPreviousOptionsProperty": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "PaginatedConfigChangeRequestDataItemNewOptionsProperty": {
+      "type": "object",
+      "description": "The new option values"
+    },
     "PaginatedDatabaseBranchKeyspaceDataItemMysqldOptionsProperty": {
       "type": "object",
       "description": "MySQL daemon configuration options"
@@ -52905,6 +54491,14 @@
     },
     "PaginatedInsightsAgentRunDataItemSelectedTargetsItemProperty": {
       "type": "object"
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptionsProperty": {
+      "type": "object",
+      "description": "The previous option values"
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemNewOptionsProperty": {
+      "type": "object",
+      "description": "The new option values"
     },
     "MetricSeriesSeriesItemLabelsProperty": {
       "type": "object",
@@ -53095,6 +54689,10 @@
         }
       }
     },
+    "CreateBranchConfigChangeRequestRequestOptions": {
+      "type": "object",
+      "description": "Parameter names and the values to set them to. Set a value to \u0060null\u0060 to reset the parameter to its default."
+    },
     "CreateShardConfigurationProfileRequestStorage": {
       "type": "object",
       "properties": {
@@ -53153,6 +54751,60 @@
       "type": "object",
       "description": "The data topology JSON to set for the branch"
     },
+    "CreateDedicatedReadReplicaRequestStorage": {
+      "type": "object",
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes."
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling."
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled."
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS."
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s."
+        }
+      }
+    },
+    "UpdateDedicatedReadReplicaRequestParameters": {
+      "type": "object",
+      "description": "Configuration parameters nested by namespace (e.g., {\u0022pgconf\u0022: {\u0022max_connections\u0022: \u0022300\u0022}}). Values must be greater than or equal to the primary\u0027s."
+    },
+    "UpdateDedicatedReadReplicaRequestStorage": {
+      "type": "object",
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes."
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling."
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled."
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS."
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s."
+        }
+      }
+    },
     "UpdateKeyspaceRequestReplicationDurabilityConstraints": {
       "type": "object",
       "properties": {
@@ -53191,6 +54843,10 @@
           "description": "Replication lag in seconds that trips the throttler. Must be \u003E= 0"
         }
       }
+    },
+    "CreateKeyspaceConfigChangeRequestRequestOptions": {
+      "type": "object",
+      "description": "Parameter names and the values to set them to. Set a value to \u0060null\u0060 to reset the parameter to its default."
     },
     "GetKeyspaceRolloutStatus200ResponseShardsItem": {
       "type": "object",
@@ -53393,60 +55049,6 @@
         }
       }
     },
-    "CreateReadOnlyReplicaRequestStorage": {
-      "type": "object",
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes."
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling."
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled."
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS."
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s."
-        }
-      }
-    },
-    "UpdateReadOnlyReplicaRequestParameters": {
-      "type": "object",
-      "description": "Configuration parameters nested by namespace (e.g., {\u0022pgconf\u0022: {\u0022max_connections\u0022: \u0022300\u0022}}). Values must be greater than or equal to the primary\u0027s."
-    },
-    "UpdateReadOnlyReplicaRequestStorage": {
-      "type": "object",
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes."
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling."
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled."
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS."
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s."
-        }
-      }
-    },
     "UpdateRouterRequestParameters": {
       "type": "object",
       "description": "Router parameters nested by namespace (e.g., {\u0022router\u0022: {\u0022replication-lag-tolerable-max\u0022: \u002215m\u0022}})"
@@ -53476,6 +55078,77 @@
     "UpdateSidecarRequestParameters": {
       "type": "object",
       "description": "Sidecar parameters nested by namespace (e.g., {\u0022sidecar\u0022: {\u0022pool-capacity\u0022: \u0022100\u0022}})"
+    },
+    "ListBranchVitessParameters200ResponseVtgateItem": {
+      "type": "object",
+      "required": [
+        "type",
+        "name",
+        "component",
+        "description",
+        "category",
+        "parameter_type",
+        "default_value",
+        "value",
+        "override"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The object type. Always \u0022VitessParameterDefinition\u0022."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the parameter"
+        },
+        "title": {
+          "type": "string",
+          "description": "The display name of the parameter"
+        },
+        "component": {
+          "$ref": "#/definitions/ListBranchVitessParameters200ResponseVtgateItemComponent"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the parameter"
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the parameter"
+        },
+        "parameter_type": {
+          "type": "string",
+          "description": "The type of the parameter\u0027s value: \u0060boolean\u0060, \u0060bytes\u0060, \u0060duration\u0060, \u0060float\u0060, \u0060integer\u0060, \u0060select\u0060, or \u0060string\u0060"
+        },
+        "default_value": {
+          "type": "string",
+          "description": "The default value of the parameter, which can depend on the cluster size",
+          "x-nullable": true
+        },
+        "value": {
+          "type": "string",
+          "description": "The current value of the parameter",
+          "x-nullable": true
+        },
+        "override": {
+          "type": "boolean",
+          "description": "Whether the parameter has been set explicitly instead of using its default"
+        },
+        "options": {
+          "type": "array",
+          "description": "The allowed values for \u0060select\u0060 parameters",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ListBranchVitessParameters200ResponseKeyspaces": {
+      "type": "object",
+      "description": "The parameters for each keyspace, keyed by keyspace name. Each value has \u0060vttablet\u0060 and \u0060mysqld\u0060 arrays of parameters in the same format as \u0060vtgate\u0060.",
+      "additionalProperties": {
+        "$ref": "#/definitions/ListBranchVitessParameters200ResponseKeyspacesAdditionalProperties"
+      }
     },
     "GetVtctldOperation200ResponseMetadata": {
       "type": "object",
@@ -53556,6 +55229,25 @@
         "$ref": "#/definitions/GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties"
       }
     },
+    "ListBranchVitessParameters200ResponseKeyspacesAdditionalProperties": {
+      "type": "object",
+      "properties": {
+        "vttablet": {
+          "type": "array",
+          "description": "The VTTablet parameters for the keyspace",
+          "items": {
+            "$ref": "#/definitions/ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesVttabletItem"
+          }
+        },
+        "mysqld": {
+          "type": "array",
+          "description": "The MySQL parameters for the keyspace",
+          "items": {
+            "$ref": "#/definitions/ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesMysqldItem"
+          }
+        }
+      }
+    },
     "CheckDeployRequestStorage200ResponseStorageReportAdditionalProperties": {
       "type": "object",
       "description": "Per-shard storage details. Keys are shard names.",
@@ -53587,6 +55279,12 @@
       }
     },
     "GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties": {
+      "type": "object"
+    },
+    "ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesVttabletItem": {
+      "type": "object"
+    },
+    "ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesMysqldItem": {
       "type": "object"
     },
     "CheckDeployRequestStorage200ResponseStorageReportAdditionalPropertiesAdditionalProperties": {
@@ -53826,6 +55524,72 @@
           {
             "value": "ready",
             "name": "Ready"
+          }
+        ]
+      }
+    },
+    "BranchConfigChangeRequestState": {
+      "type": "string",
+      "description": "The state of the config change request",
+      "enum": [
+        "draft",
+        "pending",
+        "queued",
+        "applying",
+        "completed",
+        "failed",
+        "canceled"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "BranchConfigChangeRequestState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "queued",
+            "name": "Queued"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "failed",
+            "name": "Failed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          }
+        ]
+      }
+    },
+    "VtgateChangeType": {
+      "type": "string",
+      "description": "The type of configuration being changed",
+      "enum": [
+        "vtgate"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "VtgateChangeType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "vtgate",
+            "name": "Vtgate"
           }
         ]
       }
@@ -54232,6 +55996,77 @@
           {
             "value": "month",
             "name": "Month"
+          }
+        ]
+      }
+    },
+    "KeyspaceConfigChangeRequestState": {
+      "type": "string",
+      "description": "The state of the config change request",
+      "enum": [
+        "draft",
+        "pending",
+        "queued",
+        "applying",
+        "completed",
+        "failed",
+        "canceled"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "KeyspaceConfigChangeRequestState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "queued",
+            "name": "Queued"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "failed",
+            "name": "Failed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          }
+        ]
+      }
+    },
+    "KeyspaceConfigChangeRequestChangeType": {
+      "type": "string",
+      "description": "The type of configuration being changed",
+      "enum": [
+        "mysqld",
+        "vttablet"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "KeyspaceConfigChangeRequestChangeType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
           }
         ]
       }
@@ -56145,6 +57980,82 @@
         ]
       }
     },
+    "PaginatedConfigChangeRequestDataItemState": {
+      "type": "string",
+      "description": "The state of the config change request",
+      "enum": [
+        "draft",
+        "pending",
+        "queued",
+        "applying",
+        "completed",
+        "failed",
+        "canceled"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedConfigChangeRequestDataItemState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "queued",
+            "name": "Queued"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "failed",
+            "name": "Failed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          }
+        ]
+      }
+    },
+    "PaginatedConfigChangeRequestDataItemChangeType": {
+      "type": "string",
+      "description": "The type of configuration being changed",
+      "enum": [
+        "vtgate",
+        "mysqld",
+        "vttablet"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedConfigChangeRequestDataItemChangeType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "vtgate",
+            "name": "Vtgate"
+          },
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
+          }
+        ]
+      }
+    },
     "PostgresExtensionDefinitionParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
@@ -56520,6 +58431,77 @@
           {
             "value": "cancelled",
             "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemState": {
+      "type": "string",
+      "description": "The state of the config change request",
+      "enum": [
+        "draft",
+        "pending",
+        "queued",
+        "applying",
+        "completed",
+        "failed",
+        "canceled"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedKeyspaceConfigChangeRequestDataItemState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "queued",
+            "name": "Queued"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "failed",
+            "name": "Failed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          }
+        ]
+      }
+    },
+    "PaginatedKeyspaceConfigChangeRequestDataItemChangeType": {
+      "type": "string",
+      "description": "The type of configuration being changed",
+      "enum": [
+        "mysqld",
+        "vttablet"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedKeyspaceConfigChangeRequestDataItemChangeType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
           }
         ]
       }
@@ -59476,6 +61458,29 @@
         ]
       }
     },
+    "CreateKeyspaceConfigChangeRequestRequestChangeType": {
+      "type": "string",
+      "description": "The component to configure: \u0060vttablet\u0060 or \u0060mysqld\u0060",
+      "enum": [
+        "mysqld",
+        "vttablet"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "CreateKeyspaceConfigChangeRequestRequestChangeType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
+          }
+        ]
+      }
+    },
     "CreatePasswordRequestRole": {
       "type": "string",
       "description": "The database role of the password (i.e. admin)",
@@ -59833,6 +61838,34 @@
         ]
       }
     },
+    "ListBranchVitessParameters200ResponseVtgateItemComponent": {
+      "type": "string",
+      "description": "The component the parameter configures",
+      "enum": [
+        "vtgate",
+        "vttablet",
+        "mysqld"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "ListBranchVitessParameters200ResponseVtgateItemComponent",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "vtgate",
+            "name": "Vtgate"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
+          },
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          }
+        ]
+      }
+    },
     "ListClusterSizeSkusEngineParameter": {
       "type": "string",
       "enum": [
@@ -59997,6 +62030,63 @@
       "additionalProperties": false,
       "x-ms-enum": {
         "name": "ListShardConfigurationProfileChangeRequestsPeriodParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "15m",
+            "name": "Value15M"
+          },
+          {
+            "value": "1h",
+            "name": "Value1H"
+          },
+          {
+            "value": "3h",
+            "name": "Value3H"
+          },
+          {
+            "value": "6h",
+            "name": "Value6H"
+          },
+          {
+            "value": "12h",
+            "name": "Value12H"
+          },
+          {
+            "value": "1d",
+            "name": "Value1D"
+          },
+          {
+            "value": "2d",
+            "name": "Value2D"
+          },
+          {
+            "value": "7d",
+            "name": "Value7D"
+          },
+          {
+            "value": "8d",
+            "name": "Value8D"
+          }
+        ]
+      }
+    },
+    "ListDedicatedReadReplicaChangeRequestsPeriodParameter": {
+      "type": "string",
+      "enum": [
+        "15m",
+        "1h",
+        "3h",
+        "6h",
+        "12h",
+        "1d",
+        "2d",
+        "7d",
+        "8d"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "ListDedicatedReadReplicaChangeRequestsPeriodParameter",
         "modelAsString": false,
         "values": [
           {
@@ -62912,63 +65002,6 @@
         ]
       }
     },
-    "ListReadOnlyReplicaChangeRequestsPeriodParameter": {
-      "type": "string",
-      "enum": [
-        "15m",
-        "1h",
-        "3h",
-        "6h",
-        "12h",
-        "1d",
-        "2d",
-        "7d",
-        "8d"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "ListReadOnlyReplicaChangeRequestsPeriodParameter",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "15m",
-            "name": "Value15M"
-          },
-          {
-            "value": "1h",
-            "name": "Value1H"
-          },
-          {
-            "value": "3h",
-            "name": "Value3H"
-          },
-          {
-            "value": "6h",
-            "name": "Value6H"
-          },
-          {
-            "value": "12h",
-            "name": "Value12H"
-          },
-          {
-            "value": "1d",
-            "name": "Value1D"
-          },
-          {
-            "value": "2d",
-            "name": "Value2D"
-          },
-          {
-            "value": "7d",
-            "name": "Value7D"
-          },
-          {
-            "value": "8d",
-            "name": "Value8D"
-          }
-        ]
-      }
-    },
     "ListRouterChangeRequestsPeriodParameter": {
       "type": "string",
       "enum": [
@@ -63319,6 +65352,10 @@
       "description": "          Resources for managing cluster configuration parameters.\n"
     },
     {
+      "name": "Branch Vitess parameters",
+      "description": "          Returns all editable Vitess parameter definitions with their current effective values for a branch.\n"
+    },
+    {
       "name": "Database branch keyspaces",
       "description": "          Resources for managing keyspaces.\n"
     },
@@ -63407,8 +65444,8 @@
       "description": "          Resources for downloading query insights data.\n"
     },
     {
-      "name": "Read-only replicas",
-      "description": "          Resources for managing Postgres read-only replicas.\n"
+      "name": "Dedicated read replicas",
+      "description": "          Resources for managing Postgres dedicated read replicas.\n"
     },
     {
       "name": "Roles",
