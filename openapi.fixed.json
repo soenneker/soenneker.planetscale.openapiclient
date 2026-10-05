@@ -736,7 +736,7 @@
           "Databases"
         ],
         "summary": "List databases",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
         "operationId": "ListDatabases",
         "produces": [
           "application/json"
@@ -753,6 +753,12 @@
             "in": "query",
             "name": "q",
             "description": "Search term to filter databases by name",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "kind",
+            "description": "Filter databases by kind",
             "type": "string"
           },
           {
@@ -908,7 +914,7 @@
           "Databases"
         ],
         "summary": "Get a database",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "GetDatabase",
         "produces": [
           "application/json"
@@ -4455,6 +4461,12 @@
             "description": "If provided, specifies the number of returned results",
             "type": "integer",
             "default": 25
+          },
+          {
+            "in": "query",
+            "name": "change_type",
+            "description": "Only return config change requests of this type",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4795,7 +4807,7 @@
         "tags": [
           "Branch config changes"
         ],
-        "summary": "Cancel a draft branch config change request",
+        "summary": "Cancel a draft or pending branch config change request",
         "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_branch\u0060\n\n",
         "operationId": "CancelBranchConfigChangeRequest",
         "produces": [
@@ -8146,482 +8158,6 @@
             "description": "Returns query statistics summaries",
             "schema": {
               "$ref": "#/definitions/PaginatedQuerySummary"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs": {
-      "get": {
-        "tags": [
-          "InsightsAgentRuns"
-        ],
-        "summary": "List Insights agent runs",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_databases\u0060, \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
-        "operationId": "ListInsightsAgentRuns",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "description": "If provided, specifies the page offset of returned results",
-            "type": "integer",
-            "default": 1
-          },
-          {
-            "in": "query",
-            "name": "per_page",
-            "description": "If provided, specifies the number of returned results",
-            "type": "integer",
-            "default": 25
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns Insights agent runs",
-            "schema": {
-              "$ref": "#/definitions/PaginatedInsightsAgentRun"
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "InsightsAgentRuns"
-        ],
-        "summary": "Create an Insights agent run",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_databases\u0060, \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "CreateInsightsAgentRun",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/CreateInsightsAgentRunRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "201": {
-            "description": "Returns the created Insights agent run",
-            "schema": {
-              "$ref": "#/definitions/InsightsAgentRun"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs/{id}": {
-      "get": {
-        "tags": [
-          "InsightsAgentRuns"
-        ],
-        "summary": "Get an Insights agent run",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_databases\u0060, \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
-        "operationId": "GetInsightsAgentRun",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "description": "The Insights agent run ID",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns an Insights agent run",
-            "schema": {
-              "$ref": "#/definitions/InsightsAgentRun"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/schedules": {
-      "get": {
-        "tags": [
-          "Insights Agent schedules"
-        ],
-        "summary": "List Insights Agent schedules",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_databases\u0060, \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
-        "operationId": "ListInsightsAgentSchedules",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns Insights Agent schedules",
-            "schema": {
-              "$ref": "#/definitions/ListInsightsAgentSchedules200ResponseSchema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/schedules/{runType}": {
-      "patch": {
-        "tags": [
-          "Insights Agent schedules"
-        ],
-        "summary": "Update an Insights Agent schedule",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "UpdateInsightsAgentSchedule",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "runType",
-            "description": "The scheduled run type",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/UpdateInsightsAgentScheduleRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the updated Insights Agent schedule",
-            "schema": {
-              "$ref": "#/definitions/InsightsAgentSchedule"
             }
           }
         }
@@ -23257,7 +22793,7 @@
           "Databases"
         ],
         "summary": "List read-only regions",
-        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
+        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
         "operationId": "ListReadOnlyRegions",
         "produces": [
           "application/json"
@@ -23350,7 +22886,7 @@
           "Databases"
         ],
         "summary": "List database regions",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabaseRegions",
         "produces": [
           "application/json"
@@ -30153,16 +29689,16 @@
         }
       }
     },
-    "PostgresExtensionDefinition": {
+    "PostgresExtension": {
       "type": "object",
       "required": [
         "name",
         "can_enable",
         "description",
         "internal",
-        "requirements",
-        "url",
-        "parameters"
+        "parameters",
+        "requires_cluster_update",
+        "url"
       ],
       "properties": {
         "name": {
@@ -30186,31 +29722,31 @@
           "type": "boolean",
           "description": "The internal state of the extension"
         },
-        "requirements": {
-          "$ref": "#/definitions/PostgresExtensionDefinitionRequirements"
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostgresExtensionParametersItem"
+          }
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the extension can be used"
         },
         "url": {
           "type": "string",
           "description": "The URL of the extension"
-        },
-        "parameters": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PostgresExtensionDefinitionParametersItem"
-          }
         }
       }
     },
-    "PostgresClusterParameter": {
+    "PostgresParameter": {
       "type": "object",
       "required": [
         "name",
         "display_name",
         "namespace",
+        "advanced",
         "category",
         "description",
-        "extension",
-        "immutable",
         "parameter_type",
         "default_value",
         "value",
@@ -30218,13 +29754,15 @@
         "created_at",
         "updated_at",
         "restart",
-        "max",
-        "min",
         "url",
-        "options",
         "actor"
       ],
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the parameter",
+          "x-nullable": true
+        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -30234,34 +29772,38 @@
           "description": "The display name of the parameter"
         },
         "namespace": {
-          "$ref": "#/definitions/PostgresClusterParameterNamespace"
+          "$ref": "#/definitions/PostgresParameterNamespace"
+        },
+        "advanced": {
+          "type": "boolean",
+          "description": "Whether the parameter is advanced"
         },
         "category": {
           "type": "string",
-          "description": "The category of the parameter"
+          "description": "The category of the parameter",
+          "x-nullable": true
         },
         "description": {
           "type": "string",
           "description": "The description of the parameter"
         },
-        "extension": {
-          "type": "boolean",
-          "description": "Configures an extension"
-        },
-        "immutable": {
-          "type": "boolean",
-          "description": "Whether the parameter can be changed"
-        },
         "parameter_type": {
-          "$ref": "#/definitions/PostgresClusterParameterParameterType"
+          "$ref": "#/definitions/PostgresParameterParameterType"
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
+        },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -30269,37 +29811,50 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
-          "description": "True if processes require a server restart on change"
+          "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
           "type": "number",
-          "description": "The maximum value of the parameter"
+          "description": "The maximum value of the parameter",
+          "x-nullable": true
         },
         "min": {
           "type": "number",
-          "description": "The minimum value of the parameter"
+          "description": "The minimum value of the parameter",
+          "x-nullable": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Valid options for the parameter value. Null represents an unset value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
+        },
+        "units": {
+          "type": "array",
+          "description": "The units of the parameter value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
         },
         "url": {
           "type": "string",
           "description": "The URL of the parameter"
         },
-        "options": {
-          "type": "array",
-          "description": "Valid options for the parameter value",
-          "items": {
-            "type": "string"
-          }
-        },
         "actor": {
-          "$ref": "#/definitions/PostgresClusterParameterActor"
+          "$ref": "#/definitions/PostgresParameterActor"
         }
       }
     },
@@ -31546,241 +31101,6 @@
         }
       }
     },
-    "PaginatedInsightsAgentRun": {
-      "type": "object",
-      "required": [
-        "type",
-        "current_page",
-        "per_page",
-        "next_page",
-        "next_page_url",
-        "prev_page",
-        "prev_page_url",
-        "data"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "The response type. Always \u0022list\u0022 for paginated responses."
-        },
-        "current_page": {
-          "type": "integer",
-          "description": "The current page number"
-        },
-        "per_page": {
-          "type": "integer",
-          "description": "The maximum number of results per page"
-        },
-        "next_page": {
-          "type": "integer",
-          "description": "The next page number, or null when this is the last page",
-          "x-nullable": true
-        },
-        "next_page_url": {
-          "type": "string",
-          "description": "The next page of results, or null when this is the last page",
-          "x-nullable": true
-        },
-        "prev_page": {
-          "type": "integer",
-          "description": "The previous page number, or null when this is the first page",
-          "x-nullable": true
-        },
-        "prev_page_url": {
-          "type": "string",
-          "description": "The previous page of results, or null when this is the first page",
-          "x-nullable": true
-        },
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PaginatedInsightsAgentRunDataItem"
-          }
-        }
-      }
-    },
-    "InsightsAgentRun": {
-      "type": "object",
-      "required": [
-        "id",
-        "number",
-        "scheduled",
-        "type",
-        "state",
-        "repository",
-        "agent",
-        "schedule_id",
-        "scheduled_for",
-        "selected_targets",
-        "outcome",
-        "title",
-        "summary",
-        "pull_request_url",
-        "failure_message",
-        "execution_duration_ms",
-        "cost",
-        "failure_phase",
-        "started_at",
-        "finished_at",
-        "created_at",
-        "updated_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The Insights agent run ID"
-        },
-        "number": {
-          "type": "integer",
-          "description": "The number of the Insights agent run"
-        },
-        "scheduled": {
-          "type": "boolean",
-          "description": "Whether the run was started by a schedule"
-        },
-        "type": {
-          "$ref": "#/definitions/InsightsAgentRunType"
-        },
-        "state": {
-          "$ref": "#/definitions/InsightsAgentRunState"
-        },
-        "repository": {
-          "$ref": "#/definitions/InsightsAgentRunRepositoryProperty"
-        },
-        "agent": {
-          "$ref": "#/definitions/InsightsAgentRunAgentProperty"
-        },
-        "schedule_id": {
-          "type": "string",
-          "description": "The schedule that created the run",
-          "x-nullable": true
-        },
-        "scheduled_for": {
-          "type": "string",
-          "description": "The schedule occurrence claimed by the run",
-          "x-nullable": true
-        },
-        "selected_targets": {
-          "type": "array",
-          "description": "The query patterns or schema recommendations selected for the run",
-          "items": {
-            "$ref": "#/definitions/InsightsAgentRunSelectedTargetsItemProperty"
-          }
-        },
-        "outcome": {
-          "type": "string",
-          "description": "The run outcome",
-          "x-nullable": true
-        },
-        "title": {
-          "type": "string",
-          "description": "The agent result title",
-          "x-nullable": true
-        },
-        "summary": {
-          "type": "string",
-          "description": "The agent result summary",
-          "x-nullable": true
-        },
-        "pull_request_url": {
-          "type": "string",
-          "description": "The pull request created by the run",
-          "x-nullable": true
-        },
-        "failure_message": {
-          "type": "string",
-          "description": "The run failure",
-          "x-nullable": true
-        },
-        "execution_duration_ms": {
-          "type": "number",
-          "description": "The run execution duration in milliseconds",
-          "x-nullable": true
-        },
-        "cost": {
-          "type": "string",
-          "description": "How much this run cost, as a stringified decimal to preserve precision",
-          "x-nullable": true
-        },
-        "failure_phase": {
-          "type": "string",
-          "description": "The phase where the run failed",
-          "x-nullable": true
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When execution started",
-          "x-nullable": true
-        },
-        "finished_at": {
-          "type": "string",
-          "description": "When execution finished",
-          "x-nullable": true
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the run was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the run was last updated"
-        }
-      }
-    },
-    "InsightsAgentSchedule": {
-      "type": "object",
-      "required": [
-        "id",
-        "run_type",
-        "enabled",
-        "frequency_unit",
-        "schedule_time",
-        "time_zone",
-        "day_of_week",
-        "day_of_month",
-        "next_run_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The schedule ID",
-          "x-nullable": true
-        },
-        "run_type": {
-          "$ref": "#/definitions/InsightsAgentScheduleRunType"
-        },
-        "enabled": {
-          "type": "boolean",
-          "description": "Whether the schedule is enabled"
-        },
-        "frequency_unit": {
-          "$ref": "#/definitions/InsightsAgentScheduleFrequencyUnit"
-        },
-        "schedule_time": {
-          "type": "string",
-          "description": "The local time of day in HH:MM format"
-        },
-        "time_zone": {
-          "type": "string",
-          "description": "The IANA time zone"
-        },
-        "day_of_week": {
-          "type": "integer",
-          "description": "The weekday for weekly schedules",
-          "x-nullable": true
-        },
-        "day_of_month": {
-          "type": "integer",
-          "description": "The day of month for monthly schedules",
-          "x-nullable": true
-        },
-        "next_run_at": {
-          "type": "string",
-          "description": "When the schedule will run next",
-          "x-nullable": true
-        }
-      }
-    },
     "PaginatedKeyspaceConfigChangeRequest": {
       "type": "object",
       "required": [
@@ -32297,7 +31617,6 @@
     "NekiParameter": {
       "type": "object",
       "required": [
-        "id",
         "name",
         "display_name",
         "namespace",
@@ -32352,6 +31671,11 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
+          "x-nullable": true
+        },
         "value": {
           "type": "string",
           "description": "The configured value of the parameter",
@@ -32363,11 +31687,13 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
@@ -33007,7 +32333,7 @@
         }
       }
     },
-    "NekiExtensionDefinition": {
+    "NekiExtension": {
       "type": "object",
       "required": [
         "name",
@@ -33015,7 +32341,7 @@
         "description",
         "internal",
         "parameters",
-        "requirements",
+        "requires_cluster_update",
         "url"
       ],
       "properties": {
@@ -33043,11 +32369,12 @@
         "parameters": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/NekiExtensionDefinitionParametersItem"
+            "$ref": "#/definitions/NekiExtensionParametersItem"
           }
         },
-        "requirements": {
-          "$ref": "#/definitions/NekiExtensionDefinitionRequirements"
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the extension can be used"
         },
         "url": {
           "type": "string",
@@ -38832,26 +38159,15 @@
         }
       }
     },
-    "PostgresExtensionDefinitionRequirements": {
-      "type": "object",
-      "properties": {
-        "postgres_image_version": {
-          "type": "string",
-          "description": "The Postgres image version required to use the extension",
-          "x-nullable": true
-        }
-      }
-    },
-    "PostgresExtensionDefinitionParametersItem": {
+    "PostgresExtensionParametersItem": {
       "type": "object",
       "required": [
         "name",
         "display_name",
         "namespace",
+        "advanced",
         "category",
         "description",
-        "extension",
-        "immutable",
         "parameter_type",
         "default_value",
         "value",
@@ -38859,13 +38175,15 @@
         "created_at",
         "updated_at",
         "restart",
-        "max",
-        "min",
         "url",
-        "options",
         "actor"
       ],
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the parameter",
+          "x-nullable": true
+        },
         "name": {
           "type": "string",
           "description": "The name of the parameter"
@@ -38875,34 +38193,38 @@
           "description": "The display name of the parameter"
         },
         "namespace": {
-          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemNamespace"
+          "$ref": "#/definitions/PostgresExtensionParametersItemNamespace"
+        },
+        "advanced": {
+          "type": "boolean",
+          "description": "Whether the parameter is advanced"
         },
         "category": {
           "type": "string",
-          "description": "The category of the parameter"
+          "description": "The category of the parameter",
+          "x-nullable": true
         },
         "description": {
           "type": "string",
           "description": "The description of the parameter"
         },
-        "extension": {
-          "type": "boolean",
-          "description": "Configures an extension"
-        },
-        "immutable": {
-          "type": "boolean",
-          "description": "Whether the parameter can be changed"
-        },
         "parameter_type": {
-          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemParameterType"
+          "$ref": "#/definitions/PostgresExtensionParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
+        },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -38910,41 +38232,54 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
-          "description": "True if processes require a server restart on change"
+          "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
           "type": "number",
-          "description": "The maximum value of the parameter"
+          "description": "The maximum value of the parameter",
+          "x-nullable": true
         },
         "min": {
           "type": "number",
-          "description": "The minimum value of the parameter"
+          "description": "The minimum value of the parameter",
+          "x-nullable": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Valid options for the parameter value. Null represents an unset value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
+        },
+        "units": {
+          "type": "array",
+          "description": "The units of the parameter value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
         },
         "url": {
           "type": "string",
           "description": "The URL of the parameter"
         },
-        "options": {
-          "type": "array",
-          "description": "Valid options for the parameter value",
-          "items": {
-            "type": "string"
-          }
-        },
         "actor": {
-          "$ref": "#/definitions/PostgresExtensionDefinitionParametersItemActor"
+          "$ref": "#/definitions/PostgresExtensionParametersItemActor"
         }
       }
     },
-    "PostgresClusterParameterActor": {
+    "PostgresParameterActor": {
       "type": "object",
       "required": [
         "id",
@@ -40224,146 +39559,6 @@
         }
       }
     },
-    "PaginatedInsightsAgentRunDataItem": {
-      "type": "object",
-      "required": [
-        "id",
-        "number",
-        "scheduled",
-        "type",
-        "state",
-        "repository",
-        "agent",
-        "schedule_id",
-        "scheduled_for",
-        "selected_targets",
-        "outcome",
-        "title",
-        "summary",
-        "pull_request_url",
-        "failure_message",
-        "execution_duration_ms",
-        "cost",
-        "failure_phase",
-        "started_at",
-        "finished_at",
-        "created_at",
-        "updated_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The Insights agent run ID"
-        },
-        "number": {
-          "type": "integer",
-          "description": "The number of the Insights agent run"
-        },
-        "scheduled": {
-          "type": "boolean",
-          "description": "Whether the run was started by a schedule"
-        },
-        "type": {
-          "$ref": "#/definitions/PaginatedInsightsAgentRunDataItemType"
-        },
-        "state": {
-          "$ref": "#/definitions/PaginatedInsightsAgentRunDataItemState"
-        },
-        "repository": {
-          "$ref": "#/definitions/PaginatedInsightsAgentRunDataItemRepositoryProperty"
-        },
-        "agent": {
-          "$ref": "#/definitions/PaginatedInsightsAgentRunDataItemAgentProperty"
-        },
-        "schedule_id": {
-          "type": "string",
-          "description": "The schedule that created the run",
-          "x-nullable": true
-        },
-        "scheduled_for": {
-          "type": "string",
-          "description": "The schedule occurrence claimed by the run",
-          "x-nullable": true
-        },
-        "selected_targets": {
-          "type": "array",
-          "description": "The query patterns or schema recommendations selected for the run",
-          "items": {
-            "$ref": "#/definitions/PaginatedInsightsAgentRunDataItemSelectedTargetsItemProperty"
-          }
-        },
-        "outcome": {
-          "type": "string",
-          "description": "The run outcome",
-          "x-nullable": true
-        },
-        "title": {
-          "type": "string",
-          "description": "The agent result title",
-          "x-nullable": true
-        },
-        "summary": {
-          "type": "string",
-          "description": "The agent result summary",
-          "x-nullable": true
-        },
-        "pull_request_url": {
-          "type": "string",
-          "description": "The pull request created by the run",
-          "x-nullable": true
-        },
-        "failure_message": {
-          "type": "string",
-          "description": "The run failure",
-          "x-nullable": true
-        },
-        "execution_duration_ms": {
-          "type": "number",
-          "description": "The run execution duration in milliseconds",
-          "x-nullable": true
-        },
-        "cost": {
-          "type": "string",
-          "description": "How much this run cost, as a stringified decimal to preserve precision",
-          "x-nullable": true
-        },
-        "failure_phase": {
-          "type": "string",
-          "description": "The phase where the run failed",
-          "x-nullable": true
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When execution started",
-          "x-nullable": true
-        },
-        "finished_at": {
-          "type": "string",
-          "description": "When execution finished",
-          "x-nullable": true
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the run was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the run was last updated"
-        }
-      }
-    },
-    "InsightsAgentRunRepository": {
-      "type": "object",
-      "description": "The repository snapshot and analyzed commit"
-    },
-    "InsightsAgentRunAgent": {
-      "type": "object",
-      "description": "The agent execution snapshot",
-      "x-nullable": true
-    },
-    "InsightsAgentRunSelectedTargetsItem": {
-      "type": "object"
-    },
     "PaginatedKeyspaceConfigChangeRequestDataItem": {
       "type": "object",
       "required": [
@@ -41270,10 +40465,9 @@
         }
       }
     },
-    "NekiExtensionDefinitionParametersItem": {
+    "NekiExtensionParametersItem": {
       "type": "object",
       "required": [
-        "id",
         "name",
         "display_name",
         "namespace",
@@ -41305,7 +40499,7 @@
           "description": "The display name of the parameter"
         },
         "namespace": {
-          "$ref": "#/definitions/NekiExtensionDefinitionParametersItemNamespace"
+          "$ref": "#/definitions/NekiExtensionParametersItemNamespace"
         },
         "advanced": {
           "type": "boolean",
@@ -41321,11 +40515,16 @@
           "description": "The description of the parameter"
         },
         "parameter_type": {
-          "$ref": "#/definitions/NekiExtensionDefinitionParametersItemParameterType"
+          "$ref": "#/definitions/NekiExtensionParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
           "description": "The default value of the parameter",
+          "x-nullable": true
+        },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
         "value": {
@@ -41339,11 +40538,13 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
@@ -41380,17 +40581,7 @@
           "description": "The URL of the parameter"
         },
         "actor": {
-          "$ref": "#/definitions/NekiExtensionDefinitionParametersItemActor"
-        }
-      }
-    },
-    "NekiExtensionDefinitionRequirements": {
-      "type": "object",
-      "properties": {
-        "postgres_image_version": {
-          "type": "string",
-          "description": "The Postgres image version required to use the extension",
-          "x-nullable": true
+          "$ref": "#/definitions/NekiExtensionParametersItemActor"
         }
       }
     },
@@ -42480,13 +41671,12 @@
     "PostgresBouncerParametersItem": {
       "type": "object",
       "required": [
-        "id",
-        "namespace",
         "name",
         "display_name",
+        "namespace",
+        "advanced",
         "category",
         "description",
-        "immutable",
         "parameter_type",
         "default_value",
         "value",
@@ -42494,19 +41684,14 @@
         "created_at",
         "updated_at",
         "restart",
-        "max",
-        "min",
         "url",
-        "options",
         "actor"
       ],
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the parameter"
-        },
-        "namespace": {
-          "$ref": "#/definitions/PgbouncerNamespace"
+          "description": "The ID of the parameter",
+          "x-nullable": true
         },
         "name": {
           "type": "string",
@@ -42516,28 +41701,39 @@
           "type": "string",
           "description": "The display name of the parameter"
         },
+        "namespace": {
+          "$ref": "#/definitions/PostgresBouncerParametersItemNamespace"
+        },
+        "advanced": {
+          "type": "boolean",
+          "description": "Whether the parameter is advanced"
+        },
         "category": {
           "type": "string",
-          "description": "The category of the parameter"
+          "description": "The category of the parameter",
+          "x-nullable": true
         },
         "description": {
           "type": "string",
           "description": "The description of the parameter"
-        },
-        "immutable": {
-          "type": "boolean",
-          "description": "Whether the parameter can be changed"
         },
         "parameter_type": {
           "$ref": "#/definitions/PostgresBouncerParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
+        },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -42545,34 +41741,47 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
-          "description": "True if processes require a server restart on change"
+          "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
           "type": "number",
-          "description": "The maximum value of the parameter"
+          "description": "The maximum value of the parameter",
+          "x-nullable": true
         },
         "min": {
           "type": "number",
-          "description": "The minimum value of the parameter"
+          "description": "The minimum value of the parameter",
+          "x-nullable": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Valid options for the parameter value. Null represents an unset value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
+        },
+        "units": {
+          "type": "array",
+          "description": "The units of the parameter value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
         },
         "url": {
           "type": "string",
           "description": "The URL of the parameter"
-        },
-        "options": {
-          "type": "array",
-          "description": "Valid options for the parameter value",
-          "items": {
-            "type": "string"
-          }
         },
         "actor": {
           "$ref": "#/definitions/PostgresBouncerParametersItemActor"
@@ -43792,13 +43001,12 @@
     "PostgresReadOnlyReplicaParametersItem": {
       "type": "object",
       "required": [
-        "id",
-        "namespace",
         "name",
         "display_name",
+        "namespace",
+        "advanced",
         "category",
         "description",
-        "immutable",
         "parameter_type",
         "default_value",
         "value",
@@ -43806,20 +43014,14 @@
         "created_at",
         "updated_at",
         "restart",
-        "max",
-        "min",
         "url",
-        "options",
-        "units",
         "actor"
       ],
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the parameter"
-        },
-        "namespace": {
-          "$ref": "#/definitions/PgconfNamespace"
+          "description": "The ID of the parameter",
+          "x-nullable": true
         },
         "name": {
           "type": "string",
@@ -43829,24 +43031,29 @@
           "type": "string",
           "description": "The display name of the parameter"
         },
+        "namespace": {
+          "$ref": "#/definitions/PostgresReadOnlyReplicaParametersItemNamespace"
+        },
+        "advanced": {
+          "type": "boolean",
+          "description": "Whether the parameter is advanced"
+        },
         "category": {
           "type": "string",
-          "description": "The category of the parameter"
+          "description": "The category of the parameter",
+          "x-nullable": true
         },
         "description": {
           "type": "string",
           "description": "The description of the parameter"
-        },
-        "immutable": {
-          "type": "boolean",
-          "description": "Whether the parameter can be changed"
         },
         "parameter_type": {
           "$ref": "#/definitions/PostgresReadOnlyReplicaParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter, which is the primary\u0027s current value"
+          "description": "The default value of the parameter",
+          "x-nullable": true
         },
         "disabled_reason": {
           "type": "string",
@@ -43855,7 +43062,8 @@
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -43873,33 +43081,37 @@
         },
         "restart": {
           "type": "boolean",
-          "description": "True if processes require a server restart on change"
+          "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
           "type": "number",
-          "description": "The maximum value of the parameter"
+          "description": "The maximum value of the parameter",
+          "x-nullable": true
         },
         "min": {
           "type": "number",
-          "description": "The minimum value of the parameter, floored at the primary\u0027s current value"
+          "description": "The minimum value of the parameter",
+          "x-nullable": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Valid options for the parameter value. Null represents an unset value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
+        },
+        "units": {
+          "type": "array",
+          "description": "The units of the parameter value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
         },
         "url": {
           "type": "string",
           "description": "The URL of the parameter"
-        },
-        "options": {
-          "type": "array",
-          "description": "Valid options for the parameter value",
-          "items": {
-            "type": "string"
-          }
-        },
-        "units": {
-          "type": "array",
-          "description": "Display units for the parameter value",
-          "items": {
-            "type": "string"
-          }
         },
         "actor": {
           "$ref": "#/definitions/PostgresReadOnlyReplicaParametersItemActor"
@@ -47345,7 +46557,7 @@
         }
       }
     },
-    "PostgresExtensionDefinitionParametersItemActor": {
+    "PostgresExtensionParametersItemActor": {
       "type": "object",
       "required": [
         "id",
@@ -47760,18 +46972,6 @@
         }
       }
     },
-    "PaginatedInsightsAgentRunDataItemRepository": {
-      "type": "object",
-      "description": "The repository snapshot and analyzed commit"
-    },
-    "PaginatedInsightsAgentRunDataItemAgent": {
-      "type": "object",
-      "description": "The agent execution snapshot",
-      "x-nullable": true
-    },
-    "PaginatedInsightsAgentRunDataItemSelectedTargetsItem": {
-      "type": "object"
-    },
     "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptions": {
       "type": "object",
       "description": "The previous option values"
@@ -47936,7 +47136,7 @@
       },
       "x-nullable": true
     },
-    "NekiExtensionDefinitionParametersItemActor": {
+    "NekiExtensionParametersItemActor": {
       "type": "object",
       "required": [
         "id",
@@ -48566,13 +47766,12 @@
     "PaginatedPostgresBouncerDataItemParametersItem": {
       "type": "object",
       "required": [
-        "id",
-        "namespace",
         "name",
         "display_name",
+        "namespace",
+        "advanced",
         "category",
         "description",
-        "immutable",
         "parameter_type",
         "default_value",
         "value",
@@ -48580,19 +47779,14 @@
         "created_at",
         "updated_at",
         "restart",
-        "max",
-        "min",
         "url",
-        "options",
         "actor"
       ],
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the parameter"
-        },
-        "namespace": {
-          "$ref": "#/definitions/PgbouncerNamespace"
+          "description": "The ID of the parameter",
+          "x-nullable": true
         },
         "name": {
           "type": "string",
@@ -48602,28 +47796,39 @@
           "type": "string",
           "description": "The display name of the parameter"
         },
+        "namespace": {
+          "$ref": "#/definitions/PaginatedPostgresBouncerDataItemParametersItemNamespace"
+        },
+        "advanced": {
+          "type": "boolean",
+          "description": "Whether the parameter is advanced"
+        },
         "category": {
           "type": "string",
-          "description": "The category of the parameter"
+          "description": "The category of the parameter",
+          "x-nullable": true
         },
         "description": {
           "type": "string",
           "description": "The description of the parameter"
-        },
-        "immutable": {
-          "type": "boolean",
-          "description": "Whether the parameter can be changed"
         },
         "parameter_type": {
           "$ref": "#/definitions/PaginatedPostgresBouncerDataItemParametersItemParameterType"
         },
         "default_value": {
           "type": "string",
-          "description": "The default value of the parameter"
+          "description": "The default value of the parameter",
+          "x-nullable": true
+        },
+        "disabled_reason": {
+          "type": "string",
+          "description": "Why the parameter cannot be changed",
+          "x-nullable": true
         },
         "value": {
           "type": "string",
-          "description": "The configured value of the parameter"
+          "description": "The configured value of the parameter",
+          "x-nullable": true
         },
         "required": {
           "type": "boolean",
@@ -48631,34 +47836,47 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the parameter was created"
+          "description": "When the parameter was created",
+          "x-nullable": true
         },
         "updated_at": {
           "type": "string",
-          "description": "When the parameter was last updated"
+          "description": "When the parameter was last updated",
+          "x-nullable": true
         },
         "restart": {
           "type": "boolean",
-          "description": "True if processes require a server restart on change"
+          "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
           "type": "number",
-          "description": "The maximum value of the parameter"
+          "description": "The maximum value of the parameter",
+          "x-nullable": true
         },
         "min": {
           "type": "number",
-          "description": "The minimum value of the parameter"
+          "description": "The minimum value of the parameter",
+          "x-nullable": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Valid options for the parameter value. Null represents an unset value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
+        },
+        "units": {
+          "type": "array",
+          "description": "The units of the parameter value",
+          "items": {
+            "type": "string"
+          },
+          "x-nullable": true
         },
         "url": {
           "type": "string",
           "description": "The URL of the parameter"
-        },
-        "options": {
-          "type": "array",
-          "description": "Valid options for the parameter value",
-          "items": {
-            "type": "string"
-          }
         },
         "actor": {
           "$ref": "#/definitions/PaginatedPostgresBouncerDataItemParametersItemActor"
@@ -52776,7 +51994,7 @@
     "ListShardConfigurationProfileExtensions200Response": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/NekiExtensionDefinition"
+        "$ref": "#/definitions/NekiExtension"
       }
     },
     "ListShardConfigurationProfileParameters200Response": {
@@ -52935,66 +52153,7 @@
     "ListExtensions200Response": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresExtensionDefinition"
-      }
-    },
-    "CreateInsightsAgentRunRequest": {
-      "type": "object",
-      "required": [
-        "type"
-      ],
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/CreateInsightsAgentRunRequestType"
-        },
-        "query_patterns_attributes": {
-          "type": "array",
-          "description": "The slow query patterns to review",
-          "items": {
-            "type": "string"
-          }
-        },
-        "schema_numbers": {
-          "type": "array",
-          "description": "The schema recommendation numbers to implement",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "ListInsightsAgentSchedules200Response": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/InsightsAgentSchedule"
-      }
-    },
-    "UpdateInsightsAgentScheduleRequest": {
-      "type": "object",
-      "properties": {
-        "enabled": {
-          "type": "boolean",
-          "description": "Whether the schedule is enabled"
-        },
-        "frequency_unit": {
-          "$ref": "#/definitions/UpdateInsightsAgentScheduleRequestFrequencyUnit"
-        },
-        "schedule_time": {
-          "type": "string",
-          "description": "The local time of day in HH:MM format"
-        },
-        "time_zone": {
-          "type": "string",
-          "description": "The IANA time zone"
-        },
-        "day_of_week": {
-          "type": "integer",
-          "description": "The weekday for weekly schedules"
-        },
-        "day_of_month": {
-          "type": "integer",
-          "description": "The day of month for monthly schedules"
-        }
+        "$ref": "#/definitions/PostgresExtension"
       }
     },
     "CreateKeyspaceRequest": {
@@ -53328,7 +52487,7 @@
     "ListParameters200Response": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresClusterParameter"
+        "$ref": "#/definitions/PostgresParameter"
       }
     },
     "CreatePasswordRequest": {
@@ -54245,7 +53404,7 @@
     "ListShardConfigurationProfileExtensions200ResponseSchema": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/NekiExtensionDefinition"
+        "$ref": "#/definitions/NekiExtension"
       }
     },
     "ListShardConfigurationProfileParameters200ResponseSchema": {
@@ -54269,19 +53428,13 @@
     "ListExtensions200ResponseSchema": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresExtensionDefinition"
-      }
-    },
-    "ListInsightsAgentSchedules200ResponseSchema": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/InsightsAgentSchedule"
+        "$ref": "#/definitions/PostgresExtension"
       }
     },
     "ListParameters200ResponseSchema": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/PostgresClusterParameter"
+        "$ref": "#/definitions/PostgresParameter"
       }
     },
     "ListRouterSizeSkus200ResponseSchema": {
@@ -54357,17 +53510,6 @@
     "DatabaseBranchKeyspaceVttabletOptionsProperty": {
       "type": "object",
       "description": "VTTablet configuration options"
-    },
-    "InsightsAgentRunRepositoryProperty": {
-      "type": "object",
-      "description": "The repository snapshot and analyzed commit"
-    },
-    "InsightsAgentRunAgentProperty": {
-      "type": "object",
-      "description": "The agent execution snapshot"
-    },
-    "InsightsAgentRunSelectedTargetsItemProperty": {
-      "type": "object"
     },
     "KeyspaceConfigChangeRequestPreviousOptionsProperty": {
       "type": "object",
@@ -54480,17 +53622,6 @@
     "PaginatedDatabaseBranchKeyspaceDataItemVttabletOptionsProperty": {
       "type": "object",
       "description": "VTTablet configuration options"
-    },
-    "PaginatedInsightsAgentRunDataItemRepositoryProperty": {
-      "type": "object",
-      "description": "The repository snapshot and analyzed commit"
-    },
-    "PaginatedInsightsAgentRunDataItemAgentProperty": {
-      "type": "object",
-      "description": "The agent execution snapshot"
-    },
-    "PaginatedInsightsAgentRunDataItemSelectedTargetsItemProperty": {
-      "type": "object"
     },
     "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptionsProperty": {
       "type": "object",
@@ -55594,7 +54725,7 @@
         ]
       }
     },
-    "PostgresClusterParameterNamespace": {
+    "PostgresParameterNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
@@ -55604,7 +54735,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresClusterParameterNamespace",
+        "name": "PostgresParameterNamespace",
         "modelAsString": false,
         "values": [
           {
@@ -55622,7 +54753,7 @@
         ]
       }
     },
-    "PostgresClusterParameterParameterType": {
+    "PostgresParameterParameterType": {
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
@@ -55638,7 +54769,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresClusterParameterParameterType",
+        "name": "PostgresParameterParameterType",
         "modelAsString": false,
         "values": [
           {
@@ -55884,118 +55015,6 @@
           {
             "value": "neki",
             "name": "Neki"
-          }
-        ]
-      }
-    },
-    "InsightsAgentRunType": {
-      "type": "string",
-      "description": "The work performed by the run",
-      "enum": [
-        "review_slow_queries",
-        "implement_schema_recommendation"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "InsightsAgentRunType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "review_slow_queries",
-            "name": "ReviewSlowQueries"
-          },
-          {
-            "value": "implement_schema_recommendation",
-            "name": "ImplementSchemaRecommendation"
-          }
-        ]
-      }
-    },
-    "InsightsAgentRunState": {
-      "type": "string",
-      "description": "The run state",
-      "enum": [
-        "queued",
-        "running",
-        "succeeded",
-        "failed",
-        "cancelled"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "InsightsAgentRunState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "queued",
-            "name": "Queued"
-          },
-          {
-            "value": "running",
-            "name": "Running"
-          },
-          {
-            "value": "succeeded",
-            "name": "Succeeded"
-          },
-          {
-            "value": "failed",
-            "name": "Failed"
-          },
-          {
-            "value": "cancelled",
-            "name": "Cancelled"
-          }
-        ]
-      }
-    },
-    "InsightsAgentScheduleRunType": {
-      "type": "string",
-      "description": "The scheduled run type",
-      "enum": [
-        "review_slow_queries",
-        "implement_schema_recommendation"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "InsightsAgentScheduleRunType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "review_slow_queries",
-            "name": "ReviewSlowQueries"
-          },
-          {
-            "value": "implement_schema_recommendation",
-            "name": "ImplementSchemaRecommendation"
-          }
-        ]
-      }
-    },
-    "InsightsAgentScheduleFrequencyUnit": {
-      "type": "string",
-      "description": "The cadence unit",
-      "enum": [
-        "day",
-        "week",
-        "month"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "InsightsAgentScheduleFrequencyUnit",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "day",
-            "name": "Day"
-          },
-          {
-            "value": "week",
-            "name": "Week"
-          },
-          {
-            "value": "month",
-            "name": "Month"
           }
         ]
       }
@@ -58056,7 +57075,7 @@
         ]
       }
     },
-    "PostgresExtensionDefinitionParametersItemNamespace": {
+    "PostgresExtensionParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
@@ -58066,7 +57085,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresExtensionDefinitionParametersItemNamespace",
+        "name": "PostgresExtensionParametersItemNamespace",
         "modelAsString": false,
         "values": [
           {
@@ -58084,7 +57103,7 @@
         ]
       }
     },
-    "PostgresExtensionDefinitionParametersItemParameterType": {
+    "PostgresExtensionParametersItemParameterType": {
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
@@ -58100,7 +57119,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PostgresExtensionDefinitionParametersItemParameterType",
+        "name": "PostgresExtensionParametersItemParameterType",
         "modelAsString": false,
         "values": [
           {
@@ -58374,67 +57393,6 @@
         ]
       }
     },
-    "PaginatedInsightsAgentRunDataItemType": {
-      "type": "string",
-      "description": "The work performed by the run",
-      "enum": [
-        "review_slow_queries",
-        "implement_schema_recommendation"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "PaginatedInsightsAgentRunDataItemType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "review_slow_queries",
-            "name": "ReviewSlowQueries"
-          },
-          {
-            "value": "implement_schema_recommendation",
-            "name": "ImplementSchemaRecommendation"
-          }
-        ]
-      }
-    },
-    "PaginatedInsightsAgentRunDataItemState": {
-      "type": "string",
-      "description": "The run state",
-      "enum": [
-        "queued",
-        "running",
-        "succeeded",
-        "failed",
-        "cancelled"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "PaginatedInsightsAgentRunDataItemState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "queued",
-            "name": "Queued"
-          },
-          {
-            "value": "running",
-            "name": "Running"
-          },
-          {
-            "value": "succeeded",
-            "name": "Succeeded"
-          },
-          {
-            "value": "failed",
-            "name": "Failed"
-          },
-          {
-            "value": "cancelled",
-            "name": "Cancelled"
-          }
-        ]
-      }
-    },
     "PaginatedKeyspaceConfigChangeRequestDataItemState": {
       "type": "string",
       "description": "The state of the config change request",
@@ -58641,7 +57599,7 @@
       ],
       "additionalProperties": false
     },
-    "NekiExtensionDefinitionParametersItemNamespace": {
+    "NekiExtensionParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
@@ -58653,7 +57611,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "NekiExtensionDefinitionParametersItemNamespace",
+        "name": "NekiExtensionParametersItemNamespace",
         "modelAsString": false,
         "values": [
           {
@@ -58679,7 +57637,7 @@
         ]
       }
     },
-    "NekiExtensionDefinitionParametersItemParameterType": {
+    "NekiExtensionParametersItemParameterType": {
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
@@ -58694,7 +57652,7 @@
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "NekiExtensionDefinitionParametersItemParameterType",
+        "name": "NekiExtensionParametersItemParameterType",
         "modelAsString": false,
         "values": [
           {
@@ -58811,17 +57769,27 @@
         ]
       }
     },
-    "PgbouncerNamespace": {
+    "PostgresBouncerParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
+        "patroni",
+        "pgconf",
         "pgbouncer"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PgbouncerNamespace",
+        "name": "PostgresBouncerParametersItemNamespace",
         "modelAsString": false,
         "values": [
+          {
+            "value": "patroni",
+            "name": "Patroni"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
+          },
           {
             "value": "pgbouncer",
             "name": "Pgbouncer"
@@ -58834,10 +57802,14 @@
       "description": "The type of the parameter",
       "enum": [
         "array",
+        "boolean",
+        "bytes",
+        "float",
         "integer",
         "seconds",
         "select",
-        "string"
+        "string",
+        "time"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -58847,6 +57819,18 @@
           {
             "value": "array",
             "name": "Array"
+          },
+          {
+            "value": "boolean",
+            "name": "Boolean"
+          },
+          {
+            "value": "bytes",
+            "name": "Bytes"
+          },
+          {
+            "value": "float",
+            "name": "FloatValue"
           },
           {
             "value": "integer",
@@ -58863,6 +57847,10 @@
           {
             "value": "string",
             "name": "StringValue"
+          },
+          {
+            "value": "time",
+            "name": "Time"
           }
         ]
       }
@@ -59108,20 +58096,30 @@
         ]
       }
     },
-    "PgconfNamespace": {
+    "PostgresReadOnlyReplicaParametersItemNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
-        "pgconf"
+        "patroni",
+        "pgconf",
+        "pgbouncer"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
-        "name": "PgconfNamespace",
+        "name": "PostgresReadOnlyReplicaParametersItemNamespace",
         "modelAsString": false,
         "values": [
           {
+            "value": "patroni",
+            "name": "Patroni"
+          },
+          {
             "value": "pgconf",
             "name": "Pgconf"
+          },
+          {
+            "value": "pgbouncer",
+            "name": "Pgbouncer"
           }
         ]
       }
@@ -59130,7 +58128,14 @@
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
+        "array",
+        "boolean",
+        "bytes",
+        "float",
         "integer",
+        "seconds",
+        "select",
+        "string",
         "time"
       ],
       "additionalProperties": false,
@@ -59139,8 +58144,36 @@
         "modelAsString": false,
         "values": [
           {
+            "value": "array",
+            "name": "Array"
+          },
+          {
+            "value": "boolean",
+            "name": "Boolean"
+          },
+          {
+            "value": "bytes",
+            "name": "Bytes"
+          },
+          {
+            "value": "float",
+            "name": "FloatValue"
+          },
+          {
             "value": "integer",
             "name": "Integer"
+          },
+          {
+            "value": "seconds",
+            "name": "Seconds"
+          },
+          {
+            "value": "select",
+            "name": "Select"
+          },
+          {
+            "value": "string",
+            "name": "StringValue"
           },
           {
             "value": "time",
@@ -60355,15 +59388,47 @@
         ]
       }
     },
+    "PaginatedPostgresBouncerDataItemParametersItemNamespace": {
+      "type": "string",
+      "description": "The namespace of the parameter",
+      "enum": [
+        "patroni",
+        "pgconf",
+        "pgbouncer"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "PaginatedPostgresBouncerDataItemParametersItemNamespace",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "patroni",
+            "name": "Patroni"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
+          },
+          {
+            "value": "pgbouncer",
+            "name": "Pgbouncer"
+          }
+        ]
+      }
+    },
     "PaginatedPostgresBouncerDataItemParametersItemParameterType": {
       "type": "string",
       "description": "The type of the parameter",
       "enum": [
         "array",
+        "boolean",
+        "bytes",
+        "float",
         "integer",
         "seconds",
         "select",
-        "string"
+        "string",
+        "time"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -60373,6 +59438,18 @@
           {
             "value": "array",
             "name": "Array"
+          },
+          {
+            "value": "boolean",
+            "name": "Boolean"
+          },
+          {
+            "value": "bytes",
+            "name": "Bytes"
+          },
+          {
+            "value": "float",
+            "name": "FloatValue"
           },
           {
             "value": "integer",
@@ -60389,6 +59466,10 @@
           {
             "value": "string",
             "name": "StringValue"
+          },
+          {
+            "value": "time",
+            "name": "Time"
           }
         ]
       }
@@ -61407,57 +60488,6 @@
         ]
       }
     },
-    "CreateInsightsAgentRunRequestType": {
-      "type": "string",
-      "description": "The work the Insights agent should perform",
-      "enum": [
-        "review_slow_queries",
-        "implement_schema_recommendation"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "CreateInsightsAgentRunRequestType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "review_slow_queries",
-            "name": "ReviewSlowQueries"
-          },
-          {
-            "value": "implement_schema_recommendation",
-            "name": "ImplementSchemaRecommendation"
-          }
-        ]
-      }
-    },
-    "UpdateInsightsAgentScheduleRequestFrequencyUnit": {
-      "type": "string",
-      "description": "The cadence unit",
-      "enum": [
-        "day",
-        "week",
-        "month"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "UpdateInsightsAgentScheduleRequestFrequencyUnit",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "day",
-            "name": "Day"
-          },
-          {
-            "value": "week",
-            "name": "Week"
-          },
-          {
-            "value": "month",
-            "name": "Month"
-          }
-        ]
-      }
-    },
     "CreateKeyspaceConfigChangeRequestRequestChangeType": {
       "type": "string",
       "description": "The component to configure: \u0060vttablet\u0060 or \u0060mysqld\u0060",
@@ -61893,6 +60923,33 @@
         ]
       }
     },
+    "ListDatabasesKindParameter": {
+      "type": "string",
+      "enum": [
+        "mysql",
+        "postgresql",
+        "neki"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "ListDatabasesKindParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "mysql",
+            "name": "Mysql"
+          },
+          {
+            "value": "postgresql",
+            "name": "Postgresql"
+          },
+          {
+            "value": "neki",
+            "name": "Neki"
+          }
+        ]
+      }
+    },
     "ListBranchesOrderParameter": {
       "type": "string",
       "enum": [
@@ -62010,6 +61067,33 @@
           {
             "value": "ignored",
             "name": "Ignored"
+          }
+        ]
+      }
+    },
+    "ListBranchConfigChangeRequestsChangeTypeParameter": {
+      "type": "string",
+      "enum": [
+        "vtgate",
+        "mysqld",
+        "vttablet"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "ListBranchConfigChangeRequestsChangeTypeParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "vtgate",
+            "name": "Vtgate"
+          },
+          {
+            "value": "mysqld",
+            "name": "Mysqld"
+          },
+          {
+            "value": "vttablet",
+            "name": "Vttablet"
           }
         ]
       }
@@ -62499,28 +61583,6 @@
           {
             "value": "DELETE",
             "name": "Delete"
-          }
-        ]
-      }
-    },
-    "UpdateInsightsAgentScheduleRunTypeParameter": {
-      "type": "string",
-      "enum": [
-        "review_slow_queries",
-        "implement_schema_recommendation"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "UpdateInsightsAgentScheduleRunTypeParameter",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "review_slow_queries",
-            "name": "ReviewSlowQueries"
-          },
-          {
-            "value": "implement_schema_recommendation",
-            "name": "ImplementSchemaRecommendation"
           }
         ]
       }
@@ -65269,6 +64331,7 @@
         "database:write_comments": "Create deploy request comments in a database",
         "database:write_database": "Write database",
         "database:write_deploy_requests": "Create and update deploy requests in a database",
+        "database:write_insights_agent": "Start Insights Agent runs and change their schedules",
         "database:write_members": "Write members",
         "database:write_workflows": "Create and manage database workflows",
         "organization:approve_deploy_requests": "Approve deploy requests in an organization",
@@ -65307,6 +64370,7 @@
         "organization:write_comments": "Create deploy request comments in an organization",
         "organization:write_databases": "Write organization databases",
         "organization:write_deploy_requests": "Create and update deploy requests in an organization",
+        "organization:write_insights_agents": "Start Insights Agent runs and change their schedules in an organization",
         "organization:write_members": "Write members in an organization",
         "organization:write_organization": "Write organization",
         "organization:write_payment_method": "Update and delete the organization payment method",

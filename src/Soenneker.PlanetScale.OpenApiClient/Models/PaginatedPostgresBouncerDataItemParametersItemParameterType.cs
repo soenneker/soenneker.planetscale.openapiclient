@@ -11,6 +11,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         Array,
         #pragma warning restore CS1591
+        [EnumMember(Value = "boolean")]
+        #pragma warning disable CS1591
+        Boolean,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bytes")]
+        #pragma warning disable CS1591
+        Bytes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "float")]
+        #pragma warning disable CS1591
+        FloatValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integer")]
         #pragma warning disable CS1591
         Integer,
@@ -26,6 +38,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         [EnumMember(Value = "string")]
         #pragma warning disable CS1591
         StringValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "time")]
+        #pragma warning disable CS1591
+        Time,
         #pragma warning restore CS1591
     }
 }

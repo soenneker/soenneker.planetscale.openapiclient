@@ -9,16 +9,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostgresBouncerParametersItem : IAdditionalDataHolder, IParsable
+    public partial class NekiExtensionParametersItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemActor? Actor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemActor Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The namespace of the parameter</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemNamespace? Namespace { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemNamespace? Namespace { get; set; }
         /// <summary>Valid options for the parameter value. Null represents an unset value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +103,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public List<string> Options { get; set; }
 #endif
         /// <summary>The type of the parameter</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemParameterType? ParameterType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemParameterType? ParameterType { get; set; }
         /// <summary>Whether the parameter is required</summary>
         public bool? Required { get; set; }
         /// <summary>Whether processes require a server restart after the parameter changes</summary>
@@ -141,21 +141,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem"/> and sets the default values.
         /// </summary>
-        public PostgresBouncerParametersItem()
+        public NekiExtensionParametersItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItem();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +165,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemActor.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemActor.CreateFromDiscriminatorValue); } },
                 { "advanced", n => { Advanced = n.GetBoolValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
@@ -177,9 +177,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemNamespace>(); } },
+                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemNamespace>(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemParameterType>(); } },
+                { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemParameterType>(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "restart", n => { Restart = n.GetBoolValue(); } },
                 { "units", n => { Units = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -195,7 +195,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemActor>("actor", Actor);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemActor>("actor", Actor);
             writer.WriteBoolValue("advanced", Advanced);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("created_at", CreatedAt);
@@ -207,9 +207,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemNamespace>("namespace", Namespace);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemNamespace>("namespace", Namespace);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemParameterType>("parameter_type", ParameterType);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItemParameterType>("parameter_type", ParameterType);
             writer.WriteBoolValue("required", Required);
             writer.WriteBoolValue("restart", Restart);
             writer.WriteCollectionOfPrimitiveValues<string>("units", Units);

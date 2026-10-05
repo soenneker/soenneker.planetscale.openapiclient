@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The type of the parameter</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostgresReadOnlyReplicaParametersItemParameterType
+    public enum NekiExtensionParametersItemParameterType
     {
         [EnumMember(Value = "array")]
         #pragma warning disable CS1591
@@ -26,10 +26,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         [EnumMember(Value = "integer")]
         #pragma warning disable CS1591
         Integer,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "seconds")]
-        #pragma warning disable CS1591
-        Seconds,
         #pragma warning restore CS1591
         [EnumMember(Value = "select")]
         #pragma warning disable CS1591

@@ -22,6 +22,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the parameter is advanced</summary>
+        public bool? Advanced { get; set; }
         /// <summary>The category of the parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,7 +40,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The default value of the parameter, which is the primary&apos;s current value</summary>
+        /// <summary>The default value of the parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue { get; set; }
@@ -78,11 +80,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether the parameter can be changed</summary>
-        public bool? Immutable { get; set; }
         /// <summary>The maximum value of the parameter</summary>
         public double? Max { get; set; }
-        /// <summary>The minimum value of the parameter, floored at the primary&apos;s current value</summary>
+        /// <summary>The minimum value of the parameter</summary>
         public double? Min { get; set; }
         /// <summary>The name of the parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,8 +93,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The namespace of the parameter</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PgconfNamespace? Namespace { get; set; }
-        /// <summary>Valid options for the parameter value</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemNamespace? Namespace { get; set; }
+        /// <summary>Valid options for the parameter value. Null represents an unset value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Options { get; set; }
@@ -106,9 +106,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemParameterType? ParameterType { get; set; }
         /// <summary>Whether the parameter is required</summary>
         public bool? Required { get; set; }
-        /// <summary>True if processes require a server restart on change</summary>
+        /// <summary>Whether processes require a server restart after the parameter changes</summary>
         public bool? Restart { get; set; }
-        /// <summary>Display units for the parameter value</summary>
+        /// <summary>The units of the parameter value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Units { get; set; }
@@ -166,6 +166,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemActor.CreateFromDiscriminatorValue); } },
+                { "advanced", n => { Advanced = n.GetBoolValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "default_value", n => { DefaultValue = n.GetStringValue(); } },
@@ -173,11 +174,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "disabled_reason", n => { DisabledReason = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "immutable", n => { Immutable = n.GetBoolValue(); } },
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PgconfNamespace>(); } },
+                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemNamespace>(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemParameterType>(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
@@ -196,6 +196,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemActor>("actor", Actor);
+            writer.WriteBoolValue("advanced", Advanced);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("default_value", DefaultValue);
@@ -203,11 +204,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("disabled_reason", DisabledReason);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("immutable", Immutable);
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PgconfNamespace>("namespace", Namespace);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemNamespace>("namespace", Namespace);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresReadOnlyReplicaParametersItemParameterType>("parameter_type", ParameterType);
             writer.WriteBoolValue("required", Required);
