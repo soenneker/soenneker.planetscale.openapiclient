@@ -84,14 +84,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The cluster flags</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Flags { get; set; }
-#nullable restore
-#else
-        public List<string> Flags { get; set; }
-#endif
         /// <summary>The ID of the change request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,14 +103,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
-#endif
-        /// <summary>The Neki image version</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NekiImageVersion { get; set; }
-#nullable restore
-#else
-        public string NekiImageVersion { get; set; }
 #endif
         /// <summary>The parameters requested for the target resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,14 +164,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PreviousClusterSize { get; set; }
 #endif
-        /// <summary>The previous cluster flags</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PreviousFlags { get; set; }
-#nullable restore
-#else
-        public List<string> PreviousFlags { get; set; }
-#endif
         /// <summary>The previous maximum number of replicas in each cell</summary>
         public int? PreviousMaxReplicasPerCell { get; set; }
         /// <summary>Whether the previous cluster size SKU used metal instances</summary>
@@ -199,14 +175,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #nullable restore
 #else
         public string PreviousName { get; set; }
-#endif
-        /// <summary>The previous Neki image version</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousNekiImageVersion { get; set; }
-#nullable restore
-#else
-        public string PreviousNekiImageVersion { get; set; }
 #endif
         /// <summary>The target resource parameters before the change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -362,12 +330,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "cluster_size", n => { ClusterSize = n.GetStringValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "flags", n => { Flags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_replicas_per_cell", n => { MaxReplicasPerCell = n.GetIntValue(); } },
                 { "metal", n => { Metal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "neki_image_version", n => { NekiImageVersion = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty.CreateFromDiscriminatorValue); } },
                 { "postgres_image_version", n => { PostgresImageVersion = n.GetStringValue(); } },
                 { "previous_admin_size", n => { PreviousAdminSize = n.GetStringValue(); } },
@@ -377,11 +343,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_cluster_name", n => { PreviousClusterName = n.GetStringValue(); } },
                 { "previous_cluster_rank", n => { PreviousClusterRank = n.GetIntValue(); } },
                 { "previous_cluster_size", n => { PreviousClusterSize = n.GetStringValue(); } },
-                { "previous_flags", n => { PreviousFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "previous_max_replicas_per_cell", n => { PreviousMaxReplicasPerCell = n.GetIntValue(); } },
                 { "previous_metal", n => { PreviousMetal = n.GetBoolValue(); } },
                 { "previous_name", n => { PreviousName = n.GetStringValue(); } },
-                { "previous_neki_image_version", n => { PreviousNekiImageVersion = n.GetStringValue(); } },
                 { "previous_parameters", n => { PreviousParameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty.CreateFromDiscriminatorValue); } },
                 { "previous_postgres_image_version", n => { PreviousPostgresImageVersion = n.GetStringValue(); } },
                 { "previous_replicas", n => { PreviousReplicas = n.GetIntValue(); } },
@@ -425,12 +389,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("cluster_size", ClusterSize);
             writer.WriteStringValue("completed_at", CompletedAt);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteCollectionOfPrimitiveValues<string>("flags", Flags);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("max_replicas_per_cell", MaxReplicasPerCell);
             writer.WriteBoolValue("metal", Metal);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("neki_image_version", NekiImageVersion);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty>("parameters", Parameters);
             writer.WriteStringValue("postgres_image_version", PostgresImageVersion);
             writer.WriteStringValue("previous_admin_size", PreviousAdminSize);
@@ -440,11 +402,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("previous_cluster_name", PreviousClusterName);
             writer.WriteIntValue("previous_cluster_rank", PreviousClusterRank);
             writer.WriteStringValue("previous_cluster_size", PreviousClusterSize);
-            writer.WriteCollectionOfPrimitiveValues<string>("previous_flags", PreviousFlags);
             writer.WriteIntValue("previous_max_replicas_per_cell", PreviousMaxReplicasPerCell);
             writer.WriteBoolValue("previous_metal", PreviousMetal);
             writer.WriteStringValue("previous_name", PreviousName);
-            writer.WriteStringValue("previous_neki_image_version", PreviousNekiImageVersion);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty>("previous_parameters", PreviousParameters);
             writer.WriteStringValue("previous_postgres_image_version", PreviousPostgresImageVersion);
             writer.WriteIntValue("previous_replicas", PreviousReplicas);

@@ -31944,32 +31944,6 @@
         "previous_parameters": {
           "$ref": "#/definitions/NekiChangeRequestPreviousParametersProperty"
         },
-        "flags": {
-          "type": "array",
-          "description": "The cluster flags",
-          "items": {
-            "type": "string"
-          },
-          "x-nullable": true
-        },
-        "neki_image_version": {
-          "type": "string",
-          "description": "The Neki image version",
-          "x-nullable": true
-        },
-        "previous_flags": {
-          "type": "array",
-          "description": "The previous cluster flags",
-          "items": {
-            "type": "string"
-          },
-          "x-nullable": true
-        },
-        "previous_neki_image_version": {
-          "type": "string",
-          "description": "The previous Neki image version",
-          "x-nullable": true
-        },
         "replicas": {
           "type": "integer",
           "description": "The number of replicas",
@@ -40092,32 +40066,6 @@
         },
         "previous_parameters": {
           "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousParametersProperty"
-        },
-        "flags": {
-          "type": "array",
-          "description": "The cluster flags",
-          "items": {
-            "type": "string"
-          },
-          "x-nullable": true
-        },
-        "neki_image_version": {
-          "type": "string",
-          "description": "The Neki image version",
-          "x-nullable": true
-        },
-        "previous_flags": {
-          "type": "array",
-          "description": "The previous cluster flags",
-          "items": {
-            "type": "string"
-          },
-          "x-nullable": true
-        },
-        "previous_neki_image_version": {
-          "type": "string",
-          "description": "The previous Neki image version",
-          "x-nullable": true
         },
         "replicas": {
           "type": "integer",
