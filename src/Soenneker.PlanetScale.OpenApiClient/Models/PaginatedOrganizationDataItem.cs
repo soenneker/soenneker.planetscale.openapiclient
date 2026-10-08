@@ -66,6 +66,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? KeyspaceShardLimit { get; set; }
         /// <summary>Whether or not the organization has managed tenancy enabled</summary>
         public bool? ManagedTenancy { get; set; }
+        /// <summary>The query access level MCP clients can be granted for the organization (none, read_only, or read_write)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? McpAccessLevel { get; set; }
+#nullable restore
+#else
+        public string McpAccessLevel { get; set; }
+#endif
         /// <summary>The name of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +154,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "invoice_budget_amount", n => { InvoiceBudgetAmount = n.GetStringValue(); } },
                 { "keyspace_shard_limit", n => { KeyspaceShardLimit = n.GetIntValue(); } },
                 { "managed_tenancy", n => { ManagedTenancy = n.GetBoolValue(); } },
+                { "mcp_access_level", n => { McpAccessLevel = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "neki_router_replicas_per_cell_limit", n => { NekiRouterReplicasPerCellLimit = n.GetIntValue(); } },
                 { "payment_info_required", n => { PaymentInfoRequired = n.GetBoolValue(); } },
@@ -176,6 +185,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("invoice_budget_amount", InvoiceBudgetAmount);
             writer.WriteIntValue("keyspace_shard_limit", KeyspaceShardLimit);
             writer.WriteBoolValue("managed_tenancy", ManagedTenancy);
+            writer.WriteStringValue("mcp_access_level", McpAccessLevel);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("neki_router_replicas_per_cell_limit", NekiRouterReplicasPerCellLimit);
             writer.WriteBoolValue("payment_info_required", PaymentInfoRequired);

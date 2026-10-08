@@ -26,6 +26,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public bool? IdpManagedRoles { get; set; }
         /// <summary>The expected monthly budget for the organization</summary>
         public int? InvoiceBudgetAmount { get; set; }
+        /// <summary>The query access level MCP clients can be granted for the organization (none, read_only, or read_write)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? McpAccessLevel { get; set; }
+#nullable restore
+#else
+        public string McpAccessLevel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateOrganizationRequest"/> and sets the default values.
         /// </summary>
@@ -54,6 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "billing_email", n => { BillingEmail = n.GetStringValue(); } },
                 { "idp_managed_roles", n => { IdpManagedRoles = n.GetBoolValue(); } },
                 { "invoice_budget_amount", n => { InvoiceBudgetAmount = n.GetIntValue(); } },
+                { "mcp_access_level", n => { McpAccessLevel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +75,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("billing_email", BillingEmail);
             writer.WriteBoolValue("idp_managed_roles", IdpManagedRoles);
             writer.WriteIntValue("invoice_budget_amount", InvoiceBudgetAmount);
+            writer.WriteStringValue("mcp_access_level", McpAccessLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

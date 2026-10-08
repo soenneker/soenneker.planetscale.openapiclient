@@ -29749,6 +29749,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -29799,6 +29800,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -31625,6 +31630,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -31675,6 +31681,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -32656,7 +32666,7 @@
         },
         "mcp_tool_groups": {
           "type": "array",
-          "description": "MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled, roles) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes (the organization-tier scope names granting the group across all databases in an organization) and org_roles (the organization roles allowed to grant them); both are null for organization-section groups",
+          "description": "MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled, roles) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes (the organization-tier scope names granting the group across all databases in an organization) and org_roles (the organization roles allowed to grant them); both are null for organization-section groups. Each group includes blocked_mcp_access_levels: the organization mcp_access_level values that prevent granting it, each with a level and reason. Read query groups are blocked at none; write query groups are also blocked at read_only. Other groups return an empty list",
           "items": {
             "$ref": "#/definitions/OAuthApplicationMcpToolGroupsItemProperty"
           },
@@ -33094,7 +33104,8 @@
         "keyspace_shard_limit",
         "neki_router_replicas_per_cell_limit",
         "has_card",
-        "payment_info_required"
+        "payment_info_required",
+        "mcp_access_level"
       ],
       "properties": {
         "id": {
@@ -33181,6 +33192,10 @@
         "payment_info_required": {
           "type": "boolean",
           "description": "Whether or not the organization requires payment information"
+        },
+        "mcp_access_level": {
+          "type": "string",
+          "description": "The query access level MCP clients can be granted for the organization (none, read_only, or read_write)"
         }
       }
     },
@@ -38144,6 +38159,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -38194,6 +38210,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -40424,6 +40444,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -40474,6 +40495,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -40661,7 +40686,7 @@
         },
         "mcp_tool_groups": {
           "type": "array",
-          "description": "MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled, roles) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes (the organization-tier scope names granting the group across all databases in an organization) and org_roles (the organization roles allowed to grant them); both are null for organization-section groups",
+          "description": "MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled, roles) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes (the organization-tier scope names granting the group across all databases in an organization) and org_roles (the organization roles allowed to grant them); both are null for organization-section groups. Each group includes blocked_mcp_access_levels: the organization mcp_access_level values that prevent granting it, each with a level and reason. Read query groups are blocked at none; write query groups are also blocked at read_only. Other groups return an empty list",
           "items": {
             "$ref": "#/definitions/PaginatedOAuthApplicationDataItemMcpToolGroupsItemProperty"
           },
@@ -41147,7 +41172,8 @@
         "keyspace_shard_limit",
         "neki_router_replicas_per_cell_limit",
         "has_card",
-        "payment_info_required"
+        "payment_info_required",
+        "mcp_access_level"
       ],
       "properties": {
         "id": {
@@ -41234,6 +41260,10 @@
         "payment_info_required": {
           "type": "boolean",
           "description": "Whether or not the organization requires payment information"
+        },
+        "mcp_access_level": {
+          "type": "string",
+          "description": "The query access level MCP clients can be granted for the organization (none, read_only, or read_write)"
         }
       }
     },
@@ -41627,6 +41657,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -41677,6 +41708,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -42957,6 +42992,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -43007,6 +43043,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -47722,6 +47762,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "requires_cluster_update",
         "value",
         "required",
         "created_at",
@@ -47772,6 +47813,10 @@
           "type": "string",
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
+        },
+        "requires_cluster_update": {
+          "type": "boolean",
+          "description": "Whether a cluster update is required before the parameter can be configured"
         },
         "value": {
           "type": "string",
@@ -51403,6 +51448,10 @@
         "invoice_budget_amount": {
           "type": "integer",
           "description": "The expected monthly budget for the organization"
+        },
+        "mcp_access_level": {
+          "type": "string",
+          "description": "The query access level MCP clients can be granted for the organization (none, read_only, or read_write)"
         }
       }
     },
@@ -64402,6 +64451,10 @@
     {
       "name": "Keyspace VSchemas",
       "description": "          Resources for managing VSchemas within a keyspace.\n"
+    },
+    {
+      "name": "MaintenanceEvents",
+      "description": "          Resources for viewing scheduled maintenance for Postgres databases.\n"
     },
     {
       "name": "MaintenanceSchedules",
