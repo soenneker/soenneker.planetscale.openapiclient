@@ -190,6 +190,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ReadyToCutoverAt { get; set; }
 #endif
+        /// <summary>Whether a retry of failed operations was requested within the retry window</summary>
+        public bool? RetryRequested { get; set; }
+        /// <summary>When a retry of failed operations was last requested</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RetryRequestedAt { get; set; }
+#nullable restore
+#else
+        public string RetryRequestedAt { get; set; }
+#endif
         /// <summary>When the schema was last updated for the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -295,6 +305,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "queue_paused", n => { QueuePaused = n.GetBoolValue(); } },
                 { "queued_at", n => { QueuedAt = n.GetStringValue(); } },
                 { "ready_to_cutover_at", n => { ReadyToCutoverAt = n.GetStringValue(); } },
+                { "retry_requested", n => { RetryRequested = n.GetBoolValue(); } },
+                { "retry_requested_at", n => { RetryRequestedAt = n.GetStringValue(); } },
                 { "schema_last_updated_at", n => { SchemaLastUpdatedAt = n.GetStringValue(); } },
                 { "sequential_diff_dependencies", n => { SequentialDiffDependencies = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentSequentialDiffDependenciesItemProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentSequentialDiffDependenciesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
@@ -340,6 +352,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("queue_paused", QueuePaused);
             writer.WriteStringValue("queue_pause_reason", QueuePauseReason);
             writer.WriteStringValue("ready_to_cutover_at", ReadyToCutoverAt);
+            writer.WriteBoolValue("retry_requested", RetryRequested);
+            writer.WriteStringValue("retry_requested_at", RetryRequestedAt);
             writer.WriteStringValue("schema_last_updated_at", SchemaLastUpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentSequentialDiffDependenciesItemProperty>("sequential_diff_dependencies", SequentialDiffDependencies);
             writer.WriteStringValue("started_at", StartedAt);

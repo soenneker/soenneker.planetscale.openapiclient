@@ -16,7 +16,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the shard is the authoritative shard of the cluster</summary>
         public bool? Authoritative { get; set; }
-        /// <summary>The name of the shard configuration profile</summary>
+        /// <summary>The name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfigurationProfile { get; set; }

@@ -18,6 +18,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy? DiskScalingStrategy { get; set; }
         /// <summary>The maximum size in bytes disks may autoscale to</summary>
         public int? MaxStorageBytes { get; set; }
+        /// <summary>True when PlanetScale staff raised the limit above the organization default. The limit is read-only while this is set</summary>
+        public bool? MaxStorageBytesManagedByStaff { get; set; }
         /// <summary>The current provisioned disk size in bytes. Disks grow from and shrink to this size. Custom shards may have staff-set overrides</summary>
         public int? StorageBytes { get; set; }
         /// <summary>
@@ -47,6 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             {
                 { "disk_scaling_strategy", n => { DiskScalingStrategy = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy>(); } },
                 { "max_storage_bytes", n => { MaxStorageBytes = n.GetIntValue(); } },
+                { "max_storage_bytes_managed_by_staff", n => { MaxStorageBytesManagedByStaff = n.GetBoolValue(); } },
                 { "storage_bytes", n => { StorageBytes = n.GetIntValue(); } },
             };
         }
@@ -59,6 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy>("disk_scaling_strategy", DiskScalingStrategy);
             writer.WriteIntValue("max_storage_bytes", MaxStorageBytes);
+            writer.WriteBoolValue("max_storage_bytes_managed_by_staff", MaxStorageBytesManagedByStaff);
             writer.WriteIntValue("storage_bytes", StorageBytes);
             writer.WriteAdditionalData(AdditionalData);
         }

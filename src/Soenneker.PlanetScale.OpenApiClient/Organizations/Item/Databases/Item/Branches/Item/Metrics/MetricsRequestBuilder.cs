@@ -296,7 +296,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("shard")]
             public string Shard { get; set; }
 #endif
-            /// <summary>Filter by shard configuration profile name</summary>
+            /// <summary>Filter by configuration profile name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("shard_config_profile")]

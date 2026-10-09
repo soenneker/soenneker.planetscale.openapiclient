@@ -96,7 +96,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? MaxReplicasPerCell { get; set; }
         /// <summary>Whether the cluster size SKU uses metal instances</summary>
         public bool? Metal { get; set; }
-        /// <summary>The name of the shard configuration profile</summary>
+        /// <summary>The name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -168,7 +168,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? PreviousMaxReplicasPerCell { get; set; }
         /// <summary>Whether the previous cluster size SKU used metal instances</summary>
         public bool? PreviousMetal { get; set; }
-        /// <summary>The previous name of the shard configuration profile</summary>
+        /// <summary>The previous name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviousName { get; set; }

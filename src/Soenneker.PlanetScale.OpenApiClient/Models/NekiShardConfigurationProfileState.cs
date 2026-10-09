@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
-    /// <summary>The current state of the shard configuration profile</summary>
+    /// <summary>The current state of the configuration profile</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NekiShardConfigurationProfileState
     {

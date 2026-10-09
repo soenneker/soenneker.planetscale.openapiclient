@@ -38,7 +38,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string ClusterSize { get; set; }
 #endif
-        /// <summary>When the shard configuration profile was created</summary>
+        /// <summary>When the configuration profile was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -46,9 +46,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>Whether this is the default shard configuration profile</summary>
+        /// <summary>Whether this is the default configuration profile</summary>
         public bool? Default { get; set; }
-        /// <summary>The ID of the shard configuration profile</summary>
+        /// <summary>The ID of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The latest PostgreSQL image available to the shard configuration profile</summary>
+        /// <summary>The latest PostgreSQL image available to the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LatestPostgresImageVersion { get; set; }
@@ -64,11 +64,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string LatestPostgresImageVersion { get; set; }
 #endif
-        /// <summary>The latest PostgreSQL minor version available to the shard configuration profile</summary>
+        /// <summary>The latest PostgreSQL minor version available to the configuration profile</summary>
         public int? LatestPostgresMinorVersion { get; set; }
         /// <summary>Whether shards using this configuration profile use metal instances</summary>
         public bool? Metal { get; set; }
-        /// <summary>The name of the shard configuration profile</summary>
+        /// <summary>The name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The PostgreSQL image used by the shard configuration profile</summary>
+        /// <summary>The PostgreSQL image used by the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostgresImageVersion { get; set; }
@@ -84,15 +84,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PostgresImageVersion { get; set; }
 #endif
-        /// <summary>The PostgreSQL major version used by the shard configuration profile</summary>
+        /// <summary>The PostgreSQL major version used by the configuration profile</summary>
         public int? PostgresMajorVersion { get; set; }
-        /// <summary>The PostgreSQL minor version used by the shard configuration profile</summary>
+        /// <summary>The PostgreSQL minor version used by the configuration profile</summary>
         public int? PostgresMinorVersion { get; set; }
         /// <summary>The number of replicas for shards using this configuration profile</summary>
         public int? Replicas { get; set; }
         /// <summary>The number of shards using this configuration profile</summary>
         public int? Shards { get; set; }
-        /// <summary>The current state of the shard configuration profile</summary>
+        /// <summary>The current state of the configuration profile</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardConfigurationProfileState? State { get; set; }
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardConfigurationProfileStorage Storage { get; set; }
 #endif
-        /// <summary>When the shard configuration profile was last updated</summary>
+        /// <summary>When the configuration profile was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get; set; }

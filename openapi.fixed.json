@@ -4901,7 +4901,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "List shard configuration profiles for a Neki branch",
+        "summary": "List configuration profiles for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListShardConfigurationProfiles",
         "produces": [
@@ -4974,7 +4974,7 @@
             }
           },
           "200": {
-            "description": "Returns shard configuration profiles for the branch",
+            "description": "Returns configuration profiles for the branch",
             "schema": {
               "$ref": "#/definitions/ListShardConfigurationProfiles200ResponseSchema"
             }
@@ -4985,7 +4985,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Create a shard configuration profile for a Neki branch",
+        "summary": "Create a configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CreateShardConfigurationProfile",
         "consumes": [
@@ -5068,7 +5068,7 @@
             }
           },
           "201": {
-            "description": "Returns the created shard configuration profile",
+            "description": "Returns the created configuration profile",
             "schema": {
               "$ref": "#/definitions/NekiShardConfigurationProfile"
             }
@@ -5081,7 +5081,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Run maintenance for selected Neki shard configuration profiles",
+        "summary": "Run maintenance for selected Neki configuration profiles",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "RunShardConfigurationProfilesMaintenance",
         "consumes": [
@@ -5129,7 +5129,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5178,7 +5178,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Get a shard configuration profile for a Neki branch",
+        "summary": "Get a configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetShardConfigurationProfile",
         "produces": [
@@ -5223,7 +5223,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5258,7 +5258,7 @@
             }
           },
           "200": {
-            "description": "Returns the shard configuration profile",
+            "description": "Returns the configuration profile",
             "schema": {
               "$ref": "#/definitions/NekiShardConfigurationProfile"
             }
@@ -5269,7 +5269,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Update a shard configuration profile for a Neki branch",
+        "summary": "Update a configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "UpdateShardConfigurationProfile",
         "consumes": [
@@ -5324,7 +5324,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5359,7 +5359,7 @@
             }
           },
           "200": {
-            "description": "Returns the updated shard configuration profile",
+            "description": "Returns the updated configuration profile",
             "schema": {
               "$ref": "#/definitions/NekiShardConfigurationProfile"
             }
@@ -5370,7 +5370,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Delete a shard configuration profile for a Neki branch",
+        "summary": "Delete a configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "DeleteShardConfigurationProfile",
         "produces": [
@@ -5415,7 +5415,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5450,7 +5450,7 @@
             }
           },
           "204": {
-            "description": "Shard configuration profile deleted",
+            "description": "Configuration profile deleted",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5464,7 +5464,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_changes"
         ],
-        "summary": "List change requests for a Neki shard configuration profile",
+        "summary": "List change requests for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListShardConfigurationProfileChangeRequests",
         "produces": [
@@ -5535,7 +5535,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5584,7 +5584,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_changes"
         ],
-        "summary": "Get a change request for a Neki shard configuration profile",
+        "summary": "Get a change request for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetShardConfigurationProfileChangeRequest",
         "produces": [
@@ -5636,7 +5636,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or change request not found",
+            "description": "Configuration profile or change request not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5683,7 +5683,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_changes"
         ],
-        "summary": "Cancel a change request for a Neki shard configuration profile",
+        "summary": "Cancel a change request for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CancelShardConfigurationProfileChangeRequest",
         "produces": [
@@ -5735,7 +5735,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or change request not found",
+            "description": "Configuration profile or change request not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5779,12 +5779,115 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/duplicate": {
+      "post": {
+        "tags": [
+          "api-neki_shard_configuration_profiles"
+        ],
+        "summary": "Duplicate a configuration profile for a Neki branch",
+        "description": "        Copies the profile\u0027s settings and any parameters you\u0027ve changed. Parameters you haven\u0027t changed start at their current defaults. Creating a duplicate follows the same rules as creating a profile.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "DuplicateShardConfigurationProfile",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "configurationProfile",
+            "description": "Name from \u0060list_shard_configuration_profiles\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DuplicateShardConfigurationProfileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Configuration profile not found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Invalid parameters",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "201": {
+            "description": "Returns the duplicated configuration profile",
+            "schema": {
+              "$ref": "#/definitions/NekiShardConfigurationProfile"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/extensions": {
       "get": {
         "tags": [
           "api-neki_shard_configuration_profile_extensions"
         ],
-        "summary": "List extensions for a Neki shard configuration profile",
+        "summary": "List extensions for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListShardConfigurationProfileExtensions",
         "produces": [
@@ -5829,7 +5932,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5864,7 +5967,7 @@
             }
           },
           "200": {
-            "description": "Returns extensions for the shard configuration profile",
+            "description": "Returns extensions for the configuration profile",
             "schema": {
               "$ref": "#/definitions/ListShardConfigurationProfileExtensions200ResponseSchema"
             }
@@ -5877,7 +5980,7 @@
         "tags": [
           "api-neki_shard_configuration_profiles"
         ],
-        "summary": "Run maintenance for a Neki shard configuration profile",
+        "summary": "Run maintenance for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "RunShardConfigurationProfileMaintenance",
         "produces": [
@@ -5922,7 +6025,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -5971,7 +6074,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_parameters"
         ],
-        "summary": "List parameters for a Neki shard configuration profile",
+        "summary": "List parameters for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListShardConfigurationProfileParameters",
         "produces": [
@@ -6016,7 +6119,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6051,7 +6154,7 @@
             }
           },
           "200": {
-            "description": "Returns parameters for the shard configuration profile",
+            "description": "Returns parameters for the configuration profile",
             "schema": {
               "$ref": "#/definitions/ListShardConfigurationProfileParameters200ResponseSchema"
             }
@@ -6064,7 +6167,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "List shards for a Neki shard configuration profile",
+        "summary": "List shards for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListShardConfigurationProfileShards",
         "produces": [
@@ -6129,7 +6232,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6164,7 +6267,7 @@
             }
           },
           "200": {
-            "description": "Returns shards for the shard configuration profile",
+            "description": "Returns shards for the configuration profile",
             "schema": {
               "$ref": "#/definitions/PaginatedNekiShard"
             }
@@ -6175,7 +6278,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Add a shard to a Neki shard configuration profile",
+        "summary": "Add a shard to a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CreateShardConfigurationProfileShard",
         "consumes": [
@@ -6230,7 +6333,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6276,7 +6379,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Assign shards to a Neki shard configuration profile",
+        "summary": "Assign shards to a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "AssignShardConfigurationProfileShards",
         "consumes": [
@@ -6331,7 +6434,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or shard not found",
+            "description": "Configuration profile or shard not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6377,7 +6480,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Remove shards from a Neki shard configuration profile",
+        "summary": "Remove shards from a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "DeleteShardConfigurationProfileShards",
         "produces": [
@@ -6433,7 +6536,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or shard not found",
+            "description": "Configuration profile or shard not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6482,7 +6585,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Add shards to a Neki shard configuration profile",
+        "summary": "Add shards to a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "BulkCreateShardConfigurationProfileShards",
         "consumes": [
@@ -6537,7 +6640,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6585,7 +6688,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Get a shard in a Neki shard configuration profile",
+        "summary": "Get a shard in a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetShardConfigurationProfileShard",
         "produces": [
@@ -6637,7 +6740,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or shard not found",
+            "description": "Configuration profile or shard not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6683,7 +6786,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Update a shard in a Neki shard configuration profile",
+        "summary": "Update a shard in a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "UpdateShardConfigurationProfileShard",
         "consumes": [
@@ -6745,7 +6848,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or shard not found",
+            "description": "Configuration profile or shard not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -6791,7 +6894,7 @@
         "tags": [
           "api-neki_shard_configuration_profile_shards"
         ],
-        "summary": "Remove a shard from a Neki shard configuration profile",
+        "summary": "Remove a shard from a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "DeleteShardConfigurationProfileShard",
         "produces": [
@@ -6843,7 +6946,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile or shard not found",
+            "description": "Configuration profile or shard not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -7650,7 +7753,7 @@
         "tags": [
           "api-neki_default_shard_configuration_profiles"
         ],
-        "summary": "Get the default shard configuration profile for a Neki branch",
+        "summary": "Get the default configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetDefaultShardConfigurationProfile",
         "produces": [
@@ -7688,7 +7791,7 @@
             }
           },
           "404": {
-            "description": "Default shard configuration profile not found",
+            "description": "Default configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -7723,7 +7826,7 @@
             }
           },
           "302": {
-            "description": "Redirects to the default shard configuration profile",
+            "description": "Redirects to the default configuration profile",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -7735,7 +7838,7 @@
         "tags": [
           "api-neki_default_shard_configuration_profiles"
         ],
-        "summary": "Set the default shard configuration profile for a Neki branch",
+        "summary": "Set the default configuration profile for a Neki branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "SetDefaultShardConfigurationProfile",
         "consumes": [
@@ -7783,7 +7886,7 @@
             }
           },
           "404": {
-            "description": "Shard configuration profile not found",
+            "description": "Configuration profile not found",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -7811,14 +7914,14 @@
             }
           },
           "422": {
-            "description": "Default shard configuration profile could not be updated",
+            "description": "Default configuration profile could not be updated",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
             }
           },
           "200": {
-            "description": "Returns the new default shard configuration profile",
+            "description": "Returns the new default configuration profile",
             "schema": {
               "$ref": "#/definitions/NekiShardConfigurationProfile"
             }
@@ -11439,7 +11542,7 @@
           {
             "in": "query",
             "name": "shard_config_profile",
-            "description": "Filter by shard configuration profile name",
+            "description": "Filter by configuration profile name",
             "type": "string"
           },
           {
@@ -11635,7 +11738,7 @@
           {
             "in": "query",
             "name": "shard_config_profile",
-            "description": "Filter by shard configuration profile name",
+            "description": "Filter by configuration profile name",
             "type": "string"
           },
           {
@@ -17838,7 +17941,7 @@
           {
             "in": "query",
             "name": "exclude_configuration_profile",
-            "description": "Exclude shards in this shard configuration profile",
+            "description": "Exclude shards in this configuration profile",
             "type": "string"
           },
           {
@@ -17976,7 +18079,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the default shard configuration profile shards endpoint",
+            "description": "Redirects to the default configuration profile shards endpoint",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -18161,7 +18264,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the shard configuration profile shard endpoint",
+            "description": "Redirects to the configuration profile shard endpoint",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -18253,7 +18356,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the shard configuration profile shard endpoint",
+            "description": "Redirects to the configuration profile shard endpoint",
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
@@ -18340,7 +18443,7 @@
             }
           },
           "200": {
-            "description": "Returns sidecars for the branch, one per shard configuration profile",
+            "description": "Returns sidecars for the branch, one per configuration profile",
             "schema": {
               "$ref": "#/definitions/ListSidecars200ResponseSchema"
             }
@@ -32046,12 +32149,12 @@
         },
         "name": {
           "type": "string",
-          "description": "The name of the shard configuration profile",
+          "description": "The name of the configuration profile",
           "x-nullable": true
         },
         "previous_name": {
           "type": "string",
-          "description": "The previous name of the shard configuration profile",
+          "description": "The previous name of the configuration profile",
           "x-nullable": true
         },
         "cluster_size": {
@@ -32137,11 +32240,11 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "The ID of the shard configuration profile"
+          "description": "The ID of the configuration profile"
         },
         "name": {
           "type": "string",
-          "description": "The name of the shard configuration profile"
+          "description": "The name of the configuration profile"
         },
         "architecture": {
           "type": "string",
@@ -32157,7 +32260,7 @@
         },
         "default": {
           "type": "boolean",
-          "description": "Whether this is the default shard configuration profile"
+          "description": "Whether this is the default configuration profile"
         },
         "metal": {
           "type": "boolean",
@@ -32169,23 +32272,23 @@
         },
         "postgres_image_version": {
           "type": "string",
-          "description": "The PostgreSQL image used by the shard configuration profile"
+          "description": "The PostgreSQL image used by the configuration profile"
         },
         "latest_postgres_image_version": {
           "type": "string",
-          "description": "The latest PostgreSQL image available to the shard configuration profile"
+          "description": "The latest PostgreSQL image available to the configuration profile"
         },
         "postgres_major_version": {
           "type": "integer",
-          "description": "The PostgreSQL major version used by the shard configuration profile"
+          "description": "The PostgreSQL major version used by the configuration profile"
         },
         "postgres_minor_version": {
           "type": "integer",
-          "description": "The PostgreSQL minor version used by the shard configuration profile"
+          "description": "The PostgreSQL minor version used by the configuration profile"
         },
         "latest_postgres_minor_version": {
           "type": "integer",
-          "description": "The latest PostgreSQL minor version available to the shard configuration profile"
+          "description": "The latest PostgreSQL minor version available to the configuration profile"
         },
         "shards": {
           "type": "integer",
@@ -32199,11 +32302,11 @@
         },
         "created_at": {
           "type": "string",
-          "description": "When the shard configuration profile was created"
+          "description": "When the configuration profile was created"
         },
         "updated_at": {
           "type": "string",
-          "description": "When the shard configuration profile was last updated"
+          "description": "When the configuration profile was last updated"
         }
       }
     },
@@ -32456,7 +32559,7 @@
         },
         "configuration_profile": {
           "type": "string",
-          "description": "The name of the shard configuration profile"
+          "description": "The name of the configuration profile"
         },
         "created_at": {
           "type": "string",
@@ -32508,7 +32611,7 @@
         },
         "configuration_profile": {
           "type": "string",
-          "description": "The name of the shard configuration profile the sidecar belongs to"
+          "description": "The name of the configuration profile the sidecar belongs to"
         },
         "state": {
           "$ref": "#/definitions/NekiSidecarState"
@@ -35825,6 +35928,8 @@
         "cutover_expiring",
         "finished_at",
         "force_cutover_requested_at",
+        "retry_requested",
+        "retry_requested_at",
         "queued_at",
         "ready_to_cutover_at",
         "started_at",
@@ -35887,6 +35992,15 @@
         "force_cutover_requested_at": {
           "type": "string",
           "description": "When force cutover was triggered for the deployment",
+          "x-nullable": true
+        },
+        "retry_requested": {
+          "type": "boolean",
+          "description": "Whether a retry of failed operations was requested within the retry window"
+        },
+        "retry_requested_at": {
+          "type": "string",
+          "description": "When a retry of failed operations was last requested",
           "x-nullable": true
         },
         "queued_at": {
@@ -38584,6 +38698,7 @@
       "required": [
         "storage_bytes",
         "max_storage_bytes",
+        "max_storage_bytes_managed_by_staff",
         "disk_scaling_strategy"
       ],
       "properties": {
@@ -38594,6 +38709,10 @@
         "max_storage_bytes": {
           "type": "integer",
           "description": "The maximum size in bytes disks may autoscale to"
+        },
+        "max_storage_bytes_managed_by_staff": {
+          "type": "boolean",
+          "description": "True when PlanetScale staff raised the limit above the organization default. The limit is read-only while this is set"
         },
         "disk_scaling_strategy": {
           "$ref": "#/definitions/DatabaseBranchKeyspaceStorageDiskScalingStrategy"
@@ -40179,12 +40298,12 @@
         },
         "name": {
           "type": "string",
-          "description": "The name of the shard configuration profile",
+          "description": "The name of the configuration profile",
           "x-nullable": true
         },
         "previous_name": {
           "type": "string",
-          "description": "The previous name of the shard configuration profile",
+          "description": "The previous name of the configuration profile",
           "x-nullable": true
         },
         "cluster_size": {
@@ -40585,7 +40704,7 @@
         },
         "configuration_profile": {
           "type": "string",
-          "description": "The name of the shard configuration profile"
+          "description": "The name of the configuration profile"
         },
         "created_at": {
           "type": "string",
@@ -44467,6 +44586,8 @@
         "cutover_expiring",
         "finished_at",
         "force_cutover_requested_at",
+        "retry_requested",
+        "retry_requested_at",
         "queued_at",
         "ready_to_cutover_at",
         "started_at",
@@ -44529,6 +44650,15 @@
         "force_cutover_requested_at": {
           "type": "string",
           "description": "When force cutover was triggered for the deployment",
+          "x-nullable": true
+        },
+        "retry_requested": {
+          "type": "boolean",
+          "description": "Whether a retry of failed operations was requested within the retry window"
+        },
+        "retry_requested_at": {
+          "type": "string",
+          "description": "When a retry of failed operations was last requested",
           "x-nullable": true
         },
         "queued_at": {
@@ -45098,6 +45228,8 @@
         "cutover_expiring",
         "finished_at",
         "force_cutover_requested_at",
+        "retry_requested",
+        "retry_requested_at",
         "queued_at",
         "ready_to_cutover_at",
         "started_at",
@@ -45160,6 +45292,15 @@
         "force_cutover_requested_at": {
           "type": "string",
           "description": "When force cutover was triggered for the deployment",
+          "x-nullable": true
+        },
+        "retry_requested": {
+          "type": "boolean",
+          "description": "Whether a retry of failed operations was requested within the retry window"
+        },
+        "retry_requested_at": {
+          "type": "string",
+          "description": "When a retry of failed operations was last requested",
           "x-nullable": true
         },
         "queued_at": {
@@ -46594,6 +46735,7 @@
       "required": [
         "storage_bytes",
         "max_storage_bytes",
+        "max_storage_bytes_managed_by_staff",
         "disk_scaling_strategy"
       ],
       "properties": {
@@ -46604,6 +46746,10 @@
         "max_storage_bytes": {
           "type": "integer",
           "description": "The maximum size in bytes disks may autoscale to"
+        },
+        "max_storage_bytes_managed_by_staff": {
+          "type": "boolean",
+          "description": "True when PlanetScale staff raised the limit above the organization default. The limit is read-only while this is set"
         },
         "disk_scaling_strategy": {
           "$ref": "#/definitions/PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy"
@@ -48762,6 +48908,8 @@
         "cutover_expiring",
         "finished_at",
         "force_cutover_requested_at",
+        "retry_requested",
+        "retry_requested_at",
         "queued_at",
         "ready_to_cutover_at",
         "started_at",
@@ -48824,6 +48972,15 @@
         "force_cutover_requested_at": {
           "type": "string",
           "description": "When force cutover was triggered for the deployment",
+          "x-nullable": true
+        },
+        "retry_requested": {
+          "type": "boolean",
+          "description": "Whether a retry of failed operations was requested within the retry window"
+        },
+        "retry_requested_at": {
+          "type": "string",
+          "description": "When a retry of failed operations was last requested",
           "x-nullable": true
         },
         "queued_at": {
@@ -51912,23 +52069,23 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The name of the shard configuration profile"
+          "description": "The name of the configuration profile"
         },
         "cluster_size": {
           "type": "string",
-          "description": "The cluster size for the shard configuration profile"
+          "description": "The cluster size for the configuration profile"
         },
         "replicas": {
           "type": "integer",
-          "description": "The number of replicas for the shard configuration profile"
+          "description": "The number of replicas for the configuration profile"
         },
         "postgres_major_version": {
           "type": "string",
-          "description": "The PostgreSQL major version for the shard configuration profile"
+          "description": "The PostgreSQL major version for the configuration profile"
         },
         "postgres_minor_version": {
           "type": "string",
-          "description": "The PostgreSQL minor version for the shard configuration profile. Requires postgres_major_version when specified."
+          "description": "The PostgreSQL minor version for the configuration profile. Requires postgres_major_version when specified."
         },
         "storage": {
           "$ref": "#/definitions/CreateShardConfigurationProfileRequestStorage"
@@ -51943,7 +52100,7 @@
       "properties": {
         "configuration_profile_names": {
           "type": "array",
-          "description": "The names of the shard configuration profiles to maintain",
+          "description": "The names of the configuration profiles to maintain",
           "items": {
             "type": "string"
           }
@@ -51955,11 +52112,11 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The new name for the shard configuration profile"
+          "description": "The new name for the configuration profile"
         },
         "cluster_size": {
           "type": "string",
-          "description": "The new cluster size for the shard configuration profile"
+          "description": "The new cluster size for the configuration profile"
         },
         "extensions": {
           "type": "array",
@@ -51970,21 +52127,33 @@
         },
         "replicas": {
           "type": "integer",
-          "description": "The new number of replicas for the shard configuration profile"
+          "description": "The new number of replicas for the configuration profile"
         },
         "parameters": {
           "$ref": "#/definitions/UpdateShardConfigurationProfileRequestParameters"
         },
         "postgres_major_version": {
           "type": "string",
-          "description": "The PostgreSQL major version for the shard configuration profile"
+          "description": "The PostgreSQL major version for the configuration profile"
         },
         "postgres_minor_version": {
           "type": "string",
-          "description": "The PostgreSQL minor version for the shard configuration profile. Requires postgres_major_version when specified."
+          "description": "The PostgreSQL minor version for the configuration profile. Requires postgres_major_version when specified."
         },
         "storage": {
           "$ref": "#/definitions/UpdateShardConfigurationProfileRequestStorage"
+        }
+      }
+    },
+    "DuplicateShardConfigurationProfileRequest": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the new configuration profile"
         }
       }
     },
@@ -52143,7 +52312,7 @@
       "properties": {
         "configuration_profile": {
           "type": "string",
-          "description": "The name of the shard configuration profile to make the default"
+          "description": "The name of the configuration profile to make the default"
         }
       }
     },
@@ -55343,7 +55512,7 @@
     },
     "NekiShardConfigurationProfileState": {
       "type": "string",
-      "description": "The current state of the shard configuration profile",
+      "description": "The current state of the configuration profile",
       "enum": [
         "draft",
         "pending",

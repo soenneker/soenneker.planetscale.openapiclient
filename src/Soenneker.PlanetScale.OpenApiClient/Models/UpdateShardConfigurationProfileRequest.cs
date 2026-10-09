@@ -14,7 +14,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The new cluster size for the shard configuration profile</summary>
+        /// <summary>The new cluster size for the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClusterSize { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public List<string> Extensions { get; set; }
 #endif
-        /// <summary>The new name for the shard configuration profile</summary>
+        /// <summary>The new name for the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestParameters Parameters { get; set; }
 #endif
-        /// <summary>The PostgreSQL major version for the shard configuration profile</summary>
+        /// <summary>The PostgreSQL major version for the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostgresMajorVersion { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PostgresMajorVersion { get; set; }
 #endif
-        /// <summary>The PostgreSQL minor version for the shard configuration profile. Requires postgres_major_version when specified.</summary>
+        /// <summary>The PostgreSQL minor version for the configuration profile. Requires postgres_major_version when specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostgresMinorVersion { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PostgresMinorVersion { get; set; }
 #endif
-        /// <summary>The new number of replicas for the shard configuration profile</summary>
+        /// <summary>The new number of replicas for the configuration profile</summary>
         public int? Replicas { get; set; }
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
