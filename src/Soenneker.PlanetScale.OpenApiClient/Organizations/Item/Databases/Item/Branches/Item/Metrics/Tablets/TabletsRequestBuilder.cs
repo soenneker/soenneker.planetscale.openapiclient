@@ -177,7 +177,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("to")]
             public string To { get; set; }
 #endif
-            /// <summary>Filter by workflow ID</summary>
+            /// <summary>Filter by workflow name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("workflow")]

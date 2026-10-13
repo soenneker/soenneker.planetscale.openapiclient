@@ -14,6 +14,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether or not to enable aggressive cutover for this deploy request. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt instead of retrying for up to an hour. Does not change the database setting.</summary>
+        public bool? AggressiveCutover { get; set; }
         /// <summary>Whether or not to enable auto_cutover for the deploy request. When enabled, will auto cutover to the new schema as soon as it is ready.</summary>
         public bool? AutoCutover { get; set; }
         /// <summary>Whether or not to enable auto_delete_branch for the deploy request. When enabled, will delete the branch once the DR successfully completes.</summary>
@@ -67,6 +69,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "aggressive_cutover", n => { AggressiveCutover = n.GetBoolValue(); } },
                 { "auto_cutover", n => { AutoCutover = n.GetBoolValue(); } },
                 { "auto_delete_branch", n => { AutoDeleteBranch = n.GetBoolValue(); } },
                 { "branch", n => { Branch = n.GetStringValue(); } },
@@ -81,6 +84,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("aggressive_cutover", AggressiveCutover);
             writer.WriteBoolValue("auto_cutover", AutoCutover);
             writer.WriteBoolValue("auto_delete_branch", AutoDeleteBranch);
             writer.WriteStringValue("branch", Branch);

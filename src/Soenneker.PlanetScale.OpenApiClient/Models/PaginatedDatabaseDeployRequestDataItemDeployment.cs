@@ -22,6 +22,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting.</summary>
+        public bool? AggressiveCutover { get; set; }
         /// <summary>Whether or not to automatically cutover once deployment is finished</summary>
         public bool? AutoCutover { get; set; }
         /// <summary>Whether or not to automatically delete the head branch once deployment is finished</summary>
@@ -278,6 +280,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentActor.CreateFromDiscriminatorValue); } },
+                { "aggressive_cutover", n => { AggressiveCutover = n.GetBoolValue(); } },
                 { "auto_cutover", n => { AutoCutover = n.GetBoolValue(); } },
                 { "auto_delete_branch", n => { AutoDeleteBranch = n.GetBoolValue(); } },
                 { "cancelled_actor", n => { CancelledActor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentCancelledActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentCancelledActor.CreateFromDiscriminatorValue); } },
@@ -325,6 +328,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentActor>("actor", Actor);
+            writer.WriteBoolValue("aggressive_cutover", AggressiveCutover);
             writer.WriteBoolValue("auto_cutover", AutoCutover);
             writer.WriteBoolValue("auto_delete_branch", AutoDeleteBranch);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentCancelledActor>("cancelled_actor", CancelledActor);

@@ -736,7 +736,7 @@
           "Databases"
         ],
         "summary": "List databases",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
         "operationId": "ListDatabases",
         "produces": [
           "application/json"
@@ -914,7 +914,7 @@
           "Databases"
         ],
         "summary": "Get a database",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "GetDatabase",
         "produces": [
           "application/json"
@@ -12255,7 +12255,7 @@
           {
             "in": "query",
             "name": "workflow",
-            "description": "Filter by workflow ID",
+            "description": "Filter by workflow name",
             "type": "string"
           }
         ],
@@ -21161,6 +21161,102 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/deploy-requests/{number}/aggressive-cutover": {
+      "put": {
+        "tags": [
+          "Deploy requests"
+        ],
+        "summary": "Update aggressive cutover for a deploy request",
+        "description": "Enables or disables aggressive cutover for a deploy request.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060create_deploy_request\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060deploy_deploy_requests\u0060 |\n| Database | \u0060deploy_deploy_requests\u0060 |",
+        "operationId": "UpdateAggressiveCutover",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "The name of the deploy request\u0027s organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "The name of the deploy request\u0027s database",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "number",
+            "description": "The number of the deploy request",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateAggressiveCutoverRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the deploy request",
+            "schema": {
+              "$ref": "#/definitions/DatabaseDeployRequest"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/deploy-requests/{number}/apply-deploy": {
       "post": {
         "tags": [
@@ -22896,7 +22992,7 @@
           "Databases"
         ],
         "summary": "List read-only regions",
-        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
+        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
         "operationId": "ListReadOnlyRegions",
         "produces": [
           "application/json"
@@ -22989,7 +23085,7 @@
           "Databases"
         ],
         "summary": "List database regions",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabaseRegions",
         "produces": [
           "application/json"
@@ -24050,1050 +24146,6 @@
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows": {
-      "get": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "List workflows",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
-        "operationId": "ListWorkflows",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "between",
-            "description": "Filter workflows to those active during a time range (e.g. 2025-01-01T00:00:00Z..2025-01-01T23:59:59)",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "description": "If provided, specifies the page offset of returned results",
-            "type": "integer",
-            "default": 1
-          },
-          {
-            "in": "query",
-            "name": "per_page",
-            "description": "If provided, specifies the number of returned results",
-            "type": "integer",
-            "default": 25
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns workflows",
-            "schema": {
-              "$ref": "#/definitions/PaginatedWorkflow"
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Create a workflow",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "CreateWorkflow",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/CreateWorkflowRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "201": {
-            "description": "Returns the workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}": {
-      "get": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Get a workflow",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
-        "operationId": "GetWorkflow",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Cancel a workflow",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowCancel",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/complete": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Complete a workflow",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowComplete",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/cutover": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Cutover traffic",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowCutover",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/retry": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Retry a failed workflow",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowRetry",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/reverse-cutover": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Reverse traffic cutover",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowReverseCutover",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/reverse-traffic": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Reverse traffic",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowReverseTraffic",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/switch-primaries": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Switch primary traffic",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowSwitchPrimaries",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/switch-replicas": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Switch replica traffic",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "WorkflowSwitchReplicas",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/workflows/{number}/verify-data": {
-      "patch": {
-        "tags": [
-          "Workflows"
-        ],
-        "summary": "Verify workflow data",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_workflows\u0060 |\n| Database | \u0060write_workflows\u0060 |",
-        "operationId": "VerifyWorkflow",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "The name of the organization the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "The name of the database the workflow belongs to",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "number",
-            "description": "The sequence number of the workflow",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns a workflow",
-            "schema": {
-              "$ref": "#/definitions/Workflow"
             }
           }
         }
@@ -35376,264 +34428,6 @@
         }
       }
     },
-    "PaginatedWorkflow": {
-      "type": "object",
-      "required": [
-        "type",
-        "current_page",
-        "per_page",
-        "next_page",
-        "next_page_url",
-        "prev_page",
-        "prev_page_url",
-        "data"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "The response type. Always \u0022list\u0022 for paginated responses."
-        },
-        "current_page": {
-          "type": "integer",
-          "description": "The current page number"
-        },
-        "per_page": {
-          "type": "integer",
-          "description": "The maximum number of results per page"
-        },
-        "next_page": {
-          "type": "integer",
-          "description": "The next page number, or null when this is the last page",
-          "x-nullable": true
-        },
-        "next_page_url": {
-          "type": "string",
-          "description": "The next page of results, or null when this is the last page",
-          "x-nullable": true
-        },
-        "prev_page": {
-          "type": "integer",
-          "description": "The previous page number, or null when this is the first page",
-          "x-nullable": true
-        },
-        "prev_page_url": {
-          "type": "string",
-          "description": "The previous page of results, or null when this is the first page",
-          "x-nullable": true
-        },
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PaginatedWorkflowDataItem"
-          }
-        }
-      }
-    },
-    "Workflow": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "number",
-        "state",
-        "created_at",
-        "updated_at",
-        "started_at",
-        "completed_at",
-        "cancelled_at",
-        "reversed_at",
-        "retried_at",
-        "data_copy_completed_at",
-        "cutover_at",
-        "replicas_switched",
-        "primaries_switched",
-        "switch_replicas_at",
-        "switch_primaries_at",
-        "verify_data_at",
-        "workflow_type",
-        "workflow_subtype",
-        "defer_secondary_keys",
-        "on_ddl",
-        "workflow_errors",
-        "may_retry",
-        "may_restart",
-        "verified_data_stale",
-        "sequence_tables_applied",
-        "actor",
-        "verify_data_by",
-        "reversed_by",
-        "switch_replicas_by",
-        "switch_primaries_by",
-        "cancelled_by",
-        "completed_by",
-        "retried_by",
-        "cutover_by",
-        "reversed_cutover_by",
-        "branch",
-        "source_keyspace",
-        "target_keyspace",
-        "global_keyspace"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the workflow"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the workflow"
-        },
-        "number": {
-          "type": "integer",
-          "description": "The sequence number of the workflow"
-        },
-        "state": {
-          "$ref": "#/definitions/WorkflowState"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the workflow was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the workflow was last updated"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When the workflow was started",
-          "x-nullable": true
-        },
-        "completed_at": {
-          "type": "string",
-          "description": "When the workflow was completed",
-          "x-nullable": true
-        },
-        "cancelled_at": {
-          "type": "string",
-          "description": "When the workflow was cancelled",
-          "x-nullable": true
-        },
-        "reversed_at": {
-          "type": "string",
-          "description": "When the workflow was reversed",
-          "x-nullable": true
-        },
-        "retried_at": {
-          "type": "string",
-          "description": "When the workflow was retried",
-          "x-nullable": true
-        },
-        "data_copy_completed_at": {
-          "type": "string",
-          "description": "When the data copy was completed",
-          "x-nullable": true
-        },
-        "cutover_at": {
-          "type": "string",
-          "description": "When the cutover was completed",
-          "x-nullable": true
-        },
-        "replicas_switched": {
-          "type": "boolean",
-          "description": "Whether or not the replicas have been switched"
-        },
-        "primaries_switched": {
-          "type": "boolean",
-          "description": "Whether or not the primaries have been switched"
-        },
-        "switch_replicas_at": {
-          "type": "string",
-          "description": "When the replicas were switched",
-          "x-nullable": true
-        },
-        "switch_primaries_at": {
-          "type": "string",
-          "description": "When the primaries were switched",
-          "x-nullable": true
-        },
-        "verify_data_at": {
-          "type": "string",
-          "description": "When the data was verified",
-          "x-nullable": true
-        },
-        "workflow_type": {
-          "$ref": "#/definitions/MoveTablesWorkflowType"
-        },
-        "workflow_subtype": {
-          "type": "string",
-          "description": "The subtype of the workflow"
-        },
-        "defer_secondary_keys": {
-          "type": "boolean",
-          "description": "Whether or not secondary keys are deferred"
-        },
-        "on_ddl": {
-          "$ref": "#/definitions/WorkflowOnDdl"
-        },
-        "workflow_errors": {
-          "type": "string",
-          "description": "The errors that occurred during the workflow"
-        },
-        "may_retry": {
-          "type": "boolean",
-          "description": "Whether or not the workflow may be retried"
-        },
-        "may_restart": {
-          "type": "boolean",
-          "description": "Whether or not the workflow may be restarted"
-        },
-        "verified_data_stale": {
-          "type": "boolean",
-          "description": "Whether or not the verified data is stale"
-        },
-        "sequence_tables_applied": {
-          "type": "boolean",
-          "description": "Whether or not sequence tables have been created"
-        },
-        "actor": {
-          "$ref": "#/definitions/WorkflowActor"
-        },
-        "verify_data_by": {
-          "$ref": "#/definitions/WorkflowVerifyDataBy"
-        },
-        "reversed_by": {
-          "$ref": "#/definitions/WorkflowReversedBy"
-        },
-        "switch_replicas_by": {
-          "$ref": "#/definitions/WorkflowSwitchReplicasBy"
-        },
-        "switch_primaries_by": {
-          "$ref": "#/definitions/WorkflowSwitchPrimariesBy"
-        },
-        "cancelled_by": {
-          "$ref": "#/definitions/WorkflowCancelledBy"
-        },
-        "completed_by": {
-          "$ref": "#/definitions/WorkflowCompletedBy"
-        },
-        "retried_by": {
-          "$ref": "#/definitions/WorkflowRetriedBy"
-        },
-        "cutover_by": {
-          "$ref": "#/definitions/WorkflowCutoverBy"
-        },
-        "reversed_cutover_by": {
-          "$ref": "#/definitions/WorkflowReversedCutoverBy"
-        },
-        "branch": {
-          "$ref": "#/definitions/WorkflowBranch"
-        },
-        "source_keyspace": {
-          "$ref": "#/definitions/WorkflowSourceKeyspace"
-        },
-        "target_keyspace": {
-          "$ref": "#/definitions/WorkflowTargetKeyspace"
-        },
-        "global_keyspace": {
-          "$ref": "#/definitions/WorkflowGlobalKeyspace"
-        }
-      }
-    },
     "PaginatedDeployRequestReview": {
       "type": "object",
       "required": [
@@ -35923,6 +34717,7 @@
         "id",
         "auto_cutover",
         "auto_delete_branch",
+        "aggressive_cutover",
         "created_at",
         "cutover_at",
         "cutover_expiring",
@@ -35965,6 +34760,10 @@
         "auto_delete_branch": {
           "type": "boolean",
           "description": "Whether or not to automatically delete the head branch once deployment is finished"
+        },
+        "aggressive_cutover": {
+          "type": "boolean",
+          "description": "Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting."
         },
         "created_at": {
           "type": "string",
@@ -43761,563 +42560,6 @@
       },
       "x-nullable": true
     },
-    "PaginatedWorkflowDataItem": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "number",
-        "state",
-        "created_at",
-        "updated_at",
-        "started_at",
-        "completed_at",
-        "cancelled_at",
-        "reversed_at",
-        "retried_at",
-        "data_copy_completed_at",
-        "cutover_at",
-        "replicas_switched",
-        "primaries_switched",
-        "switch_replicas_at",
-        "switch_primaries_at",
-        "verify_data_at",
-        "workflow_type",
-        "workflow_subtype",
-        "defer_secondary_keys",
-        "on_ddl",
-        "workflow_errors",
-        "may_retry",
-        "may_restart",
-        "verified_data_stale",
-        "sequence_tables_applied",
-        "actor",
-        "verify_data_by",
-        "reversed_by",
-        "switch_replicas_by",
-        "switch_primaries_by",
-        "cancelled_by",
-        "completed_by",
-        "retried_by",
-        "cutover_by",
-        "reversed_cutover_by",
-        "branch",
-        "source_keyspace",
-        "target_keyspace",
-        "global_keyspace"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the workflow"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the workflow"
-        },
-        "number": {
-          "type": "integer",
-          "description": "The sequence number of the workflow"
-        },
-        "state": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemState"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the workflow was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the workflow was last updated"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "When the workflow was started",
-          "x-nullable": true
-        },
-        "completed_at": {
-          "type": "string",
-          "description": "When the workflow was completed",
-          "x-nullable": true
-        },
-        "cancelled_at": {
-          "type": "string",
-          "description": "When the workflow was cancelled",
-          "x-nullable": true
-        },
-        "reversed_at": {
-          "type": "string",
-          "description": "When the workflow was reversed",
-          "x-nullable": true
-        },
-        "retried_at": {
-          "type": "string",
-          "description": "When the workflow was retried",
-          "x-nullable": true
-        },
-        "data_copy_completed_at": {
-          "type": "string",
-          "description": "When the data copy was completed",
-          "x-nullable": true
-        },
-        "cutover_at": {
-          "type": "string",
-          "description": "When the cutover was completed",
-          "x-nullable": true
-        },
-        "replicas_switched": {
-          "type": "boolean",
-          "description": "Whether or not the replicas have been switched"
-        },
-        "primaries_switched": {
-          "type": "boolean",
-          "description": "Whether or not the primaries have been switched"
-        },
-        "switch_replicas_at": {
-          "type": "string",
-          "description": "When the replicas were switched",
-          "x-nullable": true
-        },
-        "switch_primaries_at": {
-          "type": "string",
-          "description": "When the primaries were switched",
-          "x-nullable": true
-        },
-        "verify_data_at": {
-          "type": "string",
-          "description": "When the data was verified",
-          "x-nullable": true
-        },
-        "workflow_type": {
-          "$ref": "#/definitions/MoveTablesWorkflowType"
-        },
-        "workflow_subtype": {
-          "type": "string",
-          "description": "The subtype of the workflow"
-        },
-        "defer_secondary_keys": {
-          "type": "boolean",
-          "description": "Whether or not secondary keys are deferred"
-        },
-        "on_ddl": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemOnDdl"
-        },
-        "workflow_errors": {
-          "type": "string",
-          "description": "The errors that occurred during the workflow"
-        },
-        "may_retry": {
-          "type": "boolean",
-          "description": "Whether or not the workflow may be retried"
-        },
-        "may_restart": {
-          "type": "boolean",
-          "description": "Whether or not the workflow may be restarted"
-        },
-        "verified_data_stale": {
-          "type": "boolean",
-          "description": "Whether or not the verified data is stale"
-        },
-        "sequence_tables_applied": {
-          "type": "boolean",
-          "description": "Whether or not sequence tables have been created"
-        },
-        "actor": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemActor"
-        },
-        "verify_data_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemVerifyDataBy"
-        },
-        "reversed_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemReversedBy"
-        },
-        "switch_replicas_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemSwitchReplicasBy"
-        },
-        "switch_primaries_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemSwitchPrimariesBy"
-        },
-        "cancelled_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemCancelledBy"
-        },
-        "completed_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemCompletedBy"
-        },
-        "retried_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemRetriedBy"
-        },
-        "cutover_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemCutoverBy"
-        },
-        "reversed_cutover_by": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemReversedCutoverBy"
-        },
-        "branch": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemBranch"
-        },
-        "source_keyspace": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemSourceKeyspace"
-        },
-        "target_keyspace": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemTargetKeyspace"
-        },
-        "global_keyspace": {
-          "$ref": "#/definitions/PaginatedWorkflowDataItemGlobalKeyspace"
-        }
-      }
-    },
-    "WorkflowActor": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowVerifyDataBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowReversedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowSwitchReplicasBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowSwitchPrimariesBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowCancelledBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowCompletedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowRetriedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowCutoverBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowReversedCutoverBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "WorkflowBranch": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "WorkflowSourceKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "WorkflowTargetKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "WorkflowGlobalKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
     "PaginatedDeployRequestReviewDataItem": {
       "type": "object",
       "required": [
@@ -44581,6 +42823,7 @@
         "id",
         "auto_cutover",
         "auto_delete_branch",
+        "aggressive_cutover",
         "created_at",
         "cutover_at",
         "cutover_expiring",
@@ -44623,6 +42866,10 @@
         "auto_delete_branch": {
           "type": "boolean",
           "description": "Whether or not to automatically delete the head branch once deployment is finished"
+        },
+        "aggressive_cutover": {
+          "type": "boolean",
+          "description": "Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting."
         },
         "created_at": {
           "type": "string",
@@ -45223,6 +43470,7 @@
         "id",
         "auto_cutover",
         "auto_delete_branch",
+        "aggressive_cutover",
         "created_at",
         "cutover_at",
         "cutover_expiring",
@@ -45265,6 +43513,10 @@
         "auto_delete_branch": {
           "type": "boolean",
           "description": "Whether or not to automatically delete the head branch once deployment is finished"
+        },
+        "aggressive_cutover": {
+          "type": "boolean",
+          "description": "Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting."
         },
         "created_at": {
           "type": "string",
@@ -48455,358 +46707,6 @@
         }
       }
     },
-    "PaginatedWorkflowDataItemActor": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemVerifyDataBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemReversedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemSwitchReplicasBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemSwitchPrimariesBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemCancelledBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemCompletedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemRetriedBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemCutoverBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemReversedCutoverBy": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemBranch": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemSourceKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemTargetKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
-    "PaginatedWorkflowDataItemGlobalKeyspace": {
-      "type": "object",
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "updated_at",
-        "deleted_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID for the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name for the resource"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the resource was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the resource was last updated"
-        },
-        "deleted_at": {
-          "type": "string",
-          "description": "When the resource was deleted, if deleted",
-          "x-nullable": true
-        }
-      }
-    },
     "PaginatedDeployRequestReviewDataItemActor": {
       "type": "object",
       "required": [
@@ -48903,6 +46803,7 @@
         "id",
         "auto_cutover",
         "auto_delete_branch",
+        "aggressive_cutover",
         "created_at",
         "cutover_at",
         "cutover_expiring",
@@ -48945,6 +46846,10 @@
         "auto_delete_branch": {
           "type": "boolean",
           "description": "Whether or not to automatically delete the head branch once deployment is finished"
+        },
+        "aggressive_cutover": {
+          "type": "boolean",
+          "description": "Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting."
         },
         "created_at": {
           "type": "string",
@@ -53168,6 +51073,10 @@
         "auto_delete_branch": {
           "type": "boolean",
           "description": "Whether or not to enable auto_delete_branch for the deploy request. When enabled, will delete the branch once the DR successfully completes."
+        },
+        "aggressive_cutover": {
+          "type": "boolean",
+          "description": "Whether or not to enable aggressive cutover for this deploy request. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt instead of retrying for up to an hour. Does not change the database setting."
         }
       }
     },
@@ -53176,6 +51085,18 @@
       "properties": {
         "state": {
           "$ref": "#/definitions/ClosedState"
+        }
+      }
+    },
+    "UpdateAggressiveCutoverRequest": {
+      "type": "object",
+      "required": [
+        "enable"
+      ],
+      "properties": {
+        "enable": {
+          "type": "boolean",
+          "description": "Whether or not to enable aggressive cutover for the deploy request"
         }
       }
     },
@@ -53330,47 +51251,6 @@
         "events": {
           "type": "array",
           "description": "The events this webhook should subscribe to",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "CreateWorkflowRequest": {
-      "type": "object",
-      "required": [
-        "name",
-        "source_keyspace",
-        "target_keyspace",
-        "tables"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name the workflow"
-        },
-        "source_keyspace": {
-          "type": "string",
-          "description": "Name of the source keyspace"
-        },
-        "target_keyspace": {
-          "type": "string",
-          "description": "Name of the target keyspace"
-        },
-        "global_keyspace": {
-          "type": "string",
-          "description": "Name of the global sequence keyspace"
-        },
-        "defer_secondary_keys": {
-          "type": "boolean",
-          "description": "Defer secondary keys"
-        },
-        "on_ddl": {
-          "$ref": "#/definitions/CreateWorkflowRequestOnDdl"
-        },
-        "tables": {
-          "type": "array",
-          "description": "List of tables to move",
           "items": {
             "type": "string"
           }
@@ -56133,165 +54013,6 @@
         ]
       }
     },
-    "WorkflowState": {
-      "type": "string",
-      "description": "The state of the workflow",
-      "enum": [
-        "pending",
-        "copying",
-        "running",
-        "stopped",
-        "verifying_data",
-        "verified_data",
-        "switching_replicas",
-        "switched_replicas",
-        "switching_primaries",
-        "switched_primaries",
-        "reversing_traffic",
-        "reversing_traffic_for_cancel",
-        "cutting_over",
-        "cutover",
-        "reversed_cutover",
-        "completed",
-        "cancelling",
-        "cancelled",
-        "error"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "WorkflowState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "pending",
-            "name": "Pending"
-          },
-          {
-            "value": "copying",
-            "name": "Copying"
-          },
-          {
-            "value": "running",
-            "name": "Running"
-          },
-          {
-            "value": "stopped",
-            "name": "Stopped"
-          },
-          {
-            "value": "verifying_data",
-            "name": "VerifyingData"
-          },
-          {
-            "value": "verified_data",
-            "name": "VerifiedData"
-          },
-          {
-            "value": "switching_replicas",
-            "name": "SwitchingReplicas"
-          },
-          {
-            "value": "switched_replicas",
-            "name": "SwitchedReplicas"
-          },
-          {
-            "value": "switching_primaries",
-            "name": "SwitchingPrimaries"
-          },
-          {
-            "value": "switched_primaries",
-            "name": "SwitchedPrimaries"
-          },
-          {
-            "value": "reversing_traffic",
-            "name": "ReversingTraffic"
-          },
-          {
-            "value": "reversing_traffic_for_cancel",
-            "name": "ReversingTrafficForCancel"
-          },
-          {
-            "value": "cutting_over",
-            "name": "CuttingOver"
-          },
-          {
-            "value": "cutover",
-            "name": "Cutover"
-          },
-          {
-            "value": "reversed_cutover",
-            "name": "ReversedCutover"
-          },
-          {
-            "value": "completed",
-            "name": "Completed"
-          },
-          {
-            "value": "cancelling",
-            "name": "Cancelling"
-          },
-          {
-            "value": "cancelled",
-            "name": "Cancelled"
-          },
-          {
-            "value": "error",
-            "name": "Error"
-          }
-        ]
-      }
-    },
-    "MoveTablesWorkflowType": {
-      "type": "string",
-      "description": "The type of the workflow",
-      "enum": [
-        "move_tables"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "MoveTablesWorkflowType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "move_tables",
-            "name": "MoveTables"
-          }
-        ]
-      }
-    },
-    "WorkflowOnDdl": {
-      "type": "string",
-      "description": "The behavior when DDL changes during the workflow",
-      "enum": [
-        "IGNORE",
-        "STOP",
-        "EXEC",
-        "EXEC_IGNORE"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "WorkflowOnDdl",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "IGNORE",
-            "name": "Ignore"
-          },
-          {
-            "value": "STOP",
-            "name": "Stop"
-          },
-          {
-            "value": "EXEC",
-            "name": "Exec"
-          },
-          {
-            "value": "EXEC_IGNORE",
-            "name": "ExecIgnore"
-          }
-        ]
-      }
-    },
     "DeployRequestReviewState": {
       "type": "string",
       "description": "Whether the review is a comment or approval",
@@ -58613,147 +56334,6 @@
         ]
       }
     },
-    "PaginatedWorkflowDataItemState": {
-      "type": "string",
-      "description": "The state of the workflow",
-      "enum": [
-        "pending",
-        "copying",
-        "running",
-        "stopped",
-        "verifying_data",
-        "verified_data",
-        "switching_replicas",
-        "switched_replicas",
-        "switching_primaries",
-        "switched_primaries",
-        "reversing_traffic",
-        "reversing_traffic_for_cancel",
-        "cutting_over",
-        "cutover",
-        "reversed_cutover",
-        "completed",
-        "cancelling",
-        "cancelled",
-        "error"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "PaginatedWorkflowDataItemState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "pending",
-            "name": "Pending"
-          },
-          {
-            "value": "copying",
-            "name": "Copying"
-          },
-          {
-            "value": "running",
-            "name": "Running"
-          },
-          {
-            "value": "stopped",
-            "name": "Stopped"
-          },
-          {
-            "value": "verifying_data",
-            "name": "VerifyingData"
-          },
-          {
-            "value": "verified_data",
-            "name": "VerifiedData"
-          },
-          {
-            "value": "switching_replicas",
-            "name": "SwitchingReplicas"
-          },
-          {
-            "value": "switched_replicas",
-            "name": "SwitchedReplicas"
-          },
-          {
-            "value": "switching_primaries",
-            "name": "SwitchingPrimaries"
-          },
-          {
-            "value": "switched_primaries",
-            "name": "SwitchedPrimaries"
-          },
-          {
-            "value": "reversing_traffic",
-            "name": "ReversingTraffic"
-          },
-          {
-            "value": "reversing_traffic_for_cancel",
-            "name": "ReversingTrafficForCancel"
-          },
-          {
-            "value": "cutting_over",
-            "name": "CuttingOver"
-          },
-          {
-            "value": "cutover",
-            "name": "Cutover"
-          },
-          {
-            "value": "reversed_cutover",
-            "name": "ReversedCutover"
-          },
-          {
-            "value": "completed",
-            "name": "Completed"
-          },
-          {
-            "value": "cancelling",
-            "name": "Cancelling"
-          },
-          {
-            "value": "cancelled",
-            "name": "Cancelled"
-          },
-          {
-            "value": "error",
-            "name": "Error"
-          }
-        ]
-      }
-    },
-    "PaginatedWorkflowDataItemOnDdl": {
-      "type": "string",
-      "description": "The behavior when DDL changes during the workflow",
-      "enum": [
-        "IGNORE",
-        "STOP",
-        "EXEC",
-        "EXEC_IGNORE"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "PaginatedWorkflowDataItemOnDdl",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "IGNORE",
-            "name": "Ignore"
-          },
-          {
-            "value": "STOP",
-            "name": "Stop"
-          },
-          {
-            "value": "EXEC",
-            "name": "Exec"
-          },
-          {
-            "value": "EXEC_IGNORE",
-            "name": "ExecIgnore"
-          }
-        ]
-      }
-    },
     "PaginatedDeployRequestReviewDataItemState": {
       "type": "string",
       "description": "Whether the review is a comment or approval",
@@ -60946,39 +58526,6 @@
           {
             "value": "approved",
             "name": "Approved"
-          }
-        ]
-      }
-    },
-    "CreateWorkflowRequestOnDdl": {
-      "type": "string",
-      "description": "The behavior when DDL changes during the workflow",
-      "enum": [
-        "IGNORE",
-        "STOP",
-        "EXEC",
-        "EXEC_IGNORE"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "CreateWorkflowRequestOnDdl",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "IGNORE",
-            "name": "Ignore"
-          },
-          {
-            "value": "STOP",
-            "name": "Stop"
-          },
-          {
-            "value": "EXEC",
-            "name": "Exec"
-          },
-          {
-            "value": "EXEC_IGNORE",
-            "name": "ExecIgnore"
           }
         ]
       }
@@ -64497,7 +62044,6 @@
         "database:write_comments": "Create deploy request comments in a database",
         "database:write_database": "Write database",
         "database:write_deploy_requests": "Create and update deploy requests in a database",
-        "database:write_insights_agent": "Start Insights Agent runs and change their schedules",
         "database:write_members": "Write members",
         "database:write_workflows": "Create and manage database workflows",
         "organization:approve_deploy_requests": "Approve deploy requests in an organization",
@@ -64536,7 +62082,6 @@
         "organization:write_comments": "Create deploy request comments in an organization",
         "organization:write_databases": "Write organization databases",
         "organization:write_deploy_requests": "Create and update deploy requests in an organization",
-        "organization:write_insights_agents": "Start Insights Agent runs and change their schedules in an organization",
         "organization:write_members": "Write members in an organization",
         "organization:write_organization": "Write organization",
         "organization:write_payment_method": "Update and delete the organization payment method",
@@ -64712,10 +62257,6 @@
     {
       "name": "VtctldOperations",
       "description": "          API endpoints for checking the result of asynchronous vtctld operations, such as MoveTables commands.\n"
-    },
-    {
-      "name": "Workflows",
-      "description": "          API endpoints for managing workflows.\n"
     },
     {
       "name": "Deploy requests",

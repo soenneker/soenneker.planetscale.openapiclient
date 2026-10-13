@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.PlanetScale.OpenApiClient.Models;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.AggressiveCutover;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.ApplyDeploy;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.AutoApply;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.AutoDeleteBranch;
@@ -31,6 +32,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithNumberItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The aggressiveCutover property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.AggressiveCutover.AggressiveCutoverRequestBuilder AggressiveCutover
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.AggressiveCutover.AggressiveCutoverRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The applyDeploy property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.Item.ApplyDeploy.ApplyDeployRequestBuilder ApplyDeploy
         {
