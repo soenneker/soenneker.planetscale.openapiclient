@@ -23206,6 +23206,12 @@
           },
           {
             "in": "query",
+            "name": "branch",
+            "description": "Filter by the name of the branch the recommendation is for",
+            "type": "string"
+          },
+          {
+            "in": "query",
             "name": "page",
             "description": "If provided, specifies the page offset of returned results",
             "type": "integer",
@@ -28852,7 +28858,7 @@
         "description",
         "internal",
         "parameters",
-        "requires_cluster_update",
+        "requires_update",
         "url"
       ],
       "properties": {
@@ -28883,9 +28889,8 @@
             "$ref": "#/definitions/PostgresExtensionParametersItem"
           }
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the extension can be used"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "url": {
           "type": "string",
@@ -28904,7 +28909,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -28956,9 +28961,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -30785,7 +30789,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -30837,9 +30841,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/NekiParameterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -31480,7 +31483,7 @@
         "description",
         "internal",
         "parameters",
-        "requires_cluster_update",
+        "requires_update",
         "url"
       ],
       "properties": {
@@ -31511,9 +31514,8 @@
             "$ref": "#/definitions/NekiExtensionParametersItem"
           }
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the extension can be used"
+        "requires_update": {
+          "$ref": "#/definitions/NekiExtensionRequiresUpdate"
         },
         "url": {
           "type": "string",
@@ -37072,7 +37074,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -37124,9 +37126,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -39362,7 +39363,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -39414,9 +39415,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/NekiExtensionParametersItemRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -40575,7 +40575,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -40627,9 +40627,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -41910,7 +41909,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -41962,9 +41961,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -46160,7 +46158,7 @@
         "description",
         "parameter_type",
         "default_value",
-        "requires_cluster_update",
+        "requires_update",
         "value",
         "required",
         "created_at",
@@ -46212,9 +46210,8 @@
           "description": "Why the parameter cannot be changed",
           "x-nullable": true
         },
-        "requires_cluster_update": {
-          "type": "boolean",
-          "description": "Whether a cluster update is required before the parameter can be configured"
+        "requires_update": {
+          "$ref": "#/definitions/ClusterRequiresUpdate"
         },
         "value": {
           "type": "string",
@@ -52771,6 +52768,25 @@
         ]
       }
     },
+    "ClusterRequiresUpdate": {
+      "type": "string",
+      "description": "The update required before the extension can be used",
+      "enum": [
+        "cluster"
+      ],
+      "additionalProperties": false,
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "ClusterRequiresUpdate",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "cluster",
+            "name": "Cluster"
+          }
+        ]
+      }
+    },
     "PostgresParameterNamespace": {
       "type": "string",
       "description": "The namespace of the parameter",
@@ -53298,6 +53314,30 @@
         ]
       }
     },
+    "NekiParameterRequiresUpdate": {
+      "type": "string",
+      "description": "The update required before the parameter can be configured",
+      "enum": [
+        "cluster",
+        "configuration_profile"
+      ],
+      "additionalProperties": false,
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "NekiParameterRequiresUpdate",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "cluster",
+            "name": "Cluster"
+          },
+          {
+            "value": "configuration_profile",
+            "name": "ConfigurationProfile"
+          }
+        ]
+      }
+    },
     "NekiAdminState": {
       "type": "string",
       "description": "The current state of the admin",
@@ -53447,6 +53487,30 @@
           {
             "value": "ready",
             "name": "Ready"
+          }
+        ]
+      }
+    },
+    "NekiExtensionRequiresUpdate": {
+      "type": "string",
+      "description": "The update required before the extension can be used",
+      "enum": [
+        "cluster",
+        "configuration_profile"
+      ],
+      "additionalProperties": false,
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "NekiExtensionRequiresUpdate",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "cluster",
+            "name": "Cluster"
+          },
+          {
+            "value": "configuration_profile",
+            "name": "ConfigurationProfile"
           }
         ]
       }
@@ -55573,6 +55637,30 @@
           {
             "value": "time",
             "name": "Time"
+          }
+        ]
+      }
+    },
+    "NekiExtensionParametersItemRequiresUpdate": {
+      "type": "string",
+      "description": "The update required before the parameter can be configured",
+      "enum": [
+        "cluster",
+        "configuration_profile"
+      ],
+      "additionalProperties": false,
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "NekiExtensionParametersItemRequiresUpdate",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "cluster",
+            "name": "Cluster"
+          },
+          {
+            "value": "configuration_profile",
+            "name": "ConfigurationProfile"
           }
         ]
       }

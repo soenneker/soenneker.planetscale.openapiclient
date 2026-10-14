@@ -106,8 +106,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemParametersItemParameterType? ParameterType { get; set; }
         /// <summary>Whether the parameter is required</summary>
         public bool? Required { get; set; }
-        /// <summary>Whether a cluster update is required before the parameter can be configured</summary>
-        public bool? RequiresClusterUpdate { get; set; }
+        /// <summary>The update required before the extension can be used</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterRequiresUpdate? RequiresUpdate { get; set; }
         /// <summary>Whether processes require a server restart after the parameter changes</summary>
         public bool? Restart { get; set; }
         /// <summary>The units of the parameter value</summary>
@@ -183,7 +183,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "parameter_type", n => { ParameterType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemParametersItemParameterType>(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "requires_cluster_update", n => { RequiresClusterUpdate = n.GetBoolValue(); } },
+                { "requires_update", n => { RequiresUpdate = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterRequiresUpdate>(); } },
                 { "restart", n => { Restart = n.GetBoolValue(); } },
                 { "units", n => { Units = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -214,7 +214,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemParametersItemParameterType>("parameter_type", ParameterType);
             writer.WriteBoolValue("required", Required);
-            writer.WriteBoolValue("requires_cluster_update", RequiresClusterUpdate);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterRequiresUpdate>("requires_update", RequiresUpdate);
             writer.WriteBoolValue("restart", Restart);
             writer.WriteCollectionOfPrimitiveValues<string>("units", Units);
             writer.WriteStringValue("updated_at", UpdatedAt);

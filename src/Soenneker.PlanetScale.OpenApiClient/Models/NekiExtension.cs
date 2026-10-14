@@ -44,8 +44,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public List<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem> Parameters { get; set; }
 #endif
-        /// <summary>Whether a cluster update is required before the extension can be used</summary>
-        public bool? RequiresClusterUpdate { get; set; }
+        /// <summary>The update required before the extension can be used</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionRequiresUpdate? RequiresUpdate { get; set; }
         /// <summary>The URL of the extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "internal", n => { Internal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "requires_cluster_update", n => { RequiresClusterUpdate = n.GetBoolValue(); } },
+                { "requires_update", n => { RequiresUpdate = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionRequiresUpdate>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -102,7 +102,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("internal", Internal);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionParametersItem>("parameters", Parameters);
-            writer.WriteBoolValue("requires_cluster_update", RequiresClusterUpdate);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiExtensionRequiresUpdate>("requires_update", RequiresUpdate);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
