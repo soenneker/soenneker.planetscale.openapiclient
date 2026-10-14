@@ -80,10 +80,22 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The maximum value of the parameter</summary>
-        public double? Max { get; set; }
-        /// <summary>The minimum value of the parameter</summary>
-        public double? Min { get; set; }
+        /// <summary>The maximum value of the parameter, e.g. `800` or `1h`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Max { get; set; }
+#nullable restore
+#else
+        public string Max { get; set; }
+#endif
+        /// <summary>The minimum value of the parameter, e.g. `0` or `1ms`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Min { get; set; }
+#nullable restore
+#else
+        public string Min { get; set; }
+#endif
         /// <summary>The name of the parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,8 +188,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "disabled_reason", n => { DisabledReason = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "max", n => { Max = n.GetDoubleValue(); } },
-                { "min", n => { Min = n.GetDoubleValue(); } },
+                { "max", n => { Max = n.GetStringValue(); } },
+                { "min", n => { Min = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiParameterNamespace>(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -207,8 +219,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("disabled_reason", DisabledReason);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("max", Max);
-            writer.WriteDoubleValue("min", Min);
+            writer.WriteStringValue("max", Max);
+            writer.WriteStringValue("min", Min);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiParameterNamespace>("namespace", Namespace);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);

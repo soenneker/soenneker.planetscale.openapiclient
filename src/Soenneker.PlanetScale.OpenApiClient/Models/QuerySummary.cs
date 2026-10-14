@@ -28,6 +28,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? BlocksRead { get; set; }
         /// <summary>Total blocks written</summary>
         public int? BlocksWritten { get; set; }
+        /// <summary>How many comments are on this query pattern</summary>
+        public int? CommentCount { get; set; }
         /// <summary>Total egress bytes</summary>
         public int? EgressBytes { get; set; }
         /// <summary>Average egress bytes per query</summary>
@@ -218,6 +220,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "blocks_hit", n => { BlocksHit = n.GetIntValue(); } },
                 { "blocks_read", n => { BlocksRead = n.GetIntValue(); } },
                 { "blocks_written", n => { BlocksWritten = n.GetIntValue(); } },
+                { "comment_count", n => { CommentCount = n.GetIntValue(); } },
                 { "egress_bytes", n => { EgressBytes = n.GetIntValue(); } },
                 { "egress_bytes_per_query", n => { EgressBytesPerQuery = n.GetDoubleValue(); } },
                 { "error_count", n => { ErrorCount = n.GetIntValue(); } },
@@ -277,6 +280,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("blocks_hit", BlocksHit);
             writer.WriteIntValue("blocks_read", BlocksRead);
             writer.WriteIntValue("blocks_written", BlocksWritten);
+            writer.WriteIntValue("comment_count", CommentCount);
             writer.WriteIntValue("egress_bytes", EgressBytes);
             writer.WriteDoubleValue("egress_bytes_per_query", EgressBytesPerQuery);
             writer.WriteIntValue("error_count", ErrorCount);

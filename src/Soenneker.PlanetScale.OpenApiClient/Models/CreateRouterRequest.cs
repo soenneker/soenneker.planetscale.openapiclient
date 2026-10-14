@@ -14,7 +14,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name of the router group. Letters, digits, dashes, and underscores; 1-64 characters; cannot start or end with a dash or underscore. `new`, `primary`, and `replica` are reserved. Clients connect through the group by appending it to the username, e.g. `user|my-router`.</summary>
+        /// <summary>The name of the router group. Lowercase letters, digits, and dashes (an RFC 1123 DNS label); 1-16 characters; cannot start or end with a dash. `new`, `primary`, and `replica` are reserved. Clients connect through the group by appending it to the username, e.g. `user|my-router`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

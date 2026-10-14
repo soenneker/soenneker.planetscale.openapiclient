@@ -28988,13 +28988,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -30868,13 +30868,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -32943,6 +32943,7 @@
         "normalized_sql",
         "syntax_highlighted_sql",
         "multishard",
+        "comment_count",
         "query_count",
         "error_count",
         "tables",
@@ -33015,6 +33016,10 @@
         "multishard": {
           "type": "boolean",
           "description": "Whether the query is a multishard query"
+        },
+        "comment_count": {
+          "type": "integer",
+          "description": "How many comments are on this query pattern"
         },
         "query_count": {
           "type": "integer",
@@ -37153,13 +37158,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -39442,13 +39447,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -40654,13 +40659,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -40770,6 +40775,7 @@
         "normalized_sql",
         "syntax_highlighted_sql",
         "multishard",
+        "comment_count",
         "query_count",
         "error_count",
         "tables",
@@ -40842,6 +40848,10 @@
         "multishard": {
           "type": "boolean",
           "description": "Whether the query is a multishard query"
+        },
+        "comment_count": {
+          "type": "integer",
+          "description": "How many comments are on this query pattern"
         },
         "query_count": {
           "type": "integer",
@@ -41988,13 +41998,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -46237,13 +46247,13 @@
           "description": "Whether processes require a server restart after the parameter changes"
         },
         "max": {
-          "type": "number",
-          "description": "The maximum value of the parameter",
+          "type": "string",
+          "description": "The maximum value of the parameter, e.g. \u0060800\u0060 or \u00601h\u0060",
           "x-nullable": true
         },
         "min": {
-          "type": "number",
-          "description": "The minimum value of the parameter",
+          "type": "string",
+          "description": "The minimum value of the parameter, e.g. \u00600\u0060 or \u00601ms\u0060",
           "x-nullable": true
         },
         "options": {
@@ -50711,7 +50721,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The name of the router group. Letters, digits, dashes, and underscores; 1-64 characters; cannot start or end with a dash or underscore. \u0060new\u0060, \u0060primary\u0060, and \u0060replica\u0060 are reserved. Clients connect through the group by appending it to the username, e.g. \u0060user|my-router\u0060."
+          "description": "The name of the router group. Lowercase letters, digits, and dashes (an RFC 1123 DNS label); 1-16 characters; cannot start or end with a dash. \u0060new\u0060, \u0060primary\u0060, and \u0060replica\u0060 are reserved. Clients connect through the group by appending it to the username, e.g. \u0060user|my-router\u0060."
         },
         "router_size": {
           "type": "string",
@@ -52792,8 +52802,8 @@
       "description": "The namespace of the parameter",
       "enum": [
         "patroni",
-        "pgconf",
-        "pgbouncer"
+        "pgbouncer",
+        "pgconf"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -52805,12 +52815,12 @@
             "name": "Patroni"
           },
           {
-            "value": "pgconf",
-            "name": "Pgconf"
-          },
-          {
             "value": "pgbouncer",
             "name": "Pgbouncer"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
           }
         ]
       }
@@ -52824,7 +52834,6 @@
         "bytes",
         "float",
         "integer",
-        "seconds",
         "select",
         "string",
         "time"
@@ -52853,10 +52862,6 @@
           {
             "value": "integer",
             "name": "Integer"
-          },
-          {
-            "value": "seconds",
-            "name": "Seconds"
           },
           {
             "value": "select",
@@ -53227,11 +53232,11 @@
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
-        "pgconf",
-        "router",
-        "sidecar",
         "admin",
-        "replicator"
+        "pgconf",
+        "replicator",
+        "router",
+        "sidecar"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -53239,8 +53244,16 @@
         "modelAsString": false,
         "values": [
           {
+            "value": "admin",
+            "name": "Admin"
+          },
+          {
             "value": "pgconf",
             "name": "Pgconf"
+          },
+          {
+            "value": "replicator",
+            "name": "Replicator"
           },
           {
             "value": "router",
@@ -53249,14 +53262,6 @@
           {
             "value": "sidecar",
             "name": "Sidecar"
-          },
-          {
-            "value": "admin",
-            "name": "Admin"
-          },
-          {
-            "value": "replicator",
-            "name": "Replicator"
           }
         ]
       }
@@ -55031,8 +55036,8 @@
       "description": "The namespace of the parameter",
       "enum": [
         "patroni",
-        "pgconf",
-        "pgbouncer"
+        "pgbouncer",
+        "pgconf"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -55044,12 +55049,12 @@
             "name": "Patroni"
           },
           {
-            "value": "pgconf",
-            "name": "Pgconf"
-          },
-          {
             "value": "pgbouncer",
             "name": "Pgbouncer"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
           }
         ]
       }
@@ -55063,7 +55068,6 @@
         "bytes",
         "float",
         "integer",
-        "seconds",
         "select",
         "string",
         "time"
@@ -55092,10 +55096,6 @@
           {
             "value": "integer",
             "name": "Integer"
-          },
-          {
-            "value": "seconds",
-            "name": "Seconds"
           },
           {
             "value": "select",
@@ -55554,11 +55554,11 @@
       "type": "string",
       "description": "The namespace of the parameter",
       "enum": [
-        "pgconf",
-        "router",
-        "sidecar",
         "admin",
-        "replicator"
+        "pgconf",
+        "replicator",
+        "router",
+        "sidecar"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -55566,8 +55566,16 @@
         "modelAsString": false,
         "values": [
           {
+            "value": "admin",
+            "name": "Admin"
+          },
+          {
             "value": "pgconf",
             "name": "Pgconf"
+          },
+          {
+            "value": "replicator",
+            "name": "Replicator"
           },
           {
             "value": "router",
@@ -55576,14 +55584,6 @@
           {
             "value": "sidecar",
             "name": "Sidecar"
-          },
-          {
-            "value": "admin",
-            "name": "Admin"
-          },
-          {
-            "value": "replicator",
-            "name": "Replicator"
           }
         ]
       }
@@ -55749,8 +55749,8 @@
       "description": "The namespace of the parameter",
       "enum": [
         "patroni",
-        "pgconf",
-        "pgbouncer"
+        "pgbouncer",
+        "pgconf"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -55762,12 +55762,12 @@
             "name": "Patroni"
           },
           {
-            "value": "pgconf",
-            "name": "Pgconf"
-          },
-          {
             "value": "pgbouncer",
             "name": "Pgbouncer"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
           }
         ]
       }
@@ -55781,7 +55781,6 @@
         "bytes",
         "float",
         "integer",
-        "seconds",
         "select",
         "string",
         "time"
@@ -55810,10 +55809,6 @@
           {
             "value": "integer",
             "name": "Integer"
-          },
-          {
-            "value": "seconds",
-            "name": "Seconds"
           },
           {
             "value": "select",
@@ -56076,8 +56071,8 @@
       "description": "The namespace of the parameter",
       "enum": [
         "patroni",
-        "pgconf",
-        "pgbouncer"
+        "pgbouncer",
+        "pgconf"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -56089,12 +56084,12 @@
             "name": "Patroni"
           },
           {
-            "value": "pgconf",
-            "name": "Pgconf"
-          },
-          {
             "value": "pgbouncer",
             "name": "Pgbouncer"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
           }
         ]
       }
@@ -56108,7 +56103,6 @@
         "bytes",
         "float",
         "integer",
-        "seconds",
         "select",
         "string",
         "time"
@@ -56137,10 +56131,6 @@
           {
             "value": "integer",
             "name": "Integer"
-          },
-          {
-            "value": "seconds",
-            "name": "Seconds"
           },
           {
             "value": "select",
@@ -57227,8 +57217,8 @@
       "description": "The namespace of the parameter",
       "enum": [
         "patroni",
-        "pgconf",
-        "pgbouncer"
+        "pgbouncer",
+        "pgconf"
       ],
       "additionalProperties": false,
       "x-ms-enum": {
@@ -57240,12 +57230,12 @@
             "name": "Patroni"
           },
           {
-            "value": "pgconf",
-            "name": "Pgconf"
-          },
-          {
             "value": "pgbouncer",
             "name": "Pgbouncer"
+          },
+          {
+            "value": "pgconf",
+            "name": "Pgconf"
           }
         ]
       }
@@ -57259,7 +57249,6 @@
         "bytes",
         "float",
         "integer",
-        "seconds",
         "select",
         "string",
         "time"
@@ -57288,10 +57277,6 @@
           {
             "value": "integer",
             "name": "Integer"
-          },
-          {
-            "value": "seconds",
-            "name": "Seconds"
           },
           {
             "value": "select",
@@ -62305,6 +62290,10 @@
     {
       "name": "Switchovers",
       "description": "          Resources for moving the primary of a Postgres branch.\n"
+    },
+    {
+      "name": "QueryPatternComments",
+      "description": "          Comments attached to an Insights query pattern.\n"
     },
     {
       "name": "Query Insights reports",

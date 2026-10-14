@@ -7,9 +7,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NekiParameterNamespace
     {
+        [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
+        Admin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pgconf")]
         #pragma warning disable CS1591
         Pgconf,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "replicator")]
+        #pragma warning disable CS1591
+        Replicator,
         #pragma warning restore CS1591
         [EnumMember(Value = "router")]
         #pragma warning disable CS1591
@@ -18,14 +26,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         [EnumMember(Value = "sidecar")]
         #pragma warning disable CS1591
         Sidecar,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "admin")]
-        #pragma warning disable CS1591
-        Admin,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "replicator")]
-        #pragma warning disable CS1591
-        Replicator,
         #pragma warning restore CS1591
     }
 }

@@ -27,10 +27,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         Integer,
         #pragma warning restore CS1591
-        [EnumMember(Value = "seconds")]
-        #pragma warning disable CS1591
-        Seconds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "select")]
         #pragma warning disable CS1591
         Select,

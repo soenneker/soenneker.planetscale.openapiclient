@@ -11,13 +11,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         Patroni,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pgconf")]
-        #pragma warning disable CS1591
-        Pgconf,
-        #pragma warning restore CS1591
         [EnumMember(Value = "pgbouncer")]
         #pragma warning disable CS1591
         Pgbouncer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pgconf")]
+        #pragma warning disable CS1591
+        Pgconf,
         #pragma warning restore CS1591
     }
 }
