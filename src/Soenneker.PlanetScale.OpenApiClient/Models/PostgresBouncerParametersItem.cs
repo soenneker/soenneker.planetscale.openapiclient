@@ -56,14 +56,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Why the parameter cannot be changed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisabledReason { get; set; }
-#nullable restore
-#else
-        public string DisabledReason { get; set; }
-#endif
+        /// <summary>Whether the parameter is disabled</summary>
+        public bool? Disabled { get; set; }
         /// <summary>The display name of the parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +100,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The namespace of the parameter</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerParametersItemNamespace? Namespace { get; set; }
-        /// <summary>Valid options for the parameter value. Null represents an unset value</summary>
+        /// <summary>Options, including disabled ones, for the parameter value. Null means unset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Options { get; set; }
@@ -185,7 +179,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "default_value", n => { DefaultValue = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disabled_reason", n => { DisabledReason = n.GetStringValue(); } },
+                { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max", n => { Max = n.GetStringValue(); } },
@@ -216,7 +210,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("disabled_reason", DisabledReason);
+            writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("max", Max);

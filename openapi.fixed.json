@@ -28909,6 +28909,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -28956,10 +28957,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/ClusterRequiresUpdate"
@@ -28999,7 +28999,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -30789,6 +30789,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -30836,10 +30837,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/NekiParameterRequiresUpdate"
@@ -30879,7 +30879,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -37079,6 +37079,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -37126,10 +37127,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/ClusterRequiresUpdate"
@@ -37169,7 +37169,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -39368,6 +39368,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -39415,10 +39416,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/NekiExtensionParametersItemRequiresUpdate"
@@ -39458,7 +39458,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -40580,6 +40580,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -40627,10 +40628,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/ClusterRequiresUpdate"
@@ -40670,7 +40670,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -41919,6 +41919,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -41966,10 +41967,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/ClusterRequiresUpdate"
@@ -42009,7 +42009,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
@@ -46168,6 +46168,7 @@
         "description",
         "parameter_type",
         "default_value",
+        "disabled",
         "requires_update",
         "value",
         "required",
@@ -46215,10 +46216,9 @@
           "description": "The default value of the parameter",
           "x-nullable": true
         },
-        "disabled_reason": {
-          "type": "string",
-          "description": "Why the parameter cannot be changed",
-          "x-nullable": true
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the parameter is disabled"
         },
         "requires_update": {
           "$ref": "#/definitions/ClusterRequiresUpdate"
@@ -46258,7 +46258,7 @@
         },
         "options": {
           "type": "array",
-          "description": "Valid options for the parameter value. Null represents an unset value",
+          "description": "Options, including disabled ones, for the parameter value. Null means unset",
           "items": {
             "type": "string"
           },
