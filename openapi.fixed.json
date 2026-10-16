@@ -50275,6 +50275,9 @@
         },
         "throttler": {
           "$ref": "#/definitions/UpdateKeyspaceRequestThrottler"
+        },
+        "storage": {
+          "$ref": "#/definitions/UpdateKeyspaceRequestStorage"
         }
       }
     },
@@ -52025,6 +52028,22 @@
         "threshold": {
           "type": "number",
           "description": "Replication lag in seconds that trips the throttler. Must be \u003E= 0"
+        }
+      }
+    },
+    "UpdateKeyspaceRequestStorage": {
+      "type": "object",
+      "properties": {
+        "disk_scaling_strategy": {
+          "$ref": "#/definitions/UpdateKeyspaceRequestStorageDiskScalingStrategy"
+        },
+        "max_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum size in bytes that disks can automatically grow to. Must be at least the size of the largest current disk and no more than the organization\u0027s storage limit (4 TB by default)."
+        },
+        "storage_bytes": {
+          "type": "integer",
+          "description": "The disk size in bytes to shrink to. Only applies when \u0060disk_scaling_strategy\u0060 is \u0060shrink\u0060. Must be a multiple of 1 GB and no more than the organization\u0027s storage limit (4 TB by default). Rejected if any disk is using more than 80% of the requested size."
         }
       }
     },
@@ -58654,6 +58673,34 @@
         ]
       }
     },
+    "UpdateKeyspaceRequestStorageDiskScalingStrategy": {
+      "type": "string",
+      "description": "How disk size is managed. \u0060grow\u0060 automatically increases disk size as needed, up to \u0060max_storage_bytes\u0060. \u0060disable\u0060 turns off automatic disk growth. \u0060shrink\u0060 resizes disks to \u0060storage_bytes\u0060 and then turns off automatic disk growth.",
+      "enum": [
+        "grow",
+        "disable",
+        "shrink"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "UpdateKeyspaceRequestStorageDiskScalingStrategy",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "grow",
+            "name": "Grow"
+          },
+          {
+            "value": "disable",
+            "name": "Disable"
+          },
+          {
+            "value": "shrink",
+            "name": "Shrink"
+          }
+        ]
+      }
+    },
     "ListBranchVitessParameters200ResponseVtgateItemComponent": {
       "type": "string",
       "description": "The component the parameter configures",
@@ -60330,6 +60377,13 @@
         "planetscale_neki_router_query_latency_p95_by_database",
         "planetscale_neki_router_query_latency_p99",
         "planetscale_neki_router_query_latency_p99_by_database",
+        "planetscale_neki_sidecar_pool_capacity",
+        "planetscale_neki_sidecar_pool_connections_active",
+        "planetscale_neki_sidecar_pool_connections_available",
+        "planetscale_neki_sidecar_pool_connections_in_use",
+        "planetscale_neki_sidecar_pool_connections_waiting",
+        "planetscale_neki_sidecar_pool_wait_time_avg",
+        "planetscale_neki_sidecar_pool_waits_rate",
         "planetscale_pgbouncer_current_connections",
         "planetscale_pgbouncer_pools_client",
         "planetscale_pgbouncer_pools_server",
@@ -60587,6 +60641,34 @@
           {
             "value": "planetscale_neki_router_query_latency_p99_by_database",
             "name": "PlanetscaleNekiRouterQueryLatencyP99ByDatabase"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_capacity",
+            "name": "PlanetscaleNekiSidecarPoolCapacity"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_connections_active",
+            "name": "PlanetscaleNekiSidecarPoolConnectionsActive"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_connections_available",
+            "name": "PlanetscaleNekiSidecarPoolConnectionsAvailable"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_connections_in_use",
+            "name": "PlanetscaleNekiSidecarPoolConnectionsInUse"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_connections_waiting",
+            "name": "PlanetscaleNekiSidecarPoolConnectionsWaiting"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_wait_time_avg",
+            "name": "PlanetscaleNekiSidecarPoolWaitTimeAvg"
+          },
+          {
+            "value": "planetscale_neki_sidecar_pool_waits_rate",
+            "name": "PlanetscaleNekiSidecarPoolWaitsRate"
           },
           {
             "value": "planetscale_pgbouncer_current_connections",
@@ -62298,6 +62380,10 @@
     {
       "name": "Query Insights reports",
       "description": "          Resources for downloading query insights data.\n"
+    },
+    {
+      "name": "Dedicated read replica promotions",
+      "description": "          Resources for promoting Postgres dedicated read replicas.\n"
     },
     {
       "name": "Dedicated read replicas",

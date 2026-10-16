@@ -188,6 +188,34 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         PlanetscaleNekiRouterQueryLatencyP99ByDatabase,
         #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_capacity")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolCapacity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_connections_active")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolConnectionsActive,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_connections_available")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolConnectionsAvailable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_connections_in_use")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolConnectionsInUse,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_connections_waiting")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolConnectionsWaiting,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_wait_time_avg")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolWaitTimeAvg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planetscale_neki_sidecar_pool_waits_rate")]
+        #pragma warning disable CS1591
+        PlanetscaleNekiSidecarPoolWaitsRate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "planetscale_pgbouncer_current_connections")]
         #pragma warning disable CS1591
         PlanetscalePgbouncerCurrentConnections,

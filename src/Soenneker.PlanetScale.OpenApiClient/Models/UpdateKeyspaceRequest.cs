@@ -24,6 +24,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints ReplicationDurabilityConstraints { get; set; }
 #endif
+        /// <summary>The storage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage? Storage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage Storage { get; set; }
+#endif
         /// <summary>The throttler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +75,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             {
                 { "max_rollout", n => { MaxRollout = n.GetIntValue(); } },
                 { "replication_durability_constraints", n => { ReplicationDurabilityConstraints = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints.CreateFromDiscriminatorValue); } },
+                { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage.CreateFromDiscriminatorValue); } },
                 { "throttler", n => { Throttler = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler.CreateFromDiscriminatorValue); } },
                 { "vreplication_flags", n => { VreplicationFlags = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags.CreateFromDiscriminatorValue); } },
             };
@@ -80,6 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_rollout", MaxRollout);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints>("replication_durability_constraints", ReplicationDurabilityConstraints);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage>("storage", Storage);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler>("throttler", Throttler);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags>("vreplication_flags", VreplicationFlags);
             writer.WriteAdditionalData(AdditionalData);
