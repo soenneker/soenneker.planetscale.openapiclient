@@ -46,6 +46,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PostgresMinorVersion { get; set; }
 #endif
+        /// <summary>The number of read-only replicas for the configuration profile</summary>
+        public int? ReadOnlyReplicas { get; set; }
         /// <summary>The number of replicas for the configuration profile</summary>
         public int? Replicas { get; set; }
         /// <summary>The storage property</summary>
@@ -85,6 +87,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "postgres_major_version", n => { PostgresMajorVersion = n.GetStringValue(); } },
                 { "postgres_minor_version", n => { PostgresMinorVersion = n.GetStringValue(); } },
+                { "read_only_replicas", n => { ReadOnlyReplicas = n.GetIntValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage.CreateFromDiscriminatorValue); } },
             };
@@ -100,6 +103,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("postgres_major_version", PostgresMajorVersion);
             writer.WriteStringValue("postgres_minor_version", PostgresMinorVersion);
+            writer.WriteIntValue("read_only_replicas", ReadOnlyReplicas);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage>("storage", Storage);
             writer.WriteAdditionalData(AdditionalData);

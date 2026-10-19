@@ -62,6 +62,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string PostgresMinorVersion { get; set; }
 #endif
+        /// <summary>The new number of read-only replicas for the configuration profile</summary>
+        public int? ReadOnlyReplicas { get; set; }
         /// <summary>The new number of replicas for the configuration profile</summary>
         public int? Replicas { get; set; }
         /// <summary>The storage property</summary>
@@ -103,6 +105,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestParameters>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestParameters.CreateFromDiscriminatorValue); } },
                 { "postgres_major_version", n => { PostgresMajorVersion = n.GetStringValue(); } },
                 { "postgres_minor_version", n => { PostgresMinorVersion = n.GetStringValue(); } },
+                { "read_only_replicas", n => { ReadOnlyReplicas = n.GetIntValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestStorage.CreateFromDiscriminatorValue); } },
             };
@@ -120,6 +123,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestParameters>("parameters", Parameters);
             writer.WriteStringValue("postgres_major_version", PostgresMajorVersion);
             writer.WriteStringValue("postgres_minor_version", PostgresMinorVersion);
+            writer.WriteIntValue("read_only_replicas", ReadOnlyReplicas);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateShardConfigurationProfileRequestStorage>("storage", Storage);
             writer.WriteAdditionalData(AdditionalData);

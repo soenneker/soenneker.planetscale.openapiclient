@@ -14,6 +14,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether or not LLM-powered features are enabled for the organization</summary>
+        public bool? AllowLlmUsage { get; set; }
         /// <summary>The billing email of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The keyspace shard limit for the organization</summary>
         public int? KeyspaceShardLimit { get; set; }
+        /// <summary>Whether or not LLM usage is blocked for the organization. When true, LLM-powered features are disabled and can&apos;t be enabled</summary>
+        public bool? LlmUsageBlocked { get; set; }
         /// <summary>Whether or not the organization has managed tenancy enabled</summary>
         public bool? ManagedTenancy { get; set; }
         /// <summary>The query access level MCP clients can be granted for the organization (none, read_only, or read_write)</summary>
@@ -143,6 +147,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_llm_usage", n => { AllowLlmUsage = n.GetBoolValue(); } },
                 { "billing_email", n => { BillingEmail = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "database_count", n => { DatabaseCount = n.GetIntValue(); } },
@@ -153,6 +158,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "idp_managed_roles", n => { IdpManagedRoles = n.GetBoolValue(); } },
                 { "invoice_budget_amount", n => { InvoiceBudgetAmount = n.GetStringValue(); } },
                 { "keyspace_shard_limit", n => { KeyspaceShardLimit = n.GetIntValue(); } },
+                { "llm_usage_blocked", n => { LlmUsageBlocked = n.GetBoolValue(); } },
                 { "managed_tenancy", n => { ManagedTenancy = n.GetBoolValue(); } },
                 { "mcp_access_level", n => { McpAccessLevel = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -174,6 +180,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_llm_usage", AllowLlmUsage);
             writer.WriteStringValue("billing_email", BillingEmail);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteIntValue("database_count", DatabaseCount);
@@ -184,6 +191,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("idp_managed_roles", IdpManagedRoles);
             writer.WriteStringValue("invoice_budget_amount", InvoiceBudgetAmount);
             writer.WriteIntValue("keyspace_shard_limit", KeyspaceShardLimit);
+            writer.WriteBoolValue("llm_usage_blocked", LlmUsageBlocked);
             writer.WriteBoolValue("managed_tenancy", ManagedTenancy);
             writer.WriteStringValue("mcp_access_level", McpAccessLevel);
             writer.WriteStringValue("name", Name);
