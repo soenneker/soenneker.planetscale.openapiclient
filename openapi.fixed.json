@@ -2669,6 +2669,12 @@
             "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "internal",
+            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -6108,6 +6114,12 @@
             "description": "Name from \u0060list_shard_configuration_profiles\u0060.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "internal",
+            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -13897,6 +13909,12 @@
             "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "internal",
+            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -17375,6 +17393,12 @@
             "description": "Name from \u0060list_routers\u0060.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "internal",
+            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -19004,6 +19028,12 @@
             "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "internal",
+            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -28905,6 +28935,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -28939,6 +28970,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -30785,6 +30820,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -30819,6 +30855,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -37085,6 +37125,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -37119,6 +37160,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -39374,6 +39419,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -39408,6 +39454,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -40596,6 +40646,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -40630,6 +40681,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -41935,6 +41990,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -41969,6 +42025,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",
@@ -46184,6 +46244,7 @@
         "display_name",
         "namespace",
         "advanced",
+        "internal",
         "category",
         "description",
         "parameter_type",
@@ -46218,6 +46279,10 @@
         "advanced": {
           "type": "boolean",
           "description": "Whether the parameter is advanced"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Whether the parameter is internal and cannot be changed"
         },
         "category": {
           "type": "string",

@@ -74,6 +74,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Whether the parameter is internal and cannot be changed</summary>
+        public bool? Internal { get; set; }
         /// <summary>The maximum value of the parameter, e.g. `800` or `1h`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +184,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "internal", n => { Internal = n.GetBoolValue(); } },
                 { "max", n => { Max = n.GetStringValue(); } },
                 { "min", n => { Min = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -213,6 +216,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("internal", Internal);
             writer.WriteStringValue("max", Max);
             writer.WriteStringValue("min", Min);
             writer.WriteStringValue("name", Name);
