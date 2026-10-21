@@ -22,7 +22,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClusterSizeSkusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/cluster-size-skus{?database*,engine*,external*,rates*,region*}", pathParameters)
+        public ClusterSizeSkusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/cluster-size-skus{?architecture*,database*,engine*,external*,rates*,region*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClusterSizeSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/cluster-size-skus{?database*,engine*,external*,rates*,region*}", rawUrl)
+        public ClusterSizeSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/cluster-size-skus{?architecture*,database*,engine*,external*,rates*,region*}", rawUrl)
         {
         }
         /// <summary>
@@ -101,6 +101,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClusterSizeSkusRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter by CPU architecture.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("architecture")]
+            public string? Architecture { get; set; }
+#nullable restore
+#else
+            [QueryParameter("architecture")]
+            public string Architecture { get; set; }
+#endif
             /// <summary>The database name to resolve rates for. When specified, database-level custom rates take precedence over organization rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

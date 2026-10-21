@@ -37,7 +37,6 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.SafeMigrations;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Schema;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Shards;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Sidecars;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Traffic;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.VitessParameters;
@@ -219,11 +218,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Shards.ShardsRequestBuilder Shards
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Shards.ShardsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sidecars property</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Sidecars.SidecarsRequestBuilder Sidecars
-        {
-            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Sidecars.SidecarsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The switchovers property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Switchovers.SwitchoversRequestBuilder Switchovers

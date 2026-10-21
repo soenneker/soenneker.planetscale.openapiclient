@@ -27,9 +27,5 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         NekiRouterChangeRequest,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NekiSidecarChangeRequest")]
-        #pragma warning disable CS1591
-        NekiSidecarChangeRequest,
-        #pragma warning restore CS1591
     }
 }

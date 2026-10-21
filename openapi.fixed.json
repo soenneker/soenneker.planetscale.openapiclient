@@ -655,6 +655,12 @@
           },
           {
             "in": "query",
+            "name": "architecture",
+            "description": "Filter by CPU architecture.",
+            "type": "string"
+          },
+          {
+            "in": "query",
             "name": "rates",
             "description": "Whether to include pricing rates in the response. Defaults to false.",
             "type": "boolean"
@@ -13614,7 +13620,7 @@
           {
             "in": "query",
             "name": "target_types",
-            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, NekiRouter, or NekiSidecar",
+            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, or NekiRouter",
             "type": "array",
             "items": {
               "type": "string"
@@ -13624,7 +13630,7 @@
           {
             "in": "query",
             "name": "target_id",
-            "description": "Filter change requests by target ID. Requires target_types",
+            "description": "Filter change requests for one target. Requires exactly one target type",
             "type": "string"
           },
           {
@@ -18384,705 +18390,6 @@
             "schema": {
               "type": "object",
               "description": "Fallback media schema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/sidecars": {
-      "get": {
-        "tags": [
-          "api-neki_sidecars"
-        ],
-        "summary": "List sidecars for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "ListSidecars",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns sidecars for the branch, one per configuration profile",
-            "schema": {
-              "$ref": "#/definitions/ListSidecars200ResponseSchema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/sidecars/{sidecar}": {
-      "get": {
-        "tags": [
-          "api-neki_sidecars"
-        ],
-        "summary": "Get a sidecar for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "GetSidecar",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the sidecar",
-            "schema": {
-              "$ref": "#/definitions/NekiSidecar"
-            }
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "api-neki_sidecars"
-        ],
-        "summary": "Update a sidecar for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "UpdateSidecar",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "$ref": "#/definitions/UpdateSidecarRequest"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Invalid parameters",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns the sidecar",
-            "schema": {
-              "$ref": "#/definitions/NekiSidecar"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/sidecars/{sidecar}/changes": {
-      "get": {
-        "tags": [
-          "api-neki_sidecar_changes"
-        ],
-        "summary": "List change requests for a Neki sidecar",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "ListSidecarChangeRequests",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "description": "If provided, specifies the page offset of returned results",
-            "type": "integer",
-            "default": 1
-          },
-          {
-            "in": "query",
-            "name": "per_page",
-            "description": "If provided, specifies the number of returned results",
-            "type": "integer",
-            "default": 25
-          },
-          {
-            "in": "query",
-            "name": "period",
-            "description": "Filter change requests by named period",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "completed_at",
-            "description": "Filter change requests completed between two ISO 8601 timestamps",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "308": {
-            "description": "Redirects to the Neki change requests endpoint",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/sidecars/{sidecar}/changes/{id}": {
-      "get": {
-        "tags": [
-          "api-neki_sidecar_changes"
-        ],
-        "summary": "Get a change request for a Neki sidecar",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "GetSidecarChangeRequest",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "description": "The ID of the change request",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar or change request not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "308": {
-            "description": "Redirects to the Neki change request endpoint",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "api-neki_sidecar_changes"
-        ],
-        "summary": "Cancel a change request for a Neki sidecar",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
-        "operationId": "CancelSidecarChangeRequest",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "description": "The ID of the change request",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar or change request not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "308": {
-            "description": "Redirects to the Neki change request endpoint",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          }
-        }
-      }
-    },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/sidecars/{sidecar}/parameters": {
-      "get": {
-        "tags": [
-          "api-neki_sidecar_parameters"
-        ],
-        "summary": "List parameters for a Neki sidecar",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
-        "operationId": "ListSidecarParameters",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "organization",
-            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "database",
-            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "branch",
-            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "sidecar",
-            "description": "ID from \u0060list_sidecars\u0060, or the configuration profile name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "internal",
-            "description": "Set to true to return only internal parameters, which cannot be changed. Set to false to return only parameters you can change. Omit to return both.",
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "404": {
-            "description": "Sidecar not found",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {
-              "type": "object",
-              "description": "Fallback media schema"
-            }
-          },
-          "200": {
-            "description": "Returns parameters for the sidecar",
-            "schema": {
-              "$ref": "#/definitions/ListSidecarParameters200ResponseSchema"
             }
           }
         }
@@ -31686,37 +30993,6 @@
         },
         "error": {
           "$ref": "#/definitions/NekiShardAssignmentErrorProperty"
-        }
-      }
-    },
-    "NekiSidecar": {
-      "type": "object",
-      "required": [
-        "id",
-        "configuration_profile",
-        "state",
-        "created_at",
-        "updated_at"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the sidecar"
-        },
-        "configuration_profile": {
-          "type": "string",
-          "description": "The name of the configuration profile the sidecar belongs to"
-        },
-        "state": {
-          "$ref": "#/definitions/NekiSidecarState"
-        },
-        "created_at": {
-          "type": "string",
-          "description": "When the sidecar was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "When the sidecar was last updated"
         }
       }
     },
@@ -50889,26 +50165,6 @@
         }
       }
     },
-    "ListSidecars200Response": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/NekiSidecar"
-      }
-    },
-    "UpdateSidecarRequest": {
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/UpdateSidecarRequestParameters"
-        }
-      }
-    },
-    "ListSidecarParameters200Response": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/NekiParameter"
-      }
-    },
     "CreateSwitchoverRequest": {
       "type": "object",
       "properties": {
@@ -51599,18 +50855,6 @@
       }
     },
     "ListRouterParameters200ResponseSchema": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/NekiParameter"
-      }
-    },
-    "ListSidecars200ResponseSchema": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/NekiSidecar"
-      }
-    },
-    "ListSidecarParameters200ResponseSchema": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/NekiParameter"
@@ -52370,10 +51614,6 @@
           "description": "The table\u0027s schema"
         }
       }
-    },
-    "UpdateSidecarRequestParameters": {
-      "type": "object",
-      "description": "Sidecar parameters nested by namespace (e.g., {\u0022sidecar\u0022: {\u0022pool-capacity\u0022: \u0022100\u0022}})"
     },
     "ListBranchVitessParameters200ResponseVtgateItem": {
       "type": "object",
@@ -53491,8 +52731,7 @@
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
         "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest",
-        "NekiSidecarChangeRequest"
+        "NekiRouterChangeRequest"
       ],
       "additionalProperties": false
     },
@@ -53542,8 +52781,7 @@
         "NekiCluster",
         "NekiConfigurationProfile",
         "NekiExternalShard",
-        "NekiRouter",
-        "NekiSidecar"
+        "NekiRouter"
       ],
       "additionalProperties": false
     },
@@ -53628,34 +52866,6 @@
           {
             "value": "configuration_profile",
             "name": "ConfigurationProfile"
-          }
-        ]
-      }
-    },
-    "NekiSidecarState": {
-      "type": "string",
-      "description": "The current state of the sidecar",
-      "enum": [
-        "pending",
-        "applying",
-        "ready"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "NekiSidecarState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "pending",
-            "name": "Pending"
-          },
-          {
-            "value": "applying",
-            "name": "Applying"
-          },
-          {
-            "value": "ready",
-            "name": "Ready"
           }
         ]
       }
@@ -55606,8 +54816,7 @@
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
         "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest",
-        "NekiSidecarChangeRequest"
+        "NekiRouterChangeRequest"
       ],
       "additionalProperties": false
     },
@@ -55657,8 +54866,7 @@
         "NekiCluster",
         "NekiConfigurationProfile",
         "NekiExternalShard",
-        "NekiRouter",
-        "NekiSidecar"
+        "NekiRouter"
       ],
       "additionalProperties": false
     },
@@ -58845,6 +58053,28 @@
           {
             "value": "neki",
             "name": "Neki"
+          }
+        ]
+      }
+    },
+    "ListClusterSizeSkusArchitectureParameter": {
+      "type": "string",
+      "enum": [
+        "aarch64",
+        "x86_64"
+      ],
+      "additionalProperties": false,
+      "x-ms-enum": {
+        "name": "ListClusterSizeSkusArchitectureParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "aarch64",
+            "name": "Aarch64"
+          },
+          {
+            "value": "x86_64",
+            "name": "X8664"
           }
         ]
       }
@@ -62041,63 +61271,6 @@
       "additionalProperties": false,
       "x-ms-enum": {
         "name": "ListRouterChangeRequestsPeriodParameter",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "15m",
-            "name": "Value15M"
-          },
-          {
-            "value": "1h",
-            "name": "Value1H"
-          },
-          {
-            "value": "3h",
-            "name": "Value3H"
-          },
-          {
-            "value": "6h",
-            "name": "Value6H"
-          },
-          {
-            "value": "12h",
-            "name": "Value12H"
-          },
-          {
-            "value": "1d",
-            "name": "Value1D"
-          },
-          {
-            "value": "2d",
-            "name": "Value2D"
-          },
-          {
-            "value": "7d",
-            "name": "Value7D"
-          },
-          {
-            "value": "8d",
-            "name": "Value8D"
-          }
-        ]
-      }
-    },
-    "ListSidecarChangeRequestsPeriodParameter": {
-      "type": "string",
-      "enum": [
-        "15m",
-        "1h",
-        "3h",
-        "6h",
-        "12h",
-        "1d",
-        "2d",
-        "7d",
-        "8d"
-      ],
-      "additionalProperties": false,
-      "x-ms-enum": {
-        "name": "ListSidecarChangeRequestsPeriodParameter",
         "modelAsString": false,
         "values": [
           {
