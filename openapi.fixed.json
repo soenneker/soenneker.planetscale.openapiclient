@@ -15796,7 +15796,7 @@
           "Roles"
         ],
         "summary": "Reset default credentials",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060delete_branch_password\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Database | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Branch | \u0060manage_passwords\u0060, \u0060manage_read_only_passwords\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060connect_branch\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060delete_branch_password\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Database | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Branch | \u0060manage_passwords\u0060, \u0060manage_read_only_passwords\u0060 |",
         "operationId": "ResetDefaultRole",
         "produces": [
           "application/json"
@@ -16401,7 +16401,7 @@
           "Roles"
         ],
         "summary": "Reset a role\u0027s password",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060delete_branch_password\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Database | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Branch | \u0060manage_passwords\u0060, \u0060manage_read_only_passwords\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060connect_branch\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060delete_branch_password\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Database | \u0060manage_passwords\u0060, \u0060manage_production_branch_passwords\u0060, \u0060manage_read_only_passwords\u0060, \u0060manage_production_read_only_passwords\u0060 |\n| Branch | \u0060manage_passwords\u0060, \u0060manage_read_only_passwords\u0060 |",
         "operationId": "ResetRole",
         "produces": [
           "application/json"
@@ -61648,8 +61648,8 @@
       "description": "          Resources for downloading query insights data.\n"
     },
     {
-      "name": "Dedicated read replica promotions",
-      "description": "          Resources for promoting Postgres dedicated read replicas.\n"
+      "name": "Dedicated read replica detachments",
+      "description": "          Resources for detaching Postgres dedicated read replicas.\n"
     },
     {
       "name": "Dedicated read replicas",
