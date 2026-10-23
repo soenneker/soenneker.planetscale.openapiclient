@@ -88,6 +88,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public int? PostgresMajorVersion { get; set; }
         /// <summary>The PostgreSQL minor version used by the configuration profile</summary>
         public int? PostgresMinorVersion { get; set; }
+        /// <summary>The number of read-only replicas for shards using this configuration profile</summary>
+        public int? ReadOnlyReplicas { get; set; }
         /// <summary>The number of replicas for shards using this configuration profile</summary>
         public int? Replicas { get; set; }
         /// <summary>The number of shards using this configuration profile</summary>
@@ -148,6 +150,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "postgres_image_version", n => { PostgresImageVersion = n.GetStringValue(); } },
                 { "postgres_major_version", n => { PostgresMajorVersion = n.GetIntValue(); } },
                 { "postgres_minor_version", n => { PostgresMinorVersion = n.GetIntValue(); } },
+                { "read_only_replicas", n => { ReadOnlyReplicas = n.GetIntValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "shards", n => { Shards = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardConfigurationProfileState>(); } },
@@ -175,6 +178,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("postgres_image_version", PostgresImageVersion);
             writer.WriteIntValue("postgres_major_version", PostgresMajorVersion);
             writer.WriteIntValue("postgres_minor_version", PostgresMinorVersion);
+            writer.WriteIntValue("read_only_replicas", ReadOnlyReplicas);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteIntValue("shards", Shards);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiShardConfigurationProfileState>("state", State);

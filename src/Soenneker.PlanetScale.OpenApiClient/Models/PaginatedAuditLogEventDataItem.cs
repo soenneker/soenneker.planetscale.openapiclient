@@ -46,6 +46,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The autonomous system number for the actor&apos;s IP address</summary>
+        public int? Asn { get; set; }
+        /// <summary>The autonomous system organization for the actor&apos;s IP address</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AsnOrganization { get; set; }
+#nullable restore
+#else
+        public string AsnOrganization { get; set; }
+#endif
         /// <summary>The name of the auditable object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,6 +189,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "actor_display_name", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actor_id", n => { ActorId = n.GetStringValue(); } },
                 { "actor_type", n => { ActorType = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetIntValue(); } },
+                { "asn_organization", n => { AsnOrganization = n.GetStringValue(); } },
                 { "audit_action", n => { AuditAction = n.GetStringValue(); } },
                 { "auditable_display_name", n => { AuditableDisplayName = n.GetStringValue(); } },
                 { "auditable_id", n => { AuditableId = n.GetStringValue(); } },
@@ -205,6 +217,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("actor_display_name", ActorDisplayName);
             writer.WriteStringValue("actor_id", ActorId);
             writer.WriteStringValue("actor_type", ActorType);
+            writer.WriteIntValue("asn", Asn);
+            writer.WriteStringValue("asn_organization", AsnOrganization);
             writer.WriteStringValue("auditable_display_name", AuditableDisplayName);
             writer.WriteStringValue("auditable_id", AuditableId);
             writer.WriteStringValue("auditable_type", AuditableType);

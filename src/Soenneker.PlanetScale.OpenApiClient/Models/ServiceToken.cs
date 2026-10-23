@@ -78,6 +78,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The autonomous system number for the service token&apos;s latest use</summary>
+        public int? LastUsedAsn { get; set; }
+        /// <summary>The autonomous system organization for the service token&apos;s latest use</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastUsedAsnOrganization { get; set; }
+#nullable restore
+#else
+        public string LastUsedAsnOrganization { get; set; }
+#endif
         /// <summary>When the service token was last used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +95,22 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #nullable restore
 #else
         public string LastUsedAt { get; set; }
+#endif
+        /// <summary>The IP address from the service token&apos;s latest use</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastUsedIp { get; set; }
+#nullable restore
+#else
+        public string LastUsedIp { get; set; }
+#endif
+        /// <summary>The location of the service token&apos;s latest use</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastUsedLocation { get; set; }
+#nullable restore
+#else
+        public string LastUsedLocation { get; set; }
 #endif
         /// <summary>The name of the service token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +193,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "last_used_asn", n => { LastUsedAsn = n.GetIntValue(); } },
+                { "last_used_asn_organization", n => { LastUsedAsnOrganization = n.GetStringValue(); } },
                 { "last_used_at", n => { LastUsedAt = n.GetStringValue(); } },
+                { "last_used_ip", n => { LastUsedIp = n.GetStringValue(); } },
+                { "last_used_location", n => { LastUsedLocation = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "oauth_accesses_by_resource", n => { OauthAccessesByResource = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource>(global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource.CreateFromDiscriminatorValue); } },
                 { "plain_text_refresh_token", n => { PlainTextRefreshToken = n.GetStringValue(); } },
@@ -191,7 +221,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("last_used_asn", LastUsedAsn);
+            writer.WriteStringValue("last_used_asn_organization", LastUsedAsnOrganization);
             writer.WriteStringValue("last_used_at", LastUsedAt);
+            writer.WriteStringValue("last_used_ip", LastUsedIp);
+            writer.WriteStringValue("last_used_location", LastUsedLocation);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource>("oauth_accesses_by_resource", OauthAccessesByResource);
             writer.WriteStringValue("plain_text_refresh_token", PlainTextRefreshToken);
