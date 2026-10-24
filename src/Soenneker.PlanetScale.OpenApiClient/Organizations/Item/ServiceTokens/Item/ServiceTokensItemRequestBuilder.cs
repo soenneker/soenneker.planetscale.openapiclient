@@ -38,12 +38,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,16 +48,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceTokens500Error.CreateFromDiscriminatorValue },
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information about a service token.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `read_service_tokens`
@@ -71,12 +56,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,16 +66,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.Item.ServiceToken500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a service token from the organization.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `delete_service_tokens`

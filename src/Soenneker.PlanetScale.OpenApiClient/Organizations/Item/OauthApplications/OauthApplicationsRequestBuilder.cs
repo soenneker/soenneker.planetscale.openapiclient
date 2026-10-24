@@ -20,14 +20,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
     {
         /// <summary>Gets an item from the Soenneker.PlanetScale.OpenApiClient.organizations.item.oauthApplications.item collection</summary>
         /// <param name="position">The ID of the OAuth application</param>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.ApplicationItemRequestBuilder"/></returns>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.ApplicationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.WithApplicationItemRequestBuilder"/></returns>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.WithApplicationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("application%2Did", position);
-                return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.ApplicationItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("applicationId", position);
+                return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.WithApplicationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,12 +52,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication?> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.OauthApplicationsRequestBuilder.OauthApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,16 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.PaginatedOAuthApplication500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplication.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `read_oauth_applications`

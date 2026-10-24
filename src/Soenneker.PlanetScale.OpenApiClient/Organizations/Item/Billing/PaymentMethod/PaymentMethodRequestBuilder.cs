@@ -38,12 +38,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,16 +48,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.PaymentMethod500Error.CreateFromDiscriminatorValue },
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the current payment method for an organization### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_payment_method`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_payment_method` |
@@ -71,12 +56,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,16 +66,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.Payment
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing.PaymentMethod.BillingPaymentMethod500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BillingPaymentMethod.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete the current payment method for an organization### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_payment_method`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_payment_method` |

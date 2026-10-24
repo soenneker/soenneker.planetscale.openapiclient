@@ -39,12 +39,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,16 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.OrganizationSsoSerializer500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a URL for configuring directory sync. Requires SSO to be enabled.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `manage_sso`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_sso` |
@@ -72,12 +57,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,16 +67,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNa
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso.DirectoryNamespace.EnableOrganizationSsoDirectory200Response500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.EnableOrganizationSsoDirectory200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable directory sync for the organization. Non-admin directory members are removed.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `manage_sso`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_sso` |

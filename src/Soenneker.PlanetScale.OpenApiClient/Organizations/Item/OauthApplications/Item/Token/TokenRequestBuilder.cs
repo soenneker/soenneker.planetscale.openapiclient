@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization}\oauth-applications\{application-id}\token
+    /// Builds and executes requests for operations under \organizations\{organization}\oauth-applications\{applicationId}\token
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TokenRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/oauth-applications/{application%2Did}/token", pathParameters)
+        public TokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/oauth-applications/{applicationId}/token", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/oauth-applications/{application%2Did}/token", rawUrl)
+        public TokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/oauth-applications/{applicationId}/token", rawUrl)
         {
         }
         /// <summary>
@@ -40,11 +40,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken?> PostAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.CreateOAuthTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,15 +51,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplications.Item.Token.ServiceToken500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an OAuth token from an authorization grant code, or refresh an OAuth token from a refresh token### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_oauth_tokens`

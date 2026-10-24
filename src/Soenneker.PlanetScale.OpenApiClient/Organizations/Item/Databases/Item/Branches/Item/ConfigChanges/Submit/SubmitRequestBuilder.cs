@@ -40,12 +40,6 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response422Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequests200Response?> PostAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequestsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,16 +51,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response404Error.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response422Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges.Submit.SubmitBranchConfigChangeRequests200Response500Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequests200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequests200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequests200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.SubmitBranchConfigChangeRequests200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         ///         Submits draft config change requests for the branch and its keyspaces together. Each ID must belong to a draft created with the &quot;create_branch_config_change_request&quot; or &quot;create_keyspace_config_change_request&quot; endpoint.        If any draft fails validation, none of them are submitted.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `create_branch`
