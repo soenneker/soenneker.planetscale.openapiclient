@@ -3,46 +3,46 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes
+namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization}\databases\{database}\branches\{branch}\routers\{router}\changes
+    /// Builds and executes requests for operations under \organizations\{organization}\databases\{database}\branches\{branch}\configuration-profiles\{configurationProfile}\change-requests
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangesRequestBuilder : BaseRequestBuilder
+    public partial class ChangeRequestsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.PlanetScale.OpenApiClient.organizations.item.databases.item.branches.item.routers.item.changes.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.PlanetScale.OpenApiClient.organizations.item.databases.item.branches.item.configurationProfiles.item.changeRequests.item collection</summary>
         /// <param name="position">The ID of the change request</param>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder"/></returns>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder"/></returns>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("id", position);
-                return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes{?completed_at*,page*,per_page*,period*}", pathParameters)
+        public ChangeRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests{?completed_at*,page*,per_page*,period*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes{?completed_at*,page*,per_page*,period*}", rawUrl)
+        public ChangeRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests{?completed_at*,page*,per_page*,period*}", rawUrl)
         {
         }
         /// <summary>
@@ -53,11 +53,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder.ChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder.ChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,11 +70,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder.ChangeRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder.ChangeRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -85,17 +85,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_branch`, `delete_branch`, `create_branch`, `connect_production_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_branches` || Database | `read_branches` || Branch | `read_branch` |
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ChangesRequestBuilderGetQueryParameters 
+        public partial class ChangeRequestsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter change requests completed between two ISO 8601 timestamps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

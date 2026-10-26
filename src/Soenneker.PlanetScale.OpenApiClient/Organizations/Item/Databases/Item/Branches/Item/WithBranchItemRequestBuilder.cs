@@ -9,6 +9,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Backups;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.BouncerResizes;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Bouncers;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ChangeRequests;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Changes;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Cluster;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigChanges;
@@ -78,6 +79,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Bouncers.BouncersRequestBuilder Bouncers
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Bouncers.BouncersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The changeRequests property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ChangeRequests.ChangeRequestsRequestBuilder ChangeRequests
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ChangeRequests.ChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The changes property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Changes.ChangesRequestBuilder Changes

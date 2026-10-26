@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.PlanetScale.OpenApiClient.Models;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.ChangeRequests;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Parameters;
 using System.Collections.Generic;
 using System.IO;
@@ -19,10 +19,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRouterItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The changes property</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder Changes
+        /// <summary>The changeRequests property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.ChangeRequests.ChangeRequestsRequestBuilder ChangeRequests
         {
-            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.ChangesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.ChangeRequests.ChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The parameters property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Parameters.ParametersRequestBuilder Parameters

@@ -2178,10 +2178,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/admin/changes": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/admin/change-requests": {
       "get": {
         "tags": [
-          "api-neki_admin_changes"
+          "api-neki_admin_change_requests"
         ],
         "summary": "List change requests for a Neki admin",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -2276,7 +2276,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change requests endpoint",
+            "description": "Redirects to the change requests endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -2284,10 +2284,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/admin/changes/{id}": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/admin/change-requests/{id}": {
       "get": {
         "tags": [
-          "api-neki_admin_changes"
+          "api-neki_admin_change_requests"
         ],
         "summary": "Get a change request for a Neki admin",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -2363,7 +2363,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -2372,7 +2372,7 @@
       },
       "delete": {
         "tags": [
-          "api-neki_admin_changes"
+          "api-neki_admin_change_requests"
         ],
         "summary": "Cancel a change request for a Neki admin",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
@@ -2448,7 +2448,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -3755,6 +3755,310 @@
           },
           "204": {
             "description": "Cancels a resize request",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/change-requests": {
+      "get": {
+        "tags": [
+          "api-change_requests"
+        ],
+        "summary": "List change requests for a Neki branch",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListChangeRequests",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "description": "Filter change requests by state",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "target_types",
+            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, or NekiRouter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "description": "Filter change requests for one target. Requires exactly one target type",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "period",
+            "description": "Filter change requests by named period",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "description": "Filter change requests completed between two ISO 8601 timestamps",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns Neki change requests",
+            "schema": {
+              "$ref": "#/definitions/PaginatedNekiChangeRequest"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/change-requests/{id}": {
+      "get": {
+        "tags": [
+          "api-change_requests"
+        ],
+        "summary": "Get a change request for a Neki branch",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "GetChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Change request not found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns a Neki change request",
+            "schema": {
+              "$ref": "#/definitions/NekiChangeRequest"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "api-change_requests"
+        ],
+        "summary": "Cancel a change request for a Neki branch",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "CancelChangeRequest",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the change request",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Change request not found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Change request cannot be canceled",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "204": {
+            "description": "Change request canceled",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -5102,10 +5406,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/changes": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests": {
       "get": {
         "tags": [
-          "api-neki_shard_configuration_profile_changes"
+          "api-neki_shard_configuration_profile_change_requests"
         ],
         "summary": "List change requests for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -5207,7 +5511,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change requests endpoint",
+            "description": "Redirects to the change requests endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -5215,10 +5519,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/changes/{id}": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests/{id}": {
       "get": {
         "tags": [
-          "api-neki_shard_configuration_profile_changes"
+          "api-neki_shard_configuration_profile_change_requests"
         ],
         "summary": "Get a change request for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -5301,7 +5605,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -5310,7 +5614,7 @@
       },
       "delete": {
         "tags": [
-          "api-neki_shard_configuration_profile_changes"
+          "api-neki_shard_configuration_profile_change_requests"
         ],
         "summary": "Cancel a change request for a Neki configuration profile",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
@@ -5393,7 +5697,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -12715,10 +13019,10 @@
     "/organizations/{organization}/databases/{database}/branches/{branch}/neki-changes": {
       "get": {
         "tags": [
-          "api-neki_changes"
+          "api-neki_change_requests"
         ],
         "summary": "List change requests for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "description": "Deprecated. Use GET /organizations/:organization/databases/:database/branches/:branch/change-requests instead.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListNekiChangeRequests",
         "produces": [
           "application/json"
@@ -12835,10 +13139,10 @@
               "description": "Fallback media schema"
             }
           },
-          "200": {
-            "description": "Returns Neki change requests",
+          "308": {
+            "description": "Redirects to the change requests endpoint",
             "schema": {
-              "$ref": "#/definitions/PaginatedNekiChangeRequest"
+              "description": "Fallback media schema"
             }
           }
         }
@@ -12847,10 +13151,10 @@
     "/organizations/{organization}/databases/{database}/branches/{branch}/neki-changes/{id}": {
       "get": {
         "tags": [
-          "api-neki_changes"
+          "api-neki_change_requests"
         ],
         "summary": "Get a change request for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "description": "Deprecated. Use GET /organizations/:organization/databases/:database/branches/:branch/change-requests/:id instead.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetNekiChangeRequest",
         "produces": [
           "application/json"
@@ -12922,20 +13226,20 @@
               "description": "Fallback media schema"
             }
           },
-          "200": {
-            "description": "Returns a Neki change request",
+          "308": {
+            "description": "Redirects to the change request endpoint",
             "schema": {
-              "$ref": "#/definitions/NekiChangeRequest"
+              "description": "Fallback media schema"
             }
           }
         }
       },
       "delete": {
         "tags": [
-          "api-neki_changes"
+          "api-neki_change_requests"
         ],
         "summary": "Cancel a change request for a Neki branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "description": "Deprecated. Use DELETE /organizations/:organization/databases/:database/branches/:branch/change-requests/:id instead.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CancelNekiChangeRequest",
         "produces": [
           "application/json"
@@ -12989,6 +13293,12 @@
               "description": "Fallback media schema"
             }
           },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
           "429": {
             "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
             "schema": {
@@ -13001,14 +13311,8 @@
               "description": "Fallback media schema"
             }
           },
-          "422": {
-            "description": "Change request cannot be canceled",
-            "schema": {
-              "description": "Fallback media schema"
-            }
-          },
-          "204": {
-            "description": "Change request canceled",
+          "308": {
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -15968,10 +16272,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/change-requests": {
       "get": {
         "tags": [
-          "api-neki_router_changes"
+          "api-neki_router_change_requests"
         ],
         "summary": "List change requests for a Neki router",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -16073,7 +16377,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change requests endpoint",
+            "description": "Redirects to the change requests endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -16081,10 +16385,10 @@
         }
       }
     },
-    "/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes/{id}": {
+    "/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/change-requests/{id}": {
       "get": {
         "tags": [
-          "api-neki_router_changes"
+          "api-neki_router_change_requests"
         ],
         "summary": "Get a change request for a Neki router",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
@@ -16167,7 +16471,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -16176,7 +16480,7 @@
       },
       "delete": {
         "tags": [
-          "api-neki_router_changes"
+          "api-neki_router_change_requests"
         ],
         "summary": "Cancel a change request for a Neki router",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
@@ -16259,7 +16563,7 @@
             }
           },
           "308": {
-            "description": "Redirects to the Neki change request endpoint",
+            "description": "Redirects to the change request endpoint",
             "schema": {
               "description": "Fallback media schema"
             }
@@ -26762,6 +27066,307 @@
         }
       }
     },
+    "PaginatedNekiChangeRequest": {
+      "type": "object",
+      "required": [
+        "type",
+        "current_page",
+        "per_page",
+        "next_page",
+        "next_page_url",
+        "prev_page",
+        "prev_page_url",
+        "data"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022list\u0022 for paginated responses."
+        },
+        "current_page": {
+          "type": "integer",
+          "description": "The current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "description": "The maximum number of results per page"
+        },
+        "next_page": {
+          "type": "integer",
+          "description": "The next page number, or null when this is the last page",
+          "x-nullable": true
+        },
+        "next_page_url": {
+          "type": "string",
+          "description": "The next page of results, or null when this is the last page",
+          "x-nullable": true
+        },
+        "prev_page": {
+          "type": "integer",
+          "description": "The previous page number, or null when this is the first page",
+          "x-nullable": true
+        },
+        "prev_page_url": {
+          "type": "string",
+          "description": "The previous page of results, or null when this is the first page",
+          "x-nullable": true
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaginatedNekiChangeRequestDataItem"
+          }
+        }
+      }
+    },
+    "NekiChangeRequest": {
+      "type": "object",
+      "required": [
+        "type",
+        "id",
+        "state",
+        "can_delete",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "actor",
+        "target_id",
+        "target_type",
+        "target_name"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/NekiChangeRequestType"
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID of the change request"
+        },
+        "state": {
+          "$ref": "#/definitions/NekiChangeRequestState"
+        },
+        "can_delete": {
+          "type": "boolean",
+          "description": "Whether the change request can be deleted"
+        },
+        "started_at": {
+          "type": "string",
+          "description": "The time the change request started",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "The time the change request completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "The time the change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "The time the change request was last updated"
+        },
+        "actor": {
+          "$ref": "#/definitions/NekiChangeRequestActor"
+        },
+        "target_id": {
+          "type": "string",
+          "description": "The ID of the resource being changed",
+          "x-nullable": true
+        },
+        "target_type": {
+          "$ref": "#/definitions/NekiChangeRequestTargetType"
+        },
+        "target_name": {
+          "type": "string",
+          "description": "The name of the resource being changed"
+        },
+        "admin_size": {
+          "type": "string",
+          "description": "The name of the admin size SKU",
+          "x-nullable": true
+        },
+        "admin_size_display_name": {
+          "type": "string",
+          "description": "The display name of the admin size SKU",
+          "x-nullable": true
+        },
+        "parameters": {
+          "$ref": "#/definitions/NekiChangeRequestParametersProperty"
+        },
+        "previous_admin_size": {
+          "type": "string",
+          "description": "The previous name of the admin size SKU",
+          "x-nullable": true
+        },
+        "previous_admin_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the admin size SKU",
+          "x-nullable": true
+        },
+        "previous_parameters": {
+          "$ref": "#/definitions/NekiChangeRequestPreviousParametersProperty"
+        },
+        "replicas": {
+          "type": "integer",
+          "description": "The number of replicas",
+          "x-nullable": true
+        },
+        "previous_replicas": {
+          "type": "integer",
+          "description": "The previous number of replicas",
+          "x-nullable": true
+        },
+        "cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the external sidecar size",
+          "x-nullable": true
+        },
+        "cluster_display_name": {
+          "type": "string",
+          "description": "The display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the previous external sidecar size",
+          "x-nullable": true
+        },
+        "previous_cluster_display_name": {
+          "type": "string",
+          "description": "The previous display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "router_size": {
+          "type": "string",
+          "description": "The name of the router size SKU",
+          "x-nullable": true
+        },
+        "router_size_display_name": {
+          "type": "string",
+          "description": "The display name of the router size SKU",
+          "x-nullable": true
+        },
+        "replicas_per_cell": {
+          "type": "integer",
+          "description": "The number of replicas in each cell",
+          "x-nullable": true
+        },
+        "autoscaling": {
+          "type": "boolean",
+          "description": "Whether the router scales horizontally within each cell",
+          "x-nullable": true
+        },
+        "max_replicas_per_cell": {
+          "type": "integer",
+          "description": "The maximum number of replicas in each cell when autoscaling",
+          "x-nullable": true
+        },
+        "target_cpu_utilization": {
+          "type": "integer",
+          "description": "The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70",
+          "x-nullable": true
+        },
+        "previous_router_size": {
+          "type": "string",
+          "description": "The previous name of the router size SKU",
+          "x-nullable": true
+        },
+        "previous_router_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the router size SKU",
+          "x-nullable": true
+        },
+        "previous_replicas_per_cell": {
+          "type": "integer",
+          "description": "The previous number of replicas in each cell",
+          "x-nullable": true
+        },
+        "previous_autoscaling": {
+          "type": "boolean",
+          "description": "The previous autoscaling state of the router",
+          "x-nullable": true
+        },
+        "previous_max_replicas_per_cell": {
+          "type": "integer",
+          "description": "The previous maximum number of replicas in each cell",
+          "x-nullable": true
+        },
+        "previous_target_cpu_utilization": {
+          "type": "integer",
+          "description": "The previous target average CPU utilization percentage",
+          "x-nullable": true
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the configuration profile",
+          "x-nullable": true
+        },
+        "previous_name": {
+          "type": "string",
+          "description": "The previous name of the configuration profile",
+          "x-nullable": true
+        },
+        "cluster_size": {
+          "type": "string",
+          "description": "The name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "metal": {
+          "type": "boolean",
+          "description": "Whether the cluster size SKU uses metal instances",
+          "x-nullable": true
+        },
+        "cluster_rank": {
+          "type": "integer",
+          "description": "The display order of the cluster size SKU",
+          "x-nullable": true
+        },
+        "shards": {
+          "type": "integer",
+          "description": "The number of shards",
+          "x-nullable": true
+        },
+        "postgres_image_version": {
+          "type": "string",
+          "description": "The PostgreSQL image",
+          "x-nullable": true
+        },
+        "storage": {
+          "$ref": "#/definitions/NekiChangeRequestStorage"
+        },
+        "previous_cluster_size": {
+          "type": "string",
+          "description": "The previous name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_metal": {
+          "type": "boolean",
+          "description": "Whether the previous cluster size SKU used metal instances",
+          "x-nullable": true
+        },
+        "previous_cluster_rank": {
+          "type": "integer",
+          "description": "The previous display order of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_shards": {
+          "type": "integer",
+          "description": "The previous number of shards",
+          "x-nullable": true
+        },
+        "previous_postgres_image_version": {
+          "type": "string",
+          "description": "The previous PostgreSQL image",
+          "x-nullable": true
+        },
+        "previous_storage": {
+          "$ref": "#/definitions/NekiChangeRequestPreviousStorage"
+        }
+      }
+    },
     "NekiDataTopology": {
       "type": "object",
       "required": [
@@ -28542,307 +29147,6 @@
         "updated_at": {
           "type": "string",
           "description": "When the admin was last updated"
-        }
-      }
-    },
-    "PaginatedNekiChangeRequest": {
-      "type": "object",
-      "required": [
-        "type",
-        "current_page",
-        "per_page",
-        "next_page",
-        "next_page_url",
-        "prev_page",
-        "prev_page_url",
-        "data"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "The response type. Always \u0022list\u0022 for paginated responses."
-        },
-        "current_page": {
-          "type": "integer",
-          "description": "The current page number"
-        },
-        "per_page": {
-          "type": "integer",
-          "description": "The maximum number of results per page"
-        },
-        "next_page": {
-          "type": "integer",
-          "description": "The next page number, or null when this is the last page",
-          "x-nullable": true
-        },
-        "next_page_url": {
-          "type": "string",
-          "description": "The next page of results, or null when this is the last page",
-          "x-nullable": true
-        },
-        "prev_page": {
-          "type": "integer",
-          "description": "The previous page number, or null when this is the first page",
-          "x-nullable": true
-        },
-        "prev_page_url": {
-          "type": "string",
-          "description": "The previous page of results, or null when this is the first page",
-          "x-nullable": true
-        },
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PaginatedNekiChangeRequestDataItem"
-          }
-        }
-      }
-    },
-    "NekiChangeRequest": {
-      "type": "object",
-      "required": [
-        "type",
-        "id",
-        "state",
-        "can_delete",
-        "started_at",
-        "completed_at",
-        "created_at",
-        "updated_at",
-        "actor",
-        "target_id",
-        "target_type",
-        "target_name"
-      ],
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/NekiChangeRequestType"
-        },
-        "id": {
-          "type": "string",
-          "description": "The ID of the change request"
-        },
-        "state": {
-          "$ref": "#/definitions/NekiChangeRequestState"
-        },
-        "can_delete": {
-          "type": "boolean",
-          "description": "Whether the change request can be deleted"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "The time the change request started",
-          "x-nullable": true
-        },
-        "completed_at": {
-          "type": "string",
-          "description": "The time the change request completed",
-          "x-nullable": true
-        },
-        "created_at": {
-          "type": "string",
-          "description": "The time the change request was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "The time the change request was last updated"
-        },
-        "actor": {
-          "$ref": "#/definitions/NekiChangeRequestActor"
-        },
-        "target_id": {
-          "type": "string",
-          "description": "The ID of the resource being changed",
-          "x-nullable": true
-        },
-        "target_type": {
-          "$ref": "#/definitions/NekiChangeRequestTargetType"
-        },
-        "target_name": {
-          "type": "string",
-          "description": "The name of the resource being changed"
-        },
-        "admin_size": {
-          "type": "string",
-          "description": "The name of the admin size SKU",
-          "x-nullable": true
-        },
-        "admin_size_display_name": {
-          "type": "string",
-          "description": "The display name of the admin size SKU",
-          "x-nullable": true
-        },
-        "parameters": {
-          "$ref": "#/definitions/NekiChangeRequestParametersProperty"
-        },
-        "previous_admin_size": {
-          "type": "string",
-          "description": "The previous name of the admin size SKU",
-          "x-nullable": true
-        },
-        "previous_admin_size_display_name": {
-          "type": "string",
-          "description": "The previous display name of the admin size SKU",
-          "x-nullable": true
-        },
-        "previous_parameters": {
-          "$ref": "#/definitions/NekiChangeRequestPreviousParametersProperty"
-        },
-        "replicas": {
-          "type": "integer",
-          "description": "The number of replicas",
-          "x-nullable": true
-        },
-        "previous_replicas": {
-          "type": "integer",
-          "description": "The previous number of replicas",
-          "x-nullable": true
-        },
-        "cluster_name": {
-          "type": "string",
-          "description": "The SKU representing the external sidecar size",
-          "x-nullable": true
-        },
-        "cluster_display_name": {
-          "type": "string",
-          "description": "The display name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_cluster_name": {
-          "type": "string",
-          "description": "The SKU representing the previous external sidecar size",
-          "x-nullable": true
-        },
-        "previous_cluster_display_name": {
-          "type": "string",
-          "description": "The previous display name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "router_size": {
-          "type": "string",
-          "description": "The name of the router size SKU",
-          "x-nullable": true
-        },
-        "router_size_display_name": {
-          "type": "string",
-          "description": "The display name of the router size SKU",
-          "x-nullable": true
-        },
-        "replicas_per_cell": {
-          "type": "integer",
-          "description": "The number of replicas in each cell",
-          "x-nullable": true
-        },
-        "autoscaling": {
-          "type": "boolean",
-          "description": "Whether the router scales horizontally within each cell",
-          "x-nullable": true
-        },
-        "max_replicas_per_cell": {
-          "type": "integer",
-          "description": "The maximum number of replicas in each cell when autoscaling",
-          "x-nullable": true
-        },
-        "target_cpu_utilization": {
-          "type": "integer",
-          "description": "The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70",
-          "x-nullable": true
-        },
-        "previous_router_size": {
-          "type": "string",
-          "description": "The previous name of the router size SKU",
-          "x-nullable": true
-        },
-        "previous_router_size_display_name": {
-          "type": "string",
-          "description": "The previous display name of the router size SKU",
-          "x-nullable": true
-        },
-        "previous_replicas_per_cell": {
-          "type": "integer",
-          "description": "The previous number of replicas in each cell",
-          "x-nullable": true
-        },
-        "previous_autoscaling": {
-          "type": "boolean",
-          "description": "The previous autoscaling state of the router",
-          "x-nullable": true
-        },
-        "previous_max_replicas_per_cell": {
-          "type": "integer",
-          "description": "The previous maximum number of replicas in each cell",
-          "x-nullable": true
-        },
-        "previous_target_cpu_utilization": {
-          "type": "integer",
-          "description": "The previous target average CPU utilization percentage",
-          "x-nullable": true
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the configuration profile",
-          "x-nullable": true
-        },
-        "previous_name": {
-          "type": "string",
-          "description": "The previous name of the configuration profile",
-          "x-nullable": true
-        },
-        "cluster_size": {
-          "type": "string",
-          "description": "The name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "metal": {
-          "type": "boolean",
-          "description": "Whether the cluster size SKU uses metal instances",
-          "x-nullable": true
-        },
-        "cluster_rank": {
-          "type": "integer",
-          "description": "The display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "shards": {
-          "type": "integer",
-          "description": "The number of shards",
-          "x-nullable": true
-        },
-        "postgres_image_version": {
-          "type": "string",
-          "description": "The PostgreSQL image",
-          "x-nullable": true
-        },
-        "storage": {
-          "$ref": "#/definitions/NekiChangeRequestStorage"
-        },
-        "previous_cluster_size": {
-          "type": "string",
-          "description": "The previous name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_metal": {
-          "type": "boolean",
-          "description": "Whether the previous cluster size SKU used metal instances",
-          "x-nullable": true
-        },
-        "previous_cluster_rank": {
-          "type": "integer",
-          "description": "The previous display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_shards": {
-          "type": "integer",
-          "description": "The previous number of shards",
-          "x-nullable": true
-        },
-        "previous_postgres_image_version": {
-          "type": "string",
-          "description": "The previous PostgreSQL image",
-          "x-nullable": true
-        },
-        "previous_storage": {
-          "$ref": "#/definitions/NekiChangeRequestPreviousStorage"
         }
       }
     },
@@ -34941,6 +35245,362 @@
         }
       }
     },
+    "PaginatedNekiChangeRequestDataItem": {
+      "type": "object",
+      "required": [
+        "type",
+        "id",
+        "state",
+        "can_delete",
+        "started_at",
+        "completed_at",
+        "created_at",
+        "updated_at",
+        "actor",
+        "target_id",
+        "target_type",
+        "target_name"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemType"
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID of the change request"
+        },
+        "state": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemState"
+        },
+        "can_delete": {
+          "type": "boolean",
+          "description": "Whether the change request can be deleted"
+        },
+        "started_at": {
+          "type": "string",
+          "description": "The time the change request started",
+          "x-nullable": true
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "The time the change request completed",
+          "x-nullable": true
+        },
+        "created_at": {
+          "type": "string",
+          "description": "The time the change request was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "The time the change request was last updated"
+        },
+        "actor": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemActor"
+        },
+        "target_id": {
+          "type": "string",
+          "description": "The ID of the resource being changed",
+          "x-nullable": true
+        },
+        "target_type": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemTargetType"
+        },
+        "target_name": {
+          "type": "string",
+          "description": "The name of the resource being changed"
+        },
+        "admin_size": {
+          "type": "string",
+          "description": "The name of the admin size SKU",
+          "x-nullable": true
+        },
+        "admin_size_display_name": {
+          "type": "string",
+          "description": "The display name of the admin size SKU",
+          "x-nullable": true
+        },
+        "parameters": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemParametersProperty"
+        },
+        "previous_admin_size": {
+          "type": "string",
+          "description": "The previous name of the admin size SKU",
+          "x-nullable": true
+        },
+        "previous_admin_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the admin size SKU",
+          "x-nullable": true
+        },
+        "previous_parameters": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousParametersProperty"
+        },
+        "replicas": {
+          "type": "integer",
+          "description": "The number of replicas",
+          "x-nullable": true
+        },
+        "previous_replicas": {
+          "type": "integer",
+          "description": "The previous number of replicas",
+          "x-nullable": true
+        },
+        "cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the external sidecar size",
+          "x-nullable": true
+        },
+        "cluster_display_name": {
+          "type": "string",
+          "description": "The display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_cluster_name": {
+          "type": "string",
+          "description": "The SKU representing the previous external sidecar size",
+          "x-nullable": true
+        },
+        "previous_cluster_display_name": {
+          "type": "string",
+          "description": "The previous display name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "router_size": {
+          "type": "string",
+          "description": "The name of the router size SKU",
+          "x-nullable": true
+        },
+        "router_size_display_name": {
+          "type": "string",
+          "description": "The display name of the router size SKU",
+          "x-nullable": true
+        },
+        "replicas_per_cell": {
+          "type": "integer",
+          "description": "The number of replicas in each cell",
+          "x-nullable": true
+        },
+        "autoscaling": {
+          "type": "boolean",
+          "description": "Whether the router scales horizontally within each cell",
+          "x-nullable": true
+        },
+        "max_replicas_per_cell": {
+          "type": "integer",
+          "description": "The maximum number of replicas in each cell when autoscaling",
+          "x-nullable": true
+        },
+        "target_cpu_utilization": {
+          "type": "integer",
+          "description": "The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70",
+          "x-nullable": true
+        },
+        "previous_router_size": {
+          "type": "string",
+          "description": "The previous name of the router size SKU",
+          "x-nullable": true
+        },
+        "previous_router_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the router size SKU",
+          "x-nullable": true
+        },
+        "previous_replicas_per_cell": {
+          "type": "integer",
+          "description": "The previous number of replicas in each cell",
+          "x-nullable": true
+        },
+        "previous_autoscaling": {
+          "type": "boolean",
+          "description": "The previous autoscaling state of the router",
+          "x-nullable": true
+        },
+        "previous_max_replicas_per_cell": {
+          "type": "integer",
+          "description": "The previous maximum number of replicas in each cell",
+          "x-nullable": true
+        },
+        "previous_target_cpu_utilization": {
+          "type": "integer",
+          "description": "The previous target average CPU utilization percentage",
+          "x-nullable": true
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the configuration profile",
+          "x-nullable": true
+        },
+        "previous_name": {
+          "type": "string",
+          "description": "The previous name of the configuration profile",
+          "x-nullable": true
+        },
+        "cluster_size": {
+          "type": "string",
+          "description": "The name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "metal": {
+          "type": "boolean",
+          "description": "Whether the cluster size SKU uses metal instances",
+          "x-nullable": true
+        },
+        "cluster_rank": {
+          "type": "integer",
+          "description": "The display order of the cluster size SKU",
+          "x-nullable": true
+        },
+        "shards": {
+          "type": "integer",
+          "description": "The number of shards",
+          "x-nullable": true
+        },
+        "postgres_image_version": {
+          "type": "string",
+          "description": "The PostgreSQL image",
+          "x-nullable": true
+        },
+        "storage": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemStorage"
+        },
+        "previous_cluster_size": {
+          "type": "string",
+          "description": "The previous name of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_metal": {
+          "type": "boolean",
+          "description": "Whether the previous cluster size SKU used metal instances",
+          "x-nullable": true
+        },
+        "previous_cluster_rank": {
+          "type": "integer",
+          "description": "The previous display order of the cluster size SKU",
+          "x-nullable": true
+        },
+        "previous_shards": {
+          "type": "integer",
+          "description": "The previous number of shards",
+          "x-nullable": true
+        },
+        "previous_postgres_image_version": {
+          "type": "string",
+          "description": "The previous PostgreSQL image",
+          "x-nullable": true
+        },
+        "previous_storage": {
+          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousStorage"
+        }
+      }
+    },
+    "NekiChangeRequestActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
+        }
+      }
+    },
+    "NekiChangeRequestParameters": {
+      "type": "object",
+      "description": "The parameters requested for the target resource",
+      "x-nullable": true
+    },
+    "NekiChangeRequestPreviousParameters": {
+      "type": "object",
+      "description": "The target resource parameters before the change",
+      "x-nullable": true
+    },
+    "NekiChangeRequestStorage": {
+      "type": "object",
+      "required": [
+        "minimum_storage_bytes",
+        "maximum_storage_bytes",
+        "storage_autoscaling",
+        "storage_iops",
+        "storage_throughput_mibs"
+      ],
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes",
+          "x-nullable": true
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling",
+          "x-nullable": true
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled",
+          "x-nullable": true
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS",
+          "x-nullable": true
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
+    "NekiChangeRequestPreviousStorage": {
+      "type": "object",
+      "required": [
+        "minimum_storage_bytes",
+        "maximum_storage_bytes",
+        "storage_autoscaling",
+        "storage_iops",
+        "storage_throughput_mibs"
+      ],
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes",
+          "x-nullable": true
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling",
+          "x-nullable": true
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled",
+          "x-nullable": true
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS",
+          "x-nullable": true
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
     "NekiDataTopologyDataTopology": {
       "type": "object",
       "description": "The data topology for the branch"
@@ -36509,362 +37169,6 @@
           "description": "The sort order of the Neki admin SKU"
         }
       }
-    },
-    "PaginatedNekiChangeRequestDataItem": {
-      "type": "object",
-      "required": [
-        "type",
-        "id",
-        "state",
-        "can_delete",
-        "started_at",
-        "completed_at",
-        "created_at",
-        "updated_at",
-        "actor",
-        "target_id",
-        "target_type",
-        "target_name"
-      ],
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemType"
-        },
-        "id": {
-          "type": "string",
-          "description": "The ID of the change request"
-        },
-        "state": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemState"
-        },
-        "can_delete": {
-          "type": "boolean",
-          "description": "Whether the change request can be deleted"
-        },
-        "started_at": {
-          "type": "string",
-          "description": "The time the change request started",
-          "x-nullable": true
-        },
-        "completed_at": {
-          "type": "string",
-          "description": "The time the change request completed",
-          "x-nullable": true
-        },
-        "created_at": {
-          "type": "string",
-          "description": "The time the change request was created"
-        },
-        "updated_at": {
-          "type": "string",
-          "description": "The time the change request was last updated"
-        },
-        "actor": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemActor"
-        },
-        "target_id": {
-          "type": "string",
-          "description": "The ID of the resource being changed",
-          "x-nullable": true
-        },
-        "target_type": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemTargetType"
-        },
-        "target_name": {
-          "type": "string",
-          "description": "The name of the resource being changed"
-        },
-        "admin_size": {
-          "type": "string",
-          "description": "The name of the admin size SKU",
-          "x-nullable": true
-        },
-        "admin_size_display_name": {
-          "type": "string",
-          "description": "The display name of the admin size SKU",
-          "x-nullable": true
-        },
-        "parameters": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemParametersProperty"
-        },
-        "previous_admin_size": {
-          "type": "string",
-          "description": "The previous name of the admin size SKU",
-          "x-nullable": true
-        },
-        "previous_admin_size_display_name": {
-          "type": "string",
-          "description": "The previous display name of the admin size SKU",
-          "x-nullable": true
-        },
-        "previous_parameters": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousParametersProperty"
-        },
-        "replicas": {
-          "type": "integer",
-          "description": "The number of replicas",
-          "x-nullable": true
-        },
-        "previous_replicas": {
-          "type": "integer",
-          "description": "The previous number of replicas",
-          "x-nullable": true
-        },
-        "cluster_name": {
-          "type": "string",
-          "description": "The SKU representing the external sidecar size",
-          "x-nullable": true
-        },
-        "cluster_display_name": {
-          "type": "string",
-          "description": "The display name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_cluster_name": {
-          "type": "string",
-          "description": "The SKU representing the previous external sidecar size",
-          "x-nullable": true
-        },
-        "previous_cluster_display_name": {
-          "type": "string",
-          "description": "The previous display name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "router_size": {
-          "type": "string",
-          "description": "The name of the router size SKU",
-          "x-nullable": true
-        },
-        "router_size_display_name": {
-          "type": "string",
-          "description": "The display name of the router size SKU",
-          "x-nullable": true
-        },
-        "replicas_per_cell": {
-          "type": "integer",
-          "description": "The number of replicas in each cell",
-          "x-nullable": true
-        },
-        "autoscaling": {
-          "type": "boolean",
-          "description": "Whether the router scales horizontally within each cell",
-          "x-nullable": true
-        },
-        "max_replicas_per_cell": {
-          "type": "integer",
-          "description": "The maximum number of replicas in each cell when autoscaling",
-          "x-nullable": true
-        },
-        "target_cpu_utilization": {
-          "type": "integer",
-          "description": "The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70",
-          "x-nullable": true
-        },
-        "previous_router_size": {
-          "type": "string",
-          "description": "The previous name of the router size SKU",
-          "x-nullable": true
-        },
-        "previous_router_size_display_name": {
-          "type": "string",
-          "description": "The previous display name of the router size SKU",
-          "x-nullable": true
-        },
-        "previous_replicas_per_cell": {
-          "type": "integer",
-          "description": "The previous number of replicas in each cell",
-          "x-nullable": true
-        },
-        "previous_autoscaling": {
-          "type": "boolean",
-          "description": "The previous autoscaling state of the router",
-          "x-nullable": true
-        },
-        "previous_max_replicas_per_cell": {
-          "type": "integer",
-          "description": "The previous maximum number of replicas in each cell",
-          "x-nullable": true
-        },
-        "previous_target_cpu_utilization": {
-          "type": "integer",
-          "description": "The previous target average CPU utilization percentage",
-          "x-nullable": true
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the configuration profile",
-          "x-nullable": true
-        },
-        "previous_name": {
-          "type": "string",
-          "description": "The previous name of the configuration profile",
-          "x-nullable": true
-        },
-        "cluster_size": {
-          "type": "string",
-          "description": "The name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "metal": {
-          "type": "boolean",
-          "description": "Whether the cluster size SKU uses metal instances",
-          "x-nullable": true
-        },
-        "cluster_rank": {
-          "type": "integer",
-          "description": "The display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "shards": {
-          "type": "integer",
-          "description": "The number of shards",
-          "x-nullable": true
-        },
-        "postgres_image_version": {
-          "type": "string",
-          "description": "The PostgreSQL image",
-          "x-nullable": true
-        },
-        "storage": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemStorage"
-        },
-        "previous_cluster_size": {
-          "type": "string",
-          "description": "The previous name of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_metal": {
-          "type": "boolean",
-          "description": "Whether the previous cluster size SKU used metal instances",
-          "x-nullable": true
-        },
-        "previous_cluster_rank": {
-          "type": "integer",
-          "description": "The previous display order of the cluster size SKU",
-          "x-nullable": true
-        },
-        "previous_shards": {
-          "type": "integer",
-          "description": "The previous number of shards",
-          "x-nullable": true
-        },
-        "previous_postgres_image_version": {
-          "type": "string",
-          "description": "The previous PostgreSQL image",
-          "x-nullable": true
-        },
-        "previous_storage": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousStorage"
-        }
-      }
-    },
-    "NekiChangeRequestActor": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "NekiChangeRequestParameters": {
-      "type": "object",
-      "description": "The parameters requested for the target resource",
-      "x-nullable": true
-    },
-    "NekiChangeRequestPreviousParameters": {
-      "type": "object",
-      "description": "The target resource parameters before the change",
-      "x-nullable": true
-    },
-    "NekiChangeRequestStorage": {
-      "type": "object",
-      "required": [
-        "minimum_storage_bytes",
-        "maximum_storage_bytes",
-        "storage_autoscaling",
-        "storage_iops",
-        "storage_throughput_mibs"
-      ],
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes",
-          "x-nullable": true
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling",
-          "x-nullable": true
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled",
-          "x-nullable": true
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS",
-          "x-nullable": true
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s",
-          "x-nullable": true
-        }
-      },
-      "x-nullable": true
-    },
-    "NekiChangeRequestPreviousStorage": {
-      "type": "object",
-      "required": [
-        "minimum_storage_bytes",
-        "maximum_storage_bytes",
-        "storage_autoscaling",
-        "storage_iops",
-        "storage_throughput_mibs"
-      ],
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes",
-          "x-nullable": true
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling",
-          "x-nullable": true
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled",
-          "x-nullable": true
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS",
-          "x-nullable": true
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s",
-          "x-nullable": true
-        }
-      },
-      "x-nullable": true
     },
     "NekiShardConfigurationProfileStorage": {
       "type": "object",
@@ -42640,6 +42944,114 @@
         }
       }
     },
+    "PaginatedNekiChangeRequestDataItemActor": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "avatar_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the actor"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "The name of the actor"
+        },
+        "avatar_url": {
+          "type": "string",
+          "description": "The URL of the actor\u0027s avatar"
+        }
+      }
+    },
+    "PaginatedNekiChangeRequestDataItemParameters": {
+      "type": "object",
+      "description": "The parameters requested for the target resource",
+      "x-nullable": true
+    },
+    "PaginatedNekiChangeRequestDataItemPreviousParameters": {
+      "type": "object",
+      "description": "The target resource parameters before the change",
+      "x-nullable": true
+    },
+    "PaginatedNekiChangeRequestDataItemStorage": {
+      "type": "object",
+      "required": [
+        "minimum_storage_bytes",
+        "maximum_storage_bytes",
+        "storage_autoscaling",
+        "storage_iops",
+        "storage_throughput_mibs"
+      ],
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes",
+          "x-nullable": true
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling",
+          "x-nullable": true
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled",
+          "x-nullable": true
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS",
+          "x-nullable": true
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
+    "PaginatedNekiChangeRequestDataItemPreviousStorage": {
+      "type": "object",
+      "required": [
+        "minimum_storage_bytes",
+        "maximum_storage_bytes",
+        "storage_autoscaling",
+        "storage_iops",
+        "storage_throughput_mibs"
+      ],
+      "properties": {
+        "minimum_storage_bytes": {
+          "type": "integer",
+          "description": "The minimum storage size in bytes",
+          "x-nullable": true
+        },
+        "maximum_storage_bytes": {
+          "type": "integer",
+          "description": "The maximum storage size in bytes for autoscaling",
+          "x-nullable": true
+        },
+        "storage_autoscaling": {
+          "type": "boolean",
+          "description": "Whether storage autoscaling is enabled",
+          "x-nullable": true
+        },
+        "storage_iops": {
+          "type": "integer",
+          "description": "The storage IOPS",
+          "x-nullable": true
+        },
+        "storage_throughput_mibs": {
+          "type": "integer",
+          "description": "The storage throughput in MiB/s",
+          "x-nullable": true
+        }
+      },
+      "x-nullable": true
+    },
     "PaginatedDatabaseBranchKeyspaceDataItemStorage": {
       "type": "object",
       "required": [
@@ -43071,114 +43483,6 @@
     "MetricSeriesSeriesItemLabels": {
       "type": "object",
       "description": "Key/value labels, also known as tags, identifying the time series"
-    },
-    "PaginatedNekiChangeRequestDataItemActor": {
-      "type": "object",
-      "required": [
-        "id",
-        "display_name",
-        "avatar_url"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the actor"
-        },
-        "display_name": {
-          "type": "string",
-          "description": "The name of the actor"
-        },
-        "avatar_url": {
-          "type": "string",
-          "description": "The URL of the actor\u0027s avatar"
-        }
-      }
-    },
-    "PaginatedNekiChangeRequestDataItemParameters": {
-      "type": "object",
-      "description": "The parameters requested for the target resource",
-      "x-nullable": true
-    },
-    "PaginatedNekiChangeRequestDataItemPreviousParameters": {
-      "type": "object",
-      "description": "The target resource parameters before the change",
-      "x-nullable": true
-    },
-    "PaginatedNekiChangeRequestDataItemStorage": {
-      "type": "object",
-      "required": [
-        "minimum_storage_bytes",
-        "maximum_storage_bytes",
-        "storage_autoscaling",
-        "storage_iops",
-        "storage_throughput_mibs"
-      ],
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes",
-          "x-nullable": true
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling",
-          "x-nullable": true
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled",
-          "x-nullable": true
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS",
-          "x-nullable": true
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s",
-          "x-nullable": true
-        }
-      },
-      "x-nullable": true
-    },
-    "PaginatedNekiChangeRequestDataItemPreviousStorage": {
-      "type": "object",
-      "required": [
-        "minimum_storage_bytes",
-        "maximum_storage_bytes",
-        "storage_autoscaling",
-        "storage_iops",
-        "storage_throughput_mibs"
-      ],
-      "properties": {
-        "minimum_storage_bytes": {
-          "type": "integer",
-          "description": "The minimum storage size in bytes",
-          "x-nullable": true
-        },
-        "maximum_storage_bytes": {
-          "type": "integer",
-          "description": "The maximum storage size in bytes for autoscaling",
-          "x-nullable": true
-        },
-        "storage_autoscaling": {
-          "type": "boolean",
-          "description": "Whether storage autoscaling is enabled",
-          "x-nullable": true
-        },
-        "storage_iops": {
-          "type": "integer",
-          "description": "The storage IOPS",
-          "x-nullable": true
-        },
-        "storage_throughput_mibs": {
-          "type": "integer",
-          "description": "The storage throughput in MiB/s",
-          "x-nullable": true
-        }
-      },
-      "x-nullable": true
     },
     "NekiExtensionParametersItemActor": {
       "type": "object",
@@ -49187,6 +49491,16 @@
       "type": "object",
       "description": "The new option values"
     },
+    "NekiChangeRequestParametersProperty": {
+      "type": "object",
+      "description": "The parameters requested for the target resource",
+      "x-nullable": true
+    },
+    "NekiChangeRequestPreviousParametersProperty": {
+      "type": "object",
+      "description": "The target resource parameters before the change",
+      "x-nullable": true
+    },
     "NekiDataTopologyDataTopologyProperty": {
       "type": "object",
       "description": "The data topology for the branch"
@@ -49206,16 +49520,6 @@
     "KeyspaceConfigChangeRequestNewOptionsProperty": {
       "type": "object",
       "description": "The new option values"
-    },
-    "NekiChangeRequestParametersProperty": {
-      "type": "object",
-      "description": "The parameters requested for the target resource",
-      "x-nullable": true
-    },
-    "NekiChangeRequestPreviousParametersProperty": {
-      "type": "object",
-      "description": "The target resource parameters before the change",
-      "x-nullable": true
     },
     "NekiShardAssignmentErrorProperty": {
       "type": "object",
@@ -49309,6 +49613,16 @@
       "type": "object",
       "description": "The new option values"
     },
+    "PaginatedNekiChangeRequestDataItemParametersProperty": {
+      "type": "object",
+      "description": "The parameters requested for the target resource",
+      "x-nullable": true
+    },
+    "PaginatedNekiChangeRequestDataItemPreviousParametersProperty": {
+      "type": "object",
+      "description": "The target resource parameters before the change",
+      "x-nullable": true
+    },
     "PaginatedDatabaseBranchKeyspaceDataItemMysqldOptionsProperty": {
       "type": "object",
       "description": "MySQL daemon configuration options"
@@ -49328,16 +49642,6 @@
     "MetricSeriesSeriesItemLabelsProperty": {
       "type": "object",
       "description": "Key/value labels, also known as tags, identifying the time series"
-    },
-    "PaginatedNekiChangeRequestDataItemParametersProperty": {
-      "type": "object",
-      "description": "The parameters requested for the target resource",
-      "x-nullable": true
-    },
-    "PaginatedNekiChangeRequestDataItemPreviousParametersProperty": {
-      "type": "object",
-      "description": "The target resource parameters before the change",
-      "x-nullable": true
     },
     "PaginatedOAuthApplicationDataItemScopesByResourceProperty": {
       "type": "object",
@@ -50566,6 +50870,65 @@
         ]
       }
     },
+    "NekiChangeRequestType": {
+      "type": "string",
+      "description": "The type of change request",
+      "enum": [
+        "NekiAdminChangeRequest",
+        "NekiClusterChangeRequest",
+        "NekiConfigurationProfileChangeRequest",
+        "NekiExternalShardChangeRequest",
+        "NekiRouterChangeRequest"
+      ]
+    },
+    "NekiChangeRequestState": {
+      "type": "string",
+      "description": "The state of the change request",
+      "enum": [
+        "draft",
+        "pending",
+        "applying",
+        "canceled",
+        "completed"
+      ],
+      "x-ms-enum": {
+        "name": "NekiChangeRequestState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          }
+        ]
+      }
+    },
+    "NekiChangeRequestTargetType": {
+      "type": "string",
+      "description": "The type of resource being changed",
+      "enum": [
+        "NekiAdmin",
+        "NekiCluster",
+        "NekiConfigurationProfile",
+        "NekiExternalShard",
+        "NekiRouter"
+      ]
+    },
     "DatabaseBranchKeyspaceNodeTtlStrategy": {
       "type": "string",
       "description": "Controls when node TTL drains are allowed",
@@ -51007,65 +51370,6 @@
           }
         ]
       }
-    },
-    "NekiChangeRequestType": {
-      "type": "string",
-      "description": "The type of change request",
-      "enum": [
-        "NekiAdminChangeRequest",
-        "NekiClusterChangeRequest",
-        "NekiConfigurationProfileChangeRequest",
-        "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest"
-      ]
-    },
-    "NekiChangeRequestState": {
-      "type": "string",
-      "description": "The state of the change request",
-      "enum": [
-        "draft",
-        "pending",
-        "applying",
-        "canceled",
-        "completed"
-      ],
-      "x-ms-enum": {
-        "name": "NekiChangeRequestState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "draft",
-            "name": "Draft"
-          },
-          {
-            "value": "pending",
-            "name": "Pending"
-          },
-          {
-            "value": "applying",
-            "name": "Applying"
-          },
-          {
-            "value": "canceled",
-            "name": "Canceled"
-          },
-          {
-            "value": "completed",
-            "name": "Completed"
-          }
-        ]
-      }
-    },
-    "NekiChangeRequestTargetType": {
-      "type": "string",
-      "description": "The type of resource being changed",
-      "enum": [
-        "NekiAdmin",
-        "NekiCluster",
-        "NekiConfigurationProfile",
-        "NekiExternalShard",
-        "NekiRouter"
-      ]
     },
     "NekiShardConfigurationProfileState": {
       "type": "string",
@@ -52707,6 +53011,65 @@
         ]
       }
     },
+    "PaginatedNekiChangeRequestDataItemType": {
+      "type": "string",
+      "description": "The type of change request",
+      "enum": [
+        "NekiAdminChangeRequest",
+        "NekiClusterChangeRequest",
+        "NekiConfigurationProfileChangeRequest",
+        "NekiExternalShardChangeRequest",
+        "NekiRouterChangeRequest"
+      ]
+    },
+    "PaginatedNekiChangeRequestDataItemState": {
+      "type": "string",
+      "description": "The state of the change request",
+      "enum": [
+        "draft",
+        "pending",
+        "applying",
+        "canceled",
+        "completed"
+      ],
+      "x-ms-enum": {
+        "name": "PaginatedNekiChangeRequestDataItemState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "draft",
+            "name": "Draft"
+          },
+          {
+            "value": "pending",
+            "name": "Pending"
+          },
+          {
+            "value": "applying",
+            "name": "Applying"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          }
+        ]
+      }
+    },
+    "PaginatedNekiChangeRequestDataItemTargetType": {
+      "type": "string",
+      "description": "The type of resource being changed",
+      "enum": [
+        "NekiAdmin",
+        "NekiCluster",
+        "NekiConfigurationProfile",
+        "NekiExternalShard",
+        "NekiRouter"
+      ]
+    },
     "PaginatedDatabaseBranchKeyspaceDataItemNodeTtlStrategy": {
       "type": "string",
       "description": "Controls when node TTL drains are allowed",
@@ -53032,65 +53395,6 @@
           }
         ]
       }
-    },
-    "PaginatedNekiChangeRequestDataItemType": {
-      "type": "string",
-      "description": "The type of change request",
-      "enum": [
-        "NekiAdminChangeRequest",
-        "NekiClusterChangeRequest",
-        "NekiConfigurationProfileChangeRequest",
-        "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest"
-      ]
-    },
-    "PaginatedNekiChangeRequestDataItemState": {
-      "type": "string",
-      "description": "The state of the change request",
-      "enum": [
-        "draft",
-        "pending",
-        "applying",
-        "canceled",
-        "completed"
-      ],
-      "x-ms-enum": {
-        "name": "PaginatedNekiChangeRequestDataItemState",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "draft",
-            "name": "Draft"
-          },
-          {
-            "value": "pending",
-            "name": "Pending"
-          },
-          {
-            "value": "applying",
-            "name": "Applying"
-          },
-          {
-            "value": "canceled",
-            "name": "Canceled"
-          },
-          {
-            "value": "completed",
-            "name": "Completed"
-          }
-        ]
-      }
-    },
-    "PaginatedNekiChangeRequestDataItemTargetType": {
-      "type": "string",
-      "description": "The type of resource being changed",
-      "enum": [
-        "NekiAdmin",
-        "NekiCluster",
-        "NekiConfigurationProfile",
-        "NekiExternalShard",
-        "NekiRouter"
-      ]
     },
     "NekiExtensionParametersItemNamespace": {
       "type": "string",
@@ -56356,6 +56660,62 @@
           {
             "value": "ignored",
             "name": "Ignored"
+          }
+        ]
+      }
+    },
+    "ListChangeRequestsPeriodParameter": {
+      "type": "string",
+      "enum": [
+        "15m",
+        "1h",
+        "3h",
+        "6h",
+        "12h",
+        "1d",
+        "2d",
+        "7d",
+        "8d"
+      ],
+      "x-ms-enum": {
+        "name": "ListChangeRequestsPeriodParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "15m",
+            "name": "Value15M"
+          },
+          {
+            "value": "1h",
+            "name": "Value1H"
+          },
+          {
+            "value": "3h",
+            "name": "Value3H"
+          },
+          {
+            "value": "6h",
+            "name": "Value6H"
+          },
+          {
+            "value": "12h",
+            "name": "Value12H"
+          },
+          {
+            "value": "1d",
+            "name": "Value1D"
+          },
+          {
+            "value": "2d",
+            "name": "Value2D"
+          },
+          {
+            "value": "7d",
+            "name": "Value7D"
+          },
+          {
+            "value": "8d",
+            "name": "Value8D"
           }
         ]
       }
@@ -59704,6 +60064,10 @@
     {
       "name": "OAuth tokens",
       "description": "          Resources for managing OAuth tokens.\n"
+    },
+    {
+      "name": "OIDC tokens",
+      "description": "          API endpoints for exchanging OIDC tokens for service tokens.\n"
     },
     {
       "name": "Organization invitations",

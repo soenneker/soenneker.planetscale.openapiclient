@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.PlanetScale.OpenApiClient.Models;
-using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Changes;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Duplicate;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Extensions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Maintenance;
@@ -23,10 +23,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConfigurationProfileItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The changes property</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Changes.ChangesRequestBuilder Changes
+        /// <summary>The changeRequests property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder ChangeRequests
         {
-            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Changes.ChangesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.ChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The duplicate property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.Duplicate.DuplicateRequestBuilder Duplicate

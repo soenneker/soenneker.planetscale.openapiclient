@@ -8,28 +8,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item
+namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization}\databases\{database}\branches\{branch}\routers\{router}\changes\{id}
+    /// Builds and executes requests for operations under \organizations\{organization}\databases\{database}\branches\{branch}\configuration-profiles\{configurationProfile}\change-requests\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangesItemRequestBuilder : BaseRequestBuilder
+    public partial class ChangeRequestsItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes/{id}", pathParameters)
+        public ChangeRequestsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/routers/{router}/changes/{id}", rawUrl)
+        public ChangeRequestsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/configuration-profiles/{configurationProfile}/change-requests/{id}", rawUrl)
         {
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Routers.Item.Changes.Item.ChangesItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item.ChangeRequestsItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }
