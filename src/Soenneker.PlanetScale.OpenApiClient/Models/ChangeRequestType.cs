@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The type of change request</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PaginatedNekiChangeRequestDataItemType
+    public enum ChangeRequestType
     {
         [EnumMember(Value = "NekiAdminChangeRequest")]
         #pragma warning disable CS1591
@@ -26,6 +26,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         [EnumMember(Value = "NekiRouterChangeRequest")]
         #pragma warning disable CS1591
         NekiRouterChangeRequest,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PostgresBouncerChangeRequest")]
+        #pragma warning disable CS1591
+        PostgresBouncerChangeRequest,
         #pragma warning restore CS1591
     }
 }

@@ -14,7 +14,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The size of the cluster. Available sizes can be found using the &apos;List cluster sizes&apos; endpoint.</summary>
+        /// <summary>The size of the cluster. Available sizes can be found using the &apos;List cluster sizes&apos; endpoint. Changing a production branch to a PS-DEV size demotes it and also requires `connect_production_branch` or `demote_branches` access, or the `demote_branches` OAuth scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClusterSize { get; set; }

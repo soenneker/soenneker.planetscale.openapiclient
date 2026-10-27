@@ -62,6 +62,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #else
         public string DeletedAt { get; set; }
 #endif
+        /// <summary>Whether the backup is an immediate backup that may affect database performance</summary>
+        public bool? Emergency { get; set; }
+        /// <summary>The tablet type a MySQL clone backup was taken from</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemEmergencySource? EmergencySource { get; set; }
         /// <summary>The estimated storage cost of the backup</summary>
         public double? EstimatedStorageCost { get; set; }
         /// <summary>When the backup expires</summary>
@@ -163,6 +167,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "database_branch", n => { DatabaseBranch = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemDatabaseBranch>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemDatabaseBranch.CreateFromDiscriminatorValue); } },
                 { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "emergency", n => { Emergency = n.GetBoolValue(); } },
+                { "emergency_source", n => { EmergencySource = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemEmergencySource>(); } },
                 { "estimated_storage_cost", n => { EstimatedStorageCost = n.GetDoubleValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -192,6 +198,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemDatabaseBranch>("database_branch", DatabaseBranch);
             writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteBoolValue("emergency", Emergency);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedBackupDataItemEmergencySource>("emergency_source", EmergencySource);
             writer.WriteDoubleValue("estimated_storage_cost", EstimatedStorageCost);
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);

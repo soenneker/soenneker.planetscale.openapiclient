@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The state of the change request</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PaginatedNekiChangeRequestDataItemState
+    public enum PaginatedChangeRequestDataItemState
     {
         [EnumMember(Value = "draft")]
         #pragma warning disable CS1591

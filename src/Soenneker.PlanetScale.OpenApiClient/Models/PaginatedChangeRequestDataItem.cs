@@ -9,16 +9,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaginatedNekiChangeRequestDataItem : IAdditionalDataHolder, IParsable
+    public partial class PaginatedChangeRequestDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemActor? Actor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemActor Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -40,6 +40,22 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Whether the router scales horizontally within each cell</summary>
         public bool? Autoscaling { get; set; }
+        /// <summary>The name of the bouncer size SKU</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BouncerSize { get; set; }
+#nullable restore
+#else
+        public string BouncerSize { get; set; }
+#endif
+        /// <summary>The display name of the bouncer size SKU</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BouncerSizeDisplayName { get; set; }
+#nullable restore
+#else
+        public string BouncerSizeDisplayName { get; set; }
+#endif
         /// <summary>Whether the change request can be deleted</summary>
         public bool? CanDelete { get; set; }
         /// <summary>The display name of the cluster size SKU</summary>
@@ -107,10 +123,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The parameters requested for the target resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemParametersProperty? Parameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemParametersProperty Parameters { get; set; }
 #endif
         /// <summary>The PostgreSQL image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,6 +154,22 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The previous autoscaling state of the router</summary>
         public bool? PreviousAutoscaling { get; set; }
+        /// <summary>The previous name of the bouncer size SKU</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBouncerSize { get; set; }
+#nullable restore
+#else
+        public string PreviousBouncerSize { get; set; }
+#endif
+        /// <summary>The previous display name of the bouncer size SKU</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBouncerSizeDisplayName { get; set; }
+#nullable restore
+#else
+        public string PreviousBouncerSizeDisplayName { get; set; }
+#endif
         /// <summary>The previous display name of the cluster size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,10 +211,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The target resource parameters before the change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty? PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty? PreviousParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty PreviousParameters { get; set; }
 #endif
         /// <summary>The previous PostgreSQL image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -217,11 +249,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The previous_storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousStorage? PreviousStorage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousStorage? PreviousStorage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousStorage PreviousStorage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousStorage PreviousStorage { get; set; }
 #endif
+        /// <summary>The previous type of server the bouncer targets</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousTarget? PreviousTarget { get; set; }
         /// <summary>The previous target average CPU utilization percentage</summary>
         public int? PreviousTargetCpuUtilization { get; set; }
         /// <summary>The number of replicas</summary>
@@ -255,15 +289,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string StartedAt { get; set; }
 #endif
         /// <summary>The state of the change request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemState? State { get; set; }
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemStorage? Storage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemStorage Storage { get; set; }
 #endif
+        /// <summary>The type of server the bouncer targets</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTarget? Target { get; set; }
         /// <summary>The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70</summary>
         public int? TargetCpuUtilization { get; set; }
         /// <summary>The ID of the resource being changed</summary>
@@ -283,9 +319,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string TargetName { get; set; }
 #endif
         /// <summary>The type of resource being changed</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemTargetType? TargetType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTargetType? TargetType { get; set; }
         /// <summary>The type of change request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemType? Type { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemType? Type { get; set; }
         /// <summary>The time the change request was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -295,21 +331,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItem"/> and sets the default values.
         /// </summary>
-        public PaginatedNekiChangeRequestDataItem()
+        public PaginatedChangeRequestDataItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItem();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -319,10 +355,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemActor.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemActor.CreateFromDiscriminatorValue); } },
                 { "admin_size", n => { AdminSize = n.GetStringValue(); } },
                 { "admin_size_display_name", n => { AdminSizeDisplayName = n.GetStringValue(); } },
                 { "autoscaling", n => { Autoscaling = n.GetBoolValue(); } },
+                { "bouncer_size", n => { BouncerSize = n.GetStringValue(); } },
+                { "bouncer_size_display_name", n => { BouncerSizeDisplayName = n.GetStringValue(); } },
                 { "can_delete", n => { CanDelete = n.GetBoolValue(); } },
                 { "cluster_display_name", n => { ClusterDisplayName = n.GetStringValue(); } },
                 { "cluster_name", n => { ClusterName = n.GetStringValue(); } },
@@ -334,11 +372,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "max_replicas_per_cell", n => { MaxReplicasPerCell = n.GetIntValue(); } },
                 { "metal", n => { Metal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemParametersProperty.CreateFromDiscriminatorValue); } },
                 { "postgres_image_version", n => { PostgresImageVersion = n.GetStringValue(); } },
                 { "previous_admin_size", n => { PreviousAdminSize = n.GetStringValue(); } },
                 { "previous_admin_size_display_name", n => { PreviousAdminSizeDisplayName = n.GetStringValue(); } },
                 { "previous_autoscaling", n => { PreviousAutoscaling = n.GetBoolValue(); } },
+                { "previous_bouncer_size", n => { PreviousBouncerSize = n.GetStringValue(); } },
+                { "previous_bouncer_size_display_name", n => { PreviousBouncerSizeDisplayName = n.GetStringValue(); } },
                 { "previous_cluster_display_name", n => { PreviousClusterDisplayName = n.GetStringValue(); } },
                 { "previous_cluster_name", n => { PreviousClusterName = n.GetStringValue(); } },
                 { "previous_cluster_rank", n => { PreviousClusterRank = n.GetIntValue(); } },
@@ -346,14 +386,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_max_replicas_per_cell", n => { PreviousMaxReplicasPerCell = n.GetIntValue(); } },
                 { "previous_metal", n => { PreviousMetal = n.GetBoolValue(); } },
                 { "previous_name", n => { PreviousName = n.GetStringValue(); } },
-                { "previous_parameters", n => { PreviousParameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty.CreateFromDiscriminatorValue); } },
+                { "previous_parameters", n => { PreviousParameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty.CreateFromDiscriminatorValue); } },
                 { "previous_postgres_image_version", n => { PreviousPostgresImageVersion = n.GetStringValue(); } },
                 { "previous_replicas", n => { PreviousReplicas = n.GetIntValue(); } },
                 { "previous_replicas_per_cell", n => { PreviousReplicasPerCell = n.GetIntValue(); } },
                 { "previous_router_size", n => { PreviousRouterSize = n.GetStringValue(); } },
                 { "previous_router_size_display_name", n => { PreviousRouterSizeDisplayName = n.GetStringValue(); } },
                 { "previous_shards", n => { PreviousShards = n.GetIntValue(); } },
-                { "previous_storage", n => { PreviousStorage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousStorage.CreateFromDiscriminatorValue); } },
+                { "previous_storage", n => { PreviousStorage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousStorage.CreateFromDiscriminatorValue); } },
+                { "previous_target", n => { PreviousTarget = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousTarget>(); } },
                 { "previous_target_cpu_utilization", n => { PreviousTargetCpuUtilization = n.GetIntValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "replicas_per_cell", n => { ReplicasPerCell = n.GetIntValue(); } },
@@ -361,13 +402,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "router_size_display_name", n => { RouterSizeDisplayName = n.GetStringValue(); } },
                 { "shards", n => { Shards = n.GetIntValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemState>(); } },
-                { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemStorage.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemState>(); } },
+                { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemStorage.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTarget>(); } },
                 { "target_cpu_utilization", n => { TargetCpuUtilization = n.GetIntValue(); } },
                 { "target_id", n => { TargetId = n.GetStringValue(); } },
                 { "target_name", n => { TargetName = n.GetStringValue(); } },
-                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemTargetType>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemType>(); } },
+                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTargetType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -378,10 +420,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemActor>("actor", Actor);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemActor>("actor", Actor);
             writer.WriteStringValue("admin_size", AdminSize);
             writer.WriteStringValue("admin_size_display_name", AdminSizeDisplayName);
             writer.WriteBoolValue("autoscaling", Autoscaling);
+            writer.WriteStringValue("bouncer_size", BouncerSize);
+            writer.WriteStringValue("bouncer_size_display_name", BouncerSizeDisplayName);
             writer.WriteBoolValue("can_delete", CanDelete);
             writer.WriteStringValue("cluster_display_name", ClusterDisplayName);
             writer.WriteStringValue("cluster_name", ClusterName);
@@ -393,11 +437,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("max_replicas_per_cell", MaxReplicasPerCell);
             writer.WriteBoolValue("metal", Metal);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemParametersProperty>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemParametersProperty>("parameters", Parameters);
             writer.WriteStringValue("postgres_image_version", PostgresImageVersion);
             writer.WriteStringValue("previous_admin_size", PreviousAdminSize);
             writer.WriteStringValue("previous_admin_size_display_name", PreviousAdminSizeDisplayName);
             writer.WriteBoolValue("previous_autoscaling", PreviousAutoscaling);
+            writer.WriteStringValue("previous_bouncer_size", PreviousBouncerSize);
+            writer.WriteStringValue("previous_bouncer_size_display_name", PreviousBouncerSizeDisplayName);
             writer.WriteStringValue("previous_cluster_display_name", PreviousClusterDisplayName);
             writer.WriteStringValue("previous_cluster_name", PreviousClusterName);
             writer.WriteIntValue("previous_cluster_rank", PreviousClusterRank);
@@ -405,14 +451,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("previous_max_replicas_per_cell", PreviousMaxReplicasPerCell);
             writer.WriteBoolValue("previous_metal", PreviousMetal);
             writer.WriteStringValue("previous_name", PreviousName);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousParametersProperty>("previous_parameters", PreviousParameters);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty>("previous_parameters", PreviousParameters);
             writer.WriteStringValue("previous_postgres_image_version", PreviousPostgresImageVersion);
             writer.WriteIntValue("previous_replicas", PreviousReplicas);
             writer.WriteIntValue("previous_replicas_per_cell", PreviousReplicasPerCell);
             writer.WriteStringValue("previous_router_size", PreviousRouterSize);
             writer.WriteStringValue("previous_router_size_display_name", PreviousRouterSizeDisplayName);
             writer.WriteIntValue("previous_shards", PreviousShards);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemPreviousStorage>("previous_storage", PreviousStorage);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousStorage>("previous_storage", PreviousStorage);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousTarget>("previous_target", PreviousTarget);
             writer.WriteIntValue("previous_target_cpu_utilization", PreviousTargetCpuUtilization);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteIntValue("replicas_per_cell", ReplicasPerCell);
@@ -420,13 +467,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("router_size_display_name", RouterSizeDisplayName);
             writer.WriteIntValue("shards", Shards);
             writer.WriteStringValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemState>("state", State);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemStorage>("storage", Storage);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemState>("state", State);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemStorage>("storage", Storage);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTarget>("target", Target);
             writer.WriteIntValue("target_cpu_utilization", TargetCpuUtilization);
             writer.WriteStringValue("target_id", TargetId);
             writer.WriteStringValue("target_name", TargetName);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemTargetType>("target_type", TargetType);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedNekiChangeRequestDataItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemTargetType>("target_type", TargetType);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

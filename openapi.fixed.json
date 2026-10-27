@@ -3487,7 +3487,7 @@
           "Bouncer resizes"
         ],
         "summary": "Get bouncer resize requests",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "description": "Deprecated. Use GET /organizations/:organization/databases/:database/branches/:branch/change-requests with target_types[]=PostgresBouncer and target_id set to the bouncer ID instead.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListBouncerResizeRequests",
         "produces": [
           "application/json"
@@ -3681,7 +3681,7 @@
           "Bouncer resizes"
         ],
         "summary": "Cancel a resize request",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "description": "Deprecated. Use DELETE /organizations/:organization/databases/:database/branches/:branch/change-requests/:id to cancel individual change requests instead.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CancelBouncerResizeRequest",
         "produces": [
           "application/json"
@@ -3767,7 +3767,7 @@
         "tags": [
           "api-change_requests"
         ],
-        "summary": "List change requests for a Neki branch",
+        "summary": "List change requests for a branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "ListChangeRequests",
         "produces": [
@@ -3822,7 +3822,7 @@
           {
             "in": "query",
             "name": "target_types",
-            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, or NekiRouter",
+            "description": "Filter change requests by target type. Must contain one or more of: NekiAdmin, NekiCluster, NekiConfigurationProfile, NekiExternalShard, NekiRouter, or PostgresBouncer",
             "type": "array",
             "items": {
               "type": "string"
@@ -3886,9 +3886,9 @@
             }
           },
           "200": {
-            "description": "Returns Neki change requests",
+            "description": "Returns change requests",
             "schema": {
-              "$ref": "#/definitions/PaginatedNekiChangeRequest"
+              "$ref": "#/definitions/PaginatedChangeRequest"
             }
           }
         }
@@ -3899,7 +3899,7 @@
         "tags": [
           "api-change_requests"
         ],
-        "summary": "Get a change request for a Neki branch",
+        "summary": "Get a change request for a branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
         "operationId": "GetChangeRequest",
         "produces": [
@@ -3973,9 +3973,9 @@
             }
           },
           "200": {
-            "description": "Returns a Neki change request",
+            "description": "Returns a change request",
             "schema": {
-              "$ref": "#/definitions/NekiChangeRequest"
+              "$ref": "#/definitions/ChangeRequest"
             }
           }
         }
@@ -3984,7 +3984,7 @@
         "tags": [
           "api-change_requests"
         ],
-        "summary": "Cancel a change request for a Neki branch",
+        "summary": "Cancel a change request for a branch",
         "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
         "operationId": "CancelChangeRequest",
         "produces": [
@@ -25907,6 +25907,7 @@
         "uncompressed_size",
         "protected",
         "required",
+        "emergency",
         "restored_branches",
         "actor"
       ],
@@ -25973,6 +25974,13 @@
         "required": {
           "type": "boolean",
           "description": "Whether or not the backup policy is required"
+        },
+        "emergency": {
+          "type": "boolean",
+          "description": "Whether the backup is an immediate backup that may affect database performance"
+        },
+        "emergency_source": {
+          "$ref": "#/definitions/BackupEmergencySource"
         },
         "restored_branches": {
           "type": "array",
@@ -27066,7 +27074,7 @@
         }
       }
     },
-    "PaginatedNekiChangeRequest": {
+    "PaginatedChangeRequest": {
       "type": "object",
       "required": [
         "type",
@@ -27114,12 +27122,12 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PaginatedNekiChangeRequestDataItem"
+            "$ref": "#/definitions/PaginatedChangeRequestDataItem"
           }
         }
       }
     },
-    "NekiChangeRequest": {
+    "ChangeRequest": {
       "type": "object",
       "required": [
         "type",
@@ -27137,14 +27145,14 @@
       ],
       "properties": {
         "type": {
-          "$ref": "#/definitions/NekiChangeRequestType"
+          "$ref": "#/definitions/ChangeRequestType"
         },
         "id": {
           "type": "string",
           "description": "The ID of the change request"
         },
         "state": {
-          "$ref": "#/definitions/NekiChangeRequestState"
+          "$ref": "#/definitions/ChangeRequestState"
         },
         "can_delete": {
           "type": "boolean",
@@ -27169,7 +27177,7 @@
           "description": "The time the change request was last updated"
         },
         "actor": {
-          "$ref": "#/definitions/NekiChangeRequestActor"
+          "$ref": "#/definitions/ChangeRequestActor"
         },
         "target_id": {
           "type": "string",
@@ -27177,7 +27185,7 @@
           "x-nullable": true
         },
         "target_type": {
-          "$ref": "#/definitions/NekiChangeRequestTargetType"
+          "$ref": "#/definitions/ChangeRequestTargetType"
         },
         "target_name": {
           "type": "string",
@@ -27194,7 +27202,7 @@
           "x-nullable": true
         },
         "parameters": {
-          "$ref": "#/definitions/NekiChangeRequestParametersProperty"
+          "$ref": "#/definitions/ChangeRequestParametersProperty"
         },
         "previous_admin_size": {
           "type": "string",
@@ -27207,7 +27215,7 @@
           "x-nullable": true
         },
         "previous_parameters": {
-          "$ref": "#/definitions/NekiChangeRequestPreviousParametersProperty"
+          "$ref": "#/definitions/ChangeRequestPreviousParametersProperty"
         },
         "replicas": {
           "type": "integer",
@@ -27335,7 +27343,7 @@
           "x-nullable": true
         },
         "storage": {
-          "$ref": "#/definitions/NekiChangeRequestStorage"
+          "$ref": "#/definitions/ChangeRequestStorage"
         },
         "previous_cluster_size": {
           "type": "string",
@@ -27363,7 +27371,33 @@
           "x-nullable": true
         },
         "previous_storage": {
-          "$ref": "#/definitions/NekiChangeRequestPreviousStorage"
+          "$ref": "#/definitions/ChangeRequestPreviousStorage"
+        },
+        "bouncer_size": {
+          "type": "string",
+          "description": "The name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "bouncer_size_display_name": {
+          "type": "string",
+          "description": "The display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "target": {
+          "$ref": "#/definitions/ChangeRequestTarget"
+        },
+        "previous_bouncer_size": {
+          "type": "string",
+          "description": "The previous name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_bouncer_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_target": {
+          "$ref": "#/definitions/ChangeRequestPreviousTarget"
         }
       }
     },
@@ -33821,6 +33855,7 @@
         "uncompressed_size",
         "protected",
         "required",
+        "emergency",
         "restored_branches",
         "actor"
       ],
@@ -33887,6 +33922,13 @@
         "required": {
           "type": "boolean",
           "description": "Whether or not the backup policy is required"
+        },
+        "emergency": {
+          "type": "boolean",
+          "description": "Whether the backup is an immediate backup that may affect database performance"
+        },
+        "emergency_source": {
+          "$ref": "#/definitions/PaginatedBackupDataItemEmergencySource"
         },
         "restored_branches": {
           "type": "array",
@@ -35245,7 +35287,7 @@
         }
       }
     },
-    "PaginatedNekiChangeRequestDataItem": {
+    "PaginatedChangeRequestDataItem": {
       "type": "object",
       "required": [
         "type",
@@ -35263,14 +35305,14 @@
       ],
       "properties": {
         "type": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemType"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemType"
         },
         "id": {
           "type": "string",
           "description": "The ID of the change request"
         },
         "state": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemState"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemState"
         },
         "can_delete": {
           "type": "boolean",
@@ -35295,7 +35337,7 @@
           "description": "The time the change request was last updated"
         },
         "actor": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemActor"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemActor"
         },
         "target_id": {
           "type": "string",
@@ -35303,7 +35345,7 @@
           "x-nullable": true
         },
         "target_type": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemTargetType"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemTargetType"
         },
         "target_name": {
           "type": "string",
@@ -35320,7 +35362,7 @@
           "x-nullable": true
         },
         "parameters": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemParametersProperty"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemParametersProperty"
         },
         "previous_admin_size": {
           "type": "string",
@@ -35333,7 +35375,7 @@
           "x-nullable": true
         },
         "previous_parameters": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousParametersProperty"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemPreviousParametersProperty"
         },
         "replicas": {
           "type": "integer",
@@ -35461,7 +35503,7 @@
           "x-nullable": true
         },
         "storage": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemStorage"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemStorage"
         },
         "previous_cluster_size": {
           "type": "string",
@@ -35489,11 +35531,37 @@
           "x-nullable": true
         },
         "previous_storage": {
-          "$ref": "#/definitions/PaginatedNekiChangeRequestDataItemPreviousStorage"
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemPreviousStorage"
+        },
+        "bouncer_size": {
+          "type": "string",
+          "description": "The name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "bouncer_size_display_name": {
+          "type": "string",
+          "description": "The display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "target": {
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemTarget"
+        },
+        "previous_bouncer_size": {
+          "type": "string",
+          "description": "The previous name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_bouncer_size_display_name": {
+          "type": "string",
+          "description": "The previous display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_target": {
+          "$ref": "#/definitions/PaginatedChangeRequestDataItemPreviousTarget"
         }
       }
     },
-    "NekiChangeRequestActor": {
+    "ChangeRequestActor": {
       "type": "object",
       "required": [
         "id",
@@ -35515,17 +35583,17 @@
         }
       }
     },
-    "NekiChangeRequestParameters": {
+    "ChangeRequestParameters": {
       "type": "object",
       "description": "The parameters requested for the target resource",
       "x-nullable": true
     },
-    "NekiChangeRequestPreviousParameters": {
+    "ChangeRequestPreviousParameters": {
       "type": "object",
       "description": "The target resource parameters before the change",
       "x-nullable": true
     },
-    "NekiChangeRequestStorage": {
+    "ChangeRequestStorage": {
       "type": "object",
       "required": [
         "minimum_storage_bytes",
@@ -35563,7 +35631,7 @@
       },
       "x-nullable": true
     },
-    "NekiChangeRequestPreviousStorage": {
+    "ChangeRequestPreviousStorage": {
       "type": "object",
       "required": [
         "minimum_storage_bytes",
@@ -42944,7 +43012,7 @@
         }
       }
     },
-    "PaginatedNekiChangeRequestDataItemActor": {
+    "PaginatedChangeRequestDataItemActor": {
       "type": "object",
       "required": [
         "id",
@@ -42966,17 +43034,17 @@
         }
       }
     },
-    "PaginatedNekiChangeRequestDataItemParameters": {
+    "PaginatedChangeRequestDataItemParameters": {
       "type": "object",
       "description": "The parameters requested for the target resource",
       "x-nullable": true
     },
-    "PaginatedNekiChangeRequestDataItemPreviousParameters": {
+    "PaginatedChangeRequestDataItemPreviousParameters": {
       "type": "object",
       "description": "The target resource parameters before the change",
       "x-nullable": true
     },
-    "PaginatedNekiChangeRequestDataItemStorage": {
+    "PaginatedChangeRequestDataItemStorage": {
       "type": "object",
       "required": [
         "minimum_storage_bytes",
@@ -43014,7 +43082,7 @@
       },
       "x-nullable": true
     },
-    "PaginatedNekiChangeRequestDataItemPreviousStorage": {
+    "PaginatedChangeRequestDataItemPreviousStorage": {
       "type": "object",
       "required": [
         "minimum_storage_bytes",
@@ -47851,7 +47919,7 @@
       "properties": {
         "cluster_size": {
           "type": "string",
-          "description": "The size of the cluster. Available sizes can be found using the \u0027List cluster sizes\u0027 endpoint."
+          "description": "The size of the cluster. Available sizes can be found using the \u0027List cluster sizes\u0027 endpoint. Changing a production branch to a PS-DEV size demotes it and also requires \u0060connect_production_branch\u0060 or \u0060demote_branches\u0060 access, or the \u0060demote_branches\u0060 OAuth scope."
         },
         "replicas": {
           "type": "integer",
@@ -49491,12 +49559,12 @@
       "type": "object",
       "description": "The new option values"
     },
-    "NekiChangeRequestParametersProperty": {
+    "ChangeRequestParametersProperty": {
       "type": "object",
       "description": "The parameters requested for the target resource",
       "x-nullable": true
     },
-    "NekiChangeRequestPreviousParametersProperty": {
+    "ChangeRequestPreviousParametersProperty": {
       "type": "object",
       "description": "The target resource parameters before the change",
       "x-nullable": true
@@ -49613,12 +49681,12 @@
       "type": "object",
       "description": "The new option values"
     },
-    "PaginatedNekiChangeRequestDataItemParametersProperty": {
+    "PaginatedChangeRequestDataItemParametersProperty": {
       "type": "object",
       "description": "The parameters requested for the target resource",
       "x-nullable": true
     },
-    "PaginatedNekiChangeRequestDataItemPreviousParametersProperty": {
+    "PaginatedChangeRequestDataItemPreviousParametersProperty": {
       "type": "object",
       "description": "The target resource parameters before the change",
       "x-nullable": true
@@ -50534,6 +50602,34 @@
         ]
       }
     },
+    "BackupEmergencySource": {
+      "type": "string",
+      "description": "The tablet type a MySQL clone backup was taken from",
+      "enum": [
+        "replica",
+        "rdonly",
+        "primary"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "BackupEmergencySource",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "rdonly",
+            "name": "Rdonly"
+          },
+          {
+            "value": "primary",
+            "name": "Primary"
+          }
+        ]
+      }
+    },
     "PostgresClusterResizeRequestState": {
       "type": "string",
       "description": "The state of the branch change request",
@@ -50870,7 +50966,7 @@
         ]
       }
     },
-    "NekiChangeRequestType": {
+    "ChangeRequestType": {
       "type": "string",
       "description": "The type of change request",
       "enum": [
@@ -50878,10 +50974,11 @@
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
         "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest"
+        "NekiRouterChangeRequest",
+        "PostgresBouncerChangeRequest"
       ]
     },
-    "NekiChangeRequestState": {
+    "ChangeRequestState": {
       "type": "string",
       "description": "The state of the change request",
       "enum": [
@@ -50892,7 +50989,7 @@
         "completed"
       ],
       "x-ms-enum": {
-        "name": "NekiChangeRequestState",
+        "name": "ChangeRequestState",
         "modelAsString": false,
         "values": [
           {
@@ -50918,7 +51015,7 @@
         ]
       }
     },
-    "NekiChangeRequestTargetType": {
+    "ChangeRequestTargetType": {
       "type": "string",
       "description": "The type of resource being changed",
       "enum": [
@@ -50926,8 +51023,65 @@
         "NekiCluster",
         "NekiConfigurationProfile",
         "NekiExternalShard",
-        "NekiRouter"
+        "NekiRouter",
+        "PostgresBouncer"
       ]
+    },
+    "ChangeRequestTarget": {
+      "type": "string",
+      "description": "The type of server the bouncer targets",
+      "enum": [
+        "primary",
+        "replica",
+        "replica_az_affinity"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "ChangeRequestTarget",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "primary",
+            "name": "Primary"
+          },
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "replica_az_affinity",
+            "name": "ReplicaAzAffinity"
+          }
+        ]
+      }
+    },
+    "ChangeRequestPreviousTarget": {
+      "type": "string",
+      "description": "The previous type of server the bouncer targets",
+      "enum": [
+        "primary",
+        "replica",
+        "replica_az_affinity"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "ChangeRequestPreviousTarget",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "primary",
+            "name": "Primary"
+          },
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "replica_az_affinity",
+            "name": "ReplicaAzAffinity"
+          }
+        ]
+      }
     },
     "DatabaseBranchKeyspaceNodeTtlStrategy": {
       "type": "string",
@@ -52548,6 +52702,34 @@
         ]
       }
     },
+    "PaginatedBackupDataItemEmergencySource": {
+      "type": "string",
+      "description": "The tablet type a MySQL clone backup was taken from",
+      "enum": [
+        "replica",
+        "rdonly",
+        "primary"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "PaginatedBackupDataItemEmergencySource",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "rdonly",
+            "name": "Rdonly"
+          },
+          {
+            "value": "primary",
+            "name": "Primary"
+          }
+        ]
+      }
+    },
     "BackupBackupPolicyTarget": {
       "type": "string",
       "description": "Whether the policy is for production or development branches",
@@ -53011,7 +53193,7 @@
         ]
       }
     },
-    "PaginatedNekiChangeRequestDataItemType": {
+    "PaginatedChangeRequestDataItemType": {
       "type": "string",
       "description": "The type of change request",
       "enum": [
@@ -53019,10 +53201,11 @@
         "NekiClusterChangeRequest",
         "NekiConfigurationProfileChangeRequest",
         "NekiExternalShardChangeRequest",
-        "NekiRouterChangeRequest"
+        "NekiRouterChangeRequest",
+        "PostgresBouncerChangeRequest"
       ]
     },
-    "PaginatedNekiChangeRequestDataItemState": {
+    "PaginatedChangeRequestDataItemState": {
       "type": "string",
       "description": "The state of the change request",
       "enum": [
@@ -53033,7 +53216,7 @@
         "completed"
       ],
       "x-ms-enum": {
-        "name": "PaginatedNekiChangeRequestDataItemState",
+        "name": "PaginatedChangeRequestDataItemState",
         "modelAsString": false,
         "values": [
           {
@@ -53059,7 +53242,7 @@
         ]
       }
     },
-    "PaginatedNekiChangeRequestDataItemTargetType": {
+    "PaginatedChangeRequestDataItemTargetType": {
       "type": "string",
       "description": "The type of resource being changed",
       "enum": [
@@ -53067,8 +53250,65 @@
         "NekiCluster",
         "NekiConfigurationProfile",
         "NekiExternalShard",
-        "NekiRouter"
+        "NekiRouter",
+        "PostgresBouncer"
       ]
+    },
+    "PaginatedChangeRequestDataItemTarget": {
+      "type": "string",
+      "description": "The type of server the bouncer targets",
+      "enum": [
+        "primary",
+        "replica",
+        "replica_az_affinity"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "PaginatedChangeRequestDataItemTarget",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "primary",
+            "name": "Primary"
+          },
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "replica_az_affinity",
+            "name": "ReplicaAzAffinity"
+          }
+        ]
+      }
+    },
+    "PaginatedChangeRequestDataItemPreviousTarget": {
+      "type": "string",
+      "description": "The previous type of server the bouncer targets",
+      "enum": [
+        "primary",
+        "replica",
+        "replica_az_affinity"
+      ],
+      "x-nullable": true,
+      "x-ms-enum": {
+        "name": "PaginatedChangeRequestDataItemPreviousTarget",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "primary",
+            "name": "Primary"
+          },
+          {
+            "value": "replica",
+            "name": "Replica"
+          },
+          {
+            "value": "replica_az_affinity",
+            "name": "ReplicaAzAffinity"
+          }
+        ]
+      }
     },
     "PaginatedDatabaseBranchKeyspaceDataItemNodeTtlStrategy": {
       "type": "string",
@@ -60164,6 +60404,10 @@
     {
       "name": "Invoices",
       "description": "            Resources for managing invoices.\n"
+    },
+    {
+      "name": "OIDC trusts",
+      "description": "            Resources for managing OIDC trusts, which allow tokens from trusted OIDC providers to be exchanged for service tokens.\n"
     },
     {
       "name": "Organization SSO domains",

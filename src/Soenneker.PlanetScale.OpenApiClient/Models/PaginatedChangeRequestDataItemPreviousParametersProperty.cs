@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>
-    /// The parameters requested for the target resource
+    /// The target resource parameters before the change
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NekiChangeRequestParametersProperty : IAdditionalDataHolder, IParsable
+    public partial class PaginatedChangeRequestDataItemPreviousParametersProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.NekiChangeRequestParametersProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty"/> and sets the default values.
         /// </summary>
-        public NekiChangeRequestParametersProperty()
+        public PaginatedChangeRequestDataItemPreviousParametersProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.NekiChangeRequestParametersProperty"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.NekiChangeRequestParametersProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.NekiChangeRequestParametersProperty();
+            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedChangeRequestDataItemPreviousParametersProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
