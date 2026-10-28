@@ -9,6 +9,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Cidrs;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployQueue;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.MaintenanceEvents;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.MaintenanceSchedules;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.ReadOnlyRegions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Regions;
@@ -52,6 +53,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.DeployRequestsRequestBuilder DeployRequests
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployRequests.DeployRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The maintenanceEvents property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.MaintenanceEvents.MaintenanceEventsRequestBuilder MaintenanceEvents
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.MaintenanceEvents.MaintenanceEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The maintenanceSchedules property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.MaintenanceSchedules.MaintenanceSchedulesRequestBuilder MaintenanceSchedules

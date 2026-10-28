@@ -37,37 +37,42 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// Promotes a branch from development to production### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `connect_production_branch`, `promote_branches`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `promote_branches` || Database | `promote_branches` |
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch?> PostAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.PromoteBranchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch> PostAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.PromoteBranchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Promotes a branch from development to production### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `connect_production_branch`, `promote_branches`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `promote_branches` || Database | `promote_branches` |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.PlanetScale.OpenApiClient.Models.PromoteBranchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.PlanetScale.OpenApiClient.Models.PromoteBranchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

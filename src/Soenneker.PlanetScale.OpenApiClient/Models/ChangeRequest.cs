@@ -40,6 +40,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>Whether the router scales horizontally within each cell</summary>
         public bool? Autoscaling { get; set; }
+        /// <summary>The display order of the bouncer size SKU</summary>
+        public int? BouncerRank { get; set; }
         /// <summary>The name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +156,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The previous autoscaling state of the router</summary>
         public bool? PreviousAutoscaling { get; set; }
+        /// <summary>The previous display order of the bouncer size SKU</summary>
+        public int? PreviousBouncerRank { get; set; }
         /// <summary>The previous name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -359,6 +363,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "admin_size", n => { AdminSize = n.GetStringValue(); } },
                 { "admin_size_display_name", n => { AdminSizeDisplayName = n.GetStringValue(); } },
                 { "autoscaling", n => { Autoscaling = n.GetBoolValue(); } },
+                { "bouncer_rank", n => { BouncerRank = n.GetIntValue(); } },
                 { "bouncer_size", n => { BouncerSize = n.GetStringValue(); } },
                 { "bouncer_size_display_name", n => { BouncerSizeDisplayName = n.GetStringValue(); } },
                 { "can_delete", n => { CanDelete = n.GetBoolValue(); } },
@@ -377,6 +382,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_admin_size", n => { PreviousAdminSize = n.GetStringValue(); } },
                 { "previous_admin_size_display_name", n => { PreviousAdminSizeDisplayName = n.GetStringValue(); } },
                 { "previous_autoscaling", n => { PreviousAutoscaling = n.GetBoolValue(); } },
+                { "previous_bouncer_rank", n => { PreviousBouncerRank = n.GetIntValue(); } },
                 { "previous_bouncer_size", n => { PreviousBouncerSize = n.GetStringValue(); } },
                 { "previous_bouncer_size_display_name", n => { PreviousBouncerSizeDisplayName = n.GetStringValue(); } },
                 { "previous_cluster_display_name", n => { PreviousClusterDisplayName = n.GetStringValue(); } },
@@ -424,6 +430,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("admin_size", AdminSize);
             writer.WriteStringValue("admin_size_display_name", AdminSizeDisplayName);
             writer.WriteBoolValue("autoscaling", Autoscaling);
+            writer.WriteIntValue("bouncer_rank", BouncerRank);
             writer.WriteStringValue("bouncer_size", BouncerSize);
             writer.WriteStringValue("bouncer_size_display_name", BouncerSizeDisplayName);
             writer.WriteBoolValue("can_delete", CanDelete);
@@ -442,6 +449,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("previous_admin_size", PreviousAdminSize);
             writer.WriteStringValue("previous_admin_size_display_name", PreviousAdminSizeDisplayName);
             writer.WriteBoolValue("previous_autoscaling", PreviousAutoscaling);
+            writer.WriteIntValue("previous_bouncer_rank", PreviousBouncerRank);
             writer.WriteStringValue("previous_bouncer_size", PreviousBouncerSize);
             writer.WriteStringValue("previous_bouncer_size_display_name", PreviousBouncerSizeDisplayName);
             writer.WriteStringValue("previous_cluster_display_name", PreviousClusterDisplayName);

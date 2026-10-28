@@ -7732,6 +7732,9 @@
         "summary": "Demote a branch",
         "description": "Demotes a branch from production to development\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060connect_production_branch\u0060, \u0060demote_branches\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060demote_branches\u0060 |\n| Database | \u0060demote_branches\u0060 |",
         "operationId": "DemoteBranch",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
@@ -7756,6 +7759,13 @@
             "description": "The name of the branch",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DemoteBranchRequest"
+            }
           }
         ],
         "responses": {
@@ -13968,6 +13978,9 @@
         "summary": "Promote a branch",
         "description": "Promotes a branch from development to production\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060connect_production_branch\u0060, \u0060promote_branches\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060promote_branches\u0060 |\n| Database | \u0060promote_branches\u0060 |",
         "operationId": "PromoteBranch",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
@@ -13992,6 +14005,13 @@
             "description": "The name of the branch",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/PromoteBranchRequest"
+            }
           }
         ],
         "responses": {
@@ -20948,6 +20968,273 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/maintenance-events": {
+      "get": {
+        "tags": [
+          "MaintenanceEvents"
+        ],
+        "summary": "List maintenance events",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "ListMaintenanceEvents",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "If provided, specifies the page offset of returned results",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "per_page",
+            "description": "If provided, specifies the number of returned results",
+            "type": "integer",
+            "default": 25
+          },
+          {
+            "in": "query",
+            "name": "branch",
+            "description": "Filter by branch name",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "description": "Filter by maintenance event state",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns maintenance events for the database",
+            "schema": {
+              "$ref": "#/definitions/PaginatedPostgresBranchMaintenanceEvent"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/maintenance-events/{id}": {
+      "get": {
+        "tags": [
+          "MaintenanceEvents"
+        ],
+        "summary": "Get a maintenance event",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "GetMaintenanceEvent",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the maintenance event",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns a maintenance event",
+            "schema": {
+              "$ref": "#/definitions/PostgresBranchMaintenanceEvent"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "MaintenanceEvents"
+        ],
+        "summary": "Reschedule a maintenance event",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "RescheduleMaintenanceEvent",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the maintenance event",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RescheduleMaintenanceEventRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the rescheduled maintenance event",
+            "schema": {
+              "$ref": "#/definitions/PostgresBranchMaintenanceEvent"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/maintenance-schedules": {
       "get": {
         "tags": [
@@ -21108,6 +21395,94 @@
           },
           "200": {
             "description": "Returns a maintenance schedule",
+            "schema": {
+              "$ref": "#/definitions/BranchMaintenanceSchedule"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Update a maintenance schedule",
+        "description": "        Changes the day and hour of a branch\u0027s weekly maintenance window. Available only for PostgreSQL databases.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "UpdateMaintenanceSchedule",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "The ID of the maintenance schedule",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateMaintenanceScheduleRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the updated maintenance schedule",
             "schema": {
               "$ref": "#/definitions/BranchMaintenanceSchedule"
             }
@@ -27383,6 +27758,11 @@
           "description": "The display name of the bouncer size SKU",
           "x-nullable": true
         },
+        "bouncer_rank": {
+          "type": "integer",
+          "description": "The display order of the bouncer size SKU",
+          "x-nullable": true
+        },
         "target": {
           "$ref": "#/definitions/ChangeRequestTarget"
         },
@@ -27394,6 +27774,11 @@
         "previous_bouncer_size_display_name": {
           "type": "string",
           "description": "The previous display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_bouncer_rank": {
+          "type": "integer",
+          "description": "The previous display order of the bouncer size SKU",
           "x-nullable": true
         },
         "previous_target": {
@@ -28737,6 +29122,124 @@
         },
         "actor": {
           "$ref": "#/definitions/KeyspaceResizeRequestActor"
+        }
+      }
+    },
+    "PaginatedPostgresBranchMaintenanceEvent": {
+      "type": "object",
+      "required": [
+        "type",
+        "current_page",
+        "per_page",
+        "next_page",
+        "next_page_url",
+        "prev_page",
+        "prev_page_url",
+        "data"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The response type. Always \u0022list\u0022 for paginated responses."
+        },
+        "current_page": {
+          "type": "integer",
+          "description": "The current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "description": "The maximum number of results per page"
+        },
+        "next_page": {
+          "type": "integer",
+          "description": "The next page number, or null when this is the last page",
+          "x-nullable": true
+        },
+        "next_page_url": {
+          "type": "string",
+          "description": "The next page of results, or null when this is the last page",
+          "x-nullable": true
+        },
+        "prev_page": {
+          "type": "integer",
+          "description": "The previous page number, or null when this is the first page",
+          "x-nullable": true
+        },
+        "prev_page_url": {
+          "type": "string",
+          "description": "The previous page of results, or null when this is the first page",
+          "x-nullable": true
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaginatedPostgresBranchMaintenanceEventDataItem"
+          }
+        }
+      }
+    },
+    "PostgresBranchMaintenanceEvent": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "what",
+        "why",
+        "expected_impact",
+        "scheduled_at",
+        "not_after",
+        "completed_at",
+        "reschedules_remaining",
+        "branch",
+        "available_times"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the maintenance event"
+        },
+        "state": {
+          "$ref": "#/definitions/PostgresBranchMaintenanceEventState"
+        },
+        "what": {
+          "type": "string",
+          "description": "What the maintenance changes"
+        },
+        "why": {
+          "type": "string",
+          "description": "Why the maintenance is needed"
+        },
+        "expected_impact": {
+          "type": "string",
+          "description": "The impact to expect while the maintenance runs"
+        },
+        "scheduled_at": {
+          "type": "string",
+          "description": "When the maintenance is scheduled to run",
+          "x-nullable": true
+        },
+        "not_after": {
+          "type": "string",
+          "description": "The deadline by which the maintenance must run"
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the maintenance completed",
+          "x-nullable": true
+        },
+        "reschedules_remaining": {
+          "type": "integer",
+          "description": "How many more times the maintenance can be rescheduled"
+        },
+        "branch": {
+          "$ref": "#/definitions/PostgresBranchMaintenanceEventBranch"
+        },
+        "available_times": {
+          "type": "array",
+          "description": "The times the maintenance can be rescheduled to",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -35543,6 +36046,11 @@
           "description": "The display name of the bouncer size SKU",
           "x-nullable": true
         },
+        "bouncer_rank": {
+          "type": "integer",
+          "description": "The display order of the bouncer size SKU",
+          "x-nullable": true
+        },
         "target": {
           "$ref": "#/definitions/PaginatedChangeRequestDataItemTarget"
         },
@@ -35554,6 +36062,11 @@
         "previous_bouncer_size_display_name": {
           "type": "string",
           "description": "The previous display name of the bouncer size SKU",
+          "x-nullable": true
+        },
+        "previous_bouncer_rank": {
+          "type": "integer",
+          "description": "The previous display order of the bouncer size SKU",
           "x-nullable": true
         },
         "previous_target": {
@@ -37002,6 +37515,104 @@
         "avatar_url": {
           "type": "string",
           "description": "The URL of the actor\u0027s avatar"
+        }
+      }
+    },
+    "PaginatedPostgresBranchMaintenanceEventDataItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "state",
+        "what",
+        "why",
+        "expected_impact",
+        "scheduled_at",
+        "not_after",
+        "completed_at",
+        "reschedules_remaining",
+        "branch",
+        "available_times"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the maintenance event"
+        },
+        "state": {
+          "$ref": "#/definitions/PaginatedPostgresBranchMaintenanceEventDataItemState"
+        },
+        "what": {
+          "type": "string",
+          "description": "What the maintenance changes"
+        },
+        "why": {
+          "type": "string",
+          "description": "Why the maintenance is needed"
+        },
+        "expected_impact": {
+          "type": "string",
+          "description": "The impact to expect while the maintenance runs"
+        },
+        "scheduled_at": {
+          "type": "string",
+          "description": "When the maintenance is scheduled to run",
+          "x-nullable": true
+        },
+        "not_after": {
+          "type": "string",
+          "description": "The deadline by which the maintenance must run"
+        },
+        "completed_at": {
+          "type": "string",
+          "description": "When the maintenance completed",
+          "x-nullable": true
+        },
+        "reschedules_remaining": {
+          "type": "integer",
+          "description": "How many more times the maintenance can be rescheduled"
+        },
+        "branch": {
+          "$ref": "#/definitions/PaginatedPostgresBranchMaintenanceEventDataItemBranch"
+        },
+        "available_times": {
+          "type": "array",
+          "description": "The times the maintenance can be rescheduled to",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "PostgresBranchMaintenanceEventBranch": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
         }
       }
     },
@@ -43548,6 +44159,39 @@
         }
       }
     },
+    "PaginatedPostgresBranchMaintenanceEventDataItemBranch": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID for the resource"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name for the resource"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "When the resource was created"
+        },
+        "updated_at": {
+          "type": "string",
+          "description": "When the resource was last updated"
+        },
+        "deleted_at": {
+          "type": "string",
+          "description": "When the resource was deleted, if deleted",
+          "x-nullable": true
+        }
+      }
+    },
     "MetricSeriesSeriesItemLabels": {
       "type": "object",
       "description": "Key/value labels, also known as tags, identifying the time series"
@@ -48263,6 +48907,19 @@
         }
       }
     },
+    "DemoteBranchRequest": {
+      "type": "object",
+      "properties": {
+        "cluster_size": {
+          "type": "string",
+          "description": "Postgres cluster size to apply when demoting. PS-DEV is allowed. Changing the size requires write_database."
+        },
+        "replicas": {
+          "type": "integer",
+          "description": "Postgres replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. Changing the replica count requires write_database."
+        }
+      }
+    },
     "ListExtensions200Response": {
       "type": "array",
       "items": {
@@ -48650,6 +49307,19 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "PromoteBranchRequest": {
+      "type": "object",
+      "properties": {
+        "cluster_size": {
+          "type": "string",
+          "description": "Cluster size to apply when promoting. PS-DEV is not permitted. When omitted, a PS-DEV branch uses the smallest production size. Changing the size requires write_database."
+        },
+        "replicas": {
+          "type": "integer",
+          "description": "Postgres replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. Changing the replica count requires write_database."
         }
       }
     },
@@ -49203,6 +49873,31 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "RescheduleMaintenanceEventRequest": {
+      "type": "object",
+      "required": [
+        "scheduled_at"
+      ],
+      "properties": {
+        "scheduled_at": {
+          "type": "string",
+          "description": "When the maintenance should run, as one of the event\u0027s \u0060available_times\u0060"
+        }
+      }
+    },
+    "UpdateMaintenanceScheduleRequest": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "integer",
+          "description": "Day of the week in UTC (0 = Sunday, 6 = Saturday)"
+        },
+        "hour": {
+          "type": "integer",
+          "description": "Hour of the day in UTC (0-23)"
         }
       }
     },
@@ -51350,6 +52045,43 @@
           {
             "value": "queued",
             "name": "Queued"
+          }
+        ]
+      }
+    },
+    "PostgresBranchMaintenanceEventState": {
+      "type": "string",
+      "description": "The state of the maintenance event",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "canceled",
+        "expired"
+      ],
+      "x-ms-enum": {
+        "name": "PostgresBranchMaintenanceEventState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "scheduled",
+            "name": "Scheduled"
+          },
+          {
+            "value": "in_progress",
+            "name": "InProgress"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          },
+          {
+            "value": "expired",
+            "name": "Expired"
           }
         ]
       }
@@ -53600,6 +54332,43 @@
           {
             "value": "queued",
             "name": "Queued"
+          }
+        ]
+      }
+    },
+    "PaginatedPostgresBranchMaintenanceEventDataItemState": {
+      "type": "string",
+      "description": "The state of the maintenance event",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "canceled",
+        "expired"
+      ],
+      "x-ms-enum": {
+        "name": "PaginatedPostgresBranchMaintenanceEventDataItemState",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "scheduled",
+            "name": "Scheduled"
+          },
+          {
+            "value": "in_progress",
+            "name": "InProgress"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          },
+          {
+            "value": "expired",
+            "name": "Expired"
           }
         ]
       }
@@ -60061,6 +60830,42 @@
         ]
       }
     },
+    "ListMaintenanceEventsStateParameter": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "canceled",
+        "expired"
+      ],
+      "x-ms-enum": {
+        "name": "ListMaintenanceEventsStateParameter",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "scheduled",
+            "name": "Scheduled"
+          },
+          {
+            "value": "in_progress",
+            "name": "InProgress"
+          },
+          {
+            "value": "completed",
+            "name": "Completed"
+          },
+          {
+            "value": "canceled",
+            "name": "Canceled"
+          },
+          {
+            "value": "expired",
+            "name": "Expired"
+          }
+        ]
+      }
+    },
     "ListSchemaRecommendationsStateParameter": {
       "type": "string",
       "enum": [
@@ -60283,7 +61088,7 @@
     },
     {
       "name": "MaintenanceSchedules",
-      "description": "          Resources for viewing database maintenance schedules for Vitess databases (Enterprise only).\n"
+      "description": "          Resources for viewing and updating database maintenance schedules, for PostgreSQL databases and Vitess databases (Enterprise only).\n"
     },
     {
       "name": "MaintenanceWindows",

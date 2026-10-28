@@ -58,6 +58,26 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        ///         Changes the day and hour of a branch&apos;s weekly maintenance window. Available only for PostgreSQL databases.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_databases` || Database | `write_database` |
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule?> PatchAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateMaintenanceScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule> PatchAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateMaintenanceScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_databases` || Database | `read_database` |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -74,6 +94,28 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        ///         Changes the day and hour of a branch&apos;s weekly maintenance window. Available only for PostgreSQL databases.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_databases` || Database | `write_database` |
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateMaintenanceScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateMaintenanceScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
