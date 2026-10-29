@@ -24,6 +24,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Bran
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Logs;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Maintenance;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MaintenanceWindow;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Metrics;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.NekiChanges;
@@ -154,6 +155,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Maintenance.MaintenanceRequestBuilder Maintenance
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Maintenance.MaintenanceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The maintenanceWindow property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MaintenanceWindow.MaintenanceWindowRequestBuilder MaintenanceWindow
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MaintenanceWindow.MaintenanceWindowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metrics property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Metrics.MetricsRequestBuilder Metrics

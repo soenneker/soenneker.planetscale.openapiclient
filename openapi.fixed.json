@@ -11058,6 +11058,174 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/maintenance-window": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Get a branch\u0027s maintenance window",
+        "description": "        Returns the weekly maintenance window of a PostgreSQL production branch.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "GetBranchMaintenanceWindow",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the branch\u0027s maintenance schedule",
+            "schema": {
+              "$ref": "#/definitions/BranchMaintenanceSchedule"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Update a branch\u0027s maintenance window",
+        "description": "        Changes the day and hour of a PostgreSQL production branch\u0027s weekly maintenance window.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "UpdateBranchMaintenanceWindow",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "database",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "branch",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateBranchMaintenanceWindowRequest"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "description": "Fallback media schema"
+            }
+          },
+          "200": {
+            "description": "Returns the updated maintenance schedule",
+            "schema": {
+              "$ref": "#/definitions/BranchMaintenanceSchedule"
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/metrics": {
       "get": {
         "tags": [
@@ -49093,6 +49261,19 @@
         "update_postgres_minor_version": {
           "type": "boolean",
           "description": "Whether to upgrade the branch to the latest PostgreSQL minor version during maintenance."
+        }
+      }
+    },
+    "UpdateBranchMaintenanceWindowRequest": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "integer",
+          "description": "Day of the week in UTC (0 = Sunday, 6 = Saturday)"
+        },
+        "hour": {
+          "type": "integer",
+          "description": "Hour of the day in UTC (0-23)"
         }
       }
     },
