@@ -74,6 +74,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 #endif
         /// <summary>The state of the maintenance event</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBranchMaintenanceEventDataItemState? State { get; set; }
+        /// <summary>Whether the maintenance is urgent and runs without waiting for the maintenance window</summary>
+        public bool? Urgent { get; set; }
+        /// <summary>Why the maintenance is urgent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UrgentReason { get; set; }
+#nullable restore
+#else
+        public string UrgentReason { get; set; }
+#endif
         /// <summary>What the maintenance changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +134,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "reschedules_remaining", n => { ReschedulesRemaining = n.GetIntValue(); } },
                 { "scheduled_at", n => { ScheduledAt = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBranchMaintenanceEventDataItemState>(); } },
+                { "urgent", n => { Urgent = n.GetBoolValue(); } },
+                { "urgent_reason", n => { UrgentReason = n.GetStringValue(); } },
                 { "what", n => { What = n.GetStringValue(); } },
                 { "why", n => { Why = n.GetStringValue(); } },
             };
@@ -144,6 +156,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("reschedules_remaining", ReschedulesRemaining);
             writer.WriteStringValue("scheduled_at", ScheduledAt);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBranchMaintenanceEventDataItemState>("state", State);
+            writer.WriteBoolValue("urgent", Urgent);
+            writer.WriteStringValue("urgent_reason", UrgentReason);
             writer.WriteStringValue("what", What);
             writer.WriteStringValue("why", Why);
             writer.WriteAdditionalData(AdditionalData);

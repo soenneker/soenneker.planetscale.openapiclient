@@ -92,6 +92,26 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         #pragma warning disable CS1591
         KeyspaceStorage,
         #pragma warning restore CS1591
+        [EnumMember(Value = "maintenance.scheduled")]
+        #pragma warning disable CS1591
+        MaintenanceScheduled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "maintenance.started")]
+        #pragma warning disable CS1591
+        MaintenanceStarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "maintenance.completed")]
+        #pragma warning disable CS1591
+        MaintenanceCompleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "maintenance.failed")]
+        #pragma warning disable CS1591
+        MaintenanceFailed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "maintenance.canceled")]
+        #pragma warning disable CS1591
+        MaintenanceCanceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "webhook.test")]
         #pragma warning disable CS1591
         WebhookTest,

@@ -687,7 +687,7 @@
           "Databases"
         ],
         "summary": "List databases",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
         "operationId": "ListDatabases",
         "produces": [
           "application/json"
@@ -853,7 +853,7 @@
           "Databases"
         ],
         "summary": "Get a database",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "GetDatabase",
         "produces": [
           "application/json"
@@ -1762,7 +1762,7 @@
           "Database branches"
         ],
         "summary": "Update a branch",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_branches\u0060, \u0060write_databases\u0060 |\n| Database | \u0060write_branches\u0060, \u0060write_database\u0060 |\n| Branch | \u0060write_branch\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060, \u0060rename_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_branches\u0060, \u0060write_databases\u0060 |\n| Database | \u0060write_branches\u0060, \u0060write_database\u0060 |\n| Branch | \u0060write_branch\u0060 |",
         "operationId": "UpdateBranch",
         "consumes": [
           "application/json"
@@ -21758,7 +21758,7 @@
           "Databases"
         ],
         "summary": "List read-only regions",
-        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
+        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
         "operationId": "ListReadOnlyRegions",
         "produces": [
           "application/json"
@@ -21845,7 +21845,7 @@
           "Databases"
         ],
         "summary": "List database regions",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabaseRegions",
         "produces": [
           "application/json"
@@ -29354,6 +29354,8 @@
         "what",
         "why",
         "expected_impact",
+        "urgent",
+        "urgent_reason",
         "scheduled_at",
         "not_after",
         "completed_at",
@@ -29380,6 +29382,15 @@
         "expected_impact": {
           "type": "string",
           "description": "The impact to expect while the maintenance runs"
+        },
+        "urgent": {
+          "type": "boolean",
+          "description": "Whether the maintenance is urgent and runs without waiting for the maintenance window"
+        },
+        "urgent_reason": {
+          "type": "string",
+          "description": "Why the maintenance is urgent",
+          "x-nullable": true
         },
         "scheduled_at": {
           "type": "string",
@@ -37694,6 +37705,8 @@
         "what",
         "why",
         "expected_impact",
+        "urgent",
+        "urgent_reason",
         "scheduled_at",
         "not_after",
         "completed_at",
@@ -37720,6 +37733,15 @@
         "expected_impact": {
           "type": "string",
           "description": "The impact to expect while the maintenance runs"
+        },
+        "urgent": {
+          "type": "boolean",
+          "description": "Whether the maintenance is urgent and runs without waiting for the maintenance window"
+        },
+        "urgent_reason": {
+          "type": "string",
+          "description": "Why the maintenance is urgent",
+          "x-nullable": true
         },
         "scheduled_at": {
           "type": "string",
@@ -53330,6 +53352,11 @@
         "deploy_request.reverted",
         "deploy_request.schema_applied",
         "keyspace.storage",
+        "maintenance.scheduled",
+        "maintenance.started",
+        "maintenance.completed",
+        "maintenance.failed",
+        "maintenance.canceled",
         "webhook.test"
       ],
       "x-ms-enum": {
@@ -53419,6 +53446,26 @@
           {
             "value": "keyspace.storage",
             "name": "KeyspaceStorage"
+          },
+          {
+            "value": "maintenance.scheduled",
+            "name": "MaintenanceScheduled"
+          },
+          {
+            "value": "maintenance.started",
+            "name": "MaintenanceStarted"
+          },
+          {
+            "value": "maintenance.completed",
+            "name": "MaintenanceCompleted"
+          },
+          {
+            "value": "maintenance.failed",
+            "name": "MaintenanceFailed"
+          },
+          {
+            "value": "maintenance.canceled",
+            "name": "MaintenanceCanceled"
           },
           {
             "value": "webhook.test",
@@ -55948,6 +55995,11 @@
         "deploy_request.reverted",
         "deploy_request.schema_applied",
         "keyspace.storage",
+        "maintenance.scheduled",
+        "maintenance.started",
+        "maintenance.completed",
+        "maintenance.failed",
+        "maintenance.canceled",
         "webhook.test"
       ],
       "x-ms-enum": {
@@ -56037,6 +56089,26 @@
           {
             "value": "keyspace.storage",
             "name": "KeyspaceStorage"
+          },
+          {
+            "value": "maintenance.scheduled",
+            "name": "MaintenanceScheduled"
+          },
+          {
+            "value": "maintenance.started",
+            "name": "MaintenanceStarted"
+          },
+          {
+            "value": "maintenance.completed",
+            "name": "MaintenanceCompleted"
+          },
+          {
+            "value": "maintenance.failed",
+            "name": "MaintenanceFailed"
+          },
+          {
+            "value": "maintenance.canceled",
+            "name": "MaintenanceCanceled"
           },
           {
             "value": "webhook.test",

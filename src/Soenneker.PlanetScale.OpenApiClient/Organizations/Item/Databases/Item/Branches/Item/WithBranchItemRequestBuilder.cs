@@ -303,7 +303,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_branches`, `write_databases` || Database | `write_branches`, `write_database` || Branch | `write_branch` |
+        /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`, `rename_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_branches`, `write_databases` || Database | `write_branches`, `write_database` || Branch | `write_branch` |
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranch"/></returns>
         /// <param name="body">The request body</param>
@@ -361,7 +361,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             return requestInfo;
         }
         /// <summary>
-        /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_branches`, `write_databases` || Database | `write_branches`, `write_database` || Branch | `write_branch` |
+        /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `write_database`, `rename_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_branches`, `write_databases` || Database | `write_branches`, `write_database` || Branch | `write_branch` |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
