@@ -11,13 +11,26 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateBranchRequestStorage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maximum_storage_bytes") is null) { _explicitNullValueMaximumStorageBytes = default!; _explicitNullProperties?.Remove("maximum_storage_bytes"); }
+            else if (parseNode.GetChildNode("maximum_storage_bytes") is { } nullNodeMaximumStorageBytes && nullNodeMaximumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumStorageBytes = null;
+            if (parseNode.GetChildNode("minimum_storage_bytes") is null) { _explicitNullValueMinimumStorageBytes = default!; _explicitNullProperties?.Remove("minimum_storage_bytes"); }
+            else if (parseNode.GetChildNode("minimum_storage_bytes") is { } nullNodeMinimumStorageBytes && nullNodeMinimumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumStorageBytes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum storage size in bytes for autoscaling.</summary>
-        public int? MaximumStorageBytes { get; set; }
+        public int? MaximumStorageBytes { get => _explicitNullValueMaximumStorageBytes; set { _explicitNullValueMaximumStorageBytes = value; AdditionalData?.Remove("maximum_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_storage_bytes"); else _explicitNullProperties?.Remove("maximum_storage_bytes"); } }
+        private int? _explicitNullValueMaximumStorageBytes = default!;
         /// <summary>The minimum storage size in bytes.</summary>
-        public int? MinimumStorageBytes { get; set; }
+        public int? MinimumStorageBytes { get => _explicitNullValueMinimumStorageBytes; set { _explicitNullValueMinimumStorageBytes = value; AdditionalData?.Remove("minimum_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_storage_bytes"); else _explicitNullProperties?.Remove("minimum_storage_bytes"); } }
+        private int? _explicitNullValueMinimumStorageBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBranchRequestStorage"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBranchRequestStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBranchRequestStorage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBranchRequestStorage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maximum_storage_bytes", MaximumStorageBytes);
             writer.WriteIntValue("minimum_storage_bytes", MinimumStorageBytes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

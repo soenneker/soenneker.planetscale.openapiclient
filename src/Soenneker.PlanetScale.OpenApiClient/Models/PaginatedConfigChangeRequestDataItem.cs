@@ -11,100 +11,157 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedConfigChangeRequestDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("change_type") is null) { _explicitNullValueChangeType = default!; _explicitNullProperties?.Remove("change_type"); }
+            else if (parseNode.GetChildNode("change_type") is { } nullNodeChangeType && nullNodeChangeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeType = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("error_message") is null) { _explicitNullValueErrorMessage = default!; _explicitNullProperties?.Remove("error_message"); }
+            else if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("keyspace_name") is null) { _explicitNullValueKeyspaceName = default!; _explicitNullProperties?.Remove("keyspace_name"); }
+            else if (parseNode.GetChildNode("keyspace_name") is { } nullNodeKeyspaceName && nullNodeKeyspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyspaceName = null;
+            if (parseNode.GetChildNode("new_options") is null) { _explicitNullValueNewOptions = default!; _explicitNullProperties?.Remove("new_options"); }
+            else if (parseNode.GetChildNode("new_options") is { } nullNodeNewOptions && nullNodeNewOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewOptions = null;
+            if (parseNode.GetChildNode("previous_options") is null) { _explicitNullValuePreviousOptions = default!; _explicitNullProperties?.Remove("previous_options"); }
+            else if (parseNode.GetChildNode("previous_options") is { } nullNodePreviousOptions && nullNodePreviousOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousOptions = null;
+            if (parseNode.GetChildNode("queued_until") is null) { _explicitNullValueQueuedUntil = default!; _explicitNullProperties?.Remove("queued_until"); }
+            else if (parseNode.GetChildNode("queued_until") is { } nullNodeQueuedUntil && nullNodeQueuedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuedUntil = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of configuration being changed</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType? ChangeType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType? ChangeType { get => _explicitNullValueChangeType; set { _explicitNullValueChangeType = value; AdditionalData?.Remove("change_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_type"); else _explicitNullProperties?.Remove("change_type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType? _explicitNullValueChangeType = default!;
         /// <summary>When the config change completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>When the config change request was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Error message if the change failed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The ID of the config change request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The keyspace name for keyspace-level config changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyspaceName { get; set; }
+        public string? KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string? _explicitNullValueKeyspaceName = default!;
 #nullable restore
 #else
-        public string KeyspaceName { get; set; }
+        public string KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string _explicitNullValueKeyspaceName = default!;
 #endif
         /// <summary>The new option values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty? NewOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty? NewOptions { get => _explicitNullValueNewOptions; set { _explicitNullValueNewOptions = value; AdditionalData?.Remove("new_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_options"); else _explicitNullProperties?.Remove("new_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty? _explicitNullValueNewOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty NewOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty NewOptions { get => _explicitNullValueNewOptions; set { _explicitNullValueNewOptions = value; AdditionalData?.Remove("new_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_options"); else _explicitNullProperties?.Remove("new_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemNewOptionsProperty _explicitNullValueNewOptions = default!;
 #endif
         /// <summary>The previous option values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty? PreviousOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty? PreviousOptions { get => _explicitNullValuePreviousOptions; set { _explicitNullValuePreviousOptions = value; AdditionalData?.Remove("previous_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_options"); else _explicitNullProperties?.Remove("previous_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty? _explicitNullValuePreviousOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty PreviousOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty PreviousOptions { get => _explicitNullValuePreviousOptions; set { _explicitNullValuePreviousOptions = value; AdditionalData?.Remove("previous_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_options"); else _explicitNullProperties?.Remove("previous_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty _explicitNullValuePreviousOptions = default!;
 #endif
         /// <summary>When the config change is expected to be applied (only set when queued)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueuedUntil { get; set; }
+        public string? QueuedUntil { get => _explicitNullValueQueuedUntil; set { _explicitNullValueQueuedUntil = value; AdditionalData?.Remove("queued_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued_until"); else _explicitNullProperties?.Remove("queued_until"); } }
+        private string? _explicitNullValueQueuedUntil = default!;
 #nullable restore
 #else
-        public string QueuedUntil { get; set; }
+        public string QueuedUntil { get => _explicitNullValueQueuedUntil; set { _explicitNullValueQueuedUntil = value; AdditionalData?.Remove("queued_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued_until"); else _explicitNullProperties?.Remove("queued_until"); } }
+        private string _explicitNullValueQueuedUntil = default!;
 #endif
         /// <summary>When the config change started applying</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The state of the config change request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState? _explicitNullValueState = default!;
         /// <summary>When the config change request was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItem"/> and sets the default values.
@@ -121,7 +178,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,7 +189,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor.CreateFromDiscriminatorValue); } },
-                { "change_type", n => { ChangeType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType>(); } },
+                { "change_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChangeType = default; _explicitNullProperties?.Remove("change_type"); AdditionalData["change_type"] = unknown; } else { ChangeType = parsed; AdditionalData.Remove("change_type"); } } },
                 { "completed_at", n => { CompletedAt = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
@@ -142,7 +199,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_options", n => { PreviousOptions = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemPreviousOptionsProperty.CreateFromDiscriminatorValue); } },
                 { "queued_until", n => { QueuedUntil = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -166,6 +223,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemState>("state", State);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

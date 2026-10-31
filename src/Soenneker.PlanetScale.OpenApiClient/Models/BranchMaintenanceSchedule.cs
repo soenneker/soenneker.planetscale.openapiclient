@@ -11,109 +11,186 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BranchMaintenanceSchedule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("deadline_at") is null) { _explicitNullValueDeadlineAt = default!; _explicitNullProperties?.Remove("deadline_at"); }
+            else if (parseNode.GetChildNode("deadline_at") is { } nullNodeDeadlineAt && nullNodeDeadlineAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeadlineAt = null;
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
+            else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("frequency_unit") is null) { _explicitNullValueFrequencyUnit = default!; _explicitNullProperties?.Remove("frequency_unit"); }
+            else if (parseNode.GetChildNode("frequency_unit") is { } nullNodeFrequencyUnit && nullNodeFrequencyUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyUnit = null;
+            if (parseNode.GetChildNode("frequency_value") is null) { _explicitNullValueFrequencyValue = default!; _explicitNullProperties?.Remove("frequency_value"); }
+            else if (parseNode.GetChildNode("frequency_value") is { } nullNodeFrequencyValue && nullNodeFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyValue = null;
+            if (parseNode.GetChildNode("hour") is null) { _explicitNullValueHour = default!; _explicitNullProperties?.Remove("hour"); }
+            else if (parseNode.GetChildNode("hour") is { } nullNodeHour && nullNodeHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hour = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_window_datetime") is null) { _explicitNullValueLastWindowDatetime = default!; _explicitNullProperties?.Remove("last_window_datetime"); }
+            else if (parseNode.GetChildNode("last_window_datetime") is { } nullNodeLastWindowDatetime && nullNodeLastWindowDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastWindowDatetime = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("next_window_datetime") is null) { _explicitNullValueNextWindowDatetime = default!; _explicitNullProperties?.Remove("next_window_datetime"); }
+            else if (parseNode.GetChildNode("next_window_datetime") is { } nullNodeNextWindowDatetime && nullNodeNextWindowDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextWindowDatetime = null;
+            if (parseNode.GetChildNode("pending_mysql_version") is null) { _explicitNullValuePendingMysqlVersion = default!; _explicitNullProperties?.Remove("pending_mysql_version"); }
+            else if (parseNode.GetChildNode("pending_mysql_version") is { } nullNodePendingMysqlVersion && nullNodePendingMysqlVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingMysqlVersion = null;
+            if (parseNode.GetChildNode("pending_mysql_version_update") is null) { _explicitNullValuePendingMysqlVersionUpdate = default!; _explicitNullProperties?.Remove("pending_mysql_version_update"); }
+            else if (parseNode.GetChildNode("pending_mysql_version_update") is { } nullNodePendingMysqlVersionUpdate && nullNodePendingMysqlVersionUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingMysqlVersionUpdate = null;
+            if (parseNode.GetChildNode("pending_vitess_version") is null) { _explicitNullValuePendingVitessVersion = default!; _explicitNullProperties?.Remove("pending_vitess_version"); }
+            else if (parseNode.GetChildNode("pending_vitess_version") is { } nullNodePendingVitessVersion && nullNodePendingVitessVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingVitessVersion = null;
+            if (parseNode.GetChildNode("pending_vitess_version_update") is null) { _explicitNullValuePendingVitessVersionUpdate = default!; _explicitNullProperties?.Remove("pending_vitess_version_update"); }
+            else if (parseNode.GetChildNode("pending_vitess_version_update") is { } nullNodePendingVitessVersionUpdate && nullNodePendingVitessVersionUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingVitessVersionUpdate = null;
+            if (parseNode.GetChildNode("required") is null) { _explicitNullValueRequired = default!; _explicitNullProperties?.Remove("required"); }
+            else if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("week") is null) { _explicitNullValueWeek = default!; _explicitNullProperties?.Remove("week"); }
+            else if (parseNode.GetChildNode("week") is { } nullNodeWeek && nullNodeWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Week = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the maintenance schedule was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Day of the week (0 = Sunday, 6 = Saturday, 7 = every day)</summary>
-        public int? Day { get; set; }
+        public int? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private int? _explicitNullValueDay = default!;
         /// <summary>The deadline for a required maintenance schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeadlineAt { get; set; }
+        public string? DeadlineAt { get => _explicitNullValueDeadlineAt; set { _explicitNullValueDeadlineAt = value; AdditionalData?.Remove("deadline_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deadline_at"); else _explicitNullProperties?.Remove("deadline_at"); } }
+        private string? _explicitNullValueDeadlineAt = default!;
 #nullable restore
 #else
-        public string DeadlineAt { get; set; }
+        public string DeadlineAt { get => _explicitNullValueDeadlineAt; set { _explicitNullValueDeadlineAt = value; AdditionalData?.Remove("deadline_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deadline_at"); else _explicitNullProperties?.Remove("deadline_at"); } }
+        private string _explicitNullValueDeadlineAt = default!;
 #endif
         /// <summary>The duration of the maintenance window in hours</summary>
-        public int? Duration { get; set; }
+        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private int? _explicitNullValueDuration = default!;
         /// <summary>Whether the maintenance schedule is enabled</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>When a one-time maintenance schedule expires</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The frequency unit of the maintenance schedule</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceScheduleFrequencyUnit? FrequencyUnit { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceScheduleFrequencyUnit? FrequencyUnit { get => _explicitNullValueFrequencyUnit; set { _explicitNullValueFrequencyUnit = value; AdditionalData?.Remove("frequency_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_unit"); else _explicitNullProperties?.Remove("frequency_unit"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceScheduleFrequencyUnit? _explicitNullValueFrequencyUnit = default!;
         /// <summary>The frequency value of the maintenance schedule</summary>
-        public int? FrequencyValue { get; set; }
+        public int? FrequencyValue { get => _explicitNullValueFrequencyValue; set { _explicitNullValueFrequencyValue = value; AdditionalData?.Remove("frequency_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_value"); else _explicitNullProperties?.Remove("frequency_value"); } }
+        private int? _explicitNullValueFrequencyValue = default!;
         /// <summary>Hour of the day in UTC (0-23)</summary>
-        public int? Hour { get; set; }
+        public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; AdditionalData?.Remove("hour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
+        private int? _explicitNullValueHour = default!;
         /// <summary>The ID of the maintenance schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>When the last maintenance window started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastWindowDatetime { get; set; }
+        public string? LastWindowDatetime { get => _explicitNullValueLastWindowDatetime; set { _explicitNullValueLastWindowDatetime = value; AdditionalData?.Remove("last_window_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_window_datetime"); else _explicitNullProperties?.Remove("last_window_datetime"); } }
+        private string? _explicitNullValueLastWindowDatetime = default!;
 #nullable restore
 #else
-        public string LastWindowDatetime { get; set; }
+        public string LastWindowDatetime { get => _explicitNullValueLastWindowDatetime; set { _explicitNullValueLastWindowDatetime = value; AdditionalData?.Remove("last_window_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_window_datetime"); else _explicitNullProperties?.Remove("last_window_datetime"); } }
+        private string _explicitNullValueLastWindowDatetime = default!;
 #endif
         /// <summary>The display name of the maintenance schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>When the next maintenance window is scheduled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextWindowDatetime { get; set; }
+        public string? NextWindowDatetime { get => _explicitNullValueNextWindowDatetime; set { _explicitNullValueNextWindowDatetime = value; AdditionalData?.Remove("next_window_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_window_datetime"); else _explicitNullProperties?.Remove("next_window_datetime"); } }
+        private string? _explicitNullValueNextWindowDatetime = default!;
 #nullable restore
 #else
-        public string NextWindowDatetime { get; set; }
+        public string NextWindowDatetime { get => _explicitNullValueNextWindowDatetime; set { _explicitNullValueNextWindowDatetime = value; AdditionalData?.Remove("next_window_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_window_datetime"); else _explicitNullProperties?.Remove("next_window_datetime"); } }
+        private string _explicitNullValueNextWindowDatetime = default!;
 #endif
         /// <summary>The pending MySQL version, if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingMysqlVersion { get; set; }
+        public string? PendingMysqlVersion { get => _explicitNullValuePendingMysqlVersion; set { _explicitNullValuePendingMysqlVersion = value; AdditionalData?.Remove("pending_mysql_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_mysql_version"); else _explicitNullProperties?.Remove("pending_mysql_version"); } }
+        private string? _explicitNullValuePendingMysqlVersion = default!;
 #nullable restore
 #else
-        public string PendingMysqlVersion { get; set; }
+        public string PendingMysqlVersion { get => _explicitNullValuePendingMysqlVersion; set { _explicitNullValuePendingMysqlVersion = value; AdditionalData?.Remove("pending_mysql_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_mysql_version"); else _explicitNullProperties?.Remove("pending_mysql_version"); } }
+        private string _explicitNullValuePendingMysqlVersion = default!;
 #endif
         /// <summary>Whether there is a pending MySQL version update</summary>
-        public bool? PendingMysqlVersionUpdate { get; set; }
+        public bool? PendingMysqlVersionUpdate { get => _explicitNullValuePendingMysqlVersionUpdate; set { _explicitNullValuePendingMysqlVersionUpdate = value; AdditionalData?.Remove("pending_mysql_version_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_mysql_version_update"); else _explicitNullProperties?.Remove("pending_mysql_version_update"); } }
+        private bool? _explicitNullValuePendingMysqlVersionUpdate = default!;
         /// <summary>The pending Vitess version, if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingVitessVersion { get; set; }
+        public string? PendingVitessVersion { get => _explicitNullValuePendingVitessVersion; set { _explicitNullValuePendingVitessVersion = value; AdditionalData?.Remove("pending_vitess_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_vitess_version"); else _explicitNullProperties?.Remove("pending_vitess_version"); } }
+        private string? _explicitNullValuePendingVitessVersion = default!;
 #nullable restore
 #else
-        public string PendingVitessVersion { get; set; }
+        public string PendingVitessVersion { get => _explicitNullValuePendingVitessVersion; set { _explicitNullValuePendingVitessVersion = value; AdditionalData?.Remove("pending_vitess_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_vitess_version"); else _explicitNullProperties?.Remove("pending_vitess_version"); } }
+        private string _explicitNullValuePendingVitessVersion = default!;
 #endif
         /// <summary>Whether there is a pending Vitess version update</summary>
-        public bool? PendingVitessVersionUpdate { get; set; }
+        public bool? PendingVitessVersionUpdate { get => _explicitNullValuePendingVitessVersionUpdate; set { _explicitNullValuePendingVitessVersionUpdate = value; AdditionalData?.Remove("pending_vitess_version_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_vitess_version_update"); else _explicitNullProperties?.Remove("pending_vitess_version_update"); } }
+        private bool? _explicitNullValuePendingVitessVersionUpdate = default!;
         /// <summary>Whether the maintenance schedule is required</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>When the maintenance schedule was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>Week of the month for monthly schedules (0-3)</summary>
-        public int? Week { get; set; }
+        public int? Week { get => _explicitNullValueWeek; set { _explicitNullValueWeek = value; AdditionalData?.Remove("week"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("week"); else _explicitNullProperties?.Remove("week"); } }
+        private int? _explicitNullValueWeek = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule"/> and sets the default values.
         /// </summary>
@@ -129,7 +206,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceSchedule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,7 +222,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
-                { "frequency_unit", n => { FrequencyUnit = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceScheduleFrequencyUnit>(); } },
+                { "frequency_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BranchMaintenanceScheduleFrequencyUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequencyUnit = default; _explicitNullProperties?.Remove("frequency_unit"); AdditionalData["frequency_unit"] = unknown; } else { FrequencyUnit = parsed; AdditionalData.Remove("frequency_unit"); } } },
                 { "frequency_value", n => { FrequencyValue = n.GetIntValue(); } },
                 { "hour", n => { Hour = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -188,6 +265,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("required", Required);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteIntValue("week", Week);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

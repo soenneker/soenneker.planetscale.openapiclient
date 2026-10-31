@@ -11,48 +11,83 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedDimensionsQuerySummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current_page") is null) { _explicitNullValueCurrentPage = default!; _explicitNullProperties?.Remove("current_page"); }
+            else if (parseNode.GetChildNode("current_page") is { } nullNodeCurrentPage && nullNodeCurrentPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPage = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("next_page") is null) { _explicitNullValueNextPage = default!; _explicitNullProperties?.Remove("next_page"); }
+            else if (parseNode.GetChildNode("next_page") is { } nullNodeNextPage && nullNodeNextPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPage = null;
+            if (parseNode.GetChildNode("next_page_url") is null) { _explicitNullValueNextPageUrl = default!; _explicitNullProperties?.Remove("next_page_url"); }
+            else if (parseNode.GetChildNode("next_page_url") is { } nullNodeNextPageUrl && nullNodeNextPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUrl = null;
+            if (parseNode.GetChildNode("per_page") is null) { _explicitNullValuePerPage = default!; _explicitNullProperties?.Remove("per_page"); }
+            else if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("prev_page") is null) { _explicitNullValuePrevPage = default!; _explicitNullProperties?.Remove("prev_page"); }
+            else if (parseNode.GetChildNode("prev_page") is { } nullNodePrevPage && nullNodePrevPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevPage = null;
+            if (parseNode.GetChildNode("prev_page_url") is null) { _explicitNullValuePrevPageUrl = default!; _explicitNullProperties?.Remove("prev_page_url"); }
+            else if (parseNode.GetChildNode("prev_page_url") is { } nullNodePrevPageUrl && nullNodePrevPageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevPageUrl = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The current page number</summary>
-        public int? CurrentPage { get; set; }
+        public int? CurrentPage { get => _explicitNullValueCurrentPage; set { _explicitNullValueCurrentPage = value; AdditionalData?.Remove("current_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_page"); else _explicitNullProperties?.Remove("current_page"); } }
+        private int? _explicitNullValueCurrentPage = default!;
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem>? Data { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem> Data { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummaryDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>The next page number, or null when this is the last page</summary>
-        public int? NextPage { get; set; }
+        public int? NextPage { get => _explicitNullValueNextPage; set { _explicitNullValueNextPage = value; AdditionalData?.Remove("next_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page"); else _explicitNullProperties?.Remove("next_page"); } }
+        private int? _explicitNullValueNextPage = default!;
         /// <summary>The next page of results, or null when this is the last page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageUrl { get; set; }
+        public string? NextPageUrl { get => _explicitNullValueNextPageUrl; set { _explicitNullValueNextPageUrl = value; AdditionalData?.Remove("next_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_url"); else _explicitNullProperties?.Remove("next_page_url"); } }
+        private string? _explicitNullValueNextPageUrl = default!;
 #nullable restore
 #else
-        public string NextPageUrl { get; set; }
+        public string NextPageUrl { get => _explicitNullValueNextPageUrl; set { _explicitNullValueNextPageUrl = value; AdditionalData?.Remove("next_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_url"); else _explicitNullProperties?.Remove("next_page_url"); } }
+        private string _explicitNullValueNextPageUrl = default!;
 #endif
         /// <summary>The maximum number of results per page</summary>
-        public int? PerPage { get; set; }
+        public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private int? _explicitNullValuePerPage = default!;
         /// <summary>The previous page number, or null when this is the first page</summary>
-        public int? PrevPage { get; set; }
+        public int? PrevPage { get => _explicitNullValuePrevPage; set { _explicitNullValuePrevPage = value; AdditionalData?.Remove("prev_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev_page"); else _explicitNullProperties?.Remove("prev_page"); } }
+        private int? _explicitNullValuePrevPage = default!;
         /// <summary>The previous page of results, or null when this is the first page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrevPageUrl { get; set; }
+        public string? PrevPageUrl { get => _explicitNullValuePrevPageUrl; set { _explicitNullValuePrevPageUrl = value; AdditionalData?.Remove("prev_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev_page_url"); else _explicitNullProperties?.Remove("prev_page_url"); } }
+        private string? _explicitNullValuePrevPageUrl = default!;
 #nullable restore
 #else
-        public string PrevPageUrl { get; set; }
+        public string PrevPageUrl { get => _explicitNullValuePrevPageUrl; set { _explicitNullValuePrevPageUrl = value; AdditionalData?.Remove("prev_page_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev_page_url"); else _explicitNullProperties?.Remove("prev_page_url"); } }
+        private string _explicitNullValuePrevPageUrl = default!;
 #endif
         /// <summary>The response type. Always &quot;list&quot; for paginated responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummary"/> and sets the default values.
@@ -69,7 +104,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDimensionsQuerySummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +139,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("prev_page", PrevPage);
             writer.WriteStringValue("prev_page_url", PrevPageUrl);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

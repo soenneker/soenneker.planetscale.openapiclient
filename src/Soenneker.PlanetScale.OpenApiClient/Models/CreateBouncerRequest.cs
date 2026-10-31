@@ -11,42 +11,68 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateBouncerRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bouncer_size") is null) { _explicitNullValueBouncerSize = default!; _explicitNullProperties?.Remove("bouncer_size"); }
+            else if (parseNode.GetChildNode("bouncer_size") is { } nullNodeBouncerSize && nullNodeBouncerSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncerSize = null;
+            if (parseNode.GetChildNode("dedicated_read_replica_id") is null) { _explicitNullValueDedicatedReadReplicaId = default!; _explicitNullProperties?.Remove("dedicated_read_replica_id"); }
+            else if (parseNode.GetChildNode("dedicated_read_replica_id") is { } nullNodeDedicatedReadReplicaId && nullNodeDedicatedReadReplicaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DedicatedReadReplicaId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("replicas_per_cell") is null) { _explicitNullValueReplicasPerCell = default!; _explicitNullProperties?.Remove("replicas_per_cell"); }
+            else if (parseNode.GetChildNode("replicas_per_cell") is { } nullNodeReplicasPerCell && nullNodeReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicasPerCell = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The size SKU for the bouncer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BouncerSize { get; set; }
+        public string? BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string? _explicitNullValueBouncerSize = default!;
 #nullable restore
 #else
-        public string BouncerSize { get; set; }
+        public string BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string _explicitNullValueBouncerSize = default!;
 #endif
         /// <summary>The ID of the dedicated read replica where the bouncer should run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DedicatedReadReplicaId { get; set; }
+        public string? DedicatedReadReplicaId { get => _explicitNullValueDedicatedReadReplicaId; set { _explicitNullValueDedicatedReadReplicaId = value; AdditionalData?.Remove("dedicated_read_replica_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dedicated_read_replica_id"); else _explicitNullProperties?.Remove("dedicated_read_replica_id"); } }
+        private string? _explicitNullValueDedicatedReadReplicaId = default!;
 #nullable restore
 #else
-        public string DedicatedReadReplicaId { get; set; }
+        public string DedicatedReadReplicaId { get => _explicitNullValueDedicatedReadReplicaId; set { _explicitNullValueDedicatedReadReplicaId = value; AdditionalData?.Remove("dedicated_read_replica_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dedicated_read_replica_id"); else _explicitNullProperties?.Remove("dedicated_read_replica_id"); } }
+        private string _explicitNullValueDedicatedReadReplicaId = default!;
 #endif
         /// <summary>The bouncer name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The number of replica servers per cell</summary>
-        public int? ReplicasPerCell { get; set; }
+        public int? ReplicasPerCell { get => _explicitNullValueReplicasPerCell; set { _explicitNullValueReplicasPerCell = value; AdditionalData?.Remove("replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas_per_cell"); else _explicitNullProperties?.Remove("replicas_per_cell"); } }
+        private int? _explicitNullValueReplicasPerCell = default!;
         /// <summary>The type of server the bouncer targets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target { get; set; }
+        public string? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string? _explicitNullValueTarget = default!;
 #nullable restore
 #else
-        public string Target { get; set; }
+        public string Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string _explicitNullValueTarget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBouncerRequest"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBouncerRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBouncerRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBouncerRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("replicas_per_cell", ReplicasPerCell);
             writer.WriteStringValue("target", Target);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

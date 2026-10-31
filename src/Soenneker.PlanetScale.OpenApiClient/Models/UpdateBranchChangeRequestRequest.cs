@@ -11,42 +11,68 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateBranchChangeRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cluster_size") is null) { _explicitNullValueClusterSize = default!; _explicitNullProperties?.Remove("cluster_size"); }
+            else if (parseNode.GetChildNode("cluster_size") is { } nullNodeClusterSize && nullNodeClusterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterSize = null;
+            if (parseNode.GetChildNode("extensions") is null) { _explicitNullValueExtensions = default!; _explicitNullProperties?.Remove("extensions"); }
+            else if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("replicas") is null) { _explicitNullValueReplicas = default!; _explicitNullProperties?.Remove("replicas"); }
+            else if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The size of the cluster. Available sizes can be found using the &apos;List cluster sizes&apos; endpoint. Changing a production branch to a PS-DEV size demotes it and also requires `connect_production_branch` or `demote_branches` access, or the `demote_branches` OAuth scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterSize { get; set; }
+        public string? ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string? _explicitNullValueClusterSize = default!;
 #nullable restore
 #else
-        public string ClusterSize { get; set; }
+        public string ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string _explicitNullValueClusterSize = default!;
 #endif
         /// <summary>Extensions to enable. This replaces the current set; omit it to leave them unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Extensions { get; set; }
+        public List<string>? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private List<string>? _explicitNullValueExtensions = default!;
 #nullable restore
 #else
-        public List<string> Extensions { get; set; }
+        public List<string> Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private List<string> _explicitNullValueExtensions = default!;
 #endif
         /// <summary>Cluster configuration parameters nested by namespace (e.g., {&quot;pgconf&quot;: {&quot;max_connections&quot;: &quot;200&quot;}}). Use the &apos;List cluster parameters&apos; endpoint to retrieve available parameters. Supported namespaces include &apos;patroni&apos;, &apos;pgconf&apos;, and &apos;pgbouncer&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>The total number of replicas</summary>
-        public int? Replicas { get; set; }
+        public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private int? _explicitNullValueReplicas = default!;
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequest"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestParameters>("parameters", Parameters);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchChangeRequestRequestStorage>("storage", Storage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

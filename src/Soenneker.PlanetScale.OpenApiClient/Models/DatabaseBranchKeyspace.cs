@@ -11,136 +11,239 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DatabaseBranchKeyspace : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cluster_display_name") is null) { _explicitNullValueClusterDisplayName = default!; _explicitNullProperties?.Remove("cluster_display_name"); }
+            else if (parseNode.GetChildNode("cluster_display_name") is { } nullNodeClusterDisplayName && nullNodeClusterDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterDisplayName = null;
+            if (parseNode.GetChildNode("cluster_name") is null) { _explicitNullValueClusterName = default!; _explicitNullProperties?.Remove("cluster_name"); }
+            else if (parseNode.GetChildNode("cluster_name") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
+            if (parseNode.GetChildNode("config_change_in_progress") is null) { _explicitNullValueConfigChangeInProgress = default!; _explicitNullProperties?.Remove("config_change_in_progress"); }
+            else if (parseNode.GetChildNode("config_change_in_progress") is { } nullNodeConfigChangeInProgress && nullNodeConfigChangeInProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigChangeInProgress = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("external") is null) { _explicitNullValueExternal = default!; _explicitNullProperties?.Remove("external"); }
+            else if (parseNode.GetChildNode("external") is { } nullNodeExternal && nullNodeExternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) External = null;
+            if (parseNode.GetChildNode("extra_replicas") is null) { _explicitNullValueExtraReplicas = default!; _explicitNullProperties?.Remove("extra_replicas"); }
+            else if (parseNode.GetChildNode("extra_replicas") is { } nullNodeExtraReplicas && nullNodeExtraReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraReplicas = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("imported") is null) { _explicitNullValueImported = default!; _explicitNullProperties?.Remove("imported"); }
+            else if (parseNode.GetChildNode("imported") is { } nullNodeImported && nullNodeImported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Imported = null;
+            if (parseNode.GetChildNode("max_rollout") is null) { _explicitNullValueMaxRollout = default!; _explicitNullProperties?.Remove("max_rollout"); }
+            else if (parseNode.GetChildNode("max_rollout") is { } nullNodeMaxRollout && nullNodeMaxRollout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRollout = null;
+            if (parseNode.GetChildNode("metal") is null) { _explicitNullValueMetal = default!; _explicitNullProperties?.Remove("metal"); }
+            else if (parseNode.GetChildNode("metal") is { } nullNodeMetal && nullNodeMetal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metal = null;
+            if (parseNode.GetChildNode("mysqld_options") is null) { _explicitNullValueMysqldOptions = default!; _explicitNullProperties?.Remove("mysqld_options"); }
+            else if (parseNode.GetChildNode("mysqld_options") is { } nullNodeMysqldOptions && nullNodeMysqldOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MysqldOptions = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("node_ttl_strategy") is null) { _explicitNullValueNodeTtlStrategy = default!; _explicitNullProperties?.Remove("node_ttl_strategy"); }
+            else if (parseNode.GetChildNode("node_ttl_strategy") is { } nullNodeNodeTtlStrategy && nullNodeNodeTtlStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeTtlStrategy = null;
+            if (parseNode.GetChildNode("ready") is null) { _explicitNullValueReady = default!; _explicitNullProperties?.Remove("ready"); }
+            else if (parseNode.GetChildNode("ready") is { } nullNodeReady && nullNodeReady.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ready = null;
+            if (parseNode.GetChildNode("replicas") is null) { _explicitNullValueReplicas = default!; _explicitNullProperties?.Remove("replicas"); }
+            else if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("replication_durability_constraints") is null) { _explicitNullValueReplicationDurabilityConstraints = default!; _explicitNullProperties?.Remove("replication_durability_constraints"); }
+            else if (parseNode.GetChildNode("replication_durability_constraints") is { } nullNodeReplicationDurabilityConstraints && nullNodeReplicationDurabilityConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicationDurabilityConstraints = null;
+            if (parseNode.GetChildNode("resize_in_progress") is null) { _explicitNullValueResizeInProgress = default!; _explicitNullProperties?.Remove("resize_in_progress"); }
+            else if (parseNode.GetChildNode("resize_in_progress") is { } nullNodeResizeInProgress && nullNodeResizeInProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResizeInProgress = null;
+            if (parseNode.GetChildNode("resize_pending") is null) { _explicitNullValueResizePending = default!; _explicitNullProperties?.Remove("resize_pending"); }
+            else if (parseNode.GetChildNode("resize_pending") is { } nullNodeResizePending && nullNodeResizePending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResizePending = null;
+            if (parseNode.GetChildNode("resizing") is null) { _explicitNullValueResizing = default!; _explicitNullProperties?.Remove("resizing"); }
+            else if (parseNode.GetChildNode("resizing") is { } nullNodeResizing && nullNodeResizing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resizing = null;
+            if (parseNode.GetChildNode("sharded") is null) { _explicitNullValueSharded = default!; _explicitNullProperties?.Remove("sharded"); }
+            else if (parseNode.GetChildNode("sharded") is { } nullNodeSharded && nullNodeSharded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sharded = null;
+            if (parseNode.GetChildNode("shards") is null) { _explicitNullValueShards = default!; _explicitNullProperties?.Remove("shards"); }
+            else if (parseNode.GetChildNode("shards") is { } nullNodeShards && nullNodeShards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shards = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("throttler") is null) { _explicitNullValueThrottler = default!; _explicitNullProperties?.Remove("throttler"); }
+            else if (parseNode.GetChildNode("throttler") is { } nullNodeThrottler && nullNodeThrottler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Throttler = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("vector_pool_allocation") is null) { _explicitNullValueVectorPoolAllocation = default!; _explicitNullProperties?.Remove("vector_pool_allocation"); }
+            else if (parseNode.GetChildNode("vector_pool_allocation") is { } nullNodeVectorPoolAllocation && nullNodeVectorPoolAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorPoolAllocation = null;
+            if (parseNode.GetChildNode("vreplication_flags") is null) { _explicitNullValueVreplicationFlags = default!; _explicitNullProperties?.Remove("vreplication_flags"); }
+            else if (parseNode.GetChildNode("vreplication_flags") is { } nullNodeVreplicationFlags && nullNodeVreplicationFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VreplicationFlags = null;
+            if (parseNode.GetChildNode("vttablet_options") is null) { _explicitNullValueVttabletOptions = default!; _explicitNullProperties?.Remove("vttablet_options"); }
+            else if (parseNode.GetChildNode("vttablet_options") is { } nullNodeVttabletOptions && nullNodeVttabletOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VttabletOptions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SKU representing the keyspace cluster size for display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterDisplayName { get; set; }
+        public string? ClusterDisplayName { get => _explicitNullValueClusterDisplayName; set { _explicitNullValueClusterDisplayName = value; AdditionalData?.Remove("cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_display_name"); else _explicitNullProperties?.Remove("cluster_display_name"); } }
+        private string? _explicitNullValueClusterDisplayName = default!;
 #nullable restore
 #else
-        public string ClusterDisplayName { get; set; }
+        public string ClusterDisplayName { get => _explicitNullValueClusterDisplayName; set { _explicitNullValueClusterDisplayName = value; AdditionalData?.Remove("cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_display_name"); else _explicitNullProperties?.Remove("cluster_display_name"); } }
+        private string _explicitNullValueClusterDisplayName = default!;
 #endif
         /// <summary>The SKU representing the keyspace cluster size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterName { get; set; }
+        public string? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string? _explicitNullValueClusterName = default!;
 #nullable restore
 #else
-        public string ClusterName { get; set; }
+        public string ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string _explicitNullValueClusterName = default!;
 #endif
         /// <summary>Is the keyspace undergoing a config change</summary>
-        public bool? ConfigChangeInProgress { get; set; }
+        public bool? ConfigChangeInProgress { get => _explicitNullValueConfigChangeInProgress; set { _explicitNullValueConfigChangeInProgress = value; AdditionalData?.Remove("config_change_in_progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config_change_in_progress"); else _explicitNullProperties?.Remove("config_change_in_progress"); } }
+        private bool? _explicitNullValueConfigChangeInProgress = default!;
         /// <summary>When the keyspace was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Is this the default keyspace for the branch</summary>
-        public bool? Default { get; set; }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private bool? _explicitNullValueDefault = default!;
         /// <summary>If the keyspace uses an external datasource</summary>
-        public bool? External { get; set; }
+        public bool? External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; AdditionalData?.Remove("external"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
+        private bool? _explicitNullValueExternal = default!;
         /// <summary>Number of extra replicas in the keyspace</summary>
-        public int? ExtraReplicas { get; set; }
+        public int? ExtraReplicas { get => _explicitNullValueExtraReplicas; set { _explicitNullValueExtraReplicas = value; AdditionalData?.Remove("extra_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_replicas"); else _explicitNullProperties?.Remove("extra_replicas"); } }
+        private int? _explicitNullValueExtraReplicas = default!;
         /// <summary>The ID of the keyspace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Is this keyspace used in an import</summary>
-        public bool? Imported { get; set; }
+        public bool? Imported { get => _explicitNullValueImported; set { _explicitNullValueImported = value; AdditionalData?.Remove("imported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported"); else _explicitNullProperties?.Remove("imported"); } }
+        private bool? _explicitNullValueImported = default!;
         /// <summary>The maximum number of shards rolled out in parallel. Null uses the infrastructure default of 1. Effective concurrency is capped at 32.</summary>
-        public int? MaxRollout { get; set; }
+        public int? MaxRollout { get => _explicitNullValueMaxRollout; set { _explicitNullValueMaxRollout = value; AdditionalData?.Remove("max_rollout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_rollout"); else _explicitNullProperties?.Remove("max_rollout"); } }
+        private int? _explicitNullValueMaxRollout = default!;
         /// <summary>Is the keyspace running on metal instances</summary>
-        public bool? Metal { get; set; }
+        public bool? Metal { get => _explicitNullValueMetal; set { _explicitNullValueMetal = value; AdditionalData?.Remove("metal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metal"); else _explicitNullProperties?.Remove("metal"); } }
+        private bool? _explicitNullValueMetal = default!;
         /// <summary>MySQL daemon configuration options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty? MysqldOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty? MysqldOptions { get => _explicitNullValueMysqldOptions; set { _explicitNullValueMysqldOptions = value; AdditionalData?.Remove("mysqld_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysqld_options"); else _explicitNullProperties?.Remove("mysqld_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty? _explicitNullValueMysqldOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty MysqldOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty MysqldOptions { get => _explicitNullValueMysqldOptions; set { _explicitNullValueMysqldOptions = value; AdditionalData?.Remove("mysqld_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysqld_options"); else _explicitNullProperties?.Remove("mysqld_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty _explicitNullValueMysqldOptions = default!;
 #endif
         /// <summary>Name of the keyspace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Controls when node TTL drains are allowed</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceNodeTtlStrategy? NodeTtlStrategy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceNodeTtlStrategy? NodeTtlStrategy { get => _explicitNullValueNodeTtlStrategy; set { _explicitNullValueNodeTtlStrategy = value; AdditionalData?.Remove("node_ttl_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_ttl_strategy"); else _explicitNullProperties?.Remove("node_ttl_strategy"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceNodeTtlStrategy? _explicitNullValueNodeTtlStrategy = default!;
         /// <summary>Is the keyspace provisioned and serving traffic</summary>
-        public bool? Ready { get; set; }
+        public bool? Ready { get => _explicitNullValueReady; set { _explicitNullValueReady = value; AdditionalData?.Remove("ready"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ready"); else _explicitNullProperties?.Remove("ready"); } }
+        private bool? _explicitNullValueReady = default!;
         /// <summary>Total number of replicas in the keyspace</summary>
-        public int? Replicas { get; set; }
+        public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private int? _explicitNullValueReplicas = default!;
         /// <summary>The replication_durability_constraints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints? ReplicationDurabilityConstraints { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints? ReplicationDurabilityConstraints { get => _explicitNullValueReplicationDurabilityConstraints; set { _explicitNullValueReplicationDurabilityConstraints = value; AdditionalData?.Remove("replication_durability_constraints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replication_durability_constraints"); else _explicitNullProperties?.Remove("replication_durability_constraints"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints? _explicitNullValueReplicationDurabilityConstraints = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints ReplicationDurabilityConstraints { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints ReplicationDurabilityConstraints { get => _explicitNullValueReplicationDurabilityConstraints; set { _explicitNullValueReplicationDurabilityConstraints = value; AdditionalData?.Remove("replication_durability_constraints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replication_durability_constraints"); else _explicitNullProperties?.Remove("replication_durability_constraints"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints _explicitNullValueReplicationDurabilityConstraints = default!;
 #endif
         /// <summary>True if the keyspace has an unfinished resize request</summary>
-        public bool? ResizeInProgress { get; set; }
+        public bool? ResizeInProgress { get => _explicitNullValueResizeInProgress; set { _explicitNullValueResizeInProgress = value; AdditionalData?.Remove("resize_in_progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_in_progress"); else _explicitNullProperties?.Remove("resize_in_progress"); } }
+        private bool? _explicitNullValueResizeInProgress = default!;
         /// <summary>Is the keyspace awaiting a resize</summary>
-        public bool? ResizePending { get; set; }
+        public bool? ResizePending { get => _explicitNullValueResizePending; set { _explicitNullValueResizePending = value; AdditionalData?.Remove("resize_pending"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_pending"); else _explicitNullProperties?.Remove("resize_pending"); } }
+        private bool? _explicitNullValueResizePending = default!;
         /// <summary>Is the keyspace currently resizing</summary>
-        public bool? Resizing { get; set; }
+        public bool? Resizing { get => _explicitNullValueResizing; set { _explicitNullValueResizing = value; AdditionalData?.Remove("resizing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resizing"); else _explicitNullProperties?.Remove("resizing"); } }
+        private bool? _explicitNullValueResizing = default!;
         /// <summary>If the keyspace is sharded</summary>
-        public bool? Sharded { get; set; }
+        public bool? Sharded { get => _explicitNullValueSharded; set { _explicitNullValueSharded = value; AdditionalData?.Remove("sharded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharded"); else _explicitNullProperties?.Remove("sharded"); } }
+        private bool? _explicitNullValueSharded = default!;
         /// <summary>The number of keyspace shards</summary>
-        public int? Shards { get; set; }
+        public int? Shards { get => _explicitNullValueShards; set { _explicitNullValueShards = value; AdditionalData?.Remove("shards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shards"); else _explicitNullProperties?.Remove("shards"); } }
+        private int? _explicitNullValueShards = default!;
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>The throttler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler? Throttler { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler? Throttler { get => _explicitNullValueThrottler; set { _explicitNullValueThrottler = value; AdditionalData?.Remove("throttler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler"); else _explicitNullProperties?.Remove("throttler"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler? _explicitNullValueThrottler = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler Throttler { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler Throttler { get => _explicitNullValueThrottler; set { _explicitNullValueThrottler = value; AdditionalData?.Remove("throttler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler"); else _explicitNullProperties?.Remove("throttler"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceThrottler _explicitNullValueThrottler = default!;
 #endif
         /// <summary>When the keyspace was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>Percentage of buffer pool memory allocated to vector indexes</summary>
-        public double? VectorPoolAllocation { get; set; }
+        public double? VectorPoolAllocation { get => _explicitNullValueVectorPoolAllocation; set { _explicitNullValueVectorPoolAllocation = value; AdditionalData?.Remove("vector_pool_allocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector_pool_allocation"); else _explicitNullProperties?.Remove("vector_pool_allocation"); } }
+        private double? _explicitNullValueVectorPoolAllocation = default!;
         /// <summary>The vreplication_flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags? VreplicationFlags { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags? VreplicationFlags { get => _explicitNullValueVreplicationFlags; set { _explicitNullValueVreplicationFlags = value; AdditionalData?.Remove("vreplication_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vreplication_flags"); else _explicitNullProperties?.Remove("vreplication_flags"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags? _explicitNullValueVreplicationFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags VreplicationFlags { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags VreplicationFlags { get => _explicitNullValueVreplicationFlags; set { _explicitNullValueVreplicationFlags = value; AdditionalData?.Remove("vreplication_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vreplication_flags"); else _explicitNullProperties?.Remove("vreplication_flags"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags _explicitNullValueVreplicationFlags = default!;
 #endif
         /// <summary>VTTablet configuration options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty? VttabletOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty? VttabletOptions { get => _explicitNullValueVttabletOptions; set { _explicitNullValueVttabletOptions = value; AdditionalData?.Remove("vttablet_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vttablet_options"); else _explicitNullProperties?.Remove("vttablet_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty? _explicitNullValueVttabletOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty VttabletOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty VttabletOptions { get => _explicitNullValueVttabletOptions; set { _explicitNullValueVttabletOptions = value; AdditionalData?.Remove("vttablet_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vttablet_options"); else _explicitNullProperties?.Remove("vttablet_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty _explicitNullValueVttabletOptions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspace"/> and sets the default values.
@@ -157,7 +260,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspace CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspace();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspace(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,7 +283,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "metal", n => { Metal = n.GetBoolValue(); } },
                 { "mysqld_options", n => { MysqldOptions = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceMysqldOptionsProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "node_ttl_strategy", n => { NodeTtlStrategy = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceNodeTtlStrategy>(); } },
+                { "node_ttl_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceNodeTtlStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNodeTtlStrategy = default; _explicitNullProperties?.Remove("node_ttl_strategy"); AdditionalData["node_ttl_strategy"] = unknown; } else { NodeTtlStrategy = parsed; AdditionalData.Remove("node_ttl_strategy"); } } },
                 { "ready", n => { Ready = n.GetBoolValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "replication_durability_constraints", n => { ReplicationDurabilityConstraints = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceReplicationDurabilityConstraints.CreateFromDiscriminatorValue); } },
@@ -232,6 +335,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("vector_pool_allocation", VectorPoolAllocation);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVreplicationFlags>("vreplication_flags", VreplicationFlags);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchKeyspaceVttabletOptionsProperty>("vttablet_options", VttabletOptions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,15 +11,31 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateKeyspaceRequestStorage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("disk_scaling_strategy") is null) { _explicitNullValueDiskScalingStrategy = default!; _explicitNullProperties?.Remove("disk_scaling_strategy"); }
+            else if (parseNode.GetChildNode("disk_scaling_strategy") is { } nullNodeDiskScalingStrategy && nullNodeDiskScalingStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiskScalingStrategy = null;
+            if (parseNode.GetChildNode("max_storage_bytes") is null) { _explicitNullValueMaxStorageBytes = default!; _explicitNullProperties?.Remove("max_storage_bytes"); }
+            else if (parseNode.GetChildNode("max_storage_bytes") is { } nullNodeMaxStorageBytes && nullNodeMaxStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxStorageBytes = null;
+            if (parseNode.GetChildNode("storage_bytes") is null) { _explicitNullValueStorageBytes = default!; _explicitNullProperties?.Remove("storage_bytes"); }
+            else if (parseNode.GetChildNode("storage_bytes") is { } nullNodeStorageBytes && nullNodeStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageBytes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How disk size is managed. `grow` automatically increases disk size as needed, up to `max_storage_bytes`. `disable` turns off automatic disk growth. `shrink` resizes disks to `storage_bytes` and then turns off automatic disk growth.</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy? DiskScalingStrategy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy? DiskScalingStrategy { get => _explicitNullValueDiskScalingStrategy; set { _explicitNullValueDiskScalingStrategy = value; AdditionalData?.Remove("disk_scaling_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_scaling_strategy"); else _explicitNullProperties?.Remove("disk_scaling_strategy"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy? _explicitNullValueDiskScalingStrategy = default!;
         /// <summary>The maximum size in bytes that disks can automatically grow to. Must be at least the size of the largest current disk and no more than the organization&apos;s storage limit (4 TB by default).</summary>
-        public int? MaxStorageBytes { get; set; }
+        public int? MaxStorageBytes { get => _explicitNullValueMaxStorageBytes; set { _explicitNullValueMaxStorageBytes = value; AdditionalData?.Remove("max_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_storage_bytes"); else _explicitNullProperties?.Remove("max_storage_bytes"); } }
+        private int? _explicitNullValueMaxStorageBytes = default!;
         /// <summary>The disk size in bytes to shrink to. Only applies when `disk_scaling_strategy` is `shrink`. Must be a multiple of 1 GB and no more than the organization&apos;s storage limit (4 TB by default). Rejected if any disk is using more than 80% of the requested size.</summary>
-        public int? StorageBytes { get; set; }
+        public int? StorageBytes { get => _explicitNullValueStorageBytes; set { _explicitNullValueStorageBytes = value; AdditionalData?.Remove("storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_bytes"); else _explicitNullProperties?.Remove("storage_bytes"); } }
+        private int? _explicitNullValueStorageBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage"/> and sets the default values.
         /// </summary>
@@ -35,7 +51,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +61,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disk_scaling_strategy", n => { DiskScalingStrategy = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy>(); } },
+                { "disk_scaling_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDiskScalingStrategy = default; _explicitNullProperties?.Remove("disk_scaling_strategy"); AdditionalData["disk_scaling_strategy"] = unknown; } else { DiskScalingStrategy = parsed; AdditionalData.Remove("disk_scaling_strategy"); } } },
                 { "max_storage_bytes", n => { MaxStorageBytes = n.GetIntValue(); } },
                 { "storage_bytes", n => { StorageBytes = n.GetIntValue(); } },
             };
@@ -60,6 +76,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorageDiskScalingStrategy>("disk_scaling_strategy", DiskScalingStrategy);
             writer.WriteIntValue("max_storage_bytes", MaxStorageBytes);
             writer.WriteIntValue("storage_bytes", StorageBytes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

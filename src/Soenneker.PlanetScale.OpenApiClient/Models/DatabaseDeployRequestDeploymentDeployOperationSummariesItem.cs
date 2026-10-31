@@ -11,126 +11,206 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DatabaseDeployRequestDeploymentDeployOperationSummariesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("can_drop_data") is null) { _explicitNullValueCanDropData = default!; _explicitNullProperties?.Remove("can_drop_data"); }
+            else if (parseNode.GetChildNode("can_drop_data") is { } nullNodeCanDropData && nullNodeCanDropData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanDropData = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("ddl_statement") is null) { _explicitNullValueDdlStatement = default!; _explicitNullProperties?.Remove("ddl_statement"); }
+            else if (parseNode.GetChildNode("ddl_statement") is { } nullNodeDdlStatement && nullNodeDdlStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DdlStatement = null;
+            if (parseNode.GetChildNode("deploy_errors") is null) { _explicitNullValueDeployErrors = default!; _explicitNullProperties?.Remove("deploy_errors"); }
+            else if (parseNode.GetChildNode("deploy_errors") is { } nullNodeDeployErrors && nullNodeDeployErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployErrors = null;
+            if (parseNode.GetChildNode("eta_seconds") is null) { _explicitNullValueEtaSeconds = default!; _explicitNullProperties?.Remove("eta_seconds"); }
+            else if (parseNode.GetChildNode("eta_seconds") is { } nullNodeEtaSeconds && nullNodeEtaSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EtaSeconds = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("keyspace_name") is null) { _explicitNullValueKeyspaceName = default!; _explicitNullProperties?.Remove("keyspace_name"); }
+            else if (parseNode.GetChildNode("keyspace_name") is { } nullNodeKeyspaceName && nullNodeKeyspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyspaceName = null;
+            if (parseNode.GetChildNode("operation_name") is null) { _explicitNullValueOperationName = default!; _explicitNullProperties?.Remove("operation_name"); }
+            else if (parseNode.GetChildNode("operation_name") is { } nullNodeOperationName && nullNodeOperationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationName = null;
+            if (parseNode.GetChildNode("operations") is null) { _explicitNullValueOperations = default!; _explicitNullProperties?.Remove("operations"); }
+            else if (parseNode.GetChildNode("operations") is { } nullNodeOperations && nullNodeOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operations = null;
+            if (parseNode.GetChildNode("progress_percentage") is null) { _explicitNullValueProgressPercentage = default!; _explicitNullProperties?.Remove("progress_percentage"); }
+            else if (parseNode.GetChildNode("progress_percentage") is { } nullNodeProgressPercentage && nullNodeProgressPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressPercentage = null;
+            if (parseNode.GetChildNode("removed_foreign_key_names") is null) { _explicitNullValueRemovedForeignKeyNames = default!; _explicitNullProperties?.Remove("removed_foreign_key_names"); }
+            else if (parseNode.GetChildNode("removed_foreign_key_names") is { } nullNodeRemovedForeignKeyNames && nullNodeRemovedForeignKeyNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedForeignKeyNames = null;
+            if (parseNode.GetChildNode("shard_count") is null) { _explicitNullValueShardCount = default!; _explicitNullProperties?.Remove("shard_count"); }
+            else if (parseNode.GetChildNode("shard_count") is { } nullNodeShardCount && nullNodeShardCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardCount = null;
+            if (parseNode.GetChildNode("sharded") is null) { _explicitNullValueSharded = default!; _explicitNullProperties?.Remove("sharded"); }
+            else if (parseNode.GetChildNode("sharded") is { } nullNodeSharded && nullNodeSharded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sharded = null;
+            if (parseNode.GetChildNode("shard_names") is null) { _explicitNullValueShardNames = default!; _explicitNullProperties?.Remove("shard_names"); }
+            else if (parseNode.GetChildNode("shard_names") is { } nullNodeShardNames && nullNodeShardNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardNames = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("syntax_highlighted_ddl") is null) { _explicitNullValueSyntaxHighlightedDdl = default!; _explicitNullProperties?.Remove("syntax_highlighted_ddl"); }
+            else if (parseNode.GetChildNode("syntax_highlighted_ddl") is { } nullNodeSyntaxHighlightedDdl && nullNodeSyntaxHighlightedDdl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntaxHighlightedDdl = null;
+            if (parseNode.GetChildNode("table_name") is null) { _explicitNullValueTableName = default!; _explicitNullProperties?.Remove("table_name"); }
+            else if (parseNode.GetChildNode("table_name") is { } nullNodeTableName && nullNodeTableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableName = null;
+            if (parseNode.GetChildNode("table_recently_used") is null) { _explicitNullValueTableRecentlyUsed = default!; _explicitNullProperties?.Remove("table_recently_used"); }
+            else if (parseNode.GetChildNode("table_recently_used") is { } nullNodeTableRecentlyUsed && nullNodeTableRecentlyUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableRecentlyUsed = null;
+            if (parseNode.GetChildNode("table_recently_used_at") is null) { _explicitNullValueTableRecentlyUsedAt = default!; _explicitNullProperties?.Remove("table_recently_used_at"); }
+            else if (parseNode.GetChildNode("table_recently_used_at") is { } nullNodeTableRecentlyUsedAt && nullNodeTableRecentlyUsedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableRecentlyUsedAt = null;
+            if (parseNode.GetChildNode("throttled_at") is null) { _explicitNullValueThrottledAt = default!; _explicitNullProperties?.Remove("throttled_at"); }
+            else if (parseNode.GetChildNode("throttled_at") is { } nullNodeThrottledAt && nullNodeThrottledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThrottledAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not the deploy operation summary is capable of dropping data</summary>
-        public bool? CanDropData { get; set; }
+        public bool? CanDropData { get => _explicitNullValueCanDropData; set { _explicitNullValueCanDropData = value; AdditionalData?.Remove("can_drop_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_drop_data"); else _explicitNullProperties?.Remove("can_drop_data"); } }
+        private bool? _explicitNullValueCanDropData = default!;
         /// <summary>When the deploy operation summary was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The DDL statement for the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DdlStatement { get; set; }
+        public string? DdlStatement { get => _explicitNullValueDdlStatement; set { _explicitNullValueDdlStatement = value; AdditionalData?.Remove("ddl_statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddl_statement"); else _explicitNullProperties?.Remove("ddl_statement"); } }
+        private string? _explicitNullValueDdlStatement = default!;
 #nullable restore
 #else
-        public string DdlStatement { get; set; }
+        public string DdlStatement { get => _explicitNullValueDdlStatement; set { _explicitNullValueDdlStatement = value; AdditionalData?.Remove("ddl_statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddl_statement"); else _explicitNullProperties?.Remove("ddl_statement"); } }
+        private string _explicitNullValueDdlStatement = default!;
 #endif
         /// <summary>Deploy errors for the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployErrors { get; set; }
+        public string? DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
+        private string? _explicitNullValueDeployErrors = default!;
 #nullable restore
 #else
-        public string DeployErrors { get; set; }
+        public string DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
+        private string _explicitNullValueDeployErrors = default!;
 #endif
         /// <summary>The estimated seconds until completion for the deploy operation summary</summary>
-        public int? EtaSeconds { get; set; }
+        public int? EtaSeconds { get => _explicitNullValueEtaSeconds; set { _explicitNullValueEtaSeconds = value; AdditionalData?.Remove("eta_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eta_seconds"); else _explicitNullProperties?.Remove("eta_seconds"); } }
+        private int? _explicitNullValueEtaSeconds = default!;
         /// <summary>The ID for the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The keyspace modified by the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyspaceName { get; set; }
+        public string? KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string? _explicitNullValueKeyspaceName = default!;
 #nullable restore
 #else
-        public string KeyspaceName { get; set; }
+        public string KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string _explicitNullValueKeyspaceName = default!;
 #endif
         /// <summary>The operation name of the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationName { get; set; }
+        public string? OperationName { get => _explicitNullValueOperationName; set { _explicitNullValueOperationName = value; AdditionalData?.Remove("operation_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_name"); else _explicitNullProperties?.Remove("operation_name"); } }
+        private string? _explicitNullValueOperationName = default!;
 #nullable restore
 #else
-        public string OperationName { get; set; }
+        public string OperationName { get => _explicitNullValueOperationName; set { _explicitNullValueOperationName = value; AdditionalData?.Remove("operation_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_name"); else _explicitNullProperties?.Remove("operation_name"); } }
+        private string _explicitNullValueOperationName = default!;
 #endif
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem>? Operations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem>? Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; AdditionalData?.Remove("operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operations"); else _explicitNullProperties?.Remove("operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem>? _explicitNullValueOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem> Operations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem> Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; AdditionalData?.Remove("operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operations"); else _explicitNullProperties?.Remove("operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem> _explicitNullValueOperations = default!;
 #endif
         /// <summary>The percent completion for the deploy operation summary</summary>
-        public double? ProgressPercentage { get; set; }
+        public double? ProgressPercentage { get => _explicitNullValueProgressPercentage; set { _explicitNullValueProgressPercentage = value; AdditionalData?.Remove("progress_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress_percentage"); else _explicitNullProperties?.Remove("progress_percentage"); } }
+        private double? _explicitNullValueProgressPercentage = default!;
         /// <summary>Names of foreign keys removed by this operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovedForeignKeyNames { get; set; }
+        public List<string>? RemovedForeignKeyNames { get => _explicitNullValueRemovedForeignKeyNames; set { _explicitNullValueRemovedForeignKeyNames = value; AdditionalData?.Remove("removed_foreign_key_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed_foreign_key_names"); else _explicitNullProperties?.Remove("removed_foreign_key_names"); } }
+        private List<string>? _explicitNullValueRemovedForeignKeyNames = default!;
 #nullable restore
 #else
-        public List<string> RemovedForeignKeyNames { get; set; }
+        public List<string> RemovedForeignKeyNames { get => _explicitNullValueRemovedForeignKeyNames; set { _explicitNullValueRemovedForeignKeyNames = value; AdditionalData?.Remove("removed_foreign_key_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed_foreign_key_names"); else _explicitNullProperties?.Remove("removed_foreign_key_names"); } }
+        private List<string> _explicitNullValueRemovedForeignKeyNames = default!;
 #endif
         /// <summary>The number of shards in the keyspace modified by the deploy operation summary</summary>
-        public int? ShardCount { get; set; }
+        public int? ShardCount { get => _explicitNullValueShardCount; set { _explicitNullValueShardCount = value; AdditionalData?.Remove("shard_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_count"); else _explicitNullProperties?.Remove("shard_count"); } }
+        private int? _explicitNullValueShardCount = default!;
         /// <summary>Whether or not the keyspace modified by the deploy operation summary is sharded</summary>
-        public bool? Sharded { get; set; }
+        public bool? Sharded { get => _explicitNullValueSharded; set { _explicitNullValueSharded = value; AdditionalData?.Remove("sharded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharded"); else _explicitNullProperties?.Remove("sharded"); } }
+        private bool? _explicitNullValueSharded = default!;
         /// <summary>Names of shards in the keyspace modified by the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ShardNames { get; set; }
+        public List<string>? ShardNames { get => _explicitNullValueShardNames; set { _explicitNullValueShardNames = value; AdditionalData?.Remove("shard_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_names"); else _explicitNullProperties?.Remove("shard_names"); } }
+        private List<string>? _explicitNullValueShardNames = default!;
 #nullable restore
 #else
-        public List<string> ShardNames { get; set; }
+        public List<string> ShardNames { get => _explicitNullValueShardNames; set { _explicitNullValueShardNames = value; AdditionalData?.Remove("shard_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_names"); else _explicitNullProperties?.Remove("shard_names"); } }
+        private List<string> _explicitNullValueShardNames = default!;
 #endif
         /// <summary>The state of the deploy operation summary</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemState? _explicitNullValueState = default!;
         /// <summary>A syntax-highlighted DDL statement for the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SyntaxHighlightedDdl { get; set; }
+        public string? SyntaxHighlightedDdl { get => _explicitNullValueSyntaxHighlightedDdl; set { _explicitNullValueSyntaxHighlightedDdl = value; AdditionalData?.Remove("syntax_highlighted_ddl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_ddl"); else _explicitNullProperties?.Remove("syntax_highlighted_ddl"); } }
+        private string? _explicitNullValueSyntaxHighlightedDdl = default!;
 #nullable restore
 #else
-        public string SyntaxHighlightedDdl { get; set; }
+        public string SyntaxHighlightedDdl { get => _explicitNullValueSyntaxHighlightedDdl; set { _explicitNullValueSyntaxHighlightedDdl = value; AdditionalData?.Remove("syntax_highlighted_ddl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_ddl"); else _explicitNullProperties?.Remove("syntax_highlighted_ddl"); } }
+        private string _explicitNullValueSyntaxHighlightedDdl = default!;
 #endif
         /// <summary>The name of the table modifed by the deploy operation summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TableName { get; set; }
+        public string? TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string? _explicitNullValueTableName = default!;
 #nullable restore
 #else
-        public string TableName { get; set; }
+        public string TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string _explicitNullValueTableName = default!;
 #endif
         /// <summary>Whether or not the table modified by the deploy operation summary was recently used</summary>
-        public bool? TableRecentlyUsed { get; set; }
+        public bool? TableRecentlyUsed { get => _explicitNullValueTableRecentlyUsed; set { _explicitNullValueTableRecentlyUsed = value; AdditionalData?.Remove("table_recently_used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_recently_used"); else _explicitNullProperties?.Remove("table_recently_used"); } }
+        private bool? _explicitNullValueTableRecentlyUsed = default!;
         /// <summary>When the table modified by the deploy operation summary was last used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TableRecentlyUsedAt { get; set; }
+        public string? TableRecentlyUsedAt { get => _explicitNullValueTableRecentlyUsedAt; set { _explicitNullValueTableRecentlyUsedAt = value; AdditionalData?.Remove("table_recently_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_recently_used_at"); else _explicitNullProperties?.Remove("table_recently_used_at"); } }
+        private string? _explicitNullValueTableRecentlyUsedAt = default!;
 #nullable restore
 #else
-        public string TableRecentlyUsedAt { get; set; }
+        public string TableRecentlyUsedAt { get => _explicitNullValueTableRecentlyUsedAt; set { _explicitNullValueTableRecentlyUsedAt = value; AdditionalData?.Remove("table_recently_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_recently_used_at"); else _explicitNullProperties?.Remove("table_recently_used_at"); } }
+        private string _explicitNullValueTableRecentlyUsedAt = default!;
 #endif
         /// <summary>When the deploy operation summary was last throttled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThrottledAt { get; set; }
+        public string? ThrottledAt { get => _explicitNullValueThrottledAt; set { _explicitNullValueThrottledAt = value; AdditionalData?.Remove("throttled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttled_at"); else _explicitNullProperties?.Remove("throttled_at"); } }
+        private string? _explicitNullValueThrottledAt = default!;
 #nullable restore
 #else
-        public string ThrottledAt { get; set; }
+        public string ThrottledAt { get => _explicitNullValueThrottledAt; set { _explicitNullValueThrottledAt = value; AdditionalData?.Remove("throttled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttled_at"); else _explicitNullProperties?.Remove("throttled_at"); } }
+        private string _explicitNullValueThrottledAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItem"/> and sets the default values.
@@ -147,7 +227,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -171,7 +251,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "shard_count", n => { ShardCount = n.GetIntValue(); } },
                 { "shard_names", n => { ShardNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sharded", n => { Sharded = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseDeployRequestDeploymentDeployOperationSummariesItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "syntax_highlighted_ddl", n => { SyntaxHighlightedDdl = n.GetStringValue(); } },
                 { "table_name", n => { TableName = n.GetStringValue(); } },
                 { "table_recently_used", n => { TableRecentlyUsed = n.GetBoolValue(); } },
@@ -206,6 +286,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("table_recently_used", TableRecentlyUsed);
             writer.WriteStringValue("table_recently_used_at", TableRecentlyUsedAt);
             writer.WriteStringValue("throttled_at", ThrottledAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

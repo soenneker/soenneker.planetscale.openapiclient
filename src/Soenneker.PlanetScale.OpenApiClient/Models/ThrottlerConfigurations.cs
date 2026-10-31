@@ -11,32 +11,51 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThrottlerConfigurations : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configurable") is null) { _explicitNullValueConfigurable = default!; _explicitNullProperties?.Remove("configurable"); }
+            else if (parseNode.GetChildNode("configurable") is { } nullNodeConfigurable && nullNodeConfigurable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configurable = null;
+            if (parseNode.GetChildNode("configurations") is null) { _explicitNullValueConfigurations = default!; _explicitNullProperties?.Remove("configurations"); }
+            else if (parseNode.GetChildNode("configurations") is { } nullNodeConfigurations && nullNodeConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configurations = null;
+            if (parseNode.GetChildNode("keyspaces") is null) { _explicitNullValueKeyspaces = default!; _explicitNullProperties?.Remove("keyspaces"); }
+            else if (parseNode.GetChildNode("keyspaces") is { } nullNodeKeyspaces && nullNodeKeyspaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyspaces = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configurable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable? Configurable { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable? Configurable { get => _explicitNullValueConfigurable; set { _explicitNullValueConfigurable = value; AdditionalData?.Remove("configurable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurable"); else _explicitNullProperties?.Remove("configurable"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable? _explicitNullValueConfigurable = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable Configurable { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable Configurable { get => _explicitNullValueConfigurable; set { _explicitNullValueConfigurable = value; AdditionalData?.Remove("configurable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurable"); else _explicitNullProperties?.Remove("configurable"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable _explicitNullValueConfigurable = default!;
 #endif
         /// <summary>The configurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem>? Configurations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem>? Configurations { get => _explicitNullValueConfigurations; set { _explicitNullValueConfigurations = value; AdditionalData?.Remove("configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurations"); else _explicitNullProperties?.Remove("configurations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem>? _explicitNullValueConfigurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem> Configurations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem> Configurations { get => _explicitNullValueConfigurations; set { _explicitNullValueConfigurations = value; AdditionalData?.Remove("configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurations"); else _explicitNullProperties?.Remove("configurations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem> _explicitNullValueConfigurations = default!;
 #endif
         /// <summary>Keyspaces that are eligible for throttler configuration in the configurable resource (database or deploy request)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keyspaces { get; set; }
+        public List<string>? Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
+        private List<string>? _explicitNullValueKeyspaces = default!;
 #nullable restore
 #else
-        public List<string> Keyspaces { get; set; }
+        public List<string> Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
+        private List<string> _explicitNullValueKeyspaces = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurations"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurations();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurations(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurable>("configurable", Configurable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem>("configurations", Configurations);
             writer.WriteCollectionOfPrimitiveValues<string>("keyspaces", Keyspaces);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

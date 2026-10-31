@@ -11,25 +11,48 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateBranchResizeRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("vtgate_autoscaling") is null) { _explicitNullValueVtgateAutoscaling = default!; _explicitNullProperties?.Remove("vtgate_autoscaling"); }
+            else if (parseNode.GetChildNode("vtgate_autoscaling") is { } nullNodeVtgateAutoscaling && nullNodeVtgateAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateAutoscaling = null;
+            if (parseNode.GetChildNode("vtgate_count") is null) { _explicitNullValueVtgateCount = default!; _explicitNullProperties?.Remove("vtgate_count"); }
+            else if (parseNode.GetChildNode("vtgate_count") is { } nullNodeVtgateCount && nullNodeVtgateCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateCount = null;
+            if (parseNode.GetChildNode("vtgate_max_count") is null) { _explicitNullValueVtgateMaxCount = default!; _explicitNullProperties?.Remove("vtgate_max_count"); }
+            else if (parseNode.GetChildNode("vtgate_max_count") is { } nullNodeVtgateMaxCount && nullNodeVtgateMaxCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateMaxCount = null;
+            if (parseNode.GetChildNode("vtgate_size") is null) { _explicitNullValueVtgateSize = default!; _explicitNullProperties?.Remove("vtgate_size"); }
+            else if (parseNode.GetChildNode("vtgate_size") is { } nullNodeVtgateSize && nullNodeVtgateSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateSize = null;
+            if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is null) { _explicitNullValueVtgateTargetCpuUtilization = default!; _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is { } nullNodeVtgateTargetCpuUtilization && nullNodeVtgateTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateTargetCpuUtilization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If autoscaling is enabled for the vtgate cluster</summary>
-        public bool? VtgateAutoscaling { get; set; }
+        public bool? VtgateAutoscaling { get => _explicitNullValueVtgateAutoscaling; set { _explicitNullValueVtgateAutoscaling = value; AdditionalData?.Remove("vtgate_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_autoscaling"); else _explicitNullProperties?.Remove("vtgate_autoscaling"); } }
+        private bool? _explicitNullValueVtgateAutoscaling = default!;
         /// <summary>The number of vtgates in an availability zone</summary>
-        public int? VtgateCount { get; set; }
+        public int? VtgateCount { get => _explicitNullValueVtgateCount; set { _explicitNullValueVtgateCount = value; AdditionalData?.Remove("vtgate_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_count"); else _explicitNullProperties?.Remove("vtgate_count"); } }
+        private int? _explicitNullValueVtgateCount = default!;
         /// <summary>The maximum number of vtgates in an availability zone when autoscaling is enabled</summary>
-        public int? VtgateMaxCount { get; set; }
+        public int? VtgateMaxCount { get => _explicitNullValueVtgateMaxCount; set { _explicitNullValueVtgateMaxCount = value; AdditionalData?.Remove("vtgate_max_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_max_count"); else _explicitNullProperties?.Remove("vtgate_max_count"); } }
+        private int? _explicitNullValueVtgateMaxCount = default!;
         /// <summary>The size of the vtgate cluster: VTG_5, VTG_10,…</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateSize { get; set; }
+        public string? VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string? _explicitNullValueVtgateSize = default!;
 #nullable restore
 #else
-        public string VtgateSize { get; set; }
+        public string VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string _explicitNullValueVtgateSize = default!;
 #endif
         /// <summary>The target CPU utilization for the vtgate cluster when autoscaling is enabled</summary>
-        public int? VtgateTargetCpuUtilization { get; set; }
+        public int? VtgateTargetCpuUtilization { get => _explicitNullValueVtgateTargetCpuUtilization; set { _explicitNullValueVtgateTargetCpuUtilization = value; AdditionalData?.Remove("vtgate_target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_target_cpu_utilization"); else _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); } }
+        private int? _explicitNullValueVtgateTargetCpuUtilization = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchResizeRequestRequest"/> and sets the default values.
         /// </summary>
@@ -45,7 +68,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchResizeRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchResizeRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBranchResizeRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("vtgate_max_count", VtgateMaxCount);
             writer.WriteStringValue("vtgate_size", VtgateSize);
             writer.WriteIntValue("vtgate_target_cpu_utilization", VtgateTargetCpuUtilization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

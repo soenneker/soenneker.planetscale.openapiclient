@@ -11,31 +11,55 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeploymentDeployOperationSummariesItemOperationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("eta_seconds") is null) { _explicitNullValueEtaSeconds = default!; _explicitNullProperties?.Remove("eta_seconds"); }
+            else if (parseNode.GetChildNode("eta_seconds") is { } nullNodeEtaSeconds && nullNodeEtaSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EtaSeconds = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("progress_percentage") is null) { _explicitNullValueProgressPercentage = default!; _explicitNullProperties?.Remove("progress_percentage"); }
+            else if (parseNode.GetChildNode("progress_percentage") is { } nullNodeProgressPercentage && nullNodeProgressPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressPercentage = null;
+            if (parseNode.GetChildNode("shard") is null) { _explicitNullValueShard = default!; _explicitNullProperties?.Remove("shard"); }
+            else if (parseNode.GetChildNode("shard") is { } nullNodeShard && nullNodeShard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shard = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated seconds until completion for the deploy operation</summary>
-        public int? EtaSeconds { get; set; }
+        public int? EtaSeconds { get => _explicitNullValueEtaSeconds; set { _explicitNullValueEtaSeconds = value; AdditionalData?.Remove("eta_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eta_seconds"); else _explicitNullProperties?.Remove("eta_seconds"); } }
+        private int? _explicitNullValueEtaSeconds = default!;
         /// <summary>The ID for the deploy operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The percent completion for the deploy operation</summary>
-        public double? ProgressPercentage { get; set; }
+        public double? ProgressPercentage { get => _explicitNullValueProgressPercentage; set { _explicitNullValueProgressPercentage = value; AdditionalData?.Remove("progress_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress_percentage"); else _explicitNullProperties?.Remove("progress_percentage"); } }
+        private double? _explicitNullValueProgressPercentage = default!;
         /// <summary>The shard the deploy operation is being performed on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Shard { get; set; }
+        public string? Shard { get => _explicitNullValueShard; set { _explicitNullValueShard = value; AdditionalData?.Remove("shard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard"); else _explicitNullProperties?.Remove("shard"); } }
+        private string? _explicitNullValueShard = default!;
 #nullable restore
 #else
-        public string Shard { get; set; }
+        public string Shard { get => _explicitNullValueShard; set { _explicitNullValueShard = value; AdditionalData?.Remove("shard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard"); else _explicitNullProperties?.Remove("shard"); } }
+        private string _explicitNullValueShard = default!;
 #endif
         /// <summary>The state of the deploy operation</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItem"/> and sets the default values.
         /// </summary>
@@ -51,7 +75,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "progress_percentage", n => { ProgressPercentage = n.GetDoubleValue(); } },
                 { "shard", n => { Shard = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
             };
         }
         /// <summary>
@@ -80,6 +104,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("progress_percentage", ProgressPercentage);
             writer.WriteStringValue("shard", Shard);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItemOperationsItemState>("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

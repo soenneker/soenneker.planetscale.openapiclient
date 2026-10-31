@@ -11,150 +11,242 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedDatabaseBranchPasswordDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_host_regional_url") is null) { _explicitNullValueAccessHostRegionalUrl = default!; _explicitNullProperties?.Remove("access_host_regional_url"); }
+            else if (parseNode.GetChildNode("access_host_regional_url") is { } nullNodeAccessHostRegionalUrl && nullNodeAccessHostRegionalUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessHostRegionalUrl = null;
+            if (parseNode.GetChildNode("access_host_regional_urls") is null) { _explicitNullValueAccessHostRegionalUrls = default!; _explicitNullProperties?.Remove("access_host_regional_urls"); }
+            else if (parseNode.GetChildNode("access_host_regional_urls") is { } nullNodeAccessHostRegionalUrls && nullNodeAccessHostRegionalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessHostRegionalUrls = null;
+            if (parseNode.GetChildNode("access_host_url") is null) { _explicitNullValueAccessHostUrl = default!; _explicitNullProperties?.Remove("access_host_url"); }
+            else if (parseNode.GetChildNode("access_host_url") is { } nullNodeAccessHostUrl && nullNodeAccessHostUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessHostUrl = null;
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("cidrs") is null) { _explicitNullValueCidrs = default!; _explicitNullProperties?.Remove("cidrs"); }
+            else if (parseNode.GetChildNode("cidrs") is { } nullNodeCidrs && nullNodeCidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidrs = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("database_branch") is null) { _explicitNullValueDatabaseBranch = default!; _explicitNullProperties?.Remove("database_branch"); }
+            else if (parseNode.GetChildNode("database_branch") is { } nullNodeDatabaseBranch && nullNodeDatabaseBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseBranch = null;
+            if (parseNode.GetChildNode("deleted_at") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deleted_at"); }
+            else if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("direct_vtgate") is null) { _explicitNullValueDirectVtgate = default!; _explicitNullProperties?.Remove("direct_vtgate"); }
+            else if (parseNode.GetChildNode("direct_vtgate") is { } nullNodeDirectVtgate && nullNodeDirectVtgate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectVtgate = null;
+            if (parseNode.GetChildNode("direct_vtgate_addresses") is null) { _explicitNullValueDirectVtgateAddresses = default!; _explicitNullProperties?.Remove("direct_vtgate_addresses"); }
+            else if (parseNode.GetChildNode("direct_vtgate_addresses") is { } nullNodeDirectVtgateAddresses && nullNodeDirectVtgateAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectVtgateAddresses = null;
+            if (parseNode.GetChildNode("expired") is null) { _explicitNullValueExpired = default!; _explicitNullProperties?.Remove("expired"); }
+            else if (parseNode.GetChildNode("expired") is { } nullNodeExpired && nullNodeExpired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expired = null;
+            if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
+            else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_used_at") is null) { _explicitNullValueLastUsedAt = default!; _explicitNullProperties?.Remove("last_used_at"); }
+            else if (parseNode.GetChildNode("last_used_at") is { } nullNodeLastUsedAt && nullNodeLastUsedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedAt = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("plain_text") is null) { _explicitNullValuePlainText = default!; _explicitNullProperties?.Remove("plain_text"); }
+            else if (parseNode.GetChildNode("plain_text") is { } nullNodePlainText && nullNodePlainText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlainText = null;
+            if (parseNode.GetChildNode("read_only_region") is null) { _explicitNullValueReadOnlyRegion = default!; _explicitNullProperties?.Remove("read_only_region"); }
+            else if (parseNode.GetChildNode("read_only_region") is { } nullNodeReadOnlyRegion && nullNodeReadOnlyRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadOnlyRegion = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("renewable") is null) { _explicitNullValueRenewable = default!; _explicitNullProperties?.Remove("renewable"); }
+            else if (parseNode.GetChildNode("renewable") is { } nullNodeRenewable && nullNodeRenewable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renewable = null;
+            if (parseNode.GetChildNode("replica") is null) { _explicitNullValueReplica = default!; _explicitNullProperties?.Remove("replica"); }
+            else if (parseNode.GetChildNode("replica") is { } nullNodeReplica && nullNodeReplica.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replica = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("ttl_seconds") is null) { _explicitNullValueTtlSeconds = default!; _explicitNullProperties?.Remove("ttl_seconds"); }
+            else if (parseNode.GetChildNode("ttl_seconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
+            if (parseNode.GetChildNode("username") is null) { _explicitNullValueUsername = default!; _explicitNullProperties?.Remove("username"); }
+            else if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+        }
+
         /// <summary>The regional host URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessHostRegionalUrl { get; set; }
+        public string? AccessHostRegionalUrl { get => _explicitNullValueAccessHostRegionalUrl; set { _explicitNullValueAccessHostRegionalUrl = value; AdditionalData?.Remove("access_host_regional_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_regional_url"); else _explicitNullProperties?.Remove("access_host_regional_url"); } }
+        private string? _explicitNullValueAccessHostRegionalUrl = default!;
 #nullable restore
 #else
-        public string AccessHostRegionalUrl { get; set; }
+        public string AccessHostRegionalUrl { get => _explicitNullValueAccessHostRegionalUrl; set { _explicitNullValueAccessHostRegionalUrl = value; AdditionalData?.Remove("access_host_regional_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_regional_url"); else _explicitNullProperties?.Remove("access_host_regional_url"); } }
+        private string _explicitNullValueAccessHostRegionalUrl = default!;
 #endif
         /// <summary>The read-only replica host URLs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccessHostRegionalUrls { get; set; }
+        public List<string>? AccessHostRegionalUrls { get => _explicitNullValueAccessHostRegionalUrls; set { _explicitNullValueAccessHostRegionalUrls = value; AdditionalData?.Remove("access_host_regional_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_regional_urls"); else _explicitNullProperties?.Remove("access_host_regional_urls"); } }
+        private List<string>? _explicitNullValueAccessHostRegionalUrls = default!;
 #nullable restore
 #else
-        public List<string> AccessHostRegionalUrls { get; set; }
+        public List<string> AccessHostRegionalUrls { get => _explicitNullValueAccessHostRegionalUrls; set { _explicitNullValueAccessHostRegionalUrls = value; AdditionalData?.Remove("access_host_regional_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_regional_urls"); else _explicitNullProperties?.Remove("access_host_regional_urls"); } }
+        private List<string> _explicitNullValueAccessHostRegionalUrls = default!;
 #endif
         /// <summary>The host URL for the password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessHostUrl { get; set; }
+        public string? AccessHostUrl { get => _explicitNullValueAccessHostUrl; set { _explicitNullValueAccessHostUrl = value; AdditionalData?.Remove("access_host_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_url"); else _explicitNullProperties?.Remove("access_host_url"); } }
+        private string? _explicitNullValueAccessHostUrl = default!;
 #nullable restore
 #else
-        public string AccessHostUrl { get; set; }
+        public string AccessHostUrl { get => _explicitNullValueAccessHostUrl; set { _explicitNullValueAccessHostUrl = value; AdditionalData?.Remove("access_host_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_host_url"); else _explicitNullProperties?.Remove("access_host_url"); } }
+        private string _explicitNullValueAccessHostUrl = default!;
 #endif
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of IP addresses or CIDR ranges that can use this password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cidrs { get; set; }
+        public List<string>? Cidrs { get => _explicitNullValueCidrs; set { _explicitNullValueCidrs = value; AdditionalData?.Remove("cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidrs"); else _explicitNullProperties?.Remove("cidrs"); } }
+        private List<string>? _explicitNullValueCidrs = default!;
 #nullable restore
 #else
-        public List<string> Cidrs { get; set; }
+        public List<string> Cidrs { get => _explicitNullValueCidrs; set { _explicitNullValueCidrs = value; AdditionalData?.Remove("cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidrs"); else _explicitNullProperties?.Remove("cidrs"); } }
+        private List<string> _explicitNullValueCidrs = default!;
 #endif
         /// <summary>When the password was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The database_branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch? DatabaseBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch? DatabaseBranch { get => _explicitNullValueDatabaseBranch; set { _explicitNullValueDatabaseBranch = value; AdditionalData?.Remove("database_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch"); else _explicitNullProperties?.Remove("database_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch? _explicitNullValueDatabaseBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch DatabaseBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch DatabaseBranch { get => _explicitNullValueDatabaseBranch; set { _explicitNullValueDatabaseBranch = value; AdditionalData?.Remove("database_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch"); else _explicitNullProperties?.Remove("database_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemDatabaseBranch _explicitNullValueDatabaseBranch = default!;
 #endif
         /// <summary>When the password was deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public string? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public string DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>True if the credentials connect directly to a vtgate, bypassing load balancers</summary>
-        public bool? DirectVtgate { get; set; }
+        public bool? DirectVtgate { get => _explicitNullValueDirectVtgate; set { _explicitNullValueDirectVtgate = value; AdditionalData?.Remove("direct_vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_vtgate"); else _explicitNullProperties?.Remove("direct_vtgate"); } }
+        private bool? _explicitNullValueDirectVtgate = default!;
         /// <summary>The list of hosts in each availability zone providing direct access to a vtgate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DirectVtgateAddresses { get; set; }
+        public List<string>? DirectVtgateAddresses { get => _explicitNullValueDirectVtgateAddresses; set { _explicitNullValueDirectVtgateAddresses = value; AdditionalData?.Remove("direct_vtgate_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_vtgate_addresses"); else _explicitNullProperties?.Remove("direct_vtgate_addresses"); } }
+        private List<string>? _explicitNullValueDirectVtgateAddresses = default!;
 #nullable restore
 #else
-        public List<string> DirectVtgateAddresses { get; set; }
+        public List<string> DirectVtgateAddresses { get => _explicitNullValueDirectVtgateAddresses; set { _explicitNullValueDirectVtgateAddresses = value; AdditionalData?.Remove("direct_vtgate_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_vtgate_addresses"); else _explicitNullProperties?.Remove("direct_vtgate_addresses"); } }
+        private List<string> _explicitNullValueDirectVtgateAddresses = default!;
 #endif
         /// <summary>True if the credentials are expired</summary>
-        public bool? Expired { get; set; }
+        public bool? Expired { get => _explicitNullValueExpired; set { _explicitNullValueExpired = value; AdditionalData?.Remove("expired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired"); else _explicitNullProperties?.Remove("expired"); } }
+        private bool? _explicitNullValueExpired = default!;
         /// <summary>When the password will expire</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The ID for the password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>When the password was last used to execute a query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUsedAt { get; set; }
+        public string? LastUsedAt { get => _explicitNullValueLastUsedAt; set { _explicitNullValueLastUsedAt = value; AdditionalData?.Remove("last_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_at"); else _explicitNullProperties?.Remove("last_used_at"); } }
+        private string? _explicitNullValueLastUsedAt = default!;
 #nullable restore
 #else
-        public string LastUsedAt { get; set; }
+        public string LastUsedAt { get => _explicitNullValueLastUsedAt; set { _explicitNullValueLastUsedAt = value; AdditionalData?.Remove("last_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_at"); else _explicitNullProperties?.Remove("last_used_at"); } }
+        private string _explicitNullValueLastUsedAt = default!;
 #endif
         /// <summary>The display name for the password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The plaintext password. Null except in the response from the create endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlainText { get; set; }
+        public string? PlainText { get => _explicitNullValuePlainText; set { _explicitNullValuePlainText = value; AdditionalData?.Remove("plain_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text"); else _explicitNullProperties?.Remove("plain_text"); } }
+        private string? _explicitNullValuePlainText = default!;
 #nullable restore
 #else
-        public string PlainText { get; set; }
+        public string PlainText { get => _explicitNullValuePlainText; set { _explicitNullValuePlainText = value; AdditionalData?.Remove("plain_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text"); else _explicitNullProperties?.Remove("plain_text"); } }
+        private string _explicitNullValuePlainText = default!;
 #endif
         /// <summary>Whether or not the password is scoped to a read-only region</summary>
-        public bool? ReadOnlyRegion { get; set; }
+        public bool? ReadOnlyRegion { get => _explicitNullValueReadOnlyRegion; set { _explicitNullValueReadOnlyRegion = value; AdditionalData?.Remove("read_only_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_only_region"); else _explicitNullProperties?.Remove("read_only_region"); } }
+        private bool? _explicitNullValueReadOnlyRegion = default!;
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion? Region { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion Region { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion _explicitNullValueRegion = default!;
 #endif
         /// <summary>Whether or not the password can be renewed</summary>
-        public bool? Renewable { get; set; }
+        public bool? Renewable { get => _explicitNullValueRenewable; set { _explicitNullValueRenewable = value; AdditionalData?.Remove("renewable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewable"); else _explicitNullProperties?.Remove("renewable"); } }
+        private bool? _explicitNullValueRenewable = default!;
         /// <summary>Whether or not the password is for a read replica</summary>
-        public bool? Replica { get; set; }
+        public bool? Replica { get => _explicitNullValueReplica; set { _explicitNullValueReplica = value; AdditionalData?.Remove("replica"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replica"); else _explicitNullProperties?.Remove("replica"); } }
+        private bool? _explicitNullValueReplica = default!;
         /// <summary>The role for the password</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole? Role { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole? _explicitNullValueRole = default!;
         /// <summary>Time to live (in seconds) for the password. The password will be invalid when TTL has passed</summary>
-        public int? TtlSeconds { get; set; }
+        public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttl_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_seconds"); else _explicitNullProperties?.Remove("ttl_seconds"); } }
+        private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>The username for the password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get; set; }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItem"/> and sets the default values.
@@ -171,7 +263,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -201,7 +293,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "region", n => { Region = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRegion.CreateFromDiscriminatorValue); } },
                 { "renewable", n => { Renewable = n.GetBoolValue(); } },
                 { "replica", n => { Replica = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
                 { "ttl_seconds", n => { TtlSeconds = n.GetIntValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -236,6 +328,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchPasswordDataItemRole>("role", Role);
             writer.WriteIntValue("ttl_seconds", TtlSeconds);
             writer.WriteStringValue("username", Username);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

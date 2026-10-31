@@ -11,154 +11,236 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ServiceToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor_display_name") is null) { _explicitNullValueActorDisplayName = default!; _explicitNullProperties?.Remove("actor_display_name"); }
+            else if (parseNode.GetChildNode("actor_display_name") is { } nullNodeActorDisplayName && nullNodeActorDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorDisplayName = null;
+            if (parseNode.GetChildNode("actor_id") is null) { _explicitNullValueActorId = default!; _explicitNullProperties?.Remove("actor_id"); }
+            else if (parseNode.GetChildNode("actor_id") is { } nullNodeActorId && nullNodeActorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorId = null;
+            if (parseNode.GetChildNode("actor_type") is null) { _explicitNullValueActorType = default!; _explicitNullProperties?.Remove("actor_type"); }
+            else if (parseNode.GetChildNode("actor_type") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
+            if (parseNode.GetChildNode("avatar_url") is null) { _explicitNullValueAvatarUrl = default!; _explicitNullProperties?.Remove("avatar_url"); }
+            else if (parseNode.GetChildNode("avatar_url") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
+            else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
+            else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_used_asn") is null) { _explicitNullValueLastUsedAsn = default!; _explicitNullProperties?.Remove("last_used_asn"); }
+            else if (parseNode.GetChildNode("last_used_asn") is { } nullNodeLastUsedAsn && nullNodeLastUsedAsn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedAsn = null;
+            if (parseNode.GetChildNode("last_used_asn_organization") is null) { _explicitNullValueLastUsedAsnOrganization = default!; _explicitNullProperties?.Remove("last_used_asn_organization"); }
+            else if (parseNode.GetChildNode("last_used_asn_organization") is { } nullNodeLastUsedAsnOrganization && nullNodeLastUsedAsnOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedAsnOrganization = null;
+            if (parseNode.GetChildNode("last_used_at") is null) { _explicitNullValueLastUsedAt = default!; _explicitNullProperties?.Remove("last_used_at"); }
+            else if (parseNode.GetChildNode("last_used_at") is { } nullNodeLastUsedAt && nullNodeLastUsedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedAt = null;
+            if (parseNode.GetChildNode("last_used_ip") is null) { _explicitNullValueLastUsedIp = default!; _explicitNullProperties?.Remove("last_used_ip"); }
+            else if (parseNode.GetChildNode("last_used_ip") is { } nullNodeLastUsedIp && nullNodeLastUsedIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedIp = null;
+            if (parseNode.GetChildNode("last_used_location") is null) { _explicitNullValueLastUsedLocation = default!; _explicitNullProperties?.Remove("last_used_location"); }
+            else if (parseNode.GetChildNode("last_used_location") is { } nullNodeLastUsedLocation && nullNodeLastUsedLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUsedLocation = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("oauth_accesses_by_resource") is null) { _explicitNullValueOauthAccessesByResource = default!; _explicitNullProperties?.Remove("oauth_accesses_by_resource"); }
+            else if (parseNode.GetChildNode("oauth_accesses_by_resource") is { } nullNodeOauthAccessesByResource && nullNodeOauthAccessesByResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthAccessesByResource = null;
+            if (parseNode.GetChildNode("plain_text_refresh_token") is null) { _explicitNullValuePlainTextRefreshToken = default!; _explicitNullProperties?.Remove("plain_text_refresh_token"); }
+            else if (parseNode.GetChildNode("plain_text_refresh_token") is { } nullNodePlainTextRefreshToken && nullNodePlainTextRefreshToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlainTextRefreshToken = null;
+            if (parseNode.GetChildNode("service_token_accesses") is null) { _explicitNullValueServiceTokenAccesses = default!; _explicitNullProperties?.Remove("service_token_accesses"); }
+            else if (parseNode.GetChildNode("service_token_accesses") is { } nullNodeServiceTokenAccesses && nullNodeServiceTokenAccesses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTokenAccesses = null;
+            if (parseNode.GetChildNode("token") is null) { _explicitNullValueToken = default!; _explicitNullProperties?.Remove("token"); }
+            else if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The name of the actor on whose behalf the service token was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActorDisplayName { get; set; }
+        public string? ActorDisplayName { get => _explicitNullValueActorDisplayName; set { _explicitNullValueActorDisplayName = value; AdditionalData?.Remove("actor_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_display_name"); else _explicitNullProperties?.Remove("actor_display_name"); } }
+        private string? _explicitNullValueActorDisplayName = default!;
 #nullable restore
 #else
-        public string ActorDisplayName { get; set; }
+        public string ActorDisplayName { get => _explicitNullValueActorDisplayName; set { _explicitNullValueActorDisplayName = value; AdditionalData?.Remove("actor_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_display_name"); else _explicitNullProperties?.Remove("actor_display_name"); } }
+        private string _explicitNullValueActorDisplayName = default!;
 #endif
         /// <summary>The ID of the actor on whose behalf the service token was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActorId { get; set; }
+        public string? ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actor_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_id"); else _explicitNullProperties?.Remove("actor_id"); } }
+        private string? _explicitNullValueActorId = default!;
 #nullable restore
 #else
-        public string ActorId { get; set; }
+        public string ActorId { get => _explicitNullValueActorId; set { _explicitNullValueActorId = value; AdditionalData?.Remove("actor_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_id"); else _explicitNullProperties?.Remove("actor_id"); } }
+        private string _explicitNullValueActorId = default!;
 #endif
         /// <summary>The type of the actor on whose behalf the service token was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActorType { get; set; }
+        public string? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actor_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_type"); else _explicitNullProperties?.Remove("actor_type"); } }
+        private string? _explicitNullValueActorType = default!;
 #nullable restore
 #else
-        public string ActorType { get; set; }
+        public string ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actor_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_type"); else _explicitNullProperties?.Remove("actor_type"); } }
+        private string _explicitNullValueActorType = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The image source for the avatar of the service token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarUrl { get; set; }
+        public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        private string? _explicitNullValueAvatarUrl = default!;
 #nullable restore
 #else
-        public string AvatarUrl { get; set; }
+        public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar_url"); else _explicitNullProperties?.Remove("avatar_url"); } }
+        private string _explicitNullValueAvatarUrl = default!;
 #endif
         /// <summary>When the service token was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The display name of the service token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>When the service token will expire</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The ID of the service token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The autonomous system number for the service token&apos;s latest use</summary>
-        public int? LastUsedAsn { get; set; }
+        public int? LastUsedAsn { get => _explicitNullValueLastUsedAsn; set { _explicitNullValueLastUsedAsn = value; AdditionalData?.Remove("last_used_asn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_asn"); else _explicitNullProperties?.Remove("last_used_asn"); } }
+        private int? _explicitNullValueLastUsedAsn = default!;
         /// <summary>The autonomous system organization for the service token&apos;s latest use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUsedAsnOrganization { get; set; }
+        public string? LastUsedAsnOrganization { get => _explicitNullValueLastUsedAsnOrganization; set { _explicitNullValueLastUsedAsnOrganization = value; AdditionalData?.Remove("last_used_asn_organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_asn_organization"); else _explicitNullProperties?.Remove("last_used_asn_organization"); } }
+        private string? _explicitNullValueLastUsedAsnOrganization = default!;
 #nullable restore
 #else
-        public string LastUsedAsnOrganization { get; set; }
+        public string LastUsedAsnOrganization { get => _explicitNullValueLastUsedAsnOrganization; set { _explicitNullValueLastUsedAsnOrganization = value; AdditionalData?.Remove("last_used_asn_organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_asn_organization"); else _explicitNullProperties?.Remove("last_used_asn_organization"); } }
+        private string _explicitNullValueLastUsedAsnOrganization = default!;
 #endif
         /// <summary>When the service token was last used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUsedAt { get; set; }
+        public string? LastUsedAt { get => _explicitNullValueLastUsedAt; set { _explicitNullValueLastUsedAt = value; AdditionalData?.Remove("last_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_at"); else _explicitNullProperties?.Remove("last_used_at"); } }
+        private string? _explicitNullValueLastUsedAt = default!;
 #nullable restore
 #else
-        public string LastUsedAt { get; set; }
+        public string LastUsedAt { get => _explicitNullValueLastUsedAt; set { _explicitNullValueLastUsedAt = value; AdditionalData?.Remove("last_used_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_at"); else _explicitNullProperties?.Remove("last_used_at"); } }
+        private string _explicitNullValueLastUsedAt = default!;
 #endif
         /// <summary>The IP address from the service token&apos;s latest use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUsedIp { get; set; }
+        public string? LastUsedIp { get => _explicitNullValueLastUsedIp; set { _explicitNullValueLastUsedIp = value; AdditionalData?.Remove("last_used_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_ip"); else _explicitNullProperties?.Remove("last_used_ip"); } }
+        private string? _explicitNullValueLastUsedIp = default!;
 #nullable restore
 #else
-        public string LastUsedIp { get; set; }
+        public string LastUsedIp { get => _explicitNullValueLastUsedIp; set { _explicitNullValueLastUsedIp = value; AdditionalData?.Remove("last_used_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_ip"); else _explicitNullProperties?.Remove("last_used_ip"); } }
+        private string _explicitNullValueLastUsedIp = default!;
 #endif
         /// <summary>The location of the service token&apos;s latest use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUsedLocation { get; set; }
+        public string? LastUsedLocation { get => _explicitNullValueLastUsedLocation; set { _explicitNullValueLastUsedLocation = value; AdditionalData?.Remove("last_used_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_location"); else _explicitNullProperties?.Remove("last_used_location"); } }
+        private string? _explicitNullValueLastUsedLocation = default!;
 #nullable restore
 #else
-        public string LastUsedLocation { get; set; }
+        public string LastUsedLocation { get => _explicitNullValueLastUsedLocation; set { _explicitNullValueLastUsedLocation = value; AdditionalData?.Remove("last_used_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_used_location"); else _explicitNullProperties?.Remove("last_used_location"); } }
+        private string _explicitNullValueLastUsedLocation = default!;
 #endif
         /// <summary>The name of the service token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The oauth_accesses_by_resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource? OauthAccessesByResource { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource? OauthAccessesByResource { get => _explicitNullValueOauthAccessesByResource; set { _explicitNullValueOauthAccessesByResource = value; AdditionalData?.Remove("oauth_accesses_by_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_accesses_by_resource"); else _explicitNullProperties?.Remove("oauth_accesses_by_resource"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource? _explicitNullValueOauthAccessesByResource = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource OauthAccessesByResource { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource OauthAccessesByResource { get => _explicitNullValueOauthAccessesByResource; set { _explicitNullValueOauthAccessesByResource = value; AdditionalData?.Remove("oauth_accesses_by_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_accesses_by_resource"); else _explicitNullProperties?.Remove("oauth_accesses_by_resource"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenOAuthAccessesByResource _explicitNullValueOauthAccessesByResource = default!;
 #endif
         /// <summary>The plaintext refresh token. Available only after create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlainTextRefreshToken { get; set; }
+        public string? PlainTextRefreshToken { get => _explicitNullValuePlainTextRefreshToken; set { _explicitNullValuePlainTextRefreshToken = value; AdditionalData?.Remove("plain_text_refresh_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text_refresh_token"); else _explicitNullProperties?.Remove("plain_text_refresh_token"); } }
+        private string? _explicitNullValuePlainTextRefreshToken = default!;
 #nullable restore
 #else
-        public string PlainTextRefreshToken { get; set; }
+        public string PlainTextRefreshToken { get => _explicitNullValuePlainTextRefreshToken; set { _explicitNullValuePlainTextRefreshToken = value; AdditionalData?.Remove("plain_text_refresh_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plain_text_refresh_token"); else _explicitNullProperties?.Remove("plain_text_refresh_token"); } }
+        private string _explicitNullValuePlainTextRefreshToken = default!;
 #endif
         /// <summary>The service_token_accesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem>? ServiceTokenAccesses { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem>? ServiceTokenAccesses { get => _explicitNullValueServiceTokenAccesses; set { _explicitNullValueServiceTokenAccesses = value; AdditionalData?.Remove("service_token_accesses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_accesses"); else _explicitNullProperties?.Remove("service_token_accesses"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem>? _explicitNullValueServiceTokenAccesses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem> ServiceTokenAccesses { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem> ServiceTokenAccesses { get => _explicitNullValueServiceTokenAccesses; set { _explicitNullValueServiceTokenAccesses = value; AdditionalData?.Remove("service_token_accesses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_token_accesses"); else _explicitNullProperties?.Remove("service_token_accesses"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem> _explicitNullValueServiceTokenAccesses = default!;
 #endif
         /// <summary>The plaintext token. Available only after create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get; set; }
+        public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private string? _explicitNullValueToken = default!;
 #nullable restore
 #else
-        public string Token { get; set; }
+        public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private string _explicitNullValueToken = default!;
 #endif
         /// <summary>When the service token was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken"/> and sets the default values.
@@ -175,7 +257,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -232,6 +314,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceTokenServiceTokenAccessesItem>("service_token_accesses", ServiceTokenAccesses);
             writer.WriteStringValue("token", Token);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,110 +11,174 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SchemaRecommendation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("applied_at") is null) { _explicitNullValueAppliedAt = default!; _explicitNullProperties?.Remove("applied_at"); }
+            else if (parseNode.GetChildNode("applied_at") is { } nullNodeAppliedAt && nullNodeAppliedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliedAt = null;
+            if (parseNode.GetChildNode("closed_by_deploy_request") is null) { _explicitNullValueClosedByDeployRequest = default!; _explicitNullProperties?.Remove("closed_by_deploy_request"); }
+            else if (parseNode.GetChildNode("closed_by_deploy_request") is { } nullNodeClosedByDeployRequest && nullNodeClosedByDeployRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedByDeployRequest = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("ddl_statement") is null) { _explicitNullValueDdlStatement = default!; _explicitNullProperties?.Remove("ddl_statement"); }
+            else if (parseNode.GetChildNode("ddl_statement") is { } nullNodeDdlStatement && nullNodeDdlStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DdlStatement = null;
+            if (parseNode.GetChildNode("dismissed_at") is null) { _explicitNullValueDismissedAt = default!; _explicitNullProperties?.Remove("dismissed_at"); }
+            else if (parseNode.GetChildNode("dismissed_at") is { } nullNodeDismissedAt && nullNodeDismissedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissedAt = null;
+            if (parseNode.GetChildNode("dismissed_by") is null) { _explicitNullValueDismissedBy = default!; _explicitNullProperties?.Remove("dismissed_by"); }
+            else if (parseNode.GetChildNode("dismissed_by") is { } nullNodeDismissedBy && nullNodeDismissedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissedBy = null;
+            if (parseNode.GetChildNode("html_url") is null) { _explicitNullValueHtmlUrl = default!; _explicitNullProperties?.Remove("html_url"); }
+            else if (parseNode.GetChildNode("html_url") is { } nullNodeHtmlUrl && nullNodeHtmlUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlUrl = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("keyspace") is null) { _explicitNullValueKeyspace = default!; _explicitNullProperties?.Remove("keyspace"); }
+            else if (parseNode.GetChildNode("keyspace") is { } nullNodeKeyspace && nullNodeKeyspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyspace = null;
+            if (parseNode.GetChildNode("number") is null) { _explicitNullValueNumber = default!; _explicitNullProperties?.Remove("number"); }
+            else if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
+            if (parseNode.GetChildNode("recommendation_type") is null) { _explicitNullValueRecommendationType = default!; _explicitNullProperties?.Remove("recommendation_type"); }
+            else if (parseNode.GetChildNode("recommendation_type") is { } nullNodeRecommendationType && nullNodeRecommendationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecommendationType = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("table_name") is null) { _explicitNullValueTableName = default!; _explicitNullProperties?.Remove("table_name"); }
+            else if (parseNode.GetChildNode("table_name") is { } nullNodeTableName && nullNodeTableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableName = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the recommendation was applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppliedAt { get; set; }
+        public string? AppliedAt { get => _explicitNullValueAppliedAt; set { _explicitNullValueAppliedAt = value; AdditionalData?.Remove("applied_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applied_at"); else _explicitNullProperties?.Remove("applied_at"); } }
+        private string? _explicitNullValueAppliedAt = default!;
 #nullable restore
 #else
-        public string AppliedAt { get; set; }
+        public string AppliedAt { get => _explicitNullValueAppliedAt; set { _explicitNullValueAppliedAt = value; AdditionalData?.Remove("applied_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applied_at"); else _explicitNullProperties?.Remove("applied_at"); } }
+        private string _explicitNullValueAppliedAt = default!;
 #endif
         /// <summary>The closed_by_deploy_request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest? ClosedByDeployRequest { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest? ClosedByDeployRequest { get => _explicitNullValueClosedByDeployRequest; set { _explicitNullValueClosedByDeployRequest = value; AdditionalData?.Remove("closed_by_deploy_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_by_deploy_request"); else _explicitNullProperties?.Remove("closed_by_deploy_request"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest? _explicitNullValueClosedByDeployRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest ClosedByDeployRequest { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest ClosedByDeployRequest { get => _explicitNullValueClosedByDeployRequest; set { _explicitNullValueClosedByDeployRequest = value; AdditionalData?.Remove("closed_by_deploy_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_by_deploy_request"); else _explicitNullProperties?.Remove("closed_by_deploy_request"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationClosedByDeployRequest _explicitNullValueClosedByDeployRequest = default!;
 #endif
         /// <summary>When the recommendation was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The DDL statement to apply the recommendation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DdlStatement { get; set; }
+        public string? DdlStatement { get => _explicitNullValueDdlStatement; set { _explicitNullValueDdlStatement = value; AdditionalData?.Remove("ddl_statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddl_statement"); else _explicitNullProperties?.Remove("ddl_statement"); } }
+        private string? _explicitNullValueDdlStatement = default!;
 #nullable restore
 #else
-        public string DdlStatement { get; set; }
+        public string DdlStatement { get => _explicitNullValueDdlStatement; set { _explicitNullValueDdlStatement = value; AdditionalData?.Remove("ddl_statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddl_statement"); else _explicitNullProperties?.Remove("ddl_statement"); } }
+        private string _explicitNullValueDdlStatement = default!;
 #endif
         /// <summary>When the recommendation was dismissed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DismissedAt { get; set; }
+        public string? DismissedAt { get => _explicitNullValueDismissedAt; set { _explicitNullValueDismissedAt = value; AdditionalData?.Remove("dismissed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed_at"); else _explicitNullProperties?.Remove("dismissed_at"); } }
+        private string? _explicitNullValueDismissedAt = default!;
 #nullable restore
 #else
-        public string DismissedAt { get; set; }
+        public string DismissedAt { get => _explicitNullValueDismissedAt; set { _explicitNullValueDismissedAt = value; AdditionalData?.Remove("dismissed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed_at"); else _explicitNullProperties?.Remove("dismissed_at"); } }
+        private string _explicitNullValueDismissedAt = default!;
 #endif
         /// <summary>The dismissed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy? DismissedBy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy? DismissedBy { get => _explicitNullValueDismissedBy; set { _explicitNullValueDismissedBy = value; AdditionalData?.Remove("dismissed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed_by"); else _explicitNullProperties?.Remove("dismissed_by"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy? _explicitNullValueDismissedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy DismissedBy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy DismissedBy { get => _explicitNullValueDismissedBy; set { _explicitNullValueDismissedBy = value; AdditionalData?.Remove("dismissed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissed_by"); else _explicitNullProperties?.Remove("dismissed_by"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationDismissedBy _explicitNullValueDismissedBy = default!;
 #endif
         /// <summary>The URL to the schema recommendation in the app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get => _explicitNullValueHtmlUrl; set { _explicitNullValueHtmlUrl = value; AdditionalData?.Remove("html_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_url"); else _explicitNullProperties?.Remove("html_url"); } }
+        private string? _explicitNullValueHtmlUrl = default!;
 #nullable restore
 #else
-        public string HtmlUrl { get; set; }
+        public string HtmlUrl { get => _explicitNullValueHtmlUrl; set { _explicitNullValueHtmlUrl = value; AdditionalData?.Remove("html_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_url"); else _explicitNullProperties?.Remove("html_url"); } }
+        private string _explicitNullValueHtmlUrl = default!;
 #endif
         /// <summary>The ID of the schema recommendation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The keyspace the recommendation applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Keyspace { get; set; }
+        public string? Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string? _explicitNullValueKeyspace = default!;
 #nullable restore
 #else
-        public string Keyspace { get; set; }
+        public string Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string _explicitNullValueKeyspace = default!;
 #endif
         /// <summary>The number of the schema recommendation</summary>
-        public int? Number { get; set; }
+        public int? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        private int? _explicitNullValueNumber = default!;
         /// <summary>The type of recommendation</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationRecommendationType? RecommendationType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationRecommendationType? RecommendationType { get => _explicitNullValueRecommendationType; set { _explicitNullValueRecommendationType = value; AdditionalData?.Remove("recommendation_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendation_type"); else _explicitNullProperties?.Remove("recommendation_type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationRecommendationType? _explicitNullValueRecommendationType = default!;
         /// <summary>The state of the recommendation</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationState? _explicitNullValueState = default!;
         /// <summary>The name of the table the recommendation applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TableName { get; set; }
+        public string? TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string? _explicitNullValueTableName = default!;
 #nullable restore
 #else
-        public string TableName { get; set; }
+        public string TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string _explicitNullValueTableName = default!;
 #endif
         /// <summary>The title of the schema recommendation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>When the recommendation was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendation"/> and sets the default values.
@@ -131,7 +195,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -151,8 +215,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "keyspace", n => { Keyspace = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
-                { "recommendation_type", n => { RecommendationType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationRecommendationType>(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationState>(); } },
+                { "recommendation_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationRecommendationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecommendationType = default; _explicitNullProperties?.Remove("recommendation_type"); AdditionalData["recommendation_type"] = unknown; } else { RecommendationType = parsed; AdditionalData.Remove("recommendation_type"); } } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.SchemaRecommendationState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "table_name", n => { TableName = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -180,6 +244,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("table_name", TableName);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

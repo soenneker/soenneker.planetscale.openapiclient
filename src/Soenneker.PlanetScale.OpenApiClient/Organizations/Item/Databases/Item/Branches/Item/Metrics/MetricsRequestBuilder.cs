@@ -91,7 +91,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve time-series metrics for a database branch.```shcurl --get \  --header &quot;Authorization: $PLANETSCALE_SERVICE_TOKEN&quot; \  --data-urlencode &quot;metrics=queries&quot; \  --data-urlencode &quot;period=15m&quot; \  &quot;https://api.planetscale.com/v1/organizations/acme/databases/app-db/branches/main/metrics&quot;```Each series contains its metric name, display label, identifying labels, and sampled `[Unix timestamp, value]` points:```json{  &quot;type&quot;: &quot;MetricSeries&quot;,  &quot;start_date&quot;: &quot;2026-09-09T17:00:00Z&quot;,  &quot;end_date&quot;: &quot;2026-09-09T17:15:00Z&quot;,  &quot;interval&quot;: 60,  &quot;series&quot;: [    {      &quot;type&quot;: &quot;TimeSeries&quot;,      &quot;metric&quot;: &quot;queries&quot;,      &quot;label&quot;: &quot;Queries&quot;,      &quot;labels&quot;: { &quot;tablet_type&quot;: &quot;primary&quot; },      &quot;points&quot;: [[1788973200, 42.0]]    }  ]}```### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_branch`, `delete_branch`, `create_branch`, `connect_production_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_branches` || Database | `read_branches` || Branch | `read_branch` |
@@ -188,15 +188,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchMetricsMetricsParameterItem[] Metrics { get; set; }
 #endif
             /// <summary>Named time period to retrieve. Defaults to 12h.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("period")]
-            public string? Period { get; set; }
-#nullable restore
-#else
-            [QueryParameter("period")]
-            public string Period { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchMetricsPeriodParameter? Period { get; set; }
             /// <summary>Filter by pod</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -291,15 +284,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("steps")]
             public int? Steps { get; set; }
             /// <summary>Filter by tablet type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("tablet_type")]
-            public string? TabletType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tablet_type")]
-            public string TabletType { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchMetricsTabletTypeParameter? TabletType { get; set; }
             /// <summary>End of a custom time range as an ISO 8601 timestamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

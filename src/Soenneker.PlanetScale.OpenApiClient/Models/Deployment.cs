@@ -11,248 +11,399 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Deployment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("aggressive_cutover") is null) { _explicitNullValueAggressiveCutover = default!; _explicitNullProperties?.Remove("aggressive_cutover"); }
+            else if (parseNode.GetChildNode("aggressive_cutover") is { } nullNodeAggressiveCutover && nullNodeAggressiveCutover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggressiveCutover = null;
+            if (parseNode.GetChildNode("auto_cutover") is null) { _explicitNullValueAutoCutover = default!; _explicitNullProperties?.Remove("auto_cutover"); }
+            else if (parseNode.GetChildNode("auto_cutover") is { } nullNodeAutoCutover && nullNodeAutoCutover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCutover = null;
+            if (parseNode.GetChildNode("auto_delete_branch") is null) { _explicitNullValueAutoDeleteBranch = default!; _explicitNullProperties?.Remove("auto_delete_branch"); }
+            else if (parseNode.GetChildNode("auto_delete_branch") is { } nullNodeAutoDeleteBranch && nullNodeAutoDeleteBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDeleteBranch = null;
+            if (parseNode.GetChildNode("cancelled_actor") is null) { _explicitNullValueCancelledActor = default!; _explicitNullProperties?.Remove("cancelled_actor"); }
+            else if (parseNode.GetChildNode("cancelled_actor") is { } nullNodeCancelledActor && nullNodeCancelledActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledActor = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("cutover_actor") is null) { _explicitNullValueCutoverActor = default!; _explicitNullProperties?.Remove("cutover_actor"); }
+            else if (parseNode.GetChildNode("cutover_actor") is { } nullNodeCutoverActor && nullNodeCutoverActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CutoverActor = null;
+            if (parseNode.GetChildNode("cutover_at") is null) { _explicitNullValueCutoverAt = default!; _explicitNullProperties?.Remove("cutover_at"); }
+            else if (parseNode.GetChildNode("cutover_at") is { } nullNodeCutoverAt && nullNodeCutoverAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CutoverAt = null;
+            if (parseNode.GetChildNode("cutover_expiring") is null) { _explicitNullValueCutoverExpiring = default!; _explicitNullProperties?.Remove("cutover_expiring"); }
+            else if (parseNode.GetChildNode("cutover_expiring") is { } nullNodeCutoverExpiring && nullNodeCutoverExpiring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CutoverExpiring = null;
+            if (parseNode.GetChildNode("deployable") is null) { _explicitNullValueDeployable = default!; _explicitNullProperties?.Remove("deployable"); }
+            else if (parseNode.GetChildNode("deployable") is { } nullNodeDeployable && nullNodeDeployable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deployable = null;
+            if (parseNode.GetChildNode("deploy_check_errors") is null) { _explicitNullValueDeployCheckErrors = default!; _explicitNullProperties?.Remove("deploy_check_errors"); }
+            else if (parseNode.GetChildNode("deploy_check_errors") is { } nullNodeDeployCheckErrors && nullNodeDeployCheckErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployCheckErrors = null;
+            if (parseNode.GetChildNode("deployment_revert_request") is null) { _explicitNullValueDeploymentRevertRequest = default!; _explicitNullProperties?.Remove("deployment_revert_request"); }
+            else if (parseNode.GetChildNode("deployment_revert_request") is { } nullNodeDeploymentRevertRequest && nullNodeDeploymentRevertRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentRevertRequest = null;
+            if (parseNode.GetChildNode("deploy_operations") is null) { _explicitNullValueDeployOperations = default!; _explicitNullProperties?.Remove("deploy_operations"); }
+            else if (parseNode.GetChildNode("deploy_operations") is { } nullNodeDeployOperations && nullNodeDeployOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployOperations = null;
+            if (parseNode.GetChildNode("deploy_operation_summaries") is null) { _explicitNullValueDeployOperationSummaries = default!; _explicitNullProperties?.Remove("deploy_operation_summaries"); }
+            else if (parseNode.GetChildNode("deploy_operation_summaries") is { } nullNodeDeployOperationSummaries && nullNodeDeployOperationSummaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployOperationSummaries = null;
+            if (parseNode.GetChildNode("deploy_request_number") is null) { _explicitNullValueDeployRequestNumber = default!; _explicitNullProperties?.Remove("deploy_request_number"); }
+            else if (parseNode.GetChildNode("deploy_request_number") is { } nullNodeDeployRequestNumber && nullNodeDeployRequestNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployRequestNumber = null;
+            if (parseNode.GetChildNode("finished_at") is null) { _explicitNullValueFinishedAt = default!; _explicitNullProperties?.Remove("finished_at"); }
+            else if (parseNode.GetChildNode("finished_at") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
+            if (parseNode.GetChildNode("force_cutover_requested_at") is null) { _explicitNullValueForceCutoverRequestedAt = default!; _explicitNullProperties?.Remove("force_cutover_requested_at"); }
+            else if (parseNode.GetChildNode("force_cutover_requested_at") is { } nullNodeForceCutoverRequestedAt && nullNodeForceCutoverRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceCutoverRequestedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instant_ddl") is null) { _explicitNullValueInstantDdl = default!; _explicitNullProperties?.Remove("instant_ddl"); }
+            else if (parseNode.GetChildNode("instant_ddl") is { } nullNodeInstantDdl && nullNodeInstantDdl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantDdl = null;
+            if (parseNode.GetChildNode("instant_ddl_eligible") is null) { _explicitNullValueInstantDdlEligible = default!; _explicitNullProperties?.Remove("instant_ddl_eligible"); }
+            else if (parseNode.GetChildNode("instant_ddl_eligible") is { } nullNodeInstantDdlEligible && nullNodeInstantDdlEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantDdlEligible = null;
+            if (parseNode.GetChildNode("into_branch") is null) { _explicitNullValueIntoBranch = default!; _explicitNullProperties?.Remove("into_branch"); }
+            else if (parseNode.GetChildNode("into_branch") is { } nullNodeIntoBranch && nullNodeIntoBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntoBranch = null;
+            if (parseNode.GetChildNode("lint_errors") is null) { _explicitNullValueLintErrors = default!; _explicitNullProperties?.Remove("lint_errors"); }
+            else if (parseNode.GetChildNode("lint_errors") is { } nullNodeLintErrors && nullNodeLintErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LintErrors = null;
+            if (parseNode.GetChildNode("locked_table_name") is null) { _explicitNullValueLockedTableName = default!; _explicitNullProperties?.Remove("locked_table_name"); }
+            else if (parseNode.GetChildNode("locked_table_name") is { } nullNodeLockedTableName && nullNodeLockedTableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedTableName = null;
+            if (parseNode.GetChildNode("lookup_vindex_operations") is null) { _explicitNullValueLookupVindexOperations = default!; _explicitNullProperties?.Remove("lookup_vindex_operations"); }
+            else if (parseNode.GetChildNode("lookup_vindex_operations") is { } nullNodeLookupVindexOperations && nullNodeLookupVindexOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupVindexOperations = null;
+            if (parseNode.GetChildNode("preceding_deployments") is null) { _explicitNullValuePrecedingDeployments = default!; _explicitNullProperties?.Remove("preceding_deployments"); }
+            else if (parseNode.GetChildNode("preceding_deployments") is { } nullNodePrecedingDeployments && nullNodePrecedingDeployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecedingDeployments = null;
+            if (parseNode.GetChildNode("queued_at") is null) { _explicitNullValueQueuedAt = default!; _explicitNullProperties?.Remove("queued_at"); }
+            else if (parseNode.GetChildNode("queued_at") is { } nullNodeQueuedAt && nullNodeQueuedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuedAt = null;
+            if (parseNode.GetChildNode("queue_paused") is null) { _explicitNullValueQueuePaused = default!; _explicitNullProperties?.Remove("queue_paused"); }
+            else if (parseNode.GetChildNode("queue_paused") is { } nullNodeQueuePaused && nullNodeQueuePaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuePaused = null;
+            if (parseNode.GetChildNode("queue_pause_reason") is null) { _explicitNullValueQueuePauseReason = default!; _explicitNullProperties?.Remove("queue_pause_reason"); }
+            else if (parseNode.GetChildNode("queue_pause_reason") is { } nullNodeQueuePauseReason && nullNodeQueuePauseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueuePauseReason = null;
+            if (parseNode.GetChildNode("ready_to_cutover_at") is null) { _explicitNullValueReadyToCutoverAt = default!; _explicitNullProperties?.Remove("ready_to_cutover_at"); }
+            else if (parseNode.GetChildNode("ready_to_cutover_at") is { } nullNodeReadyToCutoverAt && nullNodeReadyToCutoverAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToCutoverAt = null;
+            if (parseNode.GetChildNode("retry_requested") is null) { _explicitNullValueRetryRequested = default!; _explicitNullProperties?.Remove("retry_requested"); }
+            else if (parseNode.GetChildNode("retry_requested") is { } nullNodeRetryRequested && nullNodeRetryRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryRequested = null;
+            if (parseNode.GetChildNode("retry_requested_at") is null) { _explicitNullValueRetryRequestedAt = default!; _explicitNullProperties?.Remove("retry_requested_at"); }
+            else if (parseNode.GetChildNode("retry_requested_at") is { } nullNodeRetryRequestedAt && nullNodeRetryRequestedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryRequestedAt = null;
+            if (parseNode.GetChildNode("schema_last_updated_at") is null) { _explicitNullValueSchemaLastUpdatedAt = default!; _explicitNullProperties?.Remove("schema_last_updated_at"); }
+            else if (parseNode.GetChildNode("schema_last_updated_at") is { } nullNodeSchemaLastUpdatedAt && nullNodeSchemaLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaLastUpdatedAt = null;
+            if (parseNode.GetChildNode("sequential_diff_dependencies") is null) { _explicitNullValueSequentialDiffDependencies = default!; _explicitNullProperties?.Remove("sequential_diff_dependencies"); }
+            else if (parseNode.GetChildNode("sequential_diff_dependencies") is { } nullNodeSequentialDiffDependencies && nullNodeSequentialDiffDependencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequentialDiffDependencies = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("submitted_at") is null) { _explicitNullValueSubmittedAt = default!; _explicitNullProperties?.Remove("submitted_at"); }
+            else if (parseNode.GetChildNode("submitted_at") is { } nullNodeSubmittedAt && nullNodeSubmittedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmittedAt = null;
+            if (parseNode.GetChildNode("table_locked") is null) { _explicitNullValueTableLocked = default!; _explicitNullProperties?.Remove("table_locked"); }
+            else if (parseNode.GetChildNode("table_locked") is { } nullNodeTableLocked && nullNodeTableLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableLocked = null;
+            if (parseNode.GetChildNode("throttler_configurations") is null) { _explicitNullValueThrottlerConfigurations = default!; _explicitNullProperties?.Remove("throttler_configurations"); }
+            else if (parseNode.GetChildNode("throttler_configurations") is { } nullNodeThrottlerConfigurations && nullNodeThrottlerConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThrottlerConfigurations = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this deploy request opted in to aggressive cutover. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt. A false value does not disable a database-wide aggressive cutover setting.</summary>
-        public bool? AggressiveCutover { get; set; }
+        public bool? AggressiveCutover { get => _explicitNullValueAggressiveCutover; set { _explicitNullValueAggressiveCutover = value; AdditionalData?.Remove("aggressive_cutover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggressive_cutover"); else _explicitNullProperties?.Remove("aggressive_cutover"); } }
+        private bool? _explicitNullValueAggressiveCutover = default!;
         /// <summary>Whether or not to automatically cutover once deployment is finished</summary>
-        public bool? AutoCutover { get; set; }
+        public bool? AutoCutover { get => _explicitNullValueAutoCutover; set { _explicitNullValueAutoCutover = value; AdditionalData?.Remove("auto_cutover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_cutover"); else _explicitNullProperties?.Remove("auto_cutover"); } }
+        private bool? _explicitNullValueAutoCutover = default!;
         /// <summary>Whether or not to automatically delete the head branch once deployment is finished</summary>
-        public bool? AutoDeleteBranch { get; set; }
+        public bool? AutoDeleteBranch { get => _explicitNullValueAutoDeleteBranch; set { _explicitNullValueAutoDeleteBranch = value; AdditionalData?.Remove("auto_delete_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_delete_branch"); else _explicitNullProperties?.Remove("auto_delete_branch"); } }
+        private bool? _explicitNullValueAutoDeleteBranch = default!;
         /// <summary>The cancelled_actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor? CancelledActor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor? CancelledActor { get => _explicitNullValueCancelledActor; set { _explicitNullValueCancelledActor = value; AdditionalData?.Remove("cancelled_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_actor"); else _explicitNullProperties?.Remove("cancelled_actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor? _explicitNullValueCancelledActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor CancelledActor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor CancelledActor { get => _explicitNullValueCancelledActor; set { _explicitNullValueCancelledActor = value; AdditionalData?.Remove("cancelled_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_actor"); else _explicitNullProperties?.Remove("cancelled_actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCancelledActor _explicitNullValueCancelledActor = default!;
 #endif
         /// <summary>When the deployment was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The cutover_actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor? CutoverActor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor? CutoverActor { get => _explicitNullValueCutoverActor; set { _explicitNullValueCutoverActor = value; AdditionalData?.Remove("cutover_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cutover_actor"); else _explicitNullProperties?.Remove("cutover_actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor? _explicitNullValueCutoverActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor CutoverActor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor CutoverActor { get => _explicitNullValueCutoverActor; set { _explicitNullValueCutoverActor = value; AdditionalData?.Remove("cutover_actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cutover_actor"); else _explicitNullProperties?.Remove("cutover_actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentCutoverActor _explicitNullValueCutoverActor = default!;
 #endif
         /// <summary>When the cutover for the deployment was initiated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CutoverAt { get; set; }
+        public string? CutoverAt { get => _explicitNullValueCutoverAt; set { _explicitNullValueCutoverAt = value; AdditionalData?.Remove("cutover_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cutover_at"); else _explicitNullProperties?.Remove("cutover_at"); } }
+        private string? _explicitNullValueCutoverAt = default!;
 #nullable restore
 #else
-        public string CutoverAt { get; set; }
+        public string CutoverAt { get => _explicitNullValueCutoverAt; set { _explicitNullValueCutoverAt = value; AdditionalData?.Remove("cutover_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cutover_at"); else _explicitNullProperties?.Remove("cutover_at"); } }
+        private string _explicitNullValueCutoverAt = default!;
 #endif
         /// <summary>Whether or not the deployment cutover will expire soon</summary>
-        public bool? CutoverExpiring { get; set; }
+        public bool? CutoverExpiring { get => _explicitNullValueCutoverExpiring; set { _explicitNullValueCutoverExpiring = value; AdditionalData?.Remove("cutover_expiring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cutover_expiring"); else _explicitNullProperties?.Remove("cutover_expiring"); } }
+        private bool? _explicitNullValueCutoverExpiring = default!;
         /// <summary>Whether the deployment is deployable</summary>
-        public bool? Deployable { get; set; }
+        public bool? Deployable { get => _explicitNullValueDeployable; set { _explicitNullValueDeployable = value; AdditionalData?.Remove("deployable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployable"); else _explicitNullProperties?.Remove("deployable"); } }
+        private bool? _explicitNullValueDeployable = default!;
         /// <summary>Deploy check errors for the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployCheckErrors { get; set; }
+        public string? DeployCheckErrors { get => _explicitNullValueDeployCheckErrors; set { _explicitNullValueDeployCheckErrors = value; AdditionalData?.Remove("deploy_check_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_check_errors"); else _explicitNullProperties?.Remove("deploy_check_errors"); } }
+        private string? _explicitNullValueDeployCheckErrors = default!;
 #nullable restore
 #else
-        public string DeployCheckErrors { get; set; }
+        public string DeployCheckErrors { get => _explicitNullValueDeployCheckErrors; set { _explicitNullValueDeployCheckErrors = value; AdditionalData?.Remove("deploy_check_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_check_errors"); else _explicitNullProperties?.Remove("deploy_check_errors"); } }
+        private string _explicitNullValueDeployCheckErrors = default!;
 #endif
         /// <summary>The request to revert the schema operations in this deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty? DeploymentRevertRequest { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty? DeploymentRevertRequest { get => _explicitNullValueDeploymentRevertRequest; set { _explicitNullValueDeploymentRevertRequest = value; AdditionalData?.Remove("deployment_revert_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_revert_request"); else _explicitNullProperties?.Remove("deployment_revert_request"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty? _explicitNullValueDeploymentRevertRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty DeploymentRevertRequest { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty DeploymentRevertRequest { get => _explicitNullValueDeploymentRevertRequest; set { _explicitNullValueDeploymentRevertRequest = value; AdditionalData?.Remove("deployment_revert_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_revert_request"); else _explicitNullProperties?.Remove("deployment_revert_request"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeploymentRevertRequestProperty _explicitNullValueDeploymentRevertRequest = default!;
 #endif
         /// <summary>The deploy_operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem>? DeployOperations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem>? DeployOperations { get => _explicitNullValueDeployOperations; set { _explicitNullValueDeployOperations = value; AdditionalData?.Remove("deploy_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_operations"); else _explicitNullProperties?.Remove("deploy_operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem>? _explicitNullValueDeployOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem> DeployOperations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem> DeployOperations { get => _explicitNullValueDeployOperations; set { _explicitNullValueDeployOperations = value; AdditionalData?.Remove("deploy_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_operations"); else _explicitNullProperties?.Remove("deploy_operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationsItem> _explicitNullValueDeployOperations = default!;
 #endif
         /// <summary>The deploy_operation_summaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem>? DeployOperationSummaries { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem>? DeployOperationSummaries { get => _explicitNullValueDeployOperationSummaries; set { _explicitNullValueDeployOperationSummaries = value; AdditionalData?.Remove("deploy_operation_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_operation_summaries"); else _explicitNullProperties?.Remove("deploy_operation_summaries"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem>? _explicitNullValueDeployOperationSummaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem> DeployOperationSummaries { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem> DeployOperationSummaries { get => _explicitNullValueDeployOperationSummaries; set { _explicitNullValueDeployOperationSummaries = value; AdditionalData?.Remove("deploy_operation_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_operation_summaries"); else _explicitNullProperties?.Remove("deploy_operation_summaries"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentDeployOperationSummariesItem> _explicitNullValueDeployOperationSummaries = default!;
 #endif
         /// <summary>The number of the deploy request associated with this deployment</summary>
-        public int? DeployRequestNumber { get; set; }
+        public int? DeployRequestNumber { get => _explicitNullValueDeployRequestNumber; set { _explicitNullValueDeployRequestNumber = value; AdditionalData?.Remove("deploy_request_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_request_number"); else _explicitNullProperties?.Remove("deploy_request_number"); } }
+        private int? _explicitNullValueDeployRequestNumber = default!;
         /// <summary>When the deployment was finished</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinishedAt { get; set; }
+        public string? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finished_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
+        private string? _explicitNullValueFinishedAt = default!;
 #nullable restore
 #else
-        public string FinishedAt { get; set; }
+        public string FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finished_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
+        private string _explicitNullValueFinishedAt = default!;
 #endif
         /// <summary>When force cutover was triggered for the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForceCutoverRequestedAt { get; set; }
+        public string? ForceCutoverRequestedAt { get => _explicitNullValueForceCutoverRequestedAt; set { _explicitNullValueForceCutoverRequestedAt = value; AdditionalData?.Remove("force_cutover_requested_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_cutover_requested_at"); else _explicitNullProperties?.Remove("force_cutover_requested_at"); } }
+        private string? _explicitNullValueForceCutoverRequestedAt = default!;
 #nullable restore
 #else
-        public string ForceCutoverRequestedAt { get; set; }
+        public string ForceCutoverRequestedAt { get => _explicitNullValueForceCutoverRequestedAt; set { _explicitNullValueForceCutoverRequestedAt = value; AdditionalData?.Remove("force_cutover_requested_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_cutover_requested_at"); else _explicitNullProperties?.Remove("force_cutover_requested_at"); } }
+        private string _explicitNullValueForceCutoverRequestedAt = default!;
 #endif
         /// <summary>The ID of the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether or not the deployment is an instant DDL deployment</summary>
-        public bool? InstantDdl { get; set; }
+        public bool? InstantDdl { get => _explicitNullValueInstantDdl; set { _explicitNullValueInstantDdl = value; AdditionalData?.Remove("instant_ddl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_ddl"); else _explicitNullProperties?.Remove("instant_ddl"); } }
+        private bool? _explicitNullValueInstantDdl = default!;
         /// <summary>Whether or not the deployment is eligible for instant DDL</summary>
-        public bool? InstantDdlEligible { get; set; }
+        public bool? InstantDdlEligible { get => _explicitNullValueInstantDdlEligible; set { _explicitNullValueInstantDdlEligible = value; AdditionalData?.Remove("instant_ddl_eligible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_ddl_eligible"); else _explicitNullProperties?.Remove("instant_ddl_eligible"); } }
+        private bool? _explicitNullValueInstantDdlEligible = default!;
         /// <summary>The name of the base branch the deployment will be merged into</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntoBranch { get; set; }
+        public string? IntoBranch { get => _explicitNullValueIntoBranch; set { _explicitNullValueIntoBranch = value; AdditionalData?.Remove("into_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("into_branch"); else _explicitNullProperties?.Remove("into_branch"); } }
+        private string? _explicitNullValueIntoBranch = default!;
 #nullable restore
 #else
-        public string IntoBranch { get; set; }
+        public string IntoBranch { get => _explicitNullValueIntoBranch; set { _explicitNullValueIntoBranch = value; AdditionalData?.Remove("into_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("into_branch"); else _explicitNullProperties?.Remove("into_branch"); } }
+        private string _explicitNullValueIntoBranch = default!;
 #endif
         /// <summary>Schema lint errors preventing the deployment from completing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty>? LintErrors { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty>? LintErrors { get => _explicitNullValueLintErrors; set { _explicitNullValueLintErrors = value; AdditionalData?.Remove("lint_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint_errors"); else _explicitNullProperties?.Remove("lint_errors"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty>? _explicitNullValueLintErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty> LintErrors { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty> LintErrors { get => _explicitNullValueLintErrors; set { _explicitNullValueLintErrors = value; AdditionalData?.Remove("lint_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint_errors"); else _explicitNullProperties?.Remove("lint_errors"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLintErrorsItemProperty> _explicitNullValueLintErrors = default!;
 #endif
         /// <summary>The name of the table that is locked by the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockedTableName { get; set; }
+        public string? LockedTableName { get => _explicitNullValueLockedTableName; set { _explicitNullValueLockedTableName = value; AdditionalData?.Remove("locked_table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_table_name"); else _explicitNullProperties?.Remove("locked_table_name"); } }
+        private string? _explicitNullValueLockedTableName = default!;
 #nullable restore
 #else
-        public string LockedTableName { get; set; }
+        public string LockedTableName { get => _explicitNullValueLockedTableName; set { _explicitNullValueLockedTableName = value; AdditionalData?.Remove("locked_table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_table_name"); else _explicitNullProperties?.Remove("locked_table_name"); } }
+        private string _explicitNullValueLockedTableName = default!;
 #endif
         /// <summary>Lookup Vitess index operations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty>? LookupVindexOperations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty>? LookupVindexOperations { get => _explicitNullValueLookupVindexOperations; set { _explicitNullValueLookupVindexOperations = value; AdditionalData?.Remove("lookup_vindex_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_vindex_operations"); else _explicitNullProperties?.Remove("lookup_vindex_operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty>? _explicitNullValueLookupVindexOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty> LookupVindexOperations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty> LookupVindexOperations { get => _explicitNullValueLookupVindexOperations; set { _explicitNullValueLookupVindexOperations = value; AdditionalData?.Remove("lookup_vindex_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_vindex_operations"); else _explicitNullProperties?.Remove("lookup_vindex_operations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentLookupVindexOperationsItemProperty> _explicitNullValueLookupVindexOperations = default!;
 #endif
         /// <summary>The deployments ahead of this one in the queue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty>? PrecedingDeployments { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty>? PrecedingDeployments { get => _explicitNullValuePrecedingDeployments; set { _explicitNullValuePrecedingDeployments = value; AdditionalData?.Remove("preceding_deployments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preceding_deployments"); else _explicitNullProperties?.Remove("preceding_deployments"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty>? _explicitNullValuePrecedingDeployments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty> PrecedingDeployments { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty> PrecedingDeployments { get => _explicitNullValuePrecedingDeployments; set { _explicitNullValuePrecedingDeployments = value; AdditionalData?.Remove("preceding_deployments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preceding_deployments"); else _explicitNullProperties?.Remove("preceding_deployments"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentPrecedingDeploymentsItemProperty> _explicitNullValuePrecedingDeployments = default!;
 #endif
         /// <summary>When the deployment was queued</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueuedAt { get; set; }
+        public string? QueuedAt { get => _explicitNullValueQueuedAt; set { _explicitNullValueQueuedAt = value; AdditionalData?.Remove("queued_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued_at"); else _explicitNullProperties?.Remove("queued_at"); } }
+        private string? _explicitNullValueQueuedAt = default!;
 #nullable restore
 #else
-        public string QueuedAt { get; set; }
+        public string QueuedAt { get => _explicitNullValueQueuedAt; set { _explicitNullValueQueuedAt = value; AdditionalData?.Remove("queued_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queued_at"); else _explicitNullProperties?.Remove("queued_at"); } }
+        private string _explicitNullValueQueuedAt = default!;
 #endif
         /// <summary>Whether the deploy queue for the target branch is currently paused</summary>
-        public bool? QueuePaused { get; set; }
+        public bool? QueuePaused { get => _explicitNullValueQueuePaused; set { _explicitNullValueQueuePaused = value; AdditionalData?.Remove("queue_paused"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_paused"); else _explicitNullProperties?.Remove("queue_paused"); } }
+        private bool? _explicitNullValueQueuePaused = default!;
         /// <summary>A human-readable reason the deploy queue is paused, if known</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueuePauseReason { get; set; }
+        public string? QueuePauseReason { get => _explicitNullValueQueuePauseReason; set { _explicitNullValueQueuePauseReason = value; AdditionalData?.Remove("queue_pause_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_pause_reason"); else _explicitNullProperties?.Remove("queue_pause_reason"); } }
+        private string? _explicitNullValueQueuePauseReason = default!;
 #nullable restore
 #else
-        public string QueuePauseReason { get; set; }
+        public string QueuePauseReason { get => _explicitNullValueQueuePauseReason; set { _explicitNullValueQueuePauseReason = value; AdditionalData?.Remove("queue_pause_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_pause_reason"); else _explicitNullProperties?.Remove("queue_pause_reason"); } }
+        private string _explicitNullValueQueuePauseReason = default!;
 #endif
         /// <summary>When the deployment was ready for cutover</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReadyToCutoverAt { get; set; }
+        public string? ReadyToCutoverAt { get => _explicitNullValueReadyToCutoverAt; set { _explicitNullValueReadyToCutoverAt = value; AdditionalData?.Remove("ready_to_cutover_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ready_to_cutover_at"); else _explicitNullProperties?.Remove("ready_to_cutover_at"); } }
+        private string? _explicitNullValueReadyToCutoverAt = default!;
 #nullable restore
 #else
-        public string ReadyToCutoverAt { get; set; }
+        public string ReadyToCutoverAt { get => _explicitNullValueReadyToCutoverAt; set { _explicitNullValueReadyToCutoverAt = value; AdditionalData?.Remove("ready_to_cutover_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ready_to_cutover_at"); else _explicitNullProperties?.Remove("ready_to_cutover_at"); } }
+        private string _explicitNullValueReadyToCutoverAt = default!;
 #endif
         /// <summary>Whether a retry of failed operations was requested within the retry window</summary>
-        public bool? RetryRequested { get; set; }
+        public bool? RetryRequested { get => _explicitNullValueRetryRequested; set { _explicitNullValueRetryRequested = value; AdditionalData?.Remove("retry_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_requested"); else _explicitNullProperties?.Remove("retry_requested"); } }
+        private bool? _explicitNullValueRetryRequested = default!;
         /// <summary>When a retry of failed operations was last requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetryRequestedAt { get; set; }
+        public string? RetryRequestedAt { get => _explicitNullValueRetryRequestedAt; set { _explicitNullValueRetryRequestedAt = value; AdditionalData?.Remove("retry_requested_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_requested_at"); else _explicitNullProperties?.Remove("retry_requested_at"); } }
+        private string? _explicitNullValueRetryRequestedAt = default!;
 #nullable restore
 #else
-        public string RetryRequestedAt { get; set; }
+        public string RetryRequestedAt { get => _explicitNullValueRetryRequestedAt; set { _explicitNullValueRetryRequestedAt = value; AdditionalData?.Remove("retry_requested_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_requested_at"); else _explicitNullProperties?.Remove("retry_requested_at"); } }
+        private string _explicitNullValueRetryRequestedAt = default!;
 #endif
         /// <summary>When the schema was last updated for the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemaLastUpdatedAt { get; set; }
+        public string? SchemaLastUpdatedAt { get => _explicitNullValueSchemaLastUpdatedAt; set { _explicitNullValueSchemaLastUpdatedAt = value; AdditionalData?.Remove("schema_last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_last_updated_at"); else _explicitNullProperties?.Remove("schema_last_updated_at"); } }
+        private string? _explicitNullValueSchemaLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string SchemaLastUpdatedAt { get; set; }
+        public string SchemaLastUpdatedAt { get => _explicitNullValueSchemaLastUpdatedAt; set { _explicitNullValueSchemaLastUpdatedAt = value; AdditionalData?.Remove("schema_last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_last_updated_at"); else _explicitNullProperties?.Remove("schema_last_updated_at"); } }
+        private string _explicitNullValueSchemaLastUpdatedAt = default!;
 #endif
         /// <summary>The schema dependencies that must be satisfied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty>? SequentialDiffDependencies { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty>? SequentialDiffDependencies { get => _explicitNullValueSequentialDiffDependencies; set { _explicitNullValueSequentialDiffDependencies = value; AdditionalData?.Remove("sequential_diff_dependencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequential_diff_dependencies"); else _explicitNullProperties?.Remove("sequential_diff_dependencies"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty>? _explicitNullValueSequentialDiffDependencies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty> SequentialDiffDependencies { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty> SequentialDiffDependencies { get => _explicitNullValueSequentialDiffDependencies; set { _explicitNullValueSequentialDiffDependencies = value; AdditionalData?.Remove("sequential_diff_dependencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequential_diff_dependencies"); else _explicitNullProperties?.Remove("sequential_diff_dependencies"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty> _explicitNullValueSequentialDiffDependencies = default!;
 #endif
         /// <summary>When the deployment was started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The state the deployment is in</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentState? _explicitNullValueState = default!;
         /// <summary>When the deployment was submitted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmittedAt { get; set; }
+        public string? SubmittedAt { get => _explicitNullValueSubmittedAt; set { _explicitNullValueSubmittedAt = value; AdditionalData?.Remove("submitted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_at"); else _explicitNullProperties?.Remove("submitted_at"); } }
+        private string? _explicitNullValueSubmittedAt = default!;
 #nullable restore
 #else
-        public string SubmittedAt { get; set; }
+        public string SubmittedAt { get => _explicitNullValueSubmittedAt; set { _explicitNullValueSubmittedAt = value; AdditionalData?.Remove("submitted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submitted_at"); else _explicitNullProperties?.Remove("submitted_at"); } }
+        private string _explicitNullValueSubmittedAt = default!;
 #endif
         /// <summary>Whether or not the deployment has a table locked</summary>
-        public bool? TableLocked { get; set; }
+        public bool? TableLocked { get => _explicitNullValueTableLocked; set { _explicitNullValueTableLocked = value; AdditionalData?.Remove("table_locked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_locked"); else _explicitNullProperties?.Remove("table_locked"); } }
+        private bool? _explicitNullValueTableLocked = default!;
         /// <summary>Deployment throttling configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty? ThrottlerConfigurations { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty? ThrottlerConfigurations { get => _explicitNullValueThrottlerConfigurations; set { _explicitNullValueThrottlerConfigurations = value; AdditionalData?.Remove("throttler_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler_configurations"); else _explicitNullProperties?.Remove("throttler_configurations"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty? _explicitNullValueThrottlerConfigurations = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty ThrottlerConfigurations { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty ThrottlerConfigurations { get => _explicitNullValueThrottlerConfigurations; set { _explicitNullValueThrottlerConfigurations = value; AdditionalData?.Remove("throttler_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler_configurations"); else _explicitNullProperties?.Remove("throttler_configurations"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty _explicitNullValueThrottlerConfigurations = default!;
 #endif
         /// <summary>When the deployment was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.Deployment"/> and sets the default values.
@@ -269,7 +420,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.Deployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.Deployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.Deployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -313,7 +464,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "schema_last_updated_at", n => { SchemaLastUpdatedAt = n.GetStringValue(); } },
                 { "sequential_diff_dependencies", n => { SequentialDiffDependencies = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentSequentialDiffDependenciesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "submitted_at", n => { SubmittedAt = n.GetStringValue(); } },
                 { "table_locked", n => { TableLocked = n.GetBoolValue(); } },
                 { "throttler_configurations", n => { ThrottlerConfigurations = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty.CreateFromDiscriminatorValue); } },
@@ -366,6 +517,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("table_locked", TableLocked);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.DeploymentThrottlerConfigurationsProperty>("throttler_configurations", ThrottlerConfigurations);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

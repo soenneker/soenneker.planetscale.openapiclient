@@ -11,203 +11,349 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedDatabaseBranchDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("cluster_iops") is null) { _explicitNullValueClusterIops = default!; _explicitNullProperties?.Remove("cluster_iops"); }
+            else if (parseNode.GetChildNode("cluster_iops") is { } nullNodeClusterIops && nullNodeClusterIops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterIops = null;
+            if (parseNode.GetChildNode("cluster_name") is null) { _explicitNullValueClusterName = default!; _explicitNullProperties?.Remove("cluster_name"); }
+            else if (parseNode.GetChildNode("cluster_name") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("deleted_at") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deleted_at"); }
+            else if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("deletion_protected") is null) { _explicitNullValueDeletionProtected = default!; _explicitNullProperties?.Remove("deletion_protected"); }
+            else if (parseNode.GetChildNode("deletion_protected") is { } nullNodeDeletionProtected && nullNodeDeletionProtected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionProtected = null;
+            if (parseNode.GetChildNode("direct_vtgate") is null) { _explicitNullValueDirectVtgate = default!; _explicitNullProperties?.Remove("direct_vtgate"); }
+            else if (parseNode.GetChildNode("direct_vtgate") is { } nullNodeDirectVtgate && nullNodeDirectVtgate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectVtgate = null;
+            if (parseNode.GetChildNode("has_read_only_replicas") is null) { _explicitNullValueHasReadOnlyReplicas = default!; _explicitNullProperties?.Remove("has_read_only_replicas"); }
+            else if (parseNode.GetChildNode("has_read_only_replicas") is { } nullNodeHasReadOnlyReplicas && nullNodeHasReadOnlyReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasReadOnlyReplicas = null;
+            if (parseNode.GetChildNode("has_replicas") is null) { _explicitNullValueHasReplicas = default!; _explicitNullProperties?.Remove("has_replicas"); }
+            else if (parseNode.GetChildNode("has_replicas") is { } nullNodeHasReplicas && nullNodeHasReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasReplicas = null;
+            if (parseNode.GetChildNode("html_url") is null) { _explicitNullValueHtmlUrl = default!; _explicitNullProperties?.Remove("html_url"); }
+            else if (parseNode.GetChildNode("html_url") is { } nullNodeHtmlUrl && nullNodeHtmlUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlUrl = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("keyspace_count") is null) { _explicitNullValueKeyspaceCount = default!; _explicitNullProperties?.Remove("keyspace_count"); }
+            else if (parseNode.GetChildNode("keyspace_count") is { } nullNodeKeyspaceCount && nullNodeKeyspaceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyspaceCount = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("metal") is null) { _explicitNullValueMetal = default!; _explicitNullProperties?.Remove("metal"); }
+            else if (parseNode.GetChildNode("metal") is { } nullNodeMetal && nullNodeMetal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metal = null;
+            if (parseNode.GetChildNode("mysql_address") is null) { _explicitNullValueMysqlAddress = default!; _explicitNullProperties?.Remove("mysql_address"); }
+            else if (parseNode.GetChildNode("mysql_address") is { } nullNodeMysqlAddress && nullNodeMysqlAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MysqlAddress = null;
+            if (parseNode.GetChildNode("mysql_edge_address") is null) { _explicitNullValueMysqlEdgeAddress = default!; _explicitNullProperties?.Remove("mysql_edge_address"); }
+            else if (parseNode.GetChildNode("mysql_edge_address") is { } nullNodeMysqlEdgeAddress && nullNodeMysqlEdgeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MysqlEdgeAddress = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_branch") is null) { _explicitNullValueParentBranch = default!; _explicitNullProperties?.Remove("parent_branch"); }
+            else if (parseNode.GetChildNode("parent_branch") is { } nullNodeParentBranch && nullNodeParentBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentBranch = null;
+            if (parseNode.GetChildNode("private_edge_connectivity") is null) { _explicitNullValuePrivateEdgeConnectivity = default!; _explicitNullProperties?.Remove("private_edge_connectivity"); }
+            else if (parseNode.GetChildNode("private_edge_connectivity") is { } nullNodePrivateEdgeConnectivity && nullNodePrivateEdgeConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateEdgeConnectivity = null;
+            if (parseNode.GetChildNode("production") is null) { _explicitNullValueProduction = default!; _explicitNullProperties?.Remove("production"); }
+            else if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+            if (parseNode.GetChildNode("ready") is null) { _explicitNullValueReady = default!; _explicitNullProperties?.Remove("ready"); }
+            else if (parseNode.GetChildNode("ready") is { } nullNodeReady && nullNodeReady.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ready = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("restore_checklist_completed_at") is null) { _explicitNullValueRestoreChecklistCompletedAt = default!; _explicitNullProperties?.Remove("restore_checklist_completed_at"); }
+            else if (parseNode.GetChildNode("restore_checklist_completed_at") is { } nullNodeRestoreChecklistCompletedAt && nullNodeRestoreChecklistCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoreChecklistCompletedAt = null;
+            if (parseNode.GetChildNode("restored_from_branch") is null) { _explicitNullValueRestoredFromBranch = default!; _explicitNullProperties?.Remove("restored_from_branch"); }
+            else if (parseNode.GetChildNode("restored_from_branch") is { } nullNodeRestoredFromBranch && nullNodeRestoredFromBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoredFromBranch = null;
+            if (parseNode.GetChildNode("safe_migrations") is null) { _explicitNullValueSafeMigrations = default!; _explicitNullProperties?.Remove("safe_migrations"); }
+            else if (parseNode.GetChildNode("safe_migrations") is { } nullNodeSafeMigrations && nullNodeSafeMigrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SafeMigrations = null;
+            if (parseNode.GetChildNode("schema_last_updated_at") is null) { _explicitNullValueSchemaLastUpdatedAt = default!; _explicitNullProperties?.Remove("schema_last_updated_at"); }
+            else if (parseNode.GetChildNode("schema_last_updated_at") is { } nullNodeSchemaLastUpdatedAt && nullNodeSchemaLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaLastUpdatedAt = null;
+            if (parseNode.GetChildNode("schema_ready") is null) { _explicitNullValueSchemaReady = default!; _explicitNullProperties?.Remove("schema_ready"); }
+            else if (parseNode.GetChildNode("schema_ready") is { } nullNodeSchemaReady && nullNodeSchemaReady.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaReady = null;
+            if (parseNode.GetChildNode("shard_count") is null) { _explicitNullValueShardCount = default!; _explicitNullProperties?.Remove("shard_count"); }
+            else if (parseNode.GetChildNode("shard_count") is { } nullNodeShardCount && nullNodeShardCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardCount = null;
+            if (parseNode.GetChildNode("sharded") is null) { _explicitNullValueSharded = default!; _explicitNullProperties?.Remove("sharded"); }
+            else if (parseNode.GetChildNode("sharded") is { } nullNodeSharded && nullNodeSharded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sharded = null;
+            if (parseNode.GetChildNode("stale_schema") is null) { _explicitNullValueStaleSchema = default!; _explicitNullProperties?.Remove("stale_schema"); }
+            else if (parseNode.GetChildNode("stale_schema") is { } nullNodeStaleSchema && nullNodeStaleSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaleSchema = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("vtgate_autoscaling") is null) { _explicitNullValueVtgateAutoscaling = default!; _explicitNullProperties?.Remove("vtgate_autoscaling"); }
+            else if (parseNode.GetChildNode("vtgate_autoscaling") is { } nullNodeVtgateAutoscaling && nullNodeVtgateAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateAutoscaling = null;
+            if (parseNode.GetChildNode("vtgate_count") is null) { _explicitNullValueVtgateCount = default!; _explicitNullProperties?.Remove("vtgate_count"); }
+            else if (parseNode.GetChildNode("vtgate_count") is { } nullNodeVtgateCount && nullNodeVtgateCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateCount = null;
+            if (parseNode.GetChildNode("vtgate_max_count") is null) { _explicitNullValueVtgateMaxCount = default!; _explicitNullProperties?.Remove("vtgate_max_count"); }
+            else if (parseNode.GetChildNode("vtgate_max_count") is { } nullNodeVtgateMaxCount && nullNodeVtgateMaxCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateMaxCount = null;
+            if (parseNode.GetChildNode("vtgate_name") is null) { _explicitNullValueVtgateName = default!; _explicitNullProperties?.Remove("vtgate_name"); }
+            else if (parseNode.GetChildNode("vtgate_name") is { } nullNodeVtgateName && nullNodeVtgateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateName = null;
+            if (parseNode.GetChildNode("vtgate_options") is null) { _explicitNullValueVtgateOptions = default!; _explicitNullProperties?.Remove("vtgate_options"); }
+            else if (parseNode.GetChildNode("vtgate_options") is { } nullNodeVtgateOptions && nullNodeVtgateOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateOptions = null;
+            if (parseNode.GetChildNode("vtgate_size") is null) { _explicitNullValueVtgateSize = default!; _explicitNullProperties?.Remove("vtgate_size"); }
+            else if (parseNode.GetChildNode("vtgate_size") is { } nullNodeVtgateSize && nullNodeVtgateSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateSize = null;
+            if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is null) { _explicitNullValueVtgateTargetCpuUtilization = default!; _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is { } nullNodeVtgateTargetCpuUtilization && nullNodeVtgateTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateTargetCpuUtilization = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>IOPS for the cluster</summary>
-        public int? ClusterIops { get; set; }
+        public int? ClusterIops { get => _explicitNullValueClusterIops; set { _explicitNullValueClusterIops = value; AdditionalData?.Remove("cluster_iops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_iops"); else _explicitNullProperties?.Remove("cluster_iops"); } }
+        private int? _explicitNullValueClusterIops = default!;
         /// <summary>The SKU representing the branch&apos;s cluster size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterName { get; set; }
+        public string? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string? _explicitNullValueClusterName = default!;
 #nullable restore
 #else
-        public string ClusterName { get; set; }
+        public string ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string _explicitNullValueClusterName = default!;
 #endif
         /// <summary>When the branch was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>When the branch was deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public string? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public string DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>Whether deletion protection is enabled for the branch</summary>
-        public bool? DeletionProtected { get; set; }
+        public bool? DeletionProtected { get => _explicitNullValueDeletionProtected; set { _explicitNullValueDeletionProtected = value; AdditionalData?.Remove("deletion_protected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletion_protected"); else _explicitNullProperties?.Remove("deletion_protected"); } }
+        private bool? _explicitNullValueDeletionProtected = default!;
         /// <summary>True if the branch allows passwords to connect directly to a vtgate, bypassing load balancers</summary>
-        public bool? DirectVtgate { get; set; }
+        public bool? DirectVtgate { get => _explicitNullValueDirectVtgate; set { _explicitNullValueDirectVtgate = value; AdditionalData?.Remove("direct_vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_vtgate"); else _explicitNullProperties?.Remove("direct_vtgate"); } }
+        private bool? _explicitNullValueDirectVtgate = default!;
         /// <summary>True if the branch has servers dedicated to read traffic</summary>
-        public bool? HasReadOnlyReplicas { get; set; }
+        public bool? HasReadOnlyReplicas { get => _explicitNullValueHasReadOnlyReplicas; set { _explicitNullValueHasReadOnlyReplicas = value; AdditionalData?.Remove("has_read_only_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_read_only_replicas"); else _explicitNullProperties?.Remove("has_read_only_replicas"); } }
+        private bool? _explicitNullValueHasReadOnlyReplicas = default!;
         /// <summary>True if the branch has replica servers</summary>
-        public bool? HasReplicas { get; set; }
+        public bool? HasReplicas { get => _explicitNullValueHasReplicas; set { _explicitNullValueHasReplicas = value; AdditionalData?.Remove("has_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_replicas"); else _explicitNullProperties?.Remove("has_replicas"); } }
+        private bool? _explicitNullValueHasReplicas = default!;
         /// <summary>Planetscale app URL for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get => _explicitNullValueHtmlUrl; set { _explicitNullValueHtmlUrl = value; AdditionalData?.Remove("html_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_url"); else _explicitNullProperties?.Remove("html_url"); } }
+        private string? _explicitNullValueHtmlUrl = default!;
 #nullable restore
 #else
-        public string HtmlUrl { get; set; }
+        public string HtmlUrl { get => _explicitNullValueHtmlUrl; set { _explicitNullValueHtmlUrl = value; AdditionalData?.Remove("html_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_url"); else _explicitNullProperties?.Remove("html_url"); } }
+        private string _explicitNullValueHtmlUrl = default!;
 #endif
         /// <summary>The ID of the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The number of keyspaces in the branch</summary>
-        public int? KeyspaceCount { get; set; }
+        public int? KeyspaceCount { get => _explicitNullValueKeyspaceCount; set { _explicitNullValueKeyspaceCount = value; AdditionalData?.Remove("keyspace_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_count"); else _explicitNullProperties?.Remove("keyspace_count"); } }
+        private int? _explicitNullValueKeyspaceCount = default!;
         /// <summary>The kind of branch</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemKind? Kind { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemKind? _explicitNullValueKind = default!;
         /// <summary>Whether or not this is a metal database</summary>
-        public bool? Metal { get; set; }
+        public bool? Metal { get => _explicitNullValueMetal; set { _explicitNullValueMetal = value; AdditionalData?.Remove("metal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metal"); else _explicitNullProperties?.Remove("metal"); } }
+        private bool? _explicitNullValueMetal = default!;
         /// <summary>The MySQL address for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MysqlAddress { get; set; }
+        public string? MysqlAddress { get => _explicitNullValueMysqlAddress; set { _explicitNullValueMysqlAddress = value; AdditionalData?.Remove("mysql_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_address"); else _explicitNullProperties?.Remove("mysql_address"); } }
+        private string? _explicitNullValueMysqlAddress = default!;
 #nullable restore
 #else
-        public string MysqlAddress { get; set; }
+        public string MysqlAddress { get => _explicitNullValueMysqlAddress; set { _explicitNullValueMysqlAddress = value; AdditionalData?.Remove("mysql_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_address"); else _explicitNullProperties?.Remove("mysql_address"); } }
+        private string _explicitNullValueMysqlAddress = default!;
 #endif
         /// <summary>The address of the MySQL provider for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MysqlEdgeAddress { get; set; }
+        public string? MysqlEdgeAddress { get => _explicitNullValueMysqlEdgeAddress; set { _explicitNullValueMysqlEdgeAddress = value; AdditionalData?.Remove("mysql_edge_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_edge_address"); else _explicitNullProperties?.Remove("mysql_edge_address"); } }
+        private string? _explicitNullValueMysqlEdgeAddress = default!;
 #nullable restore
 #else
-        public string MysqlEdgeAddress { get; set; }
+        public string MysqlEdgeAddress { get => _explicitNullValueMysqlEdgeAddress; set { _explicitNullValueMysqlEdgeAddress = value; AdditionalData?.Remove("mysql_edge_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_edge_address"); else _explicitNullProperties?.Remove("mysql_edge_address"); } }
+        private string _explicitNullValueMysqlEdgeAddress = default!;
 #endif
         /// <summary>The name of the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The name of the parent branch from which the branch was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentBranch { get; set; }
+        public string? ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
+        private string? _explicitNullValueParentBranch = default!;
 #nullable restore
 #else
-        public string ParentBranch { get; set; }
+        public string ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
+        private string _explicitNullValueParentBranch = default!;
 #endif
         /// <summary>True if private connections are enabled</summary>
-        public bool? PrivateEdgeConnectivity { get; set; }
+        public bool? PrivateEdgeConnectivity { get => _explicitNullValuePrivateEdgeConnectivity; set { _explicitNullValuePrivateEdgeConnectivity = value; AdditionalData?.Remove("private_edge_connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_edge_connectivity"); else _explicitNullProperties?.Remove("private_edge_connectivity"); } }
+        private bool? _explicitNullValuePrivateEdgeConnectivity = default!;
         /// <summary>Whether or not the branch is a production branch</summary>
-        public bool? Production { get; set; }
+        public bool? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private bool? _explicitNullValueProduction = default!;
         /// <summary>Whether or not the branch is ready to serve queries</summary>
-        public bool? Ready { get; set; }
+        public bool? Ready { get => _explicitNullValueReady; set { _explicitNullValueReady = value; AdditionalData?.Remove("ready"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ready"); else _explicitNullProperties?.Remove("ready"); } }
+        private bool? _explicitNullValueReady = default!;
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion? Region { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion Region { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRegion _explicitNullValueRegion = default!;
 #endif
         /// <summary>When a user last marked a backup restore checklist as completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestoreChecklistCompletedAt { get; set; }
+        public string? RestoreChecklistCompletedAt { get => _explicitNullValueRestoreChecklistCompletedAt; set { _explicitNullValueRestoreChecklistCompletedAt = value; AdditionalData?.Remove("restore_checklist_completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restore_checklist_completed_at"); else _explicitNullProperties?.Remove("restore_checklist_completed_at"); } }
+        private string? _explicitNullValueRestoreChecklistCompletedAt = default!;
 #nullable restore
 #else
-        public string RestoreChecklistCompletedAt { get; set; }
+        public string RestoreChecklistCompletedAt { get => _explicitNullValueRestoreChecklistCompletedAt; set { _explicitNullValueRestoreChecklistCompletedAt = value; AdditionalData?.Remove("restore_checklist_completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restore_checklist_completed_at"); else _explicitNullProperties?.Remove("restore_checklist_completed_at"); } }
+        private string _explicitNullValueRestoreChecklistCompletedAt = default!;
 #endif
         /// <summary>The restored_from_branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch? RestoredFromBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch? RestoredFromBranch { get => _explicitNullValueRestoredFromBranch; set { _explicitNullValueRestoredFromBranch = value; AdditionalData?.Remove("restored_from_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored_from_branch"); else _explicitNullProperties?.Remove("restored_from_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch? _explicitNullValueRestoredFromBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch RestoredFromBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch RestoredFromBranch { get => _explicitNullValueRestoredFromBranch; set { _explicitNullValueRestoredFromBranch = value; AdditionalData?.Remove("restored_from_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored_from_branch"); else _explicitNullProperties?.Remove("restored_from_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemRestoredFromBranch _explicitNullValueRestoredFromBranch = default!;
 #endif
         /// <summary>Whether or not the branch has safe migrations enabled</summary>
-        public bool? SafeMigrations { get; set; }
+        public bool? SafeMigrations { get => _explicitNullValueSafeMigrations; set { _explicitNullValueSafeMigrations = value; AdditionalData?.Remove("safe_migrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safe_migrations"); else _explicitNullProperties?.Remove("safe_migrations"); } }
+        private bool? _explicitNullValueSafeMigrations = default!;
         /// <summary>When the schema for the branch was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemaLastUpdatedAt { get; set; }
+        public string? SchemaLastUpdatedAt { get => _explicitNullValueSchemaLastUpdatedAt; set { _explicitNullValueSchemaLastUpdatedAt = value; AdditionalData?.Remove("schema_last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_last_updated_at"); else _explicitNullProperties?.Remove("schema_last_updated_at"); } }
+        private string? _explicitNullValueSchemaLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string SchemaLastUpdatedAt { get; set; }
+        public string SchemaLastUpdatedAt { get => _explicitNullValueSchemaLastUpdatedAt; set { _explicitNullValueSchemaLastUpdatedAt = value; AdditionalData?.Remove("schema_last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_last_updated_at"); else _explicitNullProperties?.Remove("schema_last_updated_at"); } }
+        private string _explicitNullValueSchemaLastUpdatedAt = default!;
 #endif
         /// <summary>Whether or not the schema is ready for queries</summary>
-        public bool? SchemaReady { get; set; }
+        public bool? SchemaReady { get => _explicitNullValueSchemaReady; set { _explicitNullValueSchemaReady = value; AdditionalData?.Remove("schema_ready"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_ready"); else _explicitNullProperties?.Remove("schema_ready"); } }
+        private bool? _explicitNullValueSchemaReady = default!;
         /// <summary>The number of shards in the branch</summary>
-        public int? ShardCount { get; set; }
+        public int? ShardCount { get => _explicitNullValueShardCount; set { _explicitNullValueShardCount = value; AdditionalData?.Remove("shard_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_count"); else _explicitNullProperties?.Remove("shard_count"); } }
+        private int? _explicitNullValueShardCount = default!;
         /// <summary>Whether or not the branch is sharded</summary>
-        public bool? Sharded { get; set; }
+        public bool? Sharded { get => _explicitNullValueSharded; set { _explicitNullValueSharded = value; AdditionalData?.Remove("sharded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharded"); else _explicitNullProperties?.Remove("sharded"); } }
+        private bool? _explicitNullValueSharded = default!;
         /// <summary>Whether or not the branch has a stale schema</summary>
-        public bool? StaleSchema { get; set; }
+        public bool? StaleSchema { get => _explicitNullValueStaleSchema; set { _explicitNullValueStaleSchema = value; AdditionalData?.Remove("stale_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stale_schema"); else _explicitNullProperties?.Remove("stale_schema"); } }
+        private bool? _explicitNullValueStaleSchema = default!;
         /// <summary>The current state of the branch</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemState? _explicitNullValueState = default!;
         /// <summary>When the branch was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>Planetscale API URL for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Whether VTGate autoscaling is enabled</summary>
-        public bool? VtgateAutoscaling { get; set; }
+        public bool? VtgateAutoscaling { get => _explicitNullValueVtgateAutoscaling; set { _explicitNullValueVtgateAutoscaling = value; AdditionalData?.Remove("vtgate_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_autoscaling"); else _explicitNullProperties?.Remove("vtgate_autoscaling"); } }
+        private bool? _explicitNullValueVtgateAutoscaling = default!;
         /// <summary>The number of vtgate instances in the branch</summary>
-        public int? VtgateCount { get; set; }
+        public int? VtgateCount { get => _explicitNullValueVtgateCount; set { _explicitNullValueVtgateCount = value; AdditionalData?.Remove("vtgate_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_count"); else _explicitNullProperties?.Remove("vtgate_count"); } }
+        private int? _explicitNullValueVtgateCount = default!;
         /// <summary>The maximum number of VTGate instances when autoscaling is enabled</summary>
-        public int? VtgateMaxCount { get; set; }
+        public int? VtgateMaxCount { get => _explicitNullValueVtgateMaxCount; set { _explicitNullValueVtgateMaxCount = value; AdditionalData?.Remove("vtgate_max_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_max_count"); else _explicitNullProperties?.Remove("vtgate_max_count"); } }
+        private int? _explicitNullValueVtgateMaxCount = default!;
         /// <summary>The public SKU representing the VTGate size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateName { get; set; }
+        public string? VtgateName { get => _explicitNullValueVtgateName; set { _explicitNullValueVtgateName = value; AdditionalData?.Remove("vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_name"); else _explicitNullProperties?.Remove("vtgate_name"); } }
+        private string? _explicitNullValueVtgateName = default!;
 #nullable restore
 #else
-        public string VtgateName { get; set; }
+        public string VtgateName { get => _explicitNullValueVtgateName; set { _explicitNullValueVtgateName = value; AdditionalData?.Remove("vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_name"); else _explicitNullProperties?.Remove("vtgate_name"); } }
+        private string _explicitNullValueVtgateName = default!;
 #endif
         /// <summary>VTGate configuration options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty? VtgateOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty? VtgateOptions { get => _explicitNullValueVtgateOptions; set { _explicitNullValueVtgateOptions = value; AdditionalData?.Remove("vtgate_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_options"); else _explicitNullProperties?.Remove("vtgate_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty? _explicitNullValueVtgateOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty VtgateOptions { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty VtgateOptions { get => _explicitNullValueVtgateOptions; set { _explicitNullValueVtgateOptions = value; AdditionalData?.Remove("vtgate_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_options"); else _explicitNullProperties?.Remove("vtgate_options"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty _explicitNullValueVtgateOptions = default!;
 #endif
         /// <summary>The size of the vtgate cluster for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateSize { get; set; }
+        public string? VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string? _explicitNullValueVtgateSize = default!;
 #nullable restore
 #else
-        public string VtgateSize { get; set; }
+        public string VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string _explicitNullValueVtgateSize = default!;
 #endif
         /// <summary>The target CPU utilization for VTGate autoscaling</summary>
-        public int? VtgateTargetCpuUtilization { get; set; }
+        public int? VtgateTargetCpuUtilization { get => _explicitNullValueVtgateTargetCpuUtilization; set { _explicitNullValueVtgateTargetCpuUtilization = value; AdditionalData?.Remove("vtgate_target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_target_cpu_utilization"); else _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); } }
+        private int? _explicitNullValueVtgateTargetCpuUtilization = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItem"/> and sets the default values.
         /// </summary>
@@ -223,7 +369,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -245,7 +391,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "keyspace_count", n => { KeyspaceCount = n.GetIntValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemKind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "metal", n => { Metal = n.GetBoolValue(); } },
                 { "mysql_address", n => { MysqlAddress = n.GetStringValue(); } },
                 { "mysql_edge_address", n => { MysqlEdgeAddress = n.GetStringValue(); } },
@@ -263,7 +409,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "shard_count", n => { ShardCount = n.GetIntValue(); } },
                 { "sharded", n => { Sharded = n.GetBoolValue(); } },
                 { "stale_schema", n => { StaleSchema = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "vtgate_autoscaling", n => { VtgateAutoscaling = n.GetBoolValue(); } },
@@ -322,6 +468,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchDataItemVtgateOptionsProperty>("vtgate_options", VtgateOptions);
             writer.WriteStringValue("vtgate_size", VtgateSize);
             writer.WriteIntValue("vtgate_target_cpu_utilization", VtgateTargetCpuUtilization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

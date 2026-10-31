@@ -11,33 +11,60 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateRouterRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoscaling") is null) { _explicitNullValueAutoscaling = default!; _explicitNullProperties?.Remove("autoscaling"); }
+            else if (parseNode.GetChildNode("autoscaling") is { } nullNodeAutoscaling && nullNodeAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoscaling = null;
+            if (parseNode.GetChildNode("max_replicas_per_cell") is null) { _explicitNullValueMaxReplicasPerCell = default!; _explicitNullProperties?.Remove("max_replicas_per_cell"); }
+            else if (parseNode.GetChildNode("max_replicas_per_cell") is { } nullNodeMaxReplicasPerCell && nullNodeMaxReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxReplicasPerCell = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("replicas_per_cell") is null) { _explicitNullValueReplicasPerCell = default!; _explicitNullProperties?.Remove("replicas_per_cell"); }
+            else if (parseNode.GetChildNode("replicas_per_cell") is { } nullNodeReplicasPerCell && nullNodeReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicasPerCell = null;
+            if (parseNode.GetChildNode("router_size") is null) { _explicitNullValueRouterSize = default!; _explicitNullProperties?.Remove("router_size"); }
+            else if (parseNode.GetChildNode("router_size") is { } nullNodeRouterSize && nullNodeRouterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouterSize = null;
+            if (parseNode.GetChildNode("target_cpu_utilization") is null) { _explicitNullValueTargetCpuUtilization = default!; _explicitNullProperties?.Remove("target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("target_cpu_utilization") is { } nullNodeTargetCpuUtilization && nullNodeTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCpuUtilization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the router scales horizontally within each cell</summary>
-        public bool? Autoscaling { get; set; }
+        public bool? Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; AdditionalData?.Remove("autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
+        private bool? _explicitNullValueAutoscaling = default!;
         /// <summary>The maximum number of replicas in each cell when autoscaling</summary>
-        public int? MaxReplicasPerCell { get; set; }
+        public int? MaxReplicasPerCell { get => _explicitNullValueMaxReplicasPerCell; set { _explicitNullValueMaxReplicasPerCell = value; AdditionalData?.Remove("max_replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_replicas_per_cell"); else _explicitNullProperties?.Remove("max_replicas_per_cell"); } }
+        private int? _explicitNullValueMaxReplicasPerCell = default!;
         /// <summary>Router parameters nested by namespace (e.g., {&quot;router&quot;: {&quot;replication-lag-tolerable-max&quot;: &quot;15m&quot;}})</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequestParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>The new number of replicas in each cell</summary>
-        public int? ReplicasPerCell { get; set; }
+        public int? ReplicasPerCell { get => _explicitNullValueReplicasPerCell; set { _explicitNullValueReplicasPerCell = value; AdditionalData?.Remove("replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas_per_cell"); else _explicitNullProperties?.Remove("replicas_per_cell"); } }
+        private int? _explicitNullValueReplicasPerCell = default!;
         /// <summary>The new router size for the router</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RouterSize { get; set; }
+        public string? RouterSize { get => _explicitNullValueRouterSize; set { _explicitNullValueRouterSize = value; AdditionalData?.Remove("router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size"); else _explicitNullProperties?.Remove("router_size"); } }
+        private string? _explicitNullValueRouterSize = default!;
 #nullable restore
 #else
-        public string RouterSize { get; set; }
+        public string RouterSize { get => _explicitNullValueRouterSize; set { _explicitNullValueRouterSize = value; AdditionalData?.Remove("router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size"); else _explicitNullProperties?.Remove("router_size"); } }
+        private string _explicitNullValueRouterSize = default!;
 #endif
         /// <summary>The target average CPU utilization percentage when autoscaling</summary>
-        public int? TargetCpuUtilization { get; set; }
+        public int? TargetCpuUtilization { get => _explicitNullValueTargetCpuUtilization; set { _explicitNullValueTargetCpuUtilization = value; AdditionalData?.Remove("target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_cpu_utilization"); else _explicitNullProperties?.Remove("target_cpu_utilization"); } }
+        private int? _explicitNullValueTargetCpuUtilization = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequest"/> and sets the default values.
         /// </summary>
@@ -53,7 +80,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRouterRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +111,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("replicas_per_cell", ReplicasPerCell);
             writer.WriteStringValue("router_size", RouterSize);
             writer.WriteIntValue("target_cpu_utilization", TargetCpuUtilization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

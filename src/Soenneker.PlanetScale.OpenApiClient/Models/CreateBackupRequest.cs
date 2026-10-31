@@ -11,23 +11,43 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateBackupRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("emergency") is null) { _explicitNullValueEmergency = default!; _explicitNullProperties?.Remove("emergency"); }
+            else if (parseNode.GetChildNode("emergency") is { } nullNodeEmergency && nullNodeEmergency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emergency = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("retention_unit") is null) { _explicitNullValueRetentionUnit = default!; _explicitNullProperties?.Remove("retention_unit"); }
+            else if (parseNode.GetChildNode("retention_unit") is { } nullNodeRetentionUnit && nullNodeRetentionUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionUnit = null;
+            if (parseNode.GetChildNode("retention_value") is null) { _explicitNullValueRetentionValue = default!; _explicitNullProperties?.Remove("retention_value"); }
+            else if (parseNode.GetChildNode("retention_value") is { } nullNodeRetentionValue && nullNodeRetentionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the backup is an immediate backup that may affect database performance. Emergency backups are only supported for PostgreSQL databases.</summary>
-        public bool? Emergency { get; set; }
+        public bool? Emergency { get => _explicitNullValueEmergency; set { _explicitNullValueEmergency = value; AdditionalData?.Remove("emergency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emergency"); else _explicitNullProperties?.Remove("emergency"); } }
+        private bool? _explicitNullValueEmergency = default!;
         /// <summary>Name for the backup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Unit for the retention period of the backup</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit? RetentionUnit { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit? RetentionUnit { get => _explicitNullValueRetentionUnit; set { _explicitNullValueRetentionUnit = value; AdditionalData?.Remove("retention_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_unit"); else _explicitNullProperties?.Remove("retention_unit"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit? _explicitNullValueRetentionUnit = default!;
         /// <summary>Value between `1` and `1000` for the retention period of the backup (i.e retention_value `6` and retention_unit `hour` means 6 hours)</summary>
-        public int? RetentionValue { get; set; }
+        public int? RetentionValue { get => _explicitNullValueRetentionValue; set { _explicitNullValueRetentionValue = value; AdditionalData?.Remove("retention_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_value"); else _explicitNullProperties?.Remove("retention_value"); } }
+        private int? _explicitNullValueRetentionValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequest"/> and sets the default values.
         /// </summary>
@@ -43,7 +63,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,7 +75,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             {
                 { "emergency", n => { Emergency = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "retention_unit", n => { RetentionUnit = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit>(); } },
+                { "retention_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRetentionUnit = default; _explicitNullProperties?.Remove("retention_unit"); AdditionalData["retention_unit"] = unknown; } else { RetentionUnit = parsed; AdditionalData.Remove("retention_unit"); } } },
                 { "retention_value", n => { RetentionValue = n.GetIntValue(); } },
             };
         }
@@ -70,6 +90,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupRequestRetentionUnit>("retention_unit", RetentionUnit);
             writer.WriteIntValue("retention_value", RetentionValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

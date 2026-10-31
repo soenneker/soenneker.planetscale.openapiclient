@@ -11,89 +11,160 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ClusterSizeSku : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("architecture") is null) { _explicitNullValueArchitecture = default!; _explicitNullProperties?.Remove("architecture"); }
+            else if (parseNode.GetChildNode("architecture") is { } nullNodeArchitecture && nullNodeArchitecture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Architecture = null;
+            if (parseNode.GetChildNode("cpu") is null) { _explicitNullValueCpu = default!; _explicitNullProperties?.Remove("cpu"); }
+            else if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
+            if (parseNode.GetChildNode("default_neki_router") is null) { _explicitNullValueDefaultNekiRouter = default!; _explicitNullProperties?.Remove("default_neki_router"); }
+            else if (parseNode.GetChildNode("default_neki_router") is { } nullNodeDefaultNekiRouter && nullNodeDefaultNekiRouter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultNekiRouter = null;
+            if (parseNode.GetChildNode("default_neki_router_rate") is null) { _explicitNullValueDefaultNekiRouterRate = default!; _explicitNullProperties?.Remove("default_neki_router_rate"); }
+            else if (parseNode.GetChildNode("default_neki_router_rate") is { } nullNodeDefaultNekiRouterRate && nullNodeDefaultNekiRouterRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultNekiRouterRate = null;
+            if (parseNode.GetChildNode("default_vtgate") is null) { _explicitNullValueDefaultVtgate = default!; _explicitNullProperties?.Remove("default_vtgate"); }
+            else if (parseNode.GetChildNode("default_vtgate") is { } nullNodeDefaultVtgate && nullNodeDefaultVtgate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultVtgate = null;
+            if (parseNode.GetChildNode("default_vtgate_rate") is null) { _explicitNullValueDefaultVtgateRate = default!; _explicitNullProperties?.Remove("default_vtgate_rate"); }
+            else if (parseNode.GetChildNode("default_vtgate_rate") is { } nullNodeDefaultVtgateRate && nullNodeDefaultVtgateRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultVtgateRate = null;
+            if (parseNode.GetChildNode("development") is null) { _explicitNullValueDevelopment = default!; _explicitNullProperties?.Remove("development"); }
+            else if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
+            if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
+            else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("external") is null) { _explicitNullValueExternal = default!; _explicitNullProperties?.Remove("external"); }
+            else if (parseNode.GetChildNode("external") is { } nullNodeExternal && nullNodeExternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) External = null;
+            if (parseNode.GetChildNode("metal") is null) { _explicitNullValueMetal = default!; _explicitNullProperties?.Remove("metal"); }
+            else if (parseNode.GetChildNode("metal") is { } nullNodeMetal && nullNodeMetal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metal = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("production") is null) { _explicitNullValueProduction = default!; _explicitNullProperties?.Remove("production"); }
+            else if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("ram") is null) { _explicitNullValueRam = default!; _explicitNullProperties?.Remove("ram"); }
+            else if (parseNode.GetChildNode("ram") is { } nullNodeRam && nullNodeRam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ram = null;
+            if (parseNode.GetChildNode("rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("rate"); }
+            else if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("replica_rate") is null) { _explicitNullValueReplicaRate = default!; _explicitNullProperties?.Remove("replica_rate"); }
+            else if (parseNode.GetChildNode("replica_rate") is { } nullNodeReplicaRate && nullNodeReplicaRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicaRate = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The architecture of the cluster SKU (null, x86_64 or arm64)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Architecture { get; set; }
+        public string? Architecture { get => _explicitNullValueArchitecture; set { _explicitNullValueArchitecture = value; AdditionalData?.Remove("architecture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("architecture"); else _explicitNullProperties?.Remove("architecture"); } }
+        private string? _explicitNullValueArchitecture = default!;
 #nullable restore
 #else
-        public string Architecture { get; set; }
+        public string Architecture { get => _explicitNullValueArchitecture; set { _explicitNullValueArchitecture = value; AdditionalData?.Remove("architecture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("architecture"); else _explicitNullProperties?.Remove("architecture"); } }
+        private string _explicitNullValueArchitecture = default!;
 #endif
         /// <summary>The number of CPUs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cpu { get; set; }
+        public string? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        private string? _explicitNullValueCpu = default!;
 #nullable restore
 #else
-        public string Cpu { get; set; }
+        public string Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        private string _explicitNullValueCpu = default!;
 #endif
         /// <summary>The recommended Neki router size for the cluster SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultNekiRouter { get; set; }
+        public string? DefaultNekiRouter { get => _explicitNullValueDefaultNekiRouter; set { _explicitNullValueDefaultNekiRouter = value; AdditionalData?.Remove("default_neki_router"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_neki_router"); else _explicitNullProperties?.Remove("default_neki_router"); } }
+        private string? _explicitNullValueDefaultNekiRouter = default!;
 #nullable restore
 #else
-        public string DefaultNekiRouter { get; set; }
+        public string DefaultNekiRouter { get => _explicitNullValueDefaultNekiRouter; set { _explicitNullValueDefaultNekiRouter = value; AdditionalData?.Remove("default_neki_router"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_neki_router"); else _explicitNullProperties?.Remove("default_neki_router"); } }
+        private string _explicitNullValueDefaultNekiRouter = default!;
 #endif
         /// <summary>The default Neki router rate for the cluster SKU</summary>
-        public double? DefaultNekiRouterRate { get; set; }
+        public double? DefaultNekiRouterRate { get => _explicitNullValueDefaultNekiRouterRate; set { _explicitNullValueDefaultNekiRouterRate = value; AdditionalData?.Remove("default_neki_router_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_neki_router_rate"); else _explicitNullProperties?.Remove("default_neki_router_rate"); } }
+        private double? _explicitNullValueDefaultNekiRouterRate = default!;
         /// <summary>The default vtgate size for the cluster SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultVtgate { get; set; }
+        public string? DefaultVtgate { get => _explicitNullValueDefaultVtgate; set { _explicitNullValueDefaultVtgate = value; AdditionalData?.Remove("default_vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_vtgate"); else _explicitNullProperties?.Remove("default_vtgate"); } }
+        private string? _explicitNullValueDefaultVtgate = default!;
 #nullable restore
 #else
-        public string DefaultVtgate { get; set; }
+        public string DefaultVtgate { get => _explicitNullValueDefaultVtgate; set { _explicitNullValueDefaultVtgate = value; AdditionalData?.Remove("default_vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_vtgate"); else _explicitNullProperties?.Remove("default_vtgate"); } }
+        private string _explicitNullValueDefaultVtgate = default!;
 #endif
         /// <summary>The default vtgate rate for the cluster SKU</summary>
-        public double? DefaultVtgateRate { get; set; }
+        public double? DefaultVtgateRate { get => _explicitNullValueDefaultVtgateRate; set { _explicitNullValueDefaultVtgateRate = value; AdditionalData?.Remove("default_vtgate_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_vtgate_rate"); else _explicitNullProperties?.Remove("default_vtgate_rate"); } }
+        private double? _explicitNullValueDefaultVtgateRate = default!;
         /// <summary>Whether or not the cluster SKU is a development SKU</summary>
-        public bool? Development { get; set; }
+        public bool? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; AdditionalData?.Remove("development"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        private bool? _explicitNullValueDevelopment = default!;
         /// <summary>The display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>Whether or not the cluster SKU is enabled for the organization</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Whether or not the cluster SKU is for an external keyspace</summary>
-        public bool? External { get; set; }
+        public bool? External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; AdditionalData?.Remove("external"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
+        private bool? _explicitNullValueExternal = default!;
         /// <summary>Whether or not the cluster SKU is Metal</summary>
-        public bool? Metal { get; set; }
+        public bool? Metal { get => _explicitNullValueMetal; set { _explicitNullValueMetal = value; AdditionalData?.Remove("metal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metal"); else _explicitNullProperties?.Remove("metal"); } }
+        private bool? _explicitNullValueMetal = default!;
         /// <summary>The name of the cluster SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether or not the cluster SKU is a production SKU</summary>
-        public bool? Production { get; set; }
+        public bool? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private bool? _explicitNullValueProduction = default!;
         /// <summary>The provider of the cluster SKU (nil, AWS or GCP)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The amount of memory in bytes</summary>
-        public int? Ram { get; set; }
+        public int? Ram { get => _explicitNullValueRam; set { _explicitNullValueRam = value; AdditionalData?.Remove("ram"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ram"); else _explicitNullProperties?.Remove("ram"); } }
+        private int? _explicitNullValueRam = default!;
         /// <summary>The rate for the cluster SKU</summary>
-        public double? Rate { get; set; }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        private double? _explicitNullValueRate = default!;
         /// <summary>The replica rate for the cluster SKU</summary>
-        public double? ReplicaRate { get; set; }
+        public double? ReplicaRate { get => _explicitNullValueReplicaRate; set { _explicitNullValueReplicaRate = value; AdditionalData?.Remove("replica_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replica_rate"); else _explicitNullProperties?.Remove("replica_rate"); } }
+        private double? _explicitNullValueReplicaRate = default!;
         /// <summary>The sort order of the cluster SKU</summary>
-        public int? SortOrder { get; set; }
+        public int? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private int? _explicitNullValueSortOrder = default!;
         /// <summary>The amount of storage in bytes</summary>
-        public int? Storage { get; set; }
+        public int? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private int? _explicitNullValueStorage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku"/> and sets the default values.
         /// </summary>
@@ -109,7 +180,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,6 +237,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("replica_rate", ReplicaRate);
             writer.WriteIntValue("sort_order", SortOrder);
             writer.WriteIntValue("storage", Storage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

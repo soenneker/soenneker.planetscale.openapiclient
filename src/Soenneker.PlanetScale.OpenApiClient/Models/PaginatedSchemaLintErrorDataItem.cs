@@ -11,138 +11,212 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedSchemaLintErrorDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_increment_column_names") is null) { _explicitNullValueAutoIncrementColumnNames = default!; _explicitNullProperties?.Remove("auto_increment_column_names"); }
+            else if (parseNode.GetChildNode("auto_increment_column_names") is { } nullNodeAutoIncrementColumnNames && nullNodeAutoIncrementColumnNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoIncrementColumnNames = null;
+            if (parseNode.GetChildNode("charset_name") is null) { _explicitNullValueCharsetName = default!; _explicitNullProperties?.Remove("charset_name"); }
+            else if (parseNode.GetChildNode("charset_name") is { } nullNodeCharsetName && nullNodeCharsetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharsetName = null;
+            if (parseNode.GetChildNode("check_constraint_name") is null) { _explicitNullValueCheckConstraintName = default!; _explicitNullProperties?.Remove("check_constraint_name"); }
+            else if (parseNode.GetChildNode("check_constraint_name") is { } nullNodeCheckConstraintName && nullNodeCheckConstraintName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckConstraintName = null;
+            if (parseNode.GetChildNode("column_name") is null) { _explicitNullValueColumnName = default!; _explicitNullProperties?.Remove("column_name"); }
+            else if (parseNode.GetChildNode("column_name") is { } nullNodeColumnName && nullNodeColumnName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnName = null;
+            if (parseNode.GetChildNode("docs_url") is null) { _explicitNullValueDocsUrl = default!; _explicitNullProperties?.Remove("docs_url"); }
+            else if (parseNode.GetChildNode("docs_url") is { } nullNodeDocsUrl && nullNodeDocsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocsUrl = null;
+            if (parseNode.GetChildNode("engine_name") is null) { _explicitNullValueEngineName = default!; _explicitNullProperties?.Remove("engine_name"); }
+            else if (parseNode.GetChildNode("engine_name") is { } nullNodeEngineName && nullNodeEngineName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngineName = null;
+            if (parseNode.GetChildNode("enum_value") is null) { _explicitNullValueEnumValue = default!; _explicitNullProperties?.Remove("enum_value"); }
+            else if (parseNode.GetChildNode("enum_value") is { } nullNodeEnumValue && nullNodeEnumValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnumValue = null;
+            if (parseNode.GetChildNode("error_description") is null) { _explicitNullValueErrorDescription = default!; _explicitNullProperties?.Remove("error_description"); }
+            else if (parseNode.GetChildNode("error_description") is { } nullNodeErrorDescription && nullNodeErrorDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorDescription = null;
+            if (parseNode.GetChildNode("foreign_key_column_names") is null) { _explicitNullValueForeignKeyColumnNames = default!; _explicitNullProperties?.Remove("foreign_key_column_names"); }
+            else if (parseNode.GetChildNode("foreign_key_column_names") is { } nullNodeForeignKeyColumnNames && nullNodeForeignKeyColumnNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForeignKeyColumnNames = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("keyspace_name") is null) { _explicitNullValueKeyspaceName = default!; _explicitNullProperties?.Remove("keyspace_name"); }
+            else if (parseNode.GetChildNode("keyspace_name") is { } nullNodeKeyspaceName && nullNodeKeyspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyspaceName = null;
+            if (parseNode.GetChildNode("lint_error") is null) { _explicitNullValueLintError = default!; _explicitNullProperties?.Remove("lint_error"); }
+            else if (parseNode.GetChildNode("lint_error") is { } nullNodeLintError && nullNodeLintError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LintError = null;
+            if (parseNode.GetChildNode("partitioning_type") is null) { _explicitNullValuePartitioningType = default!; _explicitNullProperties?.Remove("partitioning_type"); }
+            else if (parseNode.GetChildNode("partitioning_type") is { } nullNodePartitioningType && nullNodePartitioningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartitioningType = null;
+            if (parseNode.GetChildNode("partition_name") is null) { _explicitNullValuePartitionName = default!; _explicitNullProperties?.Remove("partition_name"); }
+            else if (parseNode.GetChildNode("partition_name") is { } nullNodePartitionName && nullNodePartitionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartitionName = null;
+            if (parseNode.GetChildNode("subject_type") is null) { _explicitNullValueSubjectType = default!; _explicitNullProperties?.Remove("subject_type"); }
+            else if (parseNode.GetChildNode("subject_type") is { } nullNodeSubjectType && nullNodeSubjectType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectType = null;
+            if (parseNode.GetChildNode("table_name") is null) { _explicitNullValueTableName = default!; _explicitNullProperties?.Remove("table_name"); }
+            else if (parseNode.GetChildNode("table_name") is { } nullNodeTableName && nullNodeTableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableName = null;
+            if (parseNode.GetChildNode("vindex_name") is null) { _explicitNullValueVindexName = default!; _explicitNullProperties?.Remove("vindex_name"); }
+            else if (parseNode.GetChildNode("vindex_name") is { } nullNodeVindexName && nullNodeVindexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VindexName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of invalid auto-incremented columns</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AutoIncrementColumnNames { get; set; }
+        public List<string>? AutoIncrementColumnNames { get => _explicitNullValueAutoIncrementColumnNames; set { _explicitNullValueAutoIncrementColumnNames = value; AdditionalData?.Remove("auto_increment_column_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_increment_column_names"); else _explicitNullProperties?.Remove("auto_increment_column_names"); } }
+        private List<string>? _explicitNullValueAutoIncrementColumnNames = default!;
 #nullable restore
 #else
-        public List<string> AutoIncrementColumnNames { get; set; }
+        public List<string> AutoIncrementColumnNames { get => _explicitNullValueAutoIncrementColumnNames; set { _explicitNullValueAutoIncrementColumnNames = value; AdditionalData?.Remove("auto_increment_column_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_increment_column_names"); else _explicitNullProperties?.Remove("auto_increment_column_names"); } }
+        private List<string> _explicitNullValueAutoIncrementColumnNames = default!;
 #endif
         /// <summary>The charset of the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CharsetName { get; set; }
+        public string? CharsetName { get => _explicitNullValueCharsetName; set { _explicitNullValueCharsetName = value; AdditionalData?.Remove("charset_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charset_name"); else _explicitNullProperties?.Remove("charset_name"); } }
+        private string? _explicitNullValueCharsetName = default!;
 #nullable restore
 #else
-        public string CharsetName { get; set; }
+        public string CharsetName { get => _explicitNullValueCharsetName; set { _explicitNullValueCharsetName = value; AdditionalData?.Remove("charset_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charset_name"); else _explicitNullProperties?.Remove("charset_name"); } }
+        private string _explicitNullValueCharsetName = default!;
 #endif
         /// <summary>The name of the invalid check constraint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckConstraintName { get; set; }
+        public string? CheckConstraintName { get => _explicitNullValueCheckConstraintName; set { _explicitNullValueCheckConstraintName = value; AdditionalData?.Remove("check_constraint_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_constraint_name"); else _explicitNullProperties?.Remove("check_constraint_name"); } }
+        private string? _explicitNullValueCheckConstraintName = default!;
 #nullable restore
 #else
-        public string CheckConstraintName { get; set; }
+        public string CheckConstraintName { get => _explicitNullValueCheckConstraintName; set { _explicitNullValueCheckConstraintName = value; AdditionalData?.Remove("check_constraint_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_constraint_name"); else _explicitNullProperties?.Remove("check_constraint_name"); } }
+        private string _explicitNullValueCheckConstraintName = default!;
 #endif
         /// <summary>The column in a table relevant to the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColumnName { get; set; }
+        public string? ColumnName { get => _explicitNullValueColumnName; set { _explicitNullValueColumnName = value; AdditionalData?.Remove("column_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_name"); else _explicitNullProperties?.Remove("column_name"); } }
+        private string? _explicitNullValueColumnName = default!;
 #nullable restore
 #else
-        public string ColumnName { get; set; }
+        public string ColumnName { get => _explicitNullValueColumnName; set { _explicitNullValueColumnName = value; AdditionalData?.Remove("column_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_name"); else _explicitNullProperties?.Remove("column_name"); } }
+        private string _explicitNullValueColumnName = default!;
 #endif
         /// <summary>A link to the documentation related to the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocsUrl { get; set; }
+        public string? DocsUrl { get => _explicitNullValueDocsUrl; set { _explicitNullValueDocsUrl = value; AdditionalData?.Remove("docs_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("docs_url"); else _explicitNullProperties?.Remove("docs_url"); } }
+        private string? _explicitNullValueDocsUrl = default!;
 #nullable restore
 #else
-        public string DocsUrl { get; set; }
+        public string DocsUrl { get => _explicitNullValueDocsUrl; set { _explicitNullValueDocsUrl = value; AdditionalData?.Remove("docs_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("docs_url"); else _explicitNullProperties?.Remove("docs_url"); } }
+        private string _explicitNullValueDocsUrl = default!;
 #endif
         /// <summary>The engine of the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EngineName { get; set; }
+        public string? EngineName { get => _explicitNullValueEngineName; set { _explicitNullValueEngineName = value; AdditionalData?.Remove("engine_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engine_name"); else _explicitNullProperties?.Remove("engine_name"); } }
+        private string? _explicitNullValueEngineName = default!;
 #nullable restore
 #else
-        public string EngineName { get; set; }
+        public string EngineName { get => _explicitNullValueEngineName; set { _explicitNullValueEngineName = value; AdditionalData?.Remove("engine_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engine_name"); else _explicitNullProperties?.Remove("engine_name"); } }
+        private string _explicitNullValueEngineName = default!;
 #endif
         /// <summary>The name of the invalid enum value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnumValue { get; set; }
+        public string? EnumValue { get => _explicitNullValueEnumValue; set { _explicitNullValueEnumValue = value; AdditionalData?.Remove("enum_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enum_value"); else _explicitNullProperties?.Remove("enum_value"); } }
+        private string? _explicitNullValueEnumValue = default!;
 #nullable restore
 #else
-        public string EnumValue { get; set; }
+        public string EnumValue { get => _explicitNullValueEnumValue; set { _explicitNullValueEnumValue = value; AdditionalData?.Remove("enum_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enum_value"); else _explicitNullProperties?.Remove("enum_value"); } }
+        private string _explicitNullValueEnumValue = default!;
 #endif
         /// <summary>A description for the error that occurred</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDescription { get; set; }
+        public string? ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; AdditionalData?.Remove("error_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_description"); else _explicitNullProperties?.Remove("error_description"); } }
+        private string? _explicitNullValueErrorDescription = default!;
 #nullable restore
 #else
-        public string ErrorDescription { get; set; }
+        public string ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; AdditionalData?.Remove("error_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_description"); else _explicitNullProperties?.Remove("error_description"); } }
+        private string _explicitNullValueErrorDescription = default!;
 #endif
         /// <summary>A list of invalid foreign key columns in a table</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ForeignKeyColumnNames { get; set; }
+        public List<string>? ForeignKeyColumnNames { get => _explicitNullValueForeignKeyColumnNames; set { _explicitNullValueForeignKeyColumnNames = value; AdditionalData?.Remove("foreign_key_column_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreign_key_column_names"); else _explicitNullProperties?.Remove("foreign_key_column_names"); } }
+        private List<string>? _explicitNullValueForeignKeyColumnNames = default!;
 #nullable restore
 #else
-        public List<string> ForeignKeyColumnNames { get; set; }
+        public List<string> ForeignKeyColumnNames { get => _explicitNullValueForeignKeyColumnNames; set { _explicitNullValueForeignKeyColumnNames = value; AdditionalData?.Remove("foreign_key_column_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreign_key_column_names"); else _explicitNullProperties?.Remove("foreign_key_column_names"); } }
+        private List<string> _explicitNullValueForeignKeyColumnNames = default!;
 #endif
         /// <summary>The path for an invalid JSON column</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get; set; }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get; set; }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>The keyspace of the schema with the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyspaceName { get; set; }
+        public string? KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string? _explicitNullValueKeyspaceName = default!;
 #nullable restore
 #else
-        public string KeyspaceName { get; set; }
+        public string KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string _explicitNullValueKeyspaceName = default!;
 #endif
         /// <summary>Code representing the type of error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LintError { get; set; }
+        public string? LintError { get => _explicitNullValueLintError; set { _explicitNullValueLintError = value; AdditionalData?.Remove("lint_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint_error"); else _explicitNullProperties?.Remove("lint_error"); } }
+        private string? _explicitNullValueLintError = default!;
 #nullable restore
 #else
-        public string LintError { get; set; }
+        public string LintError { get => _explicitNullValueLintError; set { _explicitNullValueLintError = value; AdditionalData?.Remove("lint_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lint_error"); else _explicitNullProperties?.Remove("lint_error"); } }
+        private string _explicitNullValueLintError = default!;
 #endif
         /// <summary>The name of the invalid partitioning type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartitioningType { get; set; }
+        public string? PartitioningType { get => _explicitNullValuePartitioningType; set { _explicitNullValuePartitioningType = value; AdditionalData?.Remove("partitioning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partitioning_type"); else _explicitNullProperties?.Remove("partitioning_type"); } }
+        private string? _explicitNullValuePartitioningType = default!;
 #nullable restore
 #else
-        public string PartitioningType { get; set; }
+        public string PartitioningType { get => _explicitNullValuePartitioningType; set { _explicitNullValuePartitioningType = value; AdditionalData?.Remove("partitioning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partitioning_type"); else _explicitNullProperties?.Remove("partitioning_type"); } }
+        private string _explicitNullValuePartitioningType = default!;
 #endif
         /// <summary>The name of the invalid partition in the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartitionName { get; set; }
+        public string? PartitionName { get => _explicitNullValuePartitionName; set { _explicitNullValuePartitionName = value; AdditionalData?.Remove("partition_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partition_name"); else _explicitNullProperties?.Remove("partition_name"); } }
+        private string? _explicitNullValuePartitionName = default!;
 #nullable restore
 #else
-        public string PartitionName { get; set; }
+        public string PartitionName { get => _explicitNullValuePartitionName; set { _explicitNullValuePartitionName = value; AdditionalData?.Remove("partition_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partition_name"); else _explicitNullProperties?.Remove("partition_name"); } }
+        private string _explicitNullValuePartitionName = default!;
 #endif
         /// <summary>The subject for the errors</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType? SubjectType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType? SubjectType { get => _explicitNullValueSubjectType; set { _explicitNullValueSubjectType = value; AdditionalData?.Remove("subject_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_type"); else _explicitNullProperties?.Remove("subject_type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType? _explicitNullValueSubjectType = default!;
         /// <summary>The table with the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TableName { get; set; }
+        public string? TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string? _explicitNullValueTableName = default!;
 #nullable restore
 #else
-        public string TableName { get; set; }
+        public string TableName { get => _explicitNullValueTableName; set { _explicitNullValueTableName = value; AdditionalData?.Remove("table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_name"); else _explicitNullProperties?.Remove("table_name"); } }
+        private string _explicitNullValueTableName = default!;
 #endif
         /// <summary>The name of the vindex for the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VindexName { get; set; }
+        public string? VindexName { get => _explicitNullValueVindexName; set { _explicitNullValueVindexName = value; AdditionalData?.Remove("vindex_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vindex_name"); else _explicitNullProperties?.Remove("vindex_name"); } }
+        private string? _explicitNullValueVindexName = default!;
 #nullable restore
 #else
-        public string VindexName { get; set; }
+        public string VindexName { get => _explicitNullValueVindexName; set { _explicitNullValueVindexName = value; AdditionalData?.Remove("vindex_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vindex_name"); else _explicitNullProperties?.Remove("vindex_name"); } }
+        private string _explicitNullValueVindexName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItem"/> and sets the default values.
@@ -159,7 +233,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,7 +257,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "lint_error", n => { LintError = n.GetStringValue(); } },
                 { "partition_name", n => { PartitionName = n.GetStringValue(); } },
                 { "partitioning_type", n => { PartitioningType = n.GetStringValue(); } },
-                { "subject_type", n => { SubjectType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType>(); } },
+                { "subject_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubjectType = default; _explicitNullProperties?.Remove("subject_type"); AdditionalData["subject_type"] = unknown; } else { SubjectType = parsed; AdditionalData.Remove("subject_type"); } } },
                 { "table_name", n => { TableName = n.GetStringValue(); } },
                 { "vindex_name", n => { VindexName = n.GetStringValue(); } },
             };
@@ -212,6 +286,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedSchemaLintErrorDataItemSubjectType>("subject_type", SubjectType);
             writer.WriteStringValue("table_name", TableName);
             writer.WriteStringValue("vindex_name", VindexName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

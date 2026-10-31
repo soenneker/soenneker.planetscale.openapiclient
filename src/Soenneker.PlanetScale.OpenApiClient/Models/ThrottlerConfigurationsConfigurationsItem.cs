@@ -11,19 +11,33 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ThrottlerConfigurationsConfigurationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("keyspace_name") is null) { _explicitNullValueKeyspaceName = default!; _explicitNullProperties?.Remove("keyspace_name"); }
+            else if (parseNode.GetChildNode("keyspace_name") is { } nullNodeKeyspaceName && nullNodeKeyspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyspaceName = null;
+            if (parseNode.GetChildNode("ratio") is null) { _explicitNullValueRatio = default!; _explicitNullProperties?.Remove("ratio"); }
+            else if (parseNode.GetChildNode("ratio") is { } nullNodeRatio && nullNodeRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ratio = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of keyspace this throttler ratio applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyspaceName { get; set; }
+        public string? KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string? _explicitNullValueKeyspaceName = default!;
 #nullable restore
 #else
-        public string KeyspaceName { get; set; }
+        public string KeyspaceName { get => _explicitNullValueKeyspaceName; set { _explicitNullValueKeyspaceName = value; AdditionalData?.Remove("keyspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace_name"); else _explicitNullProperties?.Remove("keyspace_name"); } }
+        private string _explicitNullValueKeyspaceName = default!;
 #endif
         /// <summary>A throttler ratio between 0 and 95 that applies to migrations in this specific keyspace</summary>
-        public double? Ratio { get; set; }
+        public double? Ratio { get => _explicitNullValueRatio; set { _explicitNullValueRatio = value; AdditionalData?.Remove("ratio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ratio"); else _explicitNullProperties?.Remove("ratio"); } }
+        private double? _explicitNullValueRatio = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem"/> and sets the default values.
         /// </summary>
@@ -39,7 +53,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ThrottlerConfigurationsConfigurationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("keyspace_name", KeyspaceName);
             writer.WriteDoubleValue("ratio", Ratio);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

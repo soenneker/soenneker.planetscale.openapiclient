@@ -11,328 +11,543 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChangeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("admin_size") is null) { _explicitNullValueAdminSize = default!; _explicitNullProperties?.Remove("admin_size"); }
+            else if (parseNode.GetChildNode("admin_size") is { } nullNodeAdminSize && nullNodeAdminSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminSize = null;
+            if (parseNode.GetChildNode("admin_size_display_name") is null) { _explicitNullValueAdminSizeDisplayName = default!; _explicitNullProperties?.Remove("admin_size_display_name"); }
+            else if (parseNode.GetChildNode("admin_size_display_name") is { } nullNodeAdminSizeDisplayName && nullNodeAdminSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminSizeDisplayName = null;
+            if (parseNode.GetChildNode("autoscaling") is null) { _explicitNullValueAutoscaling = default!; _explicitNullProperties?.Remove("autoscaling"); }
+            else if (parseNode.GetChildNode("autoscaling") is { } nullNodeAutoscaling && nullNodeAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autoscaling = null;
+            if (parseNode.GetChildNode("bouncer_rank") is null) { _explicitNullValueBouncerRank = default!; _explicitNullProperties?.Remove("bouncer_rank"); }
+            else if (parseNode.GetChildNode("bouncer_rank") is { } nullNodeBouncerRank && nullNodeBouncerRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncerRank = null;
+            if (parseNode.GetChildNode("bouncer_size") is null) { _explicitNullValueBouncerSize = default!; _explicitNullProperties?.Remove("bouncer_size"); }
+            else if (parseNode.GetChildNode("bouncer_size") is { } nullNodeBouncerSize && nullNodeBouncerSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncerSize = null;
+            if (parseNode.GetChildNode("bouncer_size_display_name") is null) { _explicitNullValueBouncerSizeDisplayName = default!; _explicitNullProperties?.Remove("bouncer_size_display_name"); }
+            else if (parseNode.GetChildNode("bouncer_size_display_name") is { } nullNodeBouncerSizeDisplayName && nullNodeBouncerSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncerSizeDisplayName = null;
+            if (parseNode.GetChildNode("can_delete") is null) { _explicitNullValueCanDelete = default!; _explicitNullProperties?.Remove("can_delete"); }
+            else if (parseNode.GetChildNode("can_delete") is { } nullNodeCanDelete && nullNodeCanDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanDelete = null;
+            if (parseNode.GetChildNode("cluster_display_name") is null) { _explicitNullValueClusterDisplayName = default!; _explicitNullProperties?.Remove("cluster_display_name"); }
+            else if (parseNode.GetChildNode("cluster_display_name") is { } nullNodeClusterDisplayName && nullNodeClusterDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterDisplayName = null;
+            if (parseNode.GetChildNode("cluster_name") is null) { _explicitNullValueClusterName = default!; _explicitNullProperties?.Remove("cluster_name"); }
+            else if (parseNode.GetChildNode("cluster_name") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
+            if (parseNode.GetChildNode("cluster_rank") is null) { _explicitNullValueClusterRank = default!; _explicitNullProperties?.Remove("cluster_rank"); }
+            else if (parseNode.GetChildNode("cluster_rank") is { } nullNodeClusterRank && nullNodeClusterRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterRank = null;
+            if (parseNode.GetChildNode("cluster_size") is null) { _explicitNullValueClusterSize = default!; _explicitNullProperties?.Remove("cluster_size"); }
+            else if (parseNode.GetChildNode("cluster_size") is { } nullNodeClusterSize && nullNodeClusterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterSize = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("max_replicas_per_cell") is null) { _explicitNullValueMaxReplicasPerCell = default!; _explicitNullProperties?.Remove("max_replicas_per_cell"); }
+            else if (parseNode.GetChildNode("max_replicas_per_cell") is { } nullNodeMaxReplicasPerCell && nullNodeMaxReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxReplicasPerCell = null;
+            if (parseNode.GetChildNode("metal") is null) { _explicitNullValueMetal = default!; _explicitNullProperties?.Remove("metal"); }
+            else if (parseNode.GetChildNode("metal") is { } nullNodeMetal && nullNodeMetal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metal = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("postgres_image_version") is null) { _explicitNullValuePostgresImageVersion = default!; _explicitNullProperties?.Remove("postgres_image_version"); }
+            else if (parseNode.GetChildNode("postgres_image_version") is { } nullNodePostgresImageVersion && nullNodePostgresImageVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresImageVersion = null;
+            if (parseNode.GetChildNode("previous_admin_size") is null) { _explicitNullValuePreviousAdminSize = default!; _explicitNullProperties?.Remove("previous_admin_size"); }
+            else if (parseNode.GetChildNode("previous_admin_size") is { } nullNodePreviousAdminSize && nullNodePreviousAdminSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousAdminSize = null;
+            if (parseNode.GetChildNode("previous_admin_size_display_name") is null) { _explicitNullValuePreviousAdminSizeDisplayName = default!; _explicitNullProperties?.Remove("previous_admin_size_display_name"); }
+            else if (parseNode.GetChildNode("previous_admin_size_display_name") is { } nullNodePreviousAdminSizeDisplayName && nullNodePreviousAdminSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousAdminSizeDisplayName = null;
+            if (parseNode.GetChildNode("previous_autoscaling") is null) { _explicitNullValuePreviousAutoscaling = default!; _explicitNullProperties?.Remove("previous_autoscaling"); }
+            else if (parseNode.GetChildNode("previous_autoscaling") is { } nullNodePreviousAutoscaling && nullNodePreviousAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousAutoscaling = null;
+            if (parseNode.GetChildNode("previous_bouncer_rank") is null) { _explicitNullValuePreviousBouncerRank = default!; _explicitNullProperties?.Remove("previous_bouncer_rank"); }
+            else if (parseNode.GetChildNode("previous_bouncer_rank") is { } nullNodePreviousBouncerRank && nullNodePreviousBouncerRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousBouncerRank = null;
+            if (parseNode.GetChildNode("previous_bouncer_size") is null) { _explicitNullValuePreviousBouncerSize = default!; _explicitNullProperties?.Remove("previous_bouncer_size"); }
+            else if (parseNode.GetChildNode("previous_bouncer_size") is { } nullNodePreviousBouncerSize && nullNodePreviousBouncerSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousBouncerSize = null;
+            if (parseNode.GetChildNode("previous_bouncer_size_display_name") is null) { _explicitNullValuePreviousBouncerSizeDisplayName = default!; _explicitNullProperties?.Remove("previous_bouncer_size_display_name"); }
+            else if (parseNode.GetChildNode("previous_bouncer_size_display_name") is { } nullNodePreviousBouncerSizeDisplayName && nullNodePreviousBouncerSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousBouncerSizeDisplayName = null;
+            if (parseNode.GetChildNode("previous_cluster_display_name") is null) { _explicitNullValuePreviousClusterDisplayName = default!; _explicitNullProperties?.Remove("previous_cluster_display_name"); }
+            else if (parseNode.GetChildNode("previous_cluster_display_name") is { } nullNodePreviousClusterDisplayName && nullNodePreviousClusterDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClusterDisplayName = null;
+            if (parseNode.GetChildNode("previous_cluster_name") is null) { _explicitNullValuePreviousClusterName = default!; _explicitNullProperties?.Remove("previous_cluster_name"); }
+            else if (parseNode.GetChildNode("previous_cluster_name") is { } nullNodePreviousClusterName && nullNodePreviousClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClusterName = null;
+            if (parseNode.GetChildNode("previous_cluster_rank") is null) { _explicitNullValuePreviousClusterRank = default!; _explicitNullProperties?.Remove("previous_cluster_rank"); }
+            else if (parseNode.GetChildNode("previous_cluster_rank") is { } nullNodePreviousClusterRank && nullNodePreviousClusterRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClusterRank = null;
+            if (parseNode.GetChildNode("previous_cluster_size") is null) { _explicitNullValuePreviousClusterSize = default!; _explicitNullProperties?.Remove("previous_cluster_size"); }
+            else if (parseNode.GetChildNode("previous_cluster_size") is { } nullNodePreviousClusterSize && nullNodePreviousClusterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClusterSize = null;
+            if (parseNode.GetChildNode("previous_max_replicas_per_cell") is null) { _explicitNullValuePreviousMaxReplicasPerCell = default!; _explicitNullProperties?.Remove("previous_max_replicas_per_cell"); }
+            else if (parseNode.GetChildNode("previous_max_replicas_per_cell") is { } nullNodePreviousMaxReplicasPerCell && nullNodePreviousMaxReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousMaxReplicasPerCell = null;
+            if (parseNode.GetChildNode("previous_metal") is null) { _explicitNullValuePreviousMetal = default!; _explicitNullProperties?.Remove("previous_metal"); }
+            else if (parseNode.GetChildNode("previous_metal") is { } nullNodePreviousMetal && nullNodePreviousMetal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousMetal = null;
+            if (parseNode.GetChildNode("previous_name") is null) { _explicitNullValuePreviousName = default!; _explicitNullProperties?.Remove("previous_name"); }
+            else if (parseNode.GetChildNode("previous_name") is { } nullNodePreviousName && nullNodePreviousName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousName = null;
+            if (parseNode.GetChildNode("previous_parameters") is null) { _explicitNullValuePreviousParameters = default!; _explicitNullProperties?.Remove("previous_parameters"); }
+            else if (parseNode.GetChildNode("previous_parameters") is { } nullNodePreviousParameters && nullNodePreviousParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousParameters = null;
+            if (parseNode.GetChildNode("previous_postgres_image_version") is null) { _explicitNullValuePreviousPostgresImageVersion = default!; _explicitNullProperties?.Remove("previous_postgres_image_version"); }
+            else if (parseNode.GetChildNode("previous_postgres_image_version") is { } nullNodePreviousPostgresImageVersion && nullNodePreviousPostgresImageVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPostgresImageVersion = null;
+            if (parseNode.GetChildNode("previous_replicas") is null) { _explicitNullValuePreviousReplicas = default!; _explicitNullProperties?.Remove("previous_replicas"); }
+            else if (parseNode.GetChildNode("previous_replicas") is { } nullNodePreviousReplicas && nullNodePreviousReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousReplicas = null;
+            if (parseNode.GetChildNode("previous_replicas_per_cell") is null) { _explicitNullValuePreviousReplicasPerCell = default!; _explicitNullProperties?.Remove("previous_replicas_per_cell"); }
+            else if (parseNode.GetChildNode("previous_replicas_per_cell") is { } nullNodePreviousReplicasPerCell && nullNodePreviousReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousReplicasPerCell = null;
+            if (parseNode.GetChildNode("previous_router_size") is null) { _explicitNullValuePreviousRouterSize = default!; _explicitNullProperties?.Remove("previous_router_size"); }
+            else if (parseNode.GetChildNode("previous_router_size") is { } nullNodePreviousRouterSize && nullNodePreviousRouterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRouterSize = null;
+            if (parseNode.GetChildNode("previous_router_size_display_name") is null) { _explicitNullValuePreviousRouterSizeDisplayName = default!; _explicitNullProperties?.Remove("previous_router_size_display_name"); }
+            else if (parseNode.GetChildNode("previous_router_size_display_name") is { } nullNodePreviousRouterSizeDisplayName && nullNodePreviousRouterSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRouterSizeDisplayName = null;
+            if (parseNode.GetChildNode("previous_shards") is null) { _explicitNullValuePreviousShards = default!; _explicitNullProperties?.Remove("previous_shards"); }
+            else if (parseNode.GetChildNode("previous_shards") is { } nullNodePreviousShards && nullNodePreviousShards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousShards = null;
+            if (parseNode.GetChildNode("previous_storage") is null) { _explicitNullValuePreviousStorage = default!; _explicitNullProperties?.Remove("previous_storage"); }
+            else if (parseNode.GetChildNode("previous_storage") is { } nullNodePreviousStorage && nullNodePreviousStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousStorage = null;
+            if (parseNode.GetChildNode("previous_target") is null) { _explicitNullValuePreviousTarget = default!; _explicitNullProperties?.Remove("previous_target"); }
+            else if (parseNode.GetChildNode("previous_target") is { } nullNodePreviousTarget && nullNodePreviousTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTarget = null;
+            if (parseNode.GetChildNode("previous_target_cpu_utilization") is null) { _explicitNullValuePreviousTargetCpuUtilization = default!; _explicitNullProperties?.Remove("previous_target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("previous_target_cpu_utilization") is { } nullNodePreviousTargetCpuUtilization && nullNodePreviousTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTargetCpuUtilization = null;
+            if (parseNode.GetChildNode("replicas") is null) { _explicitNullValueReplicas = default!; _explicitNullProperties?.Remove("replicas"); }
+            else if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("replicas_per_cell") is null) { _explicitNullValueReplicasPerCell = default!; _explicitNullProperties?.Remove("replicas_per_cell"); }
+            else if (parseNode.GetChildNode("replicas_per_cell") is { } nullNodeReplicasPerCell && nullNodeReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicasPerCell = null;
+            if (parseNode.GetChildNode("router_size") is null) { _explicitNullValueRouterSize = default!; _explicitNullProperties?.Remove("router_size"); }
+            else if (parseNode.GetChildNode("router_size") is { } nullNodeRouterSize && nullNodeRouterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouterSize = null;
+            if (parseNode.GetChildNode("router_size_display_name") is null) { _explicitNullValueRouterSizeDisplayName = default!; _explicitNullProperties?.Remove("router_size_display_name"); }
+            else if (parseNode.GetChildNode("router_size_display_name") is { } nullNodeRouterSizeDisplayName && nullNodeRouterSizeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RouterSizeDisplayName = null;
+            if (parseNode.GetChildNode("shards") is null) { _explicitNullValueShards = default!; _explicitNullProperties?.Remove("shards"); }
+            else if (parseNode.GetChildNode("shards") is { } nullNodeShards && nullNodeShards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shards = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+            if (parseNode.GetChildNode("target_cpu_utilization") is null) { _explicitNullValueTargetCpuUtilization = default!; _explicitNullProperties?.Remove("target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("target_cpu_utilization") is { } nullNodeTargetCpuUtilization && nullNodeTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetCpuUtilization = null;
+            if (parseNode.GetChildNode("target_id") is null) { _explicitNullValueTargetId = default!; _explicitNullProperties?.Remove("target_id"); }
+            else if (parseNode.GetChildNode("target_id") is { } nullNodeTargetId && nullNodeTargetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetId = null;
+            if (parseNode.GetChildNode("target_name") is null) { _explicitNullValueTargetName = default!; _explicitNullProperties?.Remove("target_name"); }
+            else if (parseNode.GetChildNode("target_name") is { } nullNodeTargetName && nullNodeTargetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetName = null;
+            if (parseNode.GetChildNode("target_type") is null) { _explicitNullValueTargetType = default!; _explicitNullProperties?.Remove("target_type"); }
+            else if (parseNode.GetChildNode("target_type") is { } nullNodeTargetType && nullNodeTargetType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetType = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the admin size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminSize { get; set; }
+        public string? AdminSize { get => _explicitNullValueAdminSize; set { _explicitNullValueAdminSize = value; AdditionalData?.Remove("admin_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_size"); else _explicitNullProperties?.Remove("admin_size"); } }
+        private string? _explicitNullValueAdminSize = default!;
 #nullable restore
 #else
-        public string AdminSize { get; set; }
+        public string AdminSize { get => _explicitNullValueAdminSize; set { _explicitNullValueAdminSize = value; AdditionalData?.Remove("admin_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_size"); else _explicitNullProperties?.Remove("admin_size"); } }
+        private string _explicitNullValueAdminSize = default!;
 #endif
         /// <summary>The display name of the admin size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminSizeDisplayName { get; set; }
+        public string? AdminSizeDisplayName { get => _explicitNullValueAdminSizeDisplayName; set { _explicitNullValueAdminSizeDisplayName = value; AdditionalData?.Remove("admin_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_size_display_name"); else _explicitNullProperties?.Remove("admin_size_display_name"); } }
+        private string? _explicitNullValueAdminSizeDisplayName = default!;
 #nullable restore
 #else
-        public string AdminSizeDisplayName { get; set; }
+        public string AdminSizeDisplayName { get => _explicitNullValueAdminSizeDisplayName; set { _explicitNullValueAdminSizeDisplayName = value; AdditionalData?.Remove("admin_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_size_display_name"); else _explicitNullProperties?.Remove("admin_size_display_name"); } }
+        private string _explicitNullValueAdminSizeDisplayName = default!;
 #endif
         /// <summary>Whether the router scales horizontally within each cell</summary>
-        public bool? Autoscaling { get; set; }
+        public bool? Autoscaling { get => _explicitNullValueAutoscaling; set { _explicitNullValueAutoscaling = value; AdditionalData?.Remove("autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoscaling"); else _explicitNullProperties?.Remove("autoscaling"); } }
+        private bool? _explicitNullValueAutoscaling = default!;
         /// <summary>The display order of the bouncer size SKU</summary>
-        public int? BouncerRank { get; set; }
+        public int? BouncerRank { get => _explicitNullValueBouncerRank; set { _explicitNullValueBouncerRank = value; AdditionalData?.Remove("bouncer_rank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_rank"); else _explicitNullProperties?.Remove("bouncer_rank"); } }
+        private int? _explicitNullValueBouncerRank = default!;
         /// <summary>The name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BouncerSize { get; set; }
+        public string? BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string? _explicitNullValueBouncerSize = default!;
 #nullable restore
 #else
-        public string BouncerSize { get; set; }
+        public string BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string _explicitNullValueBouncerSize = default!;
 #endif
         /// <summary>The display name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BouncerSizeDisplayName { get; set; }
+        public string? BouncerSizeDisplayName { get => _explicitNullValueBouncerSizeDisplayName; set { _explicitNullValueBouncerSizeDisplayName = value; AdditionalData?.Remove("bouncer_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size_display_name"); else _explicitNullProperties?.Remove("bouncer_size_display_name"); } }
+        private string? _explicitNullValueBouncerSizeDisplayName = default!;
 #nullable restore
 #else
-        public string BouncerSizeDisplayName { get; set; }
+        public string BouncerSizeDisplayName { get => _explicitNullValueBouncerSizeDisplayName; set { _explicitNullValueBouncerSizeDisplayName = value; AdditionalData?.Remove("bouncer_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size_display_name"); else _explicitNullProperties?.Remove("bouncer_size_display_name"); } }
+        private string _explicitNullValueBouncerSizeDisplayName = default!;
 #endif
         /// <summary>Whether the change request can be deleted</summary>
-        public bool? CanDelete { get; set; }
+        public bool? CanDelete { get => _explicitNullValueCanDelete; set { _explicitNullValueCanDelete = value; AdditionalData?.Remove("can_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_delete"); else _explicitNullProperties?.Remove("can_delete"); } }
+        private bool? _explicitNullValueCanDelete = default!;
         /// <summary>The display name of the cluster size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterDisplayName { get; set; }
+        public string? ClusterDisplayName { get => _explicitNullValueClusterDisplayName; set { _explicitNullValueClusterDisplayName = value; AdditionalData?.Remove("cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_display_name"); else _explicitNullProperties?.Remove("cluster_display_name"); } }
+        private string? _explicitNullValueClusterDisplayName = default!;
 #nullable restore
 #else
-        public string ClusterDisplayName { get; set; }
+        public string ClusterDisplayName { get => _explicitNullValueClusterDisplayName; set { _explicitNullValueClusterDisplayName = value; AdditionalData?.Remove("cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_display_name"); else _explicitNullProperties?.Remove("cluster_display_name"); } }
+        private string _explicitNullValueClusterDisplayName = default!;
 #endif
         /// <summary>The SKU representing the external sidecar size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterName { get; set; }
+        public string? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string? _explicitNullValueClusterName = default!;
 #nullable restore
 #else
-        public string ClusterName { get; set; }
+        public string ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_name"); else _explicitNullProperties?.Remove("cluster_name"); } }
+        private string _explicitNullValueClusterName = default!;
 #endif
         /// <summary>The display order of the cluster size SKU</summary>
-        public int? ClusterRank { get; set; }
+        public int? ClusterRank { get => _explicitNullValueClusterRank; set { _explicitNullValueClusterRank = value; AdditionalData?.Remove("cluster_rank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_rank"); else _explicitNullProperties?.Remove("cluster_rank"); } }
+        private int? _explicitNullValueClusterRank = default!;
         /// <summary>The name of the cluster size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterSize { get; set; }
+        public string? ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string? _explicitNullValueClusterSize = default!;
 #nullable restore
 #else
-        public string ClusterSize { get; set; }
+        public string ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string _explicitNullValueClusterSize = default!;
 #endif
         /// <summary>The time the change request completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>The time the change request was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The ID of the change request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The maximum number of replicas in each cell when autoscaling</summary>
-        public int? MaxReplicasPerCell { get; set; }
+        public int? MaxReplicasPerCell { get => _explicitNullValueMaxReplicasPerCell; set { _explicitNullValueMaxReplicasPerCell = value; AdditionalData?.Remove("max_replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_replicas_per_cell"); else _explicitNullProperties?.Remove("max_replicas_per_cell"); } }
+        private int? _explicitNullValueMaxReplicasPerCell = default!;
         /// <summary>Whether the cluster size SKU uses metal instances</summary>
-        public bool? Metal { get; set; }
+        public bool? Metal { get => _explicitNullValueMetal; set { _explicitNullValueMetal = value; AdditionalData?.Remove("metal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metal"); else _explicitNullProperties?.Remove("metal"); } }
+        private bool? _explicitNullValueMetal = default!;
         /// <summary>The name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The parameters requested for the target resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestParametersProperty _explicitNullValueParameters = default!;
 #endif
         /// <summary>The PostgreSQL image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostgresImageVersion { get; set; }
+        public string? PostgresImageVersion { get => _explicitNullValuePostgresImageVersion; set { _explicitNullValuePostgresImageVersion = value; AdditionalData?.Remove("postgres_image_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_image_version"); else _explicitNullProperties?.Remove("postgres_image_version"); } }
+        private string? _explicitNullValuePostgresImageVersion = default!;
 #nullable restore
 #else
-        public string PostgresImageVersion { get; set; }
+        public string PostgresImageVersion { get => _explicitNullValuePostgresImageVersion; set { _explicitNullValuePostgresImageVersion = value; AdditionalData?.Remove("postgres_image_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_image_version"); else _explicitNullProperties?.Remove("postgres_image_version"); } }
+        private string _explicitNullValuePostgresImageVersion = default!;
 #endif
         /// <summary>The previous name of the admin size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousAdminSize { get; set; }
+        public string? PreviousAdminSize { get => _explicitNullValuePreviousAdminSize; set { _explicitNullValuePreviousAdminSize = value; AdditionalData?.Remove("previous_admin_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_admin_size"); else _explicitNullProperties?.Remove("previous_admin_size"); } }
+        private string? _explicitNullValuePreviousAdminSize = default!;
 #nullable restore
 #else
-        public string PreviousAdminSize { get; set; }
+        public string PreviousAdminSize { get => _explicitNullValuePreviousAdminSize; set { _explicitNullValuePreviousAdminSize = value; AdditionalData?.Remove("previous_admin_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_admin_size"); else _explicitNullProperties?.Remove("previous_admin_size"); } }
+        private string _explicitNullValuePreviousAdminSize = default!;
 #endif
         /// <summary>The previous display name of the admin size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousAdminSizeDisplayName { get; set; }
+        public string? PreviousAdminSizeDisplayName { get => _explicitNullValuePreviousAdminSizeDisplayName; set { _explicitNullValuePreviousAdminSizeDisplayName = value; AdditionalData?.Remove("previous_admin_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_admin_size_display_name"); else _explicitNullProperties?.Remove("previous_admin_size_display_name"); } }
+        private string? _explicitNullValuePreviousAdminSizeDisplayName = default!;
 #nullable restore
 #else
-        public string PreviousAdminSizeDisplayName { get; set; }
+        public string PreviousAdminSizeDisplayName { get => _explicitNullValuePreviousAdminSizeDisplayName; set { _explicitNullValuePreviousAdminSizeDisplayName = value; AdditionalData?.Remove("previous_admin_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_admin_size_display_name"); else _explicitNullProperties?.Remove("previous_admin_size_display_name"); } }
+        private string _explicitNullValuePreviousAdminSizeDisplayName = default!;
 #endif
         /// <summary>The previous autoscaling state of the router</summary>
-        public bool? PreviousAutoscaling { get; set; }
+        public bool? PreviousAutoscaling { get => _explicitNullValuePreviousAutoscaling; set { _explicitNullValuePreviousAutoscaling = value; AdditionalData?.Remove("previous_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_autoscaling"); else _explicitNullProperties?.Remove("previous_autoscaling"); } }
+        private bool? _explicitNullValuePreviousAutoscaling = default!;
         /// <summary>The previous display order of the bouncer size SKU</summary>
-        public int? PreviousBouncerRank { get; set; }
+        public int? PreviousBouncerRank { get => _explicitNullValuePreviousBouncerRank; set { _explicitNullValuePreviousBouncerRank = value; AdditionalData?.Remove("previous_bouncer_rank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_bouncer_rank"); else _explicitNullProperties?.Remove("previous_bouncer_rank"); } }
+        private int? _explicitNullValuePreviousBouncerRank = default!;
         /// <summary>The previous name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousBouncerSize { get; set; }
+        public string? PreviousBouncerSize { get => _explicitNullValuePreviousBouncerSize; set { _explicitNullValuePreviousBouncerSize = value; AdditionalData?.Remove("previous_bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_bouncer_size"); else _explicitNullProperties?.Remove("previous_bouncer_size"); } }
+        private string? _explicitNullValuePreviousBouncerSize = default!;
 #nullable restore
 #else
-        public string PreviousBouncerSize { get; set; }
+        public string PreviousBouncerSize { get => _explicitNullValuePreviousBouncerSize; set { _explicitNullValuePreviousBouncerSize = value; AdditionalData?.Remove("previous_bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_bouncer_size"); else _explicitNullProperties?.Remove("previous_bouncer_size"); } }
+        private string _explicitNullValuePreviousBouncerSize = default!;
 #endif
         /// <summary>The previous display name of the bouncer size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousBouncerSizeDisplayName { get; set; }
+        public string? PreviousBouncerSizeDisplayName { get => _explicitNullValuePreviousBouncerSizeDisplayName; set { _explicitNullValuePreviousBouncerSizeDisplayName = value; AdditionalData?.Remove("previous_bouncer_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_bouncer_size_display_name"); else _explicitNullProperties?.Remove("previous_bouncer_size_display_name"); } }
+        private string? _explicitNullValuePreviousBouncerSizeDisplayName = default!;
 #nullable restore
 #else
-        public string PreviousBouncerSizeDisplayName { get; set; }
+        public string PreviousBouncerSizeDisplayName { get => _explicitNullValuePreviousBouncerSizeDisplayName; set { _explicitNullValuePreviousBouncerSizeDisplayName = value; AdditionalData?.Remove("previous_bouncer_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_bouncer_size_display_name"); else _explicitNullProperties?.Remove("previous_bouncer_size_display_name"); } }
+        private string _explicitNullValuePreviousBouncerSizeDisplayName = default!;
 #endif
         /// <summary>The previous display name of the cluster size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousClusterDisplayName { get; set; }
+        public string? PreviousClusterDisplayName { get => _explicitNullValuePreviousClusterDisplayName; set { _explicitNullValuePreviousClusterDisplayName = value; AdditionalData?.Remove("previous_cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_display_name"); else _explicitNullProperties?.Remove("previous_cluster_display_name"); } }
+        private string? _explicitNullValuePreviousClusterDisplayName = default!;
 #nullable restore
 #else
-        public string PreviousClusterDisplayName { get; set; }
+        public string PreviousClusterDisplayName { get => _explicitNullValuePreviousClusterDisplayName; set { _explicitNullValuePreviousClusterDisplayName = value; AdditionalData?.Remove("previous_cluster_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_display_name"); else _explicitNullProperties?.Remove("previous_cluster_display_name"); } }
+        private string _explicitNullValuePreviousClusterDisplayName = default!;
 #endif
         /// <summary>The SKU representing the previous external sidecar size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousClusterName { get; set; }
+        public string? PreviousClusterName { get => _explicitNullValuePreviousClusterName; set { _explicitNullValuePreviousClusterName = value; AdditionalData?.Remove("previous_cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_name"); else _explicitNullProperties?.Remove("previous_cluster_name"); } }
+        private string? _explicitNullValuePreviousClusterName = default!;
 #nullable restore
 #else
-        public string PreviousClusterName { get; set; }
+        public string PreviousClusterName { get => _explicitNullValuePreviousClusterName; set { _explicitNullValuePreviousClusterName = value; AdditionalData?.Remove("previous_cluster_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_name"); else _explicitNullProperties?.Remove("previous_cluster_name"); } }
+        private string _explicitNullValuePreviousClusterName = default!;
 #endif
         /// <summary>The previous display order of the cluster size SKU</summary>
-        public int? PreviousClusterRank { get; set; }
+        public int? PreviousClusterRank { get => _explicitNullValuePreviousClusterRank; set { _explicitNullValuePreviousClusterRank = value; AdditionalData?.Remove("previous_cluster_rank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_rank"); else _explicitNullProperties?.Remove("previous_cluster_rank"); } }
+        private int? _explicitNullValuePreviousClusterRank = default!;
         /// <summary>The previous name of the cluster size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousClusterSize { get; set; }
+        public string? PreviousClusterSize { get => _explicitNullValuePreviousClusterSize; set { _explicitNullValuePreviousClusterSize = value; AdditionalData?.Remove("previous_cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_size"); else _explicitNullProperties?.Remove("previous_cluster_size"); } }
+        private string? _explicitNullValuePreviousClusterSize = default!;
 #nullable restore
 #else
-        public string PreviousClusterSize { get; set; }
+        public string PreviousClusterSize { get => _explicitNullValuePreviousClusterSize; set { _explicitNullValuePreviousClusterSize = value; AdditionalData?.Remove("previous_cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_cluster_size"); else _explicitNullProperties?.Remove("previous_cluster_size"); } }
+        private string _explicitNullValuePreviousClusterSize = default!;
 #endif
         /// <summary>The previous maximum number of replicas in each cell</summary>
-        public int? PreviousMaxReplicasPerCell { get; set; }
+        public int? PreviousMaxReplicasPerCell { get => _explicitNullValuePreviousMaxReplicasPerCell; set { _explicitNullValuePreviousMaxReplicasPerCell = value; AdditionalData?.Remove("previous_max_replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_max_replicas_per_cell"); else _explicitNullProperties?.Remove("previous_max_replicas_per_cell"); } }
+        private int? _explicitNullValuePreviousMaxReplicasPerCell = default!;
         /// <summary>Whether the previous cluster size SKU used metal instances</summary>
-        public bool? PreviousMetal { get; set; }
+        public bool? PreviousMetal { get => _explicitNullValuePreviousMetal; set { _explicitNullValuePreviousMetal = value; AdditionalData?.Remove("previous_metal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_metal"); else _explicitNullProperties?.Remove("previous_metal"); } }
+        private bool? _explicitNullValuePreviousMetal = default!;
         /// <summary>The previous name of the configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousName { get; set; }
+        public string? PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previous_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_name"); else _explicitNullProperties?.Remove("previous_name"); } }
+        private string? _explicitNullValuePreviousName = default!;
 #nullable restore
 #else
-        public string PreviousName { get; set; }
+        public string PreviousName { get => _explicitNullValuePreviousName; set { _explicitNullValuePreviousName = value; AdditionalData?.Remove("previous_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_name"); else _explicitNullProperties?.Remove("previous_name"); } }
+        private string _explicitNullValuePreviousName = default!;
 #endif
         /// <summary>The target resource parameters before the change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty? PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty? PreviousParameters { get => _explicitNullValuePreviousParameters; set { _explicitNullValuePreviousParameters = value; AdditionalData?.Remove("previous_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_parameters"); else _explicitNullProperties?.Remove("previous_parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty? _explicitNullValuePreviousParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty PreviousParameters { get => _explicitNullValuePreviousParameters; set { _explicitNullValuePreviousParameters = value; AdditionalData?.Remove("previous_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_parameters"); else _explicitNullProperties?.Remove("previous_parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousParametersProperty _explicitNullValuePreviousParameters = default!;
 #endif
         /// <summary>The previous PostgreSQL image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousPostgresImageVersion { get; set; }
+        public string? PreviousPostgresImageVersion { get => _explicitNullValuePreviousPostgresImageVersion; set { _explicitNullValuePreviousPostgresImageVersion = value; AdditionalData?.Remove("previous_postgres_image_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_postgres_image_version"); else _explicitNullProperties?.Remove("previous_postgres_image_version"); } }
+        private string? _explicitNullValuePreviousPostgresImageVersion = default!;
 #nullable restore
 #else
-        public string PreviousPostgresImageVersion { get; set; }
+        public string PreviousPostgresImageVersion { get => _explicitNullValuePreviousPostgresImageVersion; set { _explicitNullValuePreviousPostgresImageVersion = value; AdditionalData?.Remove("previous_postgres_image_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_postgres_image_version"); else _explicitNullProperties?.Remove("previous_postgres_image_version"); } }
+        private string _explicitNullValuePreviousPostgresImageVersion = default!;
 #endif
         /// <summary>The previous number of replicas</summary>
-        public int? PreviousReplicas { get; set; }
+        public int? PreviousReplicas { get => _explicitNullValuePreviousReplicas; set { _explicitNullValuePreviousReplicas = value; AdditionalData?.Remove("previous_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_replicas"); else _explicitNullProperties?.Remove("previous_replicas"); } }
+        private int? _explicitNullValuePreviousReplicas = default!;
         /// <summary>The previous number of replicas in each cell</summary>
-        public int? PreviousReplicasPerCell { get; set; }
+        public int? PreviousReplicasPerCell { get => _explicitNullValuePreviousReplicasPerCell; set { _explicitNullValuePreviousReplicasPerCell = value; AdditionalData?.Remove("previous_replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_replicas_per_cell"); else _explicitNullProperties?.Remove("previous_replicas_per_cell"); } }
+        private int? _explicitNullValuePreviousReplicasPerCell = default!;
         /// <summary>The previous name of the router size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousRouterSize { get; set; }
+        public string? PreviousRouterSize { get => _explicitNullValuePreviousRouterSize; set { _explicitNullValuePreviousRouterSize = value; AdditionalData?.Remove("previous_router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_router_size"); else _explicitNullProperties?.Remove("previous_router_size"); } }
+        private string? _explicitNullValuePreviousRouterSize = default!;
 #nullable restore
 #else
-        public string PreviousRouterSize { get; set; }
+        public string PreviousRouterSize { get => _explicitNullValuePreviousRouterSize; set { _explicitNullValuePreviousRouterSize = value; AdditionalData?.Remove("previous_router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_router_size"); else _explicitNullProperties?.Remove("previous_router_size"); } }
+        private string _explicitNullValuePreviousRouterSize = default!;
 #endif
         /// <summary>The previous display name of the router size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousRouterSizeDisplayName { get; set; }
+        public string? PreviousRouterSizeDisplayName { get => _explicitNullValuePreviousRouterSizeDisplayName; set { _explicitNullValuePreviousRouterSizeDisplayName = value; AdditionalData?.Remove("previous_router_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_router_size_display_name"); else _explicitNullProperties?.Remove("previous_router_size_display_name"); } }
+        private string? _explicitNullValuePreviousRouterSizeDisplayName = default!;
 #nullable restore
 #else
-        public string PreviousRouterSizeDisplayName { get; set; }
+        public string PreviousRouterSizeDisplayName { get => _explicitNullValuePreviousRouterSizeDisplayName; set { _explicitNullValuePreviousRouterSizeDisplayName = value; AdditionalData?.Remove("previous_router_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_router_size_display_name"); else _explicitNullProperties?.Remove("previous_router_size_display_name"); } }
+        private string _explicitNullValuePreviousRouterSizeDisplayName = default!;
 #endif
         /// <summary>The previous number of shards</summary>
-        public int? PreviousShards { get; set; }
+        public int? PreviousShards { get => _explicitNullValuePreviousShards; set { _explicitNullValuePreviousShards = value; AdditionalData?.Remove("previous_shards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_shards"); else _explicitNullProperties?.Remove("previous_shards"); } }
+        private int? _explicitNullValuePreviousShards = default!;
         /// <summary>The previous_storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage? PreviousStorage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage? PreviousStorage { get => _explicitNullValuePreviousStorage; set { _explicitNullValuePreviousStorage = value; AdditionalData?.Remove("previous_storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_storage"); else _explicitNullProperties?.Remove("previous_storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage? _explicitNullValuePreviousStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage PreviousStorage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage PreviousStorage { get => _explicitNullValuePreviousStorage; set { _explicitNullValuePreviousStorage = value; AdditionalData?.Remove("previous_storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_storage"); else _explicitNullProperties?.Remove("previous_storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage _explicitNullValuePreviousStorage = default!;
 #endif
         /// <summary>The previous type of server the bouncer targets</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousTarget? PreviousTarget { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousTarget? PreviousTarget { get => _explicitNullValuePreviousTarget; set { _explicitNullValuePreviousTarget = value; AdditionalData?.Remove("previous_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_target"); else _explicitNullProperties?.Remove("previous_target"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousTarget? _explicitNullValuePreviousTarget = default!;
         /// <summary>The previous target average CPU utilization percentage</summary>
-        public int? PreviousTargetCpuUtilization { get; set; }
+        public int? PreviousTargetCpuUtilization { get => _explicitNullValuePreviousTargetCpuUtilization; set { _explicitNullValuePreviousTargetCpuUtilization = value; AdditionalData?.Remove("previous_target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_target_cpu_utilization"); else _explicitNullProperties?.Remove("previous_target_cpu_utilization"); } }
+        private int? _explicitNullValuePreviousTargetCpuUtilization = default!;
         /// <summary>The number of replicas</summary>
-        public int? Replicas { get; set; }
+        public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private int? _explicitNullValueReplicas = default!;
         /// <summary>The number of replicas in each cell</summary>
-        public int? ReplicasPerCell { get; set; }
+        public int? ReplicasPerCell { get => _explicitNullValueReplicasPerCell; set { _explicitNullValueReplicasPerCell = value; AdditionalData?.Remove("replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas_per_cell"); else _explicitNullProperties?.Remove("replicas_per_cell"); } }
+        private int? _explicitNullValueReplicasPerCell = default!;
         /// <summary>The name of the router size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RouterSize { get; set; }
+        public string? RouterSize { get => _explicitNullValueRouterSize; set { _explicitNullValueRouterSize = value; AdditionalData?.Remove("router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size"); else _explicitNullProperties?.Remove("router_size"); } }
+        private string? _explicitNullValueRouterSize = default!;
 #nullable restore
 #else
-        public string RouterSize { get; set; }
+        public string RouterSize { get => _explicitNullValueRouterSize; set { _explicitNullValueRouterSize = value; AdditionalData?.Remove("router_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size"); else _explicitNullProperties?.Remove("router_size"); } }
+        private string _explicitNullValueRouterSize = default!;
 #endif
         /// <summary>The display name of the router size SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RouterSizeDisplayName { get; set; }
+        public string? RouterSizeDisplayName { get => _explicitNullValueRouterSizeDisplayName; set { _explicitNullValueRouterSizeDisplayName = value; AdditionalData?.Remove("router_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size_display_name"); else _explicitNullProperties?.Remove("router_size_display_name"); } }
+        private string? _explicitNullValueRouterSizeDisplayName = default!;
 #nullable restore
 #else
-        public string RouterSizeDisplayName { get; set; }
+        public string RouterSizeDisplayName { get => _explicitNullValueRouterSizeDisplayName; set { _explicitNullValueRouterSizeDisplayName = value; AdditionalData?.Remove("router_size_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("router_size_display_name"); else _explicitNullProperties?.Remove("router_size_display_name"); } }
+        private string _explicitNullValueRouterSizeDisplayName = default!;
 #endif
         /// <summary>The number of shards</summary>
-        public int? Shards { get; set; }
+        public int? Shards { get => _explicitNullValueShards; set { _explicitNullValueShards = value; AdditionalData?.Remove("shards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shards"); else _explicitNullProperties?.Remove("shards"); } }
+        private int? _explicitNullValueShards = default!;
         /// <summary>The time the change request started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The state of the change request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestState? _explicitNullValueState = default!;
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>The type of server the bouncer targets</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTarget? Target { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTarget? _explicitNullValueTarget = default!;
         /// <summary>The target average CPU utilization percentage when autoscaling, one of 40, 50, 60 or 70</summary>
-        public int? TargetCpuUtilization { get; set; }
+        public int? TargetCpuUtilization { get => _explicitNullValueTargetCpuUtilization; set { _explicitNullValueTargetCpuUtilization = value; AdditionalData?.Remove("target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_cpu_utilization"); else _explicitNullProperties?.Remove("target_cpu_utilization"); } }
+        private int? _explicitNullValueTargetCpuUtilization = default!;
         /// <summary>The ID of the resource being changed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetId { get; set; }
+        public string? TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("target_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_id"); else _explicitNullProperties?.Remove("target_id"); } }
+        private string? _explicitNullValueTargetId = default!;
 #nullable restore
 #else
-        public string TargetId { get; set; }
+        public string TargetId { get => _explicitNullValueTargetId; set { _explicitNullValueTargetId = value; AdditionalData?.Remove("target_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_id"); else _explicitNullProperties?.Remove("target_id"); } }
+        private string _explicitNullValueTargetId = default!;
 #endif
         /// <summary>The name of the resource being changed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetName { get; set; }
+        public string? TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("target_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_name"); else _explicitNullProperties?.Remove("target_name"); } }
+        private string? _explicitNullValueTargetName = default!;
 #nullable restore
 #else
-        public string TargetName { get; set; }
+        public string TargetName { get => _explicitNullValueTargetName; set { _explicitNullValueTargetName = value; AdditionalData?.Remove("target_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_name"); else _explicitNullProperties?.Remove("target_name"); } }
+        private string _explicitNullValueTargetName = default!;
 #endif
         /// <summary>The type of resource being changed</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType? TargetType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType? TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; AdditionalData?.Remove("target_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_type"); else _explicitNullProperties?.Remove("target_type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType? _explicitNullValueTargetType = default!;
         /// <summary>The type of change request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType? Type { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType? _explicitNullValueType = default!;
         /// <summary>The time the change request was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequest"/> and sets the default values.
@@ -349,7 +564,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -400,7 +615,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_router_size_display_name", n => { PreviousRouterSizeDisplayName = n.GetStringValue(); } },
                 { "previous_shards", n => { PreviousShards = n.GetIntValue(); } },
                 { "previous_storage", n => { PreviousStorage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousStorage.CreateFromDiscriminatorValue); } },
-                { "previous_target", n => { PreviousTarget = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousTarget>(); } },
+                { "previous_target", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestPreviousTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousTarget = default; _explicitNullProperties?.Remove("previous_target"); AdditionalData["previous_target"] = unknown; } else { PreviousTarget = parsed; AdditionalData.Remove("previous_target"); } } },
                 { "previous_target_cpu_utilization", n => { PreviousTargetCpuUtilization = n.GetIntValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "replicas_per_cell", n => { ReplicasPerCell = n.GetIntValue(); } },
@@ -408,14 +623,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "router_size_display_name", n => { RouterSizeDisplayName = n.GetStringValue(); } },
                 { "shards", n => { Shards = n.GetIntValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage>(global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestStorage.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTarget>(); } },
+                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
                 { "target_cpu_utilization", n => { TargetCpuUtilization = n.GetIntValue(); } },
                 { "target_id", n => { TargetId = n.GetStringValue(); } },
                 { "target_name", n => { TargetName = n.GetStringValue(); } },
-                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType>(); } },
+                { "target_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetType = default; _explicitNullProperties?.Remove("target_type"); AdditionalData["target_type"] = unknown; } else { TargetType = parsed; AdditionalData.Remove("target_type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -484,6 +699,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestTargetType>("target_type", TargetType);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ChangeRequestType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,33 +11,60 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePasswordRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cidrs") is null) { _explicitNullValueCidrs = default!; _explicitNullProperties?.Remove("cidrs"); }
+            else if (parseNode.GetChildNode("cidrs") is { } nullNodeCidrs && nullNodeCidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cidrs = null;
+            if (parseNode.GetChildNode("direct_vtgate") is null) { _explicitNullValueDirectVtgate = default!; _explicitNullProperties?.Remove("direct_vtgate"); }
+            else if (parseNode.GetChildNode("direct_vtgate") is { } nullNodeDirectVtgate && nullNodeDirectVtgate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectVtgate = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("replica") is null) { _explicitNullValueReplica = default!; _explicitNullProperties?.Remove("replica"); }
+            else if (parseNode.GetChildNode("replica") is { } nullNodeReplica && nullNodeReplica.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replica = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("ttl") is null) { _explicitNullValueTtl = default!; _explicitNullProperties?.Remove("ttl"); }
+            else if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of IP addresses or CIDR ranges that can use this password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cidrs { get; set; }
+        public List<string>? Cidrs { get => _explicitNullValueCidrs; set { _explicitNullValueCidrs = value; AdditionalData?.Remove("cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidrs"); else _explicitNullProperties?.Remove("cidrs"); } }
+        private List<string>? _explicitNullValueCidrs = default!;
 #nullable restore
 #else
-        public List<string> Cidrs { get; set; }
+        public List<string> Cidrs { get => _explicitNullValueCidrs; set { _explicitNullValueCidrs = value; AdditionalData?.Remove("cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cidrs"); else _explicitNullProperties?.Remove("cidrs"); } }
+        private List<string> _explicitNullValueCidrs = default!;
 #endif
         /// <summary>Whether the password connects directly to a VTGate</summary>
-        public bool? DirectVtgate { get; set; }
+        public bool? DirectVtgate { get => _explicitNullValueDirectVtgate; set { _explicitNullValueDirectVtgate = value; AdditionalData?.Remove("direct_vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_vtgate"); else _explicitNullProperties?.Remove("direct_vtgate"); } }
+        private bool? _explicitNullValueDirectVtgate = default!;
         /// <summary>Optional name of the password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether the password is for a read replica</summary>
-        public bool? Replica { get; set; }
+        public bool? Replica { get => _explicitNullValueReplica; set { _explicitNullValueReplica = value; AdditionalData?.Remove("replica"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replica"); else _explicitNullProperties?.Remove("replica"); } }
+        private bool? _explicitNullValueReplica = default!;
         /// <summary>The database role of the password (i.e. admin)</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole? Role { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole? _explicitNullValueRole = default!;
         /// <summary>Time to live (in seconds) for the password. The password will be invalid when TTL has passed</summary>
-        public int? Ttl { get; set; }
+        public int? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; AdditionalData?.Remove("ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        private int? _explicitNullValueTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequest"/> and sets the default values.
         /// </summary>
@@ -53,7 +80,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +94,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "direct_vtgate", n => { DirectVtgate = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "replica", n => { Replica = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
             };
         }
@@ -84,6 +111,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("replica", Replica);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreatePasswordRequestRole>("role", Role);
             writer.WriteIntValue("ttl", Ttl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

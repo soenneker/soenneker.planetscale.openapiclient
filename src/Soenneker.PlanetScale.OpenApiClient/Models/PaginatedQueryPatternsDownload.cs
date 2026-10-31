@@ -11,44 +11,73 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedQueryPatternsDownload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cursor_end") is null) { _explicitNullValueCursorEnd = default!; _explicitNullProperties?.Remove("cursor_end"); }
+            else if (parseNode.GetChildNode("cursor_end") is { } nullNodeCursorEnd && nullNodeCursorEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CursorEnd = null;
+            if (parseNode.GetChildNode("cursor_start") is null) { _explicitNullValueCursorStart = default!; _explicitNullProperties?.Remove("cursor_start"); }
+            else if (parseNode.GetChildNode("cursor_start") is { } nullNodeCursorStart && nullNodeCursorStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CursorStart = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("has_next") is null) { _explicitNullValueHasNext = default!; _explicitNullProperties?.Remove("has_next"); }
+            else if (parseNode.GetChildNode("has_next") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
+            if (parseNode.GetChildNode("has_prev") is null) { _explicitNullValueHasPrev = default!; _explicitNullProperties?.Remove("has_prev"); }
+            else if (parseNode.GetChildNode("has_prev") is { } nullNodeHasPrev && nullNodeHasPrev.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrev = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the last object in the current results, or null when there are no results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CursorEnd { get; set; }
+        public string? CursorEnd { get => _explicitNullValueCursorEnd; set { _explicitNullValueCursorEnd = value; AdditionalData?.Remove("cursor_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor_end"); else _explicitNullProperties?.Remove("cursor_end"); } }
+        private string? _explicitNullValueCursorEnd = default!;
 #nullable restore
 #else
-        public string CursorEnd { get; set; }
+        public string CursorEnd { get => _explicitNullValueCursorEnd; set { _explicitNullValueCursorEnd = value; AdditionalData?.Remove("cursor_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor_end"); else _explicitNullProperties?.Remove("cursor_end"); } }
+        private string _explicitNullValueCursorEnd = default!;
 #endif
         /// <summary>The ID of the first object in the current results, or null when there are no results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CursorStart { get; set; }
+        public string? CursorStart { get => _explicitNullValueCursorStart; set { _explicitNullValueCursorStart = value; AdditionalData?.Remove("cursor_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor_start"); else _explicitNullProperties?.Remove("cursor_start"); } }
+        private string? _explicitNullValueCursorStart = default!;
 #nullable restore
 #else
-        public string CursorStart { get; set; }
+        public string CursorStart { get => _explicitNullValueCursorStart; set { _explicitNullValueCursorStart = value; AdditionalData?.Remove("cursor_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor_start"); else _explicitNullProperties?.Remove("cursor_start"); } }
+        private string _explicitNullValueCursorStart = default!;
 #endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem>? Data { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem> Data { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownloadDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Whether there is a next page of results</summary>
-        public bool? HasNext { get; set; }
+        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; AdditionalData?.Remove("has_next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_next"); else _explicitNullProperties?.Remove("has_next"); } }
+        private bool? _explicitNullValueHasNext = default!;
         /// <summary>Whether there is a previous page of results</summary>
-        public bool? HasPrev { get; set; }
+        public bool? HasPrev { get => _explicitNullValueHasPrev; set { _explicitNullValueHasPrev = value; AdditionalData?.Remove("has_prev"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_prev"); else _explicitNullProperties?.Remove("has_prev"); } }
+        private bool? _explicitNullValueHasPrev = default!;
         /// <summary>The response type. Always &quot;list&quot; for paginated responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownload"/> and sets the default values.
@@ -65,7 +94,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownload();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQueryPatternsDownload(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +125,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("has_next", HasNext);
             writer.WriteBoolValue("has_prev", HasPrev);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,59 +11,109 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateDatabaseSettingsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_data_branching") is null) { _explicitNullValueAllowDataBranching = default!; _explicitNullProperties?.Remove("allow_data_branching"); }
+            else if (parseNode.GetChildNode("allow_data_branching") is { } nullNodeAllowDataBranching && nullNodeAllowDataBranching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDataBranching = null;
+            if (parseNode.GetChildNode("allow_foreign_key_constraints") is null) { _explicitNullValueAllowForeignKeyConstraints = default!; _explicitNullProperties?.Remove("allow_foreign_key_constraints"); }
+            else if (parseNode.GetChildNode("allow_foreign_key_constraints") is { } nullNodeAllowForeignKeyConstraints && nullNodeAllowForeignKeyConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowForeignKeyConstraints = null;
+            if (parseNode.GetChildNode("automatic_migrations") is null) { _explicitNullValueAutomaticMigrations = default!; _explicitNullProperties?.Remove("automatic_migrations"); }
+            else if (parseNode.GetChildNode("automatic_migrations") is { } nullNodeAutomaticMigrations && nullNodeAutomaticMigrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticMigrations = null;
+            if (parseNode.GetChildNode("default_branch") is null) { _explicitNullValueDefaultBranch = default!; _explicitNullProperties?.Remove("default_branch"); }
+            else if (parseNode.GetChildNode("default_branch") is { } nullNodeDefaultBranch && nullNodeDefaultBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultBranch = null;
+            if (parseNode.GetChildNode("deletion_protected") is null) { _explicitNullValueDeletionProtected = default!; _explicitNullProperties?.Remove("deletion_protected"); }
+            else if (parseNode.GetChildNode("deletion_protected") is { } nullNodeDeletionProtected && nullNodeDeletionProtected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionProtected = null;
+            if (parseNode.GetChildNode("development_branches_limit") is null) { _explicitNullValueDevelopmentBranchesLimit = default!; _explicitNullProperties?.Remove("development_branches_limit"); }
+            else if (parseNode.GetChildNode("development_branches_limit") is { } nullNodeDevelopmentBranchesLimit && nullNodeDevelopmentBranchesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevelopmentBranchesLimit = null;
+            if (parseNode.GetChildNode("insights_raw_queries") is null) { _explicitNullValueInsightsRawQueries = default!; _explicitNullProperties?.Remove("insights_raw_queries"); }
+            else if (parseNode.GetChildNode("insights_raw_queries") is { } nullNodeInsightsRawQueries && nullNodeInsightsRawQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsightsRawQueries = null;
+            if (parseNode.GetChildNode("migration_framework") is null) { _explicitNullValueMigrationFramework = default!; _explicitNullProperties?.Remove("migration_framework"); }
+            else if (parseNode.GetChildNode("migration_framework") is { } nullNodeMigrationFramework && nullNodeMigrationFramework.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigrationFramework = null;
+            if (parseNode.GetChildNode("migration_table_name") is null) { _explicitNullValueMigrationTableName = default!; _explicitNullProperties?.Remove("migration_table_name"); }
+            else if (parseNode.GetChildNode("migration_table_name") is { } nullNodeMigrationTableName && nullNodeMigrationTableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigrationTableName = null;
+            if (parseNode.GetChildNode("new_name") is null) { _explicitNullValueNewName = default!; _explicitNullProperties?.Remove("new_name"); }
+            else if (parseNode.GetChildNode("new_name") is { } nullNodeNewName && nullNodeNewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewName = null;
+            if (parseNode.GetChildNode("production_branch_web_console") is null) { _explicitNullValueProductionBranchWebConsole = default!; _explicitNullProperties?.Remove("production_branch_web_console"); }
+            else if (parseNode.GetChildNode("production_branch_web_console") is { } nullNodeProductionBranchWebConsole && nullNodeProductionBranchWebConsole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductionBranchWebConsole = null;
+            if (parseNode.GetChildNode("require_approval_for_deploy") is null) { _explicitNullValueRequireApprovalForDeploy = default!; _explicitNullProperties?.Remove("require_approval_for_deploy"); }
+            else if (parseNode.GetChildNode("require_approval_for_deploy") is { } nullNodeRequireApprovalForDeploy && nullNodeRequireApprovalForDeploy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApprovalForDeploy = null;
+            if (parseNode.GetChildNode("restrict_branch_region") is null) { _explicitNullValueRestrictBranchRegion = default!; _explicitNullProperties?.Remove("restrict_branch_region"); }
+            else if (parseNode.GetChildNode("restrict_branch_region") is { } nullNodeRestrictBranchRegion && nullNodeRestrictBranchRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictBranchRegion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not data branching is allowed on the database. (Vitess only)</summary>
-        public bool? AllowDataBranching { get; set; }
+        public bool? AllowDataBranching { get => _explicitNullValueAllowDataBranching; set { _explicitNullValueAllowDataBranching = value; AdditionalData?.Remove("allow_data_branching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_data_branching"); else _explicitNullProperties?.Remove("allow_data_branching"); } }
+        private bool? _explicitNullValueAllowDataBranching = default!;
         /// <summary>Whether or not foreign key constraints are allowed on the database. (Vitess only)</summary>
-        public bool? AllowForeignKeyConstraints { get; set; }
+        public bool? AllowForeignKeyConstraints { get => _explicitNullValueAllowForeignKeyConstraints; set { _explicitNullValueAllowForeignKeyConstraints = value; AdditionalData?.Remove("allow_foreign_key_constraints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_foreign_key_constraints"); else _explicitNullProperties?.Remove("allow_foreign_key_constraints"); } }
+        private bool? _explicitNullValueAllowForeignKeyConstraints = default!;
         /// <summary>Whether or not to copy migration data to new branches and in deploy requests. (Vitess only)</summary>
-        public bool? AutomaticMigrations { get; set; }
+        public bool? AutomaticMigrations { get => _explicitNullValueAutomaticMigrations; set { _explicitNullValueAutomaticMigrations = value; AdditionalData?.Remove("automatic_migrations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_migrations"); else _explicitNullProperties?.Remove("automatic_migrations"); } }
+        private bool? _explicitNullValueAutomaticMigrations = default!;
         /// <summary>The default branch of the database</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultBranch { get; set; }
+        public string? DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; AdditionalData?.Remove("default_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string? _explicitNullValueDefaultBranch = default!;
 #nullable restore
 #else
-        public string DefaultBranch { get; set; }
+        public string DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; AdditionalData?.Remove("default_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string _explicitNullValueDefaultBranch = default!;
 #endif
         /// <summary>Whether deletion protection is enabled for the database</summary>
-        public bool? DeletionProtected { get; set; }
+        public bool? DeletionProtected { get => _explicitNullValueDeletionProtected; set { _explicitNullValueDeletionProtected = value; AdditionalData?.Remove("deletion_protected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletion_protected"); else _explicitNullProperties?.Remove("deletion_protected"); } }
+        private bool? _explicitNullValueDeletionProtected = default!;
         /// <summary>The number of development branches this database can have, up to 5000.</summary>
-        public int? DevelopmentBranchesLimit { get; set; }
+        public int? DevelopmentBranchesLimit { get => _explicitNullValueDevelopmentBranchesLimit; set { _explicitNullValueDevelopmentBranchesLimit = value; AdditionalData?.Remove("development_branches_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development_branches_limit"); else _explicitNullProperties?.Remove("development_branches_limit"); } }
+        private int? _explicitNullValueDevelopmentBranchesLimit = default!;
         /// <summary>Whether or not full queries should be collected from the database</summary>
-        public bool? InsightsRawQueries { get; set; }
+        public bool? InsightsRawQueries { get => _explicitNullValueInsightsRawQueries; set { _explicitNullValueInsightsRawQueries = value; AdditionalData?.Remove("insights_raw_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights_raw_queries"); else _explicitNullProperties?.Remove("insights_raw_queries"); } }
+        private bool? _explicitNullValueInsightsRawQueries = default!;
         /// <summary>A migration framework to use on the database. (Vitess only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MigrationFramework { get; set; }
+        public string? MigrationFramework { get => _explicitNullValueMigrationFramework; set { _explicitNullValueMigrationFramework = value; AdditionalData?.Remove("migration_framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migration_framework"); else _explicitNullProperties?.Remove("migration_framework"); } }
+        private string? _explicitNullValueMigrationFramework = default!;
 #nullable restore
 #else
-        public string MigrationFramework { get; set; }
+        public string MigrationFramework { get => _explicitNullValueMigrationFramework; set { _explicitNullValueMigrationFramework = value; AdditionalData?.Remove("migration_framework"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migration_framework"); else _explicitNullProperties?.Remove("migration_framework"); } }
+        private string _explicitNullValueMigrationFramework = default!;
 #endif
         /// <summary>Name of table to use as migration table for the database. (Vitess only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MigrationTableName { get; set; }
+        public string? MigrationTableName { get => _explicitNullValueMigrationTableName; set { _explicitNullValueMigrationTableName = value; AdditionalData?.Remove("migration_table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migration_table_name"); else _explicitNullProperties?.Remove("migration_table_name"); } }
+        private string? _explicitNullValueMigrationTableName = default!;
 #nullable restore
 #else
-        public string MigrationTableName { get; set; }
+        public string MigrationTableName { get => _explicitNullValueMigrationTableName; set { _explicitNullValueMigrationTableName = value; AdditionalData?.Remove("migration_table_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migration_table_name"); else _explicitNullProperties?.Remove("migration_table_name"); } }
+        private string _explicitNullValueMigrationTableName = default!;
 #endif
         /// <summary>The name to update the database to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewName { get; set; }
+        public string? NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("new_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
+        private string? _explicitNullValueNewName = default!;
 #nullable restore
 #else
-        public string NewName { get; set; }
+        public string NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("new_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
+        private string _explicitNullValueNewName = default!;
 #endif
         /// <summary>Whether or not the web console can be used on the production branch of the database</summary>
-        public bool? ProductionBranchWebConsole { get; set; }
+        public bool? ProductionBranchWebConsole { get => _explicitNullValueProductionBranchWebConsole; set { _explicitNullValueProductionBranchWebConsole = value; AdditionalData?.Remove("production_branch_web_console"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch_web_console"); else _explicitNullProperties?.Remove("production_branch_web_console"); } }
+        private bool? _explicitNullValueProductionBranchWebConsole = default!;
         /// <summary>Whether or not deploy requests must be approved by a database administrator other than the request creator</summary>
-        public bool? RequireApprovalForDeploy { get; set; }
+        public bool? RequireApprovalForDeploy { get => _explicitNullValueRequireApprovalForDeploy; set { _explicitNullValueRequireApprovalForDeploy = value; AdditionalData?.Remove("require_approval_for_deploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_approval_for_deploy"); else _explicitNullProperties?.Remove("require_approval_for_deploy"); } }
+        private bool? _explicitNullValueRequireApprovalForDeploy = default!;
         /// <summary>Whether or not to limit branch creation to the same region as the one selected during database creation.</summary>
-        public bool? RestrictBranchRegion { get; set; }
+        public bool? RestrictBranchRegion { get => _explicitNullValueRestrictBranchRegion; set { _explicitNullValueRestrictBranchRegion = value; AdditionalData?.Remove("restrict_branch_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrict_branch_region"); else _explicitNullProperties?.Remove("restrict_branch_region"); } }
+        private bool? _explicitNullValueRestrictBranchRegion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDatabaseSettingsRequest"/> and sets the default values.
         /// </summary>
@@ -79,7 +129,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDatabaseSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDatabaseSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDatabaseSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +174,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("production_branch_web_console", ProductionBranchWebConsole);
             writer.WriteBoolValue("require_approval_for_deploy", RequireApprovalForDeploy);
             writer.WriteBoolValue("restrict_branch_region", RestrictBranchRegion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

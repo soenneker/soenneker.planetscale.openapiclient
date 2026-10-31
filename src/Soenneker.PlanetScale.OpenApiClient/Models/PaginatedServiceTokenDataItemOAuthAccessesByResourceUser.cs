@@ -11,24 +11,39 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedServiceTokenDataItemOAuthAccessesByResourceUser : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accesses") is null) { _explicitNullValueAccesses = default!; _explicitNullProperties?.Remove("accesses"); }
+            else if (parseNode.GetChildNode("accesses") is { } nullNodeAccesses && nullNodeAccesses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accesses = null;
+            if (parseNode.GetChildNode("users") is null) { _explicitNullValueUsers = default!; _explicitNullProperties?.Remove("users"); }
+            else if (parseNode.GetChildNode("users") is { } nullNodeUsers && nullNodeUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Users = null;
+        }
+
         /// <summary>The accesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem>? Accesses { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem>? Accesses { get => _explicitNullValueAccesses; set { _explicitNullValueAccesses = value; AdditionalData?.Remove("accesses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accesses"); else _explicitNullProperties?.Remove("accesses"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem>? _explicitNullValueAccesses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem> Accesses { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem> Accesses { get => _explicitNullValueAccesses; set { _explicitNullValueAccesses = value; AdditionalData?.Remove("accesses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accesses"); else _explicitNullProperties?.Remove("accesses"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem> _explicitNullValueAccesses = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem>? Users { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem>? Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; AdditionalData?.Remove("users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem>? _explicitNullValueUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem> Users { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem> Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; AdditionalData?.Remove("users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem> _explicitNullValueUsers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUser"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUser();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUser(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserAccessesItem>("accesses", Accesses);
             writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedServiceTokenDataItemOAuthAccessesByResourceUserUsersItem>("users", Users);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,34 +11,56 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateDedicatedReadReplicaRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cluster_size") is null) { _explicitNullValueClusterSize = default!; _explicitNullProperties?.Remove("cluster_size"); }
+            else if (parseNode.GetChildNode("cluster_size") is { } nullNodeClusterSize && nullNodeClusterSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterSize = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("replicas") is null) { _explicitNullValueReplicas = default!; _explicitNullProperties?.Remove("replicas"); }
+            else if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cluster size SKU name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterSize { get; set; }
+        public string? ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string? _explicitNullValueClusterSize = default!;
 #nullable restore
 #else
-        public string ClusterSize { get; set; }
+        public string ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
+        private string _explicitNullValueClusterSize = default!;
 #endif
         /// <summary>Configuration parameters nested by namespace (e.g., {&quot;pgconf&quot;: {&quot;max_connections&quot;: &quot;300&quot;}}). Values must be greater than or equal to the primary&apos;s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>The number of instances serving reads</summary>
-        public int? Replicas { get; set; }
+        public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private int? _explicitNullValueReplicas = default!;
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequest"/> and sets the default values.
@@ -55,7 +77,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestParameters>("parameters", Parameters);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateDedicatedReadReplicaRequestStorage>("storage", Storage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

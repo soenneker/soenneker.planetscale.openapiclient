@@ -11,32 +11,51 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateRoleRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("require_where_on_delete") is null) { _explicitNullValueRequireWhereOnDelete = default!; _explicitNullProperties?.Remove("require_where_on_delete"); }
+            else if (parseNode.GetChildNode("require_where_on_delete") is { } nullNodeRequireWhereOnDelete && nullNodeRequireWhereOnDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireWhereOnDelete = null;
+            if (parseNode.GetChildNode("require_where_on_update") is null) { _explicitNullValueRequireWhereOnUpdate = default!; _explicitNullProperties?.Remove("require_where_on_update"); }
+            else if (parseNode.GetChildNode("require_where_on_update") is { } nullNodeRequireWhereOnUpdate && nullNodeRequireWhereOnUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireWhereOnUpdate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The new name of the role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Require WHERE clause on DELETE statements</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequireWhereOnDelete { get; set; }
+        public string? RequireWhereOnDelete { get => _explicitNullValueRequireWhereOnDelete; set { _explicitNullValueRequireWhereOnDelete = value; AdditionalData?.Remove("require_where_on_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_delete"); else _explicitNullProperties?.Remove("require_where_on_delete"); } }
+        private string? _explicitNullValueRequireWhereOnDelete = default!;
 #nullable restore
 #else
-        public string RequireWhereOnDelete { get; set; }
+        public string RequireWhereOnDelete { get => _explicitNullValueRequireWhereOnDelete; set { _explicitNullValueRequireWhereOnDelete = value; AdditionalData?.Remove("require_where_on_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_delete"); else _explicitNullProperties?.Remove("require_where_on_delete"); } }
+        private string _explicitNullValueRequireWhereOnDelete = default!;
 #endif
         /// <summary>Require WHERE clause on UPDATE statements</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequireWhereOnUpdate { get; set; }
+        public string? RequireWhereOnUpdate { get => _explicitNullValueRequireWhereOnUpdate; set { _explicitNullValueRequireWhereOnUpdate = value; AdditionalData?.Remove("require_where_on_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_update"); else _explicitNullProperties?.Remove("require_where_on_update"); } }
+        private string? _explicitNullValueRequireWhereOnUpdate = default!;
 #nullable restore
 #else
-        public string RequireWhereOnUpdate { get; set; }
+        public string RequireWhereOnUpdate { get => _explicitNullValueRequireWhereOnUpdate; set { _explicitNullValueRequireWhereOnUpdate = value; AdditionalData?.Remove("require_where_on_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_update"); else _explicitNullProperties?.Remove("require_where_on_update"); } }
+        private string _explicitNullValueRequireWhereOnUpdate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRoleRequest"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRoleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRoleRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateRoleRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("require_where_on_delete", RequireWhereOnDelete);
             writer.WriteStringValue("require_where_on_update", RequireWhereOnUpdate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

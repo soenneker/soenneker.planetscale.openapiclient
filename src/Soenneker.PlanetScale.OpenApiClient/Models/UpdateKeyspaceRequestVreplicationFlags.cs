@@ -11,15 +11,31 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateKeyspaceRequestVreplicationFlags : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_no_blob_binlog_row_image") is null) { _explicitNullValueAllowNoBlobBinlogRowImage = default!; _explicitNullProperties?.Remove("allow_no_blob_binlog_row_image"); }
+            else if (parseNode.GetChildNode("allow_no_blob_binlog_row_image") is { } nullNodeAllowNoBlobBinlogRowImage && nullNodeAllowNoBlobBinlogRowImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowNoBlobBinlogRowImage = null;
+            if (parseNode.GetChildNode("optimize_inserts") is null) { _explicitNullValueOptimizeInserts = default!; _explicitNullProperties?.Remove("optimize_inserts"); }
+            else if (parseNode.GetChildNode("optimize_inserts") is { } nullNodeOptimizeInserts && nullNodeOptimizeInserts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizeInserts = null;
+            if (parseNode.GetChildNode("vplayer_batching") is null) { _explicitNullValueVplayerBatching = default!; _explicitNullProperties?.Remove("vplayer_batching"); }
+            else if (parseNode.GetChildNode("vplayer_batching") is { } nullNodeVplayerBatching && nullNodeVplayerBatching.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VplayerBatching = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow no blob binlog row image</summary>
-        public bool? AllowNoBlobBinlogRowImage { get; set; }
+        public bool? AllowNoBlobBinlogRowImage { get => _explicitNullValueAllowNoBlobBinlogRowImage; set { _explicitNullValueAllowNoBlobBinlogRowImage = value; AdditionalData?.Remove("allow_no_blob_binlog_row_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_no_blob_binlog_row_image"); else _explicitNullProperties?.Remove("allow_no_blob_binlog_row_image"); } }
+        private bool? _explicitNullValueAllowNoBlobBinlogRowImage = default!;
         /// <summary>Enable optimized inserts</summary>
-        public bool? OptimizeInserts { get; set; }
+        public bool? OptimizeInserts { get => _explicitNullValueOptimizeInserts; set { _explicitNullValueOptimizeInserts = value; AdditionalData?.Remove("optimize_inserts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimize_inserts"); else _explicitNullProperties?.Remove("optimize_inserts"); } }
+        private bool? _explicitNullValueOptimizeInserts = default!;
         /// <summary>Enable VPlayer batching</summary>
-        public bool? VplayerBatching { get; set; }
+        public bool? VplayerBatching { get => _explicitNullValueVplayerBatching; set { _explicitNullValueVplayerBatching = value; AdditionalData?.Remove("vplayer_batching"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vplayer_batching"); else _explicitNullProperties?.Remove("vplayer_batching"); } }
+        private bool? _explicitNullValueVplayerBatching = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags"/> and sets the default values.
         /// </summary>
@@ -35,7 +51,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +76,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("allow_no_blob_binlog_row_image", AllowNoBlobBinlogRowImage);
             writer.WriteBoolValue("optimize_inserts", OptimizeInserts);
             writer.WriteBoolValue("vplayer_batching", VplayerBatching);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,34 +11,56 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateBouncerResizeRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bouncer_size") is null) { _explicitNullValueBouncerSize = default!; _explicitNullProperties?.Remove("bouncer_size"); }
+            else if (parseNode.GetChildNode("bouncer_size") is { } nullNodeBouncerSize && nullNodeBouncerSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncerSize = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("replicas_per_cell") is null) { _explicitNullValueReplicasPerCell = default!; _explicitNullProperties?.Remove("replicas_per_cell"); }
+            else if (parseNode.GetChildNode("replicas_per_cell") is { } nullNodeReplicasPerCell && nullNodeReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicasPerCell = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bouncer size SKU name (e.g., &apos;PGB_5&apos;, &apos;PGB_10&apos;, &apos;PGB_20&apos;, &apos;PGB_40&apos;, &apos;PGB_80&apos;, &apos;PGB_160&apos;). Defaults to &apos;PGB_5&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BouncerSize { get; set; }
+        public string? BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string? _explicitNullValueBouncerSize = default!;
 #nullable restore
 #else
-        public string BouncerSize { get; set; }
+        public string BouncerSize { get => _explicitNullValueBouncerSize; set { _explicitNullValueBouncerSize = value; AdditionalData?.Remove("bouncer_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer_size"); else _explicitNullProperties?.Remove("bouncer_size"); } }
+        private string _explicitNullValueBouncerSize = default!;
 #endif
         /// <summary>Bouncer configuration parameters nested by namespace (e.g., {&quot;pgbouncer&quot;: {&quot;default_pool_size&quot;: &quot;100&quot;}}). Use the &apos;List cluster parameters&apos; endpoint to retrieve available parameters. Only parameters with namespace &apos;pgbouncer&apos; can be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters _explicitNullValueParameters = default!;
 #endif
         /// <summary>The number of PgBouncers per availability zone. Defaults to 1.</summary>
-        public int? ReplicasPerCell { get; set; }
+        public int? ReplicasPerCell { get => _explicitNullValueReplicasPerCell; set { _explicitNullValueReplicasPerCell = value; AdditionalData?.Remove("replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas_per_cell"); else _explicitNullProperties?.Remove("replicas_per_cell"); } }
+        private int? _explicitNullValueReplicasPerCell = default!;
         /// <summary>The type of server the bouncer targets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target { get; set; }
+        public string? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string? _explicitNullValueTarget = default!;
 #nullable restore
 #else
-        public string Target { get; set; }
+        public string Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private string _explicitNullValueTarget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequest"/> and sets the default values.
@@ -55,7 +77,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateBouncerResizeRequestRequestParameters>("parameters", Parameters);
             writer.WriteIntValue("replicas_per_cell", ReplicasPerCell);
             writer.WriteStringValue("target", Target);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

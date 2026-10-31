@@ -11,13 +11,26 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostgresRoleQuerySafetySettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("require_where_on_delete") is null) { _explicitNullValueRequireWhereOnDelete = default!; _explicitNullProperties?.Remove("require_where_on_delete"); }
+            else if (parseNode.GetChildNode("require_where_on_delete") is { } nullNodeRequireWhereOnDelete && nullNodeRequireWhereOnDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireWhereOnDelete = null;
+            if (parseNode.GetChildNode("require_where_on_update") is null) { _explicitNullValueRequireWhereOnUpdate = default!; _explicitNullProperties?.Remove("require_where_on_update"); }
+            else if (parseNode.GetChildNode("require_where_on_update") is { } nullNodeRequireWhereOnUpdate && nullNodeRequireWhereOnUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireWhereOnUpdate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Require WHERE clause on DELETE statements</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete? RequireWhereOnDelete { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete? RequireWhereOnDelete { get => _explicitNullValueRequireWhereOnDelete; set { _explicitNullValueRequireWhereOnDelete = value; AdditionalData?.Remove("require_where_on_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_delete"); else _explicitNullProperties?.Remove("require_where_on_delete"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete? _explicitNullValueRequireWhereOnDelete = default!;
         /// <summary>Require WHERE clause on UPDATE statements</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate? RequireWhereOnUpdate { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate? RequireWhereOnUpdate { get => _explicitNullValueRequireWhereOnUpdate; set { _explicitNullValueRequireWhereOnUpdate = value; AdditionalData?.Remove("require_where_on_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_where_on_update"); else _explicitNullProperties?.Remove("require_where_on_update"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate? _explicitNullValueRequireWhereOnUpdate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +56,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "require_where_on_delete", n => { RequireWhereOnDelete = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete>(); } },
-                { "require_where_on_update", n => { RequireWhereOnUpdate = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate>(); } },
+                { "require_where_on_delete", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequireWhereOnDelete = default; _explicitNullProperties?.Remove("require_where_on_delete"); AdditionalData["require_where_on_delete"] = unknown; } else { RequireWhereOnDelete = parsed; AdditionalData.Remove("require_where_on_delete"); } } },
+                { "require_where_on_update", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequireWhereOnUpdate = default; _explicitNullProperties?.Remove("require_where_on_update"); AdditionalData["require_where_on_update"] = unknown; } else { RequireWhereOnUpdate = parsed; AdditionalData.Remove("require_where_on_update"); } } },
             };
         }
         /// <summary>
@@ -56,6 +69,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnDelete>("require_where_on_delete", RequireWhereOnDelete);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettingsRequireWhereOnUpdate>("require_where_on_update", RequireWhereOnUpdate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

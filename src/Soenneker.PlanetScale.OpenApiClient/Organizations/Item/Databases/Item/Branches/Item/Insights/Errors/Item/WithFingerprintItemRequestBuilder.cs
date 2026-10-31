@@ -49,7 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQuery>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQuery.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQuery>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedQuery.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_databases`, `read_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_databases` || Database | `read_database` |
@@ -99,15 +99,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Time period for filtering queries</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("period")]
-            public string? Period { get; set; }
-#nullable restore
-#else
-            [QueryParameter("period")]
-            public string Period { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchQueryErrorPeriodParameter? Period { get; set; }
             /// <summary>If provided, specifies the number of returned results</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

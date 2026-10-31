@@ -11,42 +11,68 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateKeyspaceRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_rollout") is null) { _explicitNullValueMaxRollout = default!; _explicitNullProperties?.Remove("max_rollout"); }
+            else if (parseNode.GetChildNode("max_rollout") is { } nullNodeMaxRollout && nullNodeMaxRollout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRollout = null;
+            if (parseNode.GetChildNode("replication_durability_constraints") is null) { _explicitNullValueReplicationDurabilityConstraints = default!; _explicitNullProperties?.Remove("replication_durability_constraints"); }
+            else if (parseNode.GetChildNode("replication_durability_constraints") is { } nullNodeReplicationDurabilityConstraints && nullNodeReplicationDurabilityConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicationDurabilityConstraints = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("throttler") is null) { _explicitNullValueThrottler = default!; _explicitNullProperties?.Remove("throttler"); }
+            else if (parseNode.GetChildNode("throttler") is { } nullNodeThrottler && nullNodeThrottler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Throttler = null;
+            if (parseNode.GetChildNode("vreplication_flags") is null) { _explicitNullValueVreplicationFlags = default!; _explicitNullProperties?.Remove("vreplication_flags"); }
+            else if (parseNode.GetChildNode("vreplication_flags") is { } nullNodeVreplicationFlags && nullNodeVreplicationFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VreplicationFlags = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of shards rolled out in parallel, from 1 to 32. Set to null to use the infrastructure default of 1.</summary>
-        public int? MaxRollout { get; set; }
+        public int? MaxRollout { get => _explicitNullValueMaxRollout; set { _explicitNullValueMaxRollout = value; AdditionalData?.Remove("max_rollout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_rollout"); else _explicitNullProperties?.Remove("max_rollout"); } }
+        private int? _explicitNullValueMaxRollout = default!;
         /// <summary>The replication_durability_constraints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints? ReplicationDurabilityConstraints { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints? ReplicationDurabilityConstraints { get => _explicitNullValueReplicationDurabilityConstraints; set { _explicitNullValueReplicationDurabilityConstraints = value; AdditionalData?.Remove("replication_durability_constraints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replication_durability_constraints"); else _explicitNullProperties?.Remove("replication_durability_constraints"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints? _explicitNullValueReplicationDurabilityConstraints = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints ReplicationDurabilityConstraints { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints ReplicationDurabilityConstraints { get => _explicitNullValueReplicationDurabilityConstraints; set { _explicitNullValueReplicationDurabilityConstraints = value; AdditionalData?.Remove("replication_durability_constraints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replication_durability_constraints"); else _explicitNullProperties?.Remove("replication_durability_constraints"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestReplicationDurabilityConstraints _explicitNullValueReplicationDurabilityConstraints = default!;
 #endif
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage? Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage Storage { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage _explicitNullValueStorage = default!;
 #endif
         /// <summary>The throttler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler? Throttler { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler? Throttler { get => _explicitNullValueThrottler; set { _explicitNullValueThrottler = value; AdditionalData?.Remove("throttler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler"); else _explicitNullProperties?.Remove("throttler"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler? _explicitNullValueThrottler = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler Throttler { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler Throttler { get => _explicitNullValueThrottler; set { _explicitNullValueThrottler = value; AdditionalData?.Remove("throttler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("throttler"); else _explicitNullProperties?.Remove("throttler"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler _explicitNullValueThrottler = default!;
 #endif
         /// <summary>The vreplication_flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags? VreplicationFlags { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags? VreplicationFlags { get => _explicitNullValueVreplicationFlags; set { _explicitNullValueVreplicationFlags = value; AdditionalData?.Remove("vreplication_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vreplication_flags"); else _explicitNullProperties?.Remove("vreplication_flags"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags? _explicitNullValueVreplicationFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags VreplicationFlags { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags VreplicationFlags { get => _explicitNullValueVreplicationFlags; set { _explicitNullValueVreplicationFlags = value; AdditionalData?.Remove("vreplication_flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vreplication_flags"); else _explicitNullProperties?.Remove("vreplication_flags"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags _explicitNullValueVreplicationFlags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequest"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +118,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestStorage>("storage", Storage);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestThrottler>("throttler", Throttler);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceRequestVreplicationFlags>("vreplication_flags", VreplicationFlags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

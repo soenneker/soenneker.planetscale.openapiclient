@@ -11,123 +11,205 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedMysqlClusterResizeRequestDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("previous_vtgate_autoscaling") is null) { _explicitNullValuePreviousVtgateAutoscaling = default!; _explicitNullProperties?.Remove("previous_vtgate_autoscaling"); }
+            else if (parseNode.GetChildNode("previous_vtgate_autoscaling") is { } nullNodePreviousVtgateAutoscaling && nullNodePreviousVtgateAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateAutoscaling = null;
+            if (parseNode.GetChildNode("previous_vtgate_count") is null) { _explicitNullValuePreviousVtgateCount = default!; _explicitNullProperties?.Remove("previous_vtgate_count"); }
+            else if (parseNode.GetChildNode("previous_vtgate_count") is { } nullNodePreviousVtgateCount && nullNodePreviousVtgateCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateCount = null;
+            if (parseNode.GetChildNode("previous_vtgate_display_name") is null) { _explicitNullValuePreviousVtgateDisplayName = default!; _explicitNullProperties?.Remove("previous_vtgate_display_name"); }
+            else if (parseNode.GetChildNode("previous_vtgate_display_name") is { } nullNodePreviousVtgateDisplayName && nullNodePreviousVtgateDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateDisplayName = null;
+            if (parseNode.GetChildNode("previous_vtgate_max_count") is null) { _explicitNullValuePreviousVtgateMaxCount = default!; _explicitNullProperties?.Remove("previous_vtgate_max_count"); }
+            else if (parseNode.GetChildNode("previous_vtgate_max_count") is { } nullNodePreviousVtgateMaxCount && nullNodePreviousVtgateMaxCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateMaxCount = null;
+            if (parseNode.GetChildNode("previous_vtgate_name") is null) { _explicitNullValuePreviousVtgateName = default!; _explicitNullProperties?.Remove("previous_vtgate_name"); }
+            else if (parseNode.GetChildNode("previous_vtgate_name") is { } nullNodePreviousVtgateName && nullNodePreviousVtgateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateName = null;
+            if (parseNode.GetChildNode("previous_vtgate_size") is null) { _explicitNullValuePreviousVtgateSize = default!; _explicitNullProperties?.Remove("previous_vtgate_size"); }
+            else if (parseNode.GetChildNode("previous_vtgate_size") is { } nullNodePreviousVtgateSize && nullNodePreviousVtgateSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateSize = null;
+            if (parseNode.GetChildNode("previous_vtgate_target_cpu_utilization") is null) { _explicitNullValuePreviousVtgateTargetCpuUtilization = default!; _explicitNullProperties?.Remove("previous_vtgate_target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("previous_vtgate_target_cpu_utilization") is { } nullNodePreviousVtgateTargetCpuUtilization && nullNodePreviousVtgateTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousVtgateTargetCpuUtilization = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("vtgate_autoscaling") is null) { _explicitNullValueVtgateAutoscaling = default!; _explicitNullProperties?.Remove("vtgate_autoscaling"); }
+            else if (parseNode.GetChildNode("vtgate_autoscaling") is { } nullNodeVtgateAutoscaling && nullNodeVtgateAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateAutoscaling = null;
+            if (parseNode.GetChildNode("vtgate_count") is null) { _explicitNullValueVtgateCount = default!; _explicitNullProperties?.Remove("vtgate_count"); }
+            else if (parseNode.GetChildNode("vtgate_count") is { } nullNodeVtgateCount && nullNodeVtgateCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateCount = null;
+            if (parseNode.GetChildNode("vtgate_display_name") is null) { _explicitNullValueVtgateDisplayName = default!; _explicitNullProperties?.Remove("vtgate_display_name"); }
+            else if (parseNode.GetChildNode("vtgate_display_name") is { } nullNodeVtgateDisplayName && nullNodeVtgateDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateDisplayName = null;
+            if (parseNode.GetChildNode("vtgate_max_count") is null) { _explicitNullValueVtgateMaxCount = default!; _explicitNullProperties?.Remove("vtgate_max_count"); }
+            else if (parseNode.GetChildNode("vtgate_max_count") is { } nullNodeVtgateMaxCount && nullNodeVtgateMaxCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateMaxCount = null;
+            if (parseNode.GetChildNode("vtgate_name") is null) { _explicitNullValueVtgateName = default!; _explicitNullProperties?.Remove("vtgate_name"); }
+            else if (parseNode.GetChildNode("vtgate_name") is { } nullNodeVtgateName && nullNodeVtgateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateName = null;
+            if (parseNode.GetChildNode("vtgate_size") is null) { _explicitNullValueVtgateSize = default!; _explicitNullProperties?.Remove("vtgate_size"); }
+            else if (parseNode.GetChildNode("vtgate_size") is { } nullNodeVtgateSize && nullNodeVtgateSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateSize = null;
+            if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is null) { _explicitNullValueVtgateTargetCpuUtilization = default!; _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); }
+            else if (parseNode.GetChildNode("vtgate_target_cpu_utilization") is { } nullNodeVtgateTargetCpuUtilization && nullNodeVtgateTargetCpuUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VtgateTargetCpuUtilization = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the branch resize request completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>When the branch resize request was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The ID of the branch resize request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The previous autoscaling setting for the vtgate cluster</summary>
-        public bool? PreviousVtgateAutoscaling { get; set; }
+        public bool? PreviousVtgateAutoscaling { get => _explicitNullValuePreviousVtgateAutoscaling; set { _explicitNullValuePreviousVtgateAutoscaling = value; AdditionalData?.Remove("previous_vtgate_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_autoscaling"); else _explicitNullProperties?.Remove("previous_vtgate_autoscaling"); } }
+        private bool? _explicitNullValuePreviousVtgateAutoscaling = default!;
         /// <summary>The previous number of vtgates in the availability zone</summary>
-        public int? PreviousVtgateCount { get; set; }
+        public int? PreviousVtgateCount { get => _explicitNullValuePreviousVtgateCount; set { _explicitNullValuePreviousVtgateCount = value; AdditionalData?.Remove("previous_vtgate_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_count"); else _explicitNullProperties?.Remove("previous_vtgate_count"); } }
+        private int? _explicitNullValuePreviousVtgateCount = default!;
         /// <summary>The previous SKU representing the vtgate cluster size for display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousVtgateDisplayName { get; set; }
+        public string? PreviousVtgateDisplayName { get => _explicitNullValuePreviousVtgateDisplayName; set { _explicitNullValuePreviousVtgateDisplayName = value; AdditionalData?.Remove("previous_vtgate_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_display_name"); else _explicitNullProperties?.Remove("previous_vtgate_display_name"); } }
+        private string? _explicitNullValuePreviousVtgateDisplayName = default!;
 #nullable restore
 #else
-        public string PreviousVtgateDisplayName { get; set; }
+        public string PreviousVtgateDisplayName { get => _explicitNullValuePreviousVtgateDisplayName; set { _explicitNullValuePreviousVtgateDisplayName = value; AdditionalData?.Remove("previous_vtgate_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_display_name"); else _explicitNullProperties?.Remove("previous_vtgate_display_name"); } }
+        private string _explicitNullValuePreviousVtgateDisplayName = default!;
 #endif
         /// <summary>The previous maximum number of vtgates in the availability zone when autoscaling is enabled</summary>
-        public int? PreviousVtgateMaxCount { get; set; }
+        public int? PreviousVtgateMaxCount { get => _explicitNullValuePreviousVtgateMaxCount; set { _explicitNullValuePreviousVtgateMaxCount = value; AdditionalData?.Remove("previous_vtgate_max_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_max_count"); else _explicitNullProperties?.Remove("previous_vtgate_max_count"); } }
+        private int? _explicitNullValuePreviousVtgateMaxCount = default!;
         /// <summary>The previous SKU representing the vtgate cluster size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousVtgateName { get; set; }
+        public string? PreviousVtgateName { get => _explicitNullValuePreviousVtgateName; set { _explicitNullValuePreviousVtgateName = value; AdditionalData?.Remove("previous_vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_name"); else _explicitNullProperties?.Remove("previous_vtgate_name"); } }
+        private string? _explicitNullValuePreviousVtgateName = default!;
 #nullable restore
 #else
-        public string PreviousVtgateName { get; set; }
+        public string PreviousVtgateName { get => _explicitNullValuePreviousVtgateName; set { _explicitNullValuePreviousVtgateName = value; AdditionalData?.Remove("previous_vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_name"); else _explicitNullProperties?.Remove("previous_vtgate_name"); } }
+        private string _explicitNullValuePreviousVtgateName = default!;
 #endif
         /// <summary>The previous size of the vtgate cluster</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousVtgateSize { get; set; }
+        public string? PreviousVtgateSize { get => _explicitNullValuePreviousVtgateSize; set { _explicitNullValuePreviousVtgateSize = value; AdditionalData?.Remove("previous_vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_size"); else _explicitNullProperties?.Remove("previous_vtgate_size"); } }
+        private string? _explicitNullValuePreviousVtgateSize = default!;
 #nullable restore
 #else
-        public string PreviousVtgateSize { get; set; }
+        public string PreviousVtgateSize { get => _explicitNullValuePreviousVtgateSize; set { _explicitNullValuePreviousVtgateSize = value; AdditionalData?.Remove("previous_vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_size"); else _explicitNullProperties?.Remove("previous_vtgate_size"); } }
+        private string _explicitNullValuePreviousVtgateSize = default!;
 #endif
         /// <summary>The previous target CPU utilization for the vtgate cluster</summary>
-        public double? PreviousVtgateTargetCpuUtilization { get; set; }
+        public double? PreviousVtgateTargetCpuUtilization { get => _explicitNullValuePreviousVtgateTargetCpuUtilization; set { _explicitNullValuePreviousVtgateTargetCpuUtilization = value; AdditionalData?.Remove("previous_vtgate_target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_vtgate_target_cpu_utilization"); else _explicitNullProperties?.Remove("previous_vtgate_target_cpu_utilization"); } }
+        private double? _explicitNullValuePreviousVtgateTargetCpuUtilization = default!;
         /// <summary>When the branch resize request started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The state of the branch resize request</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemState? _explicitNullValueState = default!;
         /// <summary>When the branch resize request was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>If autoscaling is enabled for the vtgate cluster</summary>
-        public bool? VtgateAutoscaling { get; set; }
+        public bool? VtgateAutoscaling { get => _explicitNullValueVtgateAutoscaling; set { _explicitNullValueVtgateAutoscaling = value; AdditionalData?.Remove("vtgate_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_autoscaling"); else _explicitNullProperties?.Remove("vtgate_autoscaling"); } }
+        private bool? _explicitNullValueVtgateAutoscaling = default!;
         /// <summary>The number of vtgates in an availability zone</summary>
-        public int? VtgateCount { get; set; }
+        public int? VtgateCount { get => _explicitNullValueVtgateCount; set { _explicitNullValueVtgateCount = value; AdditionalData?.Remove("vtgate_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_count"); else _explicitNullProperties?.Remove("vtgate_count"); } }
+        private int? _explicitNullValueVtgateCount = default!;
         /// <summary>The SKU representing the vtgate cluster size for display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateDisplayName { get; set; }
+        public string? VtgateDisplayName { get => _explicitNullValueVtgateDisplayName; set { _explicitNullValueVtgateDisplayName = value; AdditionalData?.Remove("vtgate_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_display_name"); else _explicitNullProperties?.Remove("vtgate_display_name"); } }
+        private string? _explicitNullValueVtgateDisplayName = default!;
 #nullable restore
 #else
-        public string VtgateDisplayName { get; set; }
+        public string VtgateDisplayName { get => _explicitNullValueVtgateDisplayName; set { _explicitNullValueVtgateDisplayName = value; AdditionalData?.Remove("vtgate_display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_display_name"); else _explicitNullProperties?.Remove("vtgate_display_name"); } }
+        private string _explicitNullValueVtgateDisplayName = default!;
 #endif
         /// <summary>The maximum number of vtgates in an availability zone when autoscaling is enabled</summary>
-        public int? VtgateMaxCount { get; set; }
+        public int? VtgateMaxCount { get => _explicitNullValueVtgateMaxCount; set { _explicitNullValueVtgateMaxCount = value; AdditionalData?.Remove("vtgate_max_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_max_count"); else _explicitNullProperties?.Remove("vtgate_max_count"); } }
+        private int? _explicitNullValueVtgateMaxCount = default!;
         /// <summary>The SKU representing the vtgate cluster size: VTG_5, VTG_10,…</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateName { get; set; }
+        public string? VtgateName { get => _explicitNullValueVtgateName; set { _explicitNullValueVtgateName = value; AdditionalData?.Remove("vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_name"); else _explicitNullProperties?.Remove("vtgate_name"); } }
+        private string? _explicitNullValueVtgateName = default!;
 #nullable restore
 #else
-        public string VtgateName { get; set; }
+        public string VtgateName { get => _explicitNullValueVtgateName; set { _explicitNullValueVtgateName = value; AdditionalData?.Remove("vtgate_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_name"); else _explicitNullProperties?.Remove("vtgate_name"); } }
+        private string _explicitNullValueVtgateName = default!;
 #endif
         /// <summary>The size of the vtgate cluster</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VtgateSize { get; set; }
+        public string? VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string? _explicitNullValueVtgateSize = default!;
 #nullable restore
 #else
-        public string VtgateSize { get; set; }
+        public string VtgateSize { get => _explicitNullValueVtgateSize; set { _explicitNullValueVtgateSize = value; AdditionalData?.Remove("vtgate_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_size"); else _explicitNullProperties?.Remove("vtgate_size"); } }
+        private string _explicitNullValueVtgateSize = default!;
 #endif
         /// <summary>The target CPU utilization for the vtgate cluster</summary>
-        public double? VtgateTargetCpuUtilization { get; set; }
+        public double? VtgateTargetCpuUtilization { get => _explicitNullValueVtgateTargetCpuUtilization; set { _explicitNullValueVtgateTargetCpuUtilization = value; AdditionalData?.Remove("vtgate_target_cpu_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate_target_cpu_utilization"); else _explicitNullProperties?.Remove("vtgate_target_cpu_utilization"); } }
+        private double? _explicitNullValueVtgateTargetCpuUtilization = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItem"/> and sets the default values.
         /// </summary>
@@ -143,7 +225,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +247,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_vtgate_size", n => { PreviousVtgateSize = n.GetStringValue(); } },
                 { "previous_vtgate_target_cpu_utilization", n => { PreviousVtgateTargetCpuUtilization = n.GetDoubleValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedMysqlClusterResizeRequestDataItemState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "vtgate_autoscaling", n => { VtgateAutoscaling = n.GetBoolValue(); } },
                 { "vtgate_count", n => { VtgateCount = n.GetIntValue(); } },
@@ -204,6 +286,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("vtgate_name", VtgateName);
             writer.WriteStringValue("vtgate_size", VtgateSize);
             writer.WriteDoubleValue("vtgate_target_cpu_utilization", VtgateTargetCpuUtilization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

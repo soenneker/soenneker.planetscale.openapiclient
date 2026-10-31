@@ -11,19 +11,41 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateShardConfigurationProfileRequestStorage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maximum_storage_bytes") is null) { _explicitNullValueMaximumStorageBytes = default!; _explicitNullProperties?.Remove("maximum_storage_bytes"); }
+            else if (parseNode.GetChildNode("maximum_storage_bytes") is { } nullNodeMaximumStorageBytes && nullNodeMaximumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumStorageBytes = null;
+            if (parseNode.GetChildNode("minimum_storage_bytes") is null) { _explicitNullValueMinimumStorageBytes = default!; _explicitNullProperties?.Remove("minimum_storage_bytes"); }
+            else if (parseNode.GetChildNode("minimum_storage_bytes") is { } nullNodeMinimumStorageBytes && nullNodeMinimumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumStorageBytes = null;
+            if (parseNode.GetChildNode("storage_autoscaling") is null) { _explicitNullValueStorageAutoscaling = default!; _explicitNullProperties?.Remove("storage_autoscaling"); }
+            else if (parseNode.GetChildNode("storage_autoscaling") is { } nullNodeStorageAutoscaling && nullNodeStorageAutoscaling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageAutoscaling = null;
+            if (parseNode.GetChildNode("storage_iops") is null) { _explicitNullValueStorageIops = default!; _explicitNullProperties?.Remove("storage_iops"); }
+            else if (parseNode.GetChildNode("storage_iops") is { } nullNodeStorageIops && nullNodeStorageIops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageIops = null;
+            if (parseNode.GetChildNode("storage_throughput_mibs") is null) { _explicitNullValueStorageThroughputMibs = default!; _explicitNullProperties?.Remove("storage_throughput_mibs"); }
+            else if (parseNode.GetChildNode("storage_throughput_mibs") is { } nullNodeStorageThroughputMibs && nullNodeStorageThroughputMibs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageThroughputMibs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum storage size in bytes for autoscaling.</summary>
-        public int? MaximumStorageBytes { get; set; }
+        public int? MaximumStorageBytes { get => _explicitNullValueMaximumStorageBytes; set { _explicitNullValueMaximumStorageBytes = value; AdditionalData?.Remove("maximum_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_storage_bytes"); else _explicitNullProperties?.Remove("maximum_storage_bytes"); } }
+        private int? _explicitNullValueMaximumStorageBytes = default!;
         /// <summary>The minimum storage size in bytes.</summary>
-        public int? MinimumStorageBytes { get; set; }
+        public int? MinimumStorageBytes { get => _explicitNullValueMinimumStorageBytes; set { _explicitNullValueMinimumStorageBytes = value; AdditionalData?.Remove("minimum_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_storage_bytes"); else _explicitNullProperties?.Remove("minimum_storage_bytes"); } }
+        private int? _explicitNullValueMinimumStorageBytes = default!;
         /// <summary>Whether storage autoscaling is enabled.</summary>
-        public bool? StorageAutoscaling { get; set; }
+        public bool? StorageAutoscaling { get => _explicitNullValueStorageAutoscaling; set { _explicitNullValueStorageAutoscaling = value; AdditionalData?.Remove("storage_autoscaling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_autoscaling"); else _explicitNullProperties?.Remove("storage_autoscaling"); } }
+        private bool? _explicitNullValueStorageAutoscaling = default!;
         /// <summary>The storage IOPS.</summary>
-        public int? StorageIops { get; set; }
+        public int? StorageIops { get => _explicitNullValueStorageIops; set { _explicitNullValueStorageIops = value; AdditionalData?.Remove("storage_iops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_iops"); else _explicitNullProperties?.Remove("storage_iops"); } }
+        private int? _explicitNullValueStorageIops = default!;
         /// <summary>The storage throughput in MiB/s.</summary>
-        public int? StorageThroughputMibs { get; set; }
+        public int? StorageThroughputMibs { get => _explicitNullValueStorageThroughputMibs; set { _explicitNullValueStorageThroughputMibs = value; AdditionalData?.Remove("storage_throughput_mibs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_throughput_mibs"); else _explicitNullProperties?.Remove("storage_throughput_mibs"); } }
+        private int? _explicitNullValueStorageThroughputMibs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage"/> and sets the default values.
         /// </summary>
@@ -39,7 +61,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateShardConfigurationProfileRequestStorage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +90,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("storage_autoscaling", StorageAutoscaling);
             writer.WriteIntValue("storage_iops", StorageIops);
             writer.WriteIntValue("storage_throughput_mibs", StorageThroughputMibs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

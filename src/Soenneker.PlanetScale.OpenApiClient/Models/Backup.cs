@@ -11,130 +11,216 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Backup : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("backup_policy") is null) { _explicitNullValueBackupPolicy = default!; _explicitNullProperties?.Remove("backup_policy"); }
+            else if (parseNode.GetChildNode("backup_policy") is { } nullNodeBackupPolicy && nullNodeBackupPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupPolicy = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("database_branch") is null) { _explicitNullValueDatabaseBranch = default!; _explicitNullProperties?.Remove("database_branch"); }
+            else if (parseNode.GetChildNode("database_branch") is { } nullNodeDatabaseBranch && nullNodeDatabaseBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseBranch = null;
+            if (parseNode.GetChildNode("deleted_at") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deleted_at"); }
+            else if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("emergency") is null) { _explicitNullValueEmergency = default!; _explicitNullProperties?.Remove("emergency"); }
+            else if (parseNode.GetChildNode("emergency") is { } nullNodeEmergency && nullNodeEmergency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emergency = null;
+            if (parseNode.GetChildNode("emergency_source") is null) { _explicitNullValueEmergencySource = default!; _explicitNullProperties?.Remove("emergency_source"); }
+            else if (parseNode.GetChildNode("emergency_source") is { } nullNodeEmergencySource && nullNodeEmergencySource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmergencySource = null;
+            if (parseNode.GetChildNode("estimated_storage_cost") is null) { _explicitNullValueEstimatedStorageCost = default!; _explicitNullProperties?.Remove("estimated_storage_cost"); }
+            else if (parseNode.GetChildNode("estimated_storage_cost") is { } nullNodeEstimatedStorageCost && nullNodeEstimatedStorageCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedStorageCost = null;
+            if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
+            else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("protected") is null) { _explicitNullValueProtected = default!; _explicitNullProperties?.Remove("protected"); }
+            else if (parseNode.GetChildNode("protected") is { } nullNodeProtected && nullNodeProtected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protected = null;
+            if (parseNode.GetChildNode("pvc_size") is null) { _explicitNullValuePvcSize = default!; _explicitNullProperties?.Remove("pvc_size"); }
+            else if (parseNode.GetChildNode("pvc_size") is { } nullNodePvcSize && nullNodePvcSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PvcSize = null;
+            if (parseNode.GetChildNode("required") is null) { _explicitNullValueRequired = default!; _explicitNullProperties?.Remove("required"); }
+            else if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+            if (parseNode.GetChildNode("restored_branches") is null) { _explicitNullValueRestoredBranches = default!; _explicitNullProperties?.Remove("restored_branches"); }
+            else if (parseNode.GetChildNode("restored_branches") is { } nullNodeRestoredBranches && nullNodeRestoredBranches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestoredBranches = null;
+            if (parseNode.GetChildNode("schema_snapshot") is null) { _explicitNullValueSchemaSnapshot = default!; _explicitNullProperties?.Remove("schema_snapshot"); }
+            else if (parseNode.GetChildNode("schema_snapshot") is { } nullNodeSchemaSnapshot && nullNodeSchemaSnapshot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaSnapshot = null;
+            if (parseNode.GetChildNode("size") is null) { _explicitNullValueSize = default!; _explicitNullProperties?.Remove("size"); }
+            else if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("uncompressed_size") is null) { _explicitNullValueUncompressedSize = default!; _explicitNullProperties?.Remove("uncompressed_size"); }
+            else if (parseNode.GetChildNode("uncompressed_size") is { } nullNodeUncompressedSize && nullNodeUncompressedSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UncompressedSize = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The backup_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy? BackupPolicy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy? BackupPolicy { get => _explicitNullValueBackupPolicy; set { _explicitNullValueBackupPolicy = value; AdditionalData?.Remove("backup_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_policy"); else _explicitNullProperties?.Remove("backup_policy"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy? _explicitNullValueBackupPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy BackupPolicy { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy BackupPolicy { get => _explicitNullValueBackupPolicy; set { _explicitNullValueBackupPolicy = value; AdditionalData?.Remove("backup_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_policy"); else _explicitNullProperties?.Remove("backup_policy"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupBackupPolicy _explicitNullValueBackupPolicy = default!;
 #endif
         /// <summary>When the backup completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>When the backup was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The database_branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch? DatabaseBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch? DatabaseBranch { get => _explicitNullValueDatabaseBranch; set { _explicitNullValueDatabaseBranch = value; AdditionalData?.Remove("database_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch"); else _explicitNullProperties?.Remove("database_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch? _explicitNullValueDatabaseBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch DatabaseBranch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch DatabaseBranch { get => _explicitNullValueDatabaseBranch; set { _explicitNullValueDatabaseBranch = value; AdditionalData?.Remove("database_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_branch"); else _explicitNullProperties?.Remove("database_branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch _explicitNullValueDatabaseBranch = default!;
 #endif
         /// <summary>When the backup was deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public string? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public string DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private string _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>Whether the backup is an immediate backup that may affect database performance</summary>
-        public bool? Emergency { get; set; }
+        public bool? Emergency { get => _explicitNullValueEmergency; set { _explicitNullValueEmergency = value; AdditionalData?.Remove("emergency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emergency"); else _explicitNullProperties?.Remove("emergency"); } }
+        private bool? _explicitNullValueEmergency = default!;
         /// <summary>The tablet type a MySQL clone backup was taken from</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupEmergencySource? EmergencySource { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupEmergencySource? EmergencySource { get => _explicitNullValueEmergencySource; set { _explicitNullValueEmergencySource = value; AdditionalData?.Remove("emergency_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emergency_source"); else _explicitNullProperties?.Remove("emergency_source"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupEmergencySource? _explicitNullValueEmergencySource = default!;
         /// <summary>The estimated storage cost of the backup</summary>
-        public double? EstimatedStorageCost { get; set; }
+        public double? EstimatedStorageCost { get => _explicitNullValueEstimatedStorageCost; set { _explicitNullValueEstimatedStorageCost = value; AdditionalData?.Remove("estimated_storage_cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_storage_cost"); else _explicitNullProperties?.Remove("estimated_storage_cost"); } }
+        private double? _explicitNullValueEstimatedStorageCost = default!;
         /// <summary>When the backup expires</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The ID of the backup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name of the backup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether or not the backup is protected from deletion</summary>
-        public bool? Protected { get; set; }
+        public bool? Protected { get => _explicitNullValueProtected; set { _explicitNullValueProtected = value; AdditionalData?.Remove("protected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protected"); else _explicitNullProperties?.Remove("protected"); } }
+        private bool? _explicitNullValueProtected = default!;
         /// <summary>Size of the PVC used for the backup</summary>
-        public int? PvcSize { get; set; }
+        public int? PvcSize { get => _explicitNullValuePvcSize; set { _explicitNullValuePvcSize = value; AdditionalData?.Remove("pvc_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pvc_size"); else _explicitNullProperties?.Remove("pvc_size"); } }
+        private int? _explicitNullValuePvcSize = default!;
         /// <summary>Whether or not the backup policy is required</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>The restored_branches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem>? RestoredBranches { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem>? RestoredBranches { get => _explicitNullValueRestoredBranches; set { _explicitNullValueRestoredBranches = value; AdditionalData?.Remove("restored_branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored_branches"); else _explicitNullProperties?.Remove("restored_branches"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem>? _explicitNullValueRestoredBranches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem> RestoredBranches { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem> RestoredBranches { get => _explicitNullValueRestoredBranches; set { _explicitNullValueRestoredBranches = value; AdditionalData?.Remove("restored_branches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restored_branches"); else _explicitNullProperties?.Remove("restored_branches"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupRestoredBranchesItem> _explicitNullValueRestoredBranches = default!;
 #endif
         /// <summary>The schema_snapshot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot? SchemaSnapshot { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot? SchemaSnapshot { get => _explicitNullValueSchemaSnapshot; set { _explicitNullValueSchemaSnapshot = value; AdditionalData?.Remove("schema_snapshot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_snapshot"); else _explicitNullProperties?.Remove("schema_snapshot"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot? _explicitNullValueSchemaSnapshot = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot SchemaSnapshot { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot SchemaSnapshot { get => _explicitNullValueSchemaSnapshot; set { _explicitNullValueSchemaSnapshot = value; AdditionalData?.Remove("schema_snapshot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_snapshot"); else _explicitNullProperties?.Remove("schema_snapshot"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot _explicitNullValueSchemaSnapshot = default!;
 #endif
         /// <summary>The size of the backup in bytes</summary>
-        public int? Size { get; set; }
+        public int? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; AdditionalData?.Remove("size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        private int? _explicitNullValueSize = default!;
         /// <summary>When the backup started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The current state of the backup</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState? _explicitNullValueState = default!;
         /// <summary>The uncompressed (logical) size of the backup in bytes</summary>
-        public int? UncompressedSize { get; set; }
+        public int? UncompressedSize { get => _explicitNullValueUncompressedSize; set { _explicitNullValueUncompressedSize = value; AdditionalData?.Remove("uncompressed_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uncompressed_size"); else _explicitNullProperties?.Remove("uncompressed_size"); } }
+        private int? _explicitNullValueUncompressedSize = default!;
         /// <summary>When the backup was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.Backup"/> and sets the default values.
@@ -151,7 +237,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.Backup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.Backup();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.Backup(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,7 +254,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "database_branch", n => { DatabaseBranch = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch>(global::Soenneker.PlanetScale.OpenApiClient.Models.BackupDatabaseBranch.CreateFromDiscriminatorValue); } },
                 { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
                 { "emergency", n => { Emergency = n.GetBoolValue(); } },
-                { "emergency_source", n => { EmergencySource = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupEmergencySource>(); } },
+                { "emergency_source", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupEmergencySource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmergencySource = default; _explicitNullProperties?.Remove("emergency_source"); AdditionalData["emergency_source"] = unknown; } else { EmergencySource = parsed; AdditionalData.Remove("emergency_source"); } } },
                 { "estimated_storage_cost", n => { EstimatedStorageCost = n.GetDoubleValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -180,7 +266,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "schema_snapshot", n => { SchemaSnapshot = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot>(global::Soenneker.PlanetScale.OpenApiClient.Models.BackupSchemaSnapshot.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "uncompressed_size", n => { UncompressedSize = n.GetIntValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -214,6 +300,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.BackupState>("state", State);
             writer.WriteIntValue("uncompressed_size", UncompressedSize);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

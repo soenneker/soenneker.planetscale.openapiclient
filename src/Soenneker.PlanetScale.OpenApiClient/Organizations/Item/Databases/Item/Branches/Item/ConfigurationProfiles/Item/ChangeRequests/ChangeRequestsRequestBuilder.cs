@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.PlanetScale.OpenApiClient.Models;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.ConfigurationProfiles.Item.ChangeRequests.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -61,7 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_branch`, `delete_branch`, `create_branch`, `connect_production_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_branches` || Database | `read_branches` || Branch | `read_branch` |
@@ -111,15 +112,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Filter change requests by named period</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("period")]
-            public string? Period { get; set; }
-#nullable restore
-#else
-            [QueryParameter("period")]
-            public string Period { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.ListShardConfigurationProfileChangeRequestsPeriodParameter? Period { get; set; }
             /// <summary>If provided, specifies the number of returned results</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

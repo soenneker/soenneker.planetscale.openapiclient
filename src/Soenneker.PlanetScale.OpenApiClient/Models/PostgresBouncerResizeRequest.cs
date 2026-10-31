@@ -11,106 +11,172 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostgresBouncerResizeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("bouncer") is null) { _explicitNullValueBouncer = default!; _explicitNullProperties?.Remove("bouncer"); }
+            else if (parseNode.GetChildNode("bouncer") is { } nullNodeBouncer && nullNodeBouncer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bouncer = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("previous_parameters") is null) { _explicitNullValuePreviousParameters = default!; _explicitNullProperties?.Remove("previous_parameters"); }
+            else if (parseNode.GetChildNode("previous_parameters") is { } nullNodePreviousParameters && nullNodePreviousParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousParameters = null;
+            if (parseNode.GetChildNode("previous_replicas_per_cell") is null) { _explicitNullValuePreviousReplicasPerCell = default!; _explicitNullProperties?.Remove("previous_replicas_per_cell"); }
+            else if (parseNode.GetChildNode("previous_replicas_per_cell") is { } nullNodePreviousReplicasPerCell && nullNodePreviousReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousReplicasPerCell = null;
+            if (parseNode.GetChildNode("previous_sku") is null) { _explicitNullValuePreviousSku = default!; _explicitNullProperties?.Remove("previous_sku"); }
+            else if (parseNode.GetChildNode("previous_sku") is { } nullNodePreviousSku && nullNodePreviousSku.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousSku = null;
+            if (parseNode.GetChildNode("previous_target") is null) { _explicitNullValuePreviousTarget = default!; _explicitNullProperties?.Remove("previous_target"); }
+            else if (parseNode.GetChildNode("previous_target") is { } nullNodePreviousTarget && nullNodePreviousTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousTarget = null;
+            if (parseNode.GetChildNode("replicas_per_cell") is null) { _explicitNullValueReplicasPerCell = default!; _explicitNullProperties?.Remove("replicas_per_cell"); }
+            else if (parseNode.GetChildNode("replicas_per_cell") is { } nullNodeReplicasPerCell && nullNodeReplicasPerCell.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplicasPerCell = null;
+            if (parseNode.GetChildNode("sku") is null) { _explicitNullValueSku = default!; _explicitNullProperties?.Remove("sku"); }
+            else if (parseNode.GetChildNode("sku") is { } nullNodeSku && nullNodeSku.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sku = null;
+            if (parseNode.GetChildNode("started_at") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("started_at"); }
+            else if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor? Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor Actor { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bouncer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer? Bouncer { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer? Bouncer { get => _explicitNullValueBouncer; set { _explicitNullValueBouncer = value; AdditionalData?.Remove("bouncer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer"); else _explicitNullProperties?.Remove("bouncer"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer? _explicitNullValueBouncer = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer Bouncer { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer Bouncer { get => _explicitNullValueBouncer; set { _explicitNullValueBouncer = value; AdditionalData?.Remove("bouncer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bouncer"); else _explicitNullProperties?.Remove("bouncer"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestBouncer _explicitNullValueBouncer = default!;
 #endif
         /// <summary>The time the bouncer resize completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>The time the bouncer resize was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The ID of the bouncer resize</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The bouncer parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty? Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty Parameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestParametersProperty _explicitNullValueParameters = default!;
 #endif
         /// <summary>The previous bouncer parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty? PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty? PreviousParameters { get => _explicitNullValuePreviousParameters; set { _explicitNullValuePreviousParameters = value; AdditionalData?.Remove("previous_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_parameters"); else _explicitNullProperties?.Remove("previous_parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty? _explicitNullValuePreviousParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty PreviousParameters { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty PreviousParameters { get => _explicitNullValuePreviousParameters; set { _explicitNullValuePreviousParameters = value; AdditionalData?.Remove("previous_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_parameters"); else _explicitNullProperties?.Remove("previous_parameters"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty _explicitNullValuePreviousParameters = default!;
 #endif
         /// <summary>The number of replicas per cell for the bouncer before the resize</summary>
-        public int? PreviousReplicasPerCell { get; set; }
+        public int? PreviousReplicasPerCell { get => _explicitNullValuePreviousReplicasPerCell; set { _explicitNullValuePreviousReplicasPerCell = value; AdditionalData?.Remove("previous_replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_replicas_per_cell"); else _explicitNullProperties?.Remove("previous_replicas_per_cell"); } }
+        private int? _explicitNullValuePreviousReplicasPerCell = default!;
         /// <summary>The previous_sku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku? PreviousSku { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku? PreviousSku { get => _explicitNullValuePreviousSku; set { _explicitNullValuePreviousSku = value; AdditionalData?.Remove("previous_sku"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_sku"); else _explicitNullProperties?.Remove("previous_sku"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku? _explicitNullValuePreviousSku = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku PreviousSku { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku PreviousSku { get => _explicitNullValuePreviousSku; set { _explicitNullValuePreviousSku = value; AdditionalData?.Remove("previous_sku"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_sku"); else _explicitNullProperties?.Remove("previous_sku"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku _explicitNullValuePreviousSku = default!;
 #endif
         /// <summary>The backend target for the bouncer before the resize</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousTarget? PreviousTarget { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousTarget? PreviousTarget { get => _explicitNullValuePreviousTarget; set { _explicitNullValuePreviousTarget = value; AdditionalData?.Remove("previous_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_target"); else _explicitNullProperties?.Remove("previous_target"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousTarget? _explicitNullValuePreviousTarget = default!;
         /// <summary>The number of replicas per cell for the bouncer after the resize</summary>
-        public int? ReplicasPerCell { get; set; }
+        public int? ReplicasPerCell { get => _explicitNullValueReplicasPerCell; set { _explicitNullValueReplicasPerCell = value; AdditionalData?.Remove("replicas_per_cell"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas_per_cell"); else _explicitNullProperties?.Remove("replicas_per_cell"); } }
+        private int? _explicitNullValueReplicasPerCell = default!;
         /// <summary>The sku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku? Sku { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku? Sku { get => _explicitNullValueSku; set { _explicitNullValueSku = value; AdditionalData?.Remove("sku"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sku"); else _explicitNullProperties?.Remove("sku"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku? _explicitNullValueSku = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku Sku { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku Sku { get => _explicitNullValueSku; set { _explicitNullValueSku = value; AdditionalData?.Remove("sku"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sku"); else _explicitNullProperties?.Remove("sku"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku _explicitNullValueSku = default!;
 #endif
         /// <summary>The time the bouncer resize started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The state of the bouncer resize</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState? _explicitNullValueState = default!;
         /// <summary>The backend target for the bouncer after the resize</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget? Target { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget? _explicitNullValueTarget = default!;
         /// <summary>The time the bouncer resize was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequest"/> and sets the default values.
@@ -127,7 +193,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,12 +212,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "previous_parameters", n => { PreviousParameters = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousParametersProperty.CreateFromDiscriminatorValue); } },
                 { "previous_replicas_per_cell", n => { PreviousReplicasPerCell = n.GetIntValue(); } },
                 { "previous_sku", n => { PreviousSku = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousSku.CreateFromDiscriminatorValue); } },
-                { "previous_target", n => { PreviousTarget = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousTarget>(); } },
+                { "previous_target", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestPreviousTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreviousTarget = default; _explicitNullProperties?.Remove("previous_target"); AdditionalData["previous_target"] = unknown; } else { PreviousTarget = parsed; AdditionalData.Remove("previous_target"); } } },
                 { "replicas_per_cell", n => { ReplicasPerCell = n.GetIntValue(); } },
                 { "sku", n => { Sku = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestSku.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState>(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
+                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -178,6 +244,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestState>("state", State);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBouncerResizeRequestTarget>("target", Target);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

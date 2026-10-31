@@ -11,183 +11,355 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QuerySummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avg_parallel_workers") is null) { _explicitNullValueAvgParallelWorkers = default!; _explicitNullProperties?.Remove("avg_parallel_workers"); }
+            else if (parseNode.GetChildNode("avg_parallel_workers") is { } nullNodeAvgParallelWorkers && nullNodeAvgParallelWorkers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgParallelWorkers = null;
+            if (parseNode.GetChildNode("avg_shard_queries") is null) { _explicitNullValueAvgShardQueries = default!; _explicitNullProperties?.Remove("avg_shard_queries"); }
+            else if (parseNode.GetChildNode("avg_shard_queries") is { } nullNodeAvgShardQueries && nullNodeAvgShardQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgShardQueries = null;
+            if (parseNode.GetChildNode("block_cache_hit_ratio") is null) { _explicitNullValueBlockCacheHitRatio = default!; _explicitNullProperties?.Remove("block_cache_hit_ratio"); }
+            else if (parseNode.GetChildNode("block_cache_hit_ratio") is { } nullNodeBlockCacheHitRatio && nullNodeBlockCacheHitRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockCacheHitRatio = null;
+            if (parseNode.GetChildNode("blocks_dirtied") is null) { _explicitNullValueBlocksDirtied = default!; _explicitNullProperties?.Remove("blocks_dirtied"); }
+            else if (parseNode.GetChildNode("blocks_dirtied") is { } nullNodeBlocksDirtied && nullNodeBlocksDirtied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocksDirtied = null;
+            if (parseNode.GetChildNode("blocks_hit") is null) { _explicitNullValueBlocksHit = default!; _explicitNullProperties?.Remove("blocks_hit"); }
+            else if (parseNode.GetChildNode("blocks_hit") is { } nullNodeBlocksHit && nullNodeBlocksHit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocksHit = null;
+            if (parseNode.GetChildNode("blocks_read") is null) { _explicitNullValueBlocksRead = default!; _explicitNullProperties?.Remove("blocks_read"); }
+            else if (parseNode.GetChildNode("blocks_read") is { } nullNodeBlocksRead && nullNodeBlocksRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocksRead = null;
+            if (parseNode.GetChildNode("blocks_written") is null) { _explicitNullValueBlocksWritten = default!; _explicitNullProperties?.Remove("blocks_written"); }
+            else if (parseNode.GetChildNode("blocks_written") is { } nullNodeBlocksWritten && nullNodeBlocksWritten.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlocksWritten = null;
+            if (parseNode.GetChildNode("comment_count") is null) { _explicitNullValueCommentCount = default!; _explicitNullProperties?.Remove("comment_count"); }
+            else if (parseNode.GetChildNode("comment_count") is { } nullNodeCommentCount && nullNodeCommentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentCount = null;
+            if (parseNode.GetChildNode("egress_bytes") is null) { _explicitNullValueEgressBytes = default!; _explicitNullProperties?.Remove("egress_bytes"); }
+            else if (parseNode.GetChildNode("egress_bytes") is { } nullNodeEgressBytes && nullNodeEgressBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EgressBytes = null;
+            if (parseNode.GetChildNode("egress_bytes_per_query") is null) { _explicitNullValueEgressBytesPerQuery = default!; _explicitNullProperties?.Remove("egress_bytes_per_query"); }
+            else if (parseNode.GetChildNode("egress_bytes_per_query") is { } nullNodeEgressBytesPerQuery && nullNodeEgressBytesPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EgressBytesPerQuery = null;
+            if (parseNode.GetChildNode("error_count") is null) { _explicitNullValueErrorCount = default!; _explicitNullProperties?.Remove("error_count"); }
+            else if (parseNode.GetChildNode("error_count") is { } nullNodeErrorCount && nullNodeErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCount = null;
+            if (parseNode.GetChildNode("fingerprint") is null) { _explicitNullValueFingerprint = default!; _explicitNullProperties?.Remove("fingerprint"); }
+            else if (parseNode.GetChildNode("fingerprint") is { } nullNodeFingerprint && nullNodeFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fingerprint = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("index_usages") is null) { _explicitNullValueIndexUsages = default!; _explicitNullProperties?.Remove("index_usages"); }
+            else if (parseNode.GetChildNode("index_usages") is { } nullNodeIndexUsages && nullNodeIndexUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexUsages = null;
+            if (parseNode.GetChildNode("ingress_bytes") is null) { _explicitNullValueIngressBytes = default!; _explicitNullProperties?.Remove("ingress_bytes"); }
+            else if (parseNode.GetChildNode("ingress_bytes") is { } nullNodeIngressBytes && nullNodeIngressBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngressBytes = null;
+            if (parseNode.GetChildNode("ingress_bytes_per_query") is null) { _explicitNullValueIngressBytesPerQuery = default!; _explicitNullProperties?.Remove("ingress_bytes_per_query"); }
+            else if (parseNode.GetChildNode("ingress_bytes_per_query") is { } nullNodeIngressBytesPerQuery && nullNodeIngressBytesPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IngressBytesPerQuery = null;
+            if (parseNode.GetChildNode("keyspace") is null) { _explicitNullValueKeyspace = default!; _explicitNullProperties?.Remove("keyspace"); }
+            else if (parseNode.GetChildNode("keyspace") is { } nullNodeKeyspace && nullNodeKeyspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyspace = null;
+            if (parseNode.GetChildNode("last_run_at") is null) { _explicitNullValueLastRunAt = default!; _explicitNullProperties?.Remove("last_run_at"); }
+            else if (parseNode.GetChildNode("last_run_at") is { } nullNodeLastRunAt && nullNodeLastRunAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRunAt = null;
+            if (parseNode.GetChildNode("max_egress_bytes") is null) { _explicitNullValueMaxEgressBytes = default!; _explicitNullProperties?.Remove("max_egress_bytes"); }
+            else if (parseNode.GetChildNode("max_egress_bytes") is { } nullNodeMaxEgressBytes && nullNodeMaxEgressBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxEgressBytes = null;
+            if (parseNode.GetChildNode("max_ingress_bytes") is null) { _explicitNullValueMaxIngressBytes = default!; _explicitNullProperties?.Remove("max_ingress_bytes"); }
+            else if (parseNode.GetChildNode("max_ingress_bytes") is { } nullNodeMaxIngressBytes && nullNodeMaxIngressBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxIngressBytes = null;
+            if (parseNode.GetChildNode("max_latency") is null) { _explicitNullValueMaxLatency = default!; _explicitNullProperties?.Remove("max_latency"); }
+            else if (parseNode.GetChildNode("max_latency") is { } nullNodeMaxLatency && nullNodeMaxLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLatency = null;
+            if (parseNode.GetChildNode("max_shard_queries") is null) { _explicitNullValueMaxShardQueries = default!; _explicitNullProperties?.Remove("max_shard_queries"); }
+            else if (parseNode.GetChildNode("max_shard_queries") is { } nullNodeMaxShardQueries && nullNodeMaxShardQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxShardQueries = null;
+            if (parseNode.GetChildNode("multishard") is null) { _explicitNullValueMultishard = default!; _explicitNullProperties?.Remove("multishard"); }
+            else if (parseNode.GetChildNode("multishard") is { } nullNodeMultishard && nullNodeMultishard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multishard = null;
+            if (parseNode.GetChildNode("normalized_sql") is null) { _explicitNullValueNormalizedSql = default!; _explicitNullProperties?.Remove("normalized_sql"); }
+            else if (parseNode.GetChildNode("normalized_sql") is { } nullNodeNormalizedSql && nullNodeNormalizedSql.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizedSql = null;
+            if (parseNode.GetChildNode("p50_latency") is null) { _explicitNullValueP50Latency = default!; _explicitNullProperties?.Remove("p50_latency"); }
+            else if (parseNode.GetChildNode("p50_latency") is { } nullNodeP50Latency && nullNodeP50Latency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P50Latency = null;
+            if (parseNode.GetChildNode("p99_latency") is null) { _explicitNullValueP99Latency = default!; _explicitNullProperties?.Remove("p99_latency"); }
+            else if (parseNode.GetChildNode("p99_latency") is { } nullNodeP99Latency && nullNodeP99Latency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P99Latency = null;
+            if (parseNode.GetChildNode("qualified_tables") is null) { _explicitNullValueQualifiedTables = default!; _explicitNullProperties?.Remove("qualified_tables"); }
+            else if (parseNode.GetChildNode("qualified_tables") is { } nullNodeQualifiedTables && nullNodeQualifiedTables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualifiedTables = null;
+            if (parseNode.GetChildNode("query_count") is null) { _explicitNullValueQueryCount = default!; _explicitNullProperties?.Remove("query_count"); }
+            else if (parseNode.GetChildNode("query_count") is { } nullNodeQueryCount && nullNodeQueryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryCount = null;
+            if (parseNode.GetChildNode("routing_index_usages") is null) { _explicitNullValueRoutingIndexUsages = default!; _explicitNullProperties?.Remove("routing_index_usages"); }
+            else if (parseNode.GetChildNode("routing_index_usages") is { } nullNodeRoutingIndexUsages && nullNodeRoutingIndexUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingIndexUsages = null;
+            if (parseNode.GetChildNode("rows_affected_per_query") is null) { _explicitNullValueRowsAffectedPerQuery = default!; _explicitNullProperties?.Remove("rows_affected_per_query"); }
+            else if (parseNode.GetChildNode("rows_affected_per_query") is { } nullNodeRowsAffectedPerQuery && nullNodeRowsAffectedPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsAffectedPerQuery = null;
+            if (parseNode.GetChildNode("rows_read_per_query") is null) { _explicitNullValueRowsReadPerQuery = default!; _explicitNullProperties?.Remove("rows_read_per_query"); }
+            else if (parseNode.GetChildNode("rows_read_per_query") is { } nullNodeRowsReadPerQuery && nullNodeRowsReadPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsReadPerQuery = null;
+            if (parseNode.GetChildNode("rows_read_per_returned") is null) { _explicitNullValueRowsReadPerReturned = default!; _explicitNullProperties?.Remove("rows_read_per_returned"); }
+            else if (parseNode.GetChildNode("rows_read_per_returned") is { } nullNodeRowsReadPerReturned && nullNodeRowsReadPerReturned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsReadPerReturned = null;
+            if (parseNode.GetChildNode("rows_returned_per_query") is null) { _explicitNullValueRowsReturnedPerQuery = default!; _explicitNullProperties?.Remove("rows_returned_per_query"); }
+            else if (parseNode.GetChildNode("rows_returned_per_query") is { } nullNodeRowsReturnedPerQuery && nullNodeRowsReturnedPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RowsReturnedPerQuery = null;
+            if (parseNode.GetChildNode("statement_type") is null) { _explicitNullValueStatementType = default!; _explicitNullProperties?.Remove("statement_type"); }
+            else if (parseNode.GetChildNode("statement_type") is { } nullNodeStatementType && nullNodeStatementType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatementType = null;
+            if (parseNode.GetChildNode("sum_cpu_duration_millis") is null) { _explicitNullValueSumCpuDurationMillis = default!; _explicitNullProperties?.Remove("sum_cpu_duration_millis"); }
+            else if (parseNode.GetChildNode("sum_cpu_duration_millis") is { } nullNodeSumCpuDurationMillis && nullNodeSumCpuDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumCpuDurationMillis = null;
+            if (parseNode.GetChildNode("sum_cpu_duration_percent") is null) { _explicitNullValueSumCpuDurationPercent = default!; _explicitNullProperties?.Remove("sum_cpu_duration_percent"); }
+            else if (parseNode.GetChildNode("sum_cpu_duration_percent") is { } nullNodeSumCpuDurationPercent && nullNodeSumCpuDurationPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumCpuDurationPercent = null;
+            if (parseNode.GetChildNode("sum_io_duration_millis") is null) { _explicitNullValueSumIoDurationMillis = default!; _explicitNullProperties?.Remove("sum_io_duration_millis"); }
+            else if (parseNode.GetChildNode("sum_io_duration_millis") is { } nullNodeSumIoDurationMillis && nullNodeSumIoDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumIoDurationMillis = null;
+            if (parseNode.GetChildNode("sum_io_duration_percent") is null) { _explicitNullValueSumIoDurationPercent = default!; _explicitNullProperties?.Remove("sum_io_duration_percent"); }
+            else if (parseNode.GetChildNode("sum_io_duration_percent") is { } nullNodeSumIoDurationPercent && nullNodeSumIoDurationPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumIoDurationPercent = null;
+            if (parseNode.GetChildNode("sum_rows_affected") is null) { _explicitNullValueSumRowsAffected = default!; _explicitNullProperties?.Remove("sum_rows_affected"); }
+            else if (parseNode.GetChildNode("sum_rows_affected") is { } nullNodeSumRowsAffected && nullNodeSumRowsAffected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumRowsAffected = null;
+            if (parseNode.GetChildNode("sum_rows_read") is null) { _explicitNullValueSumRowsRead = default!; _explicitNullProperties?.Remove("sum_rows_read"); }
+            else if (parseNode.GetChildNode("sum_rows_read") is { } nullNodeSumRowsRead && nullNodeSumRowsRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumRowsRead = null;
+            if (parseNode.GetChildNode("sum_rows_returned") is null) { _explicitNullValueSumRowsReturned = default!; _explicitNullProperties?.Remove("sum_rows_returned"); }
+            else if (parseNode.GetChildNode("sum_rows_returned") is { } nullNodeSumRowsReturned && nullNodeSumRowsReturned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumRowsReturned = null;
+            if (parseNode.GetChildNode("sum_shard_queries") is null) { _explicitNullValueSumShardQueries = default!; _explicitNullProperties?.Remove("sum_shard_queries"); }
+            else if (parseNode.GetChildNode("sum_shard_queries") is { } nullNodeSumShardQueries && nullNodeSumShardQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumShardQueries = null;
+            if (parseNode.GetChildNode("sum_total_duration_millis") is null) { _explicitNullValueSumTotalDurationMillis = default!; _explicitNullProperties?.Remove("sum_total_duration_millis"); }
+            else if (parseNode.GetChildNode("sum_total_duration_millis") is { } nullNodeSumTotalDurationMillis && nullNodeSumTotalDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumTotalDurationMillis = null;
+            if (parseNode.GetChildNode("sum_total_duration_percent") is null) { _explicitNullValueSumTotalDurationPercent = default!; _explicitNullProperties?.Remove("sum_total_duration_percent"); }
+            else if (parseNode.GetChildNode("sum_total_duration_percent") is { } nullNodeSumTotalDurationPercent && nullNodeSumTotalDurationPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumTotalDurationPercent = null;
+            if (parseNode.GetChildNode("syntax_highlighted_sql") is null) { _explicitNullValueSyntaxHighlightedSql = default!; _explicitNullProperties?.Remove("syntax_highlighted_sql"); }
+            else if (parseNode.GetChildNode("syntax_highlighted_sql") is { } nullNodeSyntaxHighlightedSql && nullNodeSyntaxHighlightedSql.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntaxHighlightedSql = null;
+            if (parseNode.GetChildNode("table_keyspaces") is null) { _explicitNullValueTableKeyspaces = default!; _explicitNullProperties?.Remove("table_keyspaces"); }
+            else if (parseNode.GetChildNode("table_keyspaces") is { } nullNodeTableKeyspaces && nullNodeTableKeyspaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableKeyspaces = null;
+            if (parseNode.GetChildNode("tables") is null) { _explicitNullValueTables = default!; _explicitNullProperties?.Remove("tables"); }
+            else if (parseNode.GetChildNode("tables") is { } nullNodeTables && nullNodeTables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tables = null;
+            if (parseNode.GetChildNode("time_per_query") is null) { _explicitNullValueTimePerQuery = default!; _explicitNullProperties?.Remove("time_per_query"); }
+            else if (parseNode.GetChildNode("time_per_query") is { } nullNodeTimePerQuery && nullNodeTimePerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimePerQuery = null;
+            if (parseNode.GetChildNode("traffic_control_checked") is null) { _explicitNullValueTrafficControlChecked = default!; _explicitNullProperties?.Remove("traffic_control_checked"); }
+            else if (parseNode.GetChildNode("traffic_control_checked") is { } nullNodeTrafficControlChecked && nullNodeTrafficControlChecked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficControlChecked = null;
+            if (parseNode.GetChildNode("traffic_control_throttled") is null) { _explicitNullValueTrafficControlThrottled = default!; _explicitNullProperties?.Remove("traffic_control_throttled"); }
+            else if (parseNode.GetChildNode("traffic_control_throttled") is { } nullNodeTrafficControlThrottled && nullNodeTrafficControlThrottled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficControlThrottled = null;
+            if (parseNode.GetChildNode("traffic_control_warnings") is null) { _explicitNullValueTrafficControlWarnings = default!; _explicitNullProperties?.Remove("traffic_control_warnings"); }
+            else if (parseNode.GetChildNode("traffic_control_warnings") is { } nullNodeTrafficControlWarnings && nullNodeTrafficControlWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficControlWarnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average number of parallel workers</summary>
-        public double? AvgParallelWorkers { get; set; }
+        public double? AvgParallelWorkers { get => _explicitNullValueAvgParallelWorkers; set { _explicitNullValueAvgParallelWorkers = value; AdditionalData?.Remove("avg_parallel_workers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg_parallel_workers"); else _explicitNullProperties?.Remove("avg_parallel_workers"); } }
+        private double? _explicitNullValueAvgParallelWorkers = default!;
         /// <summary>The average number of shard queries</summary>
-        public double? AvgShardQueries { get; set; }
+        public double? AvgShardQueries { get => _explicitNullValueAvgShardQueries; set { _explicitNullValueAvgShardQueries = value; AdditionalData?.Remove("avg_shard_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg_shard_queries"); else _explicitNullProperties?.Remove("avg_shard_queries"); } }
+        private double? _explicitNullValueAvgShardQueries = default!;
         /// <summary>Cache hit ratio for blocks</summary>
-        public double? BlockCacheHitRatio { get; set; }
+        public double? BlockCacheHitRatio { get => _explicitNullValueBlockCacheHitRatio; set { _explicitNullValueBlockCacheHitRatio = value; AdditionalData?.Remove("block_cache_hit_ratio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_cache_hit_ratio"); else _explicitNullProperties?.Remove("block_cache_hit_ratio"); } }
+        private double? _explicitNullValueBlockCacheHitRatio = default!;
         /// <summary>Total blocks dirtied</summary>
-        public int? BlocksDirtied { get; set; }
+        public int? BlocksDirtied { get => _explicitNullValueBlocksDirtied; set { _explicitNullValueBlocksDirtied = value; AdditionalData?.Remove("blocks_dirtied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks_dirtied"); else _explicitNullProperties?.Remove("blocks_dirtied"); } }
+        private int? _explicitNullValueBlocksDirtied = default!;
         /// <summary>Total blocks found in cache</summary>
-        public int? BlocksHit { get; set; }
+        public int? BlocksHit { get => _explicitNullValueBlocksHit; set { _explicitNullValueBlocksHit = value; AdditionalData?.Remove("blocks_hit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks_hit"); else _explicitNullProperties?.Remove("blocks_hit"); } }
+        private int? _explicitNullValueBlocksHit = default!;
         /// <summary>Total blocks read from disk</summary>
-        public int? BlocksRead { get; set; }
+        public int? BlocksRead { get => _explicitNullValueBlocksRead; set { _explicitNullValueBlocksRead = value; AdditionalData?.Remove("blocks_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks_read"); else _explicitNullProperties?.Remove("blocks_read"); } }
+        private int? _explicitNullValueBlocksRead = default!;
         /// <summary>Total blocks written</summary>
-        public int? BlocksWritten { get; set; }
+        public int? BlocksWritten { get => _explicitNullValueBlocksWritten; set { _explicitNullValueBlocksWritten = value; AdditionalData?.Remove("blocks_written"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks_written"); else _explicitNullProperties?.Remove("blocks_written"); } }
+        private int? _explicitNullValueBlocksWritten = default!;
         /// <summary>How many comments are on this query pattern</summary>
-        public int? CommentCount { get; set; }
+        public int? CommentCount { get => _explicitNullValueCommentCount; set { _explicitNullValueCommentCount = value; AdditionalData?.Remove("comment_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment_count"); else _explicitNullProperties?.Remove("comment_count"); } }
+        private int? _explicitNullValueCommentCount = default!;
         /// <summary>Total egress bytes</summary>
-        public int? EgressBytes { get; set; }
+        public int? EgressBytes { get => _explicitNullValueEgressBytes; set { _explicitNullValueEgressBytes = value; AdditionalData?.Remove("egress_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress_bytes"); else _explicitNullProperties?.Remove("egress_bytes"); } }
+        private int? _explicitNullValueEgressBytes = default!;
         /// <summary>Average egress bytes per query</summary>
-        public double? EgressBytesPerQuery { get; set; }
+        public double? EgressBytesPerQuery { get => _explicitNullValueEgressBytesPerQuery; set { _explicitNullValueEgressBytesPerQuery = value; AdditionalData?.Remove("egress_bytes_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress_bytes_per_query"); else _explicitNullProperties?.Remove("egress_bytes_per_query"); } }
+        private double? _explicitNullValueEgressBytesPerQuery = default!;
         /// <summary>The number of times this query resulted in an error</summary>
-        public int? ErrorCount { get; set; }
+        public int? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("error_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_count"); else _explicitNullProperties?.Remove("error_count"); } }
+        private int? _explicitNullValueErrorCount = default!;
         /// <summary>The query fingerprint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fingerprint { get; set; }
+        public string? Fingerprint { get => _explicitNullValueFingerprint; set { _explicitNullValueFingerprint = value; AdditionalData?.Remove("fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprint"); else _explicitNullProperties?.Remove("fingerprint"); } }
+        private string? _explicitNullValueFingerprint = default!;
 #nullable restore
 #else
-        public string Fingerprint { get; set; }
+        public string Fingerprint { get => _explicitNullValueFingerprint; set { _explicitNullValueFingerprint = value; AdditionalData?.Remove("fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprint"); else _explicitNullProperties?.Remove("fingerprint"); } }
+        private string _explicitNullValueFingerprint = default!;
 #endif
         /// <summary>The ID of the query summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Index usage information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty>? IndexUsages { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty>? IndexUsages { get => _explicitNullValueIndexUsages; set { _explicitNullValueIndexUsages = value; AdditionalData?.Remove("index_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_usages"); else _explicitNullProperties?.Remove("index_usages"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty>? _explicitNullValueIndexUsages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty> IndexUsages { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty> IndexUsages { get => _explicitNullValueIndexUsages; set { _explicitNullValueIndexUsages = value; AdditionalData?.Remove("index_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_usages"); else _explicitNullProperties?.Remove("index_usages"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryIndexUsagesItemProperty> _explicitNullValueIndexUsages = default!;
 #endif
         /// <summary>Total ingress bytes</summary>
-        public int? IngressBytes { get; set; }
+        public int? IngressBytes { get => _explicitNullValueIngressBytes; set { _explicitNullValueIngressBytes = value; AdditionalData?.Remove("ingress_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress_bytes"); else _explicitNullProperties?.Remove("ingress_bytes"); } }
+        private int? _explicitNullValueIngressBytes = default!;
         /// <summary>Average ingress bytes per query</summary>
-        public double? IngressBytesPerQuery { get; set; }
+        public double? IngressBytesPerQuery { get => _explicitNullValueIngressBytesPerQuery; set { _explicitNullValueIngressBytesPerQuery = value; AdditionalData?.Remove("ingress_bytes_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingress_bytes_per_query"); else _explicitNullProperties?.Remove("ingress_bytes_per_query"); } }
+        private double? _explicitNullValueIngressBytesPerQuery = default!;
         /// <summary>The keyspace the query ran against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Keyspace { get; set; }
+        public string? Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string? _explicitNullValueKeyspace = default!;
 #nullable restore
 #else
-        public string Keyspace { get; set; }
+        public string Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string _explicitNullValueKeyspace = default!;
 #endif
         /// <summary>When this query was last executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastRunAt { get; set; }
+        public string? LastRunAt { get => _explicitNullValueLastRunAt; set { _explicitNullValueLastRunAt = value; AdditionalData?.Remove("last_run_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_at"); else _explicitNullProperties?.Remove("last_run_at"); } }
+        private string? _explicitNullValueLastRunAt = default!;
 #nullable restore
 #else
-        public string LastRunAt { get; set; }
+        public string LastRunAt { get => _explicitNullValueLastRunAt; set { _explicitNullValueLastRunAt = value; AdditionalData?.Remove("last_run_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_at"); else _explicitNullProperties?.Remove("last_run_at"); } }
+        private string _explicitNullValueLastRunAt = default!;
 #endif
         /// <summary>Maximum egress bytes for a single execution</summary>
-        public int? MaxEgressBytes { get; set; }
+        public int? MaxEgressBytes { get => _explicitNullValueMaxEgressBytes; set { _explicitNullValueMaxEgressBytes = value; AdditionalData?.Remove("max_egress_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_egress_bytes"); else _explicitNullProperties?.Remove("max_egress_bytes"); } }
+        private int? _explicitNullValueMaxEgressBytes = default!;
         /// <summary>Maximum ingress bytes for a single execution</summary>
-        public int? MaxIngressBytes { get; set; }
+        public int? MaxIngressBytes { get => _explicitNullValueMaxIngressBytes; set { _explicitNullValueMaxIngressBytes = value; AdditionalData?.Remove("max_ingress_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_ingress_bytes"); else _explicitNullProperties?.Remove("max_ingress_bytes"); } }
+        private int? _explicitNullValueMaxIngressBytes = default!;
         /// <summary>Maximum latency observed</summary>
-        public double? MaxLatency { get; set; }
+        public double? MaxLatency { get => _explicitNullValueMaxLatency; set { _explicitNullValueMaxLatency = value; AdditionalData?.Remove("max_latency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_latency"); else _explicitNullProperties?.Remove("max_latency"); } }
+        private double? _explicitNullValueMaxLatency = default!;
         /// <summary>The maximum number of shard queries for a single execution</summary>
-        public int? MaxShardQueries { get; set; }
+        public int? MaxShardQueries { get => _explicitNullValueMaxShardQueries; set { _explicitNullValueMaxShardQueries = value; AdditionalData?.Remove("max_shard_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_shard_queries"); else _explicitNullProperties?.Remove("max_shard_queries"); } }
+        private int? _explicitNullValueMaxShardQueries = default!;
         /// <summary>Whether the query is a multishard query</summary>
-        public bool? Multishard { get; set; }
+        public bool? Multishard { get => _explicitNullValueMultishard; set { _explicitNullValueMultishard = value; AdditionalData?.Remove("multishard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multishard"); else _explicitNullProperties?.Remove("multishard"); } }
+        private bool? _explicitNullValueMultishard = default!;
         /// <summary>The normalized SQL statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NormalizedSql { get; set; }
+        public string? NormalizedSql { get => _explicitNullValueNormalizedSql; set { _explicitNullValueNormalizedSql = value; AdditionalData?.Remove("normalized_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_sql"); else _explicitNullProperties?.Remove("normalized_sql"); } }
+        private string? _explicitNullValueNormalizedSql = default!;
 #nullable restore
 #else
-        public string NormalizedSql { get; set; }
+        public string NormalizedSql { get => _explicitNullValueNormalizedSql; set { _explicitNullValueNormalizedSql = value; AdditionalData?.Remove("normalized_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_sql"); else _explicitNullProperties?.Remove("normalized_sql"); } }
+        private string _explicitNullValueNormalizedSql = default!;
 #endif
         /// <summary>50th percentile latency</summary>
-        public double? P50Latency { get; set; }
+        public double? P50Latency { get => _explicitNullValueP50Latency; set { _explicitNullValueP50Latency = value; AdditionalData?.Remove("p50_latency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p50_latency"); else _explicitNullProperties?.Remove("p50_latency"); } }
+        private double? _explicitNullValueP50Latency = default!;
         /// <summary>99th percentile latency</summary>
-        public double? P99Latency { get; set; }
+        public double? P99Latency { get => _explicitNullValueP99Latency; set { _explicitNullValueP99Latency = value; AdditionalData?.Remove("p99_latency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p99_latency"); else _explicitNullProperties?.Remove("p99_latency"); } }
+        private double? _explicitNullValueP99Latency = default!;
         /// <summary>Fully qualified tables accessed by the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? QualifiedTables { get; set; }
+        public List<string>? QualifiedTables { get => _explicitNullValueQualifiedTables; set { _explicitNullValueQualifiedTables = value; AdditionalData?.Remove("qualified_tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualified_tables"); else _explicitNullProperties?.Remove("qualified_tables"); } }
+        private List<string>? _explicitNullValueQualifiedTables = default!;
 #nullable restore
 #else
-        public List<string> QualifiedTables { get; set; }
+        public List<string> QualifiedTables { get => _explicitNullValueQualifiedTables; set { _explicitNullValueQualifiedTables = value; AdditionalData?.Remove("qualified_tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualified_tables"); else _explicitNullProperties?.Remove("qualified_tables"); } }
+        private List<string> _explicitNullValueQualifiedTables = default!;
 #endif
         /// <summary>The number of times this query was executed</summary>
-        public int? QueryCount { get; set; }
+        public int? QueryCount { get => _explicitNullValueQueryCount; set { _explicitNullValueQueryCount = value; AdditionalData?.Remove("query_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_count"); else _explicitNullProperties?.Remove("query_count"); } }
+        private int? _explicitNullValueQueryCount = default!;
         /// <summary>Routing index usage information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty>? RoutingIndexUsages { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty>? RoutingIndexUsages { get => _explicitNullValueRoutingIndexUsages; set { _explicitNullValueRoutingIndexUsages = value; AdditionalData?.Remove("routing_index_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_index_usages"); else _explicitNullProperties?.Remove("routing_index_usages"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty>? _explicitNullValueRoutingIndexUsages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty> RoutingIndexUsages { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty> RoutingIndexUsages { get => _explicitNullValueRoutingIndexUsages; set { _explicitNullValueRoutingIndexUsages = value; AdditionalData?.Remove("routing_index_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_index_usages"); else _explicitNullProperties?.Remove("routing_index_usages"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummaryRoutingIndexUsagesItemProperty> _explicitNullValueRoutingIndexUsages = default!;
 #endif
         /// <summary>Average rows affected per query</summary>
-        public double? RowsAffectedPerQuery { get; set; }
+        public double? RowsAffectedPerQuery { get => _explicitNullValueRowsAffectedPerQuery; set { _explicitNullValueRowsAffectedPerQuery = value; AdditionalData?.Remove("rows_affected_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_affected_per_query"); else _explicitNullProperties?.Remove("rows_affected_per_query"); } }
+        private double? _explicitNullValueRowsAffectedPerQuery = default!;
         /// <summary>Average rows read per query</summary>
-        public double? RowsReadPerQuery { get; set; }
+        public double? RowsReadPerQuery { get => _explicitNullValueRowsReadPerQuery; set { _explicitNullValueRowsReadPerQuery = value; AdditionalData?.Remove("rows_read_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read_per_query"); else _explicitNullProperties?.Remove("rows_read_per_query"); } }
+        private double? _explicitNullValueRowsReadPerQuery = default!;
         /// <summary>Average rows read per row returned</summary>
-        public double? RowsReadPerReturned { get; set; }
+        public double? RowsReadPerReturned { get => _explicitNullValueRowsReadPerReturned; set { _explicitNullValueRowsReadPerReturned = value; AdditionalData?.Remove("rows_read_per_returned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_read_per_returned"); else _explicitNullProperties?.Remove("rows_read_per_returned"); } }
+        private double? _explicitNullValueRowsReadPerReturned = default!;
         /// <summary>Average rows returned per query</summary>
-        public double? RowsReturnedPerQuery { get; set; }
+        public double? RowsReturnedPerQuery { get => _explicitNullValueRowsReturnedPerQuery; set { _explicitNullValueRowsReturnedPerQuery = value; AdditionalData?.Remove("rows_returned_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows_returned_per_query"); else _explicitNullProperties?.Remove("rows_returned_per_query"); } }
+        private double? _explicitNullValueRowsReturnedPerQuery = default!;
         /// <summary>The type of SQL statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatementType { get; set; }
+        public string? StatementType { get => _explicitNullValueStatementType; set { _explicitNullValueStatementType = value; AdditionalData?.Remove("statement_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement_type"); else _explicitNullProperties?.Remove("statement_type"); } }
+        private string? _explicitNullValueStatementType = default!;
 #nullable restore
 #else
-        public string StatementType { get; set; }
+        public string StatementType { get => _explicitNullValueStatementType; set { _explicitNullValueStatementType = value; AdditionalData?.Remove("statement_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement_type"); else _explicitNullProperties?.Remove("statement_type"); } }
+        private string _explicitNullValueStatementType = default!;
 #endif
         /// <summary>Total CPU duration in milliseconds</summary>
-        public double? SumCpuDurationMillis { get; set; }
+        public double? SumCpuDurationMillis { get => _explicitNullValueSumCpuDurationMillis; set { _explicitNullValueSumCpuDurationMillis = value; AdditionalData?.Remove("sum_cpu_duration_millis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_cpu_duration_millis"); else _explicitNullProperties?.Remove("sum_cpu_duration_millis"); } }
+        private double? _explicitNullValueSumCpuDurationMillis = default!;
         /// <summary>Percentage of total CPU time</summary>
-        public double? SumCpuDurationPercent { get; set; }
+        public double? SumCpuDurationPercent { get => _explicitNullValueSumCpuDurationPercent; set { _explicitNullValueSumCpuDurationPercent = value; AdditionalData?.Remove("sum_cpu_duration_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_cpu_duration_percent"); else _explicitNullProperties?.Remove("sum_cpu_duration_percent"); } }
+        private double? _explicitNullValueSumCpuDurationPercent = default!;
         /// <summary>Total IO duration in milliseconds</summary>
-        public double? SumIoDurationMillis { get; set; }
+        public double? SumIoDurationMillis { get => _explicitNullValueSumIoDurationMillis; set { _explicitNullValueSumIoDurationMillis = value; AdditionalData?.Remove("sum_io_duration_millis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_io_duration_millis"); else _explicitNullProperties?.Remove("sum_io_duration_millis"); } }
+        private double? _explicitNullValueSumIoDurationMillis = default!;
         /// <summary>Percentage of total IO time</summary>
-        public double? SumIoDurationPercent { get; set; }
+        public double? SumIoDurationPercent { get => _explicitNullValueSumIoDurationPercent; set { _explicitNullValueSumIoDurationPercent = value; AdditionalData?.Remove("sum_io_duration_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_io_duration_percent"); else _explicitNullProperties?.Remove("sum_io_duration_percent"); } }
+        private double? _explicitNullValueSumIoDurationPercent = default!;
         /// <summary>The total number of rows affected</summary>
-        public int? SumRowsAffected { get; set; }
+        public int? SumRowsAffected { get => _explicitNullValueSumRowsAffected; set { _explicitNullValueSumRowsAffected = value; AdditionalData?.Remove("sum_rows_affected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_rows_affected"); else _explicitNullProperties?.Remove("sum_rows_affected"); } }
+        private int? _explicitNullValueSumRowsAffected = default!;
         /// <summary>The total number of rows read</summary>
-        public int? SumRowsRead { get; set; }
+        public int? SumRowsRead { get => _explicitNullValueSumRowsRead; set { _explicitNullValueSumRowsRead = value; AdditionalData?.Remove("sum_rows_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_rows_read"); else _explicitNullProperties?.Remove("sum_rows_read"); } }
+        private int? _explicitNullValueSumRowsRead = default!;
         /// <summary>The total number of rows returned</summary>
-        public int? SumRowsReturned { get; set; }
+        public int? SumRowsReturned { get => _explicitNullValueSumRowsReturned; set { _explicitNullValueSumRowsReturned = value; AdditionalData?.Remove("sum_rows_returned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_rows_returned"); else _explicitNullProperties?.Remove("sum_rows_returned"); } }
+        private int? _explicitNullValueSumRowsReturned = default!;
         /// <summary>The total number of shard queries</summary>
-        public int? SumShardQueries { get; set; }
+        public int? SumShardQueries { get => _explicitNullValueSumShardQueries; set { _explicitNullValueSumShardQueries = value; AdditionalData?.Remove("sum_shard_queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_shard_queries"); else _explicitNullProperties?.Remove("sum_shard_queries"); } }
+        private int? _explicitNullValueSumShardQueries = default!;
         /// <summary>Total duration in milliseconds across all executions</summary>
-        public double? SumTotalDurationMillis { get; set; }
+        public double? SumTotalDurationMillis { get => _explicitNullValueSumTotalDurationMillis; set { _explicitNullValueSumTotalDurationMillis = value; AdditionalData?.Remove("sum_total_duration_millis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_total_duration_millis"); else _explicitNullProperties?.Remove("sum_total_duration_millis"); } }
+        private double? _explicitNullValueSumTotalDurationMillis = default!;
         /// <summary>Percentage of total query time</summary>
-        public double? SumTotalDurationPercent { get; set; }
+        public double? SumTotalDurationPercent { get => _explicitNullValueSumTotalDurationPercent; set { _explicitNullValueSumTotalDurationPercent = value; AdditionalData?.Remove("sum_total_duration_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum_total_duration_percent"); else _explicitNullProperties?.Remove("sum_total_duration_percent"); } }
+        private double? _explicitNullValueSumTotalDurationPercent = default!;
         /// <summary>Syntax highlighted SQL statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SyntaxHighlightedSql { get; set; }
+        public string? SyntaxHighlightedSql { get => _explicitNullValueSyntaxHighlightedSql; set { _explicitNullValueSyntaxHighlightedSql = value; AdditionalData?.Remove("syntax_highlighted_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_sql"); else _explicitNullProperties?.Remove("syntax_highlighted_sql"); } }
+        private string? _explicitNullValueSyntaxHighlightedSql = default!;
 #nullable restore
 #else
-        public string SyntaxHighlightedSql { get; set; }
+        public string SyntaxHighlightedSql { get => _explicitNullValueSyntaxHighlightedSql; set { _explicitNullValueSyntaxHighlightedSql = value; AdditionalData?.Remove("syntax_highlighted_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_sql"); else _explicitNullProperties?.Remove("syntax_highlighted_sql"); } }
+        private string _explicitNullValueSyntaxHighlightedSql = default!;
 #endif
         /// <summary>Keyspaces or schemas accessed by the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TableKeyspaces { get; set; }
+        public List<string>? TableKeyspaces { get => _explicitNullValueTableKeyspaces; set { _explicitNullValueTableKeyspaces = value; AdditionalData?.Remove("table_keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_keyspaces"); else _explicitNullProperties?.Remove("table_keyspaces"); } }
+        private List<string>? _explicitNullValueTableKeyspaces = default!;
 #nullable restore
 #else
-        public List<string> TableKeyspaces { get; set; }
+        public List<string> TableKeyspaces { get => _explicitNullValueTableKeyspaces; set { _explicitNullValueTableKeyspaces = value; AdditionalData?.Remove("table_keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_keyspaces"); else _explicitNullProperties?.Remove("table_keyspaces"); } }
+        private List<string> _explicitNullValueTableKeyspaces = default!;
 #endif
         /// <summary>Tables accessed by the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tables { get; set; }
+        public List<string>? Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; AdditionalData?.Remove("tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
+        private List<string>? _explicitNullValueTables = default!;
 #nullable restore
 #else
-        public List<string> Tables { get; set; }
+        public List<string> Tables { get => _explicitNullValueTables; set { _explicitNullValueTables = value; AdditionalData?.Remove("tables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tables"); else _explicitNullProperties?.Remove("tables"); } }
+        private List<string> _explicitNullValueTables = default!;
 #endif
         /// <summary>Average time per query execution</summary>
-        public double? TimePerQuery { get; set; }
+        public double? TimePerQuery { get => _explicitNullValueTimePerQuery; set { _explicitNullValueTimePerQuery = value; AdditionalData?.Remove("time_per_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_per_query"); else _explicitNullProperties?.Remove("time_per_query"); } }
+        private double? _explicitNullValueTimePerQuery = default!;
         /// <summary>The number of executions checked by traffic control rules</summary>
-        public int? TrafficControlChecked { get; set; }
+        public int? TrafficControlChecked { get => _explicitNullValueTrafficControlChecked; set { _explicitNullValueTrafficControlChecked = value; AdditionalData?.Remove("traffic_control_checked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_control_checked"); else _explicitNullProperties?.Remove("traffic_control_checked"); } }
+        private int? _explicitNullValueTrafficControlChecked = default!;
         /// <summary>The number of executions throttled by traffic control</summary>
-        public int? TrafficControlThrottled { get; set; }
+        public int? TrafficControlThrottled { get => _explicitNullValueTrafficControlThrottled; set { _explicitNullValueTrafficControlThrottled = value; AdditionalData?.Remove("traffic_control_throttled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_control_throttled"); else _explicitNullProperties?.Remove("traffic_control_throttled"); } }
+        private int? _explicitNullValueTrafficControlThrottled = default!;
         /// <summary>The number of executions that triggered a traffic control warning</summary>
-        public int? TrafficControlWarnings { get; set; }
+        public int? TrafficControlWarnings { get => _explicitNullValueTrafficControlWarnings; set { _explicitNullValueTrafficControlWarnings = value; AdditionalData?.Remove("traffic_control_warnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_control_warnings"); else _explicitNullProperties?.Remove("traffic_control_warnings"); } }
+        private int? _explicitNullValueTrafficControlWarnings = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary"/> and sets the default values.
         /// </summary>
@@ -203,7 +375,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -324,6 +496,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("traffic_control_checked", TrafficControlChecked);
             writer.WriteIntValue("traffic_control_throttled", TrafficControlThrottled);
             writer.WriteIntValue("traffic_control_warnings", TrafficControlWarnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

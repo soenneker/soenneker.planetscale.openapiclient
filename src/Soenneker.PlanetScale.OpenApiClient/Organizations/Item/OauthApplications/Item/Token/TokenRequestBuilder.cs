@@ -51,7 +51,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.OauthApplicatio
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an OAuth token from an authorization grant code, or refresh an OAuth token from a refresh token### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_oauth_tokens`

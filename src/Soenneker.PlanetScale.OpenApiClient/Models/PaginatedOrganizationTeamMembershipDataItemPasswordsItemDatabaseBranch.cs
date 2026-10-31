@@ -11,37 +11,62 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedOrganizationTeamMembershipDataItemPasswordsItemDatabaseBranch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("mysql_edge_address") is null) { _explicitNullValueMysqlEdgeAddress = default!; _explicitNullProperties?.Remove("mysql_edge_address"); }
+            else if (parseNode.GetChildNode("mysql_edge_address") is { } nullNodeMysqlEdgeAddress && nullNodeMysqlEdgeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MysqlEdgeAddress = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("private_edge_connectivity") is null) { _explicitNullValuePrivateEdgeConnectivity = default!; _explicitNullProperties?.Remove("private_edge_connectivity"); }
+            else if (parseNode.GetChildNode("private_edge_connectivity") is { } nullNodePrivateEdgeConnectivity && nullNodePrivateEdgeConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateEdgeConnectivity = null;
+            if (parseNode.GetChildNode("production") is null) { _explicitNullValueProduction = default!; _explicitNullProperties?.Remove("production"); }
+            else if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The address of the MySQL provider for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MysqlEdgeAddress { get; set; }
+        public string? MysqlEdgeAddress { get => _explicitNullValueMysqlEdgeAddress; set { _explicitNullValueMysqlEdgeAddress = value; AdditionalData?.Remove("mysql_edge_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_edge_address"); else _explicitNullProperties?.Remove("mysql_edge_address"); } }
+        private string? _explicitNullValueMysqlEdgeAddress = default!;
 #nullable restore
 #else
-        public string MysqlEdgeAddress { get; set; }
+        public string MysqlEdgeAddress { get => _explicitNullValueMysqlEdgeAddress; set { _explicitNullValueMysqlEdgeAddress = value; AdditionalData?.Remove("mysql_edge_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mysql_edge_address"); else _explicitNullProperties?.Remove("mysql_edge_address"); } }
+        private string _explicitNullValueMysqlEdgeAddress = default!;
 #endif
         /// <summary>The name for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>True if private connectivity is enabled</summary>
-        public bool? PrivateEdgeConnectivity { get; set; }
+        public bool? PrivateEdgeConnectivity { get => _explicitNullValuePrivateEdgeConnectivity; set { _explicitNullValuePrivateEdgeConnectivity = value; AdditionalData?.Remove("private_edge_connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_edge_connectivity"); else _explicitNullProperties?.Remove("private_edge_connectivity"); } }
+        private bool? _explicitNullValuePrivateEdgeConnectivity = default!;
         /// <summary>Whether or not the branch is a production branch</summary>
-        public bool? Production { get; set; }
+        public bool? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private bool? _explicitNullValueProduction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembershipDataItemPasswordsItemDatabaseBranch"/> and sets the default values.
         /// </summary>
@@ -57,7 +82,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembershipDataItemPasswordsItemDatabaseBranch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembershipDataItemPasswordsItemDatabaseBranch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationTeamMembershipDataItemPasswordsItemDatabaseBranch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +111,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("private_edge_connectivity", PrivateEdgeConnectivity);
             writer.WriteBoolValue("production", Production);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

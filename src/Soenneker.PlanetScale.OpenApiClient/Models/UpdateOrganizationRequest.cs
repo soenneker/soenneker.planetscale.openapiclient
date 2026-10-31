@@ -11,28 +11,49 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_email") is null) { _explicitNullValueBillingEmail = default!; _explicitNullProperties?.Remove("billing_email"); }
+            else if (parseNode.GetChildNode("billing_email") is { } nullNodeBillingEmail && nullNodeBillingEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingEmail = null;
+            if (parseNode.GetChildNode("idp_managed_roles") is null) { _explicitNullValueIdpManagedRoles = default!; _explicitNullProperties?.Remove("idp_managed_roles"); }
+            else if (parseNode.GetChildNode("idp_managed_roles") is { } nullNodeIdpManagedRoles && nullNodeIdpManagedRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpManagedRoles = null;
+            if (parseNode.GetChildNode("invoice_budget_amount") is null) { _explicitNullValueInvoiceBudgetAmount = default!; _explicitNullProperties?.Remove("invoice_budget_amount"); }
+            else if (parseNode.GetChildNode("invoice_budget_amount") is { } nullNodeInvoiceBudgetAmount && nullNodeInvoiceBudgetAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceBudgetAmount = null;
+            if (parseNode.GetChildNode("mcp_access_level") is null) { _explicitNullValueMcpAccessLevel = default!; _explicitNullProperties?.Remove("mcp_access_level"); }
+            else if (parseNode.GetChildNode("mcp_access_level") is { } nullNodeMcpAccessLevel && nullNodeMcpAccessLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpAccessLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billing email for the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingEmail { get; set; }
+        public string? BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; AdditionalData?.Remove("billing_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
+        private string? _explicitNullValueBillingEmail = default!;
 #nullable restore
 #else
-        public string BillingEmail { get; set; }
+        public string BillingEmail { get => _explicitNullValueBillingEmail; set { _explicitNullValueBillingEmail = value; AdditionalData?.Remove("billing_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_email"); else _explicitNullProperties?.Remove("billing_email"); } }
+        private string _explicitNullValueBillingEmail = default!;
 #endif
         /// <summary>Whether or not the IdP provider is be responsible for managing roles in PlanetScale</summary>
-        public bool? IdpManagedRoles { get; set; }
+        public bool? IdpManagedRoles { get => _explicitNullValueIdpManagedRoles; set { _explicitNullValueIdpManagedRoles = value; AdditionalData?.Remove("idp_managed_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_managed_roles"); else _explicitNullProperties?.Remove("idp_managed_roles"); } }
+        private bool? _explicitNullValueIdpManagedRoles = default!;
         /// <summary>The expected monthly budget for the organization</summary>
-        public int? InvoiceBudgetAmount { get; set; }
+        public int? InvoiceBudgetAmount { get => _explicitNullValueInvoiceBudgetAmount; set { _explicitNullValueInvoiceBudgetAmount = value; AdditionalData?.Remove("invoice_budget_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_budget_amount"); else _explicitNullProperties?.Remove("invoice_budget_amount"); } }
+        private int? _explicitNullValueInvoiceBudgetAmount = default!;
         /// <summary>The query access level MCP clients can be granted for the organization (none, read_only, or read_write)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? McpAccessLevel { get; set; }
+        public string? McpAccessLevel { get => _explicitNullValueMcpAccessLevel; set { _explicitNullValueMcpAccessLevel = value; AdditionalData?.Remove("mcp_access_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_access_level"); else _explicitNullProperties?.Remove("mcp_access_level"); } }
+        private string? _explicitNullValueMcpAccessLevel = default!;
 #nullable restore
 #else
-        public string McpAccessLevel { get; set; }
+        public string McpAccessLevel { get => _explicitNullValueMcpAccessLevel; set { _explicitNullValueMcpAccessLevel = value; AdditionalData?.Remove("mcp_access_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_access_level"); else _explicitNullProperties?.Remove("mcp_access_level"); } }
+        private string _explicitNullValueMcpAccessLevel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateOrganizationRequest"/> and sets the default values.
@@ -49,7 +70,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateOrganizationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateOrganizationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateOrganizationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("idp_managed_roles", IdpManagedRoles);
             writer.WriteIntValue("invoice_budget_amount", InvoiceBudgetAmount);
             writer.WriteStringValue("mcp_access_level", McpAccessLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

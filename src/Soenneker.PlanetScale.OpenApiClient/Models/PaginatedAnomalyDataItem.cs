@@ -11,62 +11,102 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedAnomalyDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("correlations") is null) { _explicitNullValueCorrelations = default!; _explicitNullProperties?.Remove("correlations"); }
+            else if (parseNode.GetChildNode("correlations") is { } nullNodeCorrelations && nullNodeCorrelations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Correlations = null;
+            if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
+            else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metrics_end") is null) { _explicitNullValueMetricsEnd = default!; _explicitNullProperties?.Remove("metrics_end"); }
+            else if (parseNode.GetChildNode("metrics_end") is { } nullNodeMetricsEnd && nullNodeMetricsEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsEnd = null;
+            if (parseNode.GetChildNode("metrics_start") is null) { _explicitNullValueMetricsStart = default!; _explicitNullProperties?.Remove("metrics_start"); }
+            else if (parseNode.GetChildNode("metrics_start") is { } nullNodeMetricsStart && nullNodeMetricsStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsStart = null;
+            if (parseNode.GetChildNode("minutes_in_violation") is null) { _explicitNullValueMinutesInViolation = default!; _explicitNullProperties?.Remove("minutes_in_violation"); }
+            else if (parseNode.GetChildNode("minutes_in_violation") is { } nullNodeMinutesInViolation && nullNodeMinutesInViolation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinutesInViolation = null;
+            if (parseNode.GetChildNode("period_end") is null) { _explicitNullValuePeriodEnd = default!; _explicitNullProperties?.Remove("period_end"); }
+            else if (parseNode.GetChildNode("period_end") is { } nullNodePeriodEnd && nullNodePeriodEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodEnd = null;
+            if (parseNode.GetChildNode("period_start") is null) { _explicitNullValuePeriodStart = default!; _explicitNullProperties?.Remove("period_start"); }
+            else if (parseNode.GetChildNode("period_start") is { } nullNodePeriodStart && nullNodePeriodStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodStart = null;
+        }
+
         /// <summary>Whether the anomaly is ongoing</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The correlations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem>? Correlations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem>? Correlations { get => _explicitNullValueCorrelations; set { _explicitNullValueCorrelations = value; AdditionalData?.Remove("correlations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlations"); else _explicitNullProperties?.Remove("correlations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem>? _explicitNullValueCorrelations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem> Correlations { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem> Correlations { get => _explicitNullValueCorrelations; set { _explicitNullValueCorrelations = value; AdditionalData?.Remove("correlations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlations"); else _explicitNullProperties?.Remove("correlations"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem> _explicitNullValueCorrelations = default!;
 #endif
         /// <summary>The duration of the anomaly in seconds</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The ID of the anomaly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>End of the metrics window surrounding the anomaly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricsEnd { get; set; }
+        public string? MetricsEnd { get => _explicitNullValueMetricsEnd; set { _explicitNullValueMetricsEnd = value; AdditionalData?.Remove("metrics_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics_end"); else _explicitNullProperties?.Remove("metrics_end"); } }
+        private string? _explicitNullValueMetricsEnd = default!;
 #nullable restore
 #else
-        public string MetricsEnd { get; set; }
+        public string MetricsEnd { get => _explicitNullValueMetricsEnd; set { _explicitNullValueMetricsEnd = value; AdditionalData?.Remove("metrics_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics_end"); else _explicitNullProperties?.Remove("metrics_end"); } }
+        private string _explicitNullValueMetricsEnd = default!;
 #endif
         /// <summary>Start of the metrics window surrounding the anomaly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricsStart { get; set; }
+        public string? MetricsStart { get => _explicitNullValueMetricsStart; set { _explicitNullValueMetricsStart = value; AdditionalData?.Remove("metrics_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics_start"); else _explicitNullProperties?.Remove("metrics_start"); } }
+        private string? _explicitNullValueMetricsStart = default!;
 #nullable restore
 #else
-        public string MetricsStart { get; set; }
+        public string MetricsStart { get => _explicitNullValueMetricsStart; set { _explicitNullValueMetricsStart = value; AdditionalData?.Remove("metrics_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics_start"); else _explicitNullProperties?.Remove("metrics_start"); } }
+        private string _explicitNullValueMetricsStart = default!;
 #endif
         /// <summary>The number of minutes query latency was in violation of the expected baseline</summary>
-        public int? MinutesInViolation { get; set; }
+        public int? MinutesInViolation { get => _explicitNullValueMinutesInViolation; set { _explicitNullValueMinutesInViolation = value; AdditionalData?.Remove("minutes_in_violation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minutes_in_violation"); else _explicitNullProperties?.Remove("minutes_in_violation"); } }
+        private int? _explicitNullValueMinutesInViolation = default!;
         /// <summary>When the anomaly ended</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeriodEnd { get; set; }
+        public string? PeriodEnd { get => _explicitNullValuePeriodEnd; set { _explicitNullValuePeriodEnd = value; AdditionalData?.Remove("period_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_end"); else _explicitNullProperties?.Remove("period_end"); } }
+        private string? _explicitNullValuePeriodEnd = default!;
 #nullable restore
 #else
-        public string PeriodEnd { get; set; }
+        public string PeriodEnd { get => _explicitNullValuePeriodEnd; set { _explicitNullValuePeriodEnd = value; AdditionalData?.Remove("period_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_end"); else _explicitNullProperties?.Remove("period_end"); } }
+        private string _explicitNullValuePeriodEnd = default!;
 #endif
         /// <summary>When the anomaly started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeriodStart { get; set; }
+        public string? PeriodStart { get => _explicitNullValuePeriodStart; set { _explicitNullValuePeriodStart = value; AdditionalData?.Remove("period_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_start"); else _explicitNullProperties?.Remove("period_start"); } }
+        private string? _explicitNullValuePeriodStart = default!;
 #nullable restore
 #else
-        public string PeriodStart { get; set; }
+        public string PeriodStart { get => _explicitNullValuePeriodStart; set { _explicitNullValuePeriodStart = value; AdditionalData?.Remove("period_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period_start"); else _explicitNullProperties?.Remove("period_start"); } }
+        private string _explicitNullValuePeriodStart = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItem"/> and sets the default values.
@@ -83,7 +123,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +160,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("minutes_in_violation", MinutesInViolation);
             writer.WriteStringValue("period_end", PeriodEnd);
             writer.WriteStringValue("period_start", PeriodStart);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

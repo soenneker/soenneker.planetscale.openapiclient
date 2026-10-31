@@ -49,7 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.PostgresVersions
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiPostgresVersion>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.NekiPostgresVersion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.NekiPostgresVersion>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.NekiPostgresVersion.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -87,15 +87,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.PostgresVersions
         public partial class PostgresVersionsRequestBuilderGetQueryParameters 
         {
             /// <summary>The database engine to list Postgres versions for.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("engine")]
-            public string? Engine { get; set; }
-#nullable restore
-#else
-            [QueryParameter("engine")]
-            public string Engine { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.NekiEngine? Engine { get; set; }
         }
     }
 }

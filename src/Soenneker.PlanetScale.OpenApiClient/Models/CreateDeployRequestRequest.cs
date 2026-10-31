@@ -11,38 +11,66 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDeployRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggressive_cutover") is null) { _explicitNullValueAggressiveCutover = default!; _explicitNullProperties?.Remove("aggressive_cutover"); }
+            else if (parseNode.GetChildNode("aggressive_cutover") is { } nullNodeAggressiveCutover && nullNodeAggressiveCutover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggressiveCutover = null;
+            if (parseNode.GetChildNode("auto_cutover") is null) { _explicitNullValueAutoCutover = default!; _explicitNullProperties?.Remove("auto_cutover"); }
+            else if (parseNode.GetChildNode("auto_cutover") is { } nullNodeAutoCutover && nullNodeAutoCutover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCutover = null;
+            if (parseNode.GetChildNode("auto_delete_branch") is null) { _explicitNullValueAutoDeleteBranch = default!; _explicitNullProperties?.Remove("auto_delete_branch"); }
+            else if (parseNode.GetChildNode("auto_delete_branch") is { } nullNodeAutoDeleteBranch && nullNodeAutoDeleteBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDeleteBranch = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("into_branch") is null) { _explicitNullValueIntoBranch = default!; _explicitNullProperties?.Remove("into_branch"); }
+            else if (parseNode.GetChildNode("into_branch") is { } nullNodeIntoBranch && nullNodeIntoBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntoBranch = null;
+            if (parseNode.GetChildNode("notes") is null) { _explicitNullValueNotes = default!; _explicitNullProperties?.Remove("notes"); }
+            else if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not to enable aggressive cutover for this deploy request. When enabled, Vitess kills blocking queries and transactions on the first cutover attempt instead of retrying for up to an hour. Does not change the database setting.</summary>
-        public bool? AggressiveCutover { get; set; }
+        public bool? AggressiveCutover { get => _explicitNullValueAggressiveCutover; set { _explicitNullValueAggressiveCutover = value; AdditionalData?.Remove("aggressive_cutover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggressive_cutover"); else _explicitNullProperties?.Remove("aggressive_cutover"); } }
+        private bool? _explicitNullValueAggressiveCutover = default!;
         /// <summary>Whether or not to enable auto_cutover for the deploy request. When enabled, will auto cutover to the new schema as soon as it is ready.</summary>
-        public bool? AutoCutover { get; set; }
+        public bool? AutoCutover { get => _explicitNullValueAutoCutover; set { _explicitNullValueAutoCutover = value; AdditionalData?.Remove("auto_cutover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_cutover"); else _explicitNullProperties?.Remove("auto_cutover"); } }
+        private bool? _explicitNullValueAutoCutover = default!;
         /// <summary>Whether or not to enable auto_delete_branch for the deploy request. When enabled, will delete the branch once the DR successfully completes.</summary>
-        public bool? AutoDeleteBranch { get; set; }
+        public bool? AutoDeleteBranch { get => _explicitNullValueAutoDeleteBranch; set { _explicitNullValueAutoDeleteBranch = value; AdditionalData?.Remove("auto_delete_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_delete_branch"); else _explicitNullProperties?.Remove("auto_delete_branch"); } }
+        private bool? _explicitNullValueAutoDeleteBranch = default!;
         /// <summary>The name of the branch the deploy request is created from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get; set; }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get; set; }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>The name of the branch the deploy request will be merged into</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntoBranch { get; set; }
+        public string? IntoBranch { get => _explicitNullValueIntoBranch; set { _explicitNullValueIntoBranch = value; AdditionalData?.Remove("into_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("into_branch"); else _explicitNullProperties?.Remove("into_branch"); } }
+        private string? _explicitNullValueIntoBranch = default!;
 #nullable restore
 #else
-        public string IntoBranch { get; set; }
+        public string IntoBranch { get => _explicitNullValueIntoBranch; set { _explicitNullValueIntoBranch = value; AdditionalData?.Remove("into_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("into_branch"); else _explicitNullProperties?.Remove("into_branch"); } }
+        private string _explicitNullValueIntoBranch = default!;
 #endif
         /// <summary>Notes about the deploy request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateDeployRequestRequest"/> and sets the default values.
@@ -59,7 +87,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateDeployRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateDeployRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateDeployRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +118,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("branch", Branch);
             writer.WriteStringValue("into_branch", IntoBranch);
             writer.WriteStringValue("notes", Notes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

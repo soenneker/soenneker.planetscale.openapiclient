@@ -11,11 +11,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RunBranchMaintenanceRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("update_postgres_minor_version") is null) { _explicitNullValueUpdatePostgresMinorVersion = default!; _explicitNullProperties?.Remove("update_postgres_minor_version"); }
+            else if (parseNode.GetChildNode("update_postgres_minor_version") is { } nullNodeUpdatePostgresMinorVersion && nullNodeUpdatePostgresMinorVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatePostgresMinorVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to upgrade the branch to the latest PostgreSQL minor version during maintenance.</summary>
-        public bool? UpdatePostgresMinorVersion { get; set; }
+        public bool? UpdatePostgresMinorVersion { get => _explicitNullValueUpdatePostgresMinorVersion; set { _explicitNullValueUpdatePostgresMinorVersion = value; AdditionalData?.Remove("update_postgres_minor_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_postgres_minor_version"); else _explicitNullProperties?.Remove("update_postgres_minor_version"); } }
+        private bool? _explicitNullValueUpdatePostgresMinorVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.RunBranchMaintenanceRequest"/> and sets the default values.
         /// </summary>
@@ -31,7 +41,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.RunBranchMaintenanceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.RunBranchMaintenanceRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.RunBranchMaintenanceRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,6 +62,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("update_postgres_minor_version", UpdatePostgresMinorVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

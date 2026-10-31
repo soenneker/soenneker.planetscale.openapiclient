@@ -49,7 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.QuerySummary.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_databases`, `read_database`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_databases` || Database | `read_database` |
@@ -106,15 +106,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             public string Keyspace { get; set; }
 #endif
             /// <summary>Time period for filtering query statistics</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("period")]
-            public string? Period { get; set; }
-#nullable restore
-#else
-            [QueryParameter("period")]
-            public string Period { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetQuerySummaryPeriodParameter? Period { get; set; }
             /// <summary>End time for filtering query statistics (ISO 8601 timestamp)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

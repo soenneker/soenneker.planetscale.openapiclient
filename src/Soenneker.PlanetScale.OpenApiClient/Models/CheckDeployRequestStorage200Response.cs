@@ -11,23 +11,43 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CheckDeployRequestStorage200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enough_storage") is null) { _explicitNullValueEnoughStorage = default!; _explicitNullProperties?.Remove("enough_storage"); }
+            else if (parseNode.GetChildNode("enough_storage") is { } nullNodeEnoughStorage && nullNodeEnoughStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnoughStorage = null;
+            if (parseNode.GetChildNode("storage_bytes_needed") is null) { _explicitNullValueStorageBytesNeeded = default!; _explicitNullProperties?.Remove("storage_bytes_needed"); }
+            else if (parseNode.GetChildNode("storage_bytes_needed") is { } nullNodeStorageBytesNeeded && nullNodeStorageBytesNeeded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageBytesNeeded = null;
+            if (parseNode.GetChildNode("storage_report") is null) { _explicitNullValueStorageReport = default!; _explicitNullProperties?.Remove("storage_report"); }
+            else if (parseNode.GetChildNode("storage_report") is { } nullNodeStorageReport && nullNodeStorageReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageReport = null;
+            if (parseNode.GetChildNode("upgradeable") is null) { _explicitNullValueUpgradeable = default!; _explicitNullProperties?.Remove("upgradeable"); }
+            else if (parseNode.GetChildNode("upgradeable") is { } nullNodeUpgradeable && nullNodeUpgradeable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upgradeable = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the cluster has enough storage to safely deploy</summary>
-        public bool? EnoughStorage { get; set; }
+        public bool? EnoughStorage { get => _explicitNullValueEnoughStorage; set { _explicitNullValueEnoughStorage = value; AdditionalData?.Remove("enough_storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enough_storage"); else _explicitNullProperties?.Remove("enough_storage"); } }
+        private bool? _explicitNullValueEnoughStorage = default!;
         /// <summary>Total estimated bytes of additional storage needed for the deployment</summary>
-        public int? StorageBytesNeeded { get; set; }
+        public int? StorageBytesNeeded { get => _explicitNullValueStorageBytesNeeded; set { _explicitNullValueStorageBytesNeeded = value; AdditionalData?.Remove("storage_bytes_needed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_bytes_needed"); else _explicitNullProperties?.Remove("storage_bytes_needed"); } }
+        private int? _explicitNullValueStorageBytesNeeded = default!;
         /// <summary>Per-keyspace and per-shard storage report. Keys are keyspace names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport? StorageReport { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport? StorageReport { get => _explicitNullValueStorageReport; set { _explicitNullValueStorageReport = value; AdditionalData?.Remove("storage_report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_report"); else _explicitNullProperties?.Remove("storage_report"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport? _explicitNullValueStorageReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport StorageReport { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport StorageReport { get => _explicitNullValueStorageReport; set { _explicitNullValueStorageReport = value; AdditionalData?.Remove("storage_report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_report"); else _explicitNullProperties?.Remove("storage_report"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport _explicitNullValueStorageReport = default!;
 #endif
         /// <summary>Whether the target branch cluster can be upgraded for more storage</summary>
-        public bool? Upgradeable { get; set; }
+        public bool? Upgradeable { get => _explicitNullValueUpgradeable; set { _explicitNullValueUpgradeable = value; AdditionalData?.Remove("upgradeable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upgradeable"); else _explicitNullProperties?.Remove("upgradeable"); } }
+        private bool? _explicitNullValueUpgradeable = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200Response"/> and sets the default values.
         /// </summary>
@@ -43,7 +63,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +90,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteIntValue("storage_bytes_needed", StorageBytesNeeded);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CheckDeployRequestStorage200ResponseStorageReport>("storage_report", StorageReport);
             writer.WriteBoolValue("upgradeable", Upgradeable);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

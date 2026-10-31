@@ -11,39 +11,75 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateBackupPolicyRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency_unit") is null) { _explicitNullValueFrequencyUnit = default!; _explicitNullProperties?.Remove("frequency_unit"); }
+            else if (parseNode.GetChildNode("frequency_unit") is { } nullNodeFrequencyUnit && nullNodeFrequencyUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyUnit = null;
+            if (parseNode.GetChildNode("frequency_value") is null) { _explicitNullValueFrequencyValue = default!; _explicitNullProperties?.Remove("frequency_value"); }
+            else if (parseNode.GetChildNode("frequency_value") is { } nullNodeFrequencyValue && nullNodeFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyValue = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("retention_unit") is null) { _explicitNullValueRetentionUnit = default!; _explicitNullProperties?.Remove("retention_unit"); }
+            else if (parseNode.GetChildNode("retention_unit") is { } nullNodeRetentionUnit && nullNodeRetentionUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionUnit = null;
+            if (parseNode.GetChildNode("retention_value") is null) { _explicitNullValueRetentionValue = default!; _explicitNullProperties?.Remove("retention_value"); }
+            else if (parseNode.GetChildNode("retention_value") is { } nullNodeRetentionValue && nullNodeRetentionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionValue = null;
+            if (parseNode.GetChildNode("schedule_day") is null) { _explicitNullValueScheduleDay = default!; _explicitNullProperties?.Remove("schedule_day"); }
+            else if (parseNode.GetChildNode("schedule_day") is { } nullNodeScheduleDay && nullNodeScheduleDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleDay = null;
+            if (parseNode.GetChildNode("schedule_time") is null) { _explicitNullValueScheduleTime = default!; _explicitNullProperties?.Remove("schedule_time"); }
+            else if (parseNode.GetChildNode("schedule_time") is { } nullNodeScheduleTime && nullNodeScheduleTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleTime = null;
+            if (parseNode.GetChildNode("schedule_week") is null) { _explicitNullValueScheduleWeek = default!; _explicitNullProperties?.Remove("schedule_week"); }
+            else if (parseNode.GetChildNode("schedule_week") is { } nullNodeScheduleWeek && nullNodeScheduleWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleWeek = null;
+            if (parseNode.GetChildNode("target") is null) { _explicitNullValueTarget = default!; _explicitNullProperties?.Remove("target"); }
+            else if (parseNode.GetChildNode("target") is { } nullNodeTarget && nullNodeTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Target = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unit for the frequency of the backup policy</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit? FrequencyUnit { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit? FrequencyUnit { get => _explicitNullValueFrequencyUnit; set { _explicitNullValueFrequencyUnit = value; AdditionalData?.Remove("frequency_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_unit"); else _explicitNullProperties?.Remove("frequency_unit"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit? _explicitNullValueFrequencyUnit = default!;
         /// <summary>A number value for the frequency of the backup policy</summary>
-        public int? FrequencyValue { get; set; }
+        public int? FrequencyValue { get => _explicitNullValueFrequencyValue; set { _explicitNullValueFrequencyValue = value; AdditionalData?.Remove("frequency_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_value"); else _explicitNullProperties?.Remove("frequency_value"); } }
+        private int? _explicitNullValueFrequencyValue = default!;
         /// <summary>The name of the backup policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The unit for the retention period of the backup policy</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestRetentionUnit? RetentionUnit { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestRetentionUnit? RetentionUnit { get => _explicitNullValueRetentionUnit; set { _explicitNullValueRetentionUnit = value; AdditionalData?.Remove("retention_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_unit"); else _explicitNullProperties?.Remove("retention_unit"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestRetentionUnit? _explicitNullValueRetentionUnit = default!;
         /// <summary>A number value for the retention period of the backup policy</summary>
-        public int? RetentionValue { get; set; }
+        public int? RetentionValue { get => _explicitNullValueRetentionValue; set { _explicitNullValueRetentionValue = value; AdditionalData?.Remove("retention_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_value"); else _explicitNullProperties?.Remove("retention_value"); } }
+        private int? _explicitNullValueRetentionValue = default!;
         /// <summary>Day of the week that the backup is scheduled. 0 is Sunday, 6 is Saturday</summary>
-        public int? ScheduleDay { get; set; }
+        public int? ScheduleDay { get => _explicitNullValueScheduleDay; set { _explicitNullValueScheduleDay = value; AdditionalData?.Remove("schedule_day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_day"); else _explicitNullProperties?.Remove("schedule_day"); } }
+        private int? _explicitNullValueScheduleDay = default!;
         /// <summary>The time of day that the backup is scheduled, in HH:MM format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleTime { get; set; }
+        public string? ScheduleTime { get => _explicitNullValueScheduleTime; set { _explicitNullValueScheduleTime = value; AdditionalData?.Remove("schedule_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_time"); else _explicitNullProperties?.Remove("schedule_time"); } }
+        private string? _explicitNullValueScheduleTime = default!;
 #nullable restore
 #else
-        public string ScheduleTime { get; set; }
+        public string ScheduleTime { get => _explicitNullValueScheduleTime; set { _explicitNullValueScheduleTime = value; AdditionalData?.Remove("schedule_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_time"); else _explicitNullProperties?.Remove("schedule_time"); } }
+        private string _explicitNullValueScheduleTime = default!;
 #endif
         /// <summary>Week of the month that the backup is scheduled. 0 is the first week, 3 is the fourth week</summary>
-        public int? ScheduleWeek { get; set; }
+        public int? ScheduleWeek { get => _explicitNullValueScheduleWeek; set { _explicitNullValueScheduleWeek = value; AdditionalData?.Remove("schedule_week"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_week"); else _explicitNullProperties?.Remove("schedule_week"); } }
+        private int? _explicitNullValueScheduleWeek = default!;
         /// <summary>Whether the policy is for production or development branches</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget? Target { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget? Target { get => _explicitNullValueTarget; set { _explicitNullValueTarget = value; AdditionalData?.Remove("target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target"); else _explicitNullProperties?.Remove("target"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget? _explicitNullValueTarget = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequest"/> and sets the default values.
         /// </summary>
@@ -59,7 +95,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,15 +105,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequency_unit", n => { FrequencyUnit = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit>(); } },
+                { "frequency_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequencyUnit = default; _explicitNullProperties?.Remove("frequency_unit"); AdditionalData["frequency_unit"] = unknown; } else { FrequencyUnit = parsed; AdditionalData.Remove("frequency_unit"); } } },
                 { "frequency_value", n => { FrequencyValue = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "retention_unit", n => { RetentionUnit = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestRetentionUnit>(); } },
+                { "retention_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestRetentionUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRetentionUnit = default; _explicitNullProperties?.Remove("retention_unit"); AdditionalData["retention_unit"] = unknown; } else { RetentionUnit = parsed; AdditionalData.Remove("retention_unit"); } } },
                 { "retention_value", n => { RetentionValue = n.GetIntValue(); } },
                 { "schedule_day", n => { ScheduleDay = n.GetIntValue(); } },
                 { "schedule_time", n => { ScheduleTime = n.GetStringValue(); } },
                 { "schedule_week", n => { ScheduleWeek = n.GetIntValue(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget>(); } },
+                { "target", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTarget = default; _explicitNullProperties?.Remove("target"); AdditionalData["target"] = unknown; } else { Target = parsed; AdditionalData.Remove("target"); } } },
             };
         }
         /// <summary>
@@ -96,6 +132,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("schedule_time", ScheduleTime);
             writer.WriteIntValue("schedule_week", ScheduleWeek);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestTarget>("target", Target);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

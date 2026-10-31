@@ -11,32 +11,51 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetMoveTablesWorkflowStatus200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("shard_streams") is null) { _explicitNullValueShardStreams = default!; _explicitNullProperties?.Remove("shard_streams"); }
+            else if (parseNode.GetChildNode("shard_streams") is { } nullNodeShardStreams && nullNodeShardStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShardStreams = null;
+            if (parseNode.GetChildNode("table_copy_state") is null) { _explicitNullValueTableCopyState = default!; _explicitNullProperties?.Remove("table_copy_state"); }
+            else if (parseNode.GetChildNode("table_copy_state") is { } nullNodeTableCopyState && nullNodeTableCopyState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableCopyState = null;
+            if (parseNode.GetChildNode("traffic_state") is null) { _explicitNullValueTrafficState = default!; _explicitNullProperties?.Remove("traffic_state"); }
+            else if (parseNode.GetChildNode("traffic_state") is { } nullNodeTrafficState && nullNodeTrafficState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficState = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>VReplication stream status, keyed by Vitess keyspace/shard</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams? ShardStreams { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams? ShardStreams { get => _explicitNullValueShardStreams; set { _explicitNullValueShardStreams = value; AdditionalData?.Remove("shard_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_streams"); else _explicitNullProperties?.Remove("shard_streams"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams? _explicitNullValueShardStreams = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams ShardStreams { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams ShardStreams { get => _explicitNullValueShardStreams; set { _explicitNullValueShardStreams = value; AdditionalData?.Remove("shard_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shard_streams"); else _explicitNullProperties?.Remove("shard_streams"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams _explicitNullValueShardStreams = default!;
 #endif
         /// <summary>VReplication table copy progress, keyed by table name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState? TableCopyState { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState? TableCopyState { get => _explicitNullValueTableCopyState; set { _explicitNullValueTableCopyState = value; AdditionalData?.Remove("table_copy_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_copy_state"); else _explicitNullProperties?.Remove("table_copy_state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState? _explicitNullValueTableCopyState = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState TableCopyState { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState TableCopyState { get => _explicitNullValueTableCopyState; set { _explicitNullValueTableCopyState = value; AdditionalData?.Remove("table_copy_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_copy_state"); else _explicitNullProperties?.Remove("table_copy_state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState _explicitNullValueTableCopyState = default!;
 #endif
         /// <summary>Human-readable summary of the workflow&apos;s current traffic state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrafficState { get; set; }
+        public string? TrafficState { get => _explicitNullValueTrafficState; set { _explicitNullValueTrafficState = value; AdditionalData?.Remove("traffic_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_state"); else _explicitNullProperties?.Remove("traffic_state"); } }
+        private string? _explicitNullValueTrafficState = default!;
 #nullable restore
 #else
-        public string TrafficState { get; set; }
+        public string TrafficState { get => _explicitNullValueTrafficState; set { _explicitNullValueTrafficState = value; AdditionalData?.Remove("traffic_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_state"); else _explicitNullProperties?.Remove("traffic_state"); } }
+        private string _explicitNullValueTrafficState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseData"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataShardStreams>("shard_streams", ShardStreams);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetMoveTablesWorkflowStatus200ResponseDataTableCopyState>("table_copy_state", TableCopyState);
             writer.WriteStringValue("traffic_state", TrafficState);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

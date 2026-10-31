@@ -11,53 +11,86 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AnomalyCorrelationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fingerprint") is null) { _explicitNullValueFingerprint = default!; _explicitNullProperties?.Remove("fingerprint"); }
+            else if (parseNode.GetChildNode("fingerprint") is { } nullNodeFingerprint && nullNodeFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fingerprint = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("keyspace") is null) { _explicitNullValueKeyspace = default!; _explicitNullProperties?.Remove("keyspace"); }
+            else if (parseNode.GetChildNode("keyspace") is { } nullNodeKeyspace && nullNodeKeyspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyspace = null;
+            if (parseNode.GetChildNode("normalized_sql") is null) { _explicitNullValueNormalizedSql = default!; _explicitNullProperties?.Remove("normalized_sql"); }
+            else if (parseNode.GetChildNode("normalized_sql") is { } nullNodeNormalizedSql && nullNodeNormalizedSql.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizedSql = null;
+            if (parseNode.GetChildNode("r") is null) { _explicitNullValueR = default!; _explicitNullProperties?.Remove("r"); }
+            else if (parseNode.GetChildNode("r") is { } nullNodeR && nullNodeR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) R = null;
+            if (parseNode.GetChildNode("syntax_highlighted_sql") is null) { _explicitNullValueSyntaxHighlightedSql = default!; _explicitNullProperties?.Remove("syntax_highlighted_sql"); }
+            else if (parseNode.GetChildNode("syntax_highlighted_sql") is { } nullNodeSyntaxHighlightedSql && nullNodeSyntaxHighlightedSql.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntaxHighlightedSql = null;
+            if (parseNode.GetChildNode("tablet_type") is null) { _explicitNullValueTabletType = default!; _explicitNullProperties?.Remove("tablet_type"); }
+            else if (parseNode.GetChildNode("tablet_type") is { } nullNodeTabletType && nullNodeTabletType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TabletType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The query fingerprint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fingerprint { get; set; }
+        public string? Fingerprint { get => _explicitNullValueFingerprint; set { _explicitNullValueFingerprint = value; AdditionalData?.Remove("fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprint"); else _explicitNullProperties?.Remove("fingerprint"); } }
+        private string? _explicitNullValueFingerprint = default!;
 #nullable restore
 #else
-        public string Fingerprint { get; set; }
+        public string Fingerprint { get => _explicitNullValueFingerprint; set { _explicitNullValueFingerprint = value; AdditionalData?.Remove("fingerprint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprint"); else _explicitNullProperties?.Remove("fingerprint"); } }
+        private string _explicitNullValueFingerprint = default!;
 #endif
         /// <summary>The ID of the correlation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The keyspace the query ran against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Keyspace { get; set; }
+        public string? Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string? _explicitNullValueKeyspace = default!;
 #nullable restore
 #else
-        public string Keyspace { get; set; }
+        public string Keyspace { get => _explicitNullValueKeyspace; set { _explicitNullValueKeyspace = value; AdditionalData?.Remove("keyspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspace"); else _explicitNullProperties?.Remove("keyspace"); } }
+        private string _explicitNullValueKeyspace = default!;
 #endif
         /// <summary>The normalized SQL statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NormalizedSql { get; set; }
+        public string? NormalizedSql { get => _explicitNullValueNormalizedSql; set { _explicitNullValueNormalizedSql = value; AdditionalData?.Remove("normalized_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_sql"); else _explicitNullProperties?.Remove("normalized_sql"); } }
+        private string? _explicitNullValueNormalizedSql = default!;
 #nullable restore
 #else
-        public string NormalizedSql { get; set; }
+        public string NormalizedSql { get => _explicitNullValueNormalizedSql; set { _explicitNullValueNormalizedSql = value; AdditionalData?.Remove("normalized_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_sql"); else _explicitNullProperties?.Remove("normalized_sql"); } }
+        private string _explicitNullValueNormalizedSql = default!;
 #endif
         /// <summary>The correlation coefficient between the query and the anomaly</summary>
-        public double? R { get; set; }
+        public double? R { get => _explicitNullValueR; set { _explicitNullValueR = value; AdditionalData?.Remove("r"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("r"); else _explicitNullProperties?.Remove("r"); } }
+        private double? _explicitNullValueR = default!;
         /// <summary>Syntax highlighted SQL statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SyntaxHighlightedSql { get; set; }
+        public string? SyntaxHighlightedSql { get => _explicitNullValueSyntaxHighlightedSql; set { _explicitNullValueSyntaxHighlightedSql = value; AdditionalData?.Remove("syntax_highlighted_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_sql"); else _explicitNullProperties?.Remove("syntax_highlighted_sql"); } }
+        private string? _explicitNullValueSyntaxHighlightedSql = default!;
 #nullable restore
 #else
-        public string SyntaxHighlightedSql { get; set; }
+        public string SyntaxHighlightedSql { get => _explicitNullValueSyntaxHighlightedSql; set { _explicitNullValueSyntaxHighlightedSql = value; AdditionalData?.Remove("syntax_highlighted_sql"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlighted_sql"); else _explicitNullProperties?.Remove("syntax_highlighted_sql"); } }
+        private string _explicitNullValueSyntaxHighlightedSql = default!;
 #endif
         /// <summary>The tablet type the query ran against</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType? TabletType { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType? TabletType { get => _explicitNullValueTabletType; set { _explicitNullValueTabletType = value; AdditionalData?.Remove("tablet_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablet_type"); else _explicitNullProperties?.Remove("tablet_type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType? _explicitNullValueTabletType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItem"/> and sets the default values.
         /// </summary>
@@ -73,7 +106,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,7 +122,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "normalized_sql", n => { NormalizedSql = n.GetStringValue(); } },
                 { "r", n => { R = n.GetDoubleValue(); } },
                 { "syntax_highlighted_sql", n => { SyntaxHighlightedSql = n.GetStringValue(); } },
-                { "tablet_type", n => { TabletType = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType>(); } },
+                { "tablet_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTabletType = default; _explicitNullProperties?.Remove("tablet_type"); AdditionalData["tablet_type"] = unknown; } else { TabletType = parsed; AdditionalData.Remove("tablet_type"); } } },
             };
         }
         /// <summary>
@@ -106,6 +139,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteDoubleValue("r", R);
             writer.WriteStringValue("syntax_highlighted_sql", SyntaxHighlightedSql);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.AnomalyCorrelationsItemTabletType>("tablet_type", TabletType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

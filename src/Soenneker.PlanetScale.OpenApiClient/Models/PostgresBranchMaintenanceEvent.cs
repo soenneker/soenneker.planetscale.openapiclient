@@ -11,94 +11,150 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostgresBranchMaintenanceEvent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_times") is null) { _explicitNullValueAvailableTimes = default!; _explicitNullProperties?.Remove("available_times"); }
+            else if (parseNode.GetChildNode("available_times") is { } nullNodeAvailableTimes && nullNodeAvailableTimes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTimes = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
+            else if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("expected_impact") is null) { _explicitNullValueExpectedImpact = default!; _explicitNullProperties?.Remove("expected_impact"); }
+            else if (parseNode.GetChildNode("expected_impact") is { } nullNodeExpectedImpact && nullNodeExpectedImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedImpact = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("not_after") is null) { _explicitNullValueNotAfter = default!; _explicitNullProperties?.Remove("not_after"); }
+            else if (parseNode.GetChildNode("not_after") is { } nullNodeNotAfter && nullNodeNotAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAfter = null;
+            if (parseNode.GetChildNode("reschedules_remaining") is null) { _explicitNullValueReschedulesRemaining = default!; _explicitNullProperties?.Remove("reschedules_remaining"); }
+            else if (parseNode.GetChildNode("reschedules_remaining") is { } nullNodeReschedulesRemaining && nullNodeReschedulesRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReschedulesRemaining = null;
+            if (parseNode.GetChildNode("scheduled_at") is null) { _explicitNullValueScheduledAt = default!; _explicitNullProperties?.Remove("scheduled_at"); }
+            else if (parseNode.GetChildNode("scheduled_at") is { } nullNodeScheduledAt && nullNodeScheduledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledAt = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("urgent") is null) { _explicitNullValueUrgent = default!; _explicitNullProperties?.Remove("urgent"); }
+            else if (parseNode.GetChildNode("urgent") is { } nullNodeUrgent && nullNodeUrgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urgent = null;
+            if (parseNode.GetChildNode("urgent_reason") is null) { _explicitNullValueUrgentReason = default!; _explicitNullProperties?.Remove("urgent_reason"); }
+            else if (parseNode.GetChildNode("urgent_reason") is { } nullNodeUrgentReason && nullNodeUrgentReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrgentReason = null;
+            if (parseNode.GetChildNode("what") is null) { _explicitNullValueWhat = default!; _explicitNullProperties?.Remove("what"); }
+            else if (parseNode.GetChildNode("what") is { } nullNodeWhat && nullNodeWhat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) What = null;
+            if (parseNode.GetChildNode("why") is null) { _explicitNullValueWhy = default!; _explicitNullProperties?.Remove("why"); }
+            else if (parseNode.GetChildNode("why") is { } nullNodeWhy && nullNodeWhy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Why = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The times the maintenance can be rescheduled to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableTimes { get; set; }
+        public List<string>? AvailableTimes { get => _explicitNullValueAvailableTimes; set { _explicitNullValueAvailableTimes = value; AdditionalData?.Remove("available_times"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_times"); else _explicitNullProperties?.Remove("available_times"); } }
+        private List<string>? _explicitNullValueAvailableTimes = default!;
 #nullable restore
 #else
-        public List<string> AvailableTimes { get; set; }
+        public List<string> AvailableTimes { get => _explicitNullValueAvailableTimes; set { _explicitNullValueAvailableTimes = value; AdditionalData?.Remove("available_times"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_times"); else _explicitNullProperties?.Remove("available_times"); } }
+        private List<string> _explicitNullValueAvailableTimes = default!;
 #endif
         /// <summary>The branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch? Branch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch Branch { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventBranch _explicitNullValueBranch = default!;
 #endif
         /// <summary>When the maintenance completed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletedAt { get; set; }
+        public string? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string? _explicitNullValueCompletedAt = default!;
 #nullable restore
 #else
-        public string CompletedAt { get; set; }
+        public string CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private string _explicitNullValueCompletedAt = default!;
 #endif
         /// <summary>The impact to expect while the maintenance runs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedImpact { get; set; }
+        public string? ExpectedImpact { get => _explicitNullValueExpectedImpact; set { _explicitNullValueExpectedImpact = value; AdditionalData?.Remove("expected_impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_impact"); else _explicitNullProperties?.Remove("expected_impact"); } }
+        private string? _explicitNullValueExpectedImpact = default!;
 #nullable restore
 #else
-        public string ExpectedImpact { get; set; }
+        public string ExpectedImpact { get => _explicitNullValueExpectedImpact; set { _explicitNullValueExpectedImpact = value; AdditionalData?.Remove("expected_impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_impact"); else _explicitNullProperties?.Remove("expected_impact"); } }
+        private string _explicitNullValueExpectedImpact = default!;
 #endif
         /// <summary>The ID of the maintenance event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The deadline by which the maintenance must run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotAfter { get; set; }
+        public string? NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; AdditionalData?.Remove("not_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
+        private string? _explicitNullValueNotAfter = default!;
 #nullable restore
 #else
-        public string NotAfter { get; set; }
+        public string NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; AdditionalData?.Remove("not_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
+        private string _explicitNullValueNotAfter = default!;
 #endif
         /// <summary>How many more times the maintenance can be rescheduled</summary>
-        public int? ReschedulesRemaining { get; set; }
+        public int? ReschedulesRemaining { get => _explicitNullValueReschedulesRemaining; set { _explicitNullValueReschedulesRemaining = value; AdditionalData?.Remove("reschedules_remaining"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reschedules_remaining"); else _explicitNullProperties?.Remove("reschedules_remaining"); } }
+        private int? _explicitNullValueReschedulesRemaining = default!;
         /// <summary>When the maintenance is scheduled to run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduledAt { get; set; }
+        public string? ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; AdditionalData?.Remove("scheduled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_at"); else _explicitNullProperties?.Remove("scheduled_at"); } }
+        private string? _explicitNullValueScheduledAt = default!;
 #nullable restore
 #else
-        public string ScheduledAt { get; set; }
+        public string ScheduledAt { get => _explicitNullValueScheduledAt; set { _explicitNullValueScheduledAt = value; AdditionalData?.Remove("scheduled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_at"); else _explicitNullProperties?.Remove("scheduled_at"); } }
+        private string _explicitNullValueScheduledAt = default!;
 #endif
         /// <summary>The state of the maintenance event</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventState? State { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventState? _explicitNullValueState = default!;
         /// <summary>Whether the maintenance is urgent and runs without waiting for the maintenance window</summary>
-        public bool? Urgent { get; set; }
+        public bool? Urgent { get => _explicitNullValueUrgent; set { _explicitNullValueUrgent = value; AdditionalData?.Remove("urgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urgent"); else _explicitNullProperties?.Remove("urgent"); } }
+        private bool? _explicitNullValueUrgent = default!;
         /// <summary>Why the maintenance is urgent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrgentReason { get; set; }
+        public string? UrgentReason { get => _explicitNullValueUrgentReason; set { _explicitNullValueUrgentReason = value; AdditionalData?.Remove("urgent_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urgent_reason"); else _explicitNullProperties?.Remove("urgent_reason"); } }
+        private string? _explicitNullValueUrgentReason = default!;
 #nullable restore
 #else
-        public string UrgentReason { get; set; }
+        public string UrgentReason { get => _explicitNullValueUrgentReason; set { _explicitNullValueUrgentReason = value; AdditionalData?.Remove("urgent_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urgent_reason"); else _explicitNullProperties?.Remove("urgent_reason"); } }
+        private string _explicitNullValueUrgentReason = default!;
 #endif
         /// <summary>What the maintenance changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? What { get; set; }
+        public string? What { get => _explicitNullValueWhat; set { _explicitNullValueWhat = value; AdditionalData?.Remove("what"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what"); else _explicitNullProperties?.Remove("what"); } }
+        private string? _explicitNullValueWhat = default!;
 #nullable restore
 #else
-        public string What { get; set; }
+        public string What { get => _explicitNullValueWhat; set { _explicitNullValueWhat = value; AdditionalData?.Remove("what"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("what"); else _explicitNullProperties?.Remove("what"); } }
+        private string _explicitNullValueWhat = default!;
 #endif
         /// <summary>Why the maintenance is needed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Why { get; set; }
+        public string? Why { get => _explicitNullValueWhy; set { _explicitNullValueWhy = value; AdditionalData?.Remove("why"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("why"); else _explicitNullProperties?.Remove("why"); } }
+        private string? _explicitNullValueWhy = default!;
 #nullable restore
 #else
-        public string Why { get; set; }
+        public string Why { get => _explicitNullValueWhy; set { _explicitNullValueWhy = value; AdditionalData?.Remove("why"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("why"); else _explicitNullProperties?.Remove("why"); } }
+        private string _explicitNullValueWhy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEvent"/> and sets the default values.
@@ -115,7 +171,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,7 +189,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "not_after", n => { NotAfter = n.GetStringValue(); } },
                 { "reschedules_remaining", n => { ReschedulesRemaining = n.GetIntValue(); } },
                 { "scheduled_at", n => { ScheduledAt = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresBranchMaintenanceEventState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "urgent", n => { Urgent = n.GetBoolValue(); } },
                 { "urgent_reason", n => { UrgentReason = n.GetStringValue(); } },
                 { "what", n => { What = n.GetStringValue(); } },
@@ -160,6 +216,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("urgent_reason", UrgentReason);
             writer.WriteStringValue("what", What);
             writer.WriteStringValue("why", Why);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices.Item.L
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItem>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItem>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the line items for an invoice### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_invoices`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_invoices` |

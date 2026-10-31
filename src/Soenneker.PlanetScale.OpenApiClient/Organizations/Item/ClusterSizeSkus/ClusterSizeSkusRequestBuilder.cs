@@ -49,7 +49,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ClusterSizeSku.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -87,15 +87,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
         public partial class ClusterSizeSkusRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter by CPU architecture.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("architecture")]
-            public string? Architecture { get; set; }
-#nullable restore
-#else
-            [QueryParameter("architecture")]
-            public string Architecture { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.ListClusterSizeSkusArchitectureParameter? Architecture { get; set; }
             /// <summary>The database name to resolve rates for. When specified, database-level custom rates take precedence over organization rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,15 +100,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus
             public string Database { get; set; }
 #endif
             /// <summary>The database engine to filter by. Defaults to &apos;mysql&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("engine")]
-            public string? Engine { get; set; }
-#nullable restore
-#else
-            [QueryParameter("engine")]
-            public string Engine { get; set; }
-#endif
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.ListClusterSizeSkusEngineParameter? Engine { get; set; }
             /// <summary>When true, list cluster sizes for external keyspaces. Defaults to false.</summary>
             [QueryParameter("external")]
             public bool? External { get; set; }

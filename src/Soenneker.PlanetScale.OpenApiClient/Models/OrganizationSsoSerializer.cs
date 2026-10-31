@@ -11,43 +11,77 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationSsoSerializer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configured") is null) { _explicitNullValueConfigured = default!; _explicitNullProperties?.Remove("configured"); }
+            else if (parseNode.GetChildNode("configured") is { } nullNodeConfigured && nullNodeConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configured = null;
+            if (parseNode.GetChildNode("directory") is null) { _explicitNullValueDirectory = default!; _explicitNullProperties?.Remove("directory"); }
+            else if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("domain_verification_url") is null) { _explicitNullValueDomainVerificationUrl = default!; _explicitNullProperties?.Remove("domain_verification_url"); }
+            else if (parseNode.GetChildNode("domain_verification_url") is { } nullNodeDomainVerificationUrl && nullNodeDomainVerificationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainVerificationUrl = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("has_verified_domain") is null) { _explicitNullValueHasVerifiedDomain = default!; _explicitNullProperties?.Remove("has_verified_domain"); }
+            else if (parseNode.GetChildNode("has_verified_domain") is { } nullNodeHasVerifiedDomain && nullNodeHasVerifiedDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasVerifiedDomain = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether an identity provider connection is active</summary>
-        public bool? Configured { get; set; }
+        public bool? Configured { get => _explicitNullValueConfigured; set { _explicitNullValueConfigured = value; AdditionalData?.Remove("configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured"); else _explicitNullProperties?.Remove("configured"); } }
+        private bool? _explicitNullValueConfigured = default!;
         /// <summary>Whether directory sync is enabled</summary>
-        public bool? Directory { get; set; }
+        public bool? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        private bool? _explicitNullValueDirectory = default!;
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem>? Domains { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem> Domains { get; set; }
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializerDomainsItem> _explicitNullValueDomains = default!;
 #endif
         /// <summary>URL to open for verifying an email domain, returned when SSO is enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainVerificationUrl { get; set; }
+        public string? DomainVerificationUrl { get => _explicitNullValueDomainVerificationUrl; set { _explicitNullValueDomainVerificationUrl = value; AdditionalData?.Remove("domain_verification_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_verification_url"); else _explicitNullProperties?.Remove("domain_verification_url"); } }
+        private string? _explicitNullValueDomainVerificationUrl = default!;
 #nullable restore
 #else
-        public string DomainVerificationUrl { get; set; }
+        public string DomainVerificationUrl { get => _explicitNullValueDomainVerificationUrl; set { _explicitNullValueDomainVerificationUrl = value; AdditionalData?.Remove("domain_verification_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_verification_url"); else _explicitNullProperties?.Remove("domain_verification_url"); } }
+        private string _explicitNullValueDomainVerificationUrl = default!;
 #endif
         /// <summary>Whether the SSO add-on is enabled for the organization</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Whether the organization has at least one verified email domain</summary>
-        public bool? HasVerifiedDomain { get; set; }
+        public bool? HasVerifiedDomain { get => _explicitNullValueHasVerifiedDomain; set { _explicitNullValueHasVerifiedDomain = value; AdditionalData?.Remove("has_verified_domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_verified_domain"); else _explicitNullProperties?.Remove("has_verified_domain"); } }
+        private bool? _explicitNullValueHasVerifiedDomain = default!;
         /// <summary>The organization ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The resource type</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType? Type { get; set; }
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer"/> and sets the default values.
         /// </summary>
@@ -63,7 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +114,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "has_verified_domain", n => { HasVerifiedDomain = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -98,6 +132,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("has_verified_domain", HasVerifiedDomain);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

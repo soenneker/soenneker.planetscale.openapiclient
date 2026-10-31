@@ -67,7 +67,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get SSO add-on status, identity provider connection state, directory sync, and verified domains### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `manage_sso`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_sso` |
@@ -85,7 +85,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable the SSO add-on and return a URL for verifying an email domain### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `manage_sso`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_sso` |
@@ -103,7 +103,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Sso
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationSsoSerializer.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable SSO and directory sync for the organization### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `manage_sso`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `manage_sso` |

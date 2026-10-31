@@ -11,44 +11,73 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PaginatedInvoiceDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_period_end") is null) { _explicitNullValueBillingPeriodEnd = default!; _explicitNullProperties?.Remove("billing_period_end"); }
+            else if (parseNode.GetChildNode("billing_period_end") is { } nullNodeBillingPeriodEnd && nullNodeBillingPeriodEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodEnd = null;
+            if (parseNode.GetChildNode("billing_period_start") is null) { _explicitNullValueBillingPeriodStart = default!; _explicitNullProperties?.Remove("billing_period_start"); }
+            else if (parseNode.GetChildNode("billing_period_start") is { } nullNodeBillingPeriodStart && nullNodeBillingPeriodStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodStart = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("overdue") is null) { _explicitNullValueOverdue = default!; _explicitNullProperties?.Remove("overdue"); }
+            else if (parseNode.GetChildNode("overdue") is { } nullNodeOverdue && nullNodeOverdue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overdue = null;
+            if (parseNode.GetChildNode("paid") is null) { _explicitNullValuePaid = default!; _explicitNullProperties?.Remove("paid"); }
+            else if (parseNode.GetChildNode("paid") is { } nullNodePaid && nullNodePaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paid = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the billing period</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingPeriodEnd { get; set; }
+        public string? BillingPeriodEnd { get => _explicitNullValueBillingPeriodEnd; set { _explicitNullValueBillingPeriodEnd = value; AdditionalData?.Remove("billing_period_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_end"); else _explicitNullProperties?.Remove("billing_period_end"); } }
+        private string? _explicitNullValueBillingPeriodEnd = default!;
 #nullable restore
 #else
-        public string BillingPeriodEnd { get; set; }
+        public string BillingPeriodEnd { get => _explicitNullValueBillingPeriodEnd; set { _explicitNullValueBillingPeriodEnd = value; AdditionalData?.Remove("billing_period_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_end"); else _explicitNullProperties?.Remove("billing_period_end"); } }
+        private string _explicitNullValueBillingPeriodEnd = default!;
 #endif
         /// <summary>Start of the billing period</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingPeriodStart { get; set; }
+        public string? BillingPeriodStart { get => _explicitNullValueBillingPeriodStart; set { _explicitNullValueBillingPeriodStart = value; AdditionalData?.Remove("billing_period_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_start"); else _explicitNullProperties?.Remove("billing_period_start"); } }
+        private string? _explicitNullValueBillingPeriodStart = default!;
 #nullable restore
 #else
-        public string BillingPeriodStart { get; set; }
+        public string BillingPeriodStart { get => _explicitNullValueBillingPeriodStart; set { _explicitNullValueBillingPeriodStart = value; AdditionalData?.Remove("billing_period_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_start"); else _explicitNullProperties?.Remove("billing_period_start"); } }
+        private string _explicitNullValueBillingPeriodStart = default!;
 #endif
         /// <summary>The ID of the invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether the invoice is past due and unpaid</summary>
-        public bool? Overdue { get; set; }
+        public bool? Overdue { get => _explicitNullValueOverdue; set { _explicitNullValueOverdue = value; AdditionalData?.Remove("overdue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overdue"); else _explicitNullProperties?.Remove("overdue"); } }
+        private bool? _explicitNullValueOverdue = default!;
         /// <summary>Whether the invoice has been paid</summary>
-        public bool? Paid { get; set; }
+        public bool? Paid { get => _explicitNullValuePaid; set { _explicitNullValuePaid = value; AdditionalData?.Remove("paid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paid"); else _explicitNullProperties?.Remove("paid"); } }
+        private bool? _explicitNullValuePaid = default!;
         /// <summary>The total amount of the invoice, as a stringified decimal to preserve precision</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Total { get; set; }
+        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private string? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public string Total { get; set; }
+        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private string _explicitNullValueTotal = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoiceDataItem"/> and sets the default values.
@@ -65,7 +94,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public static global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoiceDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoiceDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedInvoiceDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +125,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("overdue", Overdue);
             writer.WriteBoolValue("paid", Paid);
             writer.WriteStringValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
