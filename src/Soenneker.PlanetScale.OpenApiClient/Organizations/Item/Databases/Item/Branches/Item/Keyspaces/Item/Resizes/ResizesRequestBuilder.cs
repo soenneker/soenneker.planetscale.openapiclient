@@ -52,6 +52,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UntypedNode?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +68,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `read_branch`
@@ -70,6 +87,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest?> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Keyspaces.Item.Resizes.ResizesRequestBuilder.ResizesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +103,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedKeyspaceResizeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_database`
@@ -89,6 +123,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.KeyspaceResizeRequest?> PutAsync(global::Soenneker.PlanetScale.OpenApiClient.Models.UpdateKeyspaceResizeRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +140,18 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.KeyspaceResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.KeyspaceResizeRequest.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.KeyspaceResizeRequest>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.KeyspaceResizeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_database`

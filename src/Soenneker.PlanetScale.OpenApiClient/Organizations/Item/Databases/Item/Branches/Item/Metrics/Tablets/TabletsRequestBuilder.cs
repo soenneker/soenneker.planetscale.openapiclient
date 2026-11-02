@@ -39,6 +39,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries?> GetAsync(Action<RequestConfiguration<global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.Metrics.Tablets.TabletsRequestBuilder.TabletsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +57,20 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.MetricSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_branch`, `delete_branch`, `create_branch`, `connect_production_branch`, `connect_branch`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_branches` || Database | `read_branches` || Branch | `read_branch` |
