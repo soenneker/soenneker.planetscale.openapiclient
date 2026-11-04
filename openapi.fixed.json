@@ -71511,6 +71511,10 @@
       "description": "          Resources for managing Postgres bouncer resize requests.\n"
     },
     {
+      "name": "Bouncer restarts",
+      "description": "          Resources for restarting the PgBouncers of a Postgres branch in place.\n"
+    },
+    {
       "name": "Bouncers",
       "description": "          Resources for managing postgres bouncers.\n"
     },
