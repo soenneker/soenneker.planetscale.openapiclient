@@ -71385,12 +71385,21 @@
             }
           }
         }
+      },
+      "service_token": {
+        "type": "apiKey",
+        "description": "A service token, sent as \u0060Bearer \u003CSERVICE_TOKEN\u003E\u0060. Older service tokens are sent as \u0060\u003CSERVICE_TOKEN_ID\u003E:\u003CSERVICE_TOKEN\u003E\u0060 instead.",
+        "name": "Authorization",
+        "in": "header"
       }
     }
   },
   "security": [
     {
       "oauth2": []
+    },
+    {
+      "service_token": []
     }
   ],
   "tags": [
