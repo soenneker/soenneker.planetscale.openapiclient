@@ -17204,6 +17204,128 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/list-workflows": {
+      "post": {
+        "tags": [
+          "MoveTables"
+        ],
+        "summary": "Start listing MoveTables workflows",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_workflows\u0060 |\n| Database | \u0060read_workflows\u0060 |",
+        "operationId": "StartListMoveTablesWorkflows",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "List MoveTables workflows operations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartListMoveTablesWorkflows202Response"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "List MoveTables workflows operations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartListMoveTablesWorkflows202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/move-tables/workflows": {
       "get": {
         "tags": [
@@ -23592,7 +23714,7 @@
           "Database branches"
         ],
         "summary": "Enable safe migrations for a branch",
-        "description": "\n",
+        "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n",
         "operationId": "EnableSafeMigrations",
         "parameters": [
           {
@@ -23701,7 +23823,7 @@
           "Database branches"
         ],
         "summary": "Update safe migrations for a branch",
-        "description": "\n",
+        "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n",
         "operationId": "UpdateSafeMigrations",
         "parameters": [
           {
@@ -23820,7 +23942,7 @@
           "Database branches"
         ],
         "summary": "Disable safe migrations for a branch",
-        "description": "\n",
+        "description": "\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n",
         "operationId": "DisableSafeMigrations",
         "parameters": [
           {
@@ -32624,6 +32746,25 @@
             "description": "Search term to filter members by name or email",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "mfa_configured",
+            "in": "query",
+            "description": "Filter members by whether they have configured multi-factor authentication",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "Filter members by built-in role names or custom role IDs",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           {
@@ -59473,6 +59614,21 @@
           }
         }
       },
+      "StartListMoveTablesWorkflows202Response": {
+        "required": [
+          "ids"
+        ],
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "One vtctld operation ID per keyspace. Poll the vtctld operation endpoint for each result."
+          }
+        }
+      },
       "ListMoveTablesWorkflows200Response": {
         "required": [
           "data"
@@ -71458,6 +71614,10 @@
     {
       "name": "Insights Agent schedules",
       "description": "Resources for managing Insights Agent schedules."
+    },
+    {
+      "name": "InsightsAgentSuggestions",
+      "description": "          Resources for reviewing and applying the cluster size, replica, and parameter changes a branch tuning run suggests.\n"
     },
     {
       "name": "Keyspace config changes",

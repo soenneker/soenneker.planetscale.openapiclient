@@ -35,7 +35,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/members{?page*,per_page*,q*}", pathParameters)
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/members{?mfa_configured*,page*,per_page*,q*,role*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/members{?page*,per_page*,q*}", rawUrl)
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/members{?mfa_configured*,page*,per_page*,q*,role*}", rawUrl)
         {
         }
         /// <summary>
@@ -115,6 +115,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter members by whether they have configured multi-factor authentication</summary>
+            [QueryParameter("mfa_configured")]
+            public bool? MfaConfigured { get; set; }
             /// <summary>If provided, specifies the page offset of returned results</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -130,6 +133,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members
 #else
             [QueryParameter("q")]
             public string Q { get; set; }
+#endif
+            /// <summary>Filter members by built-in role names or custom role IDs</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("role")]
+            public string[]? Role { get; set; }
+#nullable restore
+#else
+            [QueryParameter("role")]
+            public string[] Role { get; set; }
 #endif
         }
     }

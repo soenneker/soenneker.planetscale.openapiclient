@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables.ListWorkflows;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables.Workflows;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MoveTablesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The listWorkflows property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables.ListWorkflows.ListWorkflowsRequestBuilder ListWorkflows
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables.ListWorkflows.ListWorkflowsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The workflows property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Branches.Item.MoveTables.Workflows.WorkflowsRequestBuilder Workflows
         {
