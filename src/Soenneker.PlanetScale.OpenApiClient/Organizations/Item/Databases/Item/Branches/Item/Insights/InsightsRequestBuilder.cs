@@ -164,13 +164,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("from")]
             public string From { get; set; }
 #endif
-            /// <summary>If provided, specifies the page offset of returned results</summary>
+            /// <summary>Ignored. This endpoint is not paginated and always returns the first page of results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Time period for filtering query statistics</summary>
             [QueryParameter("period")]
             public global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchQueriesPeriodParameter? Period { get; set; }
-            /// <summary>If provided, specifies the number of returned results</summary>
+            /// <summary>Maximum number of results to return, from 1 to 100. Defaults to 100. This endpoint is not paginated.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Search query statistics by SQL pattern</summary>

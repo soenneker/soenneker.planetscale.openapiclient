@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>
-    /// All available scopes grouped by resource type with scope, description, selected, and admin flags
+    /// All available scopes grouped by resource type with scope, description, and selected
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OAuthApplicationAllScopesByResourceProperty : IAdditionalDataHolder, IParsable

@@ -108,7 +108,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>Whether or not the web console can be used on the production branch of the database</summary>
         public bool? ProductionBranchWebConsole { get => _explicitNullValueProductionBranchWebConsole; set { _explicitNullValueProductionBranchWebConsole = value; AdditionalData?.Remove("production_branch_web_console"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production_branch_web_console"); else _explicitNullProperties?.Remove("production_branch_web_console"); } }
         private bool? _explicitNullValueProductionBranchWebConsole = default!;
-        /// <summary>Whether or not deploy requests must be approved by a database administrator other than the request creator</summary>
+        /// <summary>Whether or not deploy requests must be approved by someone with permission to approve them, other than the request creator</summary>
         public bool? RequireApprovalForDeploy { get => _explicitNullValueRequireApprovalForDeploy; set { _explicitNullValueRequireApprovalForDeploy = value; AdditionalData?.Remove("require_approval_for_deploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_approval_for_deploy"); else _explicitNullProperties?.Remove("require_approval_for_deploy"); } }
         private bool? _explicitNullValueRequireApprovalForDeploy = default!;
         /// <summary>Whether or not to limit branch creation to the same region as the one selected during database creation.</summary>

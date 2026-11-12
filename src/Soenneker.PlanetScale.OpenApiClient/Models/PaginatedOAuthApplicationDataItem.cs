@@ -53,7 +53,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>All available scopes grouped by resource type with scope, description, selected, and admin flags</summary>
+        /// <summary>All available scopes grouped by resource type with scope, description, and selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplicationDataItemAllScopesByResourceProperty? AllScopesByResource { get => _explicitNullValueAllScopesByResource; set { _explicitNullValueAllScopesByResource = value; AdditionalData?.Remove("all_scopes_by_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_scopes_by_resource"); else _explicitNullProperties?.Remove("all_scopes_by_resource"); } }
@@ -116,7 +116,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled, roles) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes (the organization-tier scope names granting the group across all databases in an organization) and org_roles (the organization roles allowed to grant them); both are null for organization-section groups. Each group includes blocked_mcp_access_levels: the organization mcp_access_level values that prevent granting it, each with a level and reason. Read query groups are blocked at none; write query groups are also blocked at read_only. Other groups return an empty list</summary>
+        /// <summary>MCP tool groups (id, label, section, tools, scopes, parent_id, default_enabled) selectable when authorizing a DCR app; only present for DCR apps. Database-section groups also carry org_scopes, the organization-tier scope names granting the group across all databases in an organization; it is null for organization-section groups. Each group includes blocked_mcp_access_levels: the organization mcp_access_level values that prevent granting it, each with a level and reason. Read query groups are blocked at none; write query groups are also blocked at read_only. Other groups return an empty list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplicationDataItemMcpToolGroupsItemProperty>? McpToolGroups { get => _explicitNullValueMcpToolGroups; set { _explicitNullValueMcpToolGroups = value; AdditionalData?.Remove("mcp_tool_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_tool_groups"); else _explicitNullProperties?.Remove("mcp_tool_groups"); } }
@@ -159,7 +159,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private string _explicitNullValueScopes = default!;
 #endif
-        /// <summary>Scopes grouped by resource type (database, organization, branch, user) with scope, description, and admin flag</summary>
+        /// <summary>Scopes grouped by resource type (database, organization, branch, user) with scope and description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOAuthApplicationDataItemScopesByResourceProperty? ScopesByResource { get => _explicitNullValueScopesByResource; set { _explicitNullValueScopesByResource = value; AdditionalData?.Remove("scopes_by_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes_by_resource"); else _explicitNullProperties?.Remove("scopes_by_resource"); } }

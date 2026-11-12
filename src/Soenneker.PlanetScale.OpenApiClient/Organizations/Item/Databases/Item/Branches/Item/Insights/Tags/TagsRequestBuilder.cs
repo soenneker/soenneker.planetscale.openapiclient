@@ -156,13 +156,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             /// <summary>Only return literal tag values, excluding overflow and collapsed values</summary>
             [QueryParameter("literal_values_only")]
             public bool? LiteralValuesOnly { get; set; }
-            /// <summary>If provided, specifies the page offset of returned results</summary>
+            /// <summary>Ignored. This endpoint is not paginated and always returns the first page of results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Time period for filtering tags</summary>
             [QueryParameter("period")]
             public global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchQueryTagsPeriodParameter? Period { get; set; }
-            /// <summary>If provided, specifies the number of returned results</summary>
+            /// <summary>Ignored. This endpoint returns up to 100 tags and is not paginated.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Search tags by name</summary>

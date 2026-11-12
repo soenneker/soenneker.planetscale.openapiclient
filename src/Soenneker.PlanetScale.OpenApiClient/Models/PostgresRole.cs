@@ -55,6 +55,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             else if (parseNode.GetChildNode("private_access_host_url") is { } nullNodePrivateAccessHostUrl && nullNodePrivateAccessHostUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateAccessHostUrl = null;
             if (parseNode.GetChildNode("private_connection_service_name") is null) { _explicitNullValuePrivateConnectionServiceName = default!; _explicitNullProperties?.Remove("private_connection_service_name"); }
             else if (parseNode.GetChildNode("private_connection_service_name") is { } nullNodePrivateConnectionServiceName && nullNodePrivateConnectionServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateConnectionServiceName = null;
+            if (parseNode.GetChildNode("public_access_host_url") is null) { _explicitNullValuePublicAccessHostUrl = default!; _explicitNullProperties?.Remove("public_access_host_url"); }
+            else if (parseNode.GetChildNode("public_access_host_url") is { } nullNodePublicAccessHostUrl && nullNodePublicAccessHostUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicAccessHostUrl = null;
             if (parseNode.GetChildNode("query_safety_settings") is null) { _explicitNullValueQuerySafetySettings = default!; _explicitNullProperties?.Remove("query_safety_settings"); }
             else if (parseNode.GetChildNode("query_safety_settings") is { } nullNodeQuerySafetySettings && nullNodeQuerySafetySettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySafetySettings = null;
             if (parseNode.GetChildNode("ready") is null) { _explicitNullValueReady = default!; _explicitNullProperties?.Remove("ready"); }
@@ -247,6 +249,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string PrivateConnectionServiceName { get => _explicitNullValuePrivateConnectionServiceName; set { _explicitNullValuePrivateConnectionServiceName = value; AdditionalData?.Remove("private_connection_service_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_connection_service_name"); else _explicitNullProperties?.Remove("private_connection_service_name"); } }
         private string _explicitNullValuePrivateConnectionServiceName = default!;
 #endif
+        /// <summary>The public database host. Not affected by private-only connection string settings. Null when the database only accepts private connections.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicAccessHostUrl { get => _explicitNullValuePublicAccessHostUrl; set { _explicitNullValuePublicAccessHostUrl = value; AdditionalData?.Remove("public_access_host_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_access_host_url"); else _explicitNullProperties?.Remove("public_access_host_url"); } }
+        private string? _explicitNullValuePublicAccessHostUrl = default!;
+#nullable restore
+#else
+        public string PublicAccessHostUrl { get => _explicitNullValuePublicAccessHostUrl; set { _explicitNullValuePublicAccessHostUrl = value; AdditionalData?.Remove("public_access_host_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_access_host_url"); else _explicitNullProperties?.Remove("public_access_host_url"); } }
+        private string _explicitNullValuePublicAccessHostUrl = default!;
+#endif
         /// <summary>The query_safety_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -330,6 +342,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "private_access_host_url", n => { PrivateAccessHostUrl = n.GetStringValue(); } },
                 { "private_connection_service_name", n => { PrivateConnectionServiceName = n.GetStringValue(); } },
+                { "public_access_host_url", n => { PublicAccessHostUrl = n.GetStringValue(); } },
                 { "query_safety_settings", n => { QuerySafetySettings = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings.CreateFromDiscriminatorValue); } },
                 { "ready", n => { Ready = n.GetBoolValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
@@ -364,6 +377,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("password", Password);
             writer.WriteStringValue("private_access_host_url", PrivateAccessHostUrl);
             writer.WriteStringValue("private_connection_service_name", PrivateConnectionServiceName);
+            writer.WriteStringValue("public_access_host_url", PublicAccessHostUrl);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleQuerySafetySettings>("query_safety_settings", QuerySafetySettings);
             writer.WriteBoolValue("ready", Ready);
             writer.WriteIntValue("ttl", Ttl);

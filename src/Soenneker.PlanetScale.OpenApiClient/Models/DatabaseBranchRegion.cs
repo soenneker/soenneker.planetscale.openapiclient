@@ -17,6 +17,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("availability_zones") is null) { _explicitNullValueAvailabilityZones = default!; _explicitNullProperties?.Remove("availability_zones"); }
+            else if (parseNode.GetChildNode("availability_zones") is { } nullNodeAvailabilityZones && nullNodeAvailabilityZones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailabilityZones = null;
             if (parseNode.GetChildNode("current_default") is null) { _explicitNullValueCurrentDefault = default!; _explicitNullProperties?.Remove("current_default"); }
             else if (parseNode.GetChildNode("current_default") is { } nullNodeCurrentDefault && nullNodeCurrentDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentDefault = null;
             if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
@@ -43,6 +45,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The availability_zones property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem>? AvailabilityZones { get => _explicitNullValueAvailabilityZones; set { _explicitNullValueAvailabilityZones = value; AdditionalData?.Remove("availability_zones"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability_zones"); else _explicitNullProperties?.Remove("availability_zones"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem>? _explicitNullValueAvailabilityZones = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem> AvailabilityZones { get => _explicitNullValueAvailabilityZones; set { _explicitNullValueAvailabilityZones = value; AdditionalData?.Remove("availability_zones"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability_zones"); else _explicitNullProperties?.Remove("availability_zones"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem> _explicitNullValueAvailabilityZones = default!;
+#endif
         /// <summary>True if the region is the default for new branch creation</summary>
         public bool? CurrentDefault { get => _explicitNullValueCurrentDefault; set { _explicitNullValueCurrentDefault = value; AdditionalData?.Remove("current_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_default"); else _explicitNullProperties?.Remove("current_default"); } }
         private bool? _explicitNullValueCurrentDefault = default!;
@@ -143,6 +155,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "availability_zones", n => { AvailabilityZones = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "current_default", n => { CurrentDefault = n.GetBoolValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -163,6 +176,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchRegionAvailabilityZonesItem>("availability_zones", AvailabilityZones);
             writer.WriteBoolValue("current_default", CurrentDefault);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteBoolValue("enabled", Enabled);
