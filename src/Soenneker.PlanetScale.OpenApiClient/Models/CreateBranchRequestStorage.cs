@@ -21,6 +21,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             else if (parseNode.GetChildNode("maximum_storage_bytes") is { } nullNodeMaximumStorageBytes && nullNodeMaximumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumStorageBytes = null;
             if (parseNode.GetChildNode("minimum_storage_bytes") is null) { _explicitNullValueMinimumStorageBytes = default!; _explicitNullProperties?.Remove("minimum_storage_bytes"); }
             else if (parseNode.GetChildNode("minimum_storage_bytes") is { } nullNodeMinimumStorageBytes && nullNodeMinimumStorageBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumStorageBytes = null;
+            if (parseNode.GetChildNode("storage_iops") is null) { _explicitNullValueStorageIops = default!; _explicitNullProperties?.Remove("storage_iops"); }
+            else if (parseNode.GetChildNode("storage_iops") is { } nullNodeStorageIops && nullNodeStorageIops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageIops = null;
+            if (parseNode.GetChildNode("storage_throughput_mibs") is null) { _explicitNullValueStorageThroughputMibs = default!; _explicitNullProperties?.Remove("storage_throughput_mibs"); }
+            else if (parseNode.GetChildNode("storage_throughput_mibs") is { } nullNodeStorageThroughputMibs && nullNodeStorageThroughputMibs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageThroughputMibs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,6 +35,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The minimum storage size in bytes.</summary>
         public int? MinimumStorageBytes { get => _explicitNullValueMinimumStorageBytes; set { _explicitNullValueMinimumStorageBytes = value; AdditionalData?.Remove("minimum_storage_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_storage_bytes"); else _explicitNullProperties?.Remove("minimum_storage_bytes"); } }
         private int? _explicitNullValueMinimumStorageBytes = default!;
+        /// <summary>For PostgreSQL backup restores and point-in-time recovery, the storage IOPS.</summary>
+        public int? StorageIops { get => _explicitNullValueStorageIops; set { _explicitNullValueStorageIops = value; AdditionalData?.Remove("storage_iops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_iops"); else _explicitNullProperties?.Remove("storage_iops"); } }
+        private int? _explicitNullValueStorageIops = default!;
+        /// <summary>For PostgreSQL backup restores and point-in-time recovery, the storage throughput in MiB/s.</summary>
+        public int? StorageThroughputMibs { get => _explicitNullValueStorageThroughputMibs; set { _explicitNullValueStorageThroughputMibs = value; AdditionalData?.Remove("storage_throughput_mibs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_throughput_mibs"); else _explicitNullProperties?.Remove("storage_throughput_mibs"); } }
+        private int? _explicitNullValueStorageThroughputMibs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBranchRequestStorage"/> and sets the default values.
         /// </summary>
@@ -58,6 +68,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             {
                 { "maximum_storage_bytes", n => { MaximumStorageBytes = n.GetIntValue(); } },
                 { "minimum_storage_bytes", n => { MinimumStorageBytes = n.GetIntValue(); } },
+                { "storage_iops", n => { StorageIops = n.GetIntValue(); } },
+                { "storage_throughput_mibs", n => { StorageThroughputMibs = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +81,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maximum_storage_bytes", MaximumStorageBytes);
             writer.WriteIntValue("minimum_storage_bytes", MinimumStorageBytes);
+            writer.WriteIntValue("storage_iops", StorageIops);
+            writer.WriteIntValue("storage_throughput_mibs", StorageThroughputMibs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

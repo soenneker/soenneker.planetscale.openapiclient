@@ -974,7 +974,7 @@
           "Databases"
         ],
         "summary": "List databases",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabases",
         "parameters": [
           {
@@ -61353,6 +61353,14 @@
           "maximum_storage_bytes": {
             "type": "integer",
             "description": "The maximum storage size in bytes for autoscaling."
+          },
+          "storage_iops": {
+            "type": "integer",
+            "description": "For PostgreSQL backup restores and point-in-time recovery, the storage IOPS."
+          },
+          "storage_throughput_mibs": {
+            "type": "integer",
+            "description": "For PostgreSQL backup restores and point-in-time recovery, the storage throughput in MiB/s."
           }
         }
       },
@@ -71844,7 +71852,9 @@
               "database:read_comments": "Read deploy request comments in a database",
               "database:read_database": "Read database information",
               "database:read_deploy_requests": "Read deploy requests in a database",
+              "database:read_live_connections": "Read live connections",
               "database:read_members": "Read members",
+              "database:read_production_live_connections": "Read live connections on production branches",
               "database:read_workflows": "Read database workflows",
               "database:restore_backups": "Restore backups to new branches",
               "database:restore_production_branch_backups": "Restore production branch backups to new branches",
@@ -71880,9 +71890,11 @@
               "organization:read_databases": "Read organization databases",
               "organization:read_deploy_requests": "Read deploy requests in an organization",
               "organization:read_invoices": "Read organization invoices",
+              "organization:read_live_connections": "Read live connections in an organization",
               "organization:read_members": "Read members in an organization",
               "organization:read_organization": "Read organization",
               "organization:read_payment_method": "Read organization payment method",
+              "organization:read_production_live_connections": "Read live connections on production branches in an organization",
               "organization:read_workflows": "Read workflows in an organization",
               "organization:restore_backups": "Restore backups to new branches in an organization",
               "organization:restore_production_branch_backups": "Restore production branch backups to new branches in an organization",
