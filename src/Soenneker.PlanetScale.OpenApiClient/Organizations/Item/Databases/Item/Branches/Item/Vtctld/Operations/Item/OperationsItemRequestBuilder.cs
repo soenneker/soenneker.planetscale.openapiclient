@@ -36,7 +36,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_workflow`, `write_branch_topology`, `write_production_branch_topology`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_workflows`, `manage_branch_topologies`, `manage_production_branch_topologies` || Database | `read_workflows`, `manage_branch_topologies`, `manage_production_branch_topologies` || Branch | `manage_topology` |
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 401 status code</exception>
@@ -47,11 +47,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// <exception cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -66,7 +66,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_workflow`, `write_branch_topology`, `write_production_branch_topology`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_workflows`, `manage_branch_topologies`, `manage_production_branch_topologies` || Database | `read_workflows`, `manage_branch_topologies`, `manage_production_branch_topologies` || Branch | `manage_topology` |

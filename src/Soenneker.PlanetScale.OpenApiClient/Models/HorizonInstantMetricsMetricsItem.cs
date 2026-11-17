@@ -9,7 +9,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetInstantBranchMetrics200ResponseMetricsItem : IAdditionalDataHolder, IParsable
+    public partial class HorizonInstantMetricsMetricsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -50,29 +50,29 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem>? _explicitNullValueValues = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem> _explicitNullValueValues = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem> _explicitNullValueValues = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem"/> and sets the default values.
         /// </summary>
-        public GetInstantBranchMetrics200ResponseMetricsItem()
+        public HorizonInstantMetricsMetricsItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItem(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "metric", n => { Metric = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("metric", Metric);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantBranchMetrics200ResponseMetricsItemValuesItem>("values", Values);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItemValuesItem>("values", Values);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

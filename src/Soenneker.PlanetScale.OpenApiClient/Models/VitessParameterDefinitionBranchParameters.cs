@@ -9,7 +9,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListBranchVitessParameters200Response : IAdditionalDataHolder, IParsable
+    public partial class VitessParameterDefinitionBranchParameters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -30,12 +30,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The parameters for each keyspace, keyed by keyspace name. Each value has `vttablet` and `mysqld` arrays of parameters in the same format as `vtgate`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces? Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces? _explicitNullValueKeyspaces = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty? Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty? _explicitNullValueKeyspaces = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces _explicitNullValueKeyspaces = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty Keyspaces { get => _explicitNullValueKeyspaces; set { _explicitNullValueKeyspaces = value; AdditionalData?.Remove("keyspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyspaces"); else _explicitNullProperties?.Remove("keyspaces"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty _explicitNullValueKeyspaces = default!;
 #endif
         /// <summary>The response type. Always &quot;VitessParameters&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,29 +50,29 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The vtgate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem>? Vtgate { get => _explicitNullValueVtgate; set { _explicitNullValueVtgate = value; AdditionalData?.Remove("vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate"); else _explicitNullProperties?.Remove("vtgate"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem>? _explicitNullValueVtgate = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem>? Vtgate { get => _explicitNullValueVtgate; set { _explicitNullValueVtgate = value; AdditionalData?.Remove("vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate"); else _explicitNullProperties?.Remove("vtgate"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem>? _explicitNullValueVtgate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem> Vtgate { get => _explicitNullValueVtgate; set { _explicitNullValueVtgate = value; AdditionalData?.Remove("vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate"); else _explicitNullProperties?.Remove("vtgate"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem> _explicitNullValueVtgate = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem> Vtgate { get => _explicitNullValueVtgate; set { _explicitNullValueVtgate = value; AdditionalData?.Remove("vtgate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vtgate"); else _explicitNullProperties?.Remove("vtgate"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem> _explicitNullValueVtgate = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParameters"/> and sets the default values.
         /// </summary>
-        public ListBranchVitessParameters200Response()
+        public VitessParameterDefinitionBranchParameters()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParameters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200Response(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParameters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keyspaces", n => { Keyspaces = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces>(global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces.CreateFromDiscriminatorValue); } },
+                { "keyspaces", n => { Keyspaces = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "vtgate", n => { Vtgate = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "vtgate", n => { Vtgate = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -94,9 +94,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseKeyspaces>("keyspaces", Keyspaces);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersKeyspacesProperty>("keyspaces", Keyspaces);
             writer.WriteStringValue("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem>("vtgate", Vtgate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem>("vtgate", Vtgate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

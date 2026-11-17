@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The component the parameter configures</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ListBranchVitessParameters200ResponseVtgateItemComponent
+    public enum VitessParameterDefinitionBranchParametersVtgateItemComponent
     {
         [EnumMember(Value = "vtgate")]
         #pragma warning disable CS1591

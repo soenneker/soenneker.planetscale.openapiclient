@@ -5,7 +5,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     /// <summary>The current state of the operation</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum GetVtctldOperation200ResponseState
+    public enum VtctldOperationSerializerState
     {
         [EnumMember(Value = "pending")]
         #pragma warning disable CS1591

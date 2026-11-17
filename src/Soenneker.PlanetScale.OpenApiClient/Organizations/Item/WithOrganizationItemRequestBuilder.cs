@@ -7,6 +7,7 @@ using Soenneker.PlanetScale.OpenApiClient.Models;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.AuditLog;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.DatabaseSubscriptions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invoices;
@@ -48,6 +49,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.DatabasesRequestBuilder Databases
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.DatabasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The databaseSubscriptions property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.DatabaseSubscriptions.DatabaseSubscriptionsRequestBuilder DatabaseSubscriptions
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.DatabaseSubscriptions.DatabaseSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invitations property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations.InvitationsRequestBuilder Invitations
@@ -141,7 +147,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.Organization>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_organization` |
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_organization`, `write_billing_email` |
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.Organization"/></returns>
         /// <param name="body">The request body</param>
@@ -197,7 +203,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_organization` |
+        /// ### AuthorizationA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `write_organization`, `write_billing_email` |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

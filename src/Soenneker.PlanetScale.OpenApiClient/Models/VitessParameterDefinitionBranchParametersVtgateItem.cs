@@ -9,7 +9,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListBranchVitessParameters200ResponseVtgateItem : IAdditionalDataHolder, IParsable
+    public partial class VitessParameterDefinitionBranchParametersVtgateItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -54,8 +54,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         private string _explicitNullValueCategory = default!;
 #endif
         /// <summary>The component the parameter configures</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItemComponent? Component { get => _explicitNullValueComponent; set { _explicitNullValueComponent = value; AdditionalData?.Remove("component"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component"); else _explicitNullProperties?.Remove("component"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItemComponent? _explicitNullValueComponent = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItemComponent? Component { get => _explicitNullValueComponent; set { _explicitNullValueComponent = value; AdditionalData?.Remove("component"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component"); else _explicitNullProperties?.Remove("component"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItemComponent? _explicitNullValueComponent = default!;
         /// <summary>The default value of the parameter, which can depend on the cluster size</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,21 +140,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem"/> and sets the default values.
         /// </summary>
-        public ListBranchVitessParameters200ResponseVtgateItem()
+        public VitessParameterDefinitionBranchParametersVtgateItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItem(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +165,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category", n => { Category = n.GetStringValue(); } },
-                { "component", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItemComponent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComponent = default; _explicitNullProperties?.Remove("component"); AdditionalData["component"] = unknown; } else { Component = parsed; AdditionalData.Remove("component"); } } },
+                { "component", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItemComponent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComponent = default; _explicitNullProperties?.Remove("component"); AdditionalData["component"] = unknown; } else { Component = parsed; AdditionalData.Remove("component"); } } },
                 { "default_value", n => { DefaultValue = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -185,7 +185,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.ListBranchVitessParameters200ResponseVtgateItemComponent>("component", Component);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItemComponent>("component", Component);
             writer.WriteStringValue("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);

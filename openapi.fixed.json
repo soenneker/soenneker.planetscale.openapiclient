@@ -211,7 +211,7 @@
           "Organizations"
         ],
         "summary": "Update an organization",
-        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_organization\u0060 |",
+        "description": "\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_organization\u0060, \u0060write_billing_email\u0060 |",
         "operationId": "UpdateOrganization",
         "parameters": [
           {
@@ -961,6 +961,190 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListClusterSizeSkus200ResponseSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/database-subscriptions": {
+      "post": {
+        "tags": [
+          "Database report subscriptions"
+        ],
+        "summary": "Subscribe to every database\u0027s weekly report",
+        "description": "Subscribe the current user to the weekly report email for every database in the organization they can view\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "CreateOrganizationDatabaseSubscriptions",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns a subscription for each database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationDatabaseSubscriptions200ResponseSchema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Database report subscriptions"
+        ],
+        "summary": "Unsubscribe from every database\u0027s weekly report",
+        "description": "Unsubscribe the current user from the weekly report email for every database in the organization they can view\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "DeleteOrganizationDatabaseSubscriptions",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns a subscription for each database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteOrganizationDatabaseSubscriptions200ResponseSchema"
                 }
               }
             }
@@ -14973,7 +15157,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetKeyspaceRolloutStatus200Response"
+                  "$ref": "#/components/schemas/BranchInfrastructureKeyspace"
                 }
               }
             }
@@ -16168,7 +16352,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetInstantBranchMetrics200Response"
+                  "$ref": "#/components/schemas/HorizonInstantMetrics"
                 }
               }
             }
@@ -16977,7 +17161,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetInstantTabletMetrics200Response"
+                  "$ref": "#/components/schemas/TabletInstantMetrics"
                 }
               }
             }
@@ -26334,7 +26518,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListBranchVitessParameters200Response"
+                  "$ref": "#/components/schemas/VitessParameterDefinitionBranchParameters"
                 }
               }
             }
@@ -26454,7 +26638,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetVtctldOperation200Response"
+                  "$ref": "#/components/schemas/VtctldOperationSerializer"
                 }
               }
             }
@@ -31127,6 +31311,208 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/subscription": {
+      "post": {
+        "tags": [
+          "Database report subscriptions"
+        ],
+        "summary": "Subscribe to a database\u0027s weekly report",
+        "description": "Subscribe the current user to the database\u0027s weekly report email\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "CreateDatabaseSubscription",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the subscription",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Database report subscriptions"
+        ],
+        "summary": "Unsubscribe from a database\u0027s weekly report",
+        "description": "Unsubscribe the current user from the database\u0027s weekly report email\n### Authorization\nA   OAuth token must have at least one of the following   scopes in order to use this API endpoint:\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "DeleteDatabaseSubscription",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the subscription",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/throttler": {
       "get": {
         "tags": [
@@ -34277,6 +34663,116 @@
           }
         }
       },
+      "patch": {
+        "tags": [
+          "Service tokens"
+        ],
+        "summary": "Update a service token",
+        "description": "Update a service token\u0027s name or expiration.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060\n\n",
+        "operationId": "UpdateServiceToken",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "The name of the organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the service token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateServiceTokenRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the service token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceToken"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Service tokens"
@@ -34385,6 +34881,118 @@
               }
             },
             "x-client-success-response-status": "204"
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/service-tokens/{id}/duplicate": {
+      "post": {
+        "tags": [
+          "Service tokens"
+        ],
+        "summary": "Duplicate a service token",
+        "description": "Create a new service token with the same grants as an existing service token. The original token is not changed.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060, \u0060read_service_tokens\u0060\n\n",
+        "operationId": "DuplicateServiceToken",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "The name of the organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the service token to duplicate",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuplicateServiceTokenRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the new service token with the plaintext token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceToken"
+                }
+              }
+            }
           }
         }
       }
@@ -38218,6 +38826,29 @@
           }
         }
       },
+      "VitessParameterDefinitionBranchParameters": {
+        "required": [
+          "type",
+          "vtgate",
+          "keyspaces"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The response type. Always \u0022VitessParameters\u0022."
+          },
+          "vtgate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersVtgateItem"
+            }
+          },
+          "keyspaces": {
+            "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersKeyspacesProperty"
+          }
+        }
+      },
       "PaginatedChangeRequest": {
         "required": [
           "type",
@@ -38764,6 +39395,30 @@
           },
           "vttablet_options": {
             "$ref": "#/components/schemas/DatabaseBranchKeyspaceVttabletOptionsProperty"
+          }
+        }
+      },
+      "BranchInfrastructureKeyspace": {
+        "required": [
+          "name",
+          "state",
+          "shards"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the keyspace"
+          },
+          "state": {
+            "type": "string",
+            "description": "The current state of the rollout at the keyspace level"
+          },
+          "shards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BranchInfrastructureKeyspaceShardsItem"
+            }
           }
         }
       },
@@ -40267,6 +40922,52 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/MetricSeriesSeriesItem"
+            }
+          }
+        }
+      },
+      "HorizonInstantMetrics": {
+        "required": [
+          "type",
+          "branch",
+          "metrics"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The metrics response type"
+          },
+          "branch": {
+            "$ref": "#/components/schemas/HorizonInstantMetricsBranch"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HorizonInstantMetricsMetricsItem"
+            }
+          }
+        }
+      },
+      "TabletInstantMetrics": {
+        "required": [
+          "type",
+          "branch",
+          "metrics"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The metrics response type"
+          },
+          "branch": {
+            "$ref": "#/components/schemas/TabletInstantMetricsBranch"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TabletInstantMetricsMetricsItem"
             }
           }
         }
@@ -43456,6 +44157,50 @@
           }
         }
       },
+      "Subscription": {
+        "required": [
+          "type",
+          "id",
+          "state",
+          "frequency",
+          "delivered_at",
+          "created_at",
+          "updated_at",
+          "database"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SubscriptionType"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the subscription"
+          },
+          "state": {
+            "$ref": "#/components/schemas/SubscriptionState"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/SubscriptionFrequency"
+          },
+          "delivered_at": {
+            "type": "string",
+            "description": "When the last report was sent",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the subscription was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the subscription was last updated"
+          },
+          "database": {
+            "$ref": "#/components/schemas/SubscriptionDatabase"
+          }
+        }
+      },
       "TrafficBudget": {
         "required": [
           "id",
@@ -43643,6 +44388,63 @@
             "type": "boolean",
             "description": "Whether or not the user is verified by email.",
             "nullable": true
+          }
+        }
+      },
+      "VtctldOperationSerializer": {
+        "required": [
+          "type",
+          "id",
+          "action",
+          "timeout",
+          "created_at",
+          "completed_at",
+          "state",
+          "completed"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The object type, always VtctldOperation"
+          },
+          "id": {
+            "type": "string",
+            "description": "The UUID of the operation"
+          },
+          "action": {
+            "type": "string",
+            "description": "The vtctld action being executed, such as move_tables_create"
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "Timeout in seconds"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the operation was created"
+          },
+          "completed_at": {
+            "type": "string",
+            "description": "When the operation completed, or null while it is still running",
+            "nullable": true
+          },
+          "state": {
+            "$ref": "#/components/schemas/VtctldOperationSerializerState"
+          },
+          "completed": {
+            "type": "boolean",
+            "description": "Whether the operation has reached a terminal state"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/VtctldOperationSerializerMetadataProperty"
+          },
+          "result": {
+            "$ref": "#/components/schemas/VtctldOperationSerializerResultProperty"
+          },
+          "error": {
+            "type": "string",
+            "description": "The error message, present when the operation fails or its status could not be checked"
           }
         }
       },
@@ -46562,6 +47364,70 @@
           }
         }
       },
+      "VitessParameterDefinitionBranchParametersVtgateItem": {
+        "required": [
+          "type",
+          "name",
+          "component",
+          "description",
+          "category",
+          "parameter_type",
+          "default_value",
+          "value",
+          "override"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The object type. Always \u0022VitessParameterDefinition\u0022."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the parameter"
+          },
+          "title": {
+            "type": "string",
+            "description": "The display name of the parameter"
+          },
+          "component": {
+            "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersVtgateItemComponent"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the parameter"
+          },
+          "category": {
+            "type": "string",
+            "description": "The category of the parameter"
+          },
+          "parameter_type": {
+            "type": "string",
+            "description": "The type of the parameter\u0027s value: \u0060boolean\u0060, \u0060bytes\u0060, \u0060duration\u0060, \u0060float\u0060, \u0060integer\u0060, \u0060select\u0060, or \u0060string\u0060"
+          },
+          "default_value": {
+            "type": "string",
+            "description": "The default value of the parameter, which can depend on the cluster size",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "The current value of the parameter",
+            "nullable": true
+          },
+          "override": {
+            "type": "boolean",
+            "description": "Whether the parameter has been set explicitly instead of using its default"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The allowed values for \u0060select\u0060 parameters"
+          }
+        }
+      },
       "PaginatedChangeRequestDataItem": {
         "required": [
           "type",
@@ -47157,6 +48023,33 @@
             "type": "number",
             "description": "Replication lag in seconds that trips the throttler",
             "nullable": true
+          }
+        }
+      },
+      "BranchInfrastructureKeyspaceShardsItem": {
+        "required": [
+          "name",
+          "last_rollout_started_at",
+          "last_rollout_finished_at",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the shard"
+          },
+          "last_rollout_started_at": {
+            "type": "string",
+            "description": "The time at which the rollout started"
+          },
+          "last_rollout_finished_at": {
+            "type": "string",
+            "description": "The time at which the rollout completed"
+          },
+          "state": {
+            "type": "string",
+            "description": "The current state of the rollout at the shard level"
           }
         }
       },
@@ -48573,6 +49466,120 @@
               }
             },
             "description": "Sampled data points as [Unix timestamp, value] pairs"
+          }
+        }
+      },
+      "HorizonInstantMetricsBranch": {
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "deleted_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID for the resource"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the resource"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the resource was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the resource was last updated"
+          },
+          "deleted_at": {
+            "type": "string",
+            "description": "When the resource was deleted, if deleted",
+            "nullable": true
+          }
+        }
+      },
+      "HorizonInstantMetricsMetricsItem": {
+        "required": [
+          "metric",
+          "label",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "The metric name"
+          },
+          "label": {
+            "type": "string",
+            "description": "A human-readable metric label"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HorizonInstantMetricsMetricsItemValuesItem"
+            }
+          }
+        }
+      },
+      "TabletInstantMetricsBranch": {
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "deleted_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID for the resource"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the resource"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the resource was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the resource was last updated"
+          },
+          "deleted_at": {
+            "type": "string",
+            "description": "When the resource was deleted, if deleted",
+            "nullable": true
+          }
+        }
+      },
+      "TabletInstantMetricsMetricsItem": {
+        "required": [
+          "metric",
+          "label",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "The metric name"
+          },
+          "label": {
+            "type": "string",
+            "description": "A human-readable metric label"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TabletInstantMetricsMetricsItemValuesItem"
+            }
           }
         }
       },
@@ -51798,6 +52805,39 @@
         },
         "nullable": true
       },
+      "SubscriptionDatabase": {
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "deleted_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID for the resource"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the resource"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the resource was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the resource was last updated"
+          },
+          "deleted_at": {
+            "type": "string",
+            "description": "When the resource was deleted, if deleted",
+            "nullable": true
+          }
+        }
+      },
       "TrafficBudgetActor": {
         "required": [
           "id",
@@ -54355,6 +55395,25 @@
           }
         }
       },
+      "VitessParameterDefinitionBranchParametersKeyspacesAdditionalProperties": {
+        "type": "object",
+        "properties": {
+          "vttablet": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesVttabletItemProperty"
+            },
+            "description": "The VTTablet parameters for the keyspace"
+          },
+          "mysqld": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesMysqldItemProperty"
+            },
+            "description": "The MySQL parameters for the keyspace"
+          }
+        }
+      },
       "PaginatedChangeRequestDataItemActor": {
         "required": [
           "id",
@@ -55008,6 +56067,50 @@
             "type": "string",
             "description": "When the resource was deleted, if deleted",
             "nullable": true
+          }
+        }
+      },
+      "HorizonInstantMetricsMetricsItemValuesItem": {
+        "required": [
+          "pod",
+          "role",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "pod": {
+            "type": "string",
+            "description": "Pod name"
+          },
+          "role": {
+            "type": "string",
+            "description": "Postgres role (primary or replica)"
+          },
+          "value": {
+            "type": "number",
+            "description": "Current metric value"
+          }
+        }
+      },
+      "TabletInstantMetricsMetricsItemValuesItem": {
+        "required": [
+          "pod",
+          "role",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "pod": {
+            "type": "string",
+            "description": "Pod name"
+          },
+          "role": {
+            "type": "string",
+            "description": "Postgres role (primary or replica)"
+          },
+          "value": {
+            "type": "number",
+            "description": "Current metric value"
           }
         }
       },
@@ -59824,30 +60927,6 @@
           }
         }
       },
-      "GetKeyspaceRolloutStatus200Response": {
-        "required": [
-          "name",
-          "state",
-          "shards"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the keyspace"
-          },
-          "state": {
-            "type": "string",
-            "description": "The current state of the rollout at the keyspace level"
-          },
-          "shards": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetKeyspaceRolloutStatus200ResponseShardsItem"
-            }
-          }
-        }
-      },
       "GetKeyspaceVschema200Response": {
         "required": [
           "raw"
@@ -59925,52 +61004,6 @@
           "hour": {
             "type": "integer",
             "description": "Hour of the day in UTC (0-23)"
-          }
-        }
-      },
-      "GetInstantBranchMetrics200Response": {
-        "required": [
-          "type",
-          "branch",
-          "metrics"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The metrics response type"
-          },
-          "branch": {
-            "$ref": "#/components/schemas/GetInstantBranchMetrics200ResponseBranch"
-          },
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetInstantBranchMetrics200ResponseMetricsItem"
-            }
-          }
-        }
-      },
-      "GetInstantTabletMetrics200Response": {
-        "required": [
-          "type",
-          "branch",
-          "metrics"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The metrics response type"
-          },
-          "branch": {
-            "$ref": "#/components/schemas/GetInstantTabletMetrics200ResponseBranch"
-          },
-          "metrics": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetInstantTabletMetrics200ResponseMetricsItem"
-            }
           }
         }
       },
@@ -60434,86 +61467,6 @@
           }
         }
       },
-      "ListBranchVitessParameters200Response": {
-        "required": [
-          "type",
-          "vtgate",
-          "keyspaces"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The response type. Always \u0022VitessParameters\u0022."
-          },
-          "vtgate": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseVtgateItem"
-            }
-          },
-          "keyspaces": {
-            "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseKeyspaces"
-          }
-        }
-      },
-      "GetVtctldOperation200Response": {
-        "required": [
-          "type",
-          "id",
-          "action",
-          "timeout",
-          "created_at",
-          "completed_at",
-          "state",
-          "completed"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The object type, always VtctldOperation"
-          },
-          "id": {
-            "type": "string",
-            "description": "The UUID of the operation"
-          },
-          "action": {
-            "type": "string",
-            "description": "The vtctld action being executed, such as move_tables_create"
-          },
-          "timeout": {
-            "type": "integer",
-            "description": "Timeout in seconds"
-          },
-          "created_at": {
-            "type": "string",
-            "description": "When the operation was created"
-          },
-          "completed_at": {
-            "type": "string",
-            "description": "When the operation completed, or null while it is still running",
-            "nullable": true
-          },
-          "state": {
-            "$ref": "#/components/schemas/GetVtctldOperation200ResponseState"
-          },
-          "completed": {
-            "type": "string",
-            "description": "Whether the operation has reached a terminal state"
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/GetVtctldOperation200ResponseMetadata"
-          },
-          "result": {
-            "$ref": "#/components/schemas/GetVtctldOperation200ResponseResult"
-          },
-          "error": {
-            "type": "string",
-            "description": "The error message, present when the operation fails or its status could not be checked"
-          }
-        }
-      },
       "CreateDatabasePostgresCidrRequest": {
         "required": [
           "cidrs"
@@ -60873,6 +61826,29 @@
           }
         }
       },
+      "UpdateServiceTokenRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the service token. Omit to leave the name unchanged."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Seconds from now until the service token expires. Omit to leave the expiration unchanged. Null clears the expiration. Must be greater than 0 and at most one year.",
+            "nullable": true
+          }
+        }
+      },
+      "DuplicateServiceTokenRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the new service token"
+          }
+        }
+      },
       "ConfigureOrganizationSso200Response": {
         "required": [
           "portal_url"
@@ -60954,6 +61930,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ClusterSizeSku"
+        }
+      },
+      "CreateOrganizationDatabaseSubscriptions200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Subscription"
+        }
+      },
+      "DeleteOrganizationDatabaseSubscriptions200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Subscription"
         }
       },
       "ListAdminSizeSkus200ResponseSchema": {
@@ -61061,6 +62049,13 @@
         "type": "object",
         "description": "The new option values"
       },
+      "VitessParameterDefinitionBranchParametersKeyspacesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersKeyspacesAdditionalProperties"
+        },
+        "description": "The parameters for each keyspace, keyed by keyspace name. Each value has \u0060vttablet\u0060 and \u0060mysqld\u0060 arrays of parameters in the same format as \u0060vtgate\u0060."
+      },
       "ChangeRequestParametersProperty": {
         "type": "object",
         "description": "The parameters requested for the target resource",
@@ -61131,6 +62126,14 @@
       },
       "QueryTagsItemProperty": {
         "type": "object"
+      },
+      "VtctldOperationSerializerMetadataProperty": {
+        "type": "object",
+        "description": "Operation-specific metadata captured when the operation started"
+      },
+      "VtctldOperationSerializerResultProperty": {
+        "type": "object",
+        "description": "Operation-specific result payload, present once the operation succeeds"
       },
       "DeploymentPrecedingDeploymentsItemProperty": {
         "type": "object"
@@ -61307,6 +62310,12 @@
         "type": "object",
         "description": "The request to revert the schema operations in this deployment",
         "nullable": true
+      },
+      "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesVttabletItemProperty": {
+        "type": "object"
+      },
+      "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesMysqldItemProperty": {
+        "type": "object"
       },
       "PaginatedDatabaseDeployRequestDataItemDeploymentPrecedingDeploymentsItemProperty": {
         "type": "object"
@@ -61580,147 +62589,6 @@
         "type": "object",
         "description": "Parameter names and the values to set them to. Set a value to \u0060null\u0060 to reset the parameter to its default."
       },
-      "GetKeyspaceRolloutStatus200ResponseShardsItem": {
-        "required": [
-          "name",
-          "last_rollout_started_at",
-          "last_rollout_finished_at",
-          "state"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the shard"
-          },
-          "last_rollout_started_at": {
-            "type": "string",
-            "description": "The time at which the rollout started"
-          },
-          "last_rollout_finished_at": {
-            "type": "string",
-            "description": "The time at which the rollout completed"
-          },
-          "state": {
-            "type": "string",
-            "description": "The current state of the rollout at the shard level"
-          }
-        }
-      },
-      "GetInstantBranchMetrics200ResponseBranch": {
-        "required": [
-          "id",
-          "name",
-          "created_at",
-          "updated_at",
-          "deleted_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The ID for the resource"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name for the resource"
-          },
-          "created_at": {
-            "type": "string",
-            "description": "When the resource was created"
-          },
-          "updated_at": {
-            "type": "string",
-            "description": "When the resource was last updated"
-          },
-          "deleted_at": {
-            "type": "string",
-            "description": "When the resource was deleted, if deleted",
-            "nullable": true
-          }
-        }
-      },
-      "GetInstantBranchMetrics200ResponseMetricsItem": {
-        "required": [
-          "metric",
-          "label",
-          "values"
-        ],
-        "type": "object",
-        "properties": {
-          "metric": {
-            "type": "string",
-            "description": "The metric name"
-          },
-          "label": {
-            "type": "string",
-            "description": "A human-readable metric label"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetInstantBranchMetrics200ResponseMetricsItemValuesItem"
-            }
-          }
-        }
-      },
-      "GetInstantTabletMetrics200ResponseBranch": {
-        "required": [
-          "id",
-          "name",
-          "created_at",
-          "updated_at",
-          "deleted_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The ID for the resource"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name for the resource"
-          },
-          "created_at": {
-            "type": "string",
-            "description": "When the resource was created"
-          },
-          "updated_at": {
-            "type": "string",
-            "description": "When the resource was last updated"
-          },
-          "deleted_at": {
-            "type": "string",
-            "description": "When the resource was deleted, if deleted",
-            "nullable": true
-          }
-        }
-      },
-      "GetInstantTabletMetrics200ResponseMetricsItem": {
-        "required": [
-          "metric",
-          "label",
-          "values"
-        ],
-        "type": "object",
-        "properties": {
-          "metric": {
-            "type": "string",
-            "description": "The metric name"
-          },
-          "label": {
-            "type": "string",
-            "description": "A human-readable metric label"
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetInstantTabletMetrics200ResponseMetricsItemValuesItem"
-            }
-          }
-        }
-      },
       "ListMoveTablesWorkflows200ResponseData": {
         "required": [
           "workflows"
@@ -61807,135 +62675,12 @@
           }
         }
       },
-      "ListBranchVitessParameters200ResponseVtgateItem": {
-        "required": [
-          "type",
-          "name",
-          "component",
-          "description",
-          "category",
-          "parameter_type",
-          "default_value",
-          "value",
-          "override"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The object type. Always \u0022VitessParameterDefinition\u0022."
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the parameter"
-          },
-          "title": {
-            "type": "string",
-            "description": "The display name of the parameter"
-          },
-          "component": {
-            "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseVtgateItemComponent"
-          },
-          "description": {
-            "type": "string",
-            "description": "The description of the parameter"
-          },
-          "category": {
-            "type": "string",
-            "description": "The category of the parameter"
-          },
-          "parameter_type": {
-            "type": "string",
-            "description": "The type of the parameter\u0027s value: \u0060boolean\u0060, \u0060bytes\u0060, \u0060duration\u0060, \u0060float\u0060, \u0060integer\u0060, \u0060select\u0060, or \u0060string\u0060"
-          },
-          "default_value": {
-            "type": "string",
-            "description": "The default value of the parameter, which can depend on the cluster size",
-            "nullable": true
-          },
-          "value": {
-            "type": "string",
-            "description": "The current value of the parameter",
-            "nullable": true
-          },
-          "override": {
-            "type": "boolean",
-            "description": "Whether the parameter has been set explicitly instead of using its default"
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The allowed values for \u0060select\u0060 parameters"
-          }
-        }
-      },
-      "ListBranchVitessParameters200ResponseKeyspaces": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseKeyspacesAdditionalProperties"
-        },
-        "description": "The parameters for each keyspace, keyed by keyspace name. Each value has \u0060vttablet\u0060 and \u0060mysqld\u0060 arrays of parameters in the same format as \u0060vtgate\u0060."
-      },
-      "GetVtctldOperation200ResponseMetadata": {
-        "type": "object",
-        "description": "Operation-specific metadata captured when the operation started"
-      },
-      "GetVtctldOperation200ResponseResult": {
-        "type": "object",
-        "description": "Operation-specific result payload, present once the operation succeeds"
-      },
       "CheckDeployRequestStorage200ResponseStorageReport": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/CheckDeployRequestStorage200ResponseStorageReportAdditionalProperties"
         },
         "description": "Per-keyspace and per-shard storage report. Keys are keyspace names."
-      },
-      "GetInstantBranchMetrics200ResponseMetricsItemValuesItem": {
-        "required": [
-          "pod",
-          "role",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "pod": {
-            "type": "string",
-            "description": "Pod name"
-          },
-          "role": {
-            "type": "string",
-            "description": "Postgres role (primary or replica)"
-          },
-          "value": {
-            "type": "number",
-            "description": "Current metric value"
-          }
-        }
-      },
-      "GetInstantTabletMetrics200ResponseMetricsItemValuesItem": {
-        "required": [
-          "pod",
-          "role",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "pod": {
-            "type": "string",
-            "description": "Pod name"
-          },
-          "role": {
-            "type": "string",
-            "description": "Postgres role (primary or replica)"
-          },
-          "value": {
-            "type": "number",
-            "description": "Current metric value"
-          }
-        }
       },
       "ListMoveTablesWorkflows200ResponseDataWorkflowsItem": {
         "type": "object"
@@ -61956,25 +62701,6 @@
           "$ref": "#/components/schemas/GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties"
         },
         "description": "VReplication stream status, keyed by Vitess keyspace/shard"
-      },
-      "ListBranchVitessParameters200ResponseKeyspacesAdditionalProperties": {
-        "type": "object",
-        "properties": {
-          "vttablet": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesVttabletItem"
-            },
-            "description": "The VTTablet parameters for the keyspace"
-          },
-          "mysqld": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesMysqldItem"
-            },
-            "description": "The MySQL parameters for the keyspace"
-          }
-        }
       },
       "CheckDeployRequestStorage200ResponseStorageReportAdditionalProperties": {
         "type": "object",
@@ -62007,12 +62733,6 @@
         }
       },
       "GetMoveTablesWorkflowStatus200ResponseDataShardStreamsAdditionalProperties": {
-        "type": "object"
-      },
-      "ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesVttabletItem": {
-        "type": "object"
-      },
-      "ListBranchVitessParameters200ResponseKeyspacesAdditionalPropertiesMysqldItem": {
         "type": "object"
       },
       "CheckDeployRequestStorage200ResponseStorageReportAdditionalPropertiesAdditionalProperties": {
@@ -63623,6 +64343,62 @@
           ]
         }
       },
+      "SubscriptionType": {
+        "enum": [
+          "Subscription"
+        ],
+        "type": "string",
+        "description": "The resource type"
+      },
+      "SubscriptionState": {
+        "enum": [
+          "subscribed",
+          "unsubscribed"
+        ],
+        "type": "string",
+        "description": "Whether the user receives the weekly report",
+        "x-ms-enum": {
+          "name": "SubscriptionState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "subscribed",
+              "name": "Subscribed"
+            },
+            {
+              "value": "unsubscribed",
+              "name": "Unsubscribed"
+            }
+          ]
+        }
+      },
+      "SubscriptionFrequency": {
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly"
+        ],
+        "type": "string",
+        "description": "How often the report is sent",
+        "x-ms-enum": {
+          "name": "SubscriptionFrequency",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            }
+          ]
+        }
+      },
       "TrafficBudgetMode": {
         "enum": [
           "enforce",
@@ -63668,6 +64444,43 @@
             {
               "value": "each",
               "name": "Each"
+            }
+          ]
+        }
+      },
+      "VtctldOperationSerializerState": {
+        "enum": [
+          "pending",
+          "running",
+          "completed",
+          "failed",
+          "cancelled"
+        ],
+        "type": "string",
+        "description": "The current state of the operation",
+        "x-ms-enum": {
+          "name": "VtctldOperationSerializerState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "cancelled",
+              "name": "Cancelled"
             }
           ]
         }
@@ -64761,6 +65574,33 @@
             {
               "value": "queued",
               "name": "Queued"
+            }
+          ]
+        }
+      },
+      "VitessParameterDefinitionBranchParametersVtgateItemComponent": {
+        "enum": [
+          "vtgate",
+          "vttablet",
+          "mysqld"
+        ],
+        "type": "string",
+        "description": "The component the parameter configures",
+        "x-ms-enum": {
+          "name": "VitessParameterDefinitionBranchParametersVtgateItemComponent",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "vtgate",
+              "name": "Vtgate"
+            },
+            {
+              "value": "vttablet",
+              "name": "Vttablet"
+            },
+            {
+              "value": "mysqld",
+              "name": "Mysqld"
             }
           ]
         }
@@ -68168,43 +69008,6 @@
           ]
         }
       },
-      "GetVtctldOperation200ResponseState": {
-        "enum": [
-          "pending",
-          "running",
-          "completed",
-          "failed",
-          "cancelled"
-        ],
-        "type": "string",
-        "description": "The current state of the operation",
-        "x-ms-enum": {
-          "name": "GetVtctldOperation200ResponseState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "running",
-              "name": "Running"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "cancelled",
-              "name": "Cancelled"
-            }
-          ]
-        }
-      },
       "ClosedState": {
         "enum": [
           "closed"
@@ -68316,33 +69119,6 @@
             {
               "value": "shrink",
               "name": "Shrink"
-            }
-          ]
-        }
-      },
-      "ListBranchVitessParameters200ResponseVtgateItemComponent": {
-        "enum": [
-          "vtgate",
-          "vttablet",
-          "mysqld"
-        ],
-        "type": "string",
-        "description": "The component the parameter configures",
-        "x-ms-enum": {
-          "name": "ListBranchVitessParameters200ResponseVtgateItemComponent",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "vtgate",
-              "name": "Vtgate"
-            },
-            {
-              "value": "vttablet",
-              "name": "Vttablet"
-            },
-            {
-              "value": "mysqld",
-              "name": "Mysqld"
             }
           ]
         }
@@ -71899,6 +72675,7 @@
               "organization:restore_backups": "Restore backups to new branches in an organization",
               "organization:restore_production_branch_backups": "Restore production branch backups to new branches in an organization",
               "organization:write_backups": "Create and update backups in an organization",
+              "organization:write_billing_email": "Update the organization billing email",
               "organization:write_branches": "Write branches in an organization",
               "organization:write_comments": "Create deploy request comments in an organization",
               "organization:write_databases": "Write organization databases",
@@ -71974,6 +72751,10 @@
     {
       "name": "Database Postgres IP restrictions",
       "description": "          Resources for managing Postgres IP restriction entries for databases.\n\n          Note: This endpoint is only available for PostgreSQL databases. For MySQL databases, use the Database Branch Passwords endpoint.\n"
+    },
+    {
+      "name": "Database sleeps",
+      "description": "          Sleep and wake a Postgres database.\n"
     },
     {
       "name": "Databases",
@@ -72096,6 +72877,10 @@
       "description": "          Resources for managing shard-level configuration change requests.\n          Only available for custom-sharded keyspaces.\n"
     },
     {
+      "name": "Database report subscriptions",
+      "description": "            Subscribe to and unsubscribe from a database\u0027s weekly report email.\n"
+    },
+    {
       "name": "Traffic budgets",
       "description": "          Resources for managing traffic budgets.\n"
     },
@@ -72185,6 +72970,13 @@
       "type": "object",
       "description": "The new option values"
     },
+    "VitessParameterDefinitionBranchParametersKeyspaces": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/VitessParameterDefinitionBranchParametersKeyspacesAdditionalProperties"
+      },
+      "description": "The parameters for each keyspace, keyed by keyspace name. Each value has \u0060vttablet\u0060 and \u0060mysqld\u0060 arrays of parameters in the same format as \u0060vtgate\u0060."
+    },
     "ChangeRequestParameters": {
       "type": "object",
       "description": "The parameters requested for the target resource",
@@ -72255,6 +73047,14 @@
     },
     "QueryTagsItem": {
       "type": "object"
+    },
+    "VtctldOperationSerializerMetadata": {
+      "type": "object",
+      "description": "Operation-specific metadata captured when the operation started"
+    },
+    "VtctldOperationSerializerResult": {
+      "type": "object",
+      "description": "Operation-specific result payload, present once the operation succeeds"
     },
     "DeploymentPrecedingDeploymentsItem": {
       "type": "object"
@@ -72432,6 +73232,12 @@
       "description": "The request to revert the schema operations in this deployment",
       "nullable": true
     },
+    "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesVttabletItem": {
+      "type": "object"
+    },
+    "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesMysqldItem": {
+      "type": "object"
+    },
     "PaginatedDatabaseDeployRequestDataItemDeploymentPrecedingDeploymentsItem": {
       "type": "object"
     },
@@ -72458,6 +73264,18 @@
       "type": "array",
       "items": {
         "$ref": "#/components/schemas/ClusterSizeSku"
+      }
+    },
+    "CreateOrganizationDatabaseSubscriptions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Subscription"
+      }
+    },
+    "DeleteOrganizationDatabaseSubscriptions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Subscription"
       }
     },
     "ListAdminSizeSkus200Response": {

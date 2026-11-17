@@ -9,7 +9,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetVtctldOperation200Response : IAdditionalDataHolder, IParsable
+    public partial class VtctldOperationSerializer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -54,15 +54,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the operation has reached a terminal state</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; AdditionalData?.Remove("completed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
-        private string? _explicitNullValueCompleted = default!;
-#nullable restore
-#else
-        public string Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; AdditionalData?.Remove("completed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
-        private string _explicitNullValueCompleted = default!;
-#endif
+        public bool? Completed { get => _explicitNullValueCompleted; set { _explicitNullValueCompleted = value; AdditionalData?.Remove("completed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed"); else _explicitNullProperties?.Remove("completed"); } }
+        private bool? _explicitNullValueCompleted = default!;
         /// <summary>When the operation completed, or null while it is still running</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,26 +99,26 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>Operation-specific metadata captured when the operation started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata? _explicitNullValueMetadata = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata _explicitNullValueMetadata = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Operation-specific result payload, present once the operation succeeds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult? _explicitNullValueResult = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult _explicitNullValueResult = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty _explicitNullValueResult = default!;
 #endif
         /// <summary>The current state of the operation</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseState? _explicitNullValueState = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerState? _explicitNullValueState = default!;
         /// <summary>Timeout in seconds</summary>
         public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
@@ -140,21 +133,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer"/> and sets the default values.
         /// </summary>
-        public GetVtctldOperation200Response()
+        public VtctldOperationSerializer()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200Response(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,14 +158,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "completed", n => { Completed = n.GetStringValue(); } },
+                { "completed", n => { Completed = n.GetBoolValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata>(global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult>(global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult.CreateFromDiscriminatorValue); } },
-                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty.CreateFromDiscriminatorValue); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -185,14 +178,14 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteStringValue("completed", Completed);
+            writer.WriteBoolValue("completed", Completed);
             writer.WriteStringValue("completed_at", CompletedAt);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("error", Error);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseResult>("result", Result);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetVtctldOperation200ResponseState>("state", State);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerMetadataProperty>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerResultProperty>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VtctldOperationSerializerState>("state", State);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteStringValue("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

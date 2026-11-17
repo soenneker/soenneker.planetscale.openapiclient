@@ -9,7 +9,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetInstantTabletMetrics200Response : IAdditionalDataHolder, IParsable
+    public partial class HorizonInstantMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -30,22 +30,22 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch? _explicitNullValueBranch = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch _explicitNullValueBranch = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch _explicitNullValueBranch = default!;
 #endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem>? _explicitNullValueMetrics = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem>? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
-        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem> _explicitNullValueMetrics = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; AdditionalData?.Remove("metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem> _explicitNullValueMetrics = default!;
 #endif
         /// <summary>The metrics response type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,21 +58,21 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetrics"/> and sets the default values.
         /// </summary>
-        public GetInstantTabletMetrics200Response()
+        public HorizonInstantMetrics()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetrics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200Response(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,8 +82,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branch", n => { Branch = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch>(global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch.CreateFromDiscriminatorValue); } },
-                { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "branch", n => { Branch = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch>(global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch.CreateFromDiscriminatorValue); } },
+                { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -94,8 +94,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseBranch>("branch", Branch);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.GetInstantTabletMetrics200ResponseMetricsItem>("metrics", Metrics);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsBranch>("branch", Branch);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.HorizonInstantMetricsMetricsItem>("metrics", Metrics);
             writer.WriteStringValue("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

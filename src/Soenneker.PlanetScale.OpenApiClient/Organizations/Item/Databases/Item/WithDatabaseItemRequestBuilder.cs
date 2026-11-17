@@ -14,6 +14,7 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Main
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.ReadOnlyRegions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Regions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.SchemaRecommendations;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Subscription;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Throttler;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Webhooks;
 using System.Collections.Generic;
@@ -78,6 +79,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.SchemaRecommendations.SchemaRecommendationsRequestBuilder SchemaRecommendations
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.SchemaRecommendations.SchemaRecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The subscription property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Subscription.SubscriptionRequestBuilder Subscription
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Subscription.SubscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The throttler property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Throttler.ThrottlerRequestBuilder Throttler
