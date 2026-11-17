@@ -1158,7 +1158,7 @@
           "Databases"
         ],
         "summary": "List databases",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabases",
         "parameters": [
           {
@@ -1397,7 +1397,7 @@
           "Databases"
         ],
         "summary": "Get a database",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "GetDatabase",
         "parameters": [
           {
@@ -11497,6 +11497,770 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PaginatedQuerySummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs": {
+      "get": {
+        "tags": [
+          "InsightsAgentRuns"
+        ],
+        "summary": "List Insights Agent runs",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "ListInsightsAgentRuns",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fingerprint",
+            "in": "query",
+            "description": "Only return runs for the slow query with this fingerprint",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyspace",
+            "in": "query",
+            "description": "Only return runs for the slow query in this keyspace. Requires :fingerprint to also be set",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "schema_recommendation",
+            "in": "query",
+            "description": "Only return runs for the schema recommendation with this number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "If provided, specifies the page offset of returned results",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "If provided, specifies the number of returned results",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns Insights Agent runs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedInsightsAgentRun"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "InsightsAgentRuns"
+        ],
+        "summary": "Create an Insights Agent run",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_insights_agents\u0060 |\n| Database | \u0060write_insights_agent\u0060 |",
+        "operationId": "CreateInsightsAgentRun",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInsightsAgentRunRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Returns the created Insights Agent run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRun"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the created Insights Agent run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRun"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs/{number}": {
+      "get": {
+        "tags": [
+          "InsightsAgentRuns"
+        ],
+        "summary": "Get an Insights Agent run",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "GetInsightsAgentRun",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "number",
+            "in": "path",
+            "description": "The Insights Agent run number",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns an Insights Agent run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRun"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs/{number}/cancel": {
+      "post": {
+        "tags": [
+          "InsightsAgentRuns"
+        ],
+        "summary": "Cancel an Insights Agent run",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_insights_agents\u0060 |\n| Database | \u0060write_insights_agent\u0060 |",
+        "operationId": "CancelInsightsAgentRun",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "number",
+            "in": "path",
+            "description": "The Insights Agent run number",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the cancelled Insights Agent run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRun"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/schedules": {
+      "get": {
+        "tags": [
+          "Insights Agent schedules"
+        ],
+        "summary": "List Insights Agent schedules",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "ListInsightsAgentSchedules",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns Insights Agent schedules",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListInsightsAgentSchedules200ResponseSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/schedules/{runType}": {
+      "patch": {
+        "tags": [
+          "Insights Agent schedules"
+        ],
+        "summary": "Update an Insights Agent schedule",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_insights_agents\u0060 |\n| Database | \u0060write_insights_agent\u0060 |",
+        "operationId": "UpdateInsightsAgentSchedule",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "runType",
+            "in": "path",
+            "description": "The scheduled run type",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UpdateInsightsAgentScheduleRunTypeParameter"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInsightsAgentScheduleRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the updated Insights Agent schedule",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentSchedule"
                 }
               }
             }
@@ -30709,7 +31473,7 @@
           "Databases"
         ],
         "summary": "List read-only regions",
-        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
+        "description": "List read-only regions for the database\u0027s default branch\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |",
         "operationId": "ListReadOnlyRegions",
         "parameters": [
           {
@@ -30829,7 +31593,7 @@
           "Databases"
         ],
         "summary": "List database regions",
-        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_database\u0060, \u0060delete_database\u0060, \u0060write_database\u0060, \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060rename_branch\u0060, \u0060promote_branches\u0060, \u0060demote_branches\u0060, \u0060delete_production_branch\u0060, \u0060connect_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_production_read_only_branch\u0060, \u0060delete_branch_password\u0060, \u0060delete_production_branch_password\u0060, \u0060delete_production_read_only_branch_password\u0060, \u0060read_deploy_request\u0060, \u0060create_deploy_request\u0060, \u0060approve_deploy_request\u0060, \u0060read_comment\u0060, \u0060create_comment\u0060, \u0060restore_backup\u0060, \u0060restore_production_branch_backup\u0060, \u0060read_backups\u0060, \u0060write_backups\u0060, \u0060delete_backups\u0060, \u0060delete_production_branch_backups\u0060, \u0060write_branch_vschema\u0060, \u0060write_production_branch_vschema\u0060, \u0060write_branch_topology\u0060, \u0060write_production_branch_topology\u0060, \u0060read_workflow\u0060, \u0060write_workflow\u0060, \u0060delete_workflow\u0060, \u0060read_insights_agent\u0060, \u0060write_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
         "operationId": "ListDatabaseRegions",
         "parameters": [
           {
@@ -33509,16 +34273,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ResponseError"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Unprocessable Entity",
             "content": {
@@ -33541,6 +34295,16 @@
           },
           "500": {
             "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User does not have permission to perform this action.",
             "content": {
               "application/json": {
                 "schema": {
@@ -40284,6 +41048,276 @@
           }
         }
       },
+      "PaginatedInsightsAgentRun": {
+        "required": [
+          "type",
+          "current_page",
+          "per_page",
+          "next_page",
+          "next_page_url",
+          "prev_page",
+          "prev_page_url",
+          "total_count",
+          "total_pages",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The response type. Always \u0022list\u0022 for paginated responses."
+          },
+          "current_page": {
+            "type": "integer",
+            "description": "The current page number"
+          },
+          "per_page": {
+            "type": "integer",
+            "description": "The maximum number of results per page"
+          },
+          "next_page": {
+            "type": "integer",
+            "description": "The next page number, or null when this is the last page",
+            "nullable": true
+          },
+          "next_page_url": {
+            "type": "string",
+            "description": "The next page of results, or null when this is the last page",
+            "nullable": true
+          },
+          "prev_page": {
+            "type": "integer",
+            "description": "The previous page number, or null when this is the first page",
+            "nullable": true
+          },
+          "prev_page_url": {
+            "type": "string",
+            "description": "The previous page of results, or null when this is the first page",
+            "nullable": true
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "The total number of matching results"
+          },
+          "total_pages": {
+            "type": "integer",
+            "description": "The total number of pages of matching results"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItem"
+            }
+          }
+        }
+      },
+      "InsightsAgentRun": {
+        "required": [
+          "id",
+          "number",
+          "run_type",
+          "state",
+          "outcome",
+          "title",
+          "summary",
+          "html_summary",
+          "failure_message",
+          "html_url",
+          "actor",
+          "branch",
+          "schedule",
+          "repository",
+          "query_patterns",
+          "schema_recommendations",
+          "pull_request",
+          "suggestions",
+          "cost",
+          "agent_model",
+          "submitted_at",
+          "started_at",
+          "finished_at",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The Insights agent run ID"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the Insights agent run"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/InsightsAgentRunRunType"
+          },
+          "state": {
+            "$ref": "#/components/schemas/InsightsAgentRunState"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/InsightsAgentRunOutcome"
+          },
+          "title": {
+            "type": "string",
+            "description": "The agent result title",
+            "nullable": true
+          },
+          "summary": {
+            "type": "string",
+            "description": "The summary of the run",
+            "nullable": true
+          },
+          "html_summary": {
+            "type": "string",
+            "description": "The summary rendered as sanitized HTML",
+            "nullable": true
+          },
+          "failure_message": {
+            "type": "string",
+            "description": "Why the run failed or was cancelled",
+            "nullable": true
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the run"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/InsightsAgentRunActor"
+          },
+          "branch": {
+            "$ref": "#/components/schemas/InsightsAgentRunBranch"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/InsightsAgentRunSchedule"
+          },
+          "repository": {
+            "$ref": "#/components/schemas/InsightsAgentRunRepositoryProperty"
+          },
+          "query_patterns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InsightsAgentRunQueryPatternsItem"
+            }
+          },
+          "schema_recommendations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InsightsAgentRunSchemaRecommendationsItem"
+            }
+          },
+          "pull_request": {
+            "$ref": "#/components/schemas/InsightsAgentRunPullRequest"
+          },
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItem"
+            }
+          },
+          "cost": {
+            "type": "string",
+            "description": "The run cost",
+            "nullable": true
+          },
+          "agent_model": {
+            "type": "string",
+            "description": "The model the agent used"
+          },
+          "attempt": {
+            "type": "integer",
+            "description": "The run\u0027s latest attempt, starting at 1, once it has reported a stage",
+            "nullable": true
+          },
+          "stages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InsightsAgentRunStagesItem"
+            },
+            "nullable": true
+          },
+          "submitted_at": {
+            "type": "string",
+            "description": "When the run was sent to the agent",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When execution started",
+            "nullable": true
+          },
+          "finished_at": {
+            "type": "string",
+            "description": "When execution finished",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the run was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the run was last updated"
+          }
+        }
+      },
+      "InsightsAgentSchedule": {
+        "required": [
+          "id",
+          "run_type",
+          "enabled",
+          "frequency_unit",
+          "schedule_time",
+          "time_zone",
+          "day_of_week",
+          "day_of_month",
+          "next_run_at",
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The schedule ID"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/InsightsAgentScheduleRunType"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the schedule is enabled"
+          },
+          "frequency_unit": {
+            "$ref": "#/components/schemas/InsightsAgentScheduleFrequencyUnit"
+          },
+          "schedule_time": {
+            "type": "string",
+            "description": "The local time of day in HH:MM format"
+          },
+          "time_zone": {
+            "type": "string",
+            "description": "The IANA time zone"
+          },
+          "day_of_week": {
+            "type": "integer",
+            "description": "The day of the week for weekly schedules, from 0 (Sunday) to 6 (Saturday)",
+            "nullable": true
+          },
+          "day_of_month": {
+            "type": "integer",
+            "description": "The day of the month for monthly schedules, from 1 to 31. Shorter months run on their last day.",
+            "nullable": true
+          },
+          "next_run_at": {
+            "type": "string",
+            "description": "When the schedule will run next",
+            "nullable": true
+          },
+          "actor": {
+            "$ref": "#/components/schemas/InsightsAgentScheduleActor"
+          }
+        }
+      },
       "PaginatedKeyspaceConfigChangeRequest": {
         "required": [
           "type",
@@ -43923,7 +44957,8 @@
           },
           "private_connection_service_name": {
             "type": "string",
-            "description": "The service name to set up private connectivity"
+            "description": "The service name to set up private connectivity",
+            "nullable": true
           },
           "username": {
             "type": "string",
@@ -48978,6 +50013,524 @@
           }
         }
       },
+      "PaginatedInsightsAgentRunDataItem": {
+        "required": [
+          "id",
+          "number",
+          "run_type",
+          "state",
+          "outcome",
+          "title",
+          "summary",
+          "html_summary",
+          "failure_message",
+          "html_url",
+          "actor",
+          "branch",
+          "schedule",
+          "repository",
+          "query_patterns",
+          "schema_recommendations",
+          "pull_request",
+          "suggestions",
+          "cost",
+          "agent_model",
+          "submitted_at",
+          "started_at",
+          "finished_at",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The Insights agent run ID"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the Insights agent run"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemRunType"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemState"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemOutcome"
+          },
+          "title": {
+            "type": "string",
+            "description": "The agent result title",
+            "nullable": true
+          },
+          "summary": {
+            "type": "string",
+            "description": "The summary of the run",
+            "nullable": true
+          },
+          "html_summary": {
+            "type": "string",
+            "description": "The summary rendered as sanitized HTML",
+            "nullable": true
+          },
+          "failure_message": {
+            "type": "string",
+            "description": "Why the run failed or was cancelled",
+            "nullable": true
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the run"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemActor"
+          },
+          "branch": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemBranch"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSchedule"
+          },
+          "repository": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemRepositoryProperty"
+          },
+          "query_patterns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemQueryPatternsItem"
+            }
+          },
+          "schema_recommendations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSchemaRecommendationsItem"
+            }
+          },
+          "pull_request": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemPullRequest"
+          },
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItem"
+            }
+          },
+          "cost": {
+            "type": "string",
+            "description": "The run cost",
+            "nullable": true
+          },
+          "agent_model": {
+            "type": "string",
+            "description": "The model the agent used"
+          },
+          "attempt": {
+            "type": "integer",
+            "description": "The run\u0027s latest attempt, starting at 1, once it has reported a stage",
+            "nullable": true
+          },
+          "stages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemStagesItem"
+            },
+            "nullable": true
+          },
+          "submitted_at": {
+            "type": "string",
+            "description": "When the run was sent to the agent",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When execution started",
+            "nullable": true
+          },
+          "finished_at": {
+            "type": "string",
+            "description": "When execution finished",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the run was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the run was last updated"
+          }
+        }
+      },
+      "InsightsAgentRunActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
+      "InsightsAgentRunBranch": {
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "deleted_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID for the resource"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the resource"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the resource was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the resource was last updated"
+          },
+          "deleted_at": {
+            "type": "string",
+            "description": "When the resource was deleted, if deleted",
+            "nullable": true
+          }
+        }
+      },
+      "InsightsAgentRunSchedule": {
+        "required": [
+          "id",
+          "run_type",
+          "enabled",
+          "frequency_unit",
+          "schedule_time",
+          "time_zone",
+          "day_of_week",
+          "day_of_month",
+          "next_run_at",
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The schedule ID"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/InsightsAgentRunScheduleRunType"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the schedule is enabled"
+          },
+          "frequency_unit": {
+            "$ref": "#/components/schemas/InsightsAgentRunScheduleFrequencyUnit"
+          },
+          "schedule_time": {
+            "type": "string",
+            "description": "The local time of day in HH:MM format"
+          },
+          "time_zone": {
+            "type": "string",
+            "description": "The IANA time zone"
+          },
+          "day_of_week": {
+            "type": "integer",
+            "description": "The day of the week for weekly schedules, from 0 (Sunday) to 6 (Saturday)",
+            "nullable": true
+          },
+          "day_of_month": {
+            "type": "integer",
+            "description": "The day of the month for monthly schedules, from 1 to 31. Shorter months run on their last day.",
+            "nullable": true
+          },
+          "next_run_at": {
+            "type": "string",
+            "description": "When the schedule will run next",
+            "nullable": true
+          },
+          "actor": {
+            "$ref": "#/components/schemas/InsightsAgentRunScheduleActor"
+          }
+        },
+        "nullable": true
+      },
+      "InsightsAgentRunQueryPatternsItem": {
+        "required": [
+          "fingerprint",
+          "keyspace",
+          "normalized_sql",
+          "normalized_sql_highlighted",
+          "html_url",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "fingerprint": {
+            "type": "string",
+            "description": "The fingerprint of the query pattern"
+          },
+          "keyspace": {
+            "type": "string",
+            "description": "The keyspace the query pattern runs against"
+          },
+          "normalized_sql": {
+            "type": "string",
+            "description": "The query pattern\u0027s normalized SQL, once it has been read from Insights",
+            "nullable": true
+          },
+          "normalized_sql_highlighted": {
+            "type": "string",
+            "description": "The query pattern\u0027s normalized SQL rendered as syntax-highlighted HTML",
+            "nullable": true
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the query pattern\u0027s insights"
+          },
+          "url": {
+            "type": "string",
+            "description": "The PlanetScale API URL for the query pattern\u0027s insights"
+          }
+        }
+      },
+      "InsightsAgentRunSchemaRecommendationsItem": {
+        "required": [
+          "id",
+          "number",
+          "title",
+          "state",
+          "html_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the schema recommendation"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the schema recommendation"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the schema recommendation"
+          },
+          "state": {
+            "$ref": "#/components/schemas/InsightsAgentRunSchemaRecommendationsItemState"
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the schema recommendation"
+          }
+        }
+      },
+      "InsightsAgentRunPullRequest": {
+        "required": [
+          "number",
+          "url",
+          "state",
+          "merged_at",
+          "closed_at",
+          "deploy_request"
+        ],
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "description": "The pull request number"
+          },
+          "url": {
+            "type": "string",
+            "description": "The pull request URL"
+          },
+          "state": {
+            "$ref": "#/components/schemas/InsightsAgentRunPullRequestState"
+          },
+          "merged_at": {
+            "type": "string",
+            "description": "When the pull request was merged",
+            "nullable": true
+          },
+          "closed_at": {
+            "type": "string",
+            "description": "When the pull request was closed",
+            "nullable": true
+          },
+          "deploy_request": {
+            "$ref": "#/components/schemas/InsightsAgentRunPullRequestDeployRequest"
+          }
+        },
+        "nullable": true
+      },
+      "InsightsAgentRunSuggestionsItem": {
+        "required": [
+          "id",
+          "kind",
+          "target",
+          "parameter",
+          "current_value",
+          "proposed_value",
+          "rationale",
+          "html_rationale",
+          "evidence",
+          "risk",
+          "restart_required",
+          "monthly_cost_delta_cents",
+          "state",
+          "expires_at",
+          "error",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the suggestion"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemKind"
+          },
+          "target": {
+            "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemTargetProperty"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemParameterProperty"
+          },
+          "current_value": {
+            "type": "string",
+            "description": "The value when the suggestion was last checked",
+            "nullable": true
+          },
+          "proposed_value": {
+            "type": "string",
+            "description": "The suggested value. A cluster size name, a replica count, or a parameter value."
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Why the agent suggests the change"
+          },
+          "html_rationale": {
+            "type": "string",
+            "description": "The rationale rendered as sanitized HTML"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemEvidenceItemProperty"
+            },
+            "description": "The measurements behind the suggestion, each with a metric, statistic, value, and unit"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemRisk"
+          },
+          "restart_required": {
+            "type": "boolean",
+            "description": "Whether applying the suggestion restarts or replaces database instances"
+          },
+          "monthly_cost_delta_cents": {
+            "type": "integer",
+            "description": "The estimated change in monthly cost, in cents",
+            "nullable": true
+          },
+          "state": {
+            "$ref": "#/components/schemas/InsightsAgentRunSuggestionsItemState"
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "When the suggestion can no longer be accepted"
+          },
+          "error": {
+            "type": "string",
+            "description": "Why the suggestion could not be applied",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the suggestion was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the suggestion was last updated"
+          }
+        }
+      },
+      "InsightsAgentRunStagesItem": {
+        "required": [
+          "name",
+          "status",
+          "message",
+          "started_at",
+          "finished_at"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/InsightsAgentRunStagesItemName"
+          },
+          "status": {
+            "$ref": "#/components/schemas/InsightsAgentRunStagesItemStatus"
+          },
+          "message": {
+            "type": "string",
+            "description": "Why the stage ended the way it did, such as why a deploy request couldn\u0027t be opened",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When the stage started"
+          },
+          "finished_at": {
+            "type": "string",
+            "description": "When the stage finished",
+            "nullable": true
+          }
+        }
+      },
+      "InsightsAgentScheduleActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
       "PaginatedKeyspaceConfigChangeRequestDataItem": {
         "required": [
           "id",
@@ -52518,7 +54071,8 @@
           },
           "private_connection_service_name": {
             "type": "string",
-            "description": "The service name to set up private connectivity"
+            "description": "The service name to set up private connectivity",
+            "nullable": true
           },
           "username": {
             "type": "string",
@@ -53614,8 +55168,10 @@
             "description": "When the deploy operation summary was created"
           },
           "deploy_errors": {
-            "type": "string",
-            "description": "Deploy errors for the deploy operation summary"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeploymentDeployOperationSummariesItemDeployErrorsItem"
+            }
           },
           "ddl_statement": {
             "type": "string",
@@ -53623,7 +55179,8 @@
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation summary"
+            "description": "The estimated seconds until completion for the deploy operation summary",
+            "nullable": true
           },
           "keyspace_name": {
             "type": "string",
@@ -54180,7 +55737,7 @@
             "description": "The ID for the line item"
           },
           "subtotal": {
-            "type": "number",
+            "type": "string",
             "description": "The total for the line item"
           },
           "description": {
@@ -55993,6 +57550,397 @@
           }
         }
       },
+      "PaginatedInsightsAgentRunDataItemActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemBranch": {
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at",
+          "deleted_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID for the resource"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name for the resource"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the resource was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the resource was last updated"
+          },
+          "deleted_at": {
+            "type": "string",
+            "description": "When the resource was deleted, if deleted",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSchedule": {
+        "required": [
+          "id",
+          "run_type",
+          "enabled",
+          "frequency_unit",
+          "schedule_time",
+          "time_zone",
+          "day_of_week",
+          "day_of_month",
+          "next_run_at",
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The schedule ID"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemScheduleRunType"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the schedule is enabled"
+          },
+          "frequency_unit": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemScheduleFrequencyUnit"
+          },
+          "schedule_time": {
+            "type": "string",
+            "description": "The local time of day in HH:MM format"
+          },
+          "time_zone": {
+            "type": "string",
+            "description": "The IANA time zone"
+          },
+          "day_of_week": {
+            "type": "integer",
+            "description": "The day of the week for weekly schedules, from 0 (Sunday) to 6 (Saturday)",
+            "nullable": true
+          },
+          "day_of_month": {
+            "type": "integer",
+            "description": "The day of the month for monthly schedules, from 1 to 31. Shorter months run on their last day.",
+            "nullable": true
+          },
+          "next_run_at": {
+            "type": "string",
+            "description": "When the schedule will run next",
+            "nullable": true
+          },
+          "actor": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemScheduleActor"
+          }
+        },
+        "nullable": true
+      },
+      "PaginatedInsightsAgentRunDataItemQueryPatternsItem": {
+        "required": [
+          "fingerprint",
+          "keyspace",
+          "normalized_sql",
+          "normalized_sql_highlighted",
+          "html_url",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "fingerprint": {
+            "type": "string",
+            "description": "The fingerprint of the query pattern"
+          },
+          "keyspace": {
+            "type": "string",
+            "description": "The keyspace the query pattern runs against"
+          },
+          "normalized_sql": {
+            "type": "string",
+            "description": "The query pattern\u0027s normalized SQL, once it has been read from Insights",
+            "nullable": true
+          },
+          "normalized_sql_highlighted": {
+            "type": "string",
+            "description": "The query pattern\u0027s normalized SQL rendered as syntax-highlighted HTML",
+            "nullable": true
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the query pattern\u0027s insights"
+          },
+          "url": {
+            "type": "string",
+            "description": "The PlanetScale API URL for the query pattern\u0027s insights"
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSchemaRecommendationsItem": {
+        "required": [
+          "id",
+          "number",
+          "title",
+          "state",
+          "html_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the schema recommendation"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the schema recommendation"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the schema recommendation"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSchemaRecommendationsItemState"
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app URL for the schema recommendation"
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemPullRequest": {
+        "required": [
+          "number",
+          "url",
+          "state",
+          "merged_at",
+          "closed_at",
+          "deploy_request"
+        ],
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "description": "The pull request number"
+          },
+          "url": {
+            "type": "string",
+            "description": "The pull request URL"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemPullRequestState"
+          },
+          "merged_at": {
+            "type": "string",
+            "description": "When the pull request was merged",
+            "nullable": true
+          },
+          "closed_at": {
+            "type": "string",
+            "description": "When the pull request was closed",
+            "nullable": true
+          },
+          "deploy_request": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemPullRequestDeployRequest"
+          }
+        },
+        "nullable": true
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItem": {
+        "required": [
+          "id",
+          "kind",
+          "target",
+          "parameter",
+          "current_value",
+          "proposed_value",
+          "rationale",
+          "html_rationale",
+          "evidence",
+          "risk",
+          "restart_required",
+          "monthly_cost_delta_cents",
+          "state",
+          "expires_at",
+          "error",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the suggestion"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemKind"
+          },
+          "target": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemTargetProperty"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemParameterProperty"
+          },
+          "current_value": {
+            "type": "string",
+            "description": "The value when the suggestion was last checked",
+            "nullable": true
+          },
+          "proposed_value": {
+            "type": "string",
+            "description": "The suggested value. A cluster size name, a replica count, or a parameter value."
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Why the agent suggests the change"
+          },
+          "html_rationale": {
+            "type": "string",
+            "description": "The rationale rendered as sanitized HTML"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemEvidenceItemProperty"
+            },
+            "description": "The measurements behind the suggestion, each with a metric, statistic, value, and unit"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemRisk"
+          },
+          "restart_required": {
+            "type": "boolean",
+            "description": "Whether applying the suggestion restarts or replaces database instances"
+          },
+          "monthly_cost_delta_cents": {
+            "type": "integer",
+            "description": "The estimated change in monthly cost, in cents",
+            "nullable": true
+          },
+          "state": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemSuggestionsItemState"
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "When the suggestion can no longer be accepted"
+          },
+          "error": {
+            "type": "string",
+            "description": "Why the suggestion could not be applied",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the suggestion was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the suggestion was last updated"
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemStagesItem": {
+        "required": [
+          "name",
+          "status",
+          "message",
+          "started_at",
+          "finished_at"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemStagesItemName"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemStagesItemStatus"
+          },
+          "message": {
+            "type": "string",
+            "description": "Why the stage ended the way it did, such as why a deploy request couldn\u0027t be opened",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When the stage started"
+          },
+          "finished_at": {
+            "type": "string",
+            "description": "When the stage finished",
+            "nullable": true
+          }
+        }
+      },
+      "InsightsAgentRunScheduleActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
+      "InsightsAgentRunPullRequestDeployRequest": {
+        "required": [
+          "id",
+          "number",
+          "html_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the deploy request"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the deploy request"
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app address for the deploy request"
+          }
+        },
+        "nullable": true
+      },
       "PaginatedKeyspaceConfigChangeRequestDataItemActor": {
         "required": [
           "id",
@@ -57728,8 +59676,10 @@
             "description": "When the deploy operation summary was created"
           },
           "deploy_errors": {
-            "type": "string",
-            "description": "Deploy errors for the deploy operation summary"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatabaseDeployRequestDeploymentDeployOperationSummariesItemDeployErrorsItem"
+            }
           },
           "ddl_statement": {
             "type": "string",
@@ -57737,7 +59687,8 @@
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation summary"
+            "description": "The estimated seconds until completion for the deploy operation summary",
+            "nullable": true
           },
           "keyspace_name": {
             "type": "string",
@@ -57879,6 +59830,29 @@
         },
         "nullable": true
       },
+      "DeploymentDeployOperationSummariesItemDeployErrorsItem": {
+        "required": [
+          "shard",
+          "message",
+          "docs_url"
+        ],
+        "type": "object",
+        "properties": {
+          "shard": {
+            "type": "string",
+            "description": "The shard the deploy error occurred on"
+          },
+          "message": {
+            "type": "string",
+            "description": "The deploy error message"
+          },
+          "docs_url": {
+            "type": "string",
+            "description": "A link to documentation explaining the deploy error, if present",
+            "nullable": true
+          }
+        }
+      },
       "DeploymentDeployOperationSummariesItemOperationsItem": {
         "required": [
           "id",
@@ -57902,11 +59876,13 @@
           },
           "progress_percentage": {
             "type": "number",
-            "description": "The percent completion for the deploy operation"
+            "description": "The percent completion for the deploy operation",
+            "nullable": true
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation"
+            "description": "The estimated seconds until completion for the deploy operation",
+            "nullable": true
           }
         }
       },
@@ -58055,8 +60031,10 @@
             "description": "When the deploy operation summary was created"
           },
           "deploy_errors": {
-            "type": "string",
-            "description": "Deploy errors for the deploy operation summary"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedDeploymentDataItemDeployOperationSummariesItemDeployErrorsItem"
+            }
           },
           "ddl_statement": {
             "type": "string",
@@ -58064,7 +60042,8 @@
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation summary"
+            "description": "The estimated seconds until completion for the deploy operation summary",
+            "nullable": true
           },
           "keyspace_name": {
             "type": "string",
@@ -58899,6 +60878,51 @@
           }
         }
       },
+      "PaginatedInsightsAgentRunDataItemScheduleActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemPullRequestDeployRequest": {
+        "required": [
+          "id",
+          "number",
+          "html_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the deploy request"
+          },
+          "number": {
+            "type": "integer",
+            "description": "The number of the deploy request"
+          },
+          "html_url": {
+            "type": "string",
+            "description": "The PlanetScale app address for the deploy request"
+          }
+        },
+        "nullable": true
+      },
       "PaginatedServiceTokenDataItemServiceTokenAccessesItemResource": {
         "required": [
           "id",
@@ -59499,8 +61523,10 @@
             "description": "When the deploy operation summary was created"
           },
           "deploy_errors": {
-            "type": "string",
-            "description": "Deploy errors for the deploy operation summary"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem"
+            }
           },
           "ddl_statement": {
             "type": "string",
@@ -59508,7 +61534,8 @@
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation summary"
+            "description": "The estimated seconds until completion for the deploy operation summary",
+            "nullable": true
           },
           "keyspace_name": {
             "type": "string",
@@ -59650,6 +61677,29 @@
         },
         "nullable": true
       },
+      "DatabaseDeployRequestDeploymentDeployOperationSummariesItemDeployErrorsItem": {
+        "required": [
+          "shard",
+          "message",
+          "docs_url"
+        ],
+        "type": "object",
+        "properties": {
+          "shard": {
+            "type": "string",
+            "description": "The shard the deploy error occurred on"
+          },
+          "message": {
+            "type": "string",
+            "description": "The deploy error message"
+          },
+          "docs_url": {
+            "type": "string",
+            "description": "A link to documentation explaining the deploy error, if present",
+            "nullable": true
+          }
+        }
+      },
       "DatabaseDeployRequestDeploymentDeployOperationSummariesItemOperationsItem": {
         "required": [
           "id",
@@ -59673,11 +61723,36 @@
           },
           "progress_percentage": {
             "type": "number",
-            "description": "The percent completion for the deploy operation"
+            "description": "The percent completion for the deploy operation",
+            "nullable": true
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation"
+            "description": "The estimated seconds until completion for the deploy operation",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedDeploymentDataItemDeployOperationSummariesItemDeployErrorsItem": {
+        "required": [
+          "shard",
+          "message",
+          "docs_url"
+        ],
+        "type": "object",
+        "properties": {
+          "shard": {
+            "type": "string",
+            "description": "The shard the deploy error occurred on"
+          },
+          "message": {
+            "type": "string",
+            "description": "The deploy error message"
+          },
+          "docs_url": {
+            "type": "string",
+            "description": "A link to documentation explaining the deploy error, if present",
+            "nullable": true
           }
         }
       },
@@ -59704,11 +61779,13 @@
           },
           "progress_percentage": {
             "type": "number",
-            "description": "The percent completion for the deploy operation"
+            "description": "The percent completion for the deploy operation",
+            "nullable": true
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation"
+            "description": "The estimated seconds until completion for the deploy operation",
+            "nullable": true
           }
         }
       },
@@ -60096,6 +62173,29 @@
           }
         }
       },
+      "PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem": {
+        "required": [
+          "shard",
+          "message",
+          "docs_url"
+        ],
+        "type": "object",
+        "properties": {
+          "shard": {
+            "type": "string",
+            "description": "The shard the deploy error occurred on"
+          },
+          "message": {
+            "type": "string",
+            "description": "The deploy error message"
+          },
+          "docs_url": {
+            "type": "string",
+            "description": "A link to documentation explaining the deploy error, if present",
+            "nullable": true
+          }
+        }
+      },
       "PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemOperationsItem": {
         "required": [
           "id",
@@ -60119,11 +62219,13 @@
           },
           "progress_percentage": {
             "type": "number",
-            "description": "The percent completion for the deploy operation"
+            "description": "The percent completion for the deploy operation",
+            "nullable": true
           },
           "eta_seconds": {
             "type": "integer",
-            "description": "The estimated seconds until completion for the deploy operation"
+            "description": "The estimated seconds until completion for the deploy operation",
+            "nullable": true
           }
         }
       },
@@ -60845,6 +62947,56 @@
           "replicas": {
             "type": "integer",
             "description": "Postgres replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. Changing the replica count requires write_database."
+          }
+        }
+      },
+      "CreateInsightsAgentRunRequest": {
+        "type": "object",
+        "properties": {
+          "query_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The slow query patterns to review, each identified by its fingerprint and keyspace"
+          },
+          "schema_recommendations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The numbers of the schema recommendations to implement"
+          },
+          "run_type": {
+            "$ref": "#/components/schemas/CreateInsightsAgentRunRequestRunType"
+          }
+        }
+      },
+      "UpdateInsightsAgentScheduleRequest": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the schedule is enabled"
+          },
+          "frequency_unit": {
+            "$ref": "#/components/schemas/UpdateInsightsAgentScheduleRequestFrequencyUnit"
+          },
+          "schedule_time": {
+            "type": "string",
+            "description": "The local time of day in HH:MM format"
+          },
+          "time_zone": {
+            "type": "string",
+            "description": "The IANA time zone"
+          },
+          "day_of_week": {
+            "type": "integer",
+            "description": "The day of the week for weekly schedules, from 0 (Sunday) to 6 (Saturday)"
+          },
+          "day_of_month": {
+            "type": "integer",
+            "description": "The day of the month for monthly schedules, from 1 to 31. Shorter months run on their last day."
           }
         }
       },
@@ -61992,6 +64144,12 @@
           "$ref": "#/components/schemas/PostgresExtension"
         }
       },
+      "ListInsightsAgentSchedules200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/InsightsAgentSchedule"
+        }
+      },
       "ListParameters200ResponseSchema": {
         "type": "array",
         "items": {
@@ -62077,6 +64235,11 @@
       "DatabaseBranchKeyspaceVttabletOptionsProperty": {
         "type": "object",
         "description": "VTTablet configuration options"
+      },
+      "InsightsAgentRunRepositoryProperty": {
+        "type": "object",
+        "description": "The repository snapshot and analyzed commit, null when the run has no repository",
+        "nullable": true
       },
       "KeyspaceConfigChangeRequestPreviousOptionsProperty": {
         "type": "object",
@@ -62204,6 +64367,23 @@
         "type": "object",
         "description": "VTTablet configuration options"
       },
+      "PaginatedInsightsAgentRunDataItemRepositoryProperty": {
+        "type": "object",
+        "description": "The repository snapshot and analyzed commit, null when the run has no repository",
+        "nullable": true
+      },
+      "InsightsAgentRunSuggestionsItemTargetProperty": {
+        "type": "object",
+        "description": "The cluster, keyspace, or VTGates the suggestion changes. Keyspace targets include the keyspace name."
+      },
+      "InsightsAgentRunSuggestionsItemParameterProperty": {
+        "type": "object",
+        "description": "The parameter\u0027s namespace and name, for parameter suggestions",
+        "nullable": true
+      },
+      "InsightsAgentRunSuggestionsItemEvidenceItemProperty": {
+        "type": "object"
+      },
       "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptionsProperty": {
         "type": "object",
         "description": "The previous option values"
@@ -62315,6 +64495,18 @@
         "type": "object"
       },
       "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesMysqldItemProperty": {
+        "type": "object"
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemTargetProperty": {
+        "type": "object",
+        "description": "The cluster, keyspace, or VTGates the suggestion changes. Keyspace targets include the keyspace name."
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemParameterProperty": {
+        "type": "object",
+        "description": "The parameter\u0027s namespace and name, for parameter suggestions",
+        "nullable": true
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemEvidenceItemProperty": {
         "type": "object"
       },
       "PaginatedDatabaseDeployRequestDataItemDeploymentPrecedingDeploymentsItemProperty": {
@@ -63478,6 +65670,162 @@
           ]
         }
       },
+      "InsightsAgentRunRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The work performed by the run",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunState": {
+        "enum": [
+          "pending",
+          "submitting",
+          "running",
+          "completed",
+          "failed",
+          "cancelled",
+          "skipped"
+        ],
+        "type": "string",
+        "description": "The run state",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "submitting",
+              "name": "Submitting"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "cancelled",
+              "name": "Cancelled"
+            },
+            {
+              "value": "skipped",
+              "name": "Skipped"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunOutcome": {
+        "enum": [
+          "changed",
+          "no_change",
+          "suggestions"
+        ],
+        "type": "string",
+        "description": "What a completed run produced: changed code, branch tuning suggestions, or no change",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "InsightsAgentRunOutcome",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "changed",
+              "name": "Changed"
+            },
+            {
+              "value": "no_change",
+              "name": "NoChange"
+            },
+            {
+              "value": "suggestions",
+              "name": "Suggestions"
+            }
+          ]
+        }
+      },
+      "InsightsAgentScheduleRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The scheduled run type",
+        "x-ms-enum": {
+          "name": "InsightsAgentScheduleRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "InsightsAgentScheduleFrequencyUnit": {
+        "enum": [
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "description": "The cadence unit",
+        "x-ms-enum": {
+          "name": "InsightsAgentScheduleFrequencyUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
       "KeyspaceConfigChangeRequestState": {
         "enum": [
           "draft",
@@ -63903,8 +66251,9 @@
       },
       "OrganizationMembershipRole": {
         "enum": [
-          "member",
-          "admin"
+          "admin",
+          "analyst",
+          "member"
         ],
         "type": "string",
         "description": "The role of the user in the organization",
@@ -63913,12 +66262,16 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "member",
-              "name": "Member"
-            },
-            {
               "value": "admin",
               "name": "Admin"
+            },
+            {
+              "value": "analyst",
+              "name": "Analyst"
+            },
+            {
+              "value": "member",
+              "name": "Member"
             }
           ]
         }
@@ -65910,6 +68263,401 @@
           ]
         }
       },
+      "PaginatedInsightsAgentRunDataItemRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The work performed by the run",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemState": {
+        "enum": [
+          "pending",
+          "submitting",
+          "running",
+          "completed",
+          "failed",
+          "cancelled",
+          "skipped"
+        ],
+        "type": "string",
+        "description": "The run state",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "submitting",
+              "name": "Submitting"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "cancelled",
+              "name": "Cancelled"
+            },
+            {
+              "value": "skipped",
+              "name": "Skipped"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemOutcome": {
+        "enum": [
+          "changed",
+          "no_change",
+          "suggestions"
+        ],
+        "type": "string",
+        "description": "What a completed run produced: changed code, branch tuning suggestions, or no change",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemOutcome",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "changed",
+              "name": "Changed"
+            },
+            {
+              "value": "no_change",
+              "name": "NoChange"
+            },
+            {
+              "value": "suggestions",
+              "name": "Suggestions"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunScheduleRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The scheduled run type",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunScheduleRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunScheduleFrequencyUnit": {
+        "enum": [
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "description": "The cadence unit",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunScheduleFrequencyUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunSchemaRecommendationsItemState": {
+        "enum": [
+          "open",
+          "applied",
+          "dismissed",
+          "stale"
+        ],
+        "type": "string",
+        "description": "The state of the schema recommendation",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunSchemaRecommendationsItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "applied",
+              "name": "Applied"
+            },
+            {
+              "value": "dismissed",
+              "name": "Dismissed"
+            },
+            {
+              "value": "stale",
+              "name": "Stale"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunPullRequestState": {
+        "enum": [
+          "open",
+          "merged",
+          "closed",
+          "inaccessible"
+        ],
+        "type": "string",
+        "description": "The pull request state",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunPullRequestState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "merged",
+              "name": "Merged"
+            },
+            {
+              "value": "closed",
+              "name": "Closed"
+            },
+            {
+              "value": "inaccessible",
+              "name": "Inaccessible"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunSuggestionsItemKind": {
+        "enum": [
+          "cluster_size",
+          "replicas",
+          "parameter"
+        ],
+        "type": "string",
+        "description": "What the suggestion changes",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunSuggestionsItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cluster_size",
+              "name": "ClusterSize"
+            },
+            {
+              "value": "replicas",
+              "name": "Replicas"
+            },
+            {
+              "value": "parameter",
+              "name": "Parameter"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunSuggestionsItemRisk": {
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "type": "string",
+        "description": "The agent\u0027s estimate of the change\u0027s risk",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunSuggestionsItemRisk",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "low",
+              "name": "Low"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "high",
+              "name": "High"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunSuggestionsItemState": {
+        "enum": [
+          "open",
+          "queued",
+          "applied",
+          "dismissed",
+          "expired",
+          "superseded",
+          "failed"
+        ],
+        "type": "string",
+        "description": "The suggestion state",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunSuggestionsItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "applied",
+              "name": "Applied"
+            },
+            {
+              "value": "dismissed",
+              "name": "Dismissed"
+            },
+            {
+              "value": "expired",
+              "name": "Expired"
+            },
+            {
+              "value": "superseded",
+              "name": "Superseded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunStagesItemName": {
+        "enum": [
+          "sandbox",
+          "evidence",
+          "clone",
+          "agent",
+          "check",
+          "publish",
+          "deploy_request"
+        ],
+        "type": "string",
+        "description": "The stage of the run",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunStagesItemName",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "evidence",
+              "name": "Evidence"
+            },
+            {
+              "value": "clone",
+              "name": "Clone"
+            },
+            {
+              "value": "agent",
+              "name": "Agent"
+            },
+            {
+              "value": "check",
+              "name": "Check"
+            },
+            {
+              "value": "publish",
+              "name": "Publish"
+            },
+            {
+              "value": "deploy_request",
+              "name": "DeployRequest"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunStagesItemStatus": {
+        "enum": [
+          "running",
+          "succeeded",
+          "failed"
+        ],
+        "type": "string",
+        "description": "The stage status",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunStagesItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
       "PaginatedKeyspaceConfigChangeRequestDataItemState": {
         "enum": [
           "draft",
@@ -66226,8 +68974,9 @@
       },
       "PaginatedOrganizationMembershipDataItemRole": {
         "enum": [
-          "member",
-          "admin"
+          "admin",
+          "analyst",
+          "member"
         ],
         "type": "string",
         "description": "The role of the user in the organization",
@@ -66236,12 +68985,16 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "member",
-              "name": "Member"
-            },
-            {
               "value": "admin",
               "name": "Admin"
+            },
+            {
+              "value": "analyst",
+              "name": "Analyst"
+            },
+            {
+              "value": "member",
+              "name": "Member"
             }
           ]
         }
@@ -67732,6 +70485,299 @@
           ]
         }
       },
+      "PaginatedInsightsAgentRunDataItemScheduleRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The scheduled run type",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemScheduleRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemScheduleFrequencyUnit": {
+        "enum": [
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "description": "The cadence unit",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemScheduleFrequencyUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSchemaRecommendationsItemState": {
+        "enum": [
+          "open",
+          "applied",
+          "dismissed",
+          "stale"
+        ],
+        "type": "string",
+        "description": "The state of the schema recommendation",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemSchemaRecommendationsItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "applied",
+              "name": "Applied"
+            },
+            {
+              "value": "dismissed",
+              "name": "Dismissed"
+            },
+            {
+              "value": "stale",
+              "name": "Stale"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemPullRequestState": {
+        "enum": [
+          "open",
+          "merged",
+          "closed",
+          "inaccessible"
+        ],
+        "type": "string",
+        "description": "The pull request state",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemPullRequestState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "merged",
+              "name": "Merged"
+            },
+            {
+              "value": "closed",
+              "name": "Closed"
+            },
+            {
+              "value": "inaccessible",
+              "name": "Inaccessible"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemKind": {
+        "enum": [
+          "cluster_size",
+          "replicas",
+          "parameter"
+        ],
+        "type": "string",
+        "description": "What the suggestion changes",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemSuggestionsItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cluster_size",
+              "name": "ClusterSize"
+            },
+            {
+              "value": "replicas",
+              "name": "Replicas"
+            },
+            {
+              "value": "parameter",
+              "name": "Parameter"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemRisk": {
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "type": "string",
+        "description": "The agent\u0027s estimate of the change\u0027s risk",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemSuggestionsItemRisk",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "low",
+              "name": "Low"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "high",
+              "name": "High"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemSuggestionsItemState": {
+        "enum": [
+          "open",
+          "queued",
+          "applied",
+          "dismissed",
+          "expired",
+          "superseded",
+          "failed"
+        ],
+        "type": "string",
+        "description": "The suggestion state",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemSuggestionsItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "open",
+              "name": "Open"
+            },
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "applied",
+              "name": "Applied"
+            },
+            {
+              "value": "dismissed",
+              "name": "Dismissed"
+            },
+            {
+              "value": "expired",
+              "name": "Expired"
+            },
+            {
+              "value": "superseded",
+              "name": "Superseded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemStagesItemName": {
+        "enum": [
+          "sandbox",
+          "evidence",
+          "clone",
+          "agent",
+          "check",
+          "publish",
+          "deploy_request"
+        ],
+        "type": "string",
+        "description": "The stage of the run",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemStagesItemName",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sandbox",
+              "name": "Sandbox"
+            },
+            {
+              "value": "evidence",
+              "name": "Evidence"
+            },
+            {
+              "value": "clone",
+              "name": "Clone"
+            },
+            {
+              "value": "agent",
+              "name": "Agent"
+            },
+            {
+              "value": "check",
+              "name": "Check"
+            },
+            {
+              "value": "publish",
+              "name": "Publish"
+            },
+            {
+              "value": "deploy_request",
+              "name": "DeployRequest"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemStagesItemStatus": {
+        "enum": [
+          "running",
+          "succeeded",
+          "failed"
+        ],
+        "type": "string",
+        "description": "The stage status",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemStagesItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
       "PaginatedPostgresBouncerDataItemParametersItemNamespace": {
         "enum": [
           "patroni",
@@ -68793,6 +71839,60 @@
             {
               "value": "year",
               "name": "Year"
+            }
+          ]
+        }
+      },
+      "CreateInsightsAgentRunRequestRunType": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "description": "The work the run performs. Branch tuning runs take no targets.",
+        "x-ms-enum": {
+          "name": "CreateInsightsAgentRunRequestRunType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "UpdateInsightsAgentScheduleRequestFrequencyUnit": {
+        "enum": [
+          "day",
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "description": "The cadence unit",
+        "x-ms-enum": {
+          "name": "UpdateInsightsAgentScheduleRequestFrequencyUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "day",
+              "name": "Day"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
             }
           ]
         }
@@ -69874,6 +72974,32 @@
             {
               "value": "DELETE",
               "name": "Delete"
+            }
+          ]
+        }
+      },
+      "UpdateInsightsAgentScheduleRunTypeParameter": {
+        "enum": [
+          "schema_recommendation",
+          "slow_query",
+          "branch_tuning"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "UpdateInsightsAgentScheduleRunTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "schema_recommendation",
+              "name": "SchemaRecommendation"
+            },
+            {
+              "value": "slow_query",
+              "name": "SlowQuery"
+            },
+            {
+              "value": "branch_tuning",
+              "name": "BranchTuning"
             }
           ]
         }
@@ -72639,6 +75765,7 @@
               "database:write_comments": "Create deploy request comments in a database",
               "database:write_database": "Write database",
               "database:write_deploy_requests": "Create and update deploy requests in a database",
+              "database:write_insights_agent": "Start Insights Agent runs and change their schedules",
               "database:write_members": "Write members",
               "database:write_workflows": "Create and manage database workflows",
               "organization:approve_deploy_requests": "Approve deploy requests in an organization",
@@ -72680,6 +75807,7 @@
               "organization:write_comments": "Create deploy request comments in an organization",
               "organization:write_databases": "Write organization databases",
               "organization:write_deploy_requests": "Create and update deploy requests in an organization",
+              "organization:write_insights_agents": "Start Insights Agent runs and change their schedules in an organization",
               "organization:write_members": "Write members in an organization",
               "organization:write_organization": "Write organization",
               "organization:write_payment_method": "Update and delete the organization payment method",
@@ -72762,7 +75890,7 @@
     },
     {
       "name": "InsightsAgentRuns",
-      "description": "          Resources for running and viewing Insights agent analyses.\n"
+      "description": "          Resources for starting, viewing, and cancelling Insights Agent runs.\n"
     },
     {
       "name": "Insights Agent schedules",
@@ -72999,6 +76127,11 @@
       "type": "object",
       "description": "VTTablet configuration options"
     },
+    "InsightsAgentRunRepository": {
+      "type": "object",
+      "description": "The repository snapshot and analyzed commit, null when the run has no repository",
+      "nullable": true
+    },
     "KeyspaceConfigChangeRequestPreviousOptions": {
       "type": "object",
       "description": "The previous option values"
@@ -73125,6 +76258,23 @@
       "type": "object",
       "description": "VTTablet configuration options"
     },
+    "PaginatedInsightsAgentRunDataItemRepository": {
+      "type": "object",
+      "description": "The repository snapshot and analyzed commit, null when the run has no repository",
+      "nullable": true
+    },
+    "InsightsAgentRunSuggestionsItemTarget": {
+      "type": "object",
+      "description": "The cluster, keyspace, or VTGates the suggestion changes. Keyspace targets include the keyspace name."
+    },
+    "InsightsAgentRunSuggestionsItemParameter": {
+      "type": "object",
+      "description": "The parameter\u0027s namespace and name, for parameter suggestions",
+      "nullable": true
+    },
+    "InsightsAgentRunSuggestionsItemEvidenceItem": {
+      "type": "object"
+    },
     "PaginatedKeyspaceConfigChangeRequestDataItemPreviousOptions": {
       "type": "object",
       "description": "The previous option values"
@@ -73238,6 +76388,18 @@
     "VitessParameterDefinitionBranchParametersKeyspacesAdditionalPropertiesMysqldItem": {
       "type": "object"
     },
+    "PaginatedInsightsAgentRunDataItemSuggestionsItemTarget": {
+      "type": "object",
+      "description": "The cluster, keyspace, or VTGates the suggestion changes. Keyspace targets include the keyspace name."
+    },
+    "PaginatedInsightsAgentRunDataItemSuggestionsItemParameter": {
+      "type": "object",
+      "description": "The parameter\u0027s namespace and name, for parameter suggestions",
+      "nullable": true
+    },
+    "PaginatedInsightsAgentRunDataItemSuggestionsItemEvidenceItem": {
+      "type": "object"
+    },
     "PaginatedDatabaseDeployRequestDataItemDeploymentPrecedingDeploymentsItem": {
       "type": "object"
     },
@@ -73324,6 +76486,12 @@
       "type": "array",
       "items": {
         "$ref": "#/components/schemas/PostgresExtension"
+      }
+    },
+    "ListInsightsAgentSchedules200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InsightsAgentSchedule"
       }
     },
     "ListParameters200Response": {

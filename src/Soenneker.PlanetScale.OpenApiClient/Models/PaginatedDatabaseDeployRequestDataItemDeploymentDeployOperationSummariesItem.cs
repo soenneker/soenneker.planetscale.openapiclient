@@ -84,15 +84,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string DdlStatement { get => _explicitNullValueDdlStatement; set { _explicitNullValueDdlStatement = value; AdditionalData?.Remove("ddl_statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddl_statement"); else _explicitNullProperties?.Remove("ddl_statement"); } }
         private string _explicitNullValueDdlStatement = default!;
 #endif
-        /// <summary>Deploy errors for the deploy operation summary</summary>
+        /// <summary>The deploy_errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
-        private string? _explicitNullValueDeployErrors = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem>? DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem>? _explicitNullValueDeployErrors = default!;
 #nullable restore
 #else
-        public string DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
-        private string _explicitNullValueDeployErrors = default!;
+        public List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem> DeployErrors { get => _explicitNullValueDeployErrors; set { _explicitNullValueDeployErrors = value; AdditionalData?.Remove("deploy_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploy_errors"); else _explicitNullProperties?.Remove("deploy_errors"); } }
+        private List<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem> _explicitNullValueDeployErrors = default!;
 #endif
         /// <summary>The estimated seconds until completion for the deploy operation summary</summary>
         public int? EtaSeconds { get => _explicitNullValueEtaSeconds; set { _explicitNullValueEtaSeconds = value; AdditionalData?.Remove("eta_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eta_seconds"); else _explicitNullProperties?.Remove("eta_seconds"); } }
@@ -240,7 +240,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "can_drop_data", n => { CanDropData = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "ddl_statement", n => { DdlStatement = n.GetStringValue(); } },
-                { "deploy_errors", n => { DeployErrors = n.GetStringValue(); } },
+                { "deploy_errors", n => { DeployErrors = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eta_seconds", n => { EtaSeconds = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "keyspace_name", n => { KeyspaceName = n.GetStringValue(); } },
@@ -269,7 +269,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteBoolValue("can_drop_data", CanDropData);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("ddl_statement", DdlStatement);
-            writer.WriteStringValue("deploy_errors", DeployErrors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseDeployRequestDataItemDeploymentDeployOperationSummariesItemDeployErrorsItem>("deploy_errors", DeployErrors);
             writer.WriteIntValue("eta_seconds", EtaSeconds);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("keyspace_name", KeyspaceName);

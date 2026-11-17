@@ -101,8 +101,15 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItemDataItemResource _explicitNullValueResource = default!;
 #endif
         /// <summary>The total for the line item</summary>
-        public double? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
-        private double? _explicitNullValueSubtotal = default!;
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        private string? _explicitNullValueSubtotal = default!;
+#nullable restore
+#else
+        public string Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        private string _explicitNullValueSubtotal = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItemDataItem"/> and sets the default values.
         /// </summary>
@@ -135,7 +142,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metric_name", n => { MetricName = n.GetStringValue(); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItemDataItemResource>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItemDataItemResource.CreateFromDiscriminatorValue); } },
-                { "subtotal", n => { Subtotal = n.GetDoubleValue(); } },
+                { "subtotal", n => { Subtotal = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -152,7 +159,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("metric_name", MetricName);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedLineItemDataItemResource>("resource", Resource);
-            writer.WriteDoubleValue("subtotal", Subtotal);
+            writer.WriteStringValue("subtotal", Subtotal);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

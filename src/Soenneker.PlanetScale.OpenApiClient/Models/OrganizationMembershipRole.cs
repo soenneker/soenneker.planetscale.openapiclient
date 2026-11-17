@@ -7,13 +7,17 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationMembershipRole
     {
-        [EnumMember(Value = "member")]
-        #pragma warning disable CS1591
-        Member,
-        #pragma warning restore CS1591
         [EnumMember(Value = "admin")]
         #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analyst")]
+        #pragma warning disable CS1591
+        Analyst,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "member")]
+        #pragma warning disable CS1591
+        Member,
         #pragma warning restore CS1591
     }
 }
