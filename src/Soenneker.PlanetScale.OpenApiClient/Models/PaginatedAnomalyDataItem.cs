@@ -131,7 +131,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "correlations", n => { Correlations = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedAnomalyDataItemCorrelationsItem.CreateFromDiscriminatorValue)?.AsList(); } },

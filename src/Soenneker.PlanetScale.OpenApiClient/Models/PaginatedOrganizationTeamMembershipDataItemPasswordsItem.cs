@@ -271,7 +271,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "access_host_regional_url", n => { AccessHostRegionalUrl = n.GetStringValue(); } },
                 { "access_host_regional_urls", n => { AccessHostRegionalUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

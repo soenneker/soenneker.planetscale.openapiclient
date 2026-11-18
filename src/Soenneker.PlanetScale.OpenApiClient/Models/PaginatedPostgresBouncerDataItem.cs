@@ -162,7 +162,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemActor.CreateFromDiscriminatorValue); } },
                 { "branch", n => { Branch = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemBranch>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerDataItemBranch.CreateFromDiscriminatorValue); } },

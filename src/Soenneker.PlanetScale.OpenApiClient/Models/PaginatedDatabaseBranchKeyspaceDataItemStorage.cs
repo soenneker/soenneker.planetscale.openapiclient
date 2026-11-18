@@ -64,7 +64,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "disk_scaling_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDatabaseBranchKeyspaceDataItemStorageDiskScalingStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDiskScalingStrategy = default; _explicitNullProperties?.Remove("disk_scaling_strategy"); AdditionalData["disk_scaling_strategy"] = unknown; } else { DiskScalingStrategy = parsed; AdditionalData.Remove("disk_scaling_strategy"); } } },
                 { "max_storage_bytes", n => { MaxStorageBytes = n.GetIntValue(); } },

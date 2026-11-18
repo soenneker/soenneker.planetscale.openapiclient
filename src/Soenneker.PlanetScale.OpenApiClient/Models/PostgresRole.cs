@@ -321,7 +321,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(26)
             {
                 { "access_host_url", n => { AccessHostUrl = n.GetStringValue(); } },
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PostgresRoleActor.CreateFromDiscriminatorValue); } },

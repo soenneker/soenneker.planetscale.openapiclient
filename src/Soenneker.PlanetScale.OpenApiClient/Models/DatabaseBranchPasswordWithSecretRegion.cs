@@ -153,7 +153,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "availability_zones", n => { AvailabilityZones = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecretRegionAvailabilityZonesItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.DatabaseBranchPasswordWithSecretRegionAvailabilityZonesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "current_default", n => { CurrentDefault = n.GetBoolValue(); } },

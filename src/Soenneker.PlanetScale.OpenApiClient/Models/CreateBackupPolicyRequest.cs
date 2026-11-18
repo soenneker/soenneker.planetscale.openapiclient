@@ -103,7 +103,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "frequency_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.CreateBackupPolicyRequestFrequencyUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequencyUnit = default; _explicitNullProperties?.Remove("frequency_unit"); AdditionalData["frequency_unit"] = unknown; } else { FrequencyUnit = parsed; AdditionalData.Remove("frequency_unit"); } } },
                 { "frequency_value", n => { FrequencyValue = n.GetIntValue(); } },

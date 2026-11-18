@@ -186,7 +186,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemActor.CreateFromDiscriminatorValue); } },
                 { "change_type", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedConfigChangeRequestDataItemChangeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChangeType = default; _explicitNullProperties?.Remove("change_type"); AdditionalData["change_type"] = unknown; } else { ChangeType = parsed; AdditionalData.Remove("change_type"); } } },

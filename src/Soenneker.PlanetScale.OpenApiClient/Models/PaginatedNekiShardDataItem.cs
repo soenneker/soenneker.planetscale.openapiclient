@@ -114,7 +114,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "authoritative", n => { Authoritative = n.GetBoolValue(); } },
                 { "configuration_profile", n => { ConfigurationProfile = n.GetStringValue(); } },

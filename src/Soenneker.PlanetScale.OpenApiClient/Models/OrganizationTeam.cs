@@ -181,7 +181,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "analyst_databases", n => { AnalystDatabases = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationTeamAnalystDatabasesItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.OrganizationTeamAnalystDatabasesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

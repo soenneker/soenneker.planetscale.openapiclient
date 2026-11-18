@@ -162,7 +162,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "component", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.VitessParameterDefinitionBranchParametersVtgateItemComponent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComponent = default; _explicitNullProperties?.Remove("component"); AdditionalData["component"] = unknown; } else { Component = parsed; AdditionalData.Remove("component"); } } },

@@ -110,7 +110,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a service token&apos;s name or expiration.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_service_tokens`
+        /// Update a service token&apos;s name, expiration, or IP restrictions.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_service_tokens`
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.ServiceToken"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +185,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ServiceTokens.I
             return requestInfo;
         }
         /// <summary>
-        /// Update a service token&apos;s name or expiration.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_service_tokens`
+        /// Update a service token&apos;s name, expiration, or IP restrictions.### AuthorizationA service token   must have at least one of the following access   in order to use this API endpoint:**Service Token Accesses** `write_service_tokens`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

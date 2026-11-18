@@ -350,7 +350,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(43)
             {
                 { "allow_data_branching", n => { AllowDataBranching = n.GetBoolValue(); } },
                 { "at_backup_restore_branches_limit", n => { AtBackupRestoreBranchesLimit = n.GetBoolValue(); } },

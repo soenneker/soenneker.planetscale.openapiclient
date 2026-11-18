@@ -25,7 +25,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Cluster size to apply when promoting. PS-DEV is not permitted. When omitted, a PS-DEV branch uses the smallest production size. Changing the size requires write_database.</summary>
+        /// <summary>Postgres or Neki cluster size to apply when promoting. PS-DEV is not permitted. When omitted, the current size is kept. A PS-DEV Postgres branch moves to PS-5, and a PS-DEV Neki branch moves to PS-10. Changing the size requires write_database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string ClusterSize { get => _explicitNullValueClusterSize; set { _explicitNullValueClusterSize = value; AdditionalData?.Remove("cluster_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster_size"); else _explicitNullProperties?.Remove("cluster_size"); } }
         private string _explicitNullValueClusterSize = default!;
 #endif
-        /// <summary>Postgres replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. Changing the replica count requires write_database.</summary>
+        /// <summary>Postgres or Neki replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. When omitted, the current count is kept. Changing the replica count requires write_database.</summary>
         public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
         private int? _explicitNullValueReplicas = default!;
         /// <summary>

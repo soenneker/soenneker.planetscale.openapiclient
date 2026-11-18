@@ -35432,7 +35432,7 @@
           "Service tokens"
         ],
         "summary": "Update a service token",
-        "description": "Update a service token\u0027s name or expiration.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060\n\n",
+        "description": "Update a service token\u0027s name, expiration, or IP restrictions.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060\n\n",
         "operationId": "UpdateServiceToken",
         "parameters": [
           {
@@ -42804,6 +42804,7 @@
         "required": [
           "id",
           "name",
+          "cidrs",
           "display_name",
           "avatar_url",
           "created_at",
@@ -42827,6 +42828,14 @@
           "name": {
             "type": "string",
             "description": "The name of the service token",
+            "nullable": true
+          },
+          "cidrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IP addresses or CIDR ranges that can use this service token. Empty means unrestricted.",
             "nullable": true
           },
           "display_name": {
@@ -51534,6 +51543,7 @@
         "required": [
           "id",
           "name",
+          "cidrs",
           "display_name",
           "avatar_url",
           "created_at",
@@ -51557,6 +51567,14 @@
           "name": {
             "type": "string",
             "description": "The name of the service token",
+            "nullable": true
+          },
+          "cidrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IP addresses or CIDR ranges that can use this service token. Empty means unrestricted.",
             "nullable": true
           },
           "display_name": {
@@ -63341,11 +63359,11 @@
         "properties": {
           "cluster_size": {
             "type": "string",
-            "description": "Cluster size to apply when promoting. PS-DEV is not permitted. When omitted, a PS-DEV branch uses the smallest production size. Changing the size requires write_database."
+            "description": "Postgres or Neki cluster size to apply when promoting. PS-DEV is not permitted. When omitted, the current size is kept. A PS-DEV Postgres branch moves to PS-5, and a PS-DEV Neki branch moves to PS-10. Changing the size requires write_database."
           },
           "replicas": {
             "type": "integer",
-            "description": "Postgres replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. Changing the replica count requires write_database."
+            "description": "Postgres or Neki replica count, not including the primary. 0 is a single node. 2 to 8 is high availability. When omitted, the current count is kept. Changing the replica count requires write_database."
           }
         }
       },
@@ -63975,6 +63993,13 @@
           "ttl": {
             "type": "integer",
             "description": "Time to live (in seconds) for the service token. The token will be invalid when TTL has passed"
+          },
+          "cidrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IP addresses or CIDR ranges that can use this service token. An empty list means unrestricted."
           }
         }
       },
@@ -63989,6 +64014,13 @@
             "type": "integer",
             "description": "Seconds from now until the service token expires. Omit to leave the expiration unchanged. Null clears the expiration. Must be greater than 0 and at most one year.",
             "nullable": true
+          },
+          "cidrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IP addresses or CIDR ranges that can use this service token. An empty list removes restrictions. Omit to leave restrictions unchanged."
           }
         }
       },

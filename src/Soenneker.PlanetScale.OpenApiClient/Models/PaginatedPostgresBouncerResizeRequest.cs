@@ -112,7 +112,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "current_page", n => { CurrentPage = n.GetIntValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerResizeRequestDataItem>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedPostgresBouncerResizeRequestDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
