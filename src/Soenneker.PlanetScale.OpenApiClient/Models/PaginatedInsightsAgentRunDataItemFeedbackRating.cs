@@ -3,21 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.PlanetScale.OpenApiClient.Models
 {
-    /// <summary>The role of the user in the organization</summary>
+    /// <summary>Whether the run was useful</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum OrganizationMembershipRole
+    public enum PaginatedInsightsAgentRunDataItemFeedbackRating
     {
-        [EnumMember(Value = "admin")]
+        [EnumMember(Value = "useful")]
         #pragma warning disable CS1591
-        Admin,
+        Useful,
         #pragma warning restore CS1591
-        [EnumMember(Value = "analyst")]
+        [EnumMember(Value = "not_useful")]
         #pragma warning disable CS1591
-        Analyst,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "member")]
-        #pragma warning disable CS1591
-        Member,
+        NotUseful,
         #pragma warning restore CS1591
     }
 }

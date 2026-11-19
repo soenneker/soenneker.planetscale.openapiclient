@@ -34,7 +34,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         {
         }
         /// <summary>
-        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.
+        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_deploy_request`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_deploy_requests` || Database | `read_deploy_requests` |
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDeployment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDeployment>(requestInfo, global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedDeployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.
+        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_deploy_request`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_deploy_requests` || Database | `read_deploy_requests` |
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             return new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.DeployQueue.DeployQueueRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.
+        /// The deploy queue returns the current list of deploy requests in the order they will be deployed.### AuthorizationA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:**Service Token Accesses** `read_deploy_request`**OAuth Scopes** | Resource | Scopes || :------- | :---------- || Organization | `read_deploy_requests` || Database | `read_deploy_requests` |
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeployQueueRequestBuilderGetQueryParameters 

@@ -28007,7 +28007,7 @@
           "Deploy requests"
         ],
         "summary": "Get the deploy queue",
-        "description": "The deploy queue returns the current list of deploy requests in the order they will be deployed.\n",
+        "description": "The deploy queue returns the current list of deploy requests in the order they will be deployed.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_deploy_request\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_deploy_requests\u0060 |\n| Database | \u0060read_deploy_requests\u0060 |",
         "operationId": "GetDeployQueue",
         "parameters": [
           {
@@ -33897,7 +33897,7 @@
           {
             "name": "role",
             "in": "query",
-            "description": "Filter members by built-in role names or custom role IDs",
+            "description": "Filter members by built-in role names or custom role slugs",
             "schema": {
               "type": "array",
               "items": {
@@ -35655,7 +35655,7 @@
           "Service tokens"
         ],
         "summary": "Duplicate a service token",
-        "description": "Create a new service token with the same grants as an existing service token. The original token is not changed.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060, \u0060read_service_tokens\u0060\n\n",
+        "description": "Create a new service token with the same grants and IP restrictions as an existing service token. The original token is not changed.\n### Authorization\nA service token   must have at least one of the following access   in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_service_tokens\u0060, \u0060read_service_tokens\u0060\n\n",
         "operationId": "DuplicateServiceToken",
         "parameters": [
           {
@@ -41236,6 +41236,14 @@
             },
             "nullable": true
           },
+          "feedback_requested": {
+            "type": "boolean",
+            "description": "Whether the caller can rate the run",
+            "nullable": true
+          },
+          "feedback": {
+            "$ref": "#/components/schemas/InsightsAgentRunFeedback"
+          },
           "submitted_at": {
             "type": "string",
             "description": "When the run was sent to the agent",
@@ -43007,7 +43015,8 @@
             "description": "The email address the invitation was sent to"
           },
           "role": {
-            "$ref": "#/components/schemas/OrganizationInvitationRole"
+            "type": "string",
+            "description": "The role granted when the invitation is accepted. A built-in name or a custom role slug. Invitations sent by service tokens are always member."
           },
           "sender": {
             "$ref": "#/components/schemas/OrganizationInvitationSender"
@@ -43114,7 +43123,8 @@
             "$ref": "#/components/schemas/OrganizationMembershipUser"
           },
           "role": {
-            "$ref": "#/components/schemas/OrganizationMembershipRole"
+            "type": "string",
+            "description": "The role of the user in the organization. A built-in name (admin, member, analyst) or a custom role slug."
           },
           "created_at": {
             "type": "string",
@@ -50147,6 +50157,14 @@
             },
             "nullable": true
           },
+          "feedback_requested": {
+            "type": "boolean",
+            "description": "Whether the caller can rate the run",
+            "nullable": true
+          },
+          "feedback": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemFeedback"
+          },
           "submitted_at": {
             "type": "string",
             "description": "When the run was sent to the agent",
@@ -50517,6 +50535,38 @@
             "nullable": true
           }
         }
+      },
+      "InsightsAgentRunFeedback": {
+        "required": [
+          "rating",
+          "reason",
+          "note",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackRating"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackReason"
+          },
+          "note": {
+            "type": "string",
+            "description": "The user\u0027s note about the run",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the feedback was first given"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the feedback was last changed"
+          }
+        },
+        "nullable": true
       },
       "InsightsAgentScheduleActor": {
         "required": [
@@ -51748,7 +51798,8 @@
             "description": "The email address the invitation was sent to"
           },
           "role": {
-            "$ref": "#/components/schemas/PaginatedOrganizationInvitationDataItemRole"
+            "type": "string",
+            "description": "The role granted when the invitation is accepted. A built-in name or a custom role slug. Invitations sent by service tokens are always member."
           },
           "sender": {
             "$ref": "#/components/schemas/PaginatedOrganizationInvitationDataItemSender"
@@ -51935,7 +51986,8 @@
             "$ref": "#/components/schemas/PaginatedOrganizationMembershipDataItemUser"
           },
           "role": {
-            "$ref": "#/components/schemas/PaginatedOrganizationMembershipDataItemRole"
+            "type": "string",
+            "description": "The role of the user in the organization. A built-in name (admin, member, analyst) or a custom role slug."
           },
           "created_at": {
             "type": "string",
@@ -57913,6 +57965,38 @@
             "nullable": true
           }
         }
+      },
+      "PaginatedInsightsAgentRunDataItemFeedback": {
+        "required": [
+          "rating",
+          "reason",
+          "note",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemFeedbackRating"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/PaginatedInsightsAgentRunDataItemFeedbackReason"
+          },
+          "note": {
+            "type": "string",
+            "description": "The user\u0027s note about the run",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the feedback was first given"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the feedback was last changed"
+          }
+        },
+        "nullable": true
       },
       "InsightsAgentRunScheduleActor": {
         "required": [
@@ -63934,7 +64018,8 @@
             "description": "The email address to send the invitation to"
           },
           "role": {
-            "$ref": "#/components/schemas/CreateOrganizationInvitationRequestRole"
+            "type": "string",
+            "description": "The role granted when the invitation is accepted: a built-in name or a custom role slug. Defaults to member. Service tokens can only invite members; requesting another role returns 422."
           }
         }
       },
@@ -63946,7 +64031,7 @@
         "properties": {
           "role": {
             "type": "string",
-            "description": "The role to assign to the member (e.g., \u0027admin\u0027, \u0027member\u0027). Note: Cannot update your own role. Roles managed by IdP cannot be updated via API."
+            "description": "The role to assign: a built-in name (admin, member, analyst) or a custom role slug. Cannot update your own role. Roles managed by IdP cannot be updated via API."
           }
         }
       },
@@ -64030,6 +64115,10 @@
           "name": {
             "type": "string",
             "description": "The name of the new service token"
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Time to live (in seconds) for the new service token. The token will be invalid when TTL has passed"
           }
         }
       },
@@ -66250,60 +66339,6 @@
             {
               "value": "configuration_profile",
               "name": "ConfigurationProfile"
-            }
-          ]
-        }
-      },
-      "OrganizationInvitationRole": {
-        "enum": [
-          "admin",
-          "analyst",
-          "member"
-        ],
-        "type": "string",
-        "description": "The role granted when the invitation is accepted. Invitations sent by service tokens are always member.",
-        "x-ms-enum": {
-          "name": "OrganizationInvitationRole",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "admin",
-              "name": "Admin"
-            },
-            {
-              "value": "analyst",
-              "name": "Analyst"
-            },
-            {
-              "value": "member",
-              "name": "Member"
-            }
-          ]
-        }
-      },
-      "OrganizationMembershipRole": {
-        "enum": [
-          "admin",
-          "analyst",
-          "member"
-        ],
-        "type": "string",
-        "description": "The role of the user in the organization",
-        "x-ms-enum": {
-          "name": "OrganizationMembershipRole",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "admin",
-              "name": "Admin"
-            },
-            {
-              "value": "analyst",
-              "name": "Analyst"
-            },
-            {
-              "value": "member",
-              "name": "Member"
             }
           ]
         }
@@ -68690,6 +68725,71 @@
           ]
         }
       },
+      "InsightsAgentRunFeedbackRating": {
+        "enum": [
+          "useful",
+          "not_useful"
+        ],
+        "type": "string",
+        "description": "Whether the run was useful",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunFeedbackRating",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "useful",
+              "name": "Useful"
+            },
+            {
+              "value": "not_useful",
+              "name": "NotUseful"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunFeedbackReason": {
+        "enum": [
+          "wrong_diagnosis",
+          "fix_wont_work",
+          "too_risky",
+          "already_known",
+          "doesnt_fit",
+          "other"
+        ],
+        "type": "string",
+        "description": "Why the run was not useful",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "InsightsAgentRunFeedbackReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "wrong_diagnosis",
+              "name": "WrongDiagnosis"
+            },
+            {
+              "value": "fix_wont_work",
+              "name": "FixWontWork"
+            },
+            {
+              "value": "too_risky",
+              "name": "TooRisky"
+            },
+            {
+              "value": "already_known",
+              "name": "AlreadyKnown"
+            },
+            {
+              "value": "doesnt_fit",
+              "name": "DoesntFit"
+            },
+            {
+              "value": "other",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "PaginatedKeyspaceConfigChangeRequestDataItemState": {
         "enum": [
           "draft",
@@ -68973,60 +69073,6 @@
             {
               "value": "configuration_profile",
               "name": "ConfigurationProfile"
-            }
-          ]
-        }
-      },
-      "PaginatedOrganizationInvitationDataItemRole": {
-        "enum": [
-          "admin",
-          "analyst",
-          "member"
-        ],
-        "type": "string",
-        "description": "The role granted when the invitation is accepted. Invitations sent by service tokens are always member.",
-        "x-ms-enum": {
-          "name": "PaginatedOrganizationInvitationDataItemRole",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "admin",
-              "name": "Admin"
-            },
-            {
-              "value": "analyst",
-              "name": "Analyst"
-            },
-            {
-              "value": "member",
-              "name": "Member"
-            }
-          ]
-        }
-      },
-      "PaginatedOrganizationMembershipDataItemRole": {
-        "enum": [
-          "admin",
-          "analyst",
-          "member"
-        ],
-        "type": "string",
-        "description": "The role of the user in the organization",
-        "x-ms-enum": {
-          "name": "PaginatedOrganizationMembershipDataItemRole",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "admin",
-              "name": "Admin"
-            },
-            {
-              "value": "analyst",
-              "name": "Analyst"
-            },
-            {
-              "value": "member",
-              "name": "Member"
             }
           ]
         }
@@ -70810,6 +70856,71 @@
           ]
         }
       },
+      "PaginatedInsightsAgentRunDataItemFeedbackRating": {
+        "enum": [
+          "useful",
+          "not_useful"
+        ],
+        "type": "string",
+        "description": "Whether the run was useful",
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemFeedbackRating",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "useful",
+              "name": "Useful"
+            },
+            {
+              "value": "not_useful",
+              "name": "NotUseful"
+            }
+          ]
+        }
+      },
+      "PaginatedInsightsAgentRunDataItemFeedbackReason": {
+        "enum": [
+          "wrong_diagnosis",
+          "fix_wont_work",
+          "too_risky",
+          "already_known",
+          "doesnt_fit",
+          "other"
+        ],
+        "type": "string",
+        "description": "Why the run was not useful",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "PaginatedInsightsAgentRunDataItemFeedbackReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "wrong_diagnosis",
+              "name": "WrongDiagnosis"
+            },
+            {
+              "value": "fix_wont_work",
+              "name": "FixWontWork"
+            },
+            {
+              "value": "too_risky",
+              "name": "TooRisky"
+            },
+            {
+              "value": "already_known",
+              "name": "AlreadyKnown"
+            },
+            {
+              "value": "doesnt_fit",
+              "name": "DoesntFit"
+            },
+            {
+              "value": "other",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "PaginatedPostgresBouncerDataItemParametersItemNamespace": {
         "enum": [
           "patroni",
@@ -72175,33 +72286,6 @@
             {
               "value": "approved",
               "name": "Approved"
-            }
-          ]
-        }
-      },
-      "CreateOrganizationInvitationRequestRole": {
-        "enum": [
-          "admin",
-          "analyst",
-          "member"
-        ],
-        "type": "string",
-        "description": "The role granted when the invitation is accepted. Defaults to member. Service tokens can only invite members; requesting another role returns 422.",
-        "x-ms-enum": {
-          "name": "CreateOrganizationInvitationRequestRole",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "admin",
-              "name": "Admin"
-            },
-            {
-              "value": "analyst",
-              "name": "Analyst"
-            },
-            {
-              "value": "member",
-              "name": "Member"
             }
           ]
         }
@@ -75921,6 +76005,10 @@
       "description": "            Resources for managing databases within an organization.\n"
     },
     {
+      "name": "InsightsAgentRunFeedback",
+      "description": "          Resources for rating whether an Insights Agent run was useful.\n"
+    },
+    {
       "name": "InsightsAgentRuns",
       "description": "          Resources for starting, viewing, and cancelling Insights Agent runs.\n"
     },
@@ -75999,6 +76087,10 @@
     {
       "name": "Bouncers",
       "description": "          Resources for managing postgres bouncers.\n"
+    },
+    {
+      "name": "Switchover proxies",
+      "description": "          Resources for a proxy that sits in front of an external Postgres database and a branch,\n          so data can be copied to the branch and traffic switched between the two.\n"
     },
     {
       "name": "Switchovers",

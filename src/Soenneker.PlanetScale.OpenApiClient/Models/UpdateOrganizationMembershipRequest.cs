@@ -23,7 +23,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The role to assign to the member (e.g., &apos;admin&apos;, &apos;member&apos;). Note: Cannot update your own role. Roles managed by IdP cannot be updated via API.</summary>
+        /// <summary>The role to assign: a built-in name (admin, member, analyst) or a custom role slug. Cannot update your own role. Roles managed by IdP cannot be updated via API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }

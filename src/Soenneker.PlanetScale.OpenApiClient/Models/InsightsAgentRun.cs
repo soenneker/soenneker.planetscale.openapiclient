@@ -31,6 +31,10 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("failure_message") is null) { _explicitNullValueFailureMessage = default!; _explicitNullProperties?.Remove("failure_message"); }
             else if (parseNode.GetChildNode("failure_message") is { } nullNodeFailureMessage && nullNodeFailureMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureMessage = null;
+            if (parseNode.GetChildNode("feedback") is null) { _explicitNullValueFeedback = default!; _explicitNullProperties?.Remove("feedback"); }
+            else if (parseNode.GetChildNode("feedback") is { } nullNodeFeedback && nullNodeFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feedback = null;
+            if (parseNode.GetChildNode("feedback_requested") is null) { _explicitNullValueFeedbackRequested = default!; _explicitNullProperties?.Remove("feedback_requested"); }
+            else if (parseNode.GetChildNode("feedback_requested") is { } nullNodeFeedbackRequested && nullNodeFeedbackRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackRequested = null;
             if (parseNode.GetChildNode("finished_at") is null) { _explicitNullValueFinishedAt = default!; _explicitNullProperties?.Remove("finished_at"); }
             else if (parseNode.GetChildNode("finished_at") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
             if (parseNode.GetChildNode("html_summary") is null) { _explicitNullValueHtmlSummary = default!; _explicitNullProperties?.Remove("html_summary"); }
@@ -138,6 +142,19 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string FailureMessage { get => _explicitNullValueFailureMessage; set { _explicitNullValueFailureMessage = value; AdditionalData?.Remove("failure_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_message"); else _explicitNullProperties?.Remove("failure_message"); } }
         private string _explicitNullValueFailureMessage = default!;
 #endif
+        /// <summary>The feedback property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback? _explicitNullValueFeedback = default!;
+#nullable restore
+#else
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback _explicitNullValueFeedback = default!;
+#endif
+        /// <summary>Whether the caller can rate the run</summary>
+        public bool? FeedbackRequested { get => _explicitNullValueFeedbackRequested; set { _explicitNullValueFeedbackRequested = value; AdditionalData?.Remove("feedback_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_requested"); else _explicitNullProperties?.Remove("feedback_requested"); } }
+        private bool? _explicitNullValueFeedbackRequested = default!;
         /// <summary>When execution finished</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -333,7 +350,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(27)
+            return new Dictionary<string, Action<IParseNode>>(29)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunActor>(global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunActor.CreateFromDiscriminatorValue); } },
                 { "agent_model", n => { AgentModel = n.GetStringValue(); } },
@@ -342,6 +359,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "cost", n => { Cost = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "failure_message", n => { FailureMessage = n.GetStringValue(); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback>(global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback_requested", n => { FeedbackRequested = n.GetBoolValue(); } },
                 { "finished_at", n => { FinishedAt = n.GetStringValue(); } },
                 { "html_summary", n => { HtmlSummary = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
@@ -378,6 +397,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("cost", Cost);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("failure_message", FailureMessage);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback>("feedback", Feedback);
+            writer.WriteBoolValue("feedback_requested", FeedbackRequested);
             writer.WriteStringValue("finished_at", FinishedAt);
             writer.WriteStringValue("html_summary", HtmlSummary);
             writer.WriteStringValue("html_url", HtmlUrl);

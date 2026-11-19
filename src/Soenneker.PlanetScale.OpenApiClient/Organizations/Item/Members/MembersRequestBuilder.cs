@@ -134,7 +134,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Members
             [QueryParameter("q")]
             public string Q { get; set; }
 #endif
-            /// <summary>Filter members by built-in role names or custom role IDs</summary>
+            /// <summary>Filter members by built-in role names or custom role slugs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("role")]

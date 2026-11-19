@@ -102,9 +102,16 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipient Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; AdditionalData?.Remove("recipient"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
         private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipient _explicitNullValueRecipient = default!;
 #endif
-        /// <summary>The role granted when the invitation is accepted. Invitations sent by service tokens are always member.</summary>
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRole? _explicitNullValueRole = default!;
+        /// <summary>The role granted when the invitation is accepted. A built-in name or a custom role slug. Invitations sent by service tokens are always member.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string? _explicitNullValueRole = default!;
+#nullable restore
+#else
+        public string Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string _explicitNullValueRole = default!;
+#endif
         /// <summary>The sender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +154,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "recipient", n => { Recipient = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipient>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipient.CreateFromDiscriminatorValue); } },
-                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
+                { "role", n => { Role = n.GetStringValue(); } },
                 { "sender", n => { Sender = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemSender>(global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemSender.CreateFromDiscriminatorValue); } },
             };
         }
@@ -165,7 +172,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRecipient>("recipient", Recipient);
-            writer.WriteEnumValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemRole>("role", Role);
+            writer.WriteStringValue("role", Role);
             writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.PaginatedOrganizationInvitationDataItemSender>("sender", Sender);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
