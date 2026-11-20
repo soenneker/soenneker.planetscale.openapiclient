@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "C6B3F5E0106A6B13D562A3C6ED46F2567660E4E9BAC4FCD69B66251230B5986936D763FCF3DC55A29AF6CF141BE89F07AEF1CC1DDE9ED8CB5142D49C404F0C2D",
+  "descriptionHash": "2EC1A87B77DC7D0BC2DD56AB984B6F5F4C3E28054A48BBE34B57B4014A51BA86B871B0908353F10047A74B31B33765D00441E46E46839A0F48D4C9814EB2D2A1",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.38.0",
+  "kiotaVersion": "1.39.0",
   "clientClassName": "PlanetScaleOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.PlanetScale.OpenApiClient",

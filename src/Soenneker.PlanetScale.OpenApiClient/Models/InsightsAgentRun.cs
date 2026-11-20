@@ -145,12 +145,12 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>The feedback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback? _explicitNullValueFeedback = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty? _explicitNullValueFeedback = default!;
 #nullable restore
 #else
-        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
-        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback _explicitNullValueFeedback = default!;
+        public global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty _explicitNullValueFeedback = default!;
 #endif
         /// <summary>Whether the caller can rate the run</summary>
         public bool? FeedbackRequested { get => _explicitNullValueFeedbackRequested; set { _explicitNullValueFeedbackRequested = value; AdditionalData?.Remove("feedback_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_requested"); else _explicitNullProperties?.Remove("feedback_requested"); } }
@@ -359,7 +359,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
                 { "cost", n => { Cost = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "failure_message", n => { FailureMessage = n.GetStringValue(); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback>(global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty>(global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty.CreateFromDiscriminatorValue); } },
                 { "feedback_requested", n => { FeedbackRequested = n.GetBoolValue(); } },
                 { "finished_at", n => { FinishedAt = n.GetStringValue(); } },
                 { "html_summary", n => { HtmlSummary = n.GetStringValue(); } },
@@ -397,7 +397,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("cost", Cost);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("failure_message", FailureMessage);
-            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedback>("feedback", Feedback);
+            writer.WriteObjectValue<global::Soenneker.PlanetScale.OpenApiClient.Models.InsightsAgentRunFeedbackProperty>("feedback", Feedback);
             writer.WriteBoolValue("feedback_requested", FeedbackRequested);
             writer.WriteStringValue("finished_at", FinishedAt);
             writer.WriteStringValue("html_summary", HtmlSummary);

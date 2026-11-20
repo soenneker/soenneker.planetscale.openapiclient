@@ -12027,6 +12027,254 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/runs/{number}/feedback": {
+      "get": {
+        "tags": [
+          "InsightsAgentRunFeedback"
+        ],
+        "summary": "Get your Insights Agent run feedback",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "GetInsightsAgentRunFeedback",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "number",
+            "in": "path",
+            "description": "The Insights Agent run number",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns your feedback on the run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRunFeedback"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "InsightsAgentRunFeedback"
+        ],
+        "summary": "Rate an Insights Agent run",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_insights_agent\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_databases\u0060 |\n| Database | \u0060read_database\u0060 |",
+        "operationId": "UpdateInsightsAgentRunFeedback",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "number",
+            "in": "path",
+            "description": "The Insights Agent run number",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInsightsAgentRunFeedbackRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The run does not accept feedback",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns your feedback on the run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsAgentRunFeedback"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/insights/agent/schedules": {
       "get": {
         "tags": [
@@ -32075,6 +32323,140 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/sleep": {
+      "post": {
+        "tags": [
+          "Database sleeps"
+        ],
+        "summary": "Sleep a database",
+        "description": "Accepts a request to sleep a Postgres database. Sleep runs asynchronously.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "SleepDatabase",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SleepDatabaseRequest"
+              }
+            }
+          },
+          "x-bodyName": "body"
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "unprocessable: the database cannot sleep right now",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "service_unavailable: could not reach the database cluster",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Returns the database. The sleep request was accepted and runs asynchronously.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the database. The sleep request was accepted and runs asynchronously.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
+          }
+        },
+        "x-experimental": true
+      }
+    },
     "/organizations/{organization}/databases/{database}/subscription": {
       "post": {
         "tags": [
@@ -32487,6 +32869,120 @@
             }
           }
         }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/wake": {
+      "post": {
+        "tags": [
+          "Database sleeps"
+        ],
+        "summary": "Wake a database",
+        "description": "Wakes a Postgres database that you put to sleep.\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "WakeDatabase",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "unprocessable: the database cannot wake right now",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Returns the waking database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the waking database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
+          }
+        },
+        "x-experimental": true
       }
     },
     "/organizations/{organization}/databases/{database}/webhooks": {
@@ -40633,69 +41129,6 @@
           }
         }
       },
-      "PaginatedDatabase": {
-        "required": [
-          "type",
-          "current_page",
-          "per_page",
-          "next_page",
-          "next_page_url",
-          "prev_page",
-          "prev_page_url",
-          "total_count",
-          "total_pages",
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The response type. Always \u0022list\u0022 for paginated responses."
-          },
-          "current_page": {
-            "type": "integer",
-            "description": "The current page number"
-          },
-          "per_page": {
-            "type": "integer",
-            "description": "The maximum number of results per page"
-          },
-          "next_page": {
-            "type": "integer",
-            "description": "The next page number, or null when this is the last page",
-            "nullable": true
-          },
-          "next_page_url": {
-            "type": "string",
-            "description": "The next page of results, or null when this is the last page",
-            "nullable": true
-          },
-          "prev_page": {
-            "type": "integer",
-            "description": "The previous page number, or null when this is the first page",
-            "nullable": true
-          },
-          "prev_page_url": {
-            "type": "string",
-            "description": "The previous page of results, or null when this is the first page",
-            "nullable": true
-          },
-          "total_count": {
-            "type": "integer",
-            "description": "The total number of matching results"
-          },
-          "total_pages": {
-            "type": "integer",
-            "description": "The total number of pages of matching results"
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PaginatedDatabaseDataItem"
-            }
-          }
-        }
-      },
       "Database": {
         "required": [
           "id",
@@ -40916,6 +41349,69 @@
           }
         }
       },
+      "PaginatedDatabase": {
+        "required": [
+          "type",
+          "current_page",
+          "per_page",
+          "next_page",
+          "next_page_url",
+          "prev_page",
+          "prev_page_url",
+          "total_count",
+          "total_pages",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The response type. Always \u0022list\u0022 for paginated responses."
+          },
+          "current_page": {
+            "type": "integer",
+            "description": "The current page number"
+          },
+          "per_page": {
+            "type": "integer",
+            "description": "The maximum number of results per page"
+          },
+          "next_page": {
+            "type": "integer",
+            "description": "The next page number, or null when this is the last page",
+            "nullable": true
+          },
+          "next_page_url": {
+            "type": "string",
+            "description": "The next page of results, or null when this is the last page",
+            "nullable": true
+          },
+          "prev_page": {
+            "type": "integer",
+            "description": "The previous page number, or null when this is the first page",
+            "nullable": true
+          },
+          "prev_page_url": {
+            "type": "string",
+            "description": "The previous page of results, or null when this is the first page",
+            "nullable": true
+          },
+          "total_count": {
+            "type": "integer",
+            "description": "The total number of matching results"
+          },
+          "total_pages": {
+            "type": "integer",
+            "description": "The total number of pages of matching results"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedDatabaseDataItem"
+            }
+          }
+        }
+      },
       "PaginatedPlanetscaleRegion": {
         "required": [
           "type",
@@ -41045,6 +41541,37 @@
             "items": {
               "$ref": "#/components/schemas/ThrottlerConfigurationsConfigurationsItem"
             }
+          }
+        }
+      },
+      "InsightsAgentRunFeedback": {
+        "required": [
+          "rating",
+          "reason",
+          "note",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackRating"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackReason"
+          },
+          "note": {
+            "type": "string",
+            "description": "The user\u0027s note about the run",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the feedback was first given"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the feedback was last changed"
           }
         }
       },
@@ -41242,7 +41769,7 @@
             "nullable": true
           },
           "feedback": {
-            "$ref": "#/components/schemas/InsightsAgentRunFeedback"
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackProperty"
           },
           "submitted_at": {
             "type": "string",
@@ -49572,6 +50099,78 @@
           }
         }
       },
+      "DatabaseRegion": {
+        "required": [
+          "id",
+          "provider",
+          "enabled",
+          "public_ip_addresses",
+          "display_name",
+          "location",
+          "slug",
+          "current_default",
+          "mysql_supported",
+          "postgresql_supported",
+          "neki_supported"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the region"
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider for the region (ex. AWS)"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether or not the region is currently active"
+          },
+          "public_ip_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Public IP addresses for the region"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Name of the region"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location of the region"
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the region"
+          },
+          "current_default": {
+            "type": "boolean",
+            "description": "True if the region is the default for new branch creation"
+          },
+          "mysql_supported": {
+            "type": "boolean",
+            "description": "Whether the region supports MySQL/Vitess databases"
+          },
+          "postgresql_supported": {
+            "type": "boolean",
+            "description": "Whether the region supports PostgreSQL databases"
+          },
+          "neki_supported": {
+            "type": "boolean",
+            "description": "Whether the region supports Neki databases"
+          },
+          "availability_zones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatabaseRegionAvailabilityZonesItem"
+            },
+            "nullable": true
+          }
+        }
+      },
       "PaginatedDatabaseDataItem": {
         "required": [
           "id",
@@ -49789,78 +50388,6 @@
           },
           "kind": {
             "$ref": "#/components/schemas/PaginatedDatabaseDataItemKind"
-          }
-        }
-      },
-      "DatabaseRegion": {
-        "required": [
-          "id",
-          "provider",
-          "enabled",
-          "public_ip_addresses",
-          "display_name",
-          "location",
-          "slug",
-          "current_default",
-          "mysql_supported",
-          "postgresql_supported",
-          "neki_supported"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The ID of the region"
-          },
-          "provider": {
-            "type": "string",
-            "description": "Provider for the region (ex. AWS)"
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether or not the region is currently active"
-          },
-          "public_ip_addresses": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Public IP addresses for the region"
-          },
-          "display_name": {
-            "type": "string",
-            "description": "Name of the region"
-          },
-          "location": {
-            "type": "string",
-            "description": "Location of the region"
-          },
-          "slug": {
-            "type": "string",
-            "description": "The slug of the region"
-          },
-          "current_default": {
-            "type": "boolean",
-            "description": "True if the region is the default for new branch creation"
-          },
-          "mysql_supported": {
-            "type": "boolean",
-            "description": "Whether the region supports MySQL/Vitess databases"
-          },
-          "postgresql_supported": {
-            "type": "boolean",
-            "description": "Whether the region supports PostgreSQL databases"
-          },
-          "neki_supported": {
-            "type": "boolean",
-            "description": "Whether the region supports Neki databases"
-          },
-          "availability_zones": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DatabaseRegionAvailabilityZonesItem"
-            },
-            "nullable": true
           }
         }
       },
@@ -50536,7 +51063,7 @@
           }
         }
       },
-      "InsightsAgentRunFeedback": {
+      "InsightsAgentRunFeedbackProperty": {
         "required": [
           "rating",
           "reason",
@@ -50547,10 +51074,10 @@
         "type": "object",
         "properties": {
           "rating": {
-            "$ref": "#/components/schemas/InsightsAgentRunFeedbackRating"
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackPropertyRating"
           },
           "reason": {
-            "$ref": "#/components/schemas/InsightsAgentRunFeedbackReason"
+            "$ref": "#/components/schemas/InsightsAgentRunFeedbackPropertyReason"
           },
           "note": {
             "type": "string",
@@ -57408,6 +57935,29 @@
           }
         }
       },
+      "DatabaseRegionAvailabilityZonesItem": {
+        "required": [
+          "name",
+          "id",
+          "default"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Provider availability zone name in the account where the database is deployed (e.g. us-east-1a)"
+          },
+          "id": {
+            "type": "string",
+            "description": "Provider availability zone ID when available (e.g. AWS use1-az1).",
+            "nullable": true
+          },
+          "default": {
+            "type": "boolean",
+            "description": "Whether this zone is in the caller-stable default selection of three (seeded by the authenticated user or service token)"
+          }
+        }
+      },
       "PaginatedDatabaseDataItemRegion": {
         "required": [
           "id",
@@ -57477,29 +58027,6 @@
               "$ref": "#/components/schemas/PaginatedDatabaseDataItemRegionAvailabilityZonesItem"
             },
             "nullable": true
-          }
-        }
-      },
-      "DatabaseRegionAvailabilityZonesItem": {
-        "required": [
-          "name",
-          "id",
-          "default"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Provider availability zone name in the account where the database is deployed (e.g. us-east-1a)"
-          },
-          "id": {
-            "type": "string",
-            "description": "Provider availability zone ID when available (e.g. AWS use1-az1).",
-            "nullable": true
-          },
-          "default": {
-            "type": "boolean",
-            "description": "Whether this zone is in the caller-stable default selection of three (seeded by the authenticated user or service token)"
           }
         }
       },
@@ -63074,6 +63601,24 @@
           }
         }
       },
+      "UpdateInsightsAgentRunFeedbackRequest": {
+        "required": [
+          "rating"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "$ref": "#/components/schemas/UpdateInsightsAgentRunFeedbackRequestRating"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/UpdateInsightsAgentRunFeedbackRequestReason"
+          },
+          "note": {
+            "type": "string",
+            "description": "A note about the run"
+          }
+        }
+      },
       "UpdateInsightsAgentScheduleRequest": {
         "type": "object",
         "properties": {
@@ -63937,6 +64482,15 @@
           "reason": {
             "type": "string",
             "description": "The reason for dismissing the recommendation (max 500 characters)"
+          }
+        }
+      },
+      "SleepDatabaseRequest": {
+        "type": "object",
+        "properties": {
+          "force": {
+            "type": "boolean",
+            "description": "Sleep without waiting for WAL to be archived; writes not yet archived may be lost on wake."
           }
         }
       },
@@ -65787,6 +66341,71 @@
             {
               "value": "neki",
               "name": "Neki"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunFeedbackRating": {
+        "enum": [
+          "useful",
+          "not_useful"
+        ],
+        "type": "string",
+        "description": "Whether the run was useful",
+        "x-ms-enum": {
+          "name": "InsightsAgentRunFeedbackRating",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "useful",
+              "name": "Useful"
+            },
+            {
+              "value": "not_useful",
+              "name": "NotUseful"
+            }
+          ]
+        }
+      },
+      "InsightsAgentRunFeedbackReason": {
+        "enum": [
+          "wrong_diagnosis",
+          "fix_wont_work",
+          "too_risky",
+          "already_known",
+          "doesnt_fit",
+          "other"
+        ],
+        "type": "string",
+        "description": "Why the run was not useful",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "InsightsAgentRunFeedbackReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "wrong_diagnosis",
+              "name": "WrongDiagnosis"
+            },
+            {
+              "value": "fix_wont_work",
+              "name": "FixWontWork"
+            },
+            {
+              "value": "too_risky",
+              "name": "TooRisky"
+            },
+            {
+              "value": "already_known",
+              "name": "AlreadyKnown"
+            },
+            {
+              "value": "doesnt_fit",
+              "name": "DoesntFit"
+            },
+            {
+              "value": "other",
+              "name": "Other"
             }
           ]
         }
@@ -68725,7 +69344,7 @@
           ]
         }
       },
-      "InsightsAgentRunFeedbackRating": {
+      "InsightsAgentRunFeedbackPropertyRating": {
         "enum": [
           "useful",
           "not_useful"
@@ -68733,7 +69352,7 @@
         "type": "string",
         "description": "Whether the run was useful",
         "x-ms-enum": {
-          "name": "InsightsAgentRunFeedbackRating",
+          "name": "InsightsAgentRunFeedbackPropertyRating",
           "modelAsString": false,
           "values": [
             {
@@ -68747,7 +69366,7 @@
           ]
         }
       },
-      "InsightsAgentRunFeedbackReason": {
+      "InsightsAgentRunFeedbackPropertyReason": {
         "enum": [
           "wrong_diagnosis",
           "fix_wont_work",
@@ -68760,7 +69379,7 @@
         "description": "Why the run was not useful",
         "nullable": true,
         "x-ms-enum": {
-          "name": "InsightsAgentRunFeedbackReason",
+          "name": "InsightsAgentRunFeedbackPropertyReason",
           "modelAsString": false,
           "values": [
             {
@@ -72009,6 +72628,70 @@
             {
               "value": "branch_tuning",
               "name": "BranchTuning"
+            }
+          ]
+        }
+      },
+      "UpdateInsightsAgentRunFeedbackRequestRating": {
+        "enum": [
+          "useful",
+          "not_useful"
+        ],
+        "type": "string",
+        "description": "Whether the run was useful",
+        "x-ms-enum": {
+          "name": "UpdateInsightsAgentRunFeedbackRequestRating",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "useful",
+              "name": "Useful"
+            },
+            {
+              "value": "not_useful",
+              "name": "NotUseful"
+            }
+          ]
+        }
+      },
+      "UpdateInsightsAgentRunFeedbackRequestReason": {
+        "enum": [
+          "wrong_diagnosis",
+          "fix_wont_work",
+          "too_risky",
+          "already_known",
+          "doesnt_fit",
+          "other"
+        ],
+        "type": "string",
+        "description": "Why the run was not useful",
+        "x-ms-enum": {
+          "name": "UpdateInsightsAgentRunFeedbackRequestReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "wrong_diagnosis",
+              "name": "WrongDiagnosis"
+            },
+            {
+              "value": "fix_wont_work",
+              "name": "FixWontWork"
+            },
+            {
+              "value": "too_risky",
+              "name": "TooRisky"
+            },
+            {
+              "value": "already_known",
+              "name": "AlreadyKnown"
+            },
+            {
+              "value": "doesnt_fit",
+              "name": "DoesntFit"
+            },
+            {
+              "value": "other",
+              "name": "Other"
             }
           ]
         }
@@ -75959,6 +76642,14 @@
     {
       "name": "Backups",
       "description": "          Resources for managing database branch backups.\n"
+    },
+    {
+      "name": "Branch authentication",
+      "description": "Resources for managing how roles log in to a Postgres branch."
+    },
+    {
+      "name": "Branch authentication OIDC principals",
+      "description": "Resources for managing the IAM principals that can log in to a Postgres branch with OIDC."
     },
     {
       "name": "Branch changes",

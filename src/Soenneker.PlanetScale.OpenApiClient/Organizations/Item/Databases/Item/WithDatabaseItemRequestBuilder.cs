@@ -14,8 +14,10 @@ using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Main
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.ReadOnlyRegions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Regions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.SchemaRecommendations;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Sleep;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Subscription;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Throttler;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Wake;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Webhooks;
 using System.Collections.Generic;
 using System.IO;
@@ -80,6 +82,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.SchemaRecommendations.SchemaRecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The sleep property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Sleep.SleepRequestBuilder Sleep
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Sleep.SleepRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The subscription property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Subscription.SubscriptionRequestBuilder Subscription
         {
@@ -89,6 +96,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Throttler.ThrottlerRequestBuilder Throttler
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Throttler.ThrottlerRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The wake property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Wake.WakeRequestBuilder Wake
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Wake.WakeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhooks property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.Webhooks.WebhooksRequestBuilder Webhooks
