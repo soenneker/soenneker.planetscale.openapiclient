@@ -142,7 +142,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>For PostgreSQL backup restores and point-in-time recovery, the number of additional replicas from 0 to 8, subject to the target cluster size. 0 creates a single-node branch. If omitted, the target cluster size&apos;s minimum is used.</summary>
+        /// <summary>For PostgreSQL branch creation, backup restores, and point-in-time recovery, the number of additional replicas from 0 to 8, subject to the target cluster size. 0 creates a single-node branch. If omitted, the default for the target cluster size is used.</summary>
         public int? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
         private int? _explicitNullValueReplicas = default!;
         /// <summary>Restore from a point-in-time recovery timestamp (e.g. 2023-01-01T00:00:00Z). Available only for PostgreSQL databases.</summary>

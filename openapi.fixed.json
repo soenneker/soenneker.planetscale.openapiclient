@@ -63102,7 +63102,7 @@
           },
           "replicas": {
             "type": "integer",
-            "description": "For PostgreSQL backup restores and point-in-time recovery, the number of additional replicas from 0 to 8, subject to the target cluster size. 0 creates a single-node branch. If omitted, the target cluster size\u0027s minimum is used."
+            "description": "For PostgreSQL branch creation, backup restores, and point-in-time recovery, the number of additional replicas from 0 to 8, subject to the target cluster size. 0 creates a single-node branch. If omitted, the default for the target cluster size is used."
           },
           "seed_data": {
             "$ref": "#/components/schemas/LastSuccessfulBackupSeedData"
