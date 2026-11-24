@@ -5492,6 +5492,402 @@
         }
       }
     },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/bouncers/{bouncer}/restarts": {
+      "get": {
+        "tags": [
+          "Bouncer restarts"
+        ],
+        "summary": "List bouncer restarts",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "ListBouncerRestarts",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bouncer",
+            "in": "path",
+            "description": "The name of the bouncer, or \u0060primary\u0060 for the built-in PgBouncer of the primary instance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "If provided, specifies the page offset of returned results",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "If provided, specifies the number of returned results",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns bouncer restarts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedPostgresBouncerRestart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bouncer restarts"
+        ],
+        "summary": "Restart a bouncer",
+        "description": "        Restarts the PgBouncer processes behind a bouncer one instance at a time.\n\n        Each instance starts a new PgBouncer process and keeps accepting\n        connections while the old process drains. Connections still open at the\n        end of the drain are closed and their in-flight transactions are\n        interrupted; clients that reconnect recover on their own.\n\n        A bouncer accepts one restart at a time. A restart that ends in the\n        \u0060failed\u0060 state has an unconfirmed outcome: some instances may have\n        restarted, and nothing is rolled back.\n\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060write_database\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060write_databases\u0060 |\n| Database | \u0060write_database\u0060 |",
+        "operationId": "CreateBouncerRestart",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bouncer",
+            "in": "path",
+            "description": "The name of the bouncer, or \u0060primary\u0060 for the built-in PgBouncer of the primary instance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "unprocessable: the bouncer cannot be restarted right now",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Returns the new restart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresBouncerRestart"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns the new restart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresBouncerRestart"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        }
+      }
+    },
+    "/organizations/{organization}/databases/{database}/branches/{branch}/bouncers/{bouncer}/restarts/{id}": {
+      "get": {
+        "tags": [
+          "Bouncer restarts"
+        ],
+        "summary": "Get a bouncer restart",
+        "description": "\n### Authorization\nA service token or OAuth token must have at least one of the following access or scopes in order to use this API endpoint:\n\n**Service Token Accesses**\n \u0060read_branch\u0060, \u0060delete_branch\u0060, \u0060create_branch\u0060, \u0060connect_production_branch\u0060, \u0060connect_branch\u0060\n\n**OAuth Scopes**\n\n | Resource | Scopes |\n| :------- | :---------- |\n| Organization | \u0060read_branches\u0060 |\n| Database | \u0060read_branches\u0060 |\n| Branch | \u0060read_branch\u0060 |",
+        "operationId": "GetBouncerRestart",
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "description": "Organization name slug from \u0060list_organizations\u0060. Example: \u0060acme\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database",
+            "in": "path",
+            "description": "Database name slug from \u0060list_databases\u0060. Example: \u0060app-db\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "path",
+            "description": "Branch name from \u0060list_branches\u0060. Example: \u0060main\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bouncer",
+            "in": "path",
+            "description": "The name of the bouncer, or \u0060primary\u0060 for the built-in PgBouncer of the primary instance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the restart",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Reduce the frequency of requests and try again soon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Returns a bouncer restart",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresBouncerRestart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/organizations/{organization}/databases/{database}/branches/{branch}/change-requests": {
       "get": {
         "tags": [
@@ -40808,7 +41204,7 @@
           },
           "last_used_at": {
             "type": "string",
-            "description": "When the password was last used to execute a query",
+            "description": "When the password last connected",
             "nullable": true
           },
           "expired": {
@@ -40941,7 +41337,7 @@
           },
           "last_used_at": {
             "type": "string",
-            "description": "When the password was last used to execute a query",
+            "description": "When the password last connected",
             "nullable": true
           },
           "expired": {
@@ -44065,6 +44461,115 @@
           },
           "previous_sku": {
             "$ref": "#/components/schemas/PostgresBouncerResizeRequestPreviousSku"
+          }
+        }
+      },
+      "PaginatedPostgresBouncerRestart": {
+        "required": [
+          "type",
+          "current_page",
+          "per_page",
+          "next_page",
+          "next_page_url",
+          "prev_page",
+          "prev_page_url",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The response type. Always \u0022list\u0022 for paginated responses."
+          },
+          "current_page": {
+            "type": "integer",
+            "description": "The current page number"
+          },
+          "per_page": {
+            "type": "integer",
+            "description": "The maximum number of results per page"
+          },
+          "next_page": {
+            "type": "integer",
+            "description": "The next page number, or null when this is the last page",
+            "nullable": true
+          },
+          "next_page_url": {
+            "type": "string",
+            "description": "The next page of results, or null when this is the last page",
+            "nullable": true
+          },
+          "prev_page": {
+            "type": "integer",
+            "description": "The previous page number, or null when this is the first page",
+            "nullable": true
+          },
+          "prev_page_url": {
+            "type": "string",
+            "description": "The previous page of results, or null when this is the first page",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaginatedPostgresBouncerRestartDataItem"
+            }
+          }
+        }
+      },
+      "PostgresBouncerRestart": {
+        "required": [
+          "id",
+          "state",
+          "target",
+          "bouncer",
+          "started_at",
+          "completed_at",
+          "created_at",
+          "updated_at",
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the restart"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PostgresBouncerRestartState"
+          },
+          "target": {
+            "$ref": "#/components/schemas/PostgresBouncerRestartTarget"
+          },
+          "bouncer": {
+            "type": "string",
+            "description": "The name of the restarted bouncer, or \u0060primary\u0060 for the built-in PgBouncer of the primary instance"
+          },
+          "error": {
+            "type": "string",
+            "description": "Why the restart failed. A failed restart has an unconfirmed outcome: some instances may have restarted.",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When the restart was requested",
+            "nullable": true
+          },
+          "completed_at": {
+            "type": "string",
+            "description": "When the restart finished",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the restart was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the restart was last updated"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/PostgresBouncerRestartActor"
           }
         }
       },
@@ -49697,7 +50202,7 @@
           },
           "last_used_at": {
             "type": "string",
-            "description": "When the password was last used to execute a query",
+            "description": "When the password last connected",
             "nullable": true
           },
           "expired": {
@@ -52951,6 +53456,84 @@
           "sort_order": {
             "type": "integer",
             "description": "The sort order of the Postgres bouncer SKU"
+          }
+        }
+      },
+      "PaginatedPostgresBouncerRestartDataItem": {
+        "required": [
+          "id",
+          "state",
+          "target",
+          "bouncer",
+          "started_at",
+          "completed_at",
+          "created_at",
+          "updated_at",
+          "actor"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the restart"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PaginatedPostgresBouncerRestartDataItemState"
+          },
+          "target": {
+            "$ref": "#/components/schemas/PaginatedPostgresBouncerRestartDataItemTarget"
+          },
+          "bouncer": {
+            "type": "string",
+            "description": "The name of the restarted bouncer, or \u0060primary\u0060 for the built-in PgBouncer of the primary instance"
+          },
+          "error": {
+            "type": "string",
+            "description": "Why the restart failed. A failed restart has an unconfirmed outcome: some instances may have restarted.",
+            "nullable": true
+          },
+          "started_at": {
+            "type": "string",
+            "description": "When the restart was requested",
+            "nullable": true
+          },
+          "completed_at": {
+            "type": "string",
+            "description": "When the restart finished",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When the restart was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the restart was last updated"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/PaginatedPostgresBouncerRestartDataItemActor"
+          }
+        }
+      },
+      "PostgresBouncerRestartActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
           }
         }
       },
@@ -56639,7 +57222,7 @@
           },
           "last_used_at": {
             "type": "string",
-            "description": "When the password was last used to execute a query",
+            "description": "When the password last connected",
             "nullable": true
           },
           "expired": {
@@ -59211,6 +59794,28 @@
         },
         "nullable": true
       },
+      "PaginatedPostgresBouncerRestartDataItemActor": {
+        "required": [
+          "id",
+          "display_name",
+          "avatar_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the actor"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The name of the actor"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "The URL of the actor\u0027s avatar"
+          }
+        }
+      },
       "PaginatedPostgresBouncerDataItemSku": {
         "required": [
           "name",
@@ -61003,7 +61608,7 @@
           },
           "last_used_at": {
             "type": "string",
-            "description": "When the password was last used to execute a query",
+            "description": "When the password last connected",
             "nullable": true
           },
           "expired": {
@@ -64223,7 +64828,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Optional array of tags for this rule. Each rules take exactly one tag."
+            "description": "Optional array of tags for this rule. Rules with kind each take exactly one tag."
           }
         }
       },
@@ -67048,6 +67653,65 @@
           ]
         }
       },
+      "PostgresBouncerRestartState": {
+        "enum": [
+          "pending",
+          "running",
+          "succeeded",
+          "failed",
+          "canceled"
+        ],
+        "type": "string",
+        "description": "The state of the restart",
+        "x-ms-enum": {
+          "name": "PostgresBouncerRestartState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "PostgresBouncerRestartTarget": {
+        "enum": [
+          "dedicated",
+          "local"
+        ],
+        "type": "string",
+        "description": "\u0060dedicated\u0060 restarts a dedicated bouncer; \u0060local\u0060 restarts the built-in PgBouncer of the primary instance.",
+        "x-ms-enum": {
+          "name": "PostgresBouncerRestartTarget",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "dedicated",
+              "name": "Dedicated"
+            },
+            {
+              "value": "local",
+              "name": "Local"
+            }
+          ]
+        }
+      },
       "PostgresBouncerTarget": {
         "enum": [
           "primary",
@@ -69692,6 +70356,65 @@
             {
               "value": "configuration_profile",
               "name": "ConfigurationProfile"
+            }
+          ]
+        }
+      },
+      "PaginatedPostgresBouncerRestartDataItemState": {
+        "enum": [
+          "pending",
+          "running",
+          "succeeded",
+          "failed",
+          "canceled"
+        ],
+        "type": "string",
+        "description": "The state of the restart",
+        "x-ms-enum": {
+          "name": "PaginatedPostgresBouncerRestartDataItemState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "PaginatedPostgresBouncerRestartDataItemTarget": {
+        "enum": [
+          "dedicated",
+          "local"
+        ],
+        "type": "string",
+        "description": "\u0060dedicated\u0060 restarts a dedicated bouncer; \u0060local\u0060 restarts the built-in PgBouncer of the primary instance.",
+        "x-ms-enum": {
+          "name": "PaginatedPostgresBouncerRestartDataItemTarget",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "dedicated",
+              "name": "Dedicated"
+            },
+            {
+              "value": "local",
+              "name": "Local"
             }
           ]
         }

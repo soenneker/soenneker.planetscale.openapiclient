@@ -52,7 +52,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <summary>Kind of rule</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Models.CreateTrafficRuleRequestKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.PlanetScale.OpenApiClient.Models.CreateTrafficRuleRequestKind? _explicitNullValueKind = default!;
-        /// <summary>Optional array of tags for this rule. Each rules take exactly one tag.</summary>
+        /// <summary>Optional array of tags for this rule. Rules with kind each take exactly one tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
