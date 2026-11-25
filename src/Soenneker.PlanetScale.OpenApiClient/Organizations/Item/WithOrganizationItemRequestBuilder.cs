@@ -7,6 +7,7 @@ using Soenneker.PlanetScale.OpenApiClient.Models;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.AuditLog;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Billing;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus;
+using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.CustomRoles;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.DatabaseSubscriptions;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases;
 using Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Invitations;
@@ -44,6 +45,11 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus.ClusterSizeSkusRequestBuilder ClusterSizeSkus
         {
             get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.ClusterSizeSkus.ClusterSizeSkusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customRoles property</summary>
+        public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.CustomRoles.CustomRolesRequestBuilder CustomRoles
+        {
+            get => new global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.CustomRoles.CustomRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The databases property</summary>
         public global::Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.DatabasesRequestBuilder Databases

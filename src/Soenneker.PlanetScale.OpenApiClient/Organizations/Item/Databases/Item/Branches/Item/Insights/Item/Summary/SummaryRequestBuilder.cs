@@ -114,7 +114,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("from")]
             public string From { get; set; }
 #endif
-            /// <summary>The keyspace to filter by</summary>
+            /// <summary>The keyspace to filter by, empty for queries that no keyspace served</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("keyspace")]
