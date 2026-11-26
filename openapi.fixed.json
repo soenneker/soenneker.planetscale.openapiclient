@@ -18462,6 +18462,38 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Without \u0060query_ids\u0060 or \u0060fingerprint\u0060, retrieve metrics for the top query patterns that the branch insights list returns for the same \u0060per_page\u0060, \u0060sort\u0060, \u0060dir\u0060, \u0060type\u0060, time range, and filters",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Field to rank query patterns by, with \u0060per_page\u0060",
+            "schema": {
+              "$ref": "#/components/schemas/GetBranchQueryMetricsSortParameter"
+            }
+          },
+          {
+            "name": "dir",
+            "in": "query",
+            "description": "Direction to rank query patterns in, with \u0060per_page\u0060",
+            "schema": {
+              "$ref": "#/components/schemas/GetBranchQueryMetricsDirParameter"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Filter ranked query patterns by statement type, with \u0060per_page\u0060",
+            "schema": {
+              "$ref": "#/components/schemas/GetBranchQueryMetricsTypeParameter"
+            }
           }
         ],
         "responses": {
@@ -18526,7 +18558,7 @@
             }
           },
           "400": {
-            "description": "Malformed metrics parameter",
+            "description": "Malformed metrics parameter or invalid time range",
             "content": {
               "application/json": {
                 "schema": {
@@ -79872,6 +79904,294 @@
             {
               "value": "rdonly",
               "name": "Rdonly"
+            }
+          ]
+        }
+      },
+      "GetBranchQueryMetricsSortParameter": {
+        "enum": [
+          "keyspace",
+          "query",
+          "lastRun",
+          "count",
+          "errorCount",
+          "rowsRead",
+          "rowsAffected",
+          "rowsReturned",
+          "rowsReadPerReturned",
+          "rowsReadPerQuery",
+          "rowsReturnedPerQuery",
+          "rowsAffectedPerQuery",
+          "totalTime",
+          "cpuTime",
+          "ioTime",
+          "sumShardQueries",
+          "maxShardQueries",
+          "avgShardQueries",
+          "avgParallelWorkers",
+          "table",
+          "qualifiedTable",
+          "tableKeyspace",
+          "indexes",
+          "routingIndexes",
+          "p50Latency",
+          "p99Latency",
+          "maxLatency",
+          "percentTime",
+          "percentCpuTime",
+          "percentIoTime",
+          "egressBytes",
+          "egressBytesPerQuery",
+          "maxEgressBytes",
+          "ingressBytes",
+          "ingressBytesPerQuery",
+          "maxIngressBytes",
+          "blocksRead",
+          "blocksHit",
+          "blockCacheHitRatio",
+          "blocksDirtied",
+          "blocksWritten",
+          "trafficControlWarnings",
+          "trafficControlThrottled",
+          "trafficControlChecked",
+          "trafficControlBudgetsUsed"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetBranchQueryMetricsSortParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "keyspace",
+              "name": "Keyspace"
+            },
+            {
+              "value": "query",
+              "name": "Query"
+            },
+            {
+              "value": "lastRun",
+              "name": "LastRun"
+            },
+            {
+              "value": "count",
+              "name": "Count"
+            },
+            {
+              "value": "errorCount",
+              "name": "ErrorCount"
+            },
+            {
+              "value": "rowsRead",
+              "name": "RowsRead"
+            },
+            {
+              "value": "rowsAffected",
+              "name": "RowsAffected"
+            },
+            {
+              "value": "rowsReturned",
+              "name": "RowsReturned"
+            },
+            {
+              "value": "rowsReadPerReturned",
+              "name": "RowsReadPerReturned"
+            },
+            {
+              "value": "rowsReadPerQuery",
+              "name": "RowsReadPerQuery"
+            },
+            {
+              "value": "rowsReturnedPerQuery",
+              "name": "RowsReturnedPerQuery"
+            },
+            {
+              "value": "rowsAffectedPerQuery",
+              "name": "RowsAffectedPerQuery"
+            },
+            {
+              "value": "totalTime",
+              "name": "TotalTime"
+            },
+            {
+              "value": "cpuTime",
+              "name": "CpuTime"
+            },
+            {
+              "value": "ioTime",
+              "name": "IoTime"
+            },
+            {
+              "value": "sumShardQueries",
+              "name": "SumShardQueries"
+            },
+            {
+              "value": "maxShardQueries",
+              "name": "MaxShardQueries"
+            },
+            {
+              "value": "avgShardQueries",
+              "name": "AvgShardQueries"
+            },
+            {
+              "value": "avgParallelWorkers",
+              "name": "AvgParallelWorkers"
+            },
+            {
+              "value": "table",
+              "name": "Table"
+            },
+            {
+              "value": "qualifiedTable",
+              "name": "QualifiedTable"
+            },
+            {
+              "value": "tableKeyspace",
+              "name": "TableKeyspace"
+            },
+            {
+              "value": "indexes",
+              "name": "Indexes"
+            },
+            {
+              "value": "routingIndexes",
+              "name": "RoutingIndexes"
+            },
+            {
+              "value": "p50Latency",
+              "name": "P50Latency"
+            },
+            {
+              "value": "p99Latency",
+              "name": "P99Latency"
+            },
+            {
+              "value": "maxLatency",
+              "name": "MaxLatency"
+            },
+            {
+              "value": "percentTime",
+              "name": "PercentTime"
+            },
+            {
+              "value": "percentCpuTime",
+              "name": "PercentCpuTime"
+            },
+            {
+              "value": "percentIoTime",
+              "name": "PercentIoTime"
+            },
+            {
+              "value": "egressBytes",
+              "name": "EgressBytes"
+            },
+            {
+              "value": "egressBytesPerQuery",
+              "name": "EgressBytesPerQuery"
+            },
+            {
+              "value": "maxEgressBytes",
+              "name": "MaxEgressBytes"
+            },
+            {
+              "value": "ingressBytes",
+              "name": "IngressBytes"
+            },
+            {
+              "value": "ingressBytesPerQuery",
+              "name": "IngressBytesPerQuery"
+            },
+            {
+              "value": "maxIngressBytes",
+              "name": "MaxIngressBytes"
+            },
+            {
+              "value": "blocksRead",
+              "name": "BlocksRead"
+            },
+            {
+              "value": "blocksHit",
+              "name": "BlocksHit"
+            },
+            {
+              "value": "blockCacheHitRatio",
+              "name": "BlockCacheHitRatio"
+            },
+            {
+              "value": "blocksDirtied",
+              "name": "BlocksDirtied"
+            },
+            {
+              "value": "blocksWritten",
+              "name": "BlocksWritten"
+            },
+            {
+              "value": "trafficControlWarnings",
+              "name": "TrafficControlWarnings"
+            },
+            {
+              "value": "trafficControlThrottled",
+              "name": "TrafficControlThrottled"
+            },
+            {
+              "value": "trafficControlChecked",
+              "name": "TrafficControlChecked"
+            },
+            {
+              "value": "trafficControlBudgetsUsed",
+              "name": "TrafficControlBudgetsUsed"
+            }
+          ]
+        }
+      },
+      "GetBranchQueryMetricsDirParameter": {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetBranchQueryMetricsDirParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asc",
+              "name": "Asc"
+            },
+            {
+              "value": "desc",
+              "name": "Desc"
+            }
+          ]
+        }
+      },
+      "GetBranchQueryMetricsTypeParameter": {
+        "enum": [
+          "SELECT",
+          "INSERT",
+          "UPDATE",
+          "DELETE"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetBranchQueryMetricsTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SELECT",
+              "name": "Select"
+            },
+            {
+              "value": "INSERT",
+              "name": "Insert"
+            },
+            {
+              "value": "UPDATE",
+              "name": "Update"
+            },
+            {
+              "value": "DELETE",
+              "name": "Delete"
             }
           ]
         }

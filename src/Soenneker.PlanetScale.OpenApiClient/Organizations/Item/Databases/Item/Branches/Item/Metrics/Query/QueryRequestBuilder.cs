@@ -22,7 +22,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/metrics/query{?budget_id*,fingerprint*,from*,keyspace*,metrics*,period*,q*,query_ids*,rule_id*,steps*,tablet_type*,to*}", pathParameters)
+        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/metrics/query{?budget_id*,dir*,fingerprint*,from*,keyspace*,metrics*,per_page*,period*,q*,query_ids*,rule_id*,sort*,steps*,tablet_type*,to*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/metrics/query{?budget_id*,fingerprint*,from*,keyspace*,metrics*,period*,q*,query_ids*,rule_id*,steps*,tablet_type*,to*}", rawUrl)
+        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization}/databases/{database}/branches/{branch}/metrics/query{?budget_id*,dir*,fingerprint*,from*,keyspace*,metrics*,per_page*,period*,q*,query_ids*,rule_id*,sort*,steps*,tablet_type*,to*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -114,6 +114,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("budget_id")]
             public string BudgetId { get; set; }
 #endif
+            /// <summary>Direction to rank query patterns in, with `per_page`</summary>
+            [QueryParameter("dir")]
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchQueryMetricsDirParameter? Dir { get; set; }
             /// <summary>Filter by query fingerprint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +160,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             /// <summary>Named time period to retrieve. Defaults to 12h.</summary>
             [QueryParameter("period")]
             public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchQueryMetricsPeriodParameter? Period { get; set; }
+            /// <summary>Without `query_ids` or `fingerprint`, retrieve metrics for the top query patterns that the branch insights list returns for the same `per_page`, `sort`, `dir`, `type`, time range, and filters</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             /// <summary>Filter by search terms</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +193,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("rule_id")]
             public string RuleId { get; set; }
 #endif
+            /// <summary>Field to rank query patterns by, with `per_page`</summary>
+            [QueryParameter("sort")]
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchQueryMetricsSortParameter? Sort { get; set; }
             /// <summary>Number of data points to return</summary>
             [QueryParameter("steps")]
             public int? Steps { get; set; }
@@ -203,6 +212,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Organizations.Item.Databases.Item.
             [QueryParameter("to")]
             public string To { get; set; }
 #endif
+            /// <summary>Filter ranked query patterns by statement type, with `per_page`</summary>
+            [QueryParameter("type")]
+            public global::Soenneker.PlanetScale.OpenApiClient.Models.GetBranchQueryMetricsTypeParameter? Type { get; set; }
         }
     }
 }
