@@ -25,6 +25,8 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             else if (parseNode.GetChildNode("major_version") is { } nullNodeMajorVersion && nullNodeMajorVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MajorVersion = null;
             if (parseNode.GetChildNode("minor_version") is null) { _explicitNullValueMinorVersion = default!; _explicitNullProperties?.Remove("minor_version"); }
             else if (parseNode.GetChildNode("minor_version") is { } nullNodeMinorVersion && nullNodeMinorVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinorVersion = null;
+            if (parseNode.GetChildNode("preview") is null) { _explicitNullValuePreview = default!; _explicitNullProperties?.Remove("preview"); }
+            else if (parseNode.GetChildNode("preview") is { } nullNodePreview && nullNodePreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preview = null;
             if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
             else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
@@ -64,6 +66,9 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         public string MinorVersion { get => _explicitNullValueMinorVersion; set { _explicitNullValueMinorVersion = value; AdditionalData?.Remove("minor_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minor_version"); else _explicitNullProperties?.Remove("minor_version"); } }
         private string _explicitNullValueMinorVersion = default!;
 #endif
+        /// <summary>Whether this version is newer than the stable Neki update channel&apos;s default PostgreSQL version</summary>
+        public bool? Preview { get => _explicitNullValuePreview; set { _explicitNullValuePreview = value; AdditionalData?.Remove("preview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview"); else _explicitNullProperties?.Remove("preview"); } }
+        private bool? _explicitNullValuePreview = default!;
         /// <summary>The full PostgreSQL version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,12 +102,13 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "major_version", n => { MajorVersion = n.GetStringValue(); } },
                 { "minor_version", n => { MinorVersion = n.GetStringValue(); } },
+                { "preview", n => { Preview = n.GetBoolValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -117,6 +123,7 @@ namespace Soenneker.PlanetScale.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("major_version", MajorVersion);
             writer.WriteStringValue("minor_version", MinorVersion);
+            writer.WriteBoolValue("preview", Preview);
             writer.WriteStringValue("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
